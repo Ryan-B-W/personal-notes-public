@@ -1,0 +1,6 @@
+[submodule "resume"]
+	path = resume
+	url = git@github.com:Ryan-B-W/resume.git
+[submodule "public"]
+	path = public
+	url = git@github.com:Ryan-B-W/public-notes.git
