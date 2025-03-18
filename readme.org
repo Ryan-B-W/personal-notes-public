@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       af7f3459-6423-433e-b01d-fafe6739e809
+:END:
+#+title: Personal Notes readme.org file
+
+* About
+These are Ryan "Brody" Wilcox's personal notes.  In this case, the public version of the notes meta-repository.  This specific version is intended for public consumption.
+* Organization
+These notes are split into a set of multiple [[id:003ec9df-d673-4336-aae0-9a034fd89997][git]] repositories using git submodules.
+
+The layout:
+ - [[https://github.com/Ryan-B-W/personal-notes-public][=personal-notes-public=]], the repository containing this readme file.  The default location for notes and used for most notes.
+   - [[https://github.com/Ryan-B-W/resume][=resume=]], personal résumé that is publicly accessible.
+   - [[https://github.com/Ryan-B-W/public-notes][=public-notes=]], public notes.
+* Entrypoint
+[[file:20240821170545-directory.org][Directory (relative file link)]]
+
+[[id:de1374cb-284d-4485-92d9-9dd3aa19f117][Directory (Org Mode ID link for Org Roam)]]

@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       de1374cb-284d-4485-92d9-9dd3aa19f117
+:END:
+#+title: Directory
+#+filetags: :directory:lists:
+
+Directory of nodes for navigating notes.
+* Projects
+** [[id:05636b9c-e97f-4e57-9a18-4443d1068275][Blog Ideas]]
+** [[id:63fbce98-9d35-49e6-8b2d-9096d1788d16][Project Ideas]]
+* Organization
+** [[id:3cb36cde-9b51-4dc1-8b60-577cde5c72a8][Productivity and note taking]]
+* Media
+** [[id:fa6ec024-4e2b-4e1d-ac57-37b7d82f0531][Mathematics Books]]
+** [[id:e34a8a17-67c3-4655-aa35-782eb154ae05][Self-Help Books]]
+* Computers
+** [[id:7ad4a126-0b9f-4dc0-9968-cd9135bf8b1e][Useful Software]]
+** [[id:01b40f47-e5e8-46a2-a8f7-3c719e9f245c][Computer Science Concepts]]
+** [[id:212f25e1-f183-4cb0-97db-342ac6667078][C and C++ Documentation and Resources]]
+** [[id:73afc0b8-eda4-4aea-869d-523d0a2410ad][C and C++ Tooling]]
+* Health
+** [[id:2f1ea8a7-6ccb-4e9b-94c5-cb605729a317][Electrolyte Supplement Research]]
