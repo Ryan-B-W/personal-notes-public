@@ -21,3 +21,4 @@ jobs:
           export: html
           eval: true
           branch: gh-pages
+          fragile: false
