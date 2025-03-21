@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-20 Thu 18:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(lockywolf.wordpress.com) Various Thoughts</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">(lockywolf.wordpress.com) Various Thoughts</h1>
+<pre class="example">
+ID: 881e8756-617b-4d7f-bf29-d230b9a496f9
+ROAM_REFS: https://lockywolf.wordpress.com/
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li><a href="https://lockywolf.wordpress.com/2017/10/15/first-blog-post/">About</a></li>
+</ul>
+
+<p>
+Since I abandoned LiveJournal, but still need to publish my stuff somewhere, why don't I use WordPress?
+</p>
+
+<p>
+I post micro posts in on Facebook (bilingual), occasionally on Instagram and Twitter.  The links under the site title work.
+</p>
+</blockquote>
+<div id="outline-container-org6c8600d" class="outline-2">
+<h2 id="org6c8600d">(lockywolf.wordpress.com) Solving SICP – Various Thoughts&#xa0;&#xa0;&#xa0;<span class="tag"><span class="scheme">scheme</span>&#xa0;<span class="lisp">lisp</span>&#xa0;<span class="reviews">reviews</span>&#xa0;<span class="computer_science">computer_science</span>&#xa0;<span class="blogs">blogs</span>&#xa0;<span class="blog_post">blog_post</span>&#xa0;<span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org6c8600d">
+<pre class="example">
+ID: 0cd682ff-d2c0-4ee9-af88-5729e0e89c1c
+ROAM_REFS: https://lockywolf.wordpress.com/2021/02/08/solving-sicp/
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li>Solving SICP</li>
+</ul>
+
+<p>
+<a href="https://lockywolf.wordpress.com/author/lockywolf/">lockywolf</a> <a href="https://lockywolf.wordpress.com/category/development/">development</a> February 8, 2021February 9, 2021 71 Minutes
+</p>
+
+<p>
+This report is written as a post-mortem of a project that has, perhaps, been the author's most extensive personal project: creating a complete and comprehensive solution to one of the most famous programming problem sets in the modern computer science curriculum “Structure and Interpretation of Computer Programs”, by Abelson, Sussman, and Sussman (cite{Abelson1996}).
+</p>
+
+<p>
+It measures exactly:
+</p>
+
+<ul class="org-ul">
+<li>How much effort SICP requires (729 hours 19 minutes (over eight months), 292 sessions).</li>
+<li>How many computer languages it involves (6).</li>
+<li>How many pieces of software are required (9).</li>
+<li>How much communication with peers is needed.</li>
+</ul>
+
+<p>
+It suggests:
+</p>
+
+<ul class="org-ul">
+<li>A practical software-supported task management procedure for solving coursework.</li>
+<li>Several improvements, on the technical side, to any hard skills teaching process.</li>
+<li>Several improvements, on the social side, to any kind of teaching process.</li>
+</ul>
+
+<p>
+The solution is published online (the source code and pdf file):
+</p>
+
+<ul class="org-ul">
+<li><a href="http://gitlab.com/Lockywolf/chibi-sicp">http://gitlab.com/Lockywolf/chibi-sicp</a></li>
+</ul>
+
+<p>
+This report (and the data in the appendix) can be applied immediately as:
+</p>
+
+<ul class="org-ul">
+<li>A single-point estimate of the SICP problem set difficulty.</li>
+<li>A class handout aimed at increasing students' motivation to study.</li>
+<li>A data source for a study of learning patterns among adult professionals aiming for continuing education.</li>
+<li>An “almost ready” protocol for a convenient problem-set solution procedure, which produces artefacts that can be later used as a student portfolio.</li>
+<li>An “almost ready”, and “almost convenient” protocol for measuring time consumption of almost any problem set expressible in a digital form.</li>
+</ul>
+
+<p>
+Additionally, a time-tracking data analysis can be reproduced interactively in the org-mode version of this report. (See: <a href="https://lockywolf.wordpress.com/2021/02/08/solving-sicp/#org492ae47">Appendix: Emacs Lisp code for data analysis</a>)
+</p>
+
+<p>
+** Introduction
+</p>
+
+<p>
+Programming language textbooks are not a frequent object of study, as they are expected to convey existing knowledge.  However, teaching practitioners, when they face the task of designing a computer science curriculum for their teaching institution, have to base their decisions on something.  An “ad-hoc” teaching method, primarily based on studying some particular programming language fashionable at the time of selection, is still a popular choice.
+</p>
+
+<p>
+There have been attempts to approach course design with more rigour.  The “Structure and Interpretation of Computer Programs” was created as a result of such an attempt.  SICP was revolutionary for its time, and perhaps can be still considered revolutionary nowadays.  Twenty years later, this endeavour was analysed by Felleisen in a paper “Structure and Interpretation of Computer Science Curriculum” (cite{sicsc}).  He then reflected upon the benefits and drawbacks of the <code>deliberately designed</code> syllabus from a pedagogical standpoint.  He proposed what he believes to be a pedagogically superior successor to the first generation of <code>deliberate</code> curriculum. (See: “How to Design Programs” (HTDP) cite{felleisen2018how})
+</p>
+
+<p>
+Leaving aside the pedagogical quality of the textbook (as the author is not a practising teacher), this report touches a different (and seldom considered!) aspect of a computer science (and in general, any other subject's) curriculum.  That is,precisely, how much work is required to pass a particular course.
+</p>
+
+<p>
+This endeavour was spurred by the author's previous experience of learning about partial differential equations through a traditional paper-and-pen based approach, only mildly augmented with a time-tracking software.  But even such a tiny augmentation already exposed an astonishing disparity between a declared laboriousness of a task and the empirically measured time required to complete it.
+</p>
+
+<p>
+The author, therefore, decided to build upon the previous experience and to try and design as smooth, manageable, and measurable approach to performing university coursework, as possible.  A computer science subject provided an obvious choice.
+</p>
+
+<p>
+The solution was planned, broken down into parts, harnessed with a software support system, and executed in a timely and measured manner by the author, thus proving that the chosen goal is doable.  The complete measured data are provided.  Teaching professionals may benefit from it when planning coursework specialised to their requirements.
+</p>
+
+<p>
+More generally, the author wants to propose a comprehensive reassessment of university teaching in general, based on empirical approaches (understanding precisely how, when, and what each party involved in the teaching process does), in order to select the most efficient (potentially even using an optimisation algorithm) strategy when selecting a learning approach for every particular student.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+<p class="date">Created: 2025-03-20 Thu 18:52</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-20 Thu 18:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(en.wikipedia.org) Diophantine equation - Wikipedia</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">(en.wikipedia.org) Diophantine equation - Wikipedia</h1>
+<pre class="example">
+ID: 46074efd-c5a1-40ac-9ae0-7f8e2a3a0962
+ROAM_REFS: https://en.wikipedia.org/wiki/Diophantine_equation
+</pre>
+<blockquote>
+<p>
+In <a href="https://en.wikipedia.org/wiki/Mathematics">mathematics</a>, a <b>Diophantine equation</b> is an <a href="https://en.wikipedia.org/wiki/Equation">equation</a>, typically a <a href="https://en.wikipedia.org/wiki/Polynomial_equation">polynomial equation</a> in two or more <a href="https://en.wikipedia.org/wiki/Unknown_(mathematics)">unknowns</a> with <a href="https://en.wikipedia.org/wiki/Integer">integer</a> coefficients, for which only <a href="https://en.wikipedia.org/wiki/Integer">integer</a> solutions are of interest.  A <b>linear Diophantine equation</b> equates the sum of two or more unknowns, with coefficients, to a constant.  An <b>exponential Diophantine equation</b> is one in which unknowns can appear in <a href="https://en.wikipedia.org/wiki/Exponent">exponents</a>.
+</p>
+
+<p>
+<b>Diophantine problems</b> have fewer equations than unknowns and involve finding integers that solve simultaneously all equations.  Because such <a href="https://en.wikipedia.org/wiki/Systems_of_equations">systems of equations</a> define <a href="https://en.wikipedia.org/wiki/Algebraic_curve">algebraic curves</a>, <a href="https://en.wikipedia.org/wiki/Algebraic_surface">algebraic surfaces</a>, or, more generally, <a href="https://en.wikipedia.org/wiki/Algebraic_set">algebraic sets</a>, their study is a part of <a href="https://en.wikipedia.org/wiki/Algebraic_geometry">algebraic geometry</a> that is called <i><a href="https://en.wikipedia.org/wiki/Diophantine_geometry">Diophantine geometry</a></i>.
+</p>
+
+<p>
+The word <i>Diophantine</i> refers to the <a href="https://en.wikipedia.org/wiki/Greek_mathematics#Hellenistic">Hellenistic mathematician</a> of the 3rd century, <a href="https://en.wikipedia.org/wiki/Diophantus">Diophantus</a> of <a href="https://en.wikipedia.org/wiki/Alexandria">Alexandria</a>, who made a study of such equations and was one of the first mathematicians to introduce <a href="https://en.wikipedia.org/wiki/Mathematical_symbol">symbolism</a> into <a href="https://en.wikipedia.org/wiki/Algebra">algebra</a>.  The mathematical study of Diophantine problems that Diophantus initiated is now called <b>Diophantine analysis</b>.
+</p>
+
+<p>
+While individual equations present a kind of puzzle and have been considered throughout history, the formulation of general theories of Diophantine equations, beyond the case of linear and <a href="https://en.wikipedia.org/wiki/Quadratic_equation">quadratic</a> equations, was an achievement of the twentieth century.
+</p>
+</blockquote>
+<div id="outline-container-orgbd033ec" class="outline-2">
+<h2 id="orgbd033ec">(en.wikipedia.org) Linear Diophantine equations - Diophantine equation - Wikipedia</h2>
+<div class="outline-text-2" id="text-orgbd033ec">
+<pre class="example">
+ID: 46f082ae-40c1-4621-94cc-bc78cb823859
+ROAM_REFS: https://en.wikipedia.org/wiki/Diophantine_equation#Linear_Diophantine_equations
+</pre>
+<blockquote>
+<p>
+<b>*</b> One equation
+</p>
+
+<p>
+The simplest linear Diophantine equation takes the form \[ax + by = c,\] where a, b and c are given integers.  The solutions are described by the following theorem:
+</p>
+
+<p>
+<i>This Diophantine equation has a solution</i> (where x and y are integers) <i><a href="https://en.wikipedia.org/wiki/If_and_only_if">if and only if</a></i> c <i>is a multiple of the <a href="https://en.wikipedia.org/wiki/Greatest_common_divisor">greatest common divisor</a> of</i> a <i>and</i> b. <i>Moreover, if</i> (<i>x, y</i>) <i>is a solution, then the other solutions have the form</i> (<i>x</i> + <i>kv, y</i> − <i>ku</i>), <i>where</i> k <i>is an arbitrary integer, and</i> u <i>and</i> v <i>are the quotients of</i> a <i>and</i> b <i>(respectively) by the greatest common divisor of</i> a <i>and</i> b.
+</p>
+
+<p>
+<b>Proof:</b> If d is this greatest common divisor, <a href="https://en.wikipedia.org/wiki/B%C3%A9zout's_identity">Bézout's identity</a> asserts the existence of integers e and f such that <i>ae</i> + <i>bf</i> = <i>d</i>.  If c is a multiple of d, then <i>c</i> = <i>dh</i> for some integer h, and (<i>eh, fh</i>) is a solution.  On the other hand, for every pair of integers x and y, the greatest common divisor d of a and b divides <i>ax</i> + <i>by</i>.  Thus, if the equation has a solution, then c must be a multiple of d.  If <i>a</i> = <i>ud</i> and <i>b</i> = <i>vd</i>, then for every solution (<i>x, y</i>), we have \[\begin{matrix}
+  {a(x + kv) + b(y - ku)} & {= ax + by + k(av - bu)} \\
+   & {= ax + by + k(udv - vdu)} \\
+   & {= ax + by,}
+  \end{matrix}\] showing that (<i>x</i> + <i>kv, y</i> − <i>ku</i>) is another solution.  Finally, given two solutions such that \[ax_{1} + by_{1} = ax_{2} + by_{2} = c,\] one deduces that \[u(x_{2} - x_{1}) + v(y_{2} - y_{1}) = 0.\] As u and v are <a href="https://en.wikipedia.org/wiki/Coprime">coprime</a>, <a href="https://en.wikipedia.org/wiki/Euclid's_lemma">Euclid's lemma</a> shows that v divides /x/<sub>2</sub> − /x/<sub>1</sub>, and thus that there exists an integer k such that both \[x_{2} - x_{1} = kv,\quad y_{2} - y_{1} = - ku.\] Therefore, \[x_{2} = x_{1} + kv,\quad y_{2} = y_{1} - ku,\] which completes the proof.
+</p>
+
+<p>
+<b>*</b> Chinese remainder theorem
+</p>
+
+<p>
+The <a href="https://en.wikipedia.org/wiki/Chinese_remainder_theorem">Chinese remainder theorem</a> describes an important class of linear Diophantine systems of equations: let \(n_{1},\ldots,n_{k}\) be k <a href="https://en.wikipedia.org/wiki/Pairwise_coprime">pairwise coprime</a> integers greater than one, \(a_{1},\ldots,a_{k}\) be k arbitrary integers, and N be the product \(n_{1}\cdots n_{k}.\) The Chinese remainder theorem asserts that the following linear Diophantine system has exactly one solution \((x,x_{1},\ldots,x_{k})\) such that 0 ≤ <i>x</i> &lt; <i>N</i>, and that the other solutions are obtained by adding to x a multiple of N: \[\begin{matrix}
+  x & {= a_{1} + n_{1}\, x_{1}} \\
+   & {\;\; \vdots} \\
+  x & {= a_{k} + n_{k}\, x_{k}}
+  \end{matrix}\]
+</p>
+
+<p>
+<b>*</b> System of linear Diophantine equations
+</p>
+
+<p>
+More generally, every system of linear Diophantine equations may be solved by computing the <a href="https://en.wikipedia.org/wiki/Smith_normal_form">Smith normal form</a> of its matrix, in a way that is similar to the use of the <a href="https://en.wikipedia.org/wiki/Reduced_row_echelon_form">reduced row echelon form</a> to solve a <a href="https://en.wikipedia.org/wiki/System_of_linear_equations">system of linear equations</a> over a field.  Using <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)#Notation">matrix notation</a> every system of linear Diophantine equations may be written \[AX = C,\] where A is an <i>m</i> × <i>n</i> matrix of integers, X is an <i>n</i> × 1 <a href="https://en.wikipedia.org/wiki/Column_matrix">column matrix</a> of unknowns and C is an <i>m</i> × 1 column matrix of integers.
+</p>
+
+<p>
+The computation of the Smith normal form of A provides two <a href="https://en.wikipedia.org/wiki/Unimodular_matrix">unimodular matrices</a> (that is matrices that are invertible over the integers and have ±1 as determinant) U and V of respective dimensions <i>m</i> × <i>m</i> and <i>n</i> × <i>n</i>, such that the matrix \[B = \lbrack b_{i,j}\rbrack = UAV\] is such that b<sub>i,i</sub> is not zero for i not greater than some integer k, and all the other entries are zero.  The system to be solved may thus be rewritten as \[B(V^{- 1}X) = UC.\] Calling y<sub>i</sub> the entries of <i>V/<sup>−1</sup>/X</i> and d<sub>i</sub> those of <i>D</i> = <i>UC</i>, this leads to the system \[\begin{matrix}
+   & {b_{i,i}y_{i} = d_{i},\quad 1 \leq i \leq k} \\
+   & {0y_{i} = d_{i},\quad k < i \leq n.}
+  \end{matrix}\]
+</p>
+
+<p>
+This system is equivalent to the given one in the following sense: A column matrix of integers x is a solution of the given system if and only if <i>x</i> = <i>Vy</i> for some column matrix of integers y such that <i>By</i> = <i>D</i>.
+</p>
+
+<p>
+It follows that the system has a solution if and only if b<sub>i,i</sub> divides d<sub>i</sub> for <i>i</i> ≤ <i>k</i> and <i>d<sub>i</sub></i> = 0 for <i>i</i> &gt; <i>k</i>.  If this condition is fulfilled, the solutions of the given system are \[V\,\begin{bmatrix}
+  \frac{d_{1}}{b_{1,1}} \\
+   \vdots \\
+  \frac{d_{k}}{b_{k,k}} \\
+  h_{k + 1} \\
+   \vdots \\
+  h_{n}
+  \end{bmatrix}\,,\] where <i>h/<sub>/k/+1</sub>, &#x2026;, /h<sub>n</sub></i> are arbitrary integers.
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Hermite_normal_form">Hermite normal form</a> may also be used for solving systems of linear Diophantine equations.  However, Hermite normal form does not directly provide the solutions; to get the solutions from the Hermite normal form, one has to successively solve several linear equations.  Nevertheless, Richard Zippel wrote that the Smith normal form "is somewhat more than is actually needed to solve linear diophantine equations.  Instead of reducing the equation to diagonal form, we only need to make it triangular, which is called the Hermite normal form.  The Hermite normal form is substantially easier to compute than the Smith normal form."
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Integer_linear_programming">Integer linear programming</a> amounts to finding some integer solutions (optimal in some sense) of linear systems that include also <a href="https://en.wikipedia.org/wiki/Inequation">inequations</a>.  Thus systems of linear Diophantine equations are basic in this context, and textbooks on integer programming usually have a treatment of systems of linear Diophantine equations.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+<p class="date">Created: 2025-03-20 Thu 18:52</p>
+</div>
+</body>
+</html>
