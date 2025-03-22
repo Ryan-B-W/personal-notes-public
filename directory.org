@@ -5,6 +5,8 @@
 #+filetags: :directory:lists:
 
 Directory of nodes for navigating notes.
+* Events, etc.
+** [[id:2a07e4ea-610b-4c9a-bb84-d961fb2450e5][Code and Coffee Book Club]]
 * Projects
 ** [[id:05636b9c-e97f-4e57-9a18-4443d1068275][Blog Ideas]]
 ** [[id:63fbce98-9d35-49e6-8b2d-9096d1788d16][Project Ideas]]
