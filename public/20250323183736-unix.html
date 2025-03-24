@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-23 Sun 22:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unix</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Unix</h1>
+<p>
+<a href="20240714174032-operating_system.html#ID-412bbcad-6c00-4f13-b748-d1ffde0588e1">Operating system</a> originally developed at <a href="20250323184647-bell_labs.html#ID-efd4f0a8-71b6-4a15-8109-60d9d51f1f0a">Bell Labs</a> by <a href="20250323183455-ken_l_thompson.html#ID-11238d7d-6b5d-44a8-99dc-be50cafa5657">Ken L. Thompson</a>, <a href="20250323183253-dennis_m_ritchie.html#ID-42a22d7b-4dfd-46a8-9e7d-0ee2bb4a52ec">Dennis M. Ritchie</a>, and <a href="20250323183336-brian_w_kernighan.html#ID-fe1aeb41-296c-4f8f-aae0-75be06c6e5fb">Brian W. Kernighan</a>.  Implemented in the <a href="20250323183121-c_programming_language.html#ID-c46eea5e-e2d2-4a21-bafe-74b6751292d2">C</a> <a href="20240714174950-programming_language.html#ID-b24601aa-09df-41e1-aa7e-25ead342db34">programming language</a>.  Inspired the creation of clones and other derivatives, including <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a>, <a href="20250323190702-netbsd.html#ID-43194992-e4b9-4c9c-b8bb-32aba92e3891">NetBSD</a>, <a href="20250323190417-freebsd.html#ID-9de6b78d-1506-4837-bfa5-03e8632be933">FreeBSD</a>, and <a href="20250323190615-openbsd.html#ID-a641ae8e-1d3c-4e90-911c-51a594b05a08">OpenBSD</a>.
+</p>
+<div id="outline-container-org422e264" class="outline-2">
+<h2 id="org422e264">(en.wikipedia.org) Unix - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org422e264">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Unix
+</pre>
+
+<blockquote>
+<p>
+<b>Unix</b> (<a href="https://en.wikipedia.org/wiki/Help:IPA/English"><i>ˈjuːnɪks</i></a>, <a href="https://en.wikipedia.org/wiki/Help:Pronunciation_respelling_key"><i>YOO-niks</i></a>; trademarked as <b>UNIX</b>) is a family of <a href="https://en.wikipedia.org/wiki/Computer_multitasking">multitasking</a>, <a href="https://en.wikipedia.org/wiki/Multi-user_software">multi-user</a> computer <a href="https://en.wikipedia.org/wiki/Operating_system">operating systems</a> that derive from the original <a href="https://en.wikipedia.org/wiki/AT&amp;T_Corporation">AT&amp;T</a> Unix, whose development started in 1969 at the <a href="https://en.wikipedia.org/wiki/Bell_Labs">Bell Labs</a> research center by <a href="https://en.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a>, <a href="https://en.wikipedia.org/wiki/Dennis_Ritchie">Dennis Ritchie</a>, and others.  Initially intended for use inside the <a href="https://en.wikipedia.org/wiki/Bell_System">Bell System</a>, AT&amp;T <a href="https://en.wikipedia.org/wiki/License">licensed</a> Unix to outside parties in the late 1970s, leading to a variety of both academic and commercial Unix variants from vendors including <a href="https://en.wikipedia.org/wiki/University_of_California,_Berkeley">University of California, Berkeley</a> (<a href="https://en.wikipedia.org/wiki/Berkeley_Software_Distribution">BSD</a>), <a href="https://en.wikipedia.org/wiki/Microsoft">Microsoft</a> (<a href="https://en.wikipedia.org/wiki/Xenix">Xenix</a>), <a href="https://en.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a> (<a href="https://en.wikipedia.org/wiki/SunOS">SunOS</a>/<a href="https://en.wikipedia.org/wiki/Solaris_(operating_system)">Solaris</a>), <a href="https://en.wikipedia.org/wiki/Hewlett-Packard">HP</a>/<a href="https://en.wikipedia.org/wiki/Hewlett_Packard_Enterprise">HPE</a> (<a href="https://en.wikipedia.org/wiki/HP-UX">HP-UX</a>), and <a href="https://en.wikipedia.org/wiki/IBM">IBM</a> (<a href="https://en.wikipedia.org/wiki/IBM_AIX">AIX</a>).
+</p>
+
+<p>
+The early versions of Unix&#x2014;which are retrospectively referred to as "<a href="https://en.wikipedia.org/wiki/Research_Unix">Research Unix</a>"&#x2014;ran on computers such as the <a href="https://en.wikipedia.org/wiki/PDP-11">PDP-11</a> and <a href="https://en.wikipedia.org/wiki/VAX">VAX</a>; Unix was commonly used on <a href="https://en.wikipedia.org/wiki/Minicomputers">minicomputers</a> and <a href="https://en.wikipedia.org/wiki/Mainframe_computer">mainframes</a> from the 1970s onwards.  It distinguished itself from its predecessors as the first <a href="https://en.wikipedia.org/wiki/Software_portability">portable</a> operating system: almost the entire operating system is written in the <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C programming language</a> (in 1973), which allows Unix to operate on numerous platforms.  Unix systems are characterized by a <a href="https://en.wikipedia.org/wiki/Modular_design">modular design</a> that is sometimes called the "<a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a>".  According to this philosophy, the operating system should provide a set of simple tools, each of which performs a limited, well-defined function.  A unified and <a href="https://en.wikipedia.org/wiki/Inode">inode</a>-based <a href="https://en.wikipedia.org/wiki/Unix_filesystem">filesystem</a> and an <a href="https://en.wikipedia.org/wiki/Inter-process_communication">inter-process communication</a> mechanism known as "<a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">pipes</a>" serve as the main means of communication, and a <a href="https://en.wikipedia.org/wiki/Shell_(computing)">shell</a> scripting and command language (the <a href="https://en.wikipedia.org/wiki/Unix_shell">Unix shell</a>) is used to combine the tools to perform complex workflows.
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Version_7_Unix">Version 7</a> in 1979 was the final widely released Research Unix, after which AT&amp;T sold <a href="https://en.wikipedia.org/wiki/UNIX_System_III">UNIX System III</a>, based on Version 7, commercially in 1982; to avoid confusion between the Unix variants, AT&amp;T combined various versions developed by others and released it as <a href="https://en.wikipedia.org/wiki/UNIX_System_V">UNIX System V</a> in 1983.  However as these were closed-source, the University of California, Berkeley continued developing BSD as an alternative.  Other vendors that were beginning to create commercialized versions of Unix would base their version on either System V (like <a href="https://en.wikipedia.org/wiki/Silicon_Graphics">Silicon Graphics</a>'s <a href="https://en.wikipedia.org/wiki/IRIX">IRIX</a>) or BSD (like SunOS).  Amid the "<a href="https://en.wikipedia.org/wiki/Unix_wars">Unix wars</a>" of standardization, AT&amp;T alongside Sun merged System V, BSD, SunOS and Xenix, soldifying their features into one package as UNIX System V Release 4 (SVR4) in 1989, and it was commercialized by <a href="https://en.wikipedia.org/wiki/Unix_System_Laboratories">Unix System Laboratories</a>, an AT&amp;T spinoff.  A rival Unix by other vendors was released as <a href="https://en.wikipedia.org/wiki/OSF/1">OSF/1</a>, however most commercial Unix vendors eventually changed their distributions to be based on SVR4 with BSD features added on top.
+</p>
+
+<p>
+AT&amp;T sold Unix to <a href="https://en.wikipedia.org/wiki/Novell">Novell</a> in 1992, who later sold the UNIX trademark to a new industry consortium called <a href="https://en.wikipedia.org/wiki/The_Open_Group">The Open Group</a> which allow the use of the mark for certified operating systems that comply with the <a href="https://en.wikipedia.org/wiki/Single_UNIX_Specification">Single UNIX Specification</a> (SUS).  Since the 1990s, Unix systems have appeared on <a href="https://en.wikipedia.org/wiki/Home_computers">home-class computers</a>: <a href="https://en.wikipedia.org/wiki/BSD/OS">BSD/OS</a> was the first to be commercialized for <a href="https://en.wikipedia.org/wiki/I386">i386</a> computers and since then free <a href="https://en.wikipedia.org/wiki/Unix-like">Unix-like</a> clones of existing systems have been developed, such as <a href="https://en.wikipedia.org/wiki/FreeBSD">FreeBSD</a> and the combination of <a href="https://en.wikipedia.org/wiki/Linux">Linux</a> and <a href="https://en.wikipedia.org/wiki/GNU">GNU</a>, the latter of which have since eclipsed Unix in popularity.  Unix was, until 2005, the most widely used <a href="https://en.wikipedia.org/wiki/Server_(computing)">server</a> operating system.  However in the present day, Unix distributions like IBM AIX, Oracle Solaris and <a href="https://en.wikipedia.org/wiki/OpenServer">OpenServer</a> continue to be widely used in certain fields.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+<p class="date">Created: 2025-03-23 Sun 22:01</p>
+</div>
+</body>
+</html>

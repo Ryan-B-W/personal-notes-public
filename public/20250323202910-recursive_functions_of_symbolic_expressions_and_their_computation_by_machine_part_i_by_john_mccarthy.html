@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-23 Sun 22:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Recursive functions of symbolic expressions and their computation by machine, Part I by John McCarthy</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Recursive functions of symbolic expressions and their computation by machine, Part I by John McCarthy</h1>
+<p>
+The original <a href="20240714175050-lisp.html#ID-84ae6e85-a6a2-4133-bc53-274238081c2d">Lisp</a> paper by <a href="20250323203017-john_mccarthy.html#ID-9c394806-9d31-4312-a2cf-ae0d0935f7b1">John McCarthy</a>.
+</p>
+<div id="outline-container-org5ffc5c7" class="outline-2">
+<h2 id="org5ffc5c7">(www-formal.stanford.edu) recursive.dvi - recursive.pdf&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mime_type_application_pdf">mime_type_application_pdf</span>&#xa0;<span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org5ffc5c7">
+<pre class="example">
+ROAM_REFS: http://www-formal.stanford.edu/jmc/recursive.pdf
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li>Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I</li>
+</ul>
+
+<p>
+John McCarthy, Massachusetts Institute of Technology, Cambridge, Mass.
+</p>
+
+<p>
+April 1960
+</p>
+
+<p>
+** Introduction
+</p>
+
+<p>
+A programming system called LISP (for LISt Processor) has been developed for the IBM 704 computer by the Artificial Intelligence group at M.I.T.  The system was designed to facilitate experiments with a proposed system called the Advice Taker, whereby a machine could be instructed to handle declarative as well as imperative sentences and could exhibit “common sense” in carrying out its instructions.  The original proposal [1] for the Advice Taker was made in November 1958.  The main requirement was a programming system for manipulating expressions representing formalized declarative and imperative sentences so that the Advice Taker system could make deductions.
+</p>
+
+<p>
+In the course of its development the LISP system went through several stages of simplification and eventually came to be based on a scheme for representing the partial recursive functions of a certain class of symbolic expressions.  This representation is independent of the IBM 704 computer, or of any other electronic computer, and it now seems expedient to expound the system by starting with the class of expressions called S-expressions and the functions called S-functions.
+</p>
+
+<p>
+In this article, we first describe a formalism for defining functions recursively.  We believe this formalism has advantages both as a programming language and as a vehicle for developing a theory of computation.  Next, we describe S-expressions and S-functions, give some examples, and then describe the universal S-function apply which plays the theoretical role of a universal Turing machine and the practical role of an interpreter.  Then we describe the representation of S-expressions in the memory of the IBM 704 by list structures similar to those used by Newell, Shaw and Simon [2], and the representation of S-functions by program.  Then we mention the main features of the LISP programming system for the IBM 704.  Next comes another way of describing computations with symbolic expressions, and finally we give a recursive function interpretation of flow charts.
+</p>
+
+<p>
+We hope to describe some of the symbolic computations for which LISP has been used in another paper, and also to give elsewhere some applications of our recursive function formalism to mathematical logic and to the problem of mechanical theorem proving.
+</p>
+
+<p>
+∗Putting this paper in LATEXpartly supported by ARPA (ONR) grant N00014-94-1-0775 to Stanford University where John McCarthy has been since 1962.  Copied with minor notational changes from CACM, April 1960.  If you want the exact typography, look there.  Current address, John McCarthy, Computer Science Department, Stanford, CA 94305, (email: jmc@cs.stanford.edu), (URL: <a href="http://www-formal.stanford.edu/jmc/">http://www-formal.stanford.edu/jmc/</a> )
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgd022f22" class="outline-2">
+<h2 id="orgd022f22">(dl.acm.org) Recursive functions of symbolic expressions and their computation by machine, Part I | Communications of the ACM&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orgd022f22">
+<pre class="example">
+ROAM_REFS: https://dl.acm.org/doi/10.1145/367177.367199
+</pre>
+</div>
+<div id="outline-container-org760cb4e" class="outline-3">
+<h3 id="org760cb4e">(dl.acm.org) Recursive functions of symbolic expressions and their computation by machine, Part I - 367177.367199.pdf&#xa0;&#xa0;&#xa0;<span class="tag"><span class="metadata_file_poor_quality">metadata_file_poor_quality</span>&#xa0;<span class="mime_type_application_pdf">mime_type_application_pdf</span></span></h3>
+<div class="outline-text-3" id="text-org760cb4e">
+<pre class="example">
+ROAM_REFS: https://dl.acm.org/doi/pdf/10.1145/367177.367199
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+<p class="date">Created: 2025-03-23 Sun 22:01</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-23 Sun 22:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(texdraft.github.io) Hello</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">(texdraft.github.io) Hello</h1>
+<pre class="example">
+ROAM_REFS: https://texdraft.github.io/
+</pre>
+<blockquote>
+<p>
+<a href="https://texdraft.github.io/lisp-compiler/listing.html">Lisp compiler source code</a>
+<a href="https://texdraft.github.io/lisp-compiler/internals.html">Lisp compiler internals</a>
+</p>
+</blockquote>
+<div id="outline-container-org42000b4" class="outline-2">
+<h2 id="org42000b4">(texdraft.github.io) LISP 1.5 Source</h2>
+<div class="outline-text-2" id="text-org42000b4">
+<pre class="example">
+ROAM_REFS: https://texdraft.github.io/lisp-1.5/listing.html
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li>LISP 1.5 System Listing</li>
+</ul>
+
+<p>
+What is this?
+</p>
+
+<p>
+This is a hyperlinked, marked-up version of the source code of the first <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a> implementation, LISP 1.5 for the IBM <a href="https://en.wikipedia.org/wiki/IBM_704">704</a>/<a href="https://en.wikipedia.org/wiki/IBM_709">709</a>/<a href="https://en.wikipedia.org/wiki/IBM_7090">7090</a>/<a href="https://en.wikipedia.org/wiki/IBM_7094">7094</a> computers.  The code is ultimately derived from a 1961 <a href="https://www.softwarepreservation.org/projects/LISP/LISP1.5-Bonnie-sBirthdayAssembly.pdf">listing</a> of the system, whose text has been <a href="https://www.softwarepreservation.org/projects/LISP/lisp1.5/">reconstructed</a> by some intrepid retrocomputerists (Pascal Bourguignon, Rich Cornwell, and Bob Abeles).
+</p>
+
+<p>
+The code is written in the syntax of a series of assemblers, beginning with <a href="https://en.wikipedia.org/wiki/Symbolic_Assembly_Program">SAP</a> [Symbolic (later <a href="https://en.wikipedia.org/wiki/SHARE_(computing)">SHARE</a>) Assembly Program] (<a href="https://sky-visions.com/ibm/704/uasap.pdf">manual</a>), followed by FAP (<a href="https://en.wikipedia.org/wiki/Fortran#FORTRAN">FORTRAN</a> Assembly Program) (<a href="https://bitsavers.org/pdf/ibm/7090/">several manuals</a>), then MAP (Macro Assembly Program) (<a href="https://bitsavers.org/pdf/ibm/7090/">ditto</a>).  These languages are mostly compatible, later versions maintaining obsolete features of previous iterations.  Luckily, the LISP 1.5 source tends to stick to a SAP subset, using only a handful of the more advanced capabilities of FAP and MAP.
+</p>
+
+<p>
+As for the machines themselves, you can read the official documentation on Bitsavers (<a href="https://bitsavers.org/pdf/ibm/704/">704</a>, <a href="https://bitsavers.org/pdf/ibm/709/">709</a>, <a href="https://bitsavers.org/pdf/ibm/7090/">7090</a>, <a href="https://bitsavers.org/pdf/ibm/7094/">7094</a>) or <a href="https://web.archive.org/web/20201106232440/http://www.frobenius.com/7090.htm">Jack Harper's website</a> (presently offline, unfortunately).  Wikipedia's <a href="https://en.wikipedia.org/wiki/IBM_704">article on the 704</a> summarizes some key details that will help understanding LISP 1.5.  Briefly, this series of machines (all shared the same basic “architecture”) had thirty-six-bit words with a fifteen-bit address space (32768₁₀, or rather 10000₈&#x2014;get used to octal).  Negative integers were represented using <a href="https://en.wikipedia.org/wiki/Signed_number_representations#Sign%E2%80%93magnitude">sign&#x2013;magnitude</a><a href="https://texdraft.github.io/lisp-1.5/null">.  To make self-modifying code easier, two address-sized subfields of words could conveniently be manipulated, because they were used for operands in common instructions.  These fields, as you might know, were called the address and decrements, hence c/a/r and c/d/r, etc.  The system had two general-purpose registers, conventionally called “AC” (for “Accumulator”) and “MQ” (for “Multiplier-Quotient”), and three (seven on the 7094) fifteen-bit index registers known as “IR1”, “IR2”, and “IR4” (the missing numbers filled in for the 7094).  When an instruction had an index register specified, that index register's contents was <i>subtracted</i> from the instruction (not from the address accessed by the instruction!).  By placing the</a> <a href="https://en.wikipedia.org/wiki/Two's_complement">two's complement</a> of a number in an index register, the effect of adding that number may be obtained. <a href="https://web.archive.org/web/20210424171134/http://www.frobenius.com/linkage.htm">There was nothing like a hardware stack</a>.
+</p>
+
+<p>
+There are two kinds of line in the listing below: comment lines (“remarks”) and code lines.  Every line is numbered, and you can use that number to link to a particular line. (This is a deviation from the printed listing, which did not provide line numbers for assembler-generated lines and reset the number to 1 after a DECK pseudo-operation, in order to make it easy to identify lines uniquely.) Code lines have several fields, many of which may be blank:
+</p>
+
+<p>
+<b>Flags</b>, containing single-character markers that indicate problems with the line.
+</p>
+
+<p>
+You can hover over the flags to see what they signify.  The only ones in this listing are for absent fields in an instruction.
+</p>
+
+<p>
+<b>Address</b>, the location in memory.
+</p>
+
+<p>
+Five octal digits, absent for pseudo-operations that did not result in any assembly.
+</p>
+
+<p>
+<b>Assembly</b>, a representation of the machine word produced by the assembler.
+</p>
+
+<p>
+One or more fields in several formats, related to <a href="https://web.archive.org/web/20210424122744/http://www.frobenius.com/instruction-formats.htm">the encoding of the instruction</a>, absent for some pseudo-operations.  The vast majority of instruction have a five-digit (octal) address part that you can look at to see the value of the expression in that field.
+</p>
+
+<p>
+<b>Line number</b>, as explained <a href="https://texdraft.github.io/lisp-1.5/listing.html#line-numbers">above</a>.
+</p>
+
+<p>
+<b>Location</b>, usually containing a symbol to be defined as the address.
+</p>
+
+<p>
+Today we would probably say “label”.  The lone exception is with the HED psuedo-operation, which instead interpreted the first column as a character used to “head” symbols.  Heading a symbol meant prefixing it with the head character and spaces to pad it to six characters (leaving it alone if it's already long enough).  For example, if the head is “=L=”, then <code>LOAD</code> is headed to <code>L␣LOAD</code>, but <code>COMMON</code> is unaffected by a head.  Programmers can opt out per symbol by writing <i><code>C=/=$=/=S</code></i>, where <i><code>C</code></i> is the desired head character (or empty to indicate no head) and <i><code>S</code></i> is the name before heading.  For example, <code>C$MOV</code> becomes <code>C␣␣MOV</code>, and <code>$CPPI</code> will always be <code>␣␣CPPI</code> no matter what the head is.  The point of this feature is to provide rudimentary namespace separation, so that symbols' “scope” could be limited to certain subprograms.  Later assemblers supported multiple head simultaneously using the new HEAD pseudo-operation, which took an arbitrary number of heads in the variable field.
+</p>
+
+<p>
+When you click on a symbol in the location field, you'll be taken to a cross-reference page for that symbol, showing its definition (the line you came from) and every line that contains the symbol in an expression.
+</p>
+
+<p>
+<b>Operation</b>, containing the mnemonic for the operation.
+</p>
+
+<p>
+Operations are either machine instructions (such as TRA or CLA or LDC, or commands for the assembler (such as BSS or TTL).  When it's a machine instruction, * after the mnemonic indicates indirect addressing.
+</p>
+
+<p>
+<b>Variable field*/*remarks</b>, containing operands and commentary.
+</p>
+
+<p>
+This field usually consists of comma-separated expressions (the “variable field”) and then a comment after some whitespace.  The variable field can sometimes contain spaces, when the operation is BCD or BCI or VFD.
+</p>
+
+<p>
+When you click on a symbol in the variable field, you'll be taken to that symbol's point of definition.  Hover over integers to see their magnitude in octal and decimal.
+</p>
+
+<p>
+Good luck!
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgc60d7f6" class="outline-2">
+<h2 id="orgc60d7f6">(texdraft.github.io) Lisp Compiler</h2>
+<div class="outline-text-2" id="text-orgc60d7f6">
+<pre class="example">
+ROAM_REFS: https://texdraft.github.io/lisp-compiler/internals.html
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li>The First Lisp Compiler</li>
+</ul>
+
+<p>
+** By Asher Olsen
+</p>
+
+<p>
+** <a href="https://texdraft.github.io/lisp-compiler/internals.html#introduction">Introduction</a>
+</p>
+
+<p>
+This page examines the earliest surviving Lisp compiler, written by Timothy Hart and Michael Levin around 1961.  To avoid repetition of phrases like “the compiler”, we will use the abbreviation “HLC” (for “Hart&#x2013;Levin Compiler”) to refer to it.  The HLC was introduced in <a href="ftp://publications.ai.mit.edu/ai-publications/pdf/AIM-039.pdf">M.I.T. AIM-039</a> and documented more fully in the <a href="http://www.softwarepreservation.org/projects/LISP/book/LISP%201.5%20Programmers%20Manual.pdf">LISP 1.5 Programmer's Manual</a> by McCarthy et al.
+</p>
+
+<p>
+For information about the timeline of Lisp compilers, I refer you to the ques­tion “<a href="https://retrocomputing.stackexchange.com/a/12279">What was the first Lisp compiler</a>” on the <a href="https://retrocomputing.stackexchange.com/">Retrocomputing Stack­Exchange site</a>; the answer there gives an excellent overview.  We will be focusing on implementation details.  It should be mentioned, however, that al­though the title of this page is “The <i>First</i> Lisp Compiler”, the HLC is really the <i>second</i> Lisp compiler.  A more correct title would be “The First Good Lisp Com­piler” or “The First Lisp Compiler Whose Source Code is Available”.
+</p>
+
+<p>
+In order to understand the HLC, a decent amount of prequisite knowledge is required, about the machine LISP 1.5 ran on and about LISP 1.5 itself.  If you aren't already familiar, I recommend reading the <a href="http://www.softwarepreservation.org/projects/LISP/book/LISP%201.5%20Programmers%20Manual.pdf">LISP 1.5 Programmer's Manual</a> linked above and checking out Jack Harper's <a href="https://web.archive.org/web/20200630102054/http://www.frobenius.com/7090.htm">site on the IBM 7090</a>.  You might also be interested in <a href="https://github.com/munificent/craftinginterpreters/issues/906">a GitHub issue I wrote a little while ago</a>.
+</p>
+
+<p>
+** <a href="https://texdraft.github.io/lisp-compiler/internals.html#the-source">The source</a>
+</p>
+
+<p>
+The source code of the HLC comes from <a href="https://github.com/rcornwell/ctss">an archive of CTSS source code</a>, namely <a href="https://github.com/rcornwell/ctss/blob/master/extra/lisp/lispset.job#L278">lines 278&#x2013;592 of file ctss/lispset.job</a>.  Reading the code in its original form is quite difficult, since there is virtually no indentation or meaningful spacing.  Occasionally atoms will start on one line/card and end on the next!  And of course all-uppercase text is not known for being especially readable.  Therefore I have prepared a <a href="https://texdraft.github.io/lisp-compiler/listing.html">formatted and cross-referenced version of the code</a> for easy viewing.
+</p>
+
+<p>
+Even though the code looks pretty, I still find it hard to follow.  All destruc­turing is done with compositions of car and cdr. (I'm not criticizing the authors here, since it's not like LISP 1.5 gave them anything better to work with.  But it feels like a step down when compared to Common Lisp, where we have <a href="http://www.lispworks.com/documentation/lw50/CLHS/Body/03_d.htm">fancy lambda lists</a> and <a href="http://www.lispworks.com/documentation/lw50/CLHS/Body/m_destru.htm#destructuring-bind">destructuring-bind</a>.) An additional obscurity lies in the choices of function and variable names.  For example, the name <a href="https://texdraft.github.io/lisp-compiler/listing.html#definition-pi2">pi2</a> provides no clue as to its purpose (which is to construct a setq form).  I think this is an assembly language convention.
+</p>
+
+<p>
+To run the code, you could try <a href="http://www.softwarepreservation.org/projects/LISP/lisp15_family#LISP_I_and_LISP_1.5_for_IBM_704,_709,_7090_">simulating the LISP 1.5 system</a>, or you can use <a href="https://gist.github.com/texdraft/5570f5e7a9b71f245d8eb1f442c9c47c">my translation to Common Lisp</a>.  Note: This translation does the bare mini­mum to get it running.  I make no attempt to use any high-level Common Lisp constructs; the aim was to leave the code as unchanged as possible except to add indentation.  To compile the compiler, uncomment the lines at the bottom.
+</p>
+
+<p>
+The source code of an earlier version of the HLC also exists, in a document titled “<a href="http://www.softwarepreservation.org/projects/LISP/lisp1.5/LISP_LIBRARY_NOVEMBER_1963.pdf">LISP LIBRARY NOVEMBER 1963</a>”.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgaa782c8" class="outline-2">
+<h2 id="orgaa782c8">See Also</h2>
+<div class="outline-text-2" id="text-orgaa782c8">
+</div>
+<div id="outline-container-org4661ba0" class="outline-3">
+<h3 id="org4661ba0"><a href="20250323200341-lisp_1_5_programmer_s_manual.html#ID-ff9fbc90-85a8-4b34-a759-a9cc19b9ed15">(www.softwarepreservation.org) LISP 1.5 Programmer's Manual - LISP 1.5 Programmers Manual.pdf</a></h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+<p class="date">Created: 2025-03-23 Sun 22:01</p>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-23 Sun 12:15 -->
+<!-- 2025-03-23 Sun 22:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Lisp</title>
@@ -15,7 +15,7 @@
 <div id="content" class="content">
 <h1 class="title">Lisp</h1>
 <p>
-The Lisp <a href="20240714174950-programming_language.html#ID-b24601aa-09df-41e1-aa7e-25ead342db34">programming language</a>.  Originally short for LISt Processing.  Most commonly associated with <a href="20240712221451-artificial_intelligence.html#ID-b10990c2-d056-42f5-a4e7-145a405d9550">Artificial Intelligence</a> and <a href="20240714174616-emacs.html#ID-aca1324c-b142-4e34-a121-a8bb0a79ddf8">Emacs</a>.  There are many dialects of Lisp.  Most notable dialects are Common Lisp, Scheme, and Emacs Lisp (ELisp).  First invented in 1958 by Johan McCarthy who published his paper on the notation in 1960.  First implementation started in 1958 and was working around 1960.
+The Lisp <a href="20240714174950-programming_language.html#ID-b24601aa-09df-41e1-aa7e-25ead342db34">programming language</a>.  Originally short for LISt Processing.  Most commonly associated with <a href="20240712221451-artificial_intelligence.html#ID-b10990c2-d056-42f5-a4e7-145a405d9550">Artificial Intelligence</a> and <a href="20240714174616-emacs.html#ID-aca1324c-b142-4e34-a121-a8bb0a79ddf8">Emacs</a>.  There are many dialects of Lisp.  Most notable dialects are <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a>, <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a>, and <a href="20240714204139-emacs_lisp.html#ID-eac73a7d-f14b-4ec4-bc18-08d864e6c4c0">Emacs Lisp (ELisp)</a>.  First invented in 1958 by <a href="20250323203017-john_mccarthy.html#ID-9c394806-9d31-4312-a2cf-ae0d0935f7b1">John McCarthy</a> who published <a href="20250323202910-recursive_functions_of_symbolic_expressions_and_their_computation_by_machine_part_i_by_john_mccarthy.html#ID-be8b671a-2bb0-4e85-8116-70e1ace8641c">his paper on the notation</a> in 1960.  First implementation started in 1958 and was working around 1960.
 </p>
 <div id="outline-container-orgfbbe7bf" class="outline-2">
 <h2 id="orgfbbe7bf">See Also</h2>
@@ -30,22 +30,34 @@ ROAM_REFS: https://en.wikipedia.org/wiki/Lisp_(programming_language)
 
 <blockquote>
 <p>
-Lisp (historically LISP, an abbreviation of "list processing") is a family of programming languages with a long history and a distinctive, fully parenthesized prefix notation.  Originally specified in the late 1950s, it is the second-oldest high-level programming language still in common use, after Fortran.  Lisp has changed since its early days, and many dialects have existed over its history.  Today, the best-known general-purpose Lisp dialects are Common Lisp, Scheme, Racket, and Clojure.
-Lisp was originally created as a practical mathematical notation for computer programs, influenced by (though not originally derived from) the notation of Alonzo Church's lambda calculus.  It quickly became a favored programming language for artificial intelligence (AI) research.  As one of the earliest programming languages, Lisp pioneered many ideas in computer science, including tree data structures, automatic storage management, dynamic typing, conditionals, higher-order functions, recursion, the self-hosting compiler, and the read–eval–print loop.
-The name LISP derives from "LISt Processor".  Linked lists are one of Lisp's major data structures, and Lisp source code is made of lists.  Thus, Lisp programs can manipulate source code as a data structure, giving rise to the macro systems that allow programmers to create new syntax or new domain-specific languages embedded in Lisp.
-The interchangeability of code and data gives Lisp its instantly recognizable syntax.  All program code is written as s-expressions, or parenthesized lists.  A function call or syntactic form is written as a list with the function or operator's name first, and the arguments following; for instance, a function f that takes three arguments would be called as <code>(f arg1 arg2 arg3)</code>.
+<b>Lisp</b> (historically <b>LISP</b>, an abbreviation of "list processing") is a family of <a href="https://en.wikipedia.org/wiki/Programming_language">programming languages</a> with a long history and a distinctive, fully <a href="https://en.wikipedia.org/wiki/Parenthesized">parenthesized</a> <a href="https://en.wikipedia.org/wiki/Polish_notation#Explanation">prefix notation</a>.  Originally specified in the late 1950s, it is the second-oldest <a href="https://en.wikipedia.org/wiki/High-level_programming_language">high-level programming language</a> still in common use, after <a href="https://en.wikipedia.org/wiki/Fortran">Fortran</a>.  Lisp has changed since its early days, and many <a href="https://en.wikipedia.org/wiki/Programming_language_dialect">dialects</a> have existed over its history.  Today, the best-known general-purpose Lisp dialects are <a href="https://en.wikipedia.org/wiki/Common_Lisp">Common Lisp</a>, <a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a>, <a href="https://en.wikipedia.org/wiki/Racket_(programming_language)">Racket</a>, and <a href="https://en.wikipedia.org/wiki/Clojure">Clojure</a>.
+</p>
+
+<p>
+Lisp was originally created as a practical <a href="https://en.wikipedia.org/wiki/Mathematical_notation">mathematical notation</a> for <a href="https://en.wikipedia.org/wiki/Computer_program">computer programs</a>, influenced by (though not originally derived from) the notation of <a href="https://en.wikipedia.org/wiki/Alonzo_Church">Alonzo Church</a>'s <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a>.  It quickly became a favored programming language for <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</a> (AI) research.  As one of the earliest programming languages, Lisp pioneered many ideas in <a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a>, including <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree data structures</a>, <a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">automatic storage management</a>, <a href="https://en.wikipedia.org/wiki/Dynamic_typing">dynamic typing</a>, <a href="https://en.wikipedia.org/wiki/Conditional_(computer_programming)">conditionals</a>, <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order functions</a>, <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">recursion</a>, the <a href="https://en.wikipedia.org/wiki/Self-hosting_(compilers)">self-hosting compiler</a>, and the <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">read&#x2013;eval&#x2013;print loop</a>.
+</p>
+
+<p>
+The name <i>LISP</i> derives from "LISt Processor". <a href="https://en.wikipedia.org/wiki/Linked_list">Linked lists</a> are one of Lisp's major <a href="https://en.wikipedia.org/wiki/Data_structure">data structures</a>, and Lisp <a href="https://en.wikipedia.org/wiki/Source_code">source code</a> is made of lists.  Thus, Lisp programs can manipulate source code as a data structure, giving rise to the <a href="https://en.wikipedia.org/wiki/Macro_(computer_science)">macro</a> systems that allow programmers to create new syntax or new <a href="https://en.wikipedia.org/wiki/Domain-specific_language">domain-specific languages</a> embedded in Lisp.
+</p>
+
+<p>
+The interchangeability of code and data gives Lisp its instantly recognizable syntax.  All program code is written as <i><a href="https://en.wikipedia.org/wiki/S-expression">s-expressions</a></i>, or parenthesized lists.  A function call or syntactic form is written as a list with the function or operator's name first, and the arguments following; for instance, a function <code>f</code> that takes three arguments would be called as <code>(==f=</code> <code>=arg1=</code> <code>=arg2=</code> <code>=arg3=</code>)=.
 </p>
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org9a89925" class="outline-3">
-<h3 id="org9a89925"><a href="http://jmc.stanford.edu/articles/lisp/lisp.pdf">History of Lisp, Johan McCarthy 1979</a></h3>
+<div id="outline-container-org0773711" class="outline-3">
+<h3 id="org0773711"><a href="jmc_stanford_edu_history_of_lisp.html#ID-9e65a3cb-c744-465e-b45d-c9494fddb701">(jmc.stanford.edu) History of Lisp</a></h3>
+</div>
+<div id="outline-container-org7b0260e" class="outline-3">
+<h3 id="org7b0260e"><a href="texdraft_github_io_hello.html#ID-8e828444-d654-43f9-8430-1314204ced46">(texdraft.github.io) Lisp Compiler</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Ryan "Brody" Wilcox</p>
-<p class="date">Created: 2025-03-23 Sun 12:15</p>
+<p class="date">Created: 2025-03-23 Sun 22:01</p>
 </div>
 </body>
 </html>
