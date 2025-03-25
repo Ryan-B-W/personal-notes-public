@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-24 Mon 22:12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guile</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Guile</h1>
+<p>
+An implementation of <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a> for the GNU Project as a scripting and extension language.  Implements most of R6RS, some R7RS, and many SRFIs.  As of the 2.0 series, is also an <a href="20240714204139-emacs_lisp.html#ID-eac73a7d-f14b-4ec4-bc18-08d864e6c4c0">Emacs Lisp</a> and <a href="20240719125725-javascript.html#ID-db0939e6-0c2e-4bb0-a626-2114209235af">JavaScript</a> implementation.  Used as the basis for Guix.
+</p>
+<div id="outline-container-org0be824b" class="outline-2">
+<h2 id="org0be824b">(www.gnu.org) GNU's programming and extension language — GNU Guile&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org0be824b">
+<pre class="example">
+ROAM_REFS: https://www.gnu.org/software/guile/
+</pre>
+
+<blockquote>
+<p>
+** Guile is a programming language
+</p>
+
+<p>
+Guile is designed to help programmers create flexible applications that can be extended by users or other programmers with plug-ins, modules, or scripts.
+</p>
+
+<p>
+With Guile you can create applications and games for the <a href="https://www.gnu.org/software/guile/#apps-using-guile">desktop</a>, the <a href="https://www.gnu.org/software/guile/#apps-using-guile">Web</a>, the <a href="https://www.gnu.org/software/guile/#apps-using-guile">command-line</a>, and more.
+</p>
+</blockquote>
+</div>
+<div id="outline-container-org22be885" class="outline-3">
+<h3 id="org22be885">(www.gnu.org) Top (Guile Reference Manual)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-org22be885">
+<pre class="example">
+ROAM_REFS: https://www.gnu.org/software/guile/manual/html_node/index.html
+</pre>
+</div>
+</div>
+<div id="outline-container-org025258f" class="outline-3">
+<h3 id="org025258f">Tutorial Introduction to Guile&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-org025258f">
+<pre class="example">
+ROAM_REFS: https://www.gnu.org/software/guile/docs/guile-tut/tutorial.html
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4eedf8d" class="outline-2">
+<h2 id="org4eedf8d"><a href="guile.html#Top">Guile Info Manual</a></h2>
+</div>
+<div id="outline-container-orge82db8e" class="outline-2">
+<h2 id="orge82db8e">Hello World - Guile Hacker Handbook&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orge82db8e">
+<pre class="example">
+ROAM_REFS: https://jeko.frama.io/en/hello.html
+</pre>
+</div>
+</div>
+<div id="outline-container-org27af105" class="outline-2">
+<h2 id="org27af105">(en.wikipedia.org) GNU Guile - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org27af105">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/GNU_Guile
+</pre>
+
+<blockquote>
+<p>
+<b>GNU Ubiquitous Intelligent Language for Extensions</b> (<b>GNU Guile</b>) is the preferred <a href="https://en.wikipedia.org/wiki/Extension_language">extension language</a> system for the <a href="https://en.wikipedia.org/wiki/GNU_Project">GNU Project</a> and features an implementation of the programming language <a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a>.  Its first version was released in 1993.  In addition to large parts of Scheme standards, <a href="https://en.wikipedia.org/wiki/GNU_Guile#Guile_Scheme">Guile Scheme</a> includes modularized extensions for many different programming tasks.
+</p>
+
+<p>
+For extending programs, Guile offers <i>libguile</i> which allows the language to be embedded in other programs, and integrated closely through the <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> language <a href="https://en.wikipedia.org/wiki/Application_programming_interface">application programming interface</a> (API); similarly, new <a href="https://en.wikipedia.org/wiki/Data_type">data types</a> and <a href="https://en.wikipedia.org/wiki/Subroutine">subroutines</a> defined through the C API can be made available as extensions to Guile.
+</p>
+
+<p>
+Guile is used in many programs under the <a href="https://en.wikipedia.org/wiki/GNU_project">GNU project</a> umbrella (<a href="https://en.wikipedia.org/wiki/GNU_Debugger">GDB</a>, <a href="https://en.wikipedia.org/wiki/GNU_Make">Make</a>, <a href="https://en.wikipedia.org/wiki/GNU_Guix">Guix</a>, <a href="https://en.wikipedia.org/wiki/GNU_TeXmacs">GNU TeXmacs</a>, <a href="https://en.wikipedia.org/wiki/GnuCash">GnuCash</a>, <a href="https://en.wikipedia.org/wiki/LilyPond">LilyPond</a>, <a href="https://github.com/lepton-eda/lepton-eda">Lepton-EDA</a>&#x2026;) but it also sees use outside of that, for example in <a href="https://github.com/schism-lang/schism">Google's schism</a>.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+<p class="date">Created: 2025-03-24 Mon 22:12</p>
+</div>
+</body>
+</html>

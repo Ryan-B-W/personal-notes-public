@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-24 Mon 22:12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guix</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Guix</h1>
+<p>
+A declarative, transactional, reproducible package manager and configuration manager using the <a href="20240719125446-guile.html#ID-064be3a0-bb32-4312-9868-73e9c77ba7cf">Guile</a> <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a> implementation.  In many ways similar to <a href="20240703005926-nix.html#ID-3b6a267c-90c9-491e-89d2-42c365ec6574">Nix</a>.  Used as the basis of the GNU Guix System Distribution.
+</p>
+<div id="outline-container-org946e7f8" class="outline-2">
+<h2 id="org946e7f8">(guix.gnu.org) GNU Guix transactional package manager and distribution — GNU Guix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org946e7f8">
+<pre class="example">
+ROAM_REFS: https://guix.gnu.org/
+</pre>
+
+<blockquote>
+<p>
+GNU Guix is a <a href="https://guix.gnu.org/manual/en/html_node/Package-Management.html">package manager</a> for GNU/Linux systems.  It is designed to give users <b>more control</b> over their general-purpose and specialized computing environments, and make these easier to <a href="https://guix.gnu.org/manual/en/html_node/Invoking-guix-time_002dmachine.html">reproduce over time</a> and <a href="https://guix.gnu.org/manual/en/html_node/Invoking-guix-deploy.html">deploy</a> to one or many devices.
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/Features.html">FEATURES</a> <a href="https://guix.gnu.org/en/download/">DOWNLOAD</a> <a href="https://guix.gnu.org/en/contribute/">CONTRIBUTE</a>
+</p>
+
+<p>
+** Give Users Control
+</p>
+
+<p>
+Users on the same machine can manage their own packages independently from each other, without superuser privileges.
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/Package-Management.html">LEARN MORE</a>
+</p>
+
+<p>
+** Reproducible Outputs
+</p>
+
+<p>
+Guix provides <a href="https://packages.guix.gnu.org/">thousands of packages</a> which include desktop environments, applications, system tools, programming languages and their data and other digital artifacts which work as the building blocks for creating <a href="https://en.wikipedia.org/wiki/Reproducible_builds">reproducible</a> shell environments, containers and systems for different computing needs.
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/Defining-Packages.html">Package</a>
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/Invoking-guix-shell.html">Shell Environment</a>
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/Invoking-guix-container.html">Container</a>
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/System-Configuration.html">Systems</a>
+</p>
+
+<p>
+Build an environment today
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/Invoking-guix-time_002dmachine.html">Reproduce in time</a>
+</p>
+
+<p>
+Get the same environment in the future<a href="https://guix.gnu.org/en/blog/2024/adventures-on-the-quest-for-long-term-reproducible-deployment/">*</a>
+</p>
+
+<p>
+<a href="https://packages.guix.gnu.org/">EXPLORE PACKAGES</a>
+</p>
+
+<p>
+** One Language for Everything
+</p>
+
+<p>
+Use Guile Scheme APIs, including high-level embedded domain-specific languages (EDSLs) to define packages and whole-system configurations.
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/Programming-Interface.html">CHECK THE API</a> <a href="https://gnu.org/software/guile/">WHAT'S GUILE</a>
+</p>
+
+<p>
+** All of It, Free Software
+</p>
+
+<p>
+Guix is a GNU Project&#x2014;which respects the freedom of computer users.  You are free to use, study, modify, and share Guix and all the packages it provides.
+</p>
+
+<p>
+<a href="https://gnu.org/philosophy/free-sw.en.html">LEARN MORE</a>
+</p>
+
+<p>
+** GNU Guix in Your Field
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/blog/tags/software-development/">SOFTWARE DEVELOPMENT</a> <a href="https://guix.gnu.org/en/blog/tags/bioinformatics/">BIOINFORMATICS</a> <a href="https://guix.gnu.org/en/blog/tags/high-performance-computing/">HIGH PERFORMANCE COMPUTING</a> <a href="https://guix.gnu.org/en/blog/tags/research/">RESEARCH</a> <a href="https://guix.gnu.org/en/blog/">ALL FIELDS&#x2026;</a>
+</p>
+
+<p>
+** Get Guix
+</p>
+
+<p>
+You can use Guix on top of any GNU/Linux distribution of your preference.  It won't clash with your distro's package manager.
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/download/">DOWNLOAD</a>
+</p>
+
+<p>
+** Get the Guix System
+</p>
+
+<p>
+A complete GNU operating system harnessing all the capabilities of the Guix software.  Spawned by Guix itself.
+</p>
+
+<p>
+<a href="https://guix.gnu.org/manual/en/html_node/System-Installation.html">OVERVIEW</a> <a href="https://guix.gnu.org/en/download/">DOWNLOAD</a>
+</p>
+
+<p>
+** Instructional Videos
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/videos/2020/packaging-part-one/">https://guix.gnu.org/en/videos/2020/packaging-part-one/</a>
+</p>
+
+<p>
+Packaging
+</p>
+
+<p>
+Published Mar 28, 2020 by GNU Guix
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/videos/2020/asking-for-help/">https://guix.gnu.org/en/videos/2020/asking-for-help/</a>
+</p>
+
+<p>
+Asking for help
+</p>
+
+<p>
+Published Mar 28, 2020 by GNU Guix
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/videos/2020/system-graphical-installer/">https://guix.gnu.org/en/videos/2020/system-graphical-installer/</a>
+</p>
+
+<p>
+Demonstration of the Guix System graphical installer
+</p>
+
+<p>
+Published Apr 15, 2020 by GNU Guix
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/videos/2020/everyday-use-of-gnu-guix-part-one/">https://guix.gnu.org/en/videos/2020/everyday-use-of-gnu-guix-part-one/</a>
+</p>
+
+<p>
+Everyday use of GNU Guix
+</p>
+
+<p>
+Published Mar 28, 2020 by GNU Guix
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/videos/">ALL VIDEOS</a>
+</p>
+
+<p>
+** Blog
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/blog/">ALL POSTS</a>
+</p>
+
+<p>
+** Contact
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/contact/irc/">https://guix.gnu.org/en/contact/irc/</a>
+</p>
+
+<p>
+<b>*</b> IRC Channel
+</p>
+
+<p>
+Join the #guix channel on the Libera Chat IRC network to chat with the community about GNU Guix or to get help in real-time. &#x2026;
+</p>
+
+<p>
+<a href="https://lists.gnu.org/mailman/listinfo/info-guix">https://lists.gnu.org/mailman/listinfo/info-guix</a>
+</p>
+
+<p>
+<b>*</b> Info Mailing List
+</p>
+
+<p>
+Subscribe to the info-guix low-traffic mailing list to receive important announcements sent by the project maintainers (in English). &#x2026;
+</p>
+
+<p>
+<a href="https://lists.gnu.org/mailman/listinfo/help-guix">https://lists.gnu.org/mailman/listinfo/help-guix</a>
+</p>
+
+<p>
+<b>*</b> Help Mailing List
+</p>
+
+<p>
+Subscribe to the Help mailing list to get support from the GNU Guix community via email.  You can post messages in English though we also accept other languages. &#x2026;
+</p>
+
+<p>
+<a href="https://guix.gnu.org/en/contact/">ALL CONTACT MEDIA</a>
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org127223c" class="outline-2">
+<h2 id="org127223c">(en.wikipedia.org) GNU Guix - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org127223c">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/GNU_Guix
+</pre>
+
+<blockquote>
+<p>
+<b>GNU Guix</b> (<a href="https://en.wikipedia.org/wiki/Help:IPA/English"><i>ɡiːks</i></a>) is a <a href="https://en.wikipedia.org/wiki/Functional_programming">functional</a> cross-platform <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a> and a tool to instantiate and manage <a href="https://en.wikipedia.org/wiki/Unix-like">Unix-like</a> operating systems, based on the <a href="https://en.wikipedia.org/wiki/Nix_package_manager">Nix package manager</a>.  Configuration and package recipes are written in <a href="https://en.wikipedia.org/wiki/GNU_Guile">Guile Scheme</a>.  The name Guix is in fact a <a href="https://en.wikipedia.org/wiki/Blend_word">portmanteau</a> of Guile and Nix.  GNU Guix is the default package manager of the <a href="https://en.wikipedia.org/wiki/GNU_Guix_System">GNU Guix System</a> <a href="https://en.wikipedia.org/wiki/GNU_variants">distribution</a>.
+</p>
+
+<p>
+Differing from traditional <a href="https://en.wikipedia.org/wiki/Package_manager">package managers</a>, Guix (like Nix) utilizes a purely <a href="https://en.wikipedia.org/wiki/Functional_programming">functional</a> deployment model where software is installed into unique directories generated through <a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">cryptographic hashes</a>.  All dependencies for each software are included within each hash.  This solves the problem of <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>, allowing multiple versions of the same software to coexist which makes packages portable and <a href="https://en.wikipedia.org/wiki/Reproducible_builds">reproducible</a>.  Performing scientific computations in a Guix setup has been proposed as a promising response to the <a href="https://en.wikipedia.org/wiki/Replicability_crisis">replication crisis</a>.
+</p>
+
+<p>
+The development of GNU Guix is intertwined with the <a href="https://en.wikipedia.org/wiki/GNU_Guix_System">GNU Guix System</a>, an installable operating system distribution using the <a href="https://en.wikipedia.org/wiki/Linux-libre">Linux-libre</a> kernel and <a href="https://en.wikipedia.org/wiki/GNU_Shepherd">GNU Shepherd</a> init system.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgc4979ca" class="outline-2">
+<h2 id="orgc4979ca">See Also</h2>
+<div class="outline-text-2" id="text-orgc4979ca">
+<ul class="org-ul">
+<li><a href="20240719130747-nonguix.html#ID-8cfffaf9-50bb-486d-b3db-98065c9de49e">Nonguix</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+<p class="date">Created: 2025-03-24 Mon 22:12</p>
+</div>
+</body>
+</html>
