@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-25 Tue 18:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crafting Interpreters by Robert Nystrom</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Crafting Interpreters by Robert Nystrom</h1>
+<div id="outline-container-org0a45fca" class="outline-2">
+<h2 id="org0a45fca">(craftinginterpreters.com) Crafting Interpreters&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org0a45fca">
+<pre class="example">
+ROAM_REFS: https://craftinginterpreters.com/
+</pre>
+
+<blockquote>
+<pre class="example">
+Ever wanted to make your own programming language or wondered how they are designed and built?
+
+If so, this book is for you.
+</pre>
+
+
+<p>
+<i>Crafting Interpreters</i> contains everything you need to implement a full-featured, efficient scripting language.  You'll learn both high-level concepts around parsing and semantics and gritty details like bytecode representation and garbage collection.  Your brain will light up with new ideas, and your hands will get dirty and calloused.  It's a blast.
+</p>
+
+<p>
+Starting from <code>main()</code>, you build a language that features rich syntax, dynamic typing, garbage collection, lexical scope, first-class functions, closures, classes, and inheritance.  All packed into a few thousand lines of clean, fast code that you thoroughly understand because you write each one yourself.
+</p>
+
+<p>
+The book is available in four delectable formats:
+</p>
+
+<p>
+<b>*</b> Print
+</p>
+
+<p>
+640 pages of beautiful typography and high resolution hand-drawn illustrations.  Each page lovingly typeset by the author.  The premiere reading experience.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://www.amazon.com/dp/0990582930">Amazon.com</a></td>
+<td class="org-left"><a href="https://www.amazon.ca/dp/0990582930">.ca</a></td>
+<td class="org-left"><a href="https://www.amazon.co.uk/dp/0990582930">.uk</a></td>
+<td class="org-left"><a href="https://www.amazon.com.au/dp/0990582930">.au</a></td>
+<td class="org-left"><a href="https://www.amazon.de/dp/0990582930">.de</a></td>
+<td class="org-left"><a href="https://www.amazon.fr/dp/0990582930">.fr</a></td>
+<td class="org-left"><a href="https://www.amazon.es/dp/0990582930">.es</a></td>
+<td class="org-left"><a href="https://www.amazon.it/dp/0990582930">.it</a></td>
+<td class="org-left"><a href="https://www.amazon.co.jp/dp/0990582930">.jp</a></td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://www.barnesandnoble.com/w/crafting-interpreters-robert-nystrom/1139915245?ean=9780990582939">Barnes and Noble</a></td>
+<td class="org-left"><a href="https://www.bookdepository.com/Crafting-Interpreters-Robert-Nystrom/9780990582939">Book Depository</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<a href="https://craftinginterpreters.com/sample.pdf">Download Sample PDF</a>
+</p>
+
+<p>
+<b>*</b> eBook
+</p>
+
+<p>
+Carefully tuned CSS fits itself to your ebook reader and screen size.  Full-color syntax highlighting and live hyperlinks.  Like Alan Kay's Dynabook but real.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://www.amazon.com/dp/B09BCCVLCL">Kindle Amazon.com</a></td>
+<td class="org-left"><a href="https://www.amazon.co.uk/dp/B09BCCVLCL">.uk</a></td>
+<td class="org-left"><a href="https://www.amazon.ca/dp/B09BCCVLCL">.ca</a></td>
+<td class="org-left"><a href="https://www.amazon.com.au/dp/B09BCCVLCL">.au</a></td>
+<td class="org-left"><a href="https://www.amazon.de/dp/B09BCCVLCL">.de</a></td>
+<td class="org-left"><a href="https://www.amazon.in/dp/B09BCCVLCL">.in</a></td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://www.amazon.fr/dp/B09BCCVLCL">.fr</a></td>
+<td class="org-left"><a href="https://www.amazon.es/dp/B09BCCVLCL">.es</a></td>
+<td class="org-left"><a href="https://www.amazon.it/dp/B09BCCVLCL">.it</a></td>
+<td class="org-left"><a href="https://www.amazon.co.jp/dp/B09BCCVLCL">.jp</a></td>
+<td class="org-left"><a href="https://www.amazon.com.br/dp/B09BCCVLCL">.br</a></td>
+<td class="org-left"><a href="https://www.amazon.com.mx/dp/B09BCCVLCL">.mx</a></td>
+<td class="org-left"><a href="https://books.apple.com/us/book/crafting-interpreters/id1578795812">Apple Books</a></td>
+</tr>
+</tbody>
+</table>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://play.google.com/store/books/details?id=q0c6EAAAQBAJ">Play Books Google</a></td>
+<td class="org-left"><a href="https://www.barnesandnoble.com/w/crafting-interpreters-robert-nystrom/1139915245?ean=2940164977092">Nook B&amp;N</a></td>
+<td class="org-left"><a href="https://www.smashwords.com/books/view/1096463">EPUB Smashwords</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>*</b> PDF
+</p>
+
+<p>
+Perfectly mirrors the hand-crafted typesetting and sharp illustrations of the print book, but much easier to carry around.
+</p>
+
+<p>
+<a href="https://payhip.com/b/F0zkr">Buy from Payhip</a> <a href="https://craftinginterpreters.com/sample.pdf">Download Free Sample</a>
+</p>
+
+<p>
+<b>*</b> Web
+</p>
+
+<p>
+Meticulous responsive design looks great from your desktop down to your phone.  Every chapter, aside, and illustration is there.  Read the whole book for free.  Really.
+</p>
+
+<p>
+<a href="https://craftinginterpreters.com/contents.html">Read Now</a>
+</p>
+
+
+<div id="org180e975" class="figure">
+<p><img src="https://craftinginterpreters.com/image/dogshot.jpg" alt="dogshot.jpg" />
+</p>
+</div>
+
+<p>
+<b>*</b> About Robert Nystrom
+</p>
+
+<p>
+I got bitten by the language bug years ago while on paternity leave between midnight feedings.  I cobbled together a <a href="http://wren.io/">number</a> <a href="http://magpie-lang.org/">of</a> <a href="http://finch.stuffwithstuff.com/">hobby</a> <a href="https://github.com/munificent/vigil">languages</a> before worming my way into an honest-to-God, full-time programming language job.  Today, I work at Google on the <a href="http://dart.dev/">Dart language</a>.
+</p>
+
+<p>
+Before I fell in love with languages, I developed games at Electronic Arts for eight years.  I wrote the best-selling book <i><a href="http://gameprogrammingpatterns.com/">Game Programming Patterns</a></i> based on what I learned there.  You can read that book for free too.
+</p>
+
+<p>
+If you want more, you can find me on Twitter (<a href="https://twitter.com/intent/user?screen_name=munificentbob"><code>@munificentbob</code></a>), email me at <code>bob</code> at this site's domain (though I am slow to respond), read <a href="http://journal.stuffwithstuff.com/">my blog</a>, or join my low frequency mailing list:
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orge66f45f" class="outline-2">
+<h2 id="orge66f45f">(books.google.com) Crafting Interpreters - Robert Nystrom - Google Books&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orge66f45f">
+<pre class="example">
+ROAM_REFS: https://books.google.com/books/about/Crafting_Interpreters.html?id=q0c6EAAAQBAJ
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li>Crafting Interpreters</li>
+</ul>
+
+<p>
+Robert Nystrom
+</p>
+
+<p>
+Genever Benning, Jul 27, 2021 - Computers - 640 pages
+</p>
+
+<p>
+Despite using them every day, most software engineers know little about how programming languages are designed and implemented. For many, their only experience with that corner of computer science was a terrifying "compilers" class that they suffered through in undergrad and tried to blot from their memory as soon as they had scribbled their last NFA to DFA conversion on the final exam.
+</p>
+
+<p>
+That fearsome reputation belies a field that is rich with useful techniques and not so difficult as some of its practitioners might have you believe. A better understanding of how programming languages are built will make you a stronger software engineer and teach you concepts and data structures you'll use the rest of your coding days. You might even have fun.
+</p>
+
+<p>
+This book teaches you everything you need to know to implement a full-featured, efficient scripting language. You'll learn both high-level concepts around parsing and semantics and gritty details like bytecode representation and garbage collection. Your brain will light up with new ideas, and your hands will get dirty and calloused.
+</p>
+
+<p>
+Starting from main(), you will build a language that features rich syntax, dynamic typing, garbage collection, lexical scope, first-class functions, closures, classes, and inheritance. All packed into a few thousand lines of clean, fast code that you thoroughly understand because you wrote each one yourself.
+</p>
+
+<p>
+** About the author (2021)
+</p>
+
+<p>
+Bob Nystrom is a senior software engineer at Google working on the Dart programming language. Before discovering a love of programming languages, he developed games at Electronic Arts. He is the author of the best-selling book "Game Programming Patterns".
+</p>
+
+<p>
+** Bibliographic information
+</p>
+
+<p>
+Title: Crafting Interpreters
+</p>
+
+<p>
+Author: Robert Nystrom
+</p>
+
+<p>
+Publisher: Genever Benning, 2021
+</p>
+
+<p>
+ISBN: 0990582949, 9780990582946
+</p>
+
+<p>
+Length: 640 pages
+</p>
+
+<p>
+Subjects: Computers › Programming › Compilers
+</p>
+
+<ul class="org-ul">
+<li>Computers / Languages / General</li>
+<li>Computers / Programming / Compilers</li>
+<li>Computers / Software Development &amp; Engineering / Tools</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgfb56b16" class="outline-2">
+<h2 id="orgfb56b16">(www.goodreads.com) Crafting Interpreters by Robert Nystrom | Goodreads&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orgfb56b16">
+<pre class="example">
+ROAM_REFS: https://www.goodreads.com/book/show/58661468-crafting-interpreters
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li>Crafting Interpreters</li>
+</ul>
+
+<p>
+<a href="https://www.goodreads.com/author/show/6332712.Robert_Nystrom">Robert Nystrom</a>
+</p>
+
+<p>
+** Description
+</p>
+
+<p>
+Despite using them every day, most software engineers know little about how programming languages are designed and implemented.  For many, their only experience with that corner of computer science was a terrifying "compilers" class that they suffered through in undergrad and tried to blot from their memory as soon as they had scribbled their last NFA to DFA conversion on the final exam.
+</p>
+
+<p>
+That fearsome reputation belies a field that is rich with useful techniques and not so difficult as some of its practitioners might have you believe.  A better understanding of how programming languages are built will make you a stronger software engineer and teach you concepts and data structures you'll use the rest of your coding days.  You might even have fun.
+</p>
+
+<p>
+This book teaches you everything you need to know to implement a full-featured, efficient scripting language.  You'll learn both high-level concepts around parsing and semantics and gritty details like bytecode representation and garbage collection.  Your brain will light up with new ideas, and your hands will get dirty and calloused.
+</p>
+
+<p>
+Starting from main(), you will build a language that features rich syntax, dynamic typing, garbage collection, lexical scope, first-class functions, closures, classes, and inheritance.  All packed into a few thousand lines of clean, fast code that you thoroughly understand because you wrote each one yourself.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+<p class="date">Created: 2025-03-25 Tue 18:49</p>
+</div>
+</body>
+</html>
