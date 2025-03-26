@@ -1,0 +1,4 @@
+#+TITLE: Sitemap for project personal-notes-public
+
+- [[file:directory.org][Directory]]
+- [[file:readme.org][Personal Notes readme.org file]]

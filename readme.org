@@ -17,3 +17,5 @@ The layout:
 [[file:directory.org][Directory (relative file link)]]
 
 [[id:de1374cb-284d-4485-92d9-9dd3aa19f117][Directory (Org Mode ID link for Org Roam)]]
+
+See Also: [[file:sitemap.org]] and [[file:public/sitemap.org]].
