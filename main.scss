@@ -47,7 +47,7 @@ html {
 body {
     padding: 0;
     margin: 0 auto;
-    max-width: 55em;
+    max-width: 54.25em;
     display: flow-root;
 }
 header {
@@ -125,7 +125,8 @@ div.content {
     padding: 0.6em;
     margin: 0.6em auto;
     max-width: 42em;
-    float: right;
+    float: left;
+    clear: right;
 }
 footer {
     border: 1px solid var(--border);
