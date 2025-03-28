@@ -47,9 +47,10 @@ html {
 body {
     padding: 0;
     margin: 0 auto;
-    max-width: 42em;
+    max-width: 55em;
+    display: flow-root;
 }
-header, .title {
+header {
     border: 1px solid var(--border);
     border-radius: 0.5em;
     padding: 0.6em;
@@ -59,42 +60,82 @@ header, .title {
 }
 .tag {
     background: var(--bg-dim);
-    border: 1px solid var(--border);
+    display: inline-block;
+    span {
+        background: var(--fringe);
+        border: 1px solid var(--border);
+        display: inline-block;
+    }
 }
-.todo {
-    color: red;
-}
-.done {
-    color: green;
-}
-.WAITING {
-    color: yellow;
-}
-pre.example {
-    border: 1px solid var(--border);
-    text-wrap: auto;
-}
-div.footnotes {
+nav {
+    min-height: 9em;
+    width: 9em;
     border: 1px solid var(--border);
     border-radius: 0.5em;
     padding: 0.3em;
     margin: 0.6em;
-    clear: both;
+    float: left;
+    clear: left;
     background: var(--bg-dim);
-    .icon {
-        position: relative;
-        top: 0.1em;
+    h1, h2, h3, h4, h5, h6 {
+        font-variant: small-caps;
+    }
+    hr {
+        color: var(--border);
+        background: var(--bg-dim);
+        border-color: var(--border);
+        border-width: 1px 0px 0px 0px;
+        width: calc(100% + 0.6em);
+        margin-left: -0.3em;
+        margin-right: -0.3em;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        a {
+            color: var(--fg-main);
+            background: var(--bg-button-inactive);
+            text-decoration: none;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 0.125em;
+            padding: 0.25em;
+            margin: 0.25em;
+            display: block;
+
+            &:hover {
+                text-decoration: underline;
+                background: var(--bg-button-active);
+            }
+            &:visited {
+                color: var(--fg-main);
+            }
+        }
+        li {
+            display: inline;
+        }
     }
 }
-main {
+//main
+div.content {
     color: var(--fg-main);
     background: var(--bg-main);
     border: 1px solid var(--border);
     border-radius: 0.5em;
-    max-width: 28.5em;
     padding: 0.6em;
-    margin: 0.6em;
+    margin: 0.6em auto;
+    max-width: 42em;
     float: right;
+}
+footer {
+    border: 1px solid var(--border);
+    border-radius: 0.5em;
+    padding: 0.6em;
+    margin: 0.6em 0 0.6em auto;
+    clear: both;
+    background: var(--bg-dim);
+    max-width: 42em;
+    display: flow-root;
 }
 p.date {
     display: block;
@@ -115,11 +156,73 @@ a {
         text-decoration-line: none;
     }
 }
-a[href^=http]:before {
+a[href^=http]::before {
     content: var(--link-external-icon);
     position: relative;
     top: 0.1em;
 }
 div.figure, .org-svg {
     max-width: 100%;
+}
+.todo {
+    color: red;
+}
+.done {
+    color: green;
+}
+.WAITING {
+    color: yellow;
+}
+pre {
+    border: 1px solid var(--border);
+    border-radius: 0.5em;
+    padding: 0.3em;
+    margin: 0.6em;
+    clear: both;
+    background: var(--bg-dim);
+    overflow-x: scroll;
+}
+pre.example {
+    text-wrap: auto;
+}
+pre.src {
+}
+pre.verbatim {
+    padding: 0.1em;
+    margin: 0.1em;
+    display: inline;
+    overflow: visible;
+}
+.linenr {
+    background: var(--fringe);
+}
+blockquote {
+    border: 1px solid var(--border);
+    border-radius: 0.5em;
+    padding: 0.3em;
+    margin: 0.6em;
+    clear: both;
+    background: var(--bg-dim);
+    &::before {
+        content: "“";
+        display: block;
+        text-align: left;
+    }
+    &::after {
+        content: "„";
+        display: block;
+        text-align: right;
+    }
+}
+div.footnotes {
+    border: 1px solid var(--border);
+    border-radius: 0.5em;
+    padding: 0.3em;
+    margin: 0.6em;
+    clear: both;
+    background: var(--bg-dim);
+    .icon {
+        position: relative;
+        top: 0.1em;
+    }
 }
