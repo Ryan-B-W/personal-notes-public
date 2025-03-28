@@ -1,4 +1,4 @@
-#+TITLE: Sitemap for project personal-notes-public
+#+TITLE: Sitemap for Personal Notes (Meta-Repo)
 
 - [[file:directory.org][Directory]]
 - [[file:readme.org][Personal Notes readme.org file]]
