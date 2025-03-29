@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:43 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(www.conventionalcommits.org) Conventional Commits</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(www.conventionalcommits.org) Conventional Commits</h1>
+</header><pre class="example">
+ROAM_REFS: https://www.conventionalcommits.org/en/v1.0.0/
+</pre>
+<blockquote>
+<p>
+The Conventional Commits specification is a lightweight convention on top of commit messages.  It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of.  This convention dovetails with SemVer, by describing the features, fixes, and breaking changes made in commit messages.
+The commit message should be structured as follows:
+</p>
+<pre class="example">
+&lt;type&gt;[optional scope]: &lt;description&gt;
+
+[optional body]
+
+[optional footer(s)]
+</pre>
+
+<p>
+The commit contains the following structural elements, to communicate intent to the consumers of your library:
+</p>
+<ol class="org-ol">
+<li><b>fix</b>: a commit of the <i>type</i> <pre class="verbatim">fix</pre> patches a bug in your codebase (this correlates with <pre class="verbatim">PATCH</pre> in Semantic Versioning).</li>
+<li><b>feat</b>: a commit of the <i>type</i> <pre class="verbatim">feat</pre> introduces a new feature to the codebase (this correlates with <pre class="verbatim">MINOR</pre> in Semantic Versioning).</li>
+<li><b>BREAKING CHANGE</b>: a commit that has a footer <pre class="verbatim">BREAKING CHANGE:</pre>, or appends a <pre class="verbatim">!</pre> after the type/scope, introduces a breaking API change (correlating with <pre class="verbatim">MAJOR</pre> in Semantic Versioning). A BREAKING CHANGE can be part of commits of any <i>type</i>.</li>
+<li><i>types</i> other than <pre class="verbatim">fix:</pre> and <pre class="verbatim">feat:</pre> are allowed, for example @commitlint/config-conventional (based on the Angular convention) recommends <pre class="verbatim">build:</pre>, <pre class="verbatim">chore:</pre>, <pre class="verbatim">ci:</pre>, <pre class="verbatim">docs:</pre>, <pre class="verbatim">style:</pre>, <pre class="verbatim">refactor:</pre>, <pre class="verbatim">perf:</pre>, <pre class="verbatim">test:</pre>, and others.</li>
+<li><i>footers</i> other than <pre class="verbatim">BREAKING CHANGE: &lt;description&gt;</pre> may be provided and follow a convention similar to git trailer format.</li>
+</ol>
+<p>
+Additional types are not mandated by the Conventional Commits specification, and have no implicit effect in Semantic Versioning (unless they include a BREAKING CHANGE). A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., <pre class="verbatim">feat(parser): add ability to parse arrays</pre>.
+</p>
+</blockquote>
+<div id="outline-container-org96287c1" class="outline-2">
+<h2 id="org96287c1">See Also</h2>
+<div class="outline-text-2" id="text-org96287c1">
+</div>
+<div id="outline-container-orgd8ab03b" class="outline-3">
+<h3 id="orgd8ab03b"><a href="semver_org_semantic_versioning_2_0_0_semantic_versioning.html#ID-4d3d54e9-bdee-44c2-91c0-45e7fcd18e04">(semver.org) Semantic Versioning 2.0.0 | Semantic Versioning</a></h3>
+</div>
+<div id="outline-container-org8aabf64" class="outline-3">
+<h3 id="org8aabf64"><a href="github_com_commitlint_commitlint_config_conventional_at_master_conventional_changelog_commitlint.html#ID-2cb04117-0df5-424d-8cbb-ad567f660cd6">(github.com) commitlint/@commitlint/config-conventional at master · conventional-changelog/commitlint</a></h3>
+</div>
+<div id="outline-container-org3d4f3b4" class="outline-3">
+<h3 id="org3d4f3b4"><a href="github_com_angular_contributing_md_at_22b96b96902e1a42ee8c5e807720424abad3082a_angular_angular.html#ID-59ebaaca-61b7-4583-8695-5b916b9f7ffd">(github.com) angular/CONTRIBUTING.md at 22b96b96902e1a42ee8c5e807720424abad3082a · angular/angular</a></h3>
+</div>
+<div id="outline-container-org3611d3b" class="outline-3">
+<h3 id="org3611d3b"><a href="git_scm_com_git_git_interpret_trailers_documentation.html#ID-915cfc97-0233-4303-879a-19e23100a04f">(git-scm.com) Git - git-interpret-trailers Documentation</a></h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

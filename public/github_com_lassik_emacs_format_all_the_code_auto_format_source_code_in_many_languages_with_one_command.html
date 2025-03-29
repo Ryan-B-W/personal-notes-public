@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:42 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(github.com) lassik/emacs-format-all-the-code: Auto-format source code in many languages with one command</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(github.com) lassik/emacs-format-all-the-code: Auto-format source code in many languages with one command</h1>
+</header><pre class="example">
+ROAM_REFS: https://github.com/lassik/emacs-format-all-the-code
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li><i>format-all</i> for Emacs</li>
+</ul>
+
+<pre class="example">
+/NOTE:/ The package is actively maintained but due to lack of time, complex tasks are done at a slow pace.  Simple tasks like adding or fixing formatter definitions are often done immediately.  For faster progress, additional maintainers are welcome.
+</pre>
+
+
+<p>
+** What does it do
+</p>
+
+<p>
+Lets you auto-format source code in many languages using the same command for all languages, instead of learning a different Emacs package and formatting command for each language.
+</p>
+
+<p>
+Just do <b>M-x</b> <pre class="verbatim">format-all-region-or-buffer</pre> and it will try its best to do the right thing.  To auto-format code on save, use the minor mode <pre class="verbatim">format-all-mode</pre>.  Please see the documentation for that function for instructions.
+</p>
+
+<p>
+** Supported languages
+</p>
+
+<p>
+<b>Angular</b> (<a href="https://prettier.io/"><i>prettier</i></a>)
+</p>
+
+<p>
+<b>Assembly</b> (<a href="https://github.com/klauspost/asmfmt"><i>asmfmt</i></a>)
+</p>
+
+<p>
+<b>ATS</b> (<a href="https://hackage.haskell.org/package/ats-format"><i>atsfmt</i></a>)
+</p>
+
+<p>
+<b>Awk</b> (<a href="https://www.gnu.org/software/gawk/"><i>gawk</i></a>)
+</p>
+
+<p>
+<b>AZSL</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)
+</p>
+
+<p>
+<b>Bazel Starlark</b> (<a href="https://github.com/bazelbuild/buildtools/tree/master/buildifier"><i>buildifier</i></a>)
+</p>
+
+<p>
+<b>Beancount</b> (<a href="https://beancount.github.io/"><i>bean-format</i></a>)
+</p>
+
+<p>
+<b>BibTeX</b> (Emacs)
+</p>
+
+<p>
+<b>C/C++/Objective-C</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>, <a href="http://astyle.sourceforge.net/"><i>astyle</i></a>)
+</p>
+
+<p>
+<b>C#</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>, <a href="http://astyle.sourceforge.net/"><i>astyle</i></a>, <a href="https://github.com/belav/csharpier"><i>csharpier</i></a>)
+</p>
+
+<p>
+<b>Cabal</b> (<a href="https://github.com/phadej/cabal-fmt"><i>cabal-fmt</i></a>)
+</p>
+
+<p>
+<b>Caddyfile</b> (<a href="https://caddyserver.com/docs/command-line#caddy-fmt"><i>caddy-fmt</i></a>)
+</p>
+
+<p>
+<b>Clojure/ClojureScript</b> (<a href="https://github.com/weavejester/cljfmt"><i>cljfmt</i></a>, <a href="https://github.com/kkinnear/zprint"><i>zprint</i></a>)
+</p>
+
+<p>
+<b>CMake</b> (<a href="https://github.com/cheshirekow/cmake_format"><i>cmake-format</i></a>)
+</p>
+
+<p>
+<b>Crystal</b> (<a href="http://www.motion-express.com/blog/crystal-code-formatter"><i>crystal tool format</i></a>)
+</p>
+
+<p>
+<b>CSS/Less/SCSS</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>)
+</p>
+
+<p>
+<b>Cuda</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)
+</p>
+
+<p>
+<b>D</b> (<a href="https://github.com/dlang-community/dfmt"><i>dfmt</i></a>)
+</p>
+
+<p>
+<b>Dart</b> (<a href="https://github.com/dart-lang/dart_style"><i>dartfmt</i></a>, <a href="https://dart.dev/tools/dart-format"><i>dart-format</i></a>)
+</p>
+
+<p>
+<b>Dhall</b> (<a href="https://github.com/dhall-lang/dhall-lang"><i>dhall format</i></a>)
+</p>
+
+<p>
+<b>Dockerfile</b> (<a href="https://github.com/jessfraz/dockfmt"><i>dockfmt</i></a>)
+</p>
+
+<p>
+<b>Elixir</b> (<a href="https://hexdocs.pm/mix/master/Mix.Tasks.Format.html"><i>mix format</i></a>)
+</p>
+
+<p>
+<b>Elm</b> (<a href="https://github.com/avh4/elm-format"><i>elm-format</i></a>)
+</p>
+
+<p>
+<b>Emacs Lisp</b> (Emacs)
+</p>
+
+<p>
+<b>Erb</b> (<a href="https://github.com/nebulab/erb-formatter"><i>erb-format</i></a>)
+</p>
+
+<p>
+<b>Erlang</b> (<a href="https://github.com/sile/efmt"><i>efmt</i></a>)
+</p>
+
+<p>
+<b>F#</b> (<a href="https://github.com/fsprojects/fantomas"><i>fantomas</i></a>)
+</p>
+
+<p>
+<b>Fish Shell</b> (<a href="https://fishshell.com/docs/current/commands.html#fish_indent"><i>fish<sub>indent</sub></i></a>)
+</p>
+
+<p>
+<b>Fortran Free Form</b> (<a href="https://github.com/pseewald/fprettify"><i>fprettify</i></a>)
+</p>
+
+<p>
+<b>Gleam</b> (<a href="https://gleam.run/"><i>gleam format</i></a>)
+</p>
+
+<p>
+<b>GLSL</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)
+</p>
+
+<p>
+<b>Go</b> (<a href="https://golang.org/cmd/gofmt/"><i>gofmt</i></a>, <a href="https://godoc.org/golang.org/x/tools/cmd/goimports"><i>goimports</i></a>)
+</p>
+
+<p>
+<b>GraphQL</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>)
+</p>
+
+<p>
+<b>Haskell</b> (<a href="https://github.com/lspitzner/brittany"><i>brittany</i></a>, <a href="https://github.com/fourmolu/fourmolu"><i>fourmolu</i></a>, <a href="https://github.com/commercialhaskell/hindent"><i>hindent</i></a>, <a href="https://github.com/tweag/ormolu"><i>ormolu</i></a>, <a href="https://github.com/jaspervdj/stylish-haskell"><i>stylish-haskell</i></a>)
+</p>
+
+<p>
+<b>HCL</b> (<a href="https://github.com/hashicorp/hcl/tree/main/cmd/hclfmt"><i>hclfmt</i></a>)
+</p>
+
+<p>
+<b>HLSL</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)
+</p>
+
+<p>
+<b>HTML/XHTML/XML</b> (<a href="http://www.html-tidy.org/"><i>tidy</i></a>)
+</p>
+
+<p>
+<b>Hy</b> (Emacs)
+</p>
+
+<p>
+<b>Java</b> (<a href="http://astyle.sourceforge.net/"><i>astyle</i></a>, <a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>, <a href="https://github.com/google/google-java-format"><i>google-java-format</i></a>)
+</p>
+
+<p>
+<b>JavaScript/JSON/JSX</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://standardjs.com/"><i>standard</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>, <a href="https://deno.land/manual/tools/formatter"><i>deno</i></a>)
+</p>
+
+<p>
+<b>Jsonnet</b> (<a href="https://jsonnet.org/"><i>jsonnetfmt</i></a>)
+</p>
+
+<p>
+<b>Kotlin</b> (<a href="https://github.com/shyiko/ktlint"><i>ktlint</i></a>)
+</p>
+
+<p>
+<b>LaTeX</b> (<a href="https://github.com/cmhughes/latexindent.pl"><i>latexindent</i></a>, <a href="https://www.gnu.org/software/auctex/"><i>auctex</i></a>)
+</p>
+
+<p>
+<b>Ledger</b> (<a href="https://github.com/ledger/ledger-mode"><i>ledger-mode</i></a>)
+</p>
+
+<p>
+<b>Lua</b> (<a href="https://github.com/trixnz/lua-fmt"><i>lua-fmt</i></a>, <a href="https://github.com/JohnnyMorganz/StyLua">stylua</a>, <a href="https://github.com/prettier/plugin-lua"><i>prettier plugin</i></a>)
+</p>
+
+<p>
+<b>Markdown</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>, <a href="https://deno.land/manual/tools/formatter"><i>deno</i></a>)
+</p>
+
+<p>
+<b>Meson</b> (<a href="https://sr.ht/~lattis/muon/"><i>muon fmt</i></a>)
+</p>
+
+<p>
+<b>Nginx</b> (<a href="https://github.com/slomkowski/nginx-config-formatter"><i>nginxfmt</i></a>)
+</p>
+
+<p>
+<b>Nix</b> (<a href="https://github.com/nix-community/nixpkgs-fmt"><i>nixpkgs-fmt</i></a>, <a href="https://github.com/serokell/nixfmt"><i>nixfmt</i></a>, <a href="https://github.com/kamadorueda/alejandra"><i>alejandra</i></a>)
+</p>
+
+<p>
+<b>OCaml</b> (<a href="https://opam.ocaml.org/packages/ocp-indent/"><i>ocp-indent</i></a>, <a href="https://github.com/ocaml-ppx/ocamlformat"><i>ocamlformat</i></a>)
+</p>
+
+<p>
+<b>Perl</b> (<a href="http://perltidy.sourceforge.net/"><i>perltidy</i></a>)
+</p>
+
+<p>
+<b>PHP</b> (<a href="https://github.com/prettier/plugin-php"><i>prettier plugin</i></a>)
+</p>
+
+<p>
+<b>Protocol Buffers</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)
+</p>
+
+<p>
+<b>PureScript</b> (<a href="https://gitlab.com/joneshf/purty"><i>purty</i></a>, <a href="https://github.com/natefaubion/purescript-tidy"><i>purescript-tidy</i></a>)
+</p>
+
+<p>
+<b>Python</b> (<a href="https://github.com/ambv/black"><i>black</i></a>, <a href="https://github.com/PyCQA/isort"><i>isort</i></a>, <a href="https://docs.astral.sh/ruff/formatter/"><i>ruff format</i></a>, <a href="https://github.com/google/yapf"><i>yapf</i></a>)
+</p>
+
+<p>
+<b>R</b> (<a href="https://github.com/r-lib/styler"><i>styler</i></a>)
+</p>
+
+<p>
+<b>Racket</b> (<a href="https://docs.racket-lang.org/fmt/"><i>raco fmt</i></a>)
+</p>
+
+<p>
+<b>Reason</b> (<a href="https://github.com/glennsl/bs-refmt"><i>bsrefmt</i></a>)
+</p>
+
+<p>
+<b>ReScript</b> (<a href="https://www.npmjs.com/package/rescript"><i>rescript format</i></a>)
+</p>
+
+<p>
+<b>Ruby</b> (<a href="https://github.com/rubocop/rubocop"><i>rubocop</i></a>, <a href="https://github.com/ruby-formatter/rufo"><i>rufo</i></a>, <a href="https://github.com/testdouble/standard"><i>standardrb</i></a>, <a href="https://github.com/ruby-syntax-tree/syntax_tree"><i>stree (syntax<sub>tree</sub>)</i></a>)
+</p>
+
+<p>
+<b>Rust</b> (<a href="https://github.com/rust-lang-nursery/rustfmt"><i>rustfmt</i></a>)
+</p>
+
+<p>
+<b>Scala</b> (<a href="https://github.com/scalameta/scalafmt"><i>scalafmt</i></a>)
+</p>
+
+<p>
+<b>Shell script</b> (<a href="https://github.com/lovesegfault/beautysh"><i>beautysh</i></a>, <a href="https://github.com/mvdan/sh"><i>shfmt</i></a>)
+</p>
+
+<p>
+<b>Snakemake</b> (<a href="https://github.com/snakemake/snakefmt"><i>snakefmt</i></a>)
+</p>
+
+<p>
+<b>Solidity</b> (<a href="https://github.com/prettier-solidity/prettier-plugin-solidity"><i>prettier plugin</i></a>)
+</p>
+
+<p>
+<b>SQL</b> (<a href="https://github.com/darold/pgFormatter"><i>pgformatter</i></a>, <a href="https://pypi.org/project/sqlparse/"><i>sqlformat</i></a>)
+</p>
+
+<p>
+<b>Svelte</b> (<a href="https://github.com/sveltejs/prettier-plugin-svelte"><i>prettier plugin</i></a>)
+</p>
+
+<p>
+<b>Swift</b> (<a href="https://github.com/nicklockwood/SwiftFormat"><i>swiftformat</i></a>)
+</p>
+
+<p>
+<b>Terraform</b> (<a href="https://www.terraform.io/docs/commands/fmt.html"><i>terraform fmt</i></a>)
+</p>
+
+<p>
+<b>TOML</b> (<a href="https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml"><i>prettier plugin</i></a>, <a href="https://taplo.tamasfe.dev/cli/usage/formatting.html"><i>taplo fmt</i></a>)
+</p>
+
+<p>
+<b>TypeScript/TSX</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://standardjs.com/"><i>ts-standard</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>, <a href="https://deno.land/manual/tools/formatter"><i>deno</i></a>)
+</p>
+
+<p>
+<b>V</b> (<a href="https://github.com/vlang/v"><i>v fmt</i></a>)
+</p>
+
+<p>
+<b>Vue</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>)
+</p>
+
+<p>
+<b>Verilog</b> (<a href="https://github.com/thomasrussellmurphy/istyle-verilog-formatter"><i>iStyle</i></a>, <a href="https://github.com/chipsalliance/verible/tree/master/verilog/tools/formatter"><i>Verible</i></a>)
+</p>
+
+<p>
+<b>YAML</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>)
+</p>
+
+<p>
+<b>Zig</b> (<a href="https://ziglang.org/"><i>zig</i></a>)
+</p>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

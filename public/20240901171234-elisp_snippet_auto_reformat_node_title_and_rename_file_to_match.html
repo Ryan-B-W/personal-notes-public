@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ELisp Snippet: auto reformat node title and rename file to match</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">ELisp Snippet: auto reformat node title and rename file to match</h1>
+</header><div class="org-src-container">
+<pre class="src src-elisp">;; Custom renaming function.
+(defun my/rename-org-roam-visited-file ()
+  (interactive)
+  (let* ((node (org-roam-node-at-point t))
+         (replacement-title (concat "(" (url-host (url-generic-parse-url (car (org-roam-node-refs node)))) ") " (org-roam-node-title node)))
+         (replacement-title-property (concat "#+title: " replacement-title))
+         (current-file-name (buffer-file-name (current-buffer))))
+    ;(message "New calculated title is \"%s\"." replacement-title)
+    (if (not (and current-file-name (file-exists-p current-file-name)))
+        (message "Buffer is not visiting a file!")
+      (perform-replace "^#\\+title\\: .*$" replacement-title-property nil t nil nil nil (point-min) (point-max) nil nil)
+      (save-buffer)
+      ;(message "Saved file \"%s\" with new title." (buffer-file-name (current-buffer)))
+      (let* ((node (org-roam-node-at-point t))
+             (slug (org-roam-node-slug node))
+             (new-file-name (concat (file-name-directory current-file-name) slug ".org")))
+        ;(message "New file name is \"%s\" based on slug \"%s\"." new-file-name slug)
+        (cond
+         ((vc-backend current-file-name)
+          ;(message "Renaming file \"%s\" to \"%s\" via VC." current-file-name new-file-name)
+          (vc-rename-file current-file-name new-file-name)
+          (org-roam-db-autosync--rename-file-a current-file-name new-file-name))
+         (t
+          ;(message "Renaming file \"%s\" to \"%s\" normally." current-file-name new-file-name)
+          (rename-file current-file-name new-file-name 1)
+          (set-visited-file-name new-file-name t t)))))))
+;; Bind the renaming function to "&lt;Space&gt; m"
+(bind-key (kbd "m") #'my/rename-org-roam-visited-file custom-leader-map)
+</pre>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

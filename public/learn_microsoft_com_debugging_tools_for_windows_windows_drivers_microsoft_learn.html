@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:44 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(learn.microsoft.com) Debugging Tools for Windows - Windows drivers | Microsoft Learn</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(learn.microsoft.com) Debugging Tools for Windows - Windows drivers | Microsoft Learn</h1>
+</header><pre class="example">
+ROAM_REFS: https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>Debugging Tools for Windows</li>
+
+<li>Article</li>
+<li>12/06/2024</li>
+<li></li>
+</ul>
+
+<p>
+** In this article
+</p>
+
+<ol class="org-ol">
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#install-debugging-tools-for-windows">Install Debugging Tools for Windows</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#debugging-environments">Debugging environments</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#windows-debuggers">Windows debuggers</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#command-line-debuggers">Command line debuggers</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#symbols-and-symbol-files">Symbols and symbol files</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#blue-screens-and-crash-dump-files">Blue screens and crash dump files</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#looking-for-the-debugging-tools-for-earlier-versions-of-windows">Looking for the debugging tools for earlier versions of Windows?</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#learn-more-about-the-debuggers">Learn more about the debuggers</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#looking-for-other-downloads">Looking for other downloads?</a></li>
+</ol>
+
+<p>
+In addition to the debuggers such as WinDbg, Debugging Tools for Windows includes a set of tools that are useful for debugging. For a complete list of the tools, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/extra-tools">Tools Included in Debugging Tools for Windows</a>.
+</p>
+
+<p>
+For directions on how to download and install just the Windows debugger, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/">Download and install the WinDbg Windows debugger</a>.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#install-debugging-tools-for-windows">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#install-debugging-tools-for-windows</a>
+</p>
+
+<p>
+** Install Debugging Tools for Windows
+</p>
+
+<p>
+You can get Debugging Tools for Windows as part of a development kit or as a standalone toolset:
+</p>
+
+<ul class="org-ul">
+<li><p>
+<b>As part of the WDK</b>
+</p>
+
+<p>
+Debugging Tools for Windows is included in the Windows Driver Kit (WDK). To get the WDK, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk">Download the Windows Driver Kit (WDK)</a>.
+</p></li>
+
+<li><p>
+<b>As part of the Windows SDK</b>
+</p>
+
+<p>
+Debugging Tools for Windows is included in the Windows Software Development Kit (SDK). To download the installer or an ISO image, see <a href="https://developer.microsoft.com/windows/downloads/windows-sdk">Windows SDK</a> on Windows Dev Center.
+</p></li>
+
+<li><p>
+<b>As a standalone toolset</b>
+</p>
+
+<p>
+You can install the Debugging Tools for Windows alone, without the Windows SDK or WDK, by starting the installation of the Windows SDK and then selecting only <b>Debugging Tools for Windows</b> in the list of features to install (and clearing the selection of all other features). To download the installer or an ISO image, see <a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">Windows SDK</a> on Windows Dev Center.
+</p></li>
+</ul>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#debugging-environments">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#debugging-environments</a>
+</p>
+
+<p>
+** Debugging environments
+</p>
+
+<p>
+If your computer has Visual Studio and the WDK installed, then you have six available debugging environments. For descriptions of these environments, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debuggers-in-the-debugging-tools-for-windows-package">Debugging Environments</a>.
+</p>
+
+<p>
+All of these debugging environments provide user interfaces for the same underlying debugging engine, which is implemented in the Windows Symbolic Debugger Engine (Dbgeng.dll). This debugging engine is also called the <i>Windows debugger</i>, and the six debugging environments are collectively called the <i>Windows debuggers</i>.
+</p>
+
+<p>
+Note
+</p>
+
+<p>
+Visual Studio includes its own debugging environment and debugging engine, which together are called the <i>Visual Studio debugger</i>. For information on debugging in Visual Studio, see <a href="https://learn.microsoft.com/en-us/visualstudio/debugger/">Debugging in Visual Studio</a>. For debugging managed code, such as C#, using the Visual Studio debugger is often the easiest way to get started.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#windows-debuggers">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#windows-debuggers</a>
+</p>
+
+<p>
+** Windows debuggers
+</p>
+
+<p>
+The Windows debuggers can run on x86-based, x64-based, or Arm-based processors, and they can debug code that is running on those same architectures. Sometimes the debugger and the code being debugged run on the same computer, but other times the debugger and the code being debugged run on separate computers. In either case, the computer that is running the debugger is called the <i>host computer</i>, and the computer that is being debugged is called the <i>target computer</i>. The Windows debuggers support the following versions of Windows for both the host and target computers.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#command-line-debuggers">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#command-line-debuggers</a>
+</p>
+
+<p>
+** Command line debuggers
+</p>
+
+<p>
+There are four command line debuggers that are available for specialized environments and for those that prefer a command line interface.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#kd-and-ntkd">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#kd-and-ntkd</a>
+</p>
+
+<p>
+<b>*</b> KD and NTKD
+</p>
+
+<p>
+KD and NTKD are identical in every way, except that NTKD spawns a new text window when it is started, whereas KD inherits the Command Prompt window from which it was invoked. For more information, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-using-kd-and-ntkd">Debugging Using KD and NTKD</a>.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#cdb-and-ntsd">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#cdb-and-ntsd</a>
+</p>
+
+<p>
+<b>*</b> CDB and NTSD
+</p>
+
+<p>
+Also available are the Microsoft Console Debugger (CDB) and Microsoft NT Symbolic Debugger (NTSD). For more information, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-using-cdb-and-ntsd">Debugging Using CDB and NTSD</a>.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#symbols-and-symbol-files">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#symbols-and-symbol-files</a>
+</p>
+
+<p>
+** Symbols and symbol files
+</p>
+
+<p>
+Symbol files store a variety of data that are not required when running the executable binaries, but symbol files are very useful when debugging code. For more information about creating and using symbol files, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/symbols">Symbols for Windows debugging</a>.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#blue-screens-and-crash-dump-files">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#blue-screens-and-crash-dump-files</a>
+</p>
+
+<p>
+** Blue screens and crash dump files
+</p>
+
+<p>
+If Windows stops working and displays a blue screen, the computer shuts down abruptly to protect itself from data loss and displays a bug check code. For more information, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-checks--blue-screens-">Bug Checks (Blue Screens)</a>. You can analyze crash dump files that are created when Windows shuts down by using WinDbg and other Windows debuggers. For more information, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/crash-dump-files">Crash dump analysis using the Windows debuggers (WinDbg)</a>.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#looking-for-the-debugging-tools-for-earlier-versions-of-windows">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#looking-for-the-debugging-tools-for-earlier-versions-of-windows</a>
+</p>
+
+<p>
+** Looking for the debugging tools for earlier versions of Windows?
+</p>
+
+<p>
+To download the debugger tools for previous versions of Windows, you need to download the Windows SDK for the version you are debugging from the <a href="https://developer.microsoft.com/windows/downloads/sdk-archive">Windows SDK and emulator archive</a>. In the installation wizard of the SDK, select <b>Debugging Tools for Windows</b>, and deselect all other components.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#learn-more-about-the-debuggers">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#learn-more-about-the-debuggers</a>
+</p>
+
+<p>
+** Learn more about the debuggers
+</p>
+
+<p>
+Learn more about WinDbg in <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/">Download and install the WinDbg Windows debugger</a>.
+</p>
+
+<p>
+To get started with Windows debugging, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windows-debugging">Getting Started with Windows Debugging</a>.
+</p>
+
+<p>
+For additional information related to Debugging Tools for Windows, see <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-resources">Debugging Resources</a>.
+</p>
+
+<p>
+<a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#looking-for-other-downloads">https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools#looking-for-other-downloads</a>
+</p>
+
+<p>
+** Looking for other downloads?
+</p>
+
+<ul class="org-ul">
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk">Download the Windows Driver Kit (WDK)</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-symbols">Windows Symbol Packages</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/test/hlk/windows-hardware-lab-kit">Windows Hardware Lab Kit</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install">Download and install the Windows Assessment and Deployment Kit (Windows ADK)</a></li>
+<li><a href="https://insider.windows.com/">Windows Insider - Windows Preview builds</a></li>
+</ul>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

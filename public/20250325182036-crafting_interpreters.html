@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-25 Tue 20:22 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Crafting Interpreters by Robert Nystrom</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
@@ -12,11 +10,21 @@
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
 </head>
 <body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
 <div id="content" class="content">
+<header>
 <h1 class="title">Crafting Interpreters by Robert Nystrom</h1>
-<div id="outline-container-org0a45fca" class="outline-2">
-<h2 id="org0a45fca">(craftinginterpreters.com) Crafting Interpreters&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-org0a45fca">
+</header><div id="outline-container-ID-454a8194-b098-4cfd-ba62-4644a8a02a10" class="outline-2">
+<h2 id="ID-454a8194-b098-4cfd-ba62-4644a8a02a10">(craftinginterpreters.com) Crafting Interpreters&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org812f592">
 <pre class="example">
 ROAM_REFS: https://craftinginterpreters.com/
 </pre>
@@ -34,7 +42,7 @@ If so, this book is for you.
 </p>
 
 <p>
-Starting from <code>main()</code>, you build a language that features rich syntax, dynamic typing, garbage collection, lexical scope, first-class functions, closures, classes, and inheritance.  All packed into a few thousand lines of clean, fast code that you thoroughly understand because you write each one yourself.
+Starting from <pre class="verbatim">main()</pre>, you build a language that features rich syntax, dynamic typing, garbage collection, lexical scope, first-class functions, closures, classes, and inheritance.  All packed into a few thousand lines of clean, fast code that you thoroughly understand because you write each one yourself.
 </p>
 
 <p>
@@ -49,7 +57,7 @@ The book is available in four delectable formats:
 640 pages of beautiful typography and high resolution hand-drawn illustrations.  Each page lovingly typeset by the author.  The premiere reading experience.
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -86,7 +94,7 @@ The book is available in four delectable formats:
 </tbody>
 </table>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -114,7 +122,7 @@ The book is available in four delectable formats:
 Carefully tuned CSS fits itself to your ebook reader and screen size.  Full-color syntax highlighting and live hyperlinks.  Like Alan Kay's Dynabook but real.
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -142,7 +150,7 @@ Carefully tuned CSS fits itself to your ebook reader and screen size.  Full-colo
 </tbody>
 </table>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -173,7 +181,7 @@ Carefully tuned CSS fits itself to your ebook reader and screen size.  Full-colo
 </tbody>
 </table>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -217,10 +225,10 @@ Meticulous responsive design looks great from your desktop down to your phone.  
 </p>
 
 
-<div id="org0de5cce" class="figure">
-<p><img src="https://craftinginterpreters.com/image/dogshot.jpg" alt="dogshot.jpg" />
-</p>
-</div>
+<figure id="org4abab76">
+<img src="https://craftinginterpreters.com/image/dogshot.jpg" alt="dogshot.jpg" />
+
+</figure>
 
 <p>
 <b>*</b> About Robert Nystrom
@@ -235,14 +243,14 @@ Before I fell in love with languages, I developed games at Electronic Arts for e
 </p>
 
 <p>
-If you want more, you can find me on Twitter (<a href="https://twitter.com/intent/user?screen_name=munificentbob"><code>@munificentbob</code></a>), email me at <code>bob</code> at this site's domain (though I am slow to respond), read <a href="http://journal.stuffwithstuff.com/">my blog</a>, or join my low frequency mailing list:
+If you want more, you can find me on Twitter (<a href="https://twitter.com/intent/user?screen_name=munificentbob"><pre class="verbatim">@munificentbob</pre></a>), email me at <pre class="verbatim">bob</pre> at this site's domain (though I am slow to respond), read <a href="http://journal.stuffwithstuff.com/">my blog</a>, or join my low frequency mailing list:
 </p>
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orge66f45f" class="outline-2">
-<h2 id="orge66f45f">(books.google.com) Crafting Interpreters - Robert Nystrom - Google Books&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-orge66f45f">
+<div id="outline-container-ID-a72ebad3-e601-475d-ba6c-d63b6bf4e862" class="outline-2">
+<h2 id="ID-a72ebad3-e601-475d-ba6c-d63b6bf4e862">(books.google.com) Crafting Interpreters - Robert Nystrom - Google Books&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orgfd67e25">
 <pre class="example">
 ROAM_REFS: https://books.google.com/books/about/Crafting_Interpreters.html?id=q0c6EAAAQBAJ
 </pre>
@@ -320,9 +328,9 @@ Subjects: Computers › Programming › Compilers
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgfb56b16" class="outline-2">
-<h2 id="orgfb56b16">(www.goodreads.com) Crafting Interpreters by Robert Nystrom | Goodreads&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-orgfb56b16">
+<div id="outline-container-ID-a1b7d2be-448a-4063-9427-ef95d4f74ea4" class="outline-2">
+<h2 id="ID-a1b7d2be-448a-4063-9427-ef95d4f74ea4">(www.goodreads.com) Crafting Interpreters by Robert Nystrom | Goodreads&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org9e6e20f">
 <pre class="example">
 ROAM_REFS: https://www.goodreads.com/book/show/58661468-crafting-interpreters
 </pre>
@@ -360,8 +368,10 @@ Starting from main(), you will build a language that features rich syntax, dynam
 </div>
 </div>
 <div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
-<p class="date">Created: 2025-03-25 Tue 20:22</p>
+</footer>
 </div>
 </body>
 </html>

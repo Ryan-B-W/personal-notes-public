@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:42 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MIPS</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">MIPS</h1>
+</header><p>
+A family if <a href="20250319103827-reduced_instruction_set_computer.html#ID-321ba3cc-d73a-4620-88f7-2527cbae1aac">RISC</a> <a href="20250319100756-instruction_set_architecture.html#ID-c980a340-2564-437e-a79f-388122a206ad">ISA</a>s and corresponding microprocessors.
+</p>
+<div id="outline-container-ID-d02bc40c-bde8-4672-b8bf-c664afff9084" class="outline-2">
+<h2 id="ID-d02bc40c-bde8-4672-b8bf-c664afff9084">(en.wikipedia.org) MIPS architecture - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orgf7b21f0">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/MIPS_architecture
+</pre>
+
+<blockquote>
+<p>
+<b>MIPS</b> (<b>Microprocessor without Interlocked Pipelined Stages</b>) is a family of <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">reduced instruction set computer</a> (RISC) <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instruction set architectures</a> (ISA) developed by MIPS Computer Systems, now <a href="https://en.wikipedia.org/wiki/MIPS_Technologies">MIPS Technologies</a>, based in the <a href="https://en.wikipedia.org/wiki/United_States">United States</a>.
+</p>
+
+<p>
+There are multiple versions of MIPS, including MIPS I, II, III, IV, and V, as well as five releases of MIPS32/64 (for 32- and 64-bit implementations, respectively).  The early MIPS architectures were 32-bit; 64-bit versions were developed later.  As of April 2017, the current version of MIPS is MIPS32/64 Release 6.  MIPS32/64 primarily differs from MIPS I&#x2013;V by defining the privileged kernel mode System Control Coprocessor in addition to the user mode architecture.
+</p>
+
+<p>
+The MIPS architecture has several optional extensions: <a href="https://en.wikipedia.org/wiki/MIPS-3D">MIPS-3D</a>, a simple set of <a href="https://en.wikipedia.org/wiki/Floating-point">floating-point</a> <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture#SIMD_instruction">SIMD instructions</a> dedicated to <a href="https://en.wikipedia.org/wiki/3D_computer_graphics">3D computer graphics</a>; <a href="https://en.wikipedia.org/wiki/MDMX">MDMX</a> (MaDMaX), a more extensive integer <a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">SIMD</a> instruction set using 64-bit floating-point registers; MIPS16e, which adds <a href="https://en.wikipedia.org/wiki/Compressed_instructions">compression to the instruction stream</a> to reduce the memory programs require; and MIPS MT, which adds <a href="https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)">multithreading</a> capability.
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/Computer_architecture">Computer architecture</a> courses in universities and technical schools often study the MIPS architecture.  The architecture greatly influenced later RISC architectures such as <a href="https://en.wikipedia.org/wiki/DEC_Alpha">Alpha</a>.  In March 2021, MIPS announced that the development of the MIPS architecture had ended as the company is making the transition to <a href="https://en.wikipedia.org/wiki/RISC-V">RISC-V</a>.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-86ee3b1b-c387-4b77-9010-61dbdf260b08" class="outline-2">
+<h2 id="ID-86ee3b1b-c387-4b77-9010-61dbdf260b08">(en.wikipedia.org) Stanford MIPS - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org483de31">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Stanford_MIPS
+</pre>
+
+<blockquote>
+<p>
+<b>MIPS</b>, an acronym for <b>Microprocessor without Interlocked Pipeline Stages</b>, was a research project conducted by <a href="https://en.wikipedia.org/wiki/John_L._Hennessy">John L. Hennessy</a> at <a href="https://en.wikipedia.org/wiki/Stanford_University">Stanford University</a> between 1981 and 1984.  MIPS investigated a type of <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instruction set architecture</a> (ISA) now called <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">reduced instruction set computer</a> (RISC), its implementation as a <a href="https://en.wikipedia.org/wiki/Microprocessor">microprocessor</a> with <a href="https://en.wikipedia.org/wiki/Very_large_scale_integration">very large scale integration</a> (VLSI) <a href="https://en.wikipedia.org/wiki/Semiconductor">semiconductor</a> technology, and the effective exploitation of RISC architectures with <a href="https://en.wikipedia.org/wiki/Optimizing_compiler">optimizing compilers</a>.  MIPS, together with the <a href="https://en.wikipedia.org/wiki/IBM_801">IBM 801</a> and <a href="https://en.wikipedia.org/wiki/Berkeley_RISC">Berkeley RISC</a>, were the three research projects that pioneered and popularized RISC technology in the mid-1980s.  In recognition of the impact MIPS made on computing, Hennessy was awarded the <a href="https://en.wikipedia.org/wiki/IEEE_John_von_Neumann_Medal">IEEE John von Neumann Medal</a> in 2000 by the <a href="https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers">Institute of Electrical and Electronics Engineers</a> (IEEE) (shared with <a href="https://en.wikipedia.org/wiki/David_Patterson_(computer_scientist)">David A. Patterson</a>), the <a href="https://en.wikipedia.org/wiki/Eckert%E2%80%93Mauchly_Award">Eckert&#x2013;Mauchly Award</a> in 2001 by the <a href="https://en.wikipedia.org/wiki/Association_for_Computing_Machinery">Association for Computing Machinery</a>, the <a href="https://en.wikipedia.org/wiki/Seymour_Cray_Computer_Engineering_Award">Seymour Cray Computer Engineering Award</a> in 2001 by the <a href="https://en.wikipedia.org/wiki/IEEE_Computer_Society">IEEE Computer Society</a>, and, again with David Patterson, the <a href="https://en.wikipedia.org/wiki/Turing_Award">Turing Award</a> in 2017 by the ACM.
+</p>
+
+<p>
+The project was initiated in 1981 in response to reports of similar projects at <a href="https://en.wikipedia.org/wiki/IBM">IBM</a> (the <a href="https://en.wikipedia.org/wiki/IBM_801">801</a>) and the <a href="https://en.wikipedia.org/wiki/University_of_California,_Berkeley">University of California, Berkeley</a> (the <a href="https://en.wikipedia.org/wiki/Berkeley_RISC">RISC</a>).  MIPS was conducted by Hennessy and his graduate students until its conclusion in 1984.  Hennessy founded <a href="https://en.wikipedia.org/wiki/MIPS_Computer_Systems">MIPS Computer Systems</a> in the same year to commercialize the technology developed by the project.  In 1985, MIPS Computer Systems announced a new ISA, also called <a href="https://en.wikipedia.org/wiki/MIPS_architecture">MIPS</a>, and its first implementation, the <a href="https://en.wikipedia.org/wiki/R2000_(microprocessor)">R2000</a> microprocessor.  The commercial MIPS ISA, and its implementations went on to be widely used, appearing in embedded computers, personal computers, workstations, servers, and supercomputers.  As of May 2017, the commercial MIPS ISA is owned by <a href="https://en.wikipedia.org/wiki/Imagination_Technologies">Imagination Technologies</a>, and is used mainly in embedded computers.  In the late 1980s, a follow-up project called <a href="https://en.wikipedia.org/wiki/MIPS-X">MIPS-X</a> was conducted by Hennessy at Stanford.
+</p>
+
+<p>
+The MIPS ISA was based on a 32-bit word.  It supported 32-bit addressing, and was word-addressed.  It was a <a href="https://en.wikipedia.org/wiki/Load/store_architecture">load/store architecture</a>—all references to memory used load and store instructions that copied data between the <a href="https://en.wikipedia.org/wiki/Main_memory">main memory</a> and 32 <a href="https://en.wikipedia.org/wiki/General-purpose_register">general-purpose registers</a> (GPRs).  All other instructions, such as integer arithmetic, operated on the GPRs.  It possessed a basic instruction set consisting of instructions for <a href="https://en.wikipedia.org/wiki/Control_flow">control flow</a>, integer arithmetic, and logical operations.  To minimize pipeline stalls, all instructions except for load and store had to be executed in one <a href="https://en.wikipedia.org/wiki/Clock_cycle">clock cycle</a>.  There were no instructions for integer multiplication or division, or operations for <a href="https://en.wikipedia.org/wiki/Floating-point_number">floating-point numbers</a>.  The architecture exposed all <a href="https://en.wikipedia.org/wiki/Hazard_(computer_architecture)">hazards</a> caused by the five-stage pipeline with <a href="https://en.wikipedia.org/wiki/Delay_slot">delay slots</a>.  The compiler scheduled instructions to avoid hazards resulting in incorrect computation whilst simultaneously ensuring that the generated code minimized execution time.  MIPS instructions are 16 or 32 bit long.  The decision to expose all hazards was motivated by the desire to maximize performance by minimizing critical paths, which interlock circuits lengthened.  Instructions were packed into 32-bit <i>instruction words</i> (as MIPS is word-addressed).  A 32-bit instruction word could contain two 16-bit operations.  These were included to reduce the size of machine code.  The MIPS microprocessor was implemented in <a href="https://en.wikipedia.org/wiki/NMOS_logic">NMOS logic</a>.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-43ebcdd4-40fe-4343-aa7b-a0ced98ad96f" class="outline-2">
+<h2 id="ID-43ebcdd4-40fe-4343-aa7b-a0ced98ad96f">(en.wikipedia.org) MIPS-X - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org06e9dd1">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/MIPS-X
+</pre>
+
+<blockquote>
+<p>
+<b>MIPS-X</b> is a <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">reduced instruction set computer</a> (RISC) <a href="https://en.wikipedia.org/wiki/Microprocessor">microprocessor</a> and <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instruction set architecture</a> (ISA) developed as a follow-on project to the <a href="https://en.wikipedia.org/wiki/Stanford_MIPS">MIPS</a> project at <a href="https://en.wikipedia.org/wiki/Stanford_University">Stanford University</a> by the same team that developed MIPS.  The project was supported by the Defense Advanced Research Projects Agency (<a href="https://en.wikipedia.org/wiki/DARPA">DARPA</a>) and began in 1984.  Its final form was described in a set of papers released in 1986&#x2013;87.  Unlike its older cousin, MIPS-X was never commercialized as a <a href="https://en.wikipedia.org/wiki/Workstation">workstation</a> <a href="https://en.wikipedia.org/wiki/Central_processing_unit">central processing unit</a> (CPU), and has mainly been seen in <a href="https://en.wikipedia.org/wiki/Embedded_system">embedded system</a> designs based on chips designed by <a href="https://en.wikipedia.org/wiki/8x8_Inc">Integrated Information Technology</a> (IIT) for use in <a href="https://en.wikipedia.org/wiki/Digital_video">digital video</a> applications.
+</p>
+
+<p>
+MIPS-X, while designed by the same team and architecturally very similar, is instruction-set incompatible with the mainline <a href="https://en.wikipedia.org/wiki/MIPS_architecture">MIPS architecture</a> R-series processors.  The MIPS-X processor introduced the concept of a delayed branch, which includes two <a href="https://en.wikipedia.org/wiki/Delay_slot">delay slots</a>.  An MIPS-X processor also includes a Processor Status Word (PSW) register.  The PSW register contains some flags that enable <a href="https://en.wikipedia.org/wiki/Interrupt">interruptions</a>, overflow exceptions and other status information.  The MIPS-X processor is obscure enough that, as of November 20, 2005, support for it is provided only by specialist developers (such as <a href="https://en.wikipedia.org/wiki/Green_Hills_Software">Green Hills Software</a>), and is notably missing from the <a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">GNU Compiler Collection</a> (GCC).
+</p>
+
+<p>
+MIPS-X has become important among <a href="https://en.wikipedia.org/wiki/DVD_player">DVD player</a> <a href="https://en.wikipedia.org/wiki/Firmware">firmware</a> <a href="https://en.wikipedia.org/wiki/Hacker_(hobbyist)">hackers</a>, since many <a href="https://en.wikipedia.org/wiki/DVD_player">DVD players</a> (especially low-end devices) use chips based on the IIT design (and produced by <a href="https://en.wikipedia.org/wiki/ESS_Technology">ESS Technology</a>), as their central processor.  Devices such as the ESS VideoDrive <a href="https://en.wikipedia.org/wiki/System_on_a_chip">system on a chip</a> (SoC) also include a <a href="https://en.wikipedia.org/wiki/Digital_signal_processor">digital signal processor</a> (DSP) (coprocessor) for decoding MPEG audio and video streams.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-25 Tue 20:22 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Guile</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
@@ -12,14 +10,24 @@
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
 </head>
 <body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
 <div id="content" class="content">
+<header>
 <h1 class="title">Guile</h1>
-<p>
+</header><p>
 An implementation of <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a> for the GNU Project as a scripting and extension language.  Implements most of R6RS, some R7RS, and many SRFIs.  As of the 2.0 series, is also an <a href="20240714204139-emacs_lisp.html#ID-eac73a7d-f14b-4ec4-bc18-08d864e6c4c0">Emacs Lisp</a> and <a href="20240719125725-javascript.html#ID-db0939e6-0c2e-4bb0-a626-2114209235af">JavaScript</a> implementation.  Used as the basis for Guix.
 </p>
-<div id="outline-container-org0be824b" class="outline-2">
-<h2 id="org0be824b">(www.gnu.org) GNU's programming and extension language — GNU Guile&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-org0be824b">
+<div id="outline-container-ID-b735c568-4d91-4adf-b4a7-580c50fac7f5" class="outline-2">
+<h2 id="ID-b735c568-4d91-4adf-b4a7-580c50fac7f5">(www.gnu.org) GNU's programming and extension language — GNU Guile&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org385a842">
 <pre class="example">
 ROAM_REFS: https://www.gnu.org/software/guile/
 </pre>
@@ -38,37 +46,37 @@ With Guile you can create applications and games for the <a href="https://www.gn
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org22be885" class="outline-3">
-<h3 id="org22be885">(www.gnu.org) Top (Guile Reference Manual)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
-<div class="outline-text-3" id="text-org22be885">
+<div id="outline-container-ID-f6311b42-cf2d-490f-ac69-0075b82828b9" class="outline-3">
+<h3 id="ID-f6311b42-cf2d-490f-ac69-0075b82828b9">(www.gnu.org) Top (Guile Reference Manual)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-org87c0ee0">
 <pre class="example">
 ROAM_REFS: https://www.gnu.org/software/guile/manual/html_node/index.html
 </pre>
 </div>
 </div>
-<div id="outline-container-org025258f" class="outline-3">
-<h3 id="org025258f">Tutorial Introduction to Guile&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
-<div class="outline-text-3" id="text-org025258f">
+<div id="outline-container-ID-31aba63a-771f-4219-8d60-29b9ffbd69bd" class="outline-3">
+<h3 id="ID-31aba63a-771f-4219-8d60-29b9ffbd69bd">Tutorial Introduction to Guile&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-orgf9339e1">
 <pre class="example">
 ROAM_REFS: https://www.gnu.org/software/guile/docs/guile-tut/tutorial.html
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4eedf8d" class="outline-2">
-<h2 id="org4eedf8d"><a href="guile.html#Top">Guile Info Manual</a></h2>
+<div id="outline-container-org331143a" class="outline-2">
+<h2 id="org331143a"><a href="guile.html#Top">Guile Info Manual</a></h2>
 </div>
-<div id="outline-container-orge82db8e" class="outline-2">
-<h2 id="orge82db8e">Hello World - Guile Hacker Handbook&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-orge82db8e">
+<div id="outline-container-ID-bae4222f-bd5a-4dfc-87c6-01c9e8fded69" class="outline-2">
+<h2 id="ID-bae4222f-bd5a-4dfc-87c6-01c9e8fded69">Hello World - Guile Hacker Handbook&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orgb388f9b">
 <pre class="example">
 ROAM_REFS: https://jeko.frama.io/en/hello.html
 </pre>
 </div>
 </div>
-<div id="outline-container-org27af105" class="outline-2">
-<h2 id="org27af105">(en.wikipedia.org) GNU Guile - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-org27af105">
+<div id="outline-container-ID-86108222-b90b-4ccd-94da-53c603636d3c" class="outline-2">
+<h2 id="ID-86108222-b90b-4ccd-94da-53c603636d3c">(en.wikipedia.org) GNU Guile - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org88ea2a9">
 <pre class="example">
 ROAM_REFS: https://en.wikipedia.org/wiki/GNU_Guile
 </pre>
@@ -90,8 +98,10 @@ Guile is used in many programs under the <a href="https://en.wikipedia.org/wiki/
 </div>
 </div>
 <div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
-<p class="date">Created: 2025-03-25 Tue 20:22</p>
+</footer>
 </div>
 </body>
 </html>

@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-25 Tue 20:22 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Neovim</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
@@ -12,14 +10,24 @@
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
 </head>
 <body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
 <div id="content" class="content">
+<header>
 <h1 class="title">Neovim</h1>
-<p>
+</header><p>
 A fork of <a href="20240718201007-vim.html#ID-37c53f5b-c586-41ff-a4fe-b44c05ed3c1f">Vim</a> that aims to extend Vim with built-in LSP support, Lua for scripting, and, later, built-in tree-sitter support.  Commonly used with advanced configurations and package managers as an IDE.  Current-day competitor to <a href="20240714174616-emacs.html#ID-aca1324c-b142-4e34-a121-a8bb0a79ddf8">Emacs</a>.
 </p>
-<div id="outline-container-org151cfcf" class="outline-2">
-<h2 id="org151cfcf">(neovim.io) Home - Neovim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-org151cfcf">
+<div id="outline-container-ID-0d1a9bbb-e573-4b32-a7ce-785dd18d3899" class="outline-2">
+<h2 id="ID-0d1a9bbb-e573-4b32-a7ce-785dd18d3899">(neovim.io) Home - Neovim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org4649038">
 <pre class="example">
 ROAM_REFS: https://neovim.io/
 </pre>
@@ -41,8 +49,8 @@ ROAM_REFS: https://neovim.io/
 <li>API is first-class: <a href="https://neovim.io/doc/user/api.html#api-mapping">discoverable</a>, <a href="https://neovim.io/doc/user/api.html#api-contract">versioned</a>, <a href="https://neovim.io/doc/user/api.html#api-global">documented</a>.</li>
 <li><a href="http://msgpack.org/">MessagePack</a> structured communication enables extensions in any language.</li>
 <li>Remote plugins run as co-processes, safely and asynchronously.</li>
-<li>GUIs, IDEs, web browsers can <code>--embed</code> Neovim as an editor or script host.</li>
-<li><a href="https://neovim.io/doc/user/lua.html">Lua plugins</a> are easy to create just like Vimscript plugins.  Your config can live in <code>init.lua</code>!</li>
+<li>GUIs, IDEs, web browsers can <pre class="verbatim">--embed</pre> Neovim as an editor or script host.</li>
+<li><a href="https://neovim.io/doc/user/lua.html">Lua plugins</a> are easy to create just like Vimscript plugins.  Your config can live in <pre class="verbatim">init.lua</pre>!</li>
 <li>AST-producing <a href="https://tree-sitter.github.io/">parsing engine</a> enables faster, more accurate syntax highlighting, code navigation, refactoring, text objects, and motions.</li>
 </ul>
 
@@ -65,14 +73,14 @@ ROAM_REFS: https://neovim.io/
 
 <ul class="org-ul">
 <li>Fully compatible with Vim's editing model and Vimscript v1.</li>
-<li>Start with <a href="https://neovim.io/doc/user/nvim.html#nvim-from-vim"><code>:help nvim-from-vim</code></a> if you already use Vim.  If not, try <code>:Tutor</code>.</li>
+<li>Start with <a href="https://neovim.io/doc/user/nvim.html#nvim-from-vim"><pre class="verbatim">:help nvim-from-vim</pre></a> if you already use Vim.  If not, try <pre class="verbatim">:Tutor</pre>.</li>
 </ul>
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org480ef8e" class="outline-2">
-<h2 id="org480ef8e">(en.wikipedia.org) Vim (text editor) - Neovim - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-org480ef8e">
+<div id="outline-container-ID-298a6646-02c1-4f7a-953e-ec827f9c1235" class="outline-2">
+<h2 id="ID-298a6646-02c1-4f7a-953e-ec827f9c1235">(en.wikipedia.org) Vim (text editor) - Neovim - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orgf88166b">
 <pre class="example">
 ROAM_REFS: https://en.wikipedia.org/wiki/Vim_(text_editor)#Neovim
 </pre>
@@ -102,8 +110,10 @@ With the 0.5 release of Neovim on 2 July 2021, it gained built-in support for th
 </div>
 </div>
 <div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
-<p class="date">Created: 2025-03-25 Tue 20:22</p>
+</footer>
 </div>
 </body>
 </html>

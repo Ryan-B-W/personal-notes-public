@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-25 Tue 20:22 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Scheme</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
@@ -12,20 +10,30 @@
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
 </head>
 <body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
 <div id="content" class="content">
+<header>
 <h1 class="title">Scheme</h1>
-<p>
+</header><p>
 A dialect of the <a href="20240714175050-lisp.html#ID-84ae6e85-a6a2-4133-bc53-274238081c2d">Lisp</a> family of <a href="20240714174950-programming_language.html#ID-b24601aa-09df-41e1-aa7e-25ead342db34">Programming Language</a>.  A Lisp-1 with a single symbol namespace.  Various version of Scheme have been published as a series of academic publications starting in 1975.  Features include lexical scope, guaranteed tail-call optimization, and lazy evaluation.  Generally known for being very minimalist.
 </p>
-<div id="outline-container-orgc0931f2" class="outline-2">
-<h2 id="orgc0931f2">(www.scheme.org) The Scheme Programming Language&#xa0;&#xa0;&#xa0;<span class="tag"><span class="scheme">scheme</span>&#xa0;<span class="lisp">lisp</span>&#xa0;<span class="programming_language">programming_language</span>&#xa0;<span class="programming">programming</span>&#xa0;<span class="computer_science">computer_science</span>&#xa0;<span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-orgc0931f2">
+<div id="outline-container-ID-18a1ad86-a00c-437a-b253-ba0d24299574" class="outline-2">
+<h2 id="ID-18a1ad86-a00c-437a-b253-ba0d24299574">(www.scheme.org) The Scheme Programming Language&#xa0;&#xa0;&#xa0;<span class="tag"><span class="scheme">scheme</span>&#xa0;<span class="lisp">lisp</span>&#xa0;<span class="programming_language">programming_language</span>&#xa0;<span class="programming">programming</span>&#xa0;<span class="computer_science">computer_science</span>&#xa0;<span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org1477759">
 <pre class="example">
 ROAM_REFS: https://www.scheme.org/ https://www.scheme.org/schemers/
 </pre>
 
 <p>
-The new <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a> community site that documents a lot of Scheme resources.  It hosts <a href="#orgb6aec01">a snapshot</a> of the old schemers.org website.  The old schemers.org site redirects to <a href="https://www.scheme.org/schemers/">https://www.scheme.org/schemers/</a>—for now.
+The new <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a> community site that documents a lot of Scheme resources.  It hosts <a href="#ID-20ee7228-6436-4610-9fd1-10e8a00070e9">a snapshot</a> of the old schemers.org website.  The old schemers.org site redirects to <a href="https://www.scheme.org/schemers/">https://www.scheme.org/schemers/</a>—for now.
 </p>
 
 <blockquote>
@@ -58,7 +66,7 @@ More on <a href="https://planet.scheme.org/">Planet Scheme</a>.
 ** Language
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -108,7 +116,7 @@ More on <a href="https://planet.scheme.org/">Planet Scheme</a>.
 ** Community
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -163,7 +171,7 @@ More on <a href="https://planet.scheme.org/">Planet Scheme</a>.
 ** Implementations
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -306,7 +314,7 @@ More on <a href="https://planet.scheme.org/">Planet Scheme</a>.
 ** Tools
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table>
 
 
 <colgroup>
@@ -372,9 +380,9 @@ More on <a href="https://planet.scheme.org/">Planet Scheme</a>.
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org2786f83" class="outline-3">
-<h3 id="org2786f83">(try.scheme.org)</h3>
-<div class="outline-text-3" id="text-org2786f83">
+<div id="outline-container-ID-7baffabc-9c70-4bb9-b719-3519f7eb68b0" class="outline-3">
+<h3 id="ID-7baffabc-9c70-4bb9-b719-3519f7eb68b0">(try.scheme.org)</h3>
+<div class="outline-text-3" id="text-org2e7f575">
 <pre class="example">
 ROAM_REFS: https://try.scheme.org/
 </pre>
@@ -393,14 +401,14 @@ The first pane, the REPL, is where the user interacts with the interpreter.  The
 </p>
 
 <p>
-The second pane is the editor area.  It allows creating and editing files that are local to the browser and accessible to Scheme code as files in the root directory, i.e. "<b><code>/</code></b>".  The files will persist in the browser between sessions.  Use the "<b><code>+</code></b>" tab in the editor area to create new files and open existing files.
+The second pane is the editor area.  It allows creating and editing files that are local to the browser and accessible to Scheme code as files in the root directory, i.e. "<b><pre class="verbatim">/</pre></b>".  The files will persist in the browser between sessions.  Use the "<b><pre class="verbatim">+</pre></b>" tab in the editor area to create new files and open existing files.
 </p>
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgb6aec01" class="outline-3">
-<h3 id="orgb6aec01">(conservatory.scheme.org) Welcome to schemers.org!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
-<div class="outline-text-3" id="text-orgb6aec01">
+<div id="outline-container-ID-20ee7228-6436-4610-9fd1-10e8a00070e9" class="outline-3">
+<h3 id="ID-20ee7228-6436-4610-9fd1-10e8a00070e9">(conservatory.scheme.org) Welcome to schemers.org!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-org2d744e5">
 <pre class="example">
 ROAM_REFS: https://conservatory.scheme.org/schemers/
 </pre>
@@ -411,7 +419,7 @@ Snapshot of the old schemers.org site.
 
 <blockquote>
 <p>
-<code>([[https://conservatory.scheme.org/schemers/Welcome/][welcome]] '(schemers . org))</code>
+<pre class="verbatim">([[https://conservatory.scheme.org/schemers/Welcome/][welcome]] '(schemers . org))</pre>
 </p>
 
 <p>
@@ -449,7 +457,7 @@ Check out the Scheme <a href="https://scheme.meetup.com/">Meetup site</a>.
 <b>The Regular Fare</b>
 </p>
 
-<pre class="example" id="org065a704">
+<pre class="example" id="orgb4b295c">
 (case (what-would-you-like-to-do?)
   ((learn)
    (choose-from FAQ
@@ -491,9 +499,9 @@ Check out the Scheme <a href="https://scheme.meetup.com/">Meetup site</a>.
 </div>
 </div>
 </div>
-<div id="outline-container-orgfb900da" class="outline-2">
-<h2 id="orgfb900da">(en.wikipedia.org) Scheme (programming language) - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-orgfb900da">
+<div id="outline-container-ID-a5b9f3a8-9806-4a44-9162-9ac07930f2dc" class="outline-2">
+<h2 id="ID-a5b9f3a8-9806-4a44-9162-9ac07930f2dc">(en.wikipedia.org) Scheme (programming language) - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org4a76cf0">
 <pre class="example">
 ROAM_REFS: https://en.wikipedia.org/wiki/Scheme_(programming_language)
 </pre>
@@ -511,8 +519,10 @@ The Scheme language is standardized in the official <a href="https://en.wikipedi
 </div>
 </div>
 <div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
-<p class="date">Created: 2025-03-25 Tue 20:22</p>
+</footer>
 </div>
 </body>
 </html>

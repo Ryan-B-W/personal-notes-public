@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:43 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(byorgey.github.io) blog :: Brent -&gt; [String] - Competitive Programming in Haskell: stacks, queues, and monoidal sliding windows</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(byorgey.github.io) blog :: Brent -&gt; [String] - Competitive Programming in Haskell: stacks, queues, and monoidal sliding windows</h1>
+</header><pre class="example">
+ROAM_REFS: https://byorgey.github.io/blog/posts/2024/11/27/stacks-queues.html
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>Competitive Programming in Haskell: stacks, queues, and monoidal sliding windows</li>
+</ul>
+
+<p>
+Posted on November 27, 2024
+Tagged <a href="https://byorgey.github.io/blog/tag/challenge.html">challenge</a>, <a href="https://byorgey.github.io/blog/tag/Kattis.html">Kattis</a>, <a href="https://byorgey.github.io/blog/tag/stack.html">stack</a>, <a href="https://byorgey.github.io/blog/tag/queue.html">queue</a>, <a href="https://byorgey.github.io/blog/tag/sliding%20window.html">sliding window</a>, <a href="https://byorgey.github.io/blog/tag/monoid.html">monoid</a>
+</p>
+
+<p>
+Suppose we have a list of items of length (n), and we want to consider <i>windows</i> (<i>i.e.</i> contiguous subsequences) of width (w) within the list.
+</p>
+
+<p>
+We can compute the <i>sum</i> of each window by brute force in (O(nw)) time, by simply generating the list of all the windows and then summing each.  But, of course, we can do better: keep track of the sum of the current window; every time we slide the window one element to the right we can add the new element that enters the window on the right and subtract the element that falls of the window to the left.  Using this “sliding window” technique, we can compute the sum of every window in only (O(n)) total time instead of (O(nw)).
+</p>
+
+<p>
+How about finding the <i>maximum</i> of every window?  Of course the brute force (O(nw)) algorithm still works, but doing it in only (O(n)) is considerably trickier!  We can't use the same trick as we did for sums since there's no way to “subtract” the element falling off the left.  This really comes down to the fact that addition forms a <i>group</i> (<i>i.e.</i> a monoid-with-inverses), but <pre class="verbatim">max</pre> does not.  So more generally, the question is: how can we compute a <i>monoidal</i> summary for every window in only (O(n)) time?
+</p>
+
+<p>
+Today I want to show you how to solve this problem using one of my favorite competitive programming tricks, which fits beautifully in a functional context.  Along the way we'll also see how to implement simple yet efficient functional queues.
+</p>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

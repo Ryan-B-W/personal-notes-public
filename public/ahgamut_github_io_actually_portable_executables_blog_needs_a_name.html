@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(ahgamut.github.io) Actually Portable Executables | Blog Needs a Name</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(ahgamut.github.io) Actually Portable Executables | Blog Needs a Name</h1>
+</header><pre class="example">
+ROAM_REFS: https://ahgamut.github.io/2021/02/27/ape-cosmo/
+</pre>
+<blockquote>
+<p>
+** Actually Portable Executables
+</p>
+
+<p>
+I came across <a href="https://github.com/jart/cosmopolitan">Cosmopolitan</a> on Hacker News, and I was initially confused, due to a few memories of cross-compilation nightmares: while it should be possible to compile for the same architecture regardless of operating system, wouldn't the OS get confused by the leading bytes of the executable? I read the <a href="https://justine.lol/ape.html">article</a> explaining how it works, but most of it went over my head.
+</p>
+
+<p>
+The example on the <a href="https://github.com/jart/cosmopolitan">Github README</a> used the following script for compilation:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-chroma">gcc -g -O -static -nostdlib -nostdinc -fno-pie -no-pie -mno-red-zone   -o hello.com.dbg hello.c -fuse-ld=bfd -Wl,-T,ape.lds   -include cosmopolitan.h crt.o ape.o cosmopolitan.a
+objcopy -S -O binary hello.com.dbg hello.com
+</pre>
+</div>
+
+<p>
+I converted it into a simple Makefile to run the compilation commands. I tried a bunch of simple C programs (basic arithmetic, reading and writing to files) on Linux+Windows (compiled on Linux), and all of them worked.
+</p>
+</blockquote>
+<div id="outline-container-orga344da0" class="outline-2">
+<h2 id="orga344da0">See Also</h2>
+<div class="outline-text-2" id="text-orga344da0">
+</div>
+<div id="outline-container-orgb82680a" class="outline-3">
+<h3 id="orgb82680a"><a href="justine_lol_actually_portable_executable.html#ID-90a4ff99-9e56-4a12-af93-7d12f33ff1a8">(justine.lol) Actually Portable Executable</a></h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

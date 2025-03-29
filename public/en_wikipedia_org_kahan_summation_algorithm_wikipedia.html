@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:43 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(en.wikipedia.org) Kahan summation algorithm - Wikipedia</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(en.wikipedia.org) Kahan summation algorithm - Wikipedia</h1>
+</header><pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Kahan_summation_algorithm
+</pre>
+<blockquote>
+<p>
+In <a href="https://en.wikipedia.org/wiki/Numerical_analysis">numerical analysis</a>, the <b>Kahan summation algorithm</b>, also known as <b>compensated summation</b>, significantly reduces the <a href="https://en.wikipedia.org/wiki/Numerical_error">numerical error</a> in the total obtained by adding a <a href="https://en.wikipedia.org/wiki/Sequence">sequence</a> of finite-<a href="https://en.wikipedia.org/wiki/Decimal_precision">precision</a> <a href="https://en.wikipedia.org/wiki/Floating-point_number">floating-point numbers</a>, compared to the naive approach.  This is done by keeping a separate <i>running compensation</i> (a variable to accumulate small errors), in effect extending the precision of the sum by the precision of the compensation variable.
+</p>
+
+<p>
+In particular, simply summing \(n\) numbers in sequence has a worst-case error that grows proportional to \(n\), and a <a href="https://en.wikipedia.org/wiki/Root_mean_square">root mean square</a> error that grows as \(\sqrt{n}\) for random inputs (the roundoff errors form a <a href="https://en.wikipedia.org/wiki/Random_walk">random walk</a>).  With compensated summation, using a compensation variable with sufficiently high precision the worst-case error bound is effectively independent of \(n\), so a large number of values can be summed with an error that only depends on the floating-point <a href="https://en.wikipedia.org/wiki/Precision_(arithmetic)">precision</a> of the result.
+</p>
+
+<p>
+The <a href="https://en.wikipedia.org/wiki/Algorithm">algorithm</a> is attributed to <a href="https://en.wikipedia.org/wiki/William_Kahan">William Kahan</a>; <a href="https://en.wikipedia.org/wiki/Ivo_Babu%C5%A1ka">Ivo Babuška</a> seems to have come up with a similar algorithm independently (hence <b>Kahan&#x2013;Babuška summation</b>).  Similar, earlier techniques are, for example, <a href="https://en.wikipedia.org/wiki/Bresenham's_line_algorithm">Bresenham's line algorithm</a>, keeping track of the accumulated error in integer operations (although first documented around the same time) and the <a href="https://en.wikipedia.org/wiki/Delta-sigma_modulation">delta-sigma modulation</a>.
+</p>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-25 Tue 20:22 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2025-03-29 Sat 01:43 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>(texdraft.github.io) Hello</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
@@ -12,9 +10,19 @@
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
 </head>
 <body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
 <div id="content" class="content">
+<header>
 <h1 class="title">(texdraft.github.io) Hello</h1>
-<pre class="example">
+</header><pre class="example">
 ROAM_REFS: https://texdraft.github.io/
 </pre>
 <blockquote>
@@ -23,9 +31,9 @@ ROAM_REFS: https://texdraft.github.io/
 <a href="https://texdraft.github.io/lisp-compiler/internals.html">Lisp compiler internals</a>
 </p>
 </blockquote>
-<div id="outline-container-org42000b4" class="outline-2">
-<h2 id="org42000b4">(texdraft.github.io) LISP 1.5 Source</h2>
-<div class="outline-text-2" id="text-org42000b4">
+<div id="outline-container-ID-859eefb6-e694-4907-a5f8-bb5168627b62" class="outline-2">
+<h2 id="ID-859eefb6-e694-4907-a5f8-bb5168627b62">(texdraft.github.io) LISP 1.5 Source</h2>
+<div class="outline-text-2" id="text-org597d849">
 <pre class="example">
 ROAM_REFS: https://texdraft.github.io/lisp-1.5/listing.html
 </pre>
@@ -88,7 +96,7 @@ One or more fields in several formats, related to <a href="https://web.archive.o
 </p>
 
 <p>
-Today we would probably say “label”.  The lone exception is with the HED psuedo-operation, which instead interpreted the first column as a character used to “head” symbols.  Heading a symbol meant prefixing it with the head character and spaces to pad it to six characters (leaving it alone if it's already long enough).  For example, if the head is “=L=”, then <code>LOAD</code> is headed to <code>L␣LOAD</code>, but <code>COMMON</code> is unaffected by a head.  Programmers can opt out per symbol by writing <i><code>C=/=$=/=S</code></i>, where <i><code>C</code></i> is the desired head character (or empty to indicate no head) and <i><code>S</code></i> is the name before heading.  For example, <code>C$MOV</code> becomes <code>C␣␣MOV</code>, and <code>$CPPI</code> will always be <code>␣␣CPPI</code> no matter what the head is.  The point of this feature is to provide rudimentary namespace separation, so that symbols' “scope” could be limited to certain subprograms.  Later assemblers supported multiple head simultaneously using the new HEAD pseudo-operation, which took an arbitrary number of heads in the variable field.
+Today we would probably say “label”.  The lone exception is with the HED psuedo-operation, which instead interpreted the first column as a character used to “head” symbols.  Heading a symbol meant prefixing it with the head character and spaces to pad it to six characters (leaving it alone if it's already long enough).  For example, if the head is “=L=”, then <pre class="verbatim">LOAD</pre> is headed to <pre class="verbatim">L␣LOAD</pre>, but <pre class="verbatim">COMMON</pre> is unaffected by a head.  Programmers can opt out per symbol by writing <i><pre class="verbatim">C=/=$=/=S</pre></i>, where <i><pre class="verbatim">C</pre></i> is the desired head character (or empty to indicate no head) and <i><pre class="verbatim">S</pre></i> is the name before heading.  For example, <pre class="verbatim">C$MOV</pre> becomes <pre class="verbatim">C␣␣MOV</pre>, and <pre class="verbatim">$CPPI</pre> will always be <pre class="verbatim">␣␣CPPI</pre> no matter what the head is.  The point of this feature is to provide rudimentary namespace separation, so that symbols' “scope” could be limited to certain subprograms.  Later assemblers supported multiple head simultaneously using the new HEAD pseudo-operation, which took an arbitrary number of heads in the variable field.
 </p>
 
 <p>
@@ -121,9 +129,9 @@ Good luck!
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgc60d7f6" class="outline-2">
-<h2 id="orgc60d7f6">(texdraft.github.io) Lisp Compiler</h2>
-<div class="outline-text-2" id="text-orgc60d7f6">
+<div id="outline-container-ID-8e828444-d654-43f9-8430-1314204ced46" class="outline-2">
+<h2 id="ID-8e828444-d654-43f9-8430-1314204ced46">(texdraft.github.io) Lisp Compiler</h2>
+<div class="outline-text-2" id="text-org6c82ab3">
 <pre class="example">
 ROAM_REFS: https://texdraft.github.io/lisp-compiler/internals.html
 </pre>
@@ -175,18 +183,20 @@ The source code of an earlier version of the HLC also exists, in a document titl
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgaa782c8" class="outline-2">
-<h2 id="orgaa782c8">See Also</h2>
-<div class="outline-text-2" id="text-orgaa782c8">
+<div id="outline-container-org5c06266" class="outline-2">
+<h2 id="org5c06266">See Also</h2>
+<div class="outline-text-2" id="text-org5c06266">
 </div>
-<div id="outline-container-org4661ba0" class="outline-3">
-<h3 id="org4661ba0"><a href="20250323200341-lisp_1_5_programmer_s_manual.html#ID-ff9fbc90-85a8-4b34-a759-a9cc19b9ed15">(www.softwarepreservation.org) LISP 1.5 Programmer's Manual - LISP 1.5 Programmers Manual.pdf</a></h3>
+<div id="outline-container-org24e0eab" class="outline-3">
+<h3 id="org24e0eab"><a href="20250323200341-lisp_1_5_programmer_s_manual.html#ID-ff9fbc90-85a8-4b34-a759-a9cc19b9ed15">(www.softwarepreservation.org) LISP 1.5 Programmer's Manual - LISP 1.5 Programmers Manual.pdf</a></h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
-<p class="date">Created: 2025-03-25 Tue 20:22</p>
+</footer>
 </div>
 </body>
 </html>

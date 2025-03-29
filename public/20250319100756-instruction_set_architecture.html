@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Instruction Set Architecture (ISA)</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Instruction Set Architecture (ISA)</h1>
+</header><p>
+An abstract model of the execution and operation of a computer or family of computers.
+</p>
+<div id="outline-container-ID-5e4e5f65-55e0-43e3-870c-7034fe27df1f" class="outline-2">
+<h2 id="ID-5e4e5f65-55e0-43e3-870c-7034fe27df1f">(en.wikipedia.org) Instruction set architecture - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org43b3e48">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Instruction_set_architecture
+</pre>
+
+<blockquote>
+<p>
+In <a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a>, an <b>instruction set architecture</b> (<b>ISA</b>) is an <a href="https://en.wikipedia.org/wiki/Conceptual_model">abstract model</a> that generally defines how <a href="https://en.wikipedia.org/wiki/Software">software</a> controls the <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a> in a computer or a family of computers.  A device or program that executes instructions described by that ISA, such as a central processing unit (CPU), is called an <i><a href="https://en.wikipedia.org/wiki/Implementation">implementation</a></i> of that ISA.
+</p>
+
+<p>
+In general, an ISA defines the supported <a href="https://en.wikipedia.org/wiki/Machine_code">instructions</a>, <a href="https://en.wikipedia.org/wiki/Data_type">data types</a>, <a href="https://en.wikipedia.org/wiki/Register_(computer)">registers</a>, the hardware support for managing <a href="https://en.wikipedia.org/wiki/Computer_memory">main memory</a>,<sup>[/<a href="https://en.wikipedia.org/wiki/Wikipedia:Please_clarify">clarification needed</a>/]</sup> fundamental features (such as the <a href="https://en.wikipedia.org/wiki/Memory_consistency">memory consistency</a>, <a href="https://en.wikipedia.org/wiki/Addressing_mode">addressing modes</a>, <a href="https://en.wikipedia.org/wiki/Virtual_memory">virtual memory</a>), and the <a href="https://en.wikipedia.org/wiki/Input/output">input/output</a> model of implementations of the ISA.
+</p>
+
+<p>
+An ISA specifies the behavior of <a href="https://en.wikipedia.org/wiki/Machine_code">machine code</a> running on implementations of that ISA in a fashion that does not depend on the characteristics of that implementation, providing <a href="https://en.wikipedia.org/wiki/Binary_compatibility">binary compatibility</a> between implementations.  This enables multiple implementations of an ISA that differ in characteristics such as <a href="https://en.wikipedia.org/wiki/Computer_performance">performance</a>, physical size, and monetary cost (among other things), but that are capable of running the same machine code, so that a lower-performance, lower-cost machine can be replaced with a higher-cost, higher-performance machine without having to replace software.  It also enables the evolution of the <a href="https://en.wikipedia.org/wiki/Microarchitecture">microarchitectures</a> of the implementations of that ISA, so that a newer, higher-performance implementation of an ISA can run software that runs on previous generations of implementations.
+</p>
+
+<p>
+If an <a href="https://en.wikipedia.org/wiki/Operating_system">operating system</a> maintains a standard and compatible <a href="https://en.wikipedia.org/wiki/Application_binary_interface">application binary interface</a> (ABI) for a particular ISA, machine code will run on future implementations of that ISA and operating system.  However, if an ISA supports running multiple operating systems, it does not guarantee that machine code for one operating system will run on another operating system, unless the first operating system supports running machine code built for the other operating system.
+</p>
+
+<p>
+An ISA can be extended by adding instructions or other capabilities, or adding support for larger addresses and data values; an implementation of the extended ISA will still be able to execute <a href="https://en.wikipedia.org/wiki/Machine_code">machine code</a> for versions of the ISA without those extensions.  Machine code using those extensions will only run on implementations that support those extensions.
+</p>
+
+<p>
+The binary compatibility that they provide makes ISAs one of the most fundamental abstractions in <a href="https://en.wikipedia.org/wiki/Computing">computing</a>.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

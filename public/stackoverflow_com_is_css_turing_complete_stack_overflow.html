@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:43 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(stackoverflow.com) Is CSS Turing complete? - Stack Overflow</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(stackoverflow.com) Is CSS Turing complete? - Stack Overflow</h1>
+</header><pre class="example">
+ROAM_REFS: https://stackoverflow.com/questions/2497146/is-css-turing-complete
+</pre>
+<p>
+Question:
+</p>
+<blockquote>
+<p>
+CSS isn't, insofar as I know, Turing complete. But my knowledge of CSS is very limited.
+</p>
+
+<p>
+Is CSS Turing complete?
+</p>
+</blockquote>
+
+<p>
+Answer:
+</p>
+<blockquote>
+<p>
+You can encode Rule 110 in CSS3, so it's Turing-complete so long as you consider an appropriate accompanying HTML file and user interactions to be part of the “execution” of CSS. A pretty good implementation is available, and another implementation is included here:
+</p>
+<div class="org-src-container">
+<pre class="src src-css">body {
+    -webkit-animation: bugfix infinite 1s;
+    margin: 0.5em 1em;
+}
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+
+/*
+ * 111 110 101 100 011 010 001 000
+ *  0   1   1   0   1   1   1   0
+ */
+
+body &gt; input {
+    -webkit-appearance: none;
+    display: block;
+    float: left;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 0px 3px;
+    margin: 0;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 7pt;
+}
+body &gt; input::before {
+    content: "0";
+}
+
+p {
+    font-family: Verdana, sans-serif;
+    font-size: 9pt;
+    margin-bottom: 0.5em;
+}
+
+body &gt; input:nth-of-type(-n+30) { border-top: 1px solid #ddd; }
+body &gt; input:nth-of-type(30n+1) { border-left: 1px solid #ddd; clear: left; }
+
+body &gt; input::before { content: "0"; }
+
+body &gt; input:checked::before { content: "1"; }
+body &gt; input:checked { background: #afa !important; }
+
+
+input:not(:checked) +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input::before {
+    content: "1";
+}
+input:not(:checked) +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input {
+    background: #fa0;
+}
+
+
+input:checked +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input::before {
+    content: "1";
+}
+input:checked +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input {
+    background: #fa0;
+}
+
+
+input:checked +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input::before {
+    content: "1";
+}
+input:checked +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input {
+    background: #fa0;
+}
+
+input:checked + input:checked + input:checked +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input::before {
+    content: "0";
+}
+input:checked + input:checked + input:checked +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input {
+    background: #fff;
+}
+
+input:not(:checked) + input:not(:checked) + input:not(:checked) +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input::before {
+    content: "0";
+}
+input:not(:checked) + input:not(:checked) + input:not(:checked) +
+        *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+        input {
+    background: #fff;
+}
+
+body &gt; input:nth-child(30n) { display: none !important; }
+body &gt; input:nth-child(30n) + label { display: none !important; }
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-html">&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Rule_110"&gt;Rule 110&lt;/a&gt; in (webkit) CSS, proving Turing-completeness.&lt;/p&gt;
+
+
+&lt;!-- A total of 900 checkboxes required --&gt;
+&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;&lt;input type="checkbox"/&gt;
+</pre>
+</div>
+</blockquote>
+<p>
+Which links to:
+</p>
+<ul class="org-ul">
+<li><a href="eli_fox_epste_in_rule_110.html#ID-d232a12f-e8dd-4f76-a9c1-995d796e3e4d">(eli.fox-epste.in) Rule 110</a></li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

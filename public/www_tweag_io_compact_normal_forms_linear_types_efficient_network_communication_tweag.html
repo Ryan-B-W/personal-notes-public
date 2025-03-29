@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:42 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(www.tweag.io) Compact normal forms + linear types = efficient network communication - Tweag</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(www.tweag.io) Compact normal forms + linear types = efficient network communication - Tweag</h1>
+</header><pre class="example">
+ROAM_REFS: https://www.tweag.io/blog/2017-08-24-linear-types-packed-data/
+</pre>
+<blockquote>
+<p>
+** Compact normal forms + linear types = efficient network communication
+</p>
+
+<p>
+We saw <a href="https://www.tweag.io/posts/2017-08-03-linear-typestates.html/">last time</a> that with linear types, we could precisely capture the state of sockets <i>in their types</i>.  In this post, I want to use the same idea of tracking states in types, but applied to a more unusual example from our <a href="https://github.com/tweag/linear-types/releases/download/v2.0/hlt.pdf">paper</a>: sending rich structured data types across the network and back with as little copying as possible.
+</p>
+
+<p>
+Our approach to this problem works for values of any datatype, but for the sake of simplicity, we'll consider here simple tree values of the following datatype:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-language-haskell">data Tree = Branch Tree Tree | Leaf Int
+</pre>
+</div>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

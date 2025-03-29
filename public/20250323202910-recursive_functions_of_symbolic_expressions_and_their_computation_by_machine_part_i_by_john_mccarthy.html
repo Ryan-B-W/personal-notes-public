@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-25 Tue 20:22 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!-- 2025-03-29 Sat 01:43 -->
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Recursive functions of symbolic expressions and their computation by machine, Part I by John McCarthy</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
@@ -12,14 +10,24 @@
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
 </head>
 <body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
 <div id="content" class="content">
+<header>
 <h1 class="title">Recursive functions of symbolic expressions and their computation by machine, Part I by John McCarthy</h1>
-<p>
+</header><p>
 The original <a href="20240714175050-lisp.html#ID-84ae6e85-a6a2-4133-bc53-274238081c2d">Lisp</a> paper by <a href="20250323203017-john_mccarthy.html#ID-9c394806-9d31-4312-a2cf-ae0d0935f7b1">John McCarthy</a>.
 </p>
-<div id="outline-container-org5ffc5c7" class="outline-2">
-<h2 id="org5ffc5c7">(www-formal.stanford.edu) recursive.dvi - recursive.pdf&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mime_type_application_pdf">mime_type_application_pdf</span>&#xa0;<span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-org5ffc5c7">
+<div id="outline-container-ID-e734b3b6-10ab-4f22-8fa5-e7b672844076" class="outline-2">
+<h2 id="ID-e734b3b6-10ab-4f22-8fa5-e7b672844076">(www-formal.stanford.edu) recursive.dvi - recursive.pdf&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mime_type_application_pdf">mime_type_application_pdf</span>&#xa0;<span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orgb3a7968">
 <pre class="example">
 ROAM_REFS: http://www-formal.stanford.edu/jmc/recursive.pdf
 </pre>
@@ -63,16 +71,16 @@ We hope to describe some of the symbolic computations for which LISP has been us
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgd022f22" class="outline-2">
-<h2 id="orgd022f22">(dl.acm.org) Recursive functions of symbolic expressions and their computation by machine, Part I | Communications of the ACM&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-orgd022f22">
+<div id="outline-container-ID-14decf41-26d3-423e-ad2f-b9a25c4377b0" class="outline-2">
+<h2 id="ID-14decf41-26d3-423e-ad2f-b9a25c4377b0">(dl.acm.org) Recursive functions of symbolic expressions and their computation by machine, Part I | Communications of the ACM&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orge331d0b">
 <pre class="example">
 ROAM_REFS: https://dl.acm.org/doi/10.1145/367177.367199
 </pre>
 </div>
-<div id="outline-container-org760cb4e" class="outline-3">
-<h3 id="org760cb4e">(dl.acm.org) Recursive functions of symbolic expressions and their computation by machine, Part I - 367177.367199.pdf&#xa0;&#xa0;&#xa0;<span class="tag"><span class="metadata_file_poor_quality">metadata_file_poor_quality</span>&#xa0;<span class="mime_type_application_pdf">mime_type_application_pdf</span></span></h3>
-<div class="outline-text-3" id="text-org760cb4e">
+<div id="outline-container-ID-11f599d0-7390-4e27-9e17-a059da87acde" class="outline-3">
+<h3 id="ID-11f599d0-7390-4e27-9e17-a059da87acde">(dl.acm.org) Recursive functions of symbolic expressions and their computation by machine, Part I - 367177.367199.pdf&#xa0;&#xa0;&#xa0;<span class="tag"><span class="metadata_file_poor_quality">metadata_file_poor_quality</span>&#xa0;<span class="mime_type_application_pdf">mime_type_application_pdf</span></span></h3>
+<div class="outline-text-3" id="text-orgc905530">
 <pre class="example">
 ROAM_REFS: https://dl.acm.org/doi/pdf/10.1145/367177.367199
 </pre>
@@ -81,8 +89,10 @@ ROAM_REFS: https://dl.acm.org/doi/pdf/10.1145/367177.367199
 </div>
 </div>
 <div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
-<p class="date">Created: 2025-03-25 Tue 20:22</p>
+</footer>
 </div>
 </body>
 </html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:43 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digital Font Rendering</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Digital Font Rendering</h1>
+</header><p>
+Rendering of fonts digitally.  Namely, computers.
+</p>
+<div id="outline-container-ID-1f807398-9548-46d5-8098-2651736c0cc0" class="outline-2">
+<h2 id="ID-1f807398-9548-46d5-8098-2651736c0cc0">Subpixel Rendering</h2>
+<div class="outline-text-2" id="text-orgec0d488">
+<p>
+Rendering of fonts using a display's subpixels to further increase resolution in one axis.  Most commonly used with LCD displays.  Microsoft's brand of subpixel rendering is branded ClearType.
+</p>
+
+<p>
+This also tends to be quite controversial, see <a href="www_reddit_com_turning_on_subpixel_rendering_makes_a_day_and_night_difference_r_linux.html#ID-72a47beb-2749-4056-92f6-ab391fccc651">(www.reddit.com) Turning on Subpixel rendering makes a Day and Night difference! : r/linux</a>.
+</p>
+</div>
+<div id="outline-container-ID-a52d4909-41db-4c3f-ab6e-a457bfce4c4b" class="outline-3">
+<h3 id="ID-a52d4909-41db-4c3f-ab6e-a457bfce4c4b">(en.wikipedia.org) Subpixel rendering - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-org9586819">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Subpixel_rendering
+</pre>
+
+<blockquote>
+<p>
+Subpixel rendering is a method used to increase the effective resolution of a color display device.  It takes advantage of each pixel's composition of individually addressable red, green, and blue components adjacent on the display matrix, called subpixels, and uses them as rendering units instead of pixels.
+Subpixel rendering is primarily used for text rendering on standard DPI displays.
+Despite the inherent color anomalies, it can also be used to render general graphics.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-148ded9e-5378-42e5-96fc-c195432211bb" class="outline-3">
+<h3 id="ID-148ded9e-5378-42e5-96fc-c195432211bb">(www.grc.com) GRC | How Sub-Pixel Font Rendering Works  &#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-orga242787">
+<pre class="example">
+ROAM_REFS: https://www.grc.com/ct/ctwhat.htm
+</pre>
+</div>
+</div>
+<div id="outline-container-ID-7fa712ba-1781-4d9a-9d52-68256ce74ca2" class="outline-3">
+<h3 id="ID-7fa712ba-1781-4d9a-9d52-68256ce74ca2">(www.lagom.nl) Subpixel layout - Lagom LCD test&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span>&#xa0;<span class="ATTACH">ATTACH</span></span></h3>
+<div class="outline-text-3" id="text-org6c6f27b">
+<pre class="example">
+ROAM_REFS: http://www.lagom.nl/lcd-test/subpixel.php
+</pre>
+
+<blockquote>
+<p>
+Each pixel on an LCD screen consists of three subpixels: red, green, and blue (RGB), that are sitting next to each other.  Most operating systems since about 2003 can improve the quality of on-screen text by using these subpixels.  However, this only works if the operating system knows how the subpixels are arranged.  For the majority of the monitors, the arrangement is RGB (red on the left, green in the middle, and blue on the right).  However, on an occasional monitor, it is the other way around (BGR).  And if you orient your monitor in portrait mode, the subpixel layout can be V-RGB (vertical RGB) or V-BGR.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="outline-container-ID-bdd9ee2d-b0ad-4935-bd45-76bab9d4e382" class="outline-2">
+<h2 id="ID-bdd9ee2d-b0ad-4935-bd45-76bab9d4e382">Fontconfig</h2>
+<div class="outline-text-2" id="text-org89a272e">
+<p>
+System used on <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> for configuring font rendering.  Namely, <a href="20240909211032-freetype.html#ID-71db43c6-1a39-4e98-8cb9-1305958a5978">FreeType</a>.
+</p>
+</div>
+<div id="outline-container-ID-1899f0db-5e4e-44fe-8d13-c8a2760f94a1" class="outline-3">
+<h3 id="ID-1899f0db-5e4e-44fe-8d13-c8a2760f94a1">(wiki.gentoo.org) Fontconfig - Gentoo wiki&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-orga956d11">
+<pre class="example">
+ROAM_REFS: https://wiki.gentoo.org/wiki/Fontconfig
+</pre>
+
+<blockquote>
+<p>
+Fontconfig (<code>media-libs/fontconfig</code>) is intended to provide uniform font selection and configuration amongst all GUI applications.  Although it is common for a desktop environment to provide its own font overrides and configuration utilities, Fontconfig is still the underlying system.
+Refer to the Fonts page for more general information about using fonts on Gentoo, and to the Fonts/Background page for background information about font-related concepts, terminology and systems.
+</p>
+</blockquote>
+
+<p>
+See Also:
+</p>
+</div>
+<div id="outline-container-org405bc22" class="outline-4">
+<h4 id="org405bc22"><a href="#ID-c3579d32-363c-4800-a255-37e070d41b24">(wiki.gentoo.org) Fonts - Gentoo wiki</a></h4>
+</div>
+<div id="outline-container-orgc2ae750" class="outline-4">
+<h4 id="orgc2ae750"><a href="wiki_gentoo_org_fonts_background_gentoo_wiki.html#ID-44f80123-0e70-4fa1-9c12-66a9cfdf6105">(wiki.gentoo.org) Fonts/Background - Gentoo wiki</a></h4>
+</div>
+</div>
+<div id="outline-container-ID-23050dcb-a29f-4039-975c-912c77a7b353" class="outline-3">
+<h3 id="ID-23050dcb-a29f-4039-975c-912c77a7b353">(wiki.archlinux.org) Font configuration - ArchWiki&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-orgbc67fbf">
+<pre class="example">
+ROAM_REFS: https://wiki.archlinux.org/title/Font_configuration
+</pre>
+
+<blockquote>
+<p>
+Fontconfig is a library designed to provide a list of available fonts to applications, as well as configuration for how fonts get rendered.  The FreeType library renders fonts based on this configuration.  The freetype2 font rendering package includes the bytecode interpreter (BCI) enabled for better font rendering, especially with an LCD monitor.  See #Fontconfig configuration and Font configuration/Examples.
+Although Fontconfig is used often in modern Unix and Unix-like operating systems, some applications rely on the original method of font selection and display, the X Logical Font Description.
+</p>
+</blockquote>
+
+<p>
+See also:
+</p>
+</div>
+<div id="outline-container-orgc5c5c27" class="outline-4">
+<h4 id="orgc5c5c27"><a href="20240909211032-freetype.html#ID-71db43c6-1a39-4e98-8cb9-1305958a5978">FreeType</a></h4>
+</div>
+</div>
+<div id="outline-container-ID-db089c5f-15c7-4e7c-8eef-fdb5d391a102" class="outline-3">
+<h3 id="ID-db089c5f-15c7-4e7c-8eef-fdb5d391a102">(www.linuxfromscratch.org) Tuning Fontconfig&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-orgdb22412">
+<pre class="example">
+ROAM_REFS: https://www.linuxfromscratch.org/blfs/view/svn/x/tuning-fontconfig.html
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-ID-8555b189-29a5-45de-a3b8-f607759bb901" class="outline-2">
+<h2 id="ID-8555b189-29a5-45de-a3b8-f607759bb901">Linux Font Handling</h2>
+<div class="outline-text-2" id="text-org410e955">
+<p>
+How <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> handles font rendering.
+</p>
+</div>
+<div id="outline-container-ID-c3579d32-363c-4800-a255-37e070d41b24" class="outline-3">
+<h3 id="ID-c3579d32-363c-4800-a255-37e070d41b24">(wiki.gentoo.org) Fonts - Gentoo wiki&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
+<div class="outline-text-3" id="text-org6d1d429">
+<pre class="example">
+ROAM_REFS: https://wiki.gentoo.org/wiki/Fonts
+</pre>
+
+<blockquote>
+<p>
+Fonts are a core part of the system and are necessary in order to represent text on a display.
+The best starting point for general information about configuration, use and management of fonts on Gentoo, particularly for software running under X or a Wayland compositor (including terminal emulators), is the Fontconfig page.
+</p>
+</blockquote>
+
+<p>
+See also:
+</p>
+</div>
+<div id="outline-container-orgeb73d94" class="outline-4">
+<h4 id="orgeb73d94"><a href="#ID-1899f0db-5e4e-44fe-8d13-c8a2760f94a1">(wiki.gentoo.org) Fontconfig - Gentoo wiki</a></h4>
+</div>
+<div id="outline-container-org78da445" class="outline-4">
+<h4 id="org78da445"><a href="wiki_gentoo_org_fonts_console_gentoo_wiki.html#ID-df42dbd3-dd99-42ad-bad9-4e5ab48b721e">(wiki.gentoo.org) Fonts/Console - Gentoo wiki</a></h4>
+</div>
+<div id="outline-container-org94fa91a" class="outline-4">
+<h4 id="org94fa91a"><a href="wiki_gentoo_org_fonts_software_gentoo_wiki.html#ID-aca3027d-14d0-43e1-ab13-de86640ed0c8">(wiki.gentoo.org) Fonts/Software - Gentoo wiki</a></h4>
+</div>
+<div id="outline-container-orgd88e23c" class="outline-4">
+<h4 id="orgd88e23c"><a href="mrandri19_github_io_modern_text_rendering_with_linux_overview_home.html#ID-9a533362-6ccb-4eea-a4ca-e9f2db1d4955">(mrandri19.github.io) Modern text rendering with Linux: Overview | Home</a></h4>
+</div>
+</div>
+<div id="outline-container-org8637ada" class="outline-3">
+<h3 id="org8637ada"><a href="#ID-bdd9ee2d-b0ad-4935-bd45-76bab9d4e382">Fontconfig</a></h3>
+</div>
+<div id="outline-container-org23802d9" class="outline-3">
+<h3 id="org23802d9">Tools for working with fonts on Linux</h3>
+<div class="outline-text-3" id="text-org23802d9">
+</div>
+<div id="outline-container-orga784c89" class="outline-4">
+<h4 id="orga784c89"><a href="20240909210639-ftview.html#ID-3681e8da-7fe6-4ce0-98c8-7384de6ce324">ftview</a></h4>
+</div>
+<div id="outline-container-org0b8ddaa" class="outline-4">
+<h4 id="org0b8ddaa"><a href="github_com_fontmanager_font_manager.html#ID-1d78f3a4-ed38-486a-b23c-558ef96a91c2">(github.com) FontManager/font-manager</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

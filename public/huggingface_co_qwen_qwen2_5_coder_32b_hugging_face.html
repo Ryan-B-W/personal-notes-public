@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(huggingface.co) Qwen/Qwen2.5-Coder-32B · Hugging Face</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(huggingface.co) Qwen/Qwen2.5-Coder-32B · Hugging Face</h1>
+</header><pre class="example">
+ROAM_REFS: https://huggingface.co/Qwen/Qwen2.5-Coder-32B
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>Qwen2.5-Coder-32B</li>
+</ul>
+
+<p>
+**  Introduction
+</p>
+
+<p>
+Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen).  As of now, Qwen2.5-Coder has covered six mainstream model sizes, 0.5, 1.5, 3, 7, 14, 32 billion parameters, to meet the needs of different developers.  Qwen2.5-Coder brings the following improvements upon CodeQwen1.5:
+</p>
+
+<ul class="org-ul">
+<li>Significantly improvements in <b>code generation</b>, <b>code reasoning</b> and <b>code fixing</b>.  Base on the strong Qwen2.5, we scale up the training tokens into 5.5 trillion including source code, text-code grounding, Synthetic data, etc.  Qwen2.5-Coder-32B has become the current state-of-the-art open-source codeLLM, with its coding abilities matching those of GPT-4o.</li>
+<li>A more comprehensive foundation for real-world applications such as <b>Code Agents</b>.  Not only enhancing coding capabilities but also maintaining its strengths in mathematics and general competencies.</li>
+<li><b>Long-context Support</b> up to 128K tokens.</li>
+</ul>
+
+<p>
+<b>This repo contains the 32B Qwen2.5-Coder model</b>, which has the following features:
+</p>
+
+<ul class="org-ul">
+<li>Type: Causal Language Models</li>
+<li>Training Stage: Pretraining</li>
+<li>Architecture: transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias</li>
+<li>Number of Parameters: 32.5B</li>
+<li>Number of Paramaters (Non-Embedding): 31.0B</li>
+<li>Number of Layers: 64</li>
+<li>Number of Attention Heads (GQA): 40 for Q and 8 for KV</li>
+<li>Context Length: Full 131,072 tokens
+<ul class="org-ul">
+<li>Please refer to <a href="https://huggingface.co/Qwen/Qwen2.5-Coder-32B#processing-long-texts">this section</a> for detailed instructions on how to deploy Qwen2.5 for handling long texts.</li>
+</ul></li>
+</ul>
+
+<p>
+<b>We do not recommend using base language models for conversations.</b> Instead, you can apply post-training, e.g., SFT, RLHF, continued pretraining, etc., or fill in the middle tasks on this model.
+</p>
+
+<p>
+For more details, please refer to our <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">blog</a>, <a href="https://github.com/QwenLM/Qwen2.5-Coder">GitHub</a>, <a href="https://qwen.readthedocs.io/en/latest/">Documentation</a>, <a href="https://arxiv.org/abs/2409.12186">Arxiv</a>.
+</p>
+
+<p>
+**  Requirements
+</p>
+
+<p>
+The code of Qwen2.5-Coder has been in the latest Hugging face <pre class="verbatim">transformers</pre> and we advise you to use the latest version of <pre class="verbatim">transformers</pre>.
+</p>
+
+<p>
+With <pre class="verbatim">transformers&lt;4.37.0</pre>, you will encounter the following error:
+</p>
+
+<pre class="example" id="org3154e94">
+KeyError: 'qwen2'
+</pre>
+
+<p>
+<b>*</b>  Processing Long Texts
+</p>
+
+<p>
+The current <pre class="verbatim">config.json</pre> is set for context length up to 32,768 tokens.  To handle extensive inputs exceeding 32,768 tokens, we utilize <a href="https://arxiv.org/abs/2309.00071">YaRN</a>, a technique for enhancing model length extrapolation, ensuring optimal performance on lengthy texts.
+</p>
+
+<p>
+For supported frameworks, you could add the following to <pre class="verbatim">config.json</pre> to enable YaRN:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-json">{
+  ...,
+  "rope_scaling": {
+    "factor": 4.0,
+    "original_max_position_embeddings": 32768,
+    "type": "yarn"
+  }
+}
+</pre>
+</div>
+
+<p>
+For deployment, we recommend using vLLM.  Please refer to our <a href="https://qwen.readthedocs.io/en/latest/deployment/vllm.html">Documentation</a> for usage if you are not familar with vLLM.  Presently, vLLM only supports static YARN, which means the scaling factor remains constant regardless of input length, <b>potentially impacting performance on shorter texts</b>.  We advise adding the <pre class="verbatim">rope_scaling</pre> configuration only when processing long contexts is required.
+</p>
+
+<p>
+**  Evaluation &amp; Performance
+</p>
+
+<p>
+Detailed evaluation results are reported in this <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">📑 blog</a>.
+</p>
+
+<p>
+For requirements on GPU memory and the respective throughput, see results <a href="https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html">here</a>.
+</p>
+
+<p>
+**  Citation
+</p>
+
+<p>
+If you find our work helpful, feel free to give us a cite.
+</p>
+
+<pre class="example" id="orgc9bec11">
+@article{hui2024qwen2,
+      title={Qwen2. 5-Coder Technical Report},
+      author={Hui, Binyuan and Yang, Jian and Cui, Zeyu and Yang, Jiaxi and Liu, Dayiheng and Zhang, Lei and Liu, Tianyu and Zhang, Jiajun and Yu, Bowen and Dang, Kai and others},
+      journal={arXiv preprint arXiv:2409.12186},
+      year={2024}
+}
+@article{qwen2,
+      title={Qwen2 Technical Report},
+      author={An Yang and Baosong Yang and Binyuan Hui and Bo Zheng and Bowen Yu and Chang Zhou and Chengpeng Li and Chengyuan Li and Dayiheng Liu and Fei Huang and Guanting Dong and Haoran Wei and Huan Lin and Jialong Tang and Jialin Wang and Jian Yang and Jianhong Tu and Jianwei Zhang and Jianxin Ma and Jin Xu and Jingren Zhou and Jinze Bai and Jinzheng He and Junyang Lin and Kai Dang and Keming Lu and Keqin Chen and Kexin Yang and Mei Li and Mingfeng Xue and Na Ni and Pei Zhang and Peng Wang and Ru Peng and Rui Men and Ruize Gao and Runji Lin and Shijie Wang and Shuai Bai and Sinan Tan and Tianhang Zhu and Tianhao Li and Tianyu Liu and Wenbin Ge and Xiaodong Deng and Xiaohuan Zhou and Xingzhang Ren and Xinyu Zhang and Xipin Wei and Xuancheng Ren and Yang Fan and Yang Yao and Yichang Zhang and Yu Wan and Yunfei Chu and Yuqiong Liu and Zeyu Cui and Zhenru Zhang and Zhihao Fan},
+      journal={arXiv preprint arXiv:2407.10671},
+      year={2024}
+}
+</pre>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

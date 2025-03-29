@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-29 Sat 01:41 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Power ISA</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">Power ISA</h1>
+</header><p>
+Power (also PowerPC and Power ISA) is a family of <a href="20250319103827-reduced_instruction_set_computer.html#ID-321ba3cc-d73a-4620-88f7-2527cbae1aac">RISC</a> <a href="20250319100756-instruction_set_architecture.html#ID-c980a340-2564-437e-a79f-388122a206ad">ISA</a>s and corresponding microprocessors originally developed by IBM and now managed by OpenPOWER Foundation led by IBM.
+</p>
+<div id="outline-container-ID-e9e728d9-091f-4b8e-a9a4-386df6b99c89" class="outline-2">
+<h2 id="ID-e9e728d9-091f-4b8e-a9a4-386df6b99c89">(en.wikipedia.org) Power ISA - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org48b11b4">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Power_ISA
+</pre>
+
+<blockquote>
+<p>
+<b>Power ISA</b> is a <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">reduced instruction set computer</a> (RISC) <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instruction set architecture</a> (ISA) currently developed by the <a href="https://en.wikipedia.org/wiki/OpenPOWER_Foundation">OpenPOWER Foundation</a>, led by <a href="https://en.wikipedia.org/wiki/IBM">IBM</a>.  It was originally developed by IBM and the now-defunct <a href="https://en.wikipedia.org/wiki/Power.org">Power.org</a> industry group.  Power ISA is an evolution of the <a href="https://en.wikipedia.org/wiki/PowerPC">PowerPC</a> ISA, created by the mergers of the core PowerPC ISA and the optional Book E for embedded applications.  The merger of these two components in 2006 was led by Power.org founders IBM and <a href="https://en.wikipedia.org/wiki/Freescale_Semiconductor">Freescale Semiconductor</a>.
+</p>
+
+<p>
+Prior to version 3.0, the ISA is divided into several categories. <a href="https://en.wikipedia.org/wiki/Processor_(computing)">Processors</a> implement a set of these categories as required for their <a href="https://en.wikipedia.org/wiki/Task_(computing)">task</a>.  Different classes of processors are required to implement certain categories, for example a server-class processor includes the categories: <i>Base</i>, <i>Server</i>, <i>Floating-Point</i>, <i>64-Bit</i>, etc.  All processors implement the Base category.
+</p>
+
+<p>
+Power ISA is a RISC <a href="https://en.wikipedia.org/wiki/Load/store_architecture">load/store architecture</a>.  It has multiple sets of <a href="https://en.wikipedia.org/wiki/Processor_register">registers</a>:
+</p>
+
+<ul class="org-ul">
+<li><i>32</i> × 32-bit or 64-bit general-purpose registers (GPRs) for <a href="https://en.wikipedia.org/wiki/Arithmetic_logic_unit">integer operations</a>.</li>
+<li><i>64</i> × 128-bit vector scalar registers (VSRs) for <a href="https://en.wikipedia.org/wiki/Vector_processor">vector operations</a> and <a href="https://en.wikipedia.org/wiki/Floating-point_unit">floating-point operations</a>.
+<ul class="org-ul">
+<li><i>32</i> × 64-bit floating-point registers (FPRs) as part of the VSRs for floating-point operations.</li>
+<li><i>32</i> × 128-bit vector registers (VRs) as part of the VSRs for vector operations.</li>
+</ul></li>
+<li><i>8</i> × 4-bit condition register fields (CRs) for comparison and <a href="https://en.wikipedia.org/wiki/Control_flow">control flow</a>.</li>
+<li><i>11</i> special registers of various sizes: Counter Register (CTR), link register (LR), time base (TBU, TBL), alternate time base (ATBU, ATBL), accumulator (ACC), <a href="https://en.wikipedia.org/wiki/Status_register">status registers</a> (XER, FPSCR, VSCR, SPEFSCR).</li>
+</ul>
+
+<p>
+Instructions up to version 3.0 have a length of 32 bits, with the exception of the VLE (variable-length encoding) subset that provides for higher <a href="https://en.wikipedia.org/wiki/Code_density">code density</a> for low-end embedded applications, and version 3.1 which introduced prefixing to create 64-bit instructions.  Most instructions are <a href="https://en.wikipedia.org/wiki/Triadic_relation">triadic</a>, i.e. have two source operands and one destination.  Single- and <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double-precision</a> <a href="https://en.wikipedia.org/wiki/IEEE_754-2008">IEEE-754</a> compliant floating-point operations are supported, including additional <a href="https://en.wikipedia.org/wiki/Fused_multiply%E2%80%93add">fused multiply&#x2013;add</a> (FMA) and decimal floating-point instructions.  There are provisions for <a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">single instruction, multiple data</a> (SIMD) operations on integer and floating-point data on up to 16 elements in one instruction.
+</p>
+
+<p>
+Power ISA has support for <a href="https://en.wikipedia.org/wiki/Modified_Harvard_architecture">Harvard</a> <a href="https://en.wikipedia.org/wiki/CPU_cache">cache</a>, i.e. <a href="https://en.wikipedia.org/wiki/Modified_Harvard_architecture#Split-cache_(or_almost-von-Neumann)_architecture">split data and instruction caches</a>, and support for unified caches.  Memory operations are strictly load/store, but allow for <a href="https://en.wikipedia.org/wiki/Out-of-order_execution">out-of-order execution</a>.  There is also support for both <a href="https://en.wikipedia.org/wiki/Endianness">big and little-endian</a> addressing with separate categories for moded and per-page endianness, and support for both <a href="https://en.wikipedia.org/wiki/32-bit_computing">32-bit</a> and <a href="https://en.wikipedia.org/wiki/64-bit_computing">64-bit</a> addressing.
+</p>
+
+<p>
+Different modes of operation include user, supervisor and hypervisor.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-0139f8dd-6a24-4d30-977f-46b837efebf5" class="outline-2">
+<h2 id="ID-0139f8dd-6a24-4d30-977f-46b837efebf5">(en.wikipedia.org) PowerPC - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-orgc096b89">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/PowerPC
+</pre>
+
+<blockquote>
+<p>
+<b>PowerPC</b> (with the <a href="https://en.wikipedia.org/wiki/Backronym">backronym</a> <b>Performance Optimization With Enhanced RISC &#x2013; Performance Computing</b>, sometimes abbreviated as <b>PPC</b>) is a <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">reduced instruction set computer</a> (RISC) <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instruction set architecture</a> (ISA) created by the 1991 <a href="https://en.wikipedia.org/wiki/Apple_Inc.">Apple</a>--<a href="https://en.wikipedia.org/wiki/IBM">IBM</a>--<a href="https://en.wikipedia.org/wiki/Motorola">Motorola</a> alliance, known as <a href="https://en.wikipedia.org/wiki/AIM_alliance">AIM</a>.  PowerPC, as an evolving instruction set, has been named <a href="https://en.wikipedia.org/wiki/Power_ISA">Power ISA</a> since 2006, while the old name lives on as a <a href="https://en.wikipedia.org/wiki/Trademark">trademark</a> for some implementations of <a href="https://en.wikipedia.org/wiki/Power_Architecture">Power Architecture</a>&#x2013;based processors.
+</p>
+
+<p>
+Originally intended for <a href="https://en.wikipedia.org/wiki/Personal_computer">personal computers</a>, the architecture is well known for being used by Apple's desktop and laptop lines from 1994 until 2006, and in several <a href="https://en.wikipedia.org/wiki/Videogame_console">videogame consoles</a> including Microsoft's <a href="https://en.wikipedia.org/wiki/Xbox_360">Xbox 360</a>, Sony's <a href="https://en.wikipedia.org/wiki/PlayStation_3">PlayStation 3</a>, and Nintendo's <a href="https://en.wikipedia.org/wiki/GameCube">GameCube</a>, <a href="https://en.wikipedia.org/wiki/Wii">Wii</a>, and <a href="https://en.wikipedia.org/wiki/Wii_U">Wii U</a>.  PowerPC was also used for the <a href="https://en.wikipedia.org/wiki/Curiosity_(rover)">Curiosity</a> and <a href="https://en.wikipedia.org/wiki/Perseverance_(rover)">Perseverance</a> rovers on Mars and a variety of satellites.  It has since become a niche architecture for personal computers, particularly with <a href="https://en.wikipedia.org/wiki/AmigaOS_4">AmigaOS 4</a> implementations, but remains popular for <a href="https://en.wikipedia.org/wiki/Embedded_system">embedded systems</a>.
+</p>
+
+<p>
+PowerPC was the cornerstone of AIM's <a href="https://en.wikipedia.org/wiki/PReP">PReP</a> and <a href="https://en.wikipedia.org/wiki/Common_Hardware_Reference_Platform">Common Hardware Reference Platform</a> (CHRP) initiatives in the 1990s.  It is largely based on the earlier <a href="https://en.wikipedia.org/wiki/IBM_POWER_architecture">IBM POWER architecture</a>, and retains a high level of compatibility with it; the architectures have remained close enough that the same programs and <a href="https://en.wikipedia.org/wiki/Operating_system">operating systems</a> will run on both if some care is taken in preparation; newer chips in the <a href="https://en.wikipedia.org/wiki/IBM_Power_microprocessors">Power series</a> use the <a href="https://en.wikipedia.org/wiki/Power_ISA">Power ISA</a>.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-9f66bbd3-a606-439d-804b-ff4e2a2823e5" class="outline-2">
+<h2 id="ID-9f66bbd3-a606-439d-804b-ff4e2a2823e5">(en.wikipedia.org) IBM POWER architecture - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org8c9b380">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/IBM_POWER_architecture
+</pre>
+
+<blockquote>
+<p>
+<b>IBM POWER</b> is a <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">reduced instruction set computer</a> (RISC) <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">instruction set architecture</a> (ISA) developed by <a href="https://en.wikipedia.org/wiki/IBM">IBM</a>.  The name is an <a href="https://en.wikipedia.org/wiki/Acronym">acronym</a> for <i>Performance Optimization With Enhanced RISC</i>.
+</p>
+
+<p>
+The ISA is used as base for high end microprocessors from IBM during the 1990s and were used in many of IBM's servers, <a href="https://en.wikipedia.org/wiki/Minicomputer">minicomputers</a>, <a href="https://en.wikipedia.org/wiki/Workstation">workstations</a>, and <a href="https://en.wikipedia.org/wiki/Supercomputer">supercomputers</a>.  These processors are called <a href="https://en.wikipedia.org/wiki/POWER1">POWER1</a> (RIOS-1, RIOS.9, <a href="https://en.wikipedia.org/wiki/RISC_Single_Chip">RSC</a>, <a href="https://en.wikipedia.org/wiki/RAD6000">RAD6000</a>) and <a href="https://en.wikipedia.org/wiki/POWER2">POWER2</a> (POWER2, POWER2+ and P2SC).
+</p>
+
+<p>
+The ISA evolved into the <a href="https://en.wikipedia.org/wiki/PowerPC">PowerPC</a> instruction set architecture and was deprecated in 1998 when IBM introduced the <a href="https://en.wikipedia.org/wiki/POWER3">POWER3</a> processor that was mainly a <a href="https://en.wikipedia.org/wiki/32-bit">32</a>/<a href="https://en.wikipedia.org/wiki/64-bit">64-bit</a> <a href="https://en.wikipedia.org/wiki/PowerPC">PowerPC</a> processor but included the IBM POWER architecture for <a href="https://en.wikipedia.org/wiki/Backwards_compatibility">backwards compatibility</a>.  The original IBM POWER architecture was then abandoned.  PowerPC evolved into the third <a href="https://en.wikipedia.org/wiki/Power_ISA">Power ISA</a> in 2006.
+</p>
+
+<p>
+<a href="https://en.wikipedia.org/wiki/File:PowerISA-evolution.svg">[[https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PowerISA-evolution.svg/220px-PowerISA-evolution.svg.png</a>]]
+</p>
+
+<p>
+IBM continues to develop PowerPC microprocessor cores for use in their <a href="https://en.wikipedia.org/wiki/Application-specific_integrated_circuit">application-specific integrated circuit</a> (ASIC) offerings.  Many high volume applications embed PowerPC cores.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-28 Fri 12:13</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>
