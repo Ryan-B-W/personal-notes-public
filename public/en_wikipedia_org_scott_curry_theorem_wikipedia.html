@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-03-30 Sun 21:51 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(en.wikipedia.org) Scott–Curry theorem - Wikipedia</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(en.wikipedia.org) Scott–Curry theorem - Wikipedia</h1>
+</header><pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Scott–Curry_theorem
+</pre>
+<blockquote>
+<p>
+In <a href="https://en.wikipedia.org/wiki/Mathematical_logic">mathematical logic</a>, the <b>Scott–Curry theorem</b> is a result in <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a> stating that if two non-empty sets of lambda terms <i>A</i> and <i>B</i> are closed under beta-convertibility then they are <a href="https://en.wikipedia.org/wiki/Recursively_inseparable">recursively inseparable</a>.
+</p>
+
+<p>
+** Explanation
+</p>
+
+<p>
+A set <i>A</i> of lambda terms is closed under beta-convertibility if for any lambda terms X and Y, if \(X \in A\) and X is <a href="https://en.wikipedia.org/wiki/Lambda_calculus#Reduction">β-equivalent</a> to Y then \(Y \in A\).  Two sets <i>A</i> and <i>B</i> of natural numbers are recursively separable if there exists a <a href="https://en.wikipedia.org/wiki/Computable_function">computable function</a> \(f:\mathbb{N}\rightarrow\{ 0,1\}\) such that \(f(a) = 0\) if \(a \in A\) and \(f(b) = 1\) if \(b \in B\).  Two sets of lambda terms are recursively separable if their corresponding sets under a <a href="https://en.wikipedia.org/wiki/G%C3%B6del_numbering">Gödel numbering</a> are recursively separable, and recursively inseparable otherwise.
+</p>
+
+<p>
+The Scott–Curry theorem applies equally to sets of terms in <a href="https://en.wikipedia.org/wiki/Combinatory_logic">combinatory logic</a> with weak equality.  It has parallels to <a href="https://en.wikipedia.org/wiki/Rice's_theorem">Rice's theorem</a> in computability theorem, which states that all non-trivial semantic properties of programs are undecidable.
+</p>
+
+<p>
+The theorem has the immediate consequence that it is an <a href="https://en.wikipedia.org/wiki/Undecidable_problem">undecidable problem</a> to determine if two lambda terms are β-equivalent.
+</p>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-03-30 Sun 21:45</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>
