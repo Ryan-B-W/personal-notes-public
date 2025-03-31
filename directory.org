@@ -14,6 +14,7 @@ Directory of nodes for navigating notes.
 ** [[id:3cb36cde-9b51-4dc1-8b60-577cde5c72a8][Productivity and note taking]]
 * Media
 ** [[id:fa6ec024-4e2b-4e1d-ac57-37b7d82f0531][Mathematics Books]]
+** [[id:614151d5-dd4b-4aa5-9997-c484e198cbb7][Electronics Books]]
 ** [[id:e34a8a17-67c3-4655-aa35-782eb154ae05][Self-Help Books]]
 * Computers
 ** [[id:7ad4a126-0b9f-4dc0-9968-cd9135bf8b1e][Useful Software]]
