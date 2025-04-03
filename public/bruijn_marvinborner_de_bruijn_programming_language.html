@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-03-30 Sun 21:51 -->
+<!-- 2025-04-03 Thu 01:05 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>(bruijn.marvinborner.de) bruijn programming language</title>
@@ -30,7 +30,7 @@ ROAM_REFS: https://bruijn.marvinborner.de/
 <li>bruijn</li>
 </ul>
 
-<pre class="example" id="orgf691ea0">
+<pre class="example" id="org49a391c">
 pow [index (iterate (mul 0) (+1))]
 
 …**… pow
@@ -51,7 +51,7 @@ Lambdas all the way down.
 No primitive functions.
 </p>
 
-<pre class="example" id="org1afd457">
+<pre class="example" id="orgf17a949">
 &gt; (+5)
 [[[[2 (2 (1 3))]]]]
 &gt; 'a'
@@ -60,7 +60,7 @@ No primitive functions.
 [[(([([[1 0 [[0]]]] ((((0 [[(((0...
 </pre>
 
-<pre class="example" id="org3e0f187">
+<pre class="example" id="org629bf7e">
 &gt; :time factorial (+42)
 0.01 seconds
 </pre>
@@ -74,7 +74,7 @@ Substantial standard library.
 <a href="https://bruijn.marvinborner.de/std/">Source</a>
 </p>
 
-<pre class="example" id="org33fe163">
+<pre class="example" id="org4733143">
 &gt; ∏ (+1) → (+3) | ++‣
 &gt; number! &lt;$&gt; (lines "42
 25")
@@ -82,7 +82,7 @@ Substantial standard library.
 &gt; (+10b) ⋀! (+12b)
 </pre>
 
-<pre class="example" id="org1cdbe8b">
+<pre class="example" id="orgcc19fe6">
 $ echo "main [0]" &gt; echo.bruijn
 $ bruijn -b echo.bruijn &gt; echo
 $ wc -c echo
@@ -101,7 +101,7 @@ Support for byte and ASCII encoding.
 and self-interpretation.
 </p>
 
-<pre class="example" id="orgbf2e00b">
+<pre class="example" id="org9c4a7c4">
 &gt; length `factorial
 &gt; !(swap `((+2u) (+3u)))
 &gt; lhs (blc→meta "010000100000110")

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-03 Thu 01:06 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(www.cs.virginia.edu) Guide to x86 Assembly</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(www.cs.virginia.edu) Guide to x86 Assembly</h1>
+</header><pre class="example">
+ROAM_REFS: https://www.cs.virginia.edu/~evans/cs216/guides/x86.html
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>x86 Assembly Guide</li>
+</ul>
+
+<p>
+<b>Contents:</b> <a href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html#registers">Registers</a> | <a href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html#memory">Memory and Addressing</a> | <a href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html#instructions">Instructions</a> | <a href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html#calling">Calling Convention</a>
+</p>
+
+<p>
+This guide describes the basics of 32-bit x86 assembly language programming, covering a small but useful subset of the available instructions and assembler directives.  There are several different assembly languages for generating x86 machine code.  The one we will use in CS216 is the Microsoft Macro Assembler (MASM) assembler.  MASM uses the standard Intel syntax for writing x86 assembly code.
+</p>
+
+<p>
+The full x86 instruction set is large and complex (Intel's x86 instruction set manuals comprise over 2900 pages), and we do not cover it all in this guide.  For example, there is a 16-bit subset of the x86 instruction set.  Using the 16-bit programming model can be quite complex.  It has a segmented memory model, more restrictions on register usage, and so on.  In this guide, we will limit our attention to more modern aspects of x86 programming, and delve into the instruction set only in enough detail to get a basic feel for x86 programming.
+</p>
+
+<p>
+<b>*</b> Resources
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.cs.virginia.edu/~evans/cs216/guides/vsasm.html">Guide to Using Assembly in Visual Studio</a> — a tutorial on building and debugging assembly code in Visual Studio</li>
+<li><a href="http://www.felixcloutier.com/x86/">Intel x86 Instruction Set Reference</a></li>
+<li><a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">Intel's Pentium Manuals</a> (the full gory details)</li>
+</ul>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-04-02 Wed 02:10</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

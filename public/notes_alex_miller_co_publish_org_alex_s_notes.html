@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-03 Thu 01:09 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(notes.alex-miller.co) publish.org - Alex's Notes</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<ul>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</ul>
+</nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">(notes.alex-miller.co) publish.org - Alex's Notes</h1>
+</header><pre class="example">
+ROAM_REFS: https://notes.alex-miller.co/publish/
+</pre>
+<blockquote>
+<p>
+** Overview
+</p>
+
+<p>
+This is a self-documenting org-mode publishing script.  It is run by executing all the source code blocks herein.  The actual <a href="https://github.com/apmiller108/slip-box/blob/main/publish.el">publish.el</a> script just loads this file in a buffer and calls <pre class="verbatim">org-babel-execute-buffer</pre> followed by the function that starts the publishing process.
+</p>
+
+<ul class="org-ul">
+<li>This is based on <a href="https://github.com/daviwil/dotfiles/blob/master/.site/publish.el">David Wilson's publish.el</a> which itself is based on <a href="https://gitlab.com/ambrevar/ambrevar.gitlab.io/-/blob/master/publish.el">Pierre Neidhardt's publish.el</a>.  Huge thanks for both.</li>
+<li>It requires emacs v27+</li>
+<li>I'm using <a href="https://getuikit.com/">UIkit</a> CSS framework.</li>
+<li>Reader comments powered by <a href="https://utteranc.es/">Utterances</a>.</li>
+<li>There's a little bit of JavaScript, mostly for the tags used to filter and sort on the homepage.</li>
+<li>CI is run on GitHub actions where this is built and deployed to Netlify.  It is hosted at <a href="https://notes.alex-miller.co/">https://notes.alex-miller.co/</a>.  See <a href="https://github.com/apmiller108/slip-box/blob/main/.github/workflows/main.yml">CI configuration.</a></li>
+</ul>
+</blockquote>
+</div>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-04-02 Wed 02:10</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>
