@@ -1,4 +1,3 @@
 #+TITLE: Sitemap for Personal Notes (Meta-Repo)
 
-- [[file:directory.org][Directory]]
-- [[file:readme.org][Personal Notes readme.org file]]
+- Stubbed sitemap list.  Replaced during export and publishing.
