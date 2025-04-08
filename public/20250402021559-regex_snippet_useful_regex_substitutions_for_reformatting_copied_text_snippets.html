@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-03 Thu 01:07 -->
+<!-- 2025-04-08 Tue 13:45 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Regex Snippet: Useful Regex Substitutions for Reformatting Copied Text Snippets</title>
@@ -26,7 +26,7 @@
 Replace single spaces after end-of-sentence periods with double spaces:
 </p>
 <pre class="example">
-\([^\(?: [:upper:]\)][\.\?\!]\(?:"\|\]\]\|”\|\*\|_\|/\|\+\)?\) \([^ [:lower:]]\) → \1  \2
+\([^\(?: [:upper:]\)])?[\.\?\!]\(?:'"\|\]\]?\|”\|\*\|_\|/\|\+\|)\)?\) \([^ [:lower:]]\) → \1  \2
 </pre>
 
 
@@ -95,7 +95,7 @@ Remove YouTube icon URIs in hyperlink bodies:
 </div>
 <div id="postamble" class="status">
 <footer>
-<p class="date">Last Modified: 2025-04-02 Wed 04:11</p>
+<p class="date">Last Modified: 2025-04-06 Sun 14:38</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
 </footer>
 </div>
