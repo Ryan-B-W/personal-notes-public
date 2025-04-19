@@ -21,5 +21,6 @@ Directory of nodes for navigating notes.
 ** [[id:01b40f47-e5e8-46a2-a8f7-3c719e9f245c][Computer Science Concepts]]
 ** [[id:212f25e1-f183-4cb0-97db-342ac6667078][C and C++ Documentation and Resources]]
 ** [[id:73afc0b8-eda4-4aea-869d-523d0a2410ad][C and C++ Tooling]]
+** [[id:bd12a34f-f545-4508-ad59-01fb77a2420f][Snippets]]
 * Health
 ** [[id:2f1ea8a7-6ccb-4e9b-94c5-cb605729a317][Electrolyte Supplement Research]]
