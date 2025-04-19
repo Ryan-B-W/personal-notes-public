@@ -117,7 +117,7 @@ nav {
     }
 }
 //main
-div.content {
+main, div.content {
     color: var(--fg-main);
     background: var(--bg-main);
     border: 1px solid var(--border);
@@ -181,7 +181,7 @@ pre {
     margin: 0.6em;
     clear: both;
     background: var(--bg-dim);
-    overflow-x: scroll;
+    overflow: auto;
 }
 pre.example {
     text-wrap: auto;
@@ -192,7 +192,6 @@ pre.verbatim {
     padding: 0.1em;
     margin: 0.1em;
     display: inline;
-    overflow: visible;
 }
 .linenr {
     background: var(--fringe);
