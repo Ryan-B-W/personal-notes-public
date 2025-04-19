@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:48 -->
+<!-- 2025-04-19 Sat 13:07 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(github.com) radian-software/apheleia: 🌷 Run code formatter on buffer contents without moving point, using RCS patches and dynamic programming.</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(github.com) radian-software/apheleia: 🌷 Run code formatter on buffer contents without moving point, using RCS patches and dynamic programming.</h1>
 </header><pre class="example">
@@ -52,7 +52,7 @@ The approach is as follows:
 <li>After running the code formatter, generate an <a href="https://web.archive.org/web/20220527003730/https://tools.ietf.org/doc/tcllib/html/rcs.html#section4">RCS patch</a> showing the changes and then apply it to the buffer.  This prevents changes elsewhere in the buffer from moving point.  If a patch region happens to include point, then use a <a href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm">dynamic programming algorithm for string alignment</a> to determine where point should be moved so that it remains in the same place relative to its surroundings.  Finally, if the vertical position of point relative to the window has changed, adjust the scroll position to maintain maximum visual continuity. (This includes iterating through all windows displaying the buffer, if there are more than one.) The dynamic programming algorithm runs in quadratic time, which is why it is only applied if necessary and to a single patch region.</li>
 </ol>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

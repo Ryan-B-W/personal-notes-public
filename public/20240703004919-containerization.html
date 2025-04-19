@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:45 -->
+<!-- 2025-04-19 Sat 13:02 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Containerization</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,13 +19,13 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">Containerization</h1>
 </header><p>
 Containerization is where processes are sandboxed under <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> via <pre class="verbatim">namespaces</pre> and <a href="20240714202626-kernel_control_groups_cgroups.html#ID-a29f2f24-2eb7-45dd-ad90-b10d4df99191">cgroups</a>—or via jails under BSDs—to limit the process's access to the <a href="20240714174032-operating_system.html#ID-412bbcad-6c00-4f13-b748-d1ffde0588e1">larger system</a>.  Common features of this are limiting <a href="20240728223109-file_system.html#ID-a4c2de37-5317-44f3-b877-ec0b5777c61f">filesystem</a> access via a changed root—commonly called a <pre class="verbatim">chroot</pre>​—which changes the root of the filesystem as the process sees it to a specified path, restricting the process namespace, and other such changes to restrict the process.
 </p>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

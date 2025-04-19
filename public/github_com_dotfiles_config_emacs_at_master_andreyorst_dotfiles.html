@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:46 -->
+<!-- 2025-04-19 Sat 13:03 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(github.com) dotfiles/.config/emacs at master · andreyorst/dotfiles</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(github.com) dotfiles/.config/emacs at master · andreyorst/dotfiles</h1>
 </header><pre class="example">
@@ -36,47 +36,47 @@ ROAM_REFS: https://github.com/andreyorst/dotfiles/blob/6849f27cea5d2dfa0222b74dd
 Snippet of interest relating to <a href="20240908160505-smartparens.html#ID-8278042c-72a7-4eac-806f-e369ffdd82c3">Smartparens</a> configuration:
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">(use-package smartparens
-  :hook (((clojure-mode
-           emacs-lisp-mode
-           common-lisp-mode
-           scheme-mode
-           lisp-mode
-           racket-mode
-           fennel-mode
-           cider-repl-mode
-           racket-repl-mode
-           geiser-repl-mode
-           inferior-lisp-mode
-           inferior-emacs-lisp-mode
-           sly-mrepl-mode)
-          . smartparens-strict-mode)
-         ((eval-expression-minibuffer-setup
-           lisp-data-mode)
-          . aorst/minibuffer-enable-sp)
-         (prog-mode . smartparens-mode))
-  :bind (:map smartparens-mode-map
-         ("C-M-q" . sp-indent-defun)
-         :map smartparens-strict-mode-map
-         (";" . sp-comment))
-  :custom
-  (sp-highlight-pair-overlay nil)
-  (sp-highlight-wrap-overlay nil)
-  (sp-highlight-wrap-tag-overlay nil)
-  (sp-show-pair-delay 0)
-  (sp-echo-match-when-invisible nil)
-  :config
-  (require 'smartparens-config)
-  (sp-use-paredit-bindings)
-  (define-key smartparens-mode-map (kbd "M-r") 'sp-rewrap-sexp) ; needs to be set manually, because :bind section runs before config
-  (add-to-list 'sp-lisp-modes 'fennel-mode t)
-  (defun aorst/minibuffer-enable-sp ()
-    "Enable `smartparens-strict-mode' in the minibuffer, during `eval-expression'."
-    (setq-local comment-start ";")
-    (sp-local-pair 'minibuffer-pairs "'" nil :actions nil)
-    (sp-local-pair 'minibuffer-pairs "`" nil :actions nil)
-    (sp-update-local-pairs 'minibuffer-pairs)
-    (smartparens-strict-mode 1)))
+<pre class="src src-elisp"><code>(<span class="org-keyword">use-package</span> smartparens</code>
+<code>  <span class="org-builtin">:hook</span> (((clojure-mode</code>
+<code>           emacs-lisp-mode</code>
+<code>           common-lisp-mode</code>
+<code>           scheme-mode</code>
+<code>           lisp-mode</code>
+<code>           racket-mode</code>
+<code>           fennel-mode</code>
+<code>           cider-repl-mode</code>
+<code>           racket-repl-mode</code>
+<code>           geiser-repl-mode</code>
+<code>           inferior-lisp-mode</code>
+<code>           inferior-emacs-lisp-mode</code>
+<code>           sly-mrepl-mode)</code>
+<code>          . smartparens-strict-mode)</code>
+<code>         ((eval-expression-minibuffer-setup</code>
+<code>           lisp-data-mode)</code>
+<code>          . aorst/minibuffer-enable-sp)</code>
+<code>         (prog-mode . smartparens-mode))</code>
+<code>  <span class="org-builtin">:bind</span> (<span class="org-builtin">:map</span> smartparens-mode-map</code>
+<code>         (<span class="org-string">"C-M-q"</span> . sp-indent-defun)</code>
+<code>         <span class="org-builtin">:map</span> smartparens-strict-mode-map</code>
+<code>         (<span class="org-string">";"</span> . sp-comment))</code>
+<code>  <span class="org-builtin">:custom</span></code>
+<code>  (sp-highlight-pair-overlay nil)</code>
+<code>  (sp-highlight-wrap-overlay nil)</code>
+<code>  (sp-highlight-wrap-tag-overlay nil)</code>
+<code>  (sp-show-pair-delay 0)</code>
+<code>  (sp-echo-match-when-invisible nil)</code>
+<code>  <span class="org-builtin">:config</span></code>
+<code>  (<span class="org-keyword">require</span> '<span class="org-constant">smartparens-config</span>)</code>
+<code>  (sp-use-paredit-bindings)</code>
+<code>  (define-key smartparens-mode-map (kbd <span class="org-string">"M-r"</span>) 'sp-rewrap-sexp) <span class="org-comment-delimiter">; </span><span class="org-comment">needs to be set manually, because :bind section runs before config</span></code>
+<code>  (add-to-list 'sp-lisp-modes 'fennel-mode t)</code>
+<code>  (<span class="org-keyword">defun</span> <span class="org-function-name">aorst/minibuffer-enable-sp</span> ()</code>
+<code>    <span class="org-doc">"Enable `</span><span class="org-doc"><span class="org-constant">smartparens-strict-mode</span></span><span class="org-doc">' in the minibuffer, during `</span><span class="org-doc"><span class="org-constant">eval-expression</span></span><span class="org-doc">'."</span></code>
+<code>    (<span class="org-keyword">setq-local</span> comment-start <span class="org-string">";"</span>)</code>
+<code>    (sp-local-pair 'minibuffer-pairs <span class="org-string">"'"</span> nil <span class="org-builtin">:actions</span> nil)</code>
+<code>    (sp-local-pair 'minibuffer-pairs <span class="org-string">"`"</span> nil <span class="org-builtin">:actions</span> nil)</code>
+<code>    (sp-update-local-pairs 'minibuffer-pairs)</code>
+<code>    (smartparens-strict-mode 1)))</code>
 </pre>
 </div>
 </div>
@@ -92,14 +92,14 @@ ROAM_REFS: https://github.com/andreyorst/dotfiles/blob/master/.config/emacs/earl
 Relevant snippet for silencing <a href="20240714174616-emacs.html#ID-aca1324c-b142-4e34-a121-a8bb0a79ddf8">Emacs</a> native compilation warnings:
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">(when (featurep 'native-compile)
-  (defvar native-comp-async-report-warnings-errors)
-  (setq native-comp-async-report-warnings-errors 'silent))
+<pre class="src src-elisp"><code>(<span class="org-keyword">when</span> (<span class="org-keyword">featurep</span> '<span class="org-constant">native-compile</span>)</code>
+<code>  (<span class="org-keyword">defvar</span> <span class="org-variable-name">native-comp-async-report-warnings-errors</span>)</code>
+<code>  (<span class="org-keyword">setq</span> native-comp-async-report-warnings-errors 'silent))</code>
 </pre>
 </div>
 </div>
 </div>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

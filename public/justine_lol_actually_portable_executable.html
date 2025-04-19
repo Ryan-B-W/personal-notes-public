@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:48 -->
+<!-- 2025-04-19 Sat 13:07 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(justine.lol) Actually Portable Executable</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(justine.lol) Actually Portable Executable</h1>
 </header><pre class="example">
@@ -35,20 +35,20 @@ One day, while studying old code, I found out that it's possible to encode Windo
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh">MZqFpD='
-BIOS BOOT SECTOR'
-exec 7&lt;&gt; $(command -v $0)
-printf '\177ELF...LINKER-ENCODED-FREEBSD-HEADER' &gt;&amp;7
-exec "$0" "$@"
-exec qemu-x86_64 "$0" "$@"
-exit 1
-REAL MODE...
-ELF SEGMENTS...
-OPENBSD NOTE...
-NETBSD NOTE...
-MACHO HEADERS...
-CODE AND DATA...
-ZIP DIRECTORY...
+<pre class="src src-sh"><code><span class="org-variable-name">MZqFpD</span>=<span class="org-string">'</span></code>
+<code><span class="org-string">BIOS BOOT SECTOR'</span></code>
+<code><span class="org-keyword">exec</span> 7&lt;&gt; $(<span class="org-sh-quoted-exec">command -v $0</span>)</code>
+<code><span class="org-builtin">printf</span> <span class="org-string">'\177ELF...LINKER-ENCODED-FREEBSD-HEADER'</span> &gt;&amp;7</code>
+<code><span class="org-keyword">exec</span> <span class="org-string">"$0"</span> <span class="org-string">"$@"</span></code>
+<code><span class="org-keyword">exec</span> qemu-x86_64 <span class="org-string">"$0"</span> <span class="org-string">"$@"</span></code>
+<code><span class="org-keyword">exit</span> 1</code>
+<code>REAL MODE...</code>
+<code>ELF SEGMENTS...</code>
+<code>OPENBSD NOTE...</code>
+<code>NETBSD NOTE...</code>
+<code>MACHO HEADERS...</code>
+<code>CODE AND DATA...</code>
+<code>ZIP DIRECTORY...</code>
 </pre>
 </div>
 
@@ -57,7 +57,7 @@ I started a project called <a href="https://github.com/jart/cosmopolitan">Cosmop
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh">gcc -g -O -static -fno-pie -no-pie -mno-red-zone -nostdlib -nostdinc -o hello.com hello.c   -Wl,--oformat=binary -Wl,--gc-sections -Wl,-z,max-page-size=0x1000 -fuse-ld=bfd -gdwarf-4   -Wl,-T,ape.lds -include cosmopolitan.h crt.o ape.o cosmopolitan.a
+<pre class="src src-sh"><code>gcc -g -O -static -fno-pie -no-pie -mno-red-zone -nostdlib -nostdinc -o hello.com hello.c   -Wl,--oformat=binary -Wl,--gc-sections -Wl,-z,max-page-size=0x1000 -fuse-ld=bfd -gdwarf-4   -Wl,-T,ape.lds -include cosmopolitan.h crt.o ape.o cosmopolitan.a</code>
 </pre>
 </div>
 
@@ -65,7 +65,7 @@ I started a project called <a href="https://github.com/jart/cosmopolitan">Cosmop
 In the above one-liner, we've basically reconfigured the stock compiler on Linux so it outputs binaries that'll run on MacOS, Windows, FreeBSD, OpenBSD, and NetBSD too.  They also boot from the BIOS.  Please note this is intended for people who don't care about desktop GUIs, and just want stdio and sockets without devops toil.
 </p>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

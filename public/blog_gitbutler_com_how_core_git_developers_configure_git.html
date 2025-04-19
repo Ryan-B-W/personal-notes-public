@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:48 -->
+<!-- 2025-04-19 Sat 13:07 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(blog.gitbutler.com) How Core Git Developers Configure Git</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(blog.gitbutler.com) How Core Git Developers Configure Git</h1>
 </header><pre class="example">
@@ -67,56 +67,56 @@ Well, fair enough. Here is the fun stuff:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-ini"># clearly makes git better
-
-[column]
-        ui = auto
-[branch]
-        sort = -committerdate
-[tag]
-        sort = version:refname
-[init]
-        defaultBranch = main
-[diff]
-        algorithm = histogram
-        colorMoved = plain
-        mnemonicPrefix = true
-        renames = true
-[push]
-        default = simple
-        autoSetupRemote = true
-        followTags = true
-[fetch]
-        prune = true
-        pruneTags = true
-        all = true
-
-# why the hell not?
-
-[help]
-        autocorrect = prompt
-[commit]
-        verbose = true
-[rerere]
-        enabled = true
-        autoupdate = true
-[core]
-        excludesfile = ~/.gitignore
-[rebase]
-        autoSquash = true
-        autoStash = true
-        updateRefs = true
-
-# a matter of taste (uncomment if you dare)
-
-[core]
-        # fsmonitor = true
-        # untrackedCache = true
-[merge]
-        # (just 'diff3' if git version &lt; 2.3)
-        # conflictstyle = zdiff3
-[pull]
-        # rebase = true
+<pre class="src src-ini"><code># clearly makes git better</code>
+<code></code>
+<code>[column]</code>
+<code>        ui = auto</code>
+<code>[branch]</code>
+<code>        sort = -committerdate</code>
+<code>[tag]</code>
+<code>        sort = version:refname</code>
+<code>[init]</code>
+<code>        defaultBranch = main</code>
+<code>[diff]</code>
+<code>        algorithm = histogram</code>
+<code>        colorMoved = plain</code>
+<code>        mnemonicPrefix = true</code>
+<code>        renames = true</code>
+<code>[push]</code>
+<code>        default = simple</code>
+<code>        autoSetupRemote = true</code>
+<code>        followTags = true</code>
+<code>[fetch]</code>
+<code>        prune = true</code>
+<code>        pruneTags = true</code>
+<code>        all = true</code>
+<code></code>
+<code># why the hell not?</code>
+<code></code>
+<code>[help]</code>
+<code>        autocorrect = prompt</code>
+<code>[commit]</code>
+<code>        verbose = true</code>
+<code>[rerere]</code>
+<code>        enabled = true</code>
+<code>        autoupdate = true</code>
+<code>[core]</code>
+<code>        excludesfile = ~/.gitignore</code>
+<code>[rebase]</code>
+<code>        autoSquash = true</code>
+<code>        autoStash = true</code>
+<code>        updateRefs = true</code>
+<code></code>
+<code># a matter of taste (uncomment if you dare)</code>
+<code></code>
+<code>[core]</code>
+<code>        # fsmonitor = true</code>
+<code>        # untrackedCache = true</code>
+<code>[merge]</code>
+<code>        # (just 'diff3' if git version &lt; 2.3)</code>
+<code>        # conflictstyle = zdiff3</code>
+<code>[pull]</code>
+<code>        # rebase = true</code>
 </pre>
 </div>
 
@@ -124,7 +124,7 @@ Well, fair enough. Here is the fun stuff:
 Copypasta, my friends.
 </p>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

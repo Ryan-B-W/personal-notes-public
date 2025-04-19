@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:44 -->
+<!-- 2025-04-19 Sat 13:01 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(bruijn.marvinborner.de) bruijn programming language</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(bruijn.marvinborner.de) bruijn programming language</h1>
 </header><pre class="example">
@@ -30,12 +30,12 @@ ROAM_REFS: https://bruijn.marvinborner.de/
 <li>bruijn</li>
 </ul>
 
-<pre class="example" id="orgdb18cd7">
-pow [index (iterate (mul 0) (+1))]
-
-…**… pow
-
-:test ((+2) ** (+3) =? (+8)) (true)
+<pre class="example" id="org42794b9">
+<code>pow [index (iterate (mul 0) (+1))]</code>
+<code></code>
+<code>…**… pow</code>
+<code></code>
+<code>:test ((+2) ** (+3) =? (+8)) (true)</code>
 </pre>
 
 <p>
@@ -51,18 +51,18 @@ Lambdas all the way down.
 No primitive functions.
 </p>
 
-<pre class="example" id="org9814012">
-&gt; (+5)
-[[[[2 (2 (1 3))]]]]
-&gt; 'a'
-[[[1 (0 (0 (0 (0 (1 (1 (0 2)))))))]]]
-&gt; add
-[[(([([[1 0 [[0]]]] ((((0 [[(((0...
+<pre class="example" id="orge5ccf3c">
+<code>&gt; (+5)</code>
+<code>[[[[2 (2 (1 3))]]]]</code>
+<code>&gt; 'a'</code>
+<code>[[[1 (0 (0 (0 (0 (1 (1 (0 2)))))))]]]</code>
+<code>&gt; add</code>
+<code>[[(([([[1 0 [[0]]]] ((((0 [[(((0...</code>
 </pre>
 
-<pre class="example" id="orgbe130b8">
-&gt; :time factorial (+42)
-0.01 seconds
+<pre class="example" id="orgca7f706">
+<code>&gt; :time factorial (+42)</code>
+<code>0.01 seconds</code>
 </pre>
 
 <p>
@@ -74,21 +74,21 @@ Substantial standard library.
 <a href="https://bruijn.marvinborner.de/std/">Source</a>
 </p>
 
-<pre class="example" id="org9753d36">
-&gt; ∏ (+1) → (+3) | ++‣
-&gt; number! &lt;$&gt; (lines "42
-25")
-&gt; sum (take (+3) (repeat (+4)))
-&gt; (+10b) ⋀! (+12b)
+<pre class="example" id="org7251fed">
+<code>&gt; ∏ (+1) → (+3) | ++‣</code>
+<code>&gt; number! &lt;$&gt; (lines "42</code>
+<code>25")</code>
+<code>&gt; sum (take (+3) (repeat (+4)))</code>
+<code>&gt; (+10b) ⋀! (+12b)</code>
 </pre>
 
-<pre class="example" id="org1d2d797">
-$ echo "main [0]" &gt; echo.bruijn
-$ bruijn -b echo.bruijn &gt; echo
-$ wc -c echo
-2 echo
-$ echo "hello world!" | bruijn -e echo
-hello world!
+<pre class="example" id="org13b62b5">
+<code>$ echo "main [0]" &gt; echo.bruijn</code>
+<code>$ bruijn -b echo.bruijn &gt; echo</code>
+<code>$ wc -c echo</code>
+<code>2 echo</code>
+<code>$ echo "hello world!" | bruijn -e echo</code>
+<code>hello world!</code>
 </pre>
 
 <p>
@@ -101,13 +101,13 @@ Support for byte and ASCII encoding.
 and self-interpretation.
 </p>
 
-<pre class="example" id="orgb6aa346">
-&gt; length `factorial
-&gt; !(swap `((+2u) (+3u)))
-&gt; lhs (blc→meta "010000100000110")
+<pre class="example" id="orgccb9260">
+<code>&gt; length `factorial</code>
+<code>&gt; !(swap `((+2u) (+3u)))</code>
+<code>&gt; lhs (blc→meta "010000100000110")</code>
 </pre>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

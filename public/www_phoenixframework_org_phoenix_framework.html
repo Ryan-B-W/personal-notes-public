@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:46 -->
+<!-- 2025-04-19 Sat 13:04 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(www.phoenixframework.org) Phoenix Framework</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(www.phoenixframework.org) Phoenix Framework</h1>
 </header><pre class="example">
@@ -39,30 +39,30 @@ Build rich, interactive web applications quickly, with less code and fewer movin
 </p>
 
 <div class="org-src-container">
-<pre class="src src-flex">defmodule TimelineLive do
-  use Phoenix.LiveView
-
-  def render(assigns) do
-    ~H"""
-    &lt;div class="timeline"&gt;
-      &lt;div :for={{id, tweet} &lt;- @streams.tweets} id={id}&gt;
-        &lt;img src={tweet.avatar_url} class="tweet-avatar" /&gt;
-        &lt;p class="tweet-username"&gt;@{tweet.username}&lt;/p&gt;
-        &lt;p class="tweet-body"&gt;{tweet.body}&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    """
-  end
-
-  def mount(_, _, socket) do
-    Twitter.subscribe("elixirphoenix")
-    {:ok, stream(socket, :tweets, [])}
-  end
-
-  def handle_info({:new, tweet}, socket) do
-    {:noreply, stream_insert(socket, :tweets, tweet, at: 0}
-  end
-end
+<pre class="src src-flex"><code>defmodule TimelineLive do</code>
+<code>  use Phoenix.LiveView</code>
+<code></code>
+<code>  def render(assigns) do</code>
+<code>    ~H"""</code>
+<code>    &lt;div class="timeline"&gt;</code>
+<code>      &lt;div :for={{id, tweet} &lt;- @streams.tweets} id={id}&gt;</code>
+<code>        &lt;img src={tweet.avatar_url} class="tweet-avatar" /&gt;</code>
+<code>        &lt;p class="tweet-username"&gt;@{tweet.username}&lt;/p&gt;</code>
+<code>        &lt;p class="tweet-body"&gt;{tweet.body}&lt;/p&gt;</code>
+<code>      &lt;/div&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>    """</code>
+<code>  end</code>
+<code></code>
+<code>  def mount(_, _, socket) do</code>
+<code>    Twitter.subscribe("elixirphoenix")</code>
+<code>    {:ok, stream(socket, :tweets, [])}</code>
+<code>  end</code>
+<code></code>
+<code>  def handle_info({:new, tweet}, socket) do</code>
+<code>    {:noreply, stream_insert(socket, :tweets, tweet, at: 0}</code>
+<code>  end</code>
+<code>end</code>
 </pre>
 </div>
 
@@ -86,8 +86,8 @@ Install the Phoenix project generator and create your project
 </p>
 
 <div class="org-src-container">
-<pre class="src src-text-sm">mix archive.install hex phx_new
-mix phx.new demo
+<pre class="src src-text-sm"><code>mix archive.install hex phx_new</code>
+<code>mix phx.new demo</code>
 </pre>
 </div></li>
 
@@ -170,7 +170,7 @@ Know who is connected right now, across one or dozens of nodes, by using our bui
 <b>**</b> HEEx (HTML + Embedded Elixir) is a performant templating language with support for reusable components.
 </p>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-04-06 Sun 14:33</p>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:45 -->
+<!-- 2025-04-19 Sat 13:03 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(slhck.info) CRF Guide (Constant Rate Factor in x264, x265 and libvpx)</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(slhck.info) CRF Guide (Constant Rate Factor in x264, x265 and libvpx)</h1>
 </header><pre class="example">
@@ -51,7 +51,7 @@ With <pre class="verbatim">ffmpeg</pre>, it'd look like this:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-highlight">ffmpeg -i input.mp4 -c:v libx264 -crf 23 output.mp4
+<pre class="src src-highlight"><code>ffmpeg -i input.mp4 -c:v libx264 -crf 23 output.mp4</code>
 </pre>
 </div>
 
@@ -60,7 +60,7 @@ For x265, the default CRF is 28:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-highlight">ffmpeg -i input.mp4 -c:v libx265 -crf 28 output.mp4
+<pre class="src src-highlight"><code>ffmpeg -i input.mp4 -c:v libx265 -crf 28 output.mp4</code>
 </pre>
 </div>
 
@@ -69,7 +69,7 @@ For libvpx, there is no default, and CRF can range between 0 and 63.  31 is reco
 </p>
 
 <div class="org-src-container">
-<pre class="src src-highlight">ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf 31 -b:v 0 output.mkv
+<pre class="src src-highlight"><code>ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf 31 -b:v 0 output.mkv</code>
 </pre>
 </div>
 
@@ -81,7 +81,7 @@ If you're unsure about what CRF to use, begin with the default and change it acc
 You should use CRF encoding primarly for offline file storage, in order to achieve the most optimal encodes.  For other applications, <a href="https://slhck.info/articles/rate-control">other rate control modes</a> are recommended.  In video streaming, for example, CRF can be used in a constrained/capped mode to prevent bitrate spikes.
 </p>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

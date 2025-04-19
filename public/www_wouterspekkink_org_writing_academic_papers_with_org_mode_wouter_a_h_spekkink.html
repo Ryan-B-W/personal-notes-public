@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:47 -->
+<!-- 2025-04-19 Sat 13:06 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(www.wouterspekkink.org) Writing academic papers with org-mode | Wouter A. H. Spekkink</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(www.wouterspekkink.org) Writing academic papers with org-mode | Wouter A. H. Spekkink</h1>
 </header><pre class="example">
@@ -33,7 +33,7 @@ Tools:
 <li><a href="20240723010834-org_mode.html#ID-5ab4a0b0-95e2-40cf-b924-709db3115d48">Org Mode</a></li>
 <li><a href="20240708142616-org_roam.html#ID-ad5b1807-db6f-47de-b957-2537a489021c">Org Roam</a></li>
 <li><a href="github_com_jkitchin_org_ref_org_mode_modules_for_citations_cross_references_bibliographies_in_org_mode_and_useful_bibtex_tools_to_go_with_it.html#ID-30632feb-caa2-486c-920c-915183c90430">org-ref</a> (largely obsoleted by the built-in org-cite)</li>
-<li><a href="github_com_weirdnox_org_noter_emacs_document_annotator_using_org_mode.html#ID-cdffce59-0413-4e8f-94ff-8777352ec6de">org-noter</a></li>
+<li><a href="20250415144246-org_noter.html#ID-cdffce59-0413-4e8f-94ff-8777352ec6de">org-noter</a></li>
 <li>pdf-tools (largely obsoleted by the built-in doc-view now that it's improved in Emacs 29)</li>
 <li>org-bibtex and org-roam-bibtex</li>
 <li><a href="www_zotero_org_zotero_your_personal_research_assistant.html#ID-0c44b04d-5b1e-4e49-87df-8c5290c9c028">Zotero</a></li>
@@ -43,40 +43,40 @@ Tools:
 <p>
 Template used for papers:
 </p>
-<pre class="example" id="org18c91e6">
-#+TITLE: Your title goes here
-#+OPTIONS: toc:nil author:nil
-#+LaTeX_CLASS: apa6
-#+LaTeX_CLASS_OPTIONS: [a4paper]
-#+LaTeX_HEADER: \author{author name}
-#+LaTeX_HEADER: \affiliation{author affiliation}
-#+LaTeX_HEADER: \leftheader{With the apa6 class, it is good idea to customize the left header here}
-#+LaTeX_HEADER: \shorttitle{Your short title goes here}
-#+LaTeX_HEADER: \usepackage{breakcites}
-#+LaTeX_HEADER: \usepackage{apacite}
-#+LaTeX_HEADER: \usepackage{natbib}
-#+LaTeX_HEADER: \usepackage{paralist}
-#+LaTeX_HEADER: \let\itemize\compactitem
-#+LaTeX_HEADER: \let\description\compactdesc
-#+LaTeX_HEADER: \let\enumerate\compactenum
-#+LaTeX_HEADER: \abstract{Your abstract goes here}
-#+LaTeX_HEADER: \keywords{Your keywords go here}
-
-
-* Introduction
-And now just type away!
-# Everything with a "# " (don't forget the space) before it is a comment and is ignored when exporting to pdf.
-
-** This is a sub-heading!
-Remember our lists?
-- Here is a list entry
-- Here is another one
-
-# Don't forget to add the bibliography by the end.
-bibliographystyle:apacite
-bibliography:/path/to/library.bib
+<pre class="example" id="org5675375">
+<code>#+TITLE: Your title goes here</code>
+<code>#+OPTIONS: toc:nil author:nil</code>
+<code>#+LaTeX_CLASS: apa6</code>
+<code>#+LaTeX_CLASS_OPTIONS: [a4paper]</code>
+<code>#+LaTeX_HEADER: \author{author name}</code>
+<code>#+LaTeX_HEADER: \affiliation{author affiliation}</code>
+<code>#+LaTeX_HEADER: \leftheader{With the apa6 class, it is good idea to customize the left header here}</code>
+<code>#+LaTeX_HEADER: \shorttitle{Your short title goes here}</code>
+<code>#+LaTeX_HEADER: \usepackage{breakcites}</code>
+<code>#+LaTeX_HEADER: \usepackage{apacite}</code>
+<code>#+LaTeX_HEADER: \usepackage{natbib}</code>
+<code>#+LaTeX_HEADER: \usepackage{paralist}</code>
+<code>#+LaTeX_HEADER: \let\itemize\compactitem</code>
+<code>#+LaTeX_HEADER: \let\description\compactdesc</code>
+<code>#+LaTeX_HEADER: \let\enumerate\compactenum</code>
+<code>#+LaTeX_HEADER: \abstract{Your abstract goes here}</code>
+<code>#+LaTeX_HEADER: \keywords{Your keywords go here}</code>
+<code></code>
+<code></code>
+<code>* Introduction</code>
+<code>And now just type away!</code>
+<code># Everything with a "# " (don't forget the space) before it is a comment and is ignored when exporting to pdf.</code>
+<code></code>
+<code>** This is a sub-heading!</code>
+<code>Remember our lists?</code>
+<code>- Here is a list entry</code>
+<code>- Here is another one</code>
+<code></code>
+<code># Don't forget to add the bibliography by the end.</code>
+<code>bibliographystyle:apacite</code>
+<code>bibliography:/path/to/library.bib</code>
 </pre>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

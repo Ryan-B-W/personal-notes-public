@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:45 -->
+<!-- 2025-04-19 Sat 13:03 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Regex Snippet: Useful Regex Substitutions for Reformatting Copied Text Snippets</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,14 +19,35 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">Regex Snippet: Useful Regex Substitutions for Reformatting Copied Text Snippets</h1>
 </header><p>
 Replace single spaces after end-of-sentence periods with double spaces:
 </p>
+<div class="org-src-container">
+<pre class="src src-elisp"><code>(<span class="org-keyword">rx</span> (seq (group (<span class="org-keyword">or</span> (seq (not (any whitespace <span class="org-string">"."</span>)) (not upper-case))</code>
+<code>                    (seq (any whitespace <span class="org-string">"."</span>) (not word))</code>
+<code>                    (seq (not (any whitespace <span class="org-string">"."</span>)) word))</code>
+<code>                (? <span class="org-string">")"</span>)</code>
+<code>                (any <span class="org-string">".?!"</span>)</code>
+<code>                (* (any <span class="org-string">"'&#8217;&#8217;&#8218;&#8218;&#10076;&#10079;"</span></code>
+<code>                       <span class="org-string">"\"&#8221;&#8221;&#8222;&#8222;&#10078;&#10080;"</span></code>
+<code>                       <span class="org-string">"_*+/=-"</span></code>
+<code>                       <span class="org-string">")]}"</span>)))</code>
+<code>         <span class="org-string">" "</span></code>
+<code>         (group (not (any <span class="org-string">" "</span> lower-case)))))</code>
+</pre>
+</div>
 <pre class="example">
-\([^\(?: [:upper:]\)])?[\.\?\!]\(?:'"\|\]\]?\|”\|\*\|_\|/\|\+\|)\)?\) \([^ [:lower:]]\) → \1  \2
+\(\(?:[^.[:space:]][^[:upper:]]\|[.[:space:]][^[:word:]]\|[^.[:space:]][[:word:]]\))?[!.?][]"')-+/=_}’‚”„❜❞-❠-]*\) \([^ [:lower:]]\)
+</pre>
+
+<p>
+and replace with
+</p>
+<pre class="example">
+\1  \2
 </pre>
 
 
@@ -92,10 +113,10 @@ Remove YouTube icon URIs in hyperlink bodies:
 <pre class="example">
 \[\[https://www\.gstatic\.com/youtube/img/.*?\.\(?:png\|jpeg\|jpg\|svg\)]] →
 </pre>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
-<p class="date">Last Modified: 2025-04-06 Sun 14:38</p>
+<p class="date">Last Modified: 2025-04-18 Fri 16:31</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
 </footer>
 </div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:47 -->
+<!-- 2025-04-19 Sat 13:06 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(vekatze.github.io) Overview - Neut Programming Language</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(vekatze.github.io) Overview - Neut Programming Language</h1>
 </header><pre class="example">
@@ -57,30 +57,30 @@ Like the following:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-neut">// the obligated hello world
-define hello(): unit {
-  print("Hello, world!
-")
-}
-
-// algebraic data types
-data my-list(a) {
-| Nil
-| Cons(a, my-list(a))
-}
-
-// a recursive function with pattern matching
-define noisy-length&lt;a&gt;(xs: my-list(a)): int {
-  match xs {
-  | Nil =&gt;
-    0
-  | Cons(_, ys) =&gt;
-    let my-message = "hey
-" in
-    print(my-message);
-    add-int(1, noisy-length(ys))
-  }
-}
+<pre class="src src-neut"><code>// the obligated hello world</code>
+<code>define hello(): unit {</code>
+<code>  print("Hello, world!</code>
+<code>")</code>
+<code>}</code>
+<code></code>
+<code>// algebraic data types</code>
+<code>data my-list(a) {</code>
+<code>| Nil</code>
+<code>| Cons(a, my-list(a))</code>
+<code>}</code>
+<code></code>
+<code>// a recursive function with pattern matching</code>
+<code>define noisy-length&lt;a&gt;(xs: my-list(a)): int {</code>
+<code>  match xs {</code>
+<code>  | Nil =&gt;</code>
+<code>    0</code>
+<code>  | Cons(_, ys) =&gt;</code>
+<code>    let my-message = "hey</code>
+<code>" in</code>
+<code>    print(my-message);</code>
+<code>    add-int(1, noisy-length(ys))</code>
+<code>  }</code>
+<code>}</code>
 </pre>
 </div>
 
@@ -97,16 +97,16 @@ For example, if a variable is used twice, a translation like the following will 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-neut">// (before)
-let xs: list(a) = [value-1, value-2] in
-some-func(xs, xs) // `xs` is used twice
-
-// ↓
-
-// (after)
-let xs: list(a) = [value-1, value-2] in
-let (xs1, xs2) = copy-list-a(xs) in  // `xs` is used once
-some-func(xs1, xs2)
+<pre class="src src-neut"><code>// (before)</code>
+<code>let xs: list(a) = [value-1, value-2] in</code>
+<code>some-func(xs, xs) // `xs` is used twice</code>
+<code></code>
+<code>// ↓</code>
+<code></code>
+<code>// (after)</code>
+<code>let xs: list(a) = [value-1, value-2] in</code>
+<code>let (xs1, xs2) = copy-list-a(xs) in  // `xs` is used once</code>
+<code>some-func(xs1, xs2)</code>
 </pre>
 </div>
 
@@ -155,7 +155,7 @@ You might also find Neut's module system interesting. <i>It distinguishes module
 Also, Neut includes an LSP server, which provides things like code completion, error reporting on save, etc. See <a href="https://vekatze.github.io/neut/lovely-lsp-showcase.html">Lovely LSP Showcase</a> to see it in action.
 </p>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

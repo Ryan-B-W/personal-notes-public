@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:48 -->
+<!-- 2025-04-19 Sat 13:07 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>ELisp Snippet: convert buffer from html to org using org-web-tools and Pandoc</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,14 +19,14 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">ELisp Snippet: convert buffer from html to org using org-web-tools and Pandoc</h1>
 </header><div class="org-src-container">
-<pre class="src src-elisp">(insert (org-web-tools--html-to-org-with-pandoc (delete-and-extract-region (point-min) (point-max))))
+<pre class="src src-elisp"><code>(insert (org-web-tools--html-to-org-with-pandoc (delete-and-extract-region (point-min) (point-max))))</code>
 </pre>
 </div>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

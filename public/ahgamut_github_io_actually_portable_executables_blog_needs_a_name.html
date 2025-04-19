@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:44 -->
+<!-- 2025-04-19 Sat 13:01 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(ahgamut.github.io) Actually Portable Executables | Blog Needs a Name</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(ahgamut.github.io) Actually Portable Executables | Blog Needs a Name</h1>
 </header><pre class="example">
@@ -39,8 +39,8 @@ The example on the <a href="https://github.com/jart/cosmopolitan">Github README<
 </p>
 
 <div class="org-src-container">
-<pre class="src src-chroma">gcc -g -O -static -nostdlib -nostdinc -fno-pie -no-pie -mno-red-zone   -o hello.com.dbg hello.c -fuse-ld=bfd -Wl,-T,ape.lds   -include cosmopolitan.h crt.o ape.o cosmopolitan.a
-objcopy -S -O binary hello.com.dbg hello.com
+<pre class="src src-chroma"><code>gcc -g -O -static -nostdlib -nostdinc -fno-pie -no-pie -mno-red-zone   -o hello.com.dbg hello.c -fuse-ld=bfd -Wl,-T,ape.lds   -include cosmopolitan.h crt.o ape.o cosmopolitan.a</code>
+<code>objcopy -S -O binary hello.com.dbg hello.com</code>
 </pre>
 </div>
 
@@ -56,7 +56,7 @@ I converted it into a simple Makefile to run the compilation commands. I tried a
 <h3 id="org9b622dd"><a href="justine_lol_actually_portable_executable.html#ID-90a4ff99-9e56-4a12-af93-7d12f33ff1a8">(justine.lol) Actually Portable Executable</a></h3>
 </div>
 </div>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:46 -->
+<!-- 2025-04-19 Sat 13:05 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(en.cppreference.com) qsort, qsort_s - cppreference.com</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(en.cppreference.com) qsort, qsort<sub>s</sub> - cppreference.com</h1>
 </header><pre class="example">
@@ -35,11 +35,11 @@ Defined in header <a href="https://en.cppreference.com/w/c/header/stdlib"><pre c
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c">void qsort( void* ptr, [[http://en.cppreference.com/w/c/types/size_t][size_t]] count, [[http://en.cppreference.com/w/c/types/size_t][size_t]] size,
-            int (*comp)(const void*, const void*) );
-errno_t qsort_s( void* ptr, rsize_t count, rsize_t size,
-                 int (*comp)(const void*, const void*, void*),
-                 void* context );
+<pre class="src src-c"><code><span class="org-type">void</span> <span class="org-function-name">qsort</span>( <span class="org-type">void</span>* <span class="org-variable-name">ptr</span>, [[http:<span class="org-comment-delimiter">//</span><span class="org-comment">en.cppreference.com/w/c/types/size_t][size_t]] count, [[http://en.cppreference.com/w/c/types/size_t][size_t]] size,</span></code>
+<code>            <span class="org-type">int</span> (*comp)(<span class="org-keyword">const</span> <span class="org-type">void</span>*, <span class="org-keyword">const</span> <span class="org-type">void</span>*) );</code>
+<code><span class="org-type">errno_t</span> <span class="org-function-name">qsort_s</span>( <span class="org-type">void</span>* <span class="org-variable-name">ptr</span>, <span class="org-type">rsize_t</span> <span class="org-variable-name">count</span>, <span class="org-type">rsize_t</span> <span class="org-variable-name">size</span>,</code>
+<code>                 <span class="org-type">int</span> (*<span class="org-function-name">comp</span>)(<span class="org-keyword">const</span> <span class="org-type">void</span>*, <span class="org-keyword">const</span> <span class="org-type">void</span>*, <span class="org-type">void</span>*),</code>
+<code>                 <span class="org-type">void</span>* <span class="org-variable-name">context</span> );</code>
 </pre>
 </div>
 
@@ -91,7 +91,7 @@ context - additional information (e.g., collating sequence), passed to <pre clas
 <li>zero on success, non-zero if a runtime constraints violation was detected</li>
 </ol>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

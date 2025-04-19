@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:46 -->
+<!-- 2025-04-19 Sat 13:04 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(arxiv.org) [2503.13877] Shock with Confidence: Formal Proofs of Correctness for Hyperbolic Partial Differential Equation Solvers</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(arxiv.org) [2503.13877] Shock with Confidence: Formal Proofs of Correctness for Hyperbolic Partial Differential Equation Solvers</h1>
 </header><pre class="example">
@@ -38,7 +38,7 @@ Authors: <a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Gorard
 First-order systems of hyperbolic partial differential equations (PDEs) occur ubiquitously throughout computational physics, commonly used in simulations of fluid turbulence, shock waves, electromagnetic interactions, and even general relativistic phenomena.  Such equations are often challenging to solve numerically in the non-linear case, due to their tendency to form discontinuities even for smooth initial data, which can cause numerical algorithms to become unstable, violate conservation laws, or converge to physically incorrect solutions.  In this paper, we introduce a new formal verification pipeline for such algorithms in Racket, which allows a user to construct a bespoke hyperbolic PDE solver for a specified equation system, generate low-level C code which verifiably implements that solver, and then produce formal proofs of various mathematical and physical correctness properties of the resulting implementation, including L<sup>2</sup> stability, flux conservation, and physical validity.  We outline how these correctness proofs are generated, using a custom-built theorem-proving and automatic differentiation framework that fully respects the algebraic structure of floating-point arithmetic, and show how the resulting C code may either be used to run standalone simulations, or integrated into a larger computational multiphysics framework such as Gkeyll.
 </p>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

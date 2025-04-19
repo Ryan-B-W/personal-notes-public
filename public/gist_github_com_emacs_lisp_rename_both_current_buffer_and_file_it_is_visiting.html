@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:47 -->
+<!-- 2025-04-19 Sat 13:05 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(gist.github.com) Emacs Lisp: Rename both current buffer and file it is visiting.</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,37 +19,37 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(gist.github.com) Emacs Lisp: Rename both current buffer and file it is visiting.</h1>
 </header><pre class="example">
 ROAM_REFS: https://gist.github.com/jamescherti/fc1054ce24606c4574cfa41d1ed67412
 </pre>
 <div class="org-src-container">
-<pre class="src src-elisp">;; Language: Emacs Lisp (elisp)
-;; Description: Rename both current buffer and file it is visiting.
-;; Author: James Cherti
-;; License: MIT
-;; URL: https://gist.github.com/jamescherti/fc1054ce24606c4574cfa41d1ed67412
-
-(defun rename-buffer-and-file ()
-  "Rename both current buffer and file it is visiting."
-  (interactive)
-  (let* ((bufname (buffer-name))
-         (filename (buffer-file-name))
-         (basename (file-name-nondirectory filename)))
-    (unless filename
-      (error "The buffer with the name '%s' is not visiting a file." bufname))
-    (unless (file-exists-p filename)
-      (error "The file '%s' cannot be found on the disk." filename))
-    (let ((new-basename (read-string "New name: " basename)))
-      (when (not (string= basename new-basename))
-        (save-buffer)
-        (rename-file filename new-basename 1)
-        (set-visited-file-name new-basename)))))
+<pre class="src src-elisp"><code><span class="org-comment-delimiter">;; </span><span class="org-comment">Language: Emacs Lisp (elisp)</span></code>
+<code><span class="org-comment-delimiter">;; </span><span class="org-comment">Description: Rename both current buffer and file it is visiting.</span></code>
+<code><span class="org-comment-delimiter">;; </span><span class="org-comment">Author: James Cherti</span></code>
+<code><span class="org-comment-delimiter">;; </span><span class="org-comment">License: MIT</span></code>
+<code><span class="org-comment-delimiter">;; </span><span class="org-comment">URL: https://gist.github.com/jamescherti/fc1054ce24606c4574cfa41d1ed67412</span></code>
+<code></code>
+<code>(<span class="org-keyword">defun</span> <span class="org-function-name">rename-buffer-and-file</span> ()</code>
+<code>  <span class="org-doc">"Rename both current buffer and file it is visiting."</span></code>
+<code>  (<span class="org-keyword">interactive</span>)</code>
+<code>  (<span class="org-keyword">let*</span> ((bufname (buffer-name))</code>
+<code>         (filename (buffer-file-name))</code>
+<code>         (basename (file-name-nondirectory filename)))</code>
+<code>    (<span class="org-keyword">unless</span> filename</code>
+<code>      (<span class="org-warning">error</span> <span class="org-string">"The buffer with the name '</span><span class="org-string"><span class="org-constant">%s</span></span><span class="org-string">' is not visiting a file."</span> bufname))</code>
+<code>    (<span class="org-keyword">unless</span> (file-exists-p filename)</code>
+<code>      (<span class="org-warning">error</span> <span class="org-string">"The file '</span><span class="org-string"><span class="org-constant">%s</span></span><span class="org-string">' cannot be found on the disk."</span> filename))</code>
+<code>    (<span class="org-keyword">let</span> ((new-basename (read-string <span class="org-string">"New name: "</span> basename)))</code>
+<code>      (<span class="org-keyword">when</span> (not (string= basename new-basename))</code>
+<code>        (save-buffer)</code>
+<code>        (rename-file filename new-basename 1)</code>
+<code>        (set-visited-file-name new-basename)))))</code>
 </pre>
 </div>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

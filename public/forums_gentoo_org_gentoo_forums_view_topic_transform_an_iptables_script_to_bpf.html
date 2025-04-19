@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:46 -->
+<!-- 2025-04-19 Sat 13:04 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(forums.gentoo.org) Gentoo Forums :: View topic - transform an iptables script to BPF</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(forums.gentoo.org) Gentoo Forums :: View topic - transform an iptables script to BPF</h1>
 </header><pre class="example">
@@ -44,64 +44,64 @@ I do wonder, if this script
 <b>Code:</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">#!/bin/sh
-#
-#set -x
-
-IPT="/sbin/iptables"
-
-startFirewall() {
-  $IPT -P INPUT DROP
-  $IPT -P OUTPUT ACCEPT
-  $IPT -P FORWARD DROP
-
-  # trust already established connections
-  #
-  $IPT -A INPUT --match conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-  $IPT -A INPUT --match conntrack --ctstate INVALID -j DROP
-
-  # Allow localhost traffic
-  #
-  $IPT -A INPUT --in-interface lo -j ACCEPT
-
-  # Tor
-  #
-  $IPT -A INPUT -p tcp --destination 5.9.158.75 -m multiport --destination-ports 443,9001,80,9030 -j ACCEPT
-
-  # Hetzner monitoring
-  # https://wiki.hetzner.de/index.php/System_Monitor_(SysMon)
-  #
-  getent ahostsv4 pool.sysmon.hetzner.com | awk '{print $1}' | sort -u |\
-  while read s
-  do
-    $IPT -A INPUT --source $s -j ACCEPT
-  done
-
-  # ssh
-  #
-  $IPT -A INPUT -p tcp --destination &lt;snip&gt; --destination-port &lt;snip&gt; -j ACCEPT
-}
-
-
-stopFirewall() {
-  $IPT -F
-  $IPT -X
-  $IPT -Z
-
-  $IPT -P INPUT ACCEPT
-  $IPT -P OUTPUT ACCEPT
-  $IPT -P FORWARD ACCEPT
-}
-
-
-case $1 in
-  start) startFirewall
-  ;;
-  stop) stopFirewall
-  ;;
-  *) echo "Usage: sh $(basename $0) { start | stop }"
-  ;;
-esac
+<pre class="src src-sh"><code><span class="org-comment-delimiter">#</span><span class="org-comment">!/bin/</span><span class="org-keyword">sh</span></code>
+<code><span class="org-comment-delimiter">#</span></code>
+<code><span class="org-comment-delimiter">#</span><span class="org-comment">set -x</span></code>
+<code></code>
+<code><span class="org-variable-name">IPT</span>=<span class="org-string">"/sbin/iptables"</span></code>
+<code></code>
+<code><span class="org-function-name">startFirewall</span>() {</code>
+<code>  $<span class="org-variable-name">IPT</span> -P INPUT DROP</code>
+<code>  $<span class="org-variable-name">IPT</span> -P OUTPUT ACCEPT</code>
+<code>  $<span class="org-variable-name">IPT</span> -P FORWARD DROP</code>
+<code></code>
+<code>  <span class="org-comment-delimiter"># </span><span class="org-comment">trust already established connections</span></code>
+<code>  <span class="org-comment-delimiter">#</span></code>
+<code>  $<span class="org-variable-name">IPT</span> -A INPUT --match conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT</code>
+<code>  $<span class="org-variable-name">IPT</span> -A INPUT --match conntrack --ctstate INVALID -j DROP</code>
+<code></code>
+<code>  <span class="org-comment-delimiter"># </span><span class="org-comment">Allow localhost traffic</span></code>
+<code>  <span class="org-comment-delimiter">#</span></code>
+<code>  $<span class="org-variable-name">IPT</span> -A INPUT --in-interface lo -j ACCEPT</code>
+<code></code>
+<code>  <span class="org-comment-delimiter"># </span><span class="org-comment">Tor</span></code>
+<code>  <span class="org-comment-delimiter">#</span></code>
+<code>  $<span class="org-variable-name">IPT</span> -A INPUT -p tcp --destination 5.9.158.75 -m multiport --destination-ports 443,9001,80,9030 -j ACCEPT</code>
+<code></code>
+<code>  <span class="org-comment-delimiter"># </span><span class="org-comment">Hetzner monitoring</span></code>
+<code>  <span class="org-comment-delimiter"># </span><span class="org-comment">https://wiki.hetzner.de/index.php/System_Monitor_(SysMon)</span></code>
+<code>  <span class="org-comment-delimiter">#</span></code>
+<code>  getent ahostsv4 pool.sysmon.hetzner.com | awk <span class="org-string">'{print $1}'</span> | sort -u |<span class="org-sh-escaped-newline">\</span></code>
+<code>  <span class="org-keyword">while </span><span class="org-builtin">read</span> s</code>
+<code>  <span class="org-keyword">do</span></code>
+<code>    $<span class="org-variable-name">IPT</span> -A INPUT --source $<span class="org-variable-name">s</span> -j ACCEPT</code>
+<code>  <span class="org-keyword">done</span></code>
+<code></code>
+<code>  <span class="org-comment-delimiter"># </span><span class="org-comment">ssh</span></code>
+<code>  <span class="org-comment-delimiter">#</span></code>
+<code>  $<span class="org-variable-name">IPT</span> -A INPUT -p tcp --destination &lt;snip&gt; --destination-port &lt;snip&gt; -j ACCEPT</code>
+<code>}</code>
+<code></code>
+<code></code>
+<code><span class="org-function-name">stopFirewall</span>() {</code>
+<code>  $<span class="org-variable-name">IPT</span> -F</code>
+<code>  $<span class="org-variable-name">IPT</span> -X</code>
+<code>  $<span class="org-variable-name">IPT</span> -Z</code>
+<code></code>
+<code>  $<span class="org-variable-name">IPT</span> -P INPUT ACCEPT</code>
+<code>  $<span class="org-variable-name">IPT</span> -P OUTPUT ACCEPT</code>
+<code>  $<span class="org-variable-name">IPT</span> -P FORWARD ACCEPT</code>
+<code>}</code>
+<code></code>
+<code></code>
+<code><span class="org-keyword">case</span> $<span class="org-variable-name">1</span><span class="org-keyword"> in</span></code>
+<code>  start) startFirewall</code>
+<code>  ;;</code>
+<code>  stop) stopFirewall</code>
+<code>  ;;</code>
+<code>  *) <span class="org-builtin">echo</span> <span class="org-string">"Usage: sh $(</span><span class="org-sh-quoted-exec">basename $0</span><span class="org-string">) { start | stop }"</span></code>
+<code>  ;;</code>
+<code><span class="org-keyword">esac</span></code>
 </pre>
 </div>
 
@@ -132,12 +132,12 @@ Here's a translation (untested) using nftables, which is supported:
 <b>Code:</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">#!/bin/sh -eu
-nft -f rules.nft
-
-dig -t A +short pool.sysmon.hetzner.com | while read -r ipaddr; do
-    nft add element inet filter monitoring-ips "{ $ipaddr }"
-done
+<pre class="src src-sh"><code><span class="org-comment-delimiter">#</span><span class="org-comment">!/bin/</span><span class="org-keyword">sh</span><span class="org-comment"> -eu</span></code>
+<code>nft -f rules.nft</code>
+<code></code>
+<code>dig -t A +short pool.sysmon.hetzner.com | <span class="org-keyword">while </span><span class="org-builtin">read</span> -r ipaddr; <span class="org-keyword">do</span></code>
+<code>    nft add element inet filter monitoring-ips <span class="org-string">"{ $ipaddr }"</span></code>
+<code><span class="org-keyword">done</span></code>
 </pre>
 </div>
 
@@ -145,41 +145,41 @@ done
 <b>rules.nft:</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">#!/sbin/nft -f
-
-ssh_dest = 123.456.XXX.XXX;
-ssh_port = 6789X;
-tor_dest = 5.9.158.75;
-
-table inet filter {
-    set monitoring-ips {
-        type ipv4_addr
-        elements = { }
-    }
-
-    chain input {
-        type filter hook input priority 0
-        policy drop
-
-        meta iif lo accept
-        ct state related,established accept
-        ct state invalid drop
-
-        ip saddr @monitoring-ips accept
-        ip daddr $tor_dest tcp dport { 80, 443, 9001, 9030 } accept comment "Tor"
-        ip daddr $ssh_dest tcp dport $ssh_port accept comment "SSH"
-    }
-
-    chain output {
-        type filter hook output priority 0
-        policy accept
-    }
-
-    chain forward {
-        type filter hook forward priority 0
-        policy drop
-    }
-}
+<pre class="src src-sh"><code><span class="org-comment-delimiter">#</span><span class="org-comment">!/sbin/</span><span class="org-keyword">nft</span><span class="org-comment"> -f</span></code>
+<code></code>
+<code>ssh_dest = 123.456.XXX.XXX;</code>
+<code>ssh_port = 6789X;</code>
+<code>tor_dest = 5.9.158.75;</code>
+<code></code>
+<code>table inet filter {</code>
+<code>    <span class="org-builtin">set</span> monitoring-ips {</code>
+<code>        <span class="org-builtin">type</span> ipv4_addr</code>
+<code>        elements = { }</code>
+<code>    }</code>
+<code></code>
+<code>    chain input {</code>
+<code>        <span class="org-builtin">type</span> filter hook input priority 0</code>
+<code>        policy drop</code>
+<code></code>
+<code>        meta iif lo accept</code>
+<code>        ct state related,established accept</code>
+<code>        ct state invalid drop</code>
+<code></code>
+<code>        ip saddr @monitoring-ips accept</code>
+<code>        ip daddr $<span class="org-variable-name">tor_dest</span> tcp dport { 80, 443, 9001, 9030 } accept comment <span class="org-string">"Tor"</span></code>
+<code>        ip daddr $<span class="org-variable-name">ssh_dest</span> tcp dport $<span class="org-variable-name">ssh_port</span> accept comment <span class="org-string">"SSH"</span></code>
+<code>    }</code>
+<code></code>
+<code>    chain output {</code>
+<code>        <span class="org-builtin">type</span> filter hook output priority 0</code>
+<code>        policy accept</code>
+<code>    }</code>
+<code></code>
+<code>    chain forward {</code>
+<code>        <span class="org-builtin">type</span> filter hook forward priority 0</code>
+<code>        policy drop</code>
+<code>    }</code>
+<code>}</code>
 </pre>
 </div>
 
@@ -198,7 +198,7 @@ Posted: Mon Sep 09, 2019 2:26 pm Post subject:
 Thx, Ant P.!
 </p>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-04-02 Wed 02:10</p>

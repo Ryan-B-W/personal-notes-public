@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:45 -->
+<!-- 2025-04-19 Sat 13:02 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>ELisp Snippet: auto reformat node title and rename file to match</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,41 +19,41 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">ELisp Snippet: auto reformat node title and rename file to match</h1>
 </header><div class="org-src-container">
-<pre class="src src-elisp">;; Custom renaming function.
-(defun my/rename-org-roam-visited-file ()
-  (interactive)
-  (let* ((node (org-roam-node-at-point t))
-         (replacement-title (concat "(" (url-host (url-generic-parse-url (car (org-roam-node-refs node)))) ") " (org-roam-node-title node)))
-         (replacement-title-property (concat "#+title: " replacement-title))
-         (current-file-name (buffer-file-name (current-buffer))))
-    ;(message "New calculated title is \"%s\"." replacement-title)
-    (if (not (and current-file-name (file-exists-p current-file-name)))
-        (message "Buffer is not visiting a file!")
-      (perform-replace "^#\\+title\\: .*$" replacement-title-property nil t nil nil nil (point-min) (point-max) nil nil)
-      (save-buffer)
-      ;(message "Saved file \"%s\" with new title." (buffer-file-name (current-buffer)))
-      (let* ((node (org-roam-node-at-point t))
-             (slug (org-roam-node-slug node))
-             (new-file-name (concat (file-name-directory current-file-name) slug ".org")))
-        ;(message "New file name is \"%s\" based on slug \"%s\"." new-file-name slug)
-        (cond
-         ((vc-backend current-file-name)
-          ;(message "Renaming file \"%s\" to \"%s\" via VC." current-file-name new-file-name)
-          (vc-rename-file current-file-name new-file-name)
-          (org-roam-db-autosync--rename-file-a current-file-name new-file-name))
-         (t
-          ;(message "Renaming file \"%s\" to \"%s\" normally." current-file-name new-file-name)
-          (rename-file current-file-name new-file-name 1)
-          (set-visited-file-name new-file-name t t)))))))
-;; Bind the renaming function to "&lt;Space&gt; m"
-(bind-key (kbd "m") #'my/rename-org-roam-visited-file custom-leader-map)
+<pre class="src src-elisp"><code><span class="org-comment-delimiter">;; </span><span class="org-comment">Custom renaming function.</span></code>
+<code>(<span class="org-keyword">defun</span> <span class="org-function-name">my/rename-org-roam-visited-file</span> ()</code>
+<code>  (<span class="org-keyword">interactive</span>)</code>
+<code>  (<span class="org-keyword">let*</span> ((node (org-roam-node-at-point t))</code>
+<code>         (replacement-title (concat <span class="org-string">"("</span> (url-host (url-generic-parse-url (car (org-roam-node-refs node)))) <span class="org-string">") "</span> (org-roam-node-title node)))</code>
+<code>         (replacement-title-property (concat <span class="org-string">"#+title: "</span> replacement-title))</code>
+<code>         (current-file-name (buffer-file-name (current-buffer))))</code>
+<code>    <span class="org-comment-delimiter">;</span><span class="org-comment">(message "New calculated title is \"%s\"." replacement-title)</span></code>
+<code>    (<span class="org-keyword">if</span> (not (<span class="org-keyword">and</span> current-file-name (file-exists-p current-file-name)))</code>
+<code>        (message <span class="org-string">"Buffer is not visiting a file!"</span>)</code>
+<code>      (perform-replace <span class="org-string">"^#\\+title\\: .*$"</span> replacement-title-property nil t nil nil nil (point-min) (point-max) nil nil)</code>
+<code>      (save-buffer)</code>
+<code>      <span class="org-comment-delimiter">;</span><span class="org-comment">(message "Saved file \"%s\" with new title." (buffer-file-name (current-buffer)))</span></code>
+<code>      (<span class="org-keyword">let*</span> ((node (org-roam-node-at-point t))</code>
+<code>             (slug (org-roam-node-slug node))</code>
+<code>             (new-file-name (concat (file-name-directory current-file-name) slug <span class="org-string">".org"</span>)))</code>
+<code>        <span class="org-comment-delimiter">;</span><span class="org-comment">(message "New file name is \"%s\" based on slug \"%s\"." new-file-name slug)</span></code>
+<code>        (<span class="org-keyword">cond</span></code>
+<code>         ((vc-backend current-file-name)</code>
+<code>          <span class="org-comment-delimiter">;</span><span class="org-comment">(message "Renaming file \"%s\" to \"%s\" via VC." current-file-name new-file-name)</span></code>
+<code>          (vc-rename-file current-file-name new-file-name)</code>
+<code>          (org-roam-db-autosync--rename-file-a current-file-name new-file-name))</code>
+<code>         (t</code>
+<code>          <span class="org-comment-delimiter">;</span><span class="org-comment">(message "Renaming file \"%s\" to \"%s\" normally." current-file-name new-file-name)</span></code>
+<code>          (rename-file current-file-name new-file-name 1)</code>
+<code>          (set-visited-file-name new-file-name t t)))))))</code>
+<code><span class="org-comment-delimiter">;; </span><span class="org-comment">Bind the renaming function to "&lt;Space&gt; m"</span></code>
+<code>(<span class="org-keyword">bind-key</span> (kbd <span class="org-string">"m"</span>) #'my/rename-org-roam-visited-file custom-leader-map)</code>
 </pre>
 </div>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:47 -->
+<!-- 2025-04-19 Sat 13:06 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(huggingface.co) Qwen/Qwen2.5-Coder-32B-Instruct · Hugging Face</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(huggingface.co) Qwen/Qwen2.5-Coder-32B-Instruct · Hugging Face</h1>
 </header><pre class="example">
@@ -78,8 +78,8 @@ The code of Qwen2.5-Coder has been in the latest Hugging face <pre class="verbat
 With <pre class="verbatim">transformers&lt;4.37.0</pre>, you will encounter the following error:
 </p>
 
-<pre class="example" id="orgaa8a6fa">
-KeyError: 'qwen2'
+<pre class="example" id="org35ca39b">
+<code>KeyError: 'qwen2'</code>
 </pre>
 
 <p>
@@ -91,38 +91,38 @@ Here provides a code snippet with <pre class="verbatim">apply_chat_template</pre
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">from transformers import AutoModelForCausalLM, AutoTokenizer
-
-model_name = "Qwen/Qwen2.5-Coder-32B-Instruct"
-
-model = AutoModelForCausalLM.from_pretrained(
-    model_name,
-    torch_dtype="auto",
-    device_map="auto"
-)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-
-prompt = "write a quick sort algorithm."
-messages = [
-    {"role": "system", "content": "You are Qwen, created by Alibaba Cloud.  You are a helpful assistant."},
-    {"role": "user", "content": prompt}
-]
-text = tokenizer.apply_chat_template(
-    messages,
-    tokenize=False,
-    add_generation_prompt=True
-)
-model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
-
-generated_ids = model.generate(
-    **model_inputs,
-    max_new_tokens=512
-)
-generated_ids = [
-    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
-]
-
-response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+<pre class="src src-python"><code><span class="org-keyword">from</span> transformers <span class="org-keyword">import</span> AutoModelForCausalLM, AutoTokenizer</code>
+<code></code>
+<code><span class="org-variable-name">model_name</span> <span class="org-operator">=</span> <span class="org-string">"Qwen/Qwen2.5-Coder-32B-Instruct"</span></code>
+<code></code>
+<code><span class="org-variable-name">model</span> <span class="org-operator">=</span> AutoModelForCausalLM.from_pretrained(</code>
+<code>    model_name,</code>
+<code>    torch_dtype<span class="org-operator">=</span><span class="org-string">"auto"</span>,</code>
+<code>    device_map<span class="org-operator">=</span><span class="org-string">"auto"</span></code>
+<code>)</code>
+<code><span class="org-variable-name">tokenizer</span> <span class="org-operator">=</span> AutoTokenizer.from_pretrained(model_name)</code>
+<code></code>
+<code><span class="org-variable-name">prompt</span> <span class="org-operator">=</span> <span class="org-string">"write a quick sort algorithm."</span></code>
+<code><span class="org-variable-name">messages</span> <span class="org-operator">=</span> [</code>
+<code>    {<span class="org-string">"role"</span>: <span class="org-string">"system"</span>, <span class="org-string">"content"</span>: <span class="org-string">"You are Qwen, created by Alibaba Cloud.  You are a helpful assistant."</span>},</code>
+<code>    {<span class="org-string">"role"</span>: <span class="org-string">"user"</span>, <span class="org-string">"content"</span>: prompt}</code>
+<code>]</code>
+<code><span class="org-variable-name">text</span> <span class="org-operator">=</span> tokenizer.apply_chat_template(</code>
+<code>    messages,</code>
+<code>    tokenize<span class="org-operator">=</span><span class="org-constant">False</span>,</code>
+<code>    add_generation_prompt<span class="org-operator">=</span><span class="org-constant">True</span></code>
+<code>)</code>
+<code><span class="org-variable-name">model_inputs</span> <span class="org-operator">=</span> tokenizer([text], return_tensors<span class="org-operator">=</span><span class="org-string">"pt"</span>).to(model.device)</code>
+<code></code>
+<code><span class="org-variable-name">generated_ids</span> <span class="org-operator">=</span> model.generate(</code>
+<code>    <span class="org-operator">**</span>model_inputs,</code>
+<code>    max_new_tokens<span class="org-operator">=</span>512</code>
+<code>)</code>
+<code><span class="org-variable-name">generated_ids</span> <span class="org-operator">=</span> [</code>
+<code>    output_ids[<span class="org-builtin">len</span>(input_ids):] <span class="org-keyword">for</span> input_ids, output_ids <span class="org-keyword">in</span> <span class="org-builtin">zip</span>(model_inputs.input_ids, generated_ids)</code>
+<code>]</code>
+<code></code>
+<code><span class="org-variable-name">response</span> <span class="org-operator">=</span> tokenizer.batch_decode(generated_ids, skip_special_tokens<span class="org-operator">=</span><span class="org-constant">True</span>)[0]</code>
 </pre>
 </div>
 
@@ -139,14 +139,14 @@ For supported frameworks, you could add the following to <pre class="verbatim">c
 </p>
 
 <div class="org-src-container">
-<pre class="src src-json">{
-  ...,
-  "rope_scaling": {
-    "factor": 4.0,
-    "original_max_position_embeddings": 32768,
-    "type": "yarn"
-  }
-}
+<pre class="src src-json"><code>{</code>
+<code>  ...,</code>
+<code>  "rope_scaling": {</code>
+<code>    "factor": 4.0,</code>
+<code>    "original_max_position_embeddings": 32768,</code>
+<code>    "type": "yarn"</code>
+<code>  }</code>
+<code>}</code>
 </pre>
 </div>
 
@@ -174,22 +174,22 @@ For requirements on GPU memory and the respective throughput, see results <a hre
 If you find our work helpful, feel free to give us a cite.
 </p>
 
-<pre class="example" id="org3217de9">
-@article{hui2024qwen2,
-      title={Qwen2. 5-Coder Technical Report},
-      author={Hui, Binyuan and Yang, Jian and Cui, Zeyu and Yang, Jiaxi and Liu, Dayiheng and Zhang, Lei and Liu, Tianyu and Zhang, Jiajun and Yu, Bowen and Dang, Kai and others},
-      journal={arXiv preprint arXiv:2409.12186},
-      year={2024}
-}
-@article{qwen2,
-      title={Qwen2 Technical Report},
-      author={An Yang and Baosong Yang and Binyuan Hui and Bo Zheng and Bowen Yu and Chang Zhou and Chengpeng Li and Chengyuan Li and Dayiheng Liu and Fei Huang and Guanting Dong and Haoran Wei and Huan Lin and Jialong Tang and Jialin Wang and Jian Yang and Jianhong Tu and Jianwei Zhang and Jianxin Ma and Jin Xu and Jingren Zhou and Jinze Bai and Jinzheng He and Junyang Lin and Kai Dang and Keming Lu and Keqin Chen and Kexin Yang and Mei Li and Mingfeng Xue and Na Ni and Pei Zhang and Peng Wang and Ru Peng and Rui Men and Ruize Gao and Runji Lin and Shijie Wang and Shuai Bai and Sinan Tan and Tianhang Zhu and Tianhao Li and Tianyu Liu and Wenbin Ge and Xiaodong Deng and Xiaohuan Zhou and Xingzhang Ren and Xinyu Zhang and Xipin Wei and Xuancheng Ren and Yang Fan and Yang Yao and Yichang Zhang and Yu Wan and Yunfei Chu and Yuqiong Liu and Zeyu Cui and Zhenru Zhang and Zhihao Fan},
-      journal={arXiv preprint arXiv:2407.10671},
-      year={2024}
-}
+<pre class="example" id="org506e246">
+<code>@article{hui2024qwen2,</code>
+<code>      title={Qwen2. 5-Coder Technical Report},</code>
+<code>      author={Hui, Binyuan and Yang, Jian and Cui, Zeyu and Yang, Jiaxi and Liu, Dayiheng and Zhang, Lei and Liu, Tianyu and Zhang, Jiajun and Yu, Bowen and Dang, Kai and others},</code>
+<code>      journal={arXiv preprint arXiv:2409.12186},</code>
+<code>      year={2024}</code>
+<code>}</code>
+<code>@article{qwen2,</code>
+<code>      title={Qwen2 Technical Report},</code>
+<code>      author={An Yang and Baosong Yang and Binyuan Hui and Bo Zheng and Bowen Yu and Chang Zhou and Chengpeng Li and Chengyuan Li and Dayiheng Liu and Fei Huang and Guanting Dong and Haoran Wei and Huan Lin and Jialong Tang and Jialin Wang and Jian Yang and Jianhong Tu and Jianwei Zhang and Jianxin Ma and Jin Xu and Jingren Zhou and Jinze Bai and Jinzheng He and Junyang Lin and Kai Dang and Keming Lu and Keqin Chen and Kexin Yang and Mei Li and Mingfeng Xue and Na Ni and Pei Zhang and Peng Wang and Ru Peng and Rui Men and Ruize Gao and Runji Lin and Shijie Wang and Shuai Bai and Sinan Tan and Tianhang Zhu and Tianhao Li and Tianyu Liu and Wenbin Ge and Xiaodong Deng and Xiaohuan Zhou and Xingzhang Ren and Xinyu Zhang and Xipin Wei and Xuancheng Ren and Yang Fan and Yang Yao and Yichang Zhang and Yu Wan and Yunfei Chu and Yuqiong Liu and Zeyu Cui and Zhenru Zhang and Zhihao Fan},</code>
+<code>      journal={arXiv preprint arXiv:2407.10671},</code>
+<code>      year={2024}</code>
+<code>}</code>
 </pre>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

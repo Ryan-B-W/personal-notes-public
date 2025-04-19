@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:47 -->
+<!-- 2025-04-19 Sat 13:06 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(tex.stackexchange.com) texlive - How do I list the available classes in my installation? - TeX - LaTeX Stack Exchange</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(tex.stackexchange.com) texlive - How do I list the available classes in my installation? - TeX - LaTeX Stack Exchange</h1>
 </header><pre class="example">
@@ -29,10 +29,10 @@ ROAM_REFS: https://tex.stackexchange.com/questions/115028/how-do-i-list-the-avai
 From the answer:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">grep "\.cls" `kpsewhich --var-value TEXMFDIST`/ls-R
+<pre class="src src-sh"><code>grep <span class="org-string">"\.cls"</span> <span class="org-sh-quoted-exec">`kpsewhich --var-value TEXMFDIST`</span>/ls-R</code>
 </pre>
 </div>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-03-28 Fri 12:13</p>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-08 Tue 13:44 -->
+<!-- 2025-04-19 Sat 13:01 -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(www.brendangregg.com) CPU Utilization is Wrong</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
@@ -19,7 +19,7 @@
 </ul>
 </nav>
 </div>
-<div id="content" class="content">
+<main id="content" class="content">
 <header>
 <h1 class="title">(www.brendangregg.com) CPU Utilization is Wrong</h1>
 </header><pre class="example">
@@ -43,7 +43,7 @@ What you may think 90% CPU utilization means:
 </p>
 
 
-<figure id="orgffdc6b8">
+<figure id="org59d0d08">
 <img src="https://www.brendangregg.com/blog/images/2017/cpubusyidle.png" alt="cpubusyidle.png" />
 
 </figure>
@@ -53,7 +53,7 @@ What it might really mean:
 </p>
 
 
-<figure id="org82d722d">
+<figure id="org0cbcbdc">
 <img src="https://www.brendangregg.com/blog/images/2017/cpubusystalledidle.png" alt="cpubusystalledidle.png" />
 
 </figure>
@@ -66,7 +66,7 @@ Stalled means the processor was not making forward progress with instructions, a
 What does this mean for you?  Understanding how much your CPUs are stalled can direct performance tuning efforts between reducing code or reducing memory I/O. Anyone looking at CPU performance, especially on clouds that auto scale based on CPU, would benefit from knowing the stalled component of their %CPU.
 </p>
 </blockquote>
-</div>
+</main>
 <div id="postamble" class="status">
 <footer>
 <p class="date">Last Modified: 2025-04-02 Wed 02:10</p>
