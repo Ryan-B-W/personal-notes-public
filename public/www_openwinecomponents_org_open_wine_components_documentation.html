@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:13 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(www.openwinecomponents.org) Open Wine Components Documentation</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -26,115 +26,41 @@
 ROAM_REFS: https://www.openwinecomponents.org/
 </pre>
 <blockquote>
-<p>
-** HOW STEAM RUNS GAMES ON LINUX:
-</p>
-
-
-<figure id="orgdc4ca17">
+<p>** HOW STEAM RUNS GAMES ON LINUX:</p><figure id="orge6688a8">
 <img src="https://www.openwinecomponents.org/images/steam-process-diagram.png" alt="steam-process-diagram.png" />
 
-</figure>
-
-<p>
-** BUT WHAT IF MY GAME IS NOT ON STEAM?..
-</p>
-
-<p>
-<b>*</b> Use Open Wine Components UMU-LAUNCHER!
-</p>
-
-
-<figure id="org304c14a">
+</figure><p>** BUT WHAT IF MY GAME IS NOT ON STEAM?..</p><p><b>*</b> Use Open Wine Components UMU-LAUNCHER!</p><figure id="org0473df2">
 <img src="https://www.openwinecomponents.org/images/umu-launcher-diagram.png" alt="umu-launcher-diagram.png" />
 
-</figure>
+</figure><p>** THE IMPORTANCE OF THE STEAM LINUX RUNTIME CONTAINER</p><p>By running everything inside the Steam Linux Runtime container, it forces both Proton and the game it's running to use the libraries within the container.  This is important for two reasons.</p><ol class="org-ol">
+<li><p><b>Version Compatibility</b></p><p>Proton is built using this runtime.  If your system has a library version that differs from the runtime and you don't run proton with the runtime, it can cause Proton to fail.</p><p>Example: Your system has library.so (version 4.5.6) but Proton was built using Steam Linux Runtime with library.so (version 1.2.3) - so it expects a different version and fails when trying to run with a different version.</p></li>
 
-<p>
-** THE IMPORTANCE OF THE STEAM LINUX RUNTIME CONTAINER
-</p>
-
-<p>
-By running everything inside the Steam Linux Runtime container, it forces both Proton and the game it's running to use the libraries within the container.  This is important for two reasons.
-</p>
-
-<ol class="org-ol">
-<li><p>
-<b>Version Compatibility</b>
-</p>
-
-<p>
-Proton is built using this runtime.  If your system has a library version that differs from the runtime and you don't run proton with the runtime, it can cause Proton to fail.
-</p>
-
-<p>
-Example: Your system has library.so (version 4.5.6) but Proton was built using Steam Linux Runtime with library.so (version 1.2.3) - so it expects a different version and fails when trying to run with a different version.
-</p></li>
-
-<li><p>
-<b>Cross-Distribution Stability</b>
-</p>
-
-<p>
-This ensures a stable, non-changing set of libraries EVERY time the game is run, on ANY Linux distribution.  Having a stable target has always been the hardest part of allowing games to run on Linux, and this resolves that problem.
-</p></li>
+<li><p><b>Cross-Distribution Stability</b></p><p>This ensures a stable, non-changing set of libraries EVERY time the game is run, on ANY Linux distribution.  Having a stable target has always been the hardest part of allowing games to run on Linux, and this resolves that problem.</p></li>
 </ol>
 
-<p>
-** USING THE CLI TOOL:
-</p>
-
-<ul class="org-ul">
+<p>** USING THE CLI TOOL:</p><ul class="org-ul">
 <li>UMU-LAUNCHER can be used for ANY non-steam game.  Even if the game doesn't need fixes!</li>
 <li>Specifying UMU<sub>ID</sub> (GAMEID), and STORE are completely optional.</li>
 </ul>
 
-<p>
-Example command:
-</p>
-
-<div class="org-src-container">
+<p>Example command:</p><div class="org-src-container">
 <pre class="src src-cli-command"><code>WINEPREFIX=~/some/prefix/path PROTONPATH=GE-Proton umu-run /path/to/game.exe</code>
 </pre>
 </div>
 
-<p>
-** GE-PROTON AND UMU-PROTON
-</p>
-
-<ul class="org-ul">
+<p>** GE-PROTON AND UMU-PROTON</p><ul class="org-ul">
 <li>GE-PROTON is a fork of Valve's proton bleeding-edge branch.  It adds wine-staging patches as well as enables more codecs for video playback in games.  It also adds various game patches which have not made it into upstream proton yet.  Lastly, it adds UMU-Protonfixes support: <a href="https://github.com/gloriouseggroll/proton-ge-custom">View GE-Proton Custom Repository</a></li>
 <li>UMU-PROTON is a fork of Valve's proton stable branch.  It aims to stay as close to upstream stable version as possible while still adding UMU-Protonfixes support: <a href="https://github.com/open-wine-components/umu-proton">View UMU-Proton Repository</a></li>
 </ul>
 
-<p>
-When using UMU-LAUNCHER you can specify PROTONPATH=GE-Proton to make it automatically download and use the latest GE-Proton build.  Alternatively you can point it to any existing proton install path.  If PROTONPATH is not specified, it defaults to downloading and using UMU-Proton.
-</p>
-
-<p>
-** UMU-DATABASE + UMU-PROTONFIXES
-</p>
-
-<p>
-<b>*</b> Common Game Fixes
-</p>
-
-<ul class="org-ul">
+<p>When using UMU-LAUNCHER you can specify PROTONPATH=GE-Proton to make it automatically download and use the latest GE-Proton build.  Alternatively you can point it to any existing proton install path.  If PROTONPATH is not specified, it defaults to downloading and using UMU-Proton.</p><p>** UMU-DATABASE + UMU-PROTONFIXES</p><p><b>*</b> Common Game Fixes</p><ul class="org-ul">
 <li>Winetricks - for installing Windows components needed by the game</li>
 <li>Executable swap - for cases where a game's launcher isn't working but the game itself does</li>
 <li>DLL overrides - for using native Windows' version of a library instead of the WINE version</li>
 <li>Game save transfers - for sequel games that use saves from the original game</li>
 </ul>
 
-<p>
-<b>*</b> Integration Partners
-</p>
-
-<p>
-UMU-LAUNCHER works as a back-end CLI tool alongside these front-end GUI game managers:
-</p>
-
-<ul class="org-ul">
+<p><b>*</b> Integration Partners</p><p>UMU-LAUNCHER works as a back-end CLI tool alongside these front-end GUI game managers:</p><ul class="org-ul">
 <li><a href="https://lutris.net/">Lutris</a></li>
 <li><a href="https://heroicgameslauncher.com/">Heroic</a></li>
 <li><a href="https://github.com/Faugus/faugus-launcher">Faugus</a></li>
@@ -144,71 +70,27 @@ UMU-LAUNCHER works as a back-end CLI tool alongside these front-end GUI game man
 <li><a href="https://usebottles.com/posts/2024-09-24-umu-next/">Bottles (coming soon)</a></li>
 </ul>
 
-<p>
-CLI &#x2013; Command Line Interface
-</p>
-
-<p>
-GUI &#x2013; Graphical User Interface
-</p>
-
-<p>
-<b>*</b> The Unified Database System
-</p>
-
-<p>
-All tool developers collaborate on UMU's unified database:
-</p>
-
-<ul class="org-ul">
+<p>CLI &#x2013; Command Line Interface</p><p>GUI &#x2013; Graphical User Interface</p><p><b>*</b> The Unified Database System</p><p>All tool developers collaborate on UMU's unified database:</p><ul class="org-ul">
 <li><a href="https://github.com/Open-Wine-Components/umu-database">UMU-DATABASE Repository</a></li>
 </ul>
 
-<p>
-Key Features:
-</p>
-
-<ul class="org-ul">
+<p>Key Features:</p><ul class="org-ul">
 <li>Assigns unique UMU<sub>ID</sub> to every game requiring fixes</li>
 <li>Game fixes stored as python scripts in UMU-PROTONFIXES: <a href="https://github.com/Open-Wine-Components/umu-protonfixes">UMU-PROTONFIXES Repository</a></li>
 </ul>
 
-<p>
-<b>*</b> How It Works Together
-</p>
-
-<ol class="org-ol">
+<p><b>*</b> How It Works Together</p><ol class="org-ol">
 <li>The GUI tool knows the TITLE and STORE the game comes from, or the CODENAME provided by the store's API/database.</li>
 <li>The GUI searches the UMU-DATABASE using STORE and/or TITLE/CODENAME, receiving the UMU<sub>ID</sub> in return.</li>
 <li>The GUI tool passes the UMU<sub>ID</sub> and STORE to UMU-LAUNCHER, triggering game fixes when using GE-Proton or UMU-Proton.</li>
 </ol>
 
-<p>
-** DATABASE USAGE
-</p>
-
-<p>
-<b>*</b> Search Interface
-</p>
-
-<p>
-We've created a simple search web page for finding database entries:
-</p>
-
-<ul class="org-ul">
+<p>** DATABASE USAGE</p><p><b>*</b> Search Interface</p><p>We've created a simple search web page for finding database entries:</p><ul class="org-ul">
 <li><a href="https://umu.openwinecomponents.org/">Search Web Page</a></li>
 <li><a href="https://github.com/Open-Wine-Components/umu-database/tree/main/umu.openwinecomponents.org">Source Code on GitHub</a></li>
 </ul>
 
-<p>
-<b>*</b> API Endpoints
-</p>
-
-<p>
-The web page provides several endpoints that can be queried:
-</p>
-
-<ul class="org-ul">
+<p><b>*</b> API Endpoints</p><p>The web page provides several endpoints that can be queried:</p><ul class="org-ul">
 <li>List ALL entries:
 <pre class="verbatim">https://umu.openwinecomponents.org/umu_api.php</pre></li>
 <li>List ALL entries based on STORE:

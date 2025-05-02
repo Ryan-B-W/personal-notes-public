@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:13 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(vekatze.github.io) Overview - Neut Programming Language</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,33 +30,13 @@ ROAM_REFS: https://vekatze.github.io/neut/overview.html
 <li><a href="https://vekatze.github.io/neut/overview.html#neut-programming-language">Neut Programming Language</a></li>
 </ul>
 
-<p>
-Neut is a functional programming language with static memory management.
-</p>
-
-<p>
-Its key features include:
-</p>
-
-<ul class="org-ul">
+<p>Neut is a functional programming language with static memory management.</p><p>Its key features include:</p><ul class="org-ul">
 <li>Full λ-calculus support</li>
 <li>Predictable automatic memory management</li>
 <li><i>The absence of annotations to the type system</i> when achieving both of the above</li>
 </ul>
 
-<p>
-Neut doesn't use GCs or regions. Instead, it takes a <i>type-directed approach</i> to handle resources.
-</p>
-
-<p>
-** <a href="https://vekatze.github.io/neut/overview.html#what-does-it-look-like">What Does it Look Like?</a>
-</p>
-
-<p>
-Like the following:
-</p>
-
-<div class="org-src-container">
+<p>Neut doesn't use GCs or regions. Instead, it takes a <i>type-directed approach</i> to handle resources.</p><p>** <a href="https://vekatze.github.io/neut/overview.html#what-does-it-look-like">What Does it Look Like?</a></p><p>Like the following:</p><div class="org-src-container">
 <pre class="src src-neut"><code>// the obligated hello world</code>
 <code>define hello(): unit {</code>
 <code>  print("Hello, world!</code>
@@ -84,19 +64,7 @@ Like the following:
 </pre>
 </div>
 
-<p>
-** <a href="https://vekatze.github.io/neut/overview.html#static-memory-management--but-how">Static Memory Management &#x2014; But How?</a>
-</p>
-
-<p>
-<i>Neut translates a type into a function</i> that can discard/copy the values of the type. By using those functions, the compiler translates programs so that every variable is used exactly once.
-</p>
-
-<p>
-For example, if a variable is used twice, a translation like the following will happen:
-</p>
-
-<div class="org-src-container">
+<p>** <a href="https://vekatze.github.io/neut/overview.html#static-memory-management--but-how">Static Memory Management &#x2014; But How?</a></p><p><i>Neut translates a type into a function</i> that can discard/copy the values of the type. By using those functions, the compiler translates programs so that every variable is used exactly once.</p><p>For example, if a variable is used twice, a translation like the following will happen:</p><div class="org-src-container">
 <pre class="src src-neut"><code>// (before)</code>
 <code>let xs: list(a) = [value-1, value-2] in</code>
 <code>some-func(xs, xs) // `xs` is used twice</code>
@@ -110,32 +78,11 @@ For example, if a variable is used twice, a translation like the following will 
 </pre>
 </div>
 
-<p>
-If you need more, see <a href="https://vekatze.github.io/neut/how-to-execute-types.html">How to Execute Types</a>.
-</p>
-
-<p>
-You may wonder: <i>"So we need to, for example, copy the whole list just to get its length? Isn't it the end of the world?"</i>. This topic is covered in <a href="https://vekatze.github.io/neut/static-memory-management.html">Static Memory Management</a>. As written there, Neut avoids such copyings by using the <i>T-necessity operator</i> in modal logic to achieve something like borrowing in Rust.
-</p>
-
-<p>
-** <a href="https://vekatze.github.io/neut/overview.html#how-fast-is-this">How Fast is This?</a>
-</p>
-
-<p>
-<a href="https://vekatze.github.io/neut/benchmarks.html">Please see the benchmarks</a>.
-</p>
-
-<p>
-** <a href="https://vekatze.github.io/neut/overview.html#list-of-other-basic-characteristics">List of Other Basic Characteristics?</a>
-</p>
-
-<ul class="org-ul">
+<p>If you need more, see <a href="https://vekatze.github.io/neut/how-to-execute-types.html">How to Execute Types</a>.</p><p>You may wonder: <i>"So we need to, for example, copy the whole list just to get its length? Isn't it the end of the world?"</i>. This topic is covered in <a href="https://vekatze.github.io/neut/static-memory-management.html">Static Memory Management</a>. As written there, Neut avoids such copyings by using the <i>T-necessity operator</i> in modal logic to achieve something like borrowing in Rust.</p><p>** <a href="https://vekatze.github.io/neut/overview.html#how-fast-is-this">How Fast is This?</a></p><p><a href="https://vekatze.github.io/neut/benchmarks.html">Please see the benchmarks</a>.</p><p>** <a href="https://vekatze.github.io/neut/overview.html#list-of-other-basic-characteristics">List of Other Basic Characteristics?</a></p><ul class="org-ul">
 <li>Call by value</li>
 <li>Impure</li>
 <li>Compiles to <a href="https://llvm.org/docs/LangRef.html">LLVM IR</a> and binary</li>
-<li>The type system ≒ <a href="https://en.wikipedia.org/wiki/Calculus_of_constructions">CoC</a> + <a href="https://en.wikipedia.org/wiki/Algebraic_data_type">ADT</a> + (T-necessity) + (fix) - (universe hierarchy)
-<ul class="org-ul">
+<li>The type system ≒ <a href="https://en.wikipedia.org/wiki/Calculus_of_constructions">CoC</a> + <a href="https://en.wikipedia.org/wiki/Algebraic_data_type">ADT</a> + (T-necessity) + (fix) - (universe hierarchy)<ul class="org-ul">
 <li>That is, the usual one in functional programming, but a bit generalized</li>
 </ul></li>
 <li>Built-in <a href="https://vekatze.github.io/neut/lovely-lsp-showcase.html">LSP support</a></li>
@@ -143,17 +90,7 @@ You may wonder: <i>"So we need to, for example, copy the whole list just to get 
 <li>Built-in formatter like Go</li>
 </ul>
 
-<p>
-** <a href="https://vekatze.github.io/neut/overview.html#anything-else">Anything Else?</a>
-</p>
-
-<p>
-You might also find Neut's module system interesting. <i>It distinguishes modules using the digests (checksums) of tarballs</i> and defines module identities using version information. Although this is not the main point of the language, it still might be of interest. This topic is covered in the <a href="https://vekatze.github.io/neut/hello-external-world.html">tutorial</a>.
-</p>
-
-<p>
-Also, Neut includes an LSP server, which provides things like code completion, error reporting on save, etc. See <a href="https://vekatze.github.io/neut/lovely-lsp-showcase.html">Lovely LSP Showcase</a> to see it in action.
-</p>
+<p>** <a href="https://vekatze.github.io/neut/overview.html#anything-else">Anything Else?</a></p><p>You might also find Neut's module system interesting. <i>It distinguishes modules using the digests (checksums) of tarballs</i> and defines module identities using version information. Although this is not the main point of the language, it still might be of interest. This topic is covered in the <a href="https://vekatze.github.io/neut/hello-external-world.html">tutorial</a>.</p><p>Also, Neut includes an LSP server, which provides things like code completion, error reporting on save, etc. See <a href="https://vekatze.github.io/neut/lovely-lsp-showcase.html">Lovely LSP Showcase</a> to see it in action.</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

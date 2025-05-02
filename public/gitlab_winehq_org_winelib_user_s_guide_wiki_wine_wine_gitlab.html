@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:13 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(gitlab.winehq.org) Winelib User's Guide · Wiki · wine / wine · GitLab</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,41 +30,7 @@ ROAM_REFS: https://gitlab.winehq.org/wine/wine/-/wikis/Winelib-User's-Guide
 <li>Winelib User's Guide</li>
 </ul>
 
-<p>
-Last edited by <a href="https://gitlab.winehq.org/julliard">Alexandre Julliard</a> 6 months ago
-</p>
-
-<p>
-<b>Authors</b>: Wilbur Dale; Francois Gouget; André Hentschel; John Sheets
-</p>
-
-<p>
-** Winelib Introduction
-</p>
-
-<p>
-<b>*</b> What is Winelib?
-</p>
-
-<p>
-Winelib is a development toolkit which allows you to compile your Windows applications on Unix.
-</p>
-
-<p>
-Most of Winelib code consists of the Win32 API implementation.  Fortunately this part is 100 percent shared with Wine.  The remainder consists of Windows compatible headers and tools like the resource compiler (and even these are used when compiling Wine).
-</p>
-
-<p>
-Thanks to the above, Winelib supports most C and C++ source code, resource and message files, and can generate graphical or console applications as well as dynamic libraries.
-</p>
-
-<p>
-What is not supported is 16-bit source code as the types it depends on (especially segmented pointers) are not supported by Unix compilers.  Also missing are some of the more exotic features of Microsoft compilers like native COM support and structured exception handling.  So you may need to perform some modifications in your code when recompiling your application with Winelib.  This guide is here to help you in this task.
-</p>
-
-<p>
-What you gain by recompiling your application with Winelib is the ability to make calls to Unix APIs, directly from your Windows source code.  This allows for a better integration with the Unix environment than is allowed by running an unmodified Windows application running in Wine.  Another benefit is that a Winelib application can relatively easily be recompiled on a non-Intel architecture and run there without the need for a slow software emulation of the processor.
-</p>
+<p>Last edited by <a href="https://gitlab.winehq.org/julliard">Alexandre Julliard</a> 6 months ago</p><p><b>Authors</b>: Wilbur Dale; Francois Gouget; André Hentschel; John Sheets</p><p>** Winelib Introduction</p><p><b>*</b> What is Winelib?</p><p>Winelib is a development toolkit which allows you to compile your Windows applications on Unix.</p><p>Most of Winelib code consists of the Win32 API implementation.  Fortunately this part is 100 percent shared with Wine.  The remainder consists of Windows compatible headers and tools like the resource compiler (and even these are used when compiling Wine).</p><p>Thanks to the above, Winelib supports most C and C++ source code, resource and message files, and can generate graphical or console applications as well as dynamic libraries.</p><p>What is not supported is 16-bit source code as the types it depends on (especially segmented pointers) are not supported by Unix compilers.  Also missing are some of the more exotic features of Microsoft compilers like native COM support and structured exception handling.  So you may need to perform some modifications in your code when recompiling your application with Winelib.  This guide is here to help you in this task.</p><p>What you gain by recompiling your application with Winelib is the ability to make calls to Unix APIs, directly from your Windows source code.  This allows for a better integration with the Unix environment than is allowed by running an unmodified Windows application running in Wine.  Another benefit is that a Winelib application can relatively easily be recompiled on a non-Intel architecture and run there without the need for a slow software emulation of the processor.</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

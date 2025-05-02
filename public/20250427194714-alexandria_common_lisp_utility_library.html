@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-02 Fri 16:48 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>Alexandria - Common Lisp Utility Library</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">Alexandria - Common Lisp Utility Library</h1>
+</header><p>Popular utility library for <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a> projects.</p>
+<div id="outline-container-ID-787339e7-fc9e-41d8-b385-0212b145bef6" class="outline-2">
+<h2 id="ID-787339e7-fc9e-41d8-b385-0212b145bef6">(alexandria.common-lisp.dev) Alexandria&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org24675d1">
+<pre class="example">
+ROAM_REFS: https://alexandria.common-lisp.dev/
+</pre>
+
+<blockquote>
+<p>Alexandria is a project and a library.</p><p>As a project Alexandria's goal is to reduce duplication of effort and improve portability of Common Lisp code according to its own idiosyncratic and rather conservative aesthetic.  What this actually means is open to debate, but each project member has a veto on all project activities, so a degree of conservativism is inevitable.</p><p>As a library Alexandria is one of the means by which the project strives for its goals.  Alexandria is a collection of portable <a href="http://common-lisp.net/project/alexandria/darcs/alexandria/LICENCE">public domain</a> utilities that meet the following constraints:</p><ul class="org-ul">
+<li><i>Utilities, not extensions</i>: Alexandria will not contain conceptual extensions to Common Lisp, instead limiting itself to tools and utilities that fit well within the framework of standard ANSI Common Lisp.  Test-frameworks, system definitions, logging facilities, serialization layers, etc. are all outside the scope of Alexandria as a library, though well within the scope of Alexandria as a project.</li>
+<li><i>Conservative</i>: Alexandria limits itself to what project members consider conservative utilities.  Alexandria does not and will not include anaphoric constructs, loop-like binding macros, etc.</li>
+<li><i>Portable</i>: Alexandria limits itself to portable parts of Common Lisp.  Even apparently conservative and usefull functions remain outside the scope of Alexandria if they cannot be implemented portably.  Portability is here defined as portable within a conforming implementation: implementation bugs are not considered portability issues.</li>
+<li><i>Team player</i>: Alexandria will not (initially, at least) subsume or provide functionality for which good-quality special-purpose packages exist, like <a href="http://www.cliki.net/SPLIT-SEQUENCE"><pre class="verbatim">split-sequence</pre></a>.  Instead, third party packages such as that may be "blessed".</li>
+</ul>
+
+<p>Documentation is available as <a href="https://alexandria.common-lisp.dev/draft/alexandria.html">a single-page HTML</a> or a <a href="https://alexandria.common-lisp.dev/draft/alexandria.pdf">PDF</a>, and current sources are available:</p><p>The repository and the issue tracker is in <a href="https://gitlab.common-lisp.net/alexandria/alexandria">GitLab</a>.</p><div class="org-src-container">
+<pre class="src src-sh"><code>git clone git://common-lisp.net/projects/alexandria/alexandria.git</code>
+</pre>
+</div>
+
+<p><b>Note:</b> As of 2010-03-09 the project switched from Darcs to Git.  The old Darcs repo</p><pre class="example" id="org337fdaa">
+<code>http://common-lisp.net/project/alexandria/darcs/alexandria</code>
+</pre>
+
+<p>is still available, but remains frozen.</p><p>Discussions on Alexandria take place on <a href="http://common-lisp.net/cgi-bin/mailman/listinfo/alexandria-devel">alexandria-devel</a> mailing list &#x2013; and also <pre class="verbatim">#lisp on irc.freenode.net</pre>.  Automated commit messages for the Git repository are sent to the <a href="http://common-lisp.net/cgi-bin/mailman/listinfo/alexandria-cvs">alexandria-cvs</a> mailing list.  (Yeah, -cvs, really.  Historical reasons.)</p><p>Current members of Alexandria are: Marco Baringer, Attila Lendvai, Nikodemus Siivola, Robert Strandh, and Philipp Marek.</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-564037ee-32f0-4b22-8f01-c22b745938dc" class="outline-2">
+<h2 id="ID-564037ee-32f0-4b22-8f01-c22b745938dc">(gitlab.common-lisp.net) alexandria / alexandria · GitLab&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org1246666">
+<pre class="example">
+ROAM_REFS: https://gitlab.common-lisp.net/alexandria/alexandria
+</pre>
+
+<blockquote>
+<p>Alexandria is a collection of portable public domain utilities that meet the following constraints:</p><ul class="org-ul">
+<li>Utilities, not extensions: Alexandria will not contain conceptual extensions to Common Lisp, instead limiting itself to tools and utilities that fit well within the framework of standard ANSI Common Lisp.  Test-frameworks, system definitions, logging facilities, serialization layers, etc. are all outside the scope of Alexandria as a library, though well within the scope of Alexandria as a project.</li>
+<li>Conservative: Alexandria limits itself to what project members consider conservative utilities.  Alexandria does not and will not include anaphoric constructs, loop-like binding macros, etc.</li>
+<li>Portable: Alexandria limits itself to portable parts of Common Lisp.  Even apparently conservative and useful functions remain outside the scope of Alexandria if they cannot be implemented portably.  Portability is here defined as portable within a conforming implementation: implementation bugs are not considered portability issues.</li>
+</ul>
+</blockquote>
+</div>
+<div id="outline-container-ID-3d72803f-e192-4ee5-a39a-fa73fcf21e80" class="outline-3">
+<h3 id="ID-3d72803f-e192-4ee5-a39a-fa73fcf21e80">(gitlab.common-lisp.net) alexandria.asd · master · alexandria / alexandria · GitLab</h3>
+<div class="outline-text-3" id="text-org2c110d7">
+<pre class="example">
+ROAM_REFS: https://gitlab.common-lisp.net/alexandria/alexandria/-/blob/master/alexandria.asd
+</pre>
+</div>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-04-30 Wed 04:29</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

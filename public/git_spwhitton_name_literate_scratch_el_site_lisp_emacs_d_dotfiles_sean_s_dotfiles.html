@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:13 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(git.spwhitton.name) literate-scratch.el « site-lisp « .emacs.d - dotfiles - Sean's dotfiles</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -29,32 +29,16 @@ ROAM_REFS: https://git.spwhitton.name/dotfiles/tree/.emacs.d/site-lisp/literate-
 <p>
 Variant Lisp Interaction mode for easier interleaving of paragraphs of
 plain text with Lisp code.  This means you can have
-</p>
-
-<p>
+</p><p>
 ;; This buffer is for text that is not saved &#x2026;
 ;; To create a file, visit it with C-x C-f and &#x2026;
-</p>
-
-<p>
-(here is some Lisp)
-</p>
-
-<p>
+</p><p>(here is some Lisp)</p><p>
 Here is a plain text paragraph )( including some unmatched parentheses.
 Uh oh!  Paredit won't like that.
-</p>
-
-<p>
-(here is some more Lisp)
-</p>
-
-<p>
+</p><p>(here is some more Lisp)</p><p>
 but (e.g.) Paredit won't complain about the unmatched parentheses.
 Indeed, the whole plain text paragraph is font-locked as a comment.
-</p>
-
-<p>
+</p><p>
 If you use Paredit but want to be able to use <b>scratch</b> for both Lisp
 interaction and blocks of plain text, then this mode is for you.
 Also compatible with the `orgalist-mode' and `orgtbl-mode' minor modes.

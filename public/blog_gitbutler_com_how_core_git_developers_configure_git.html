@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:14 -->
+<!-- 2025-05-02 Fri 16:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(blog.gitbutler.com) How Core Git Developers Configure Git</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,43 +30,7 @@ ROAM_REFS: https://blog.gitbutler.com/how-git-core-devs-configure-git/
 <li>How Core Git Developers Configure Git</li>
 </ul>
 
-<p>
-What `git config` settings should be defaults by now? Here are some settings that even the core developers change.
-</p>
-
-<p>
-<a href="https://blog.gitbutler.com/tag/git/">git</a>
-</p>
-
-<p>
-A few weeks ago I <a href="https://blog.gitbutler.com/why-is-git-autocorrect-too-fast-for-formula-one-drivers/">wrote about</a> Git's <pre class="verbatim">help.autocorrect</pre> setting and the strange tale of the origin of it's deciseconds value.
-</p>
-
-<p>
-It got me to thinking about other <pre class="verbatim">git config</pre> settings that most people likely don't know about and which should probably be defaulted differently.
-</p>
-
-<p>
-In this post, I'll go through some of the perhaps obscure Git config settings that I have personally globally enabled and go into them to explain what they do and why they should <i>probably</i> be the default settings.
-</p>
-
-<p>
-Also, it turns out that I learned most of these from the people who actually work on the core Git codebase every day.
-</p>
-
-<p>
-** TLDR
-</p>
-
-<p>
-First, though, some of you may not particularly care about the wonderful and sordid history of the <pre class="verbatim">rerere</pre> values or whatever. You may just be thinking “just give me the settings so I can blindly throw them into my <pre class="verbatim">~/.gitconfig</pre> file."
-</p>
-
-<p>
-Well, fair enough. Here is the fun stuff:
-</p>
-
-<div class="org-src-container">
+<p>What `git config` settings should be defaults by now? Here are some settings that even the core developers change.</p><p><a href="https://blog.gitbutler.com/tag/git/">git</a></p><p>A few weeks ago I <a href="https://blog.gitbutler.com/why-is-git-autocorrect-too-fast-for-formula-one-drivers/">wrote about</a> Git's <pre class="verbatim">help.autocorrect</pre> setting and the strange tale of the origin of it's deciseconds value.</p><p>It got me to thinking about other <pre class="verbatim">git config</pre> settings that most people likely don't know about and which should probably be defaulted differently.</p><p>In this post, I'll go through some of the perhaps obscure Git config settings that I have personally globally enabled and go into them to explain what they do and why they should <i>probably</i> be the default settings.</p><p>Also, it turns out that I learned most of these from the people who actually work on the core Git codebase every day.</p><p>** TLDR</p><p>First, though, some of you may not particularly care about the wonderful and sordid history of the <pre class="verbatim">rerere</pre> values or whatever. You may just be thinking “just give me the settings so I can blindly throw them into my <pre class="verbatim">~/.gitconfig</pre> file."</p><p>Well, fair enough. Here is the fun stuff:</p><div class="org-src-container">
 <pre class="src src-ini"><code># clearly makes git better</code>
 <code></code>
 <code>[column]</code>
@@ -120,9 +84,7 @@ Well, fair enough. Here is the fun stuff:
 </pre>
 </div>
 
-<p>
-Copypasta, my friends.
-</p>
+<p>Copypasta, my friends.</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

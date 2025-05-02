@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:12 -->
+<!-- 2025-05-02 Fri 16:50 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(news.ycombinator.com) The Common Lisp Condition System – Upcoming Book | Hacker News</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -28,39 +28,13 @@ ROAM_REFS: https://news.ycombinator.com/item?id=23843525
 <div id="outline-container-orgb31abab" class="outline-2">
 <h2 id="orgb31abab">Comments of Note</h2>
 <div class="outline-text-2" id="text-orgb31abab">
-</div>
-<div id="outline-container-org4a27ae6" class="outline-3">
-<h3 id="org4a27ae6">phoe-krk</h3>
-<div class="outline-text-3" id="text-org4a27ae6">
+</div><div id="outline-container-orga20af58" class="outline-3">
+<h3 id="orga20af58">phoe-krk</h3>
+<div class="outline-text-3" id="text-orga20af58">
 <blockquote>
-<p>
-Author here.  The book has just gone to production and will be available at the end of the year in dead-tree and electronic formats.
-</p>
-
-<p>
-The book happened because I got annoyed at the fact that there is no good reference that shows how the condition system works, what are the foundations required for it to work, what are the basic building blocks that it is composed of, and what are its uses, both in the domain of handling exceptional situations and, more importantly and less obviously, outside that domain.
-</p>
-
-<p>
-The book also contains a description of a full implementation of a condition system that can (and hopefully will!) be used outside Common Lisp.  There's hope that some languages will pick up these parts of Common Lisp that fully decouple the acts and means of signaling conditions from the acts and means of handling them, therefore allowing for means of dynamically controlled control flow that are currently very hard to achieve in other languages.
-</p>
-
-<p>
-The accompanying code is available at <a href="https://github.com/phoe/tclcs-code">https://github.com/phoe/tclcs-code</a> and <a href="https://github.com/phoe/portable-condition-system">https://github.com/phoe/portable-condition-system</a> - it will be copied over to the Apress repository soon.
-</p>
-
-<p>
-Linked Reddit thread: <a href="https://www.reddit.com/r/lisp/comments/hrjzs8/">https://www.reddit.com/r/lisp/comments/hrjzs8/</a>
-</p>
-
-<p>
-AMA, I guess.
-</p>
+<p>Author here.  The book has just gone to production and will be available at the end of the year in dead-tree and electronic formats.</p><p>The book happened because I got annoyed at the fact that there is no good reference that shows how the condition system works, what are the foundations required for it to work, what are the basic building blocks that it is composed of, and what are its uses, both in the domain of handling exceptional situations and, more importantly and less obviously, outside that domain.</p><p>The book also contains a description of a full implementation of a condition system that can (and hopefully will!) be used outside Common Lisp.  There's hope that some languages will pick up these parts of Common Lisp that fully decouple the acts and means of signaling conditions from the acts and means of handling them, therefore allowing for means of dynamically controlled control flow that are currently very hard to achieve in other languages.</p><p>The accompanying code is available at <a href="https://github.com/phoe/tclcs-code">https://github.com/phoe/tclcs-code</a> and <a href="https://github.com/phoe/portable-condition-system">https://github.com/phoe/portable-condition-system</a> - it will be copied over to the Apress repository soon.</p><p>Linked Reddit thread: <a href="https://www.reddit.com/r/lisp/comments/hrjzs8/">https://www.reddit.com/r/lisp/comments/hrjzs8/</a></p><p>AMA, I guess.</p>
 </blockquote>
-<p>
-Links:
-</p>
-<ul class="org-ul">
+<p>Links:</p><ul class="org-ul">
 <li><a href="link_springer_com_the_common_lisp_condition_system_beyond_exception_handling_with_control_flow_mechanisms_springerlink.html#ID-3c7df3f7-a551-4f8c-97b6-8ef3296cd36a">(link.springer.com) The Common Lisp Condition System: Beyond Exception Handling with Control Flow Mechanisms | SpringerLink</a></li>
 <li><a href="github_com_github_phoe_tclcs_code_companion_code_for_the_book_the_common_lisp_condition_system.html#ID-ceb47e89-bff1-40fa-a774-10f77c58216a">(github.com) GitHub - phoe/tclcs-code: Companion code for the book "The Common Lisp Condition System"</a></li>
 <li><a href="github_com_github_phoe_portable_condition_system_a_portable_common_lisp_condition_system.html#ID-f569efb7-7112-4080-957d-e9e0eb480e74">(github.com) GitHub - phoe/portable-condition-system: A portable Common Lisp condition system</a></li>
@@ -69,240 +43,48 @@ Links:
 <div id="outline-container-orgb118b74" class="outline-4">
 <h4 id="orgb118b74">lonjil (author of book)</h4>
 <div class="outline-text-4" id="text-orgb118b74">
-<p>
-In response to a question about what the <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a> condition system is.
-</p>
-<blockquote>
-<p>
-It is essentially an exception system, but more general and flexible.  When you "throw an error", so to speak, rather than unwinding the stack until it finds a matching handler and then executing that, it looks at a list of handlers until it finds a match, and then calls it, right then and there.  The handler can then run whatever code it wants, for example to unwind the stack, or it can return and let the search for a matching handler continue.
-</p>
-
-<p>
-It could also choose to invoke a restart.  Restarts are basically code to handle a problem, but they don't catch any conditions.  Instead, they can be invoked, usually from a condition handler.  So you would have an error being signaled at the lowest level of your code, various recovery strategies defined at appropriate intermediate levels of code, and at the highest level of code you could have a condition handler defined which picks whichever restart is best for the high level situation.  So a library author can provide many different restarts, signal errors very deep in the library, and then let the library user choose the recovery strategy that fits their requirements.
-</p>
-
-<p>
-If no matching handler is found, typically the debugger would be invoked, and when running with a suitable IDE like Emacs with Slime or Sly, a window with a stack trace will pop up.  Here, if there were any available, restarts can be invoked directly by the programmer while they are debugging
-</p>
-
-<p>
-Finally, the condition system can be used to signal non-erroneous conditions, that can optionally be handled.
-</p>
+<p>In response to a question about what the <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a> condition system is.</p><blockquote>
+<p>It is essentially an exception system, but more general and flexible.  When you "throw an error", so to speak, rather than unwinding the stack until it finds a matching handler and then executing that, it looks at a list of handlers until it finds a match, and then calls it, right then and there.  The handler can then run whatever code it wants, for example to unwind the stack, or it can return and let the search for a matching handler continue.</p><p>It could also choose to invoke a restart.  Restarts are basically code to handle a problem, but they don't catch any conditions.  Instead, they can be invoked, usually from a condition handler.  So you would have an error being signaled at the lowest level of your code, various recovery strategies defined at appropriate intermediate levels of code, and at the highest level of code you could have a condition handler defined which picks whichever restart is best for the high level situation.  So a library author can provide many different restarts, signal errors very deep in the library, and then let the library user choose the recovery strategy that fits their requirements.</p><p>If no matching handler is found, typically the debugger would be invoked, and when running with a suitable IDE like Emacs with Slime or Sly, a window with a stack trace will pop up.  Here, if there were any available, restarts can be invoked directly by the programmer while they are debugging</p><p>Finally, the condition system can be used to signal non-erroneous conditions, that can optionally be handled.</p>
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org8a4da1e" class="outline-4">
-<h4 id="org8a4da1e">phoe-krk</h4>
-<div class="outline-text-4" id="text-org8a4da1e">
-<p>
-In response to a question about what the <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a> condition system is.
-</p>
-<blockquote>
-<p>
-Let me answer by posting an introduction to the condition system by Kent M. Pitman. It is the first subchapter of the book.
-</p>
+<div id="outline-container-org3bd7d6b" class="outline-4">
+<h4 id="org3bd7d6b">phoe-krk</h4>
+<div class="outline-text-4" id="text-org3bd7d6b">
+<p>In response to a question about what the <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a> condition system is.</p><blockquote>
+<p>Let me answer by posting an introduction to the condition system by Kent M. Pitman. It is the first subchapter of the book.</p><hr />
 
-<hr />
-
-<p>
-There have been many attempts to declare the Lisp family of languages dead, and yet it continues on in many forms.  There are many explanations for this, but an obvious one is that it still contains ideas and features that aren't fully appreciated outside the Lisp community, and so it continues as both a refuge and an idea factory.
-</p>
-
-<p>
-Gradually, other languages see the light and these important features migrate to other languages.  For example, the Lisp community used to be unusual for standing steadfastly by automatic memory management and garbage collection when many said it couldn't be trusted to be efficient or responsive.  In the modern world, however, many languages now presume that automatic memory management is normal and natural, as if this had never been a controversy.  So times change.
-</p>
-
-<p>
-But proper condition handling is something which other languages still have not figured out that they need.  Java's try/catch and Python's try/except have indeed shown that these language appreciate the importance of representing exceptional situations as objects.  However, in adopting these concepts, they have left out restarts &#x2014; a key piece of the puzzle.
-</p>
-
-<p>
-When you raise an exception in Python, or throw one in Java, you are still just performing an immediate and blind transfer of control to the innermost available handler.  This leaves out the rich experience that Common Lisp offers to perform actual reasoning about where to return to.
-</p>
-
-<p>
-The Common Lisp condition system disconnects the ability to return to a particular place in the program from the necessity to do so, and adds the ability to "look before you leap." In other languages, if you create a possible place to return to, that is what will get used.  There is no ability to say "If a certain kind of error happens, this might be a good place to return to, but I don't have a strong opinion ahead of time on whether or not it is definitely the right place."
-</p>
-
-<p>
-The Common Lisp condition system separates out three different activities: describing a problem, describing a possible solution, and selecting the right solution for the right problem.  In other languages, describing a possible solution is the same as selecting that solution, so the set of things you can describe is necessarily less expansive.
-</p>
-
-<p>
-This matters, because in other languages such as Python or Java, by the time your program first notices a problem, it already will have "recovered" from it.  The "except" or "catch" part of your "try" statement will have received control.  There will have been no intervening time.  To invoke the error handling process IS to transfer control.  By the time any further application code is running, a stack unwind already will have happened.  The dynamic context of the problem will be gone, and with it, any potential intervening options to resume operation at other points on the stack between the raising of the condition and the handling of an error.  Any such opportunities to resume operation will have lost their chance to exist.
-</p>
-
-<p>
-"Well, too bad", these languages would say.  "If they wanted a chance, they could have handled the error."  But the thing is, a lot of the business of signaling and handling conditions is about the fact that you only have partial knowledge.  The more uncertain information you are forced to supply, the more your system will make bad decisions.  For best results, you want to be able to defer decisions until all information is available.  Simple-minded exception systems are great if you know exactly how you want to handle things ahead of time.  But if you don't know, then what are you to do?  Common Lisp provides much better mechanisms for navigating this uncertain space than other languages do.
-</p>
-
-<p>
-So in Common Lisp you can say "I got an argument of the wrong type.  Moreover, I know what I would do with an argument of the right type, I just don't happen to have one or know how to make one." Or you can say "Not only do I know what to do if I'm given an argument of the right type (even at runtime), but I even know how to store such a value so they won't hit this error over and over again." In other languages, if the program doesn't know this correctly-typed value, even if you (the user) do know it at runtime, you're simply stuck.
-</p>
-
-<p>
-In Common Lisp, you can specify the restart mechanism separately from the mechanism of choosing among possible restarts.  Having this ability means that an outer part of the program can make the choice, or the choice can fall through to a human user to make.  Of course, the human user might get tired of answering, but in such a case, they can wrap the program with advice that will save them from the need to answer.  This is a much more flexible division of responsibility than other languages offer.
-</p>
+<p>There have been many attempts to declare the Lisp family of languages dead, and yet it continues on in many forms.  There are many explanations for this, but an obvious one is that it still contains ideas and features that aren't fully appreciated outside the Lisp community, and so it continues as both a refuge and an idea factory.</p><p>Gradually, other languages see the light and these important features migrate to other languages.  For example, the Lisp community used to be unusual for standing steadfastly by automatic memory management and garbage collection when many said it couldn't be trusted to be efficient or responsive.  In the modern world, however, many languages now presume that automatic memory management is normal and natural, as if this had never been a controversy.  So times change.</p><p>But proper condition handling is something which other languages still have not figured out that they need.  Java's try/catch and Python's try/except have indeed shown that these language appreciate the importance of representing exceptional situations as objects.  However, in adopting these concepts, they have left out restarts &#x2014; a key piece of the puzzle.</p><p>When you raise an exception in Python, or throw one in Java, you are still just performing an immediate and blind transfer of control to the innermost available handler.  This leaves out the rich experience that Common Lisp offers to perform actual reasoning about where to return to.</p><p>The Common Lisp condition system disconnects the ability to return to a particular place in the program from the necessity to do so, and adds the ability to "look before you leap." In other languages, if you create a possible place to return to, that is what will get used.  There is no ability to say "If a certain kind of error happens, this might be a good place to return to, but I don't have a strong opinion ahead of time on whether or not it is definitely the right place."</p><p>The Common Lisp condition system separates out three different activities: describing a problem, describing a possible solution, and selecting the right solution for the right problem.  In other languages, describing a possible solution is the same as selecting that solution, so the set of things you can describe is necessarily less expansive.</p><p>This matters, because in other languages such as Python or Java, by the time your program first notices a problem, it already will have "recovered" from it.  The "except" or "catch" part of your "try" statement will have received control.  There will have been no intervening time.  To invoke the error handling process IS to transfer control.  By the time any further application code is running, a stack unwind already will have happened.  The dynamic context of the problem will be gone, and with it, any potential intervening options to resume operation at other points on the stack between the raising of the condition and the handling of an error.  Any such opportunities to resume operation will have lost their chance to exist.</p><p>"Well, too bad", these languages would say.  "If they wanted a chance, they could have handled the error."  But the thing is, a lot of the business of signaling and handling conditions is about the fact that you only have partial knowledge.  The more uncertain information you are forced to supply, the more your system will make bad decisions.  For best results, you want to be able to defer decisions until all information is available.  Simple-minded exception systems are great if you know exactly how you want to handle things ahead of time.  But if you don't know, then what are you to do?  Common Lisp provides much better mechanisms for navigating this uncertain space than other languages do.</p><p>So in Common Lisp you can say "I got an argument of the wrong type.  Moreover, I know what I would do with an argument of the right type, I just don't happen to have one or know how to make one." Or you can say "Not only do I know what to do if I'm given an argument of the right type (even at runtime), but I even know how to store such a value so they won't hit this error over and over again." In other languages, if the program doesn't know this correctly-typed value, even if you (the user) do know it at runtime, you're simply stuck.</p><p>In Common Lisp, you can specify the restart mechanism separately from the mechanism of choosing among possible restarts.  Having this ability means that an outer part of the program can make the choice, or the choice can fall through to a human user to make.  Of course, the human user might get tired of answering, but in such a case, they can wrap the program with advice that will save them from the need to answer.  This is a much more flexible division of responsibility than other languages offer.</p>
 </blockquote>
 </div>
-<ul class="org-ul">
-<li><a id="org64a9b49"></a>pierrebai<br />
-<div class="outline-text-5" id="text-org64a9b49">
+<ul class="org-ul"><li><a id="org690ea03"></a>pierrebai<div class="outline-text-5" id="text-org690ea03">
 <blockquote>
-<p>
-Am I allowed to think the described use case less than compelling?
-</p>
-
-<p>
-It's especially not compelling that the caller passed the wrong type, the called function would like a different type and somehow a different piece of code would know both end of the situation and fix it instead of the caller or callee.
-</p>
-
-<p>
-It all seems like an artificial and convoluted use case.
-</p>
-
-<p>
-Software design tend to know if they'd like to abort (throw) or report (callback) statically.  Conditions may be general, but they seem to me to mostly allow unnecessary open-ended complex design.
-</p>
-
-<p>
-If the supposed gain is that a single system can do it all, I again don't feel it is a convincing argument.  In fact, I tend to prefer a one-goal system, where different use case are easily differentiable because they are different.  IOW, that throwing an exception, calling a callback, sending a signal or converting a value should look different is a plus.
-</p>
-
-<p>
-This is something I've noticed: one starts with a rigid design, then adds abstractions.  But one reach a point over over-abstracting where the design becomes uncomprehensible because it is so generic that it becomes meaningless.
-</p>
+<p>Am I allowed to think the described use case less than compelling?</p><p>It's especially not compelling that the caller passed the wrong type, the called function would like a different type and somehow a different piece of code would know both end of the situation and fix it instead of the caller or callee.</p><p>It all seems like an artificial and convoluted use case.</p><p>Software design tend to know if they'd like to abort (throw) or report (callback) statically.  Conditions may be general, but they seem to me to mostly allow unnecessary open-ended complex design.</p><p>If the supposed gain is that a single system can do it all, I again don't feel it is a convincing argument.  In fact, I tend to prefer a one-goal system, where different use case are easily differentiable because they are different.  IOW, that throwing an exception, calling a callback, sending a signal or converting a value should look different is a plus.</p><p>This is something I've noticed: one starts with a rigid design, then adds abstractions.  But one reach a point over over-abstracting where the design becomes uncomprehensible because it is so generic that it becomes meaningless.</p>
 </blockquote>
 </div>
-<ul class="org-ul">
-<li><a id="org2866211"></a>phoe-krk<br />
-<div class="outline-text-6" id="text-org2866211">
+<ul class="org-ul"><li><a id="org5b24c9e"></a>phoe-krk<div class="outline-text-6" id="text-org5b24c9e">
 <blockquote>
-<p>
-Sure.  The type-error example shown here is easily fixable by languages which utilize static typing and therefore make invalid code uncompilable, but it has the advantage of being easily understood by almost all programmers.
-</p>
-
-<p>
-A more contrived example would be a situation in which some piece of data (e.g. a worker's monthly timesheet report) is passed between modules of a programming system, but the receiving module, upon performing validation, discovers e.g. that the employee was working during a holiday.
-</p>
-
-<p>
-Handling that situation is hard, since there are multiple ways of handling it, each of them valid in its own specific context.  If the employee is in another country where that day is not a holiday, we should proceed without any other actions.  If the employee has an agreement with their manager that they are having crunch time, then the system should proceed after applying overtime payment.  If the employee is on a flexible time schedule, we should proceed and log this somewhere else; if the employee has no justification for that overtime, we should abort and signal an error; more examples follow.
-</p>
-
-<p>
-In other words, when we signal the condition, we do not have full information about what should happen to it.  We have the question "What should we do with this timesheet?" and the answer to that question is "It depends."
-</p>
-
-<p>
-It is possible to model this situation by a condition type named e.g. EMPLOYEE-WORKING-DURING-HOLIDAY, and instances of that condition type being signaled inside the programming module.  We create a dynamic environment where the proper handler routines for EMPLOYEE-WORKING-DURING-HOLIDAY are established, and we call the module's validator function inside that environment.
-</p>
-
-<p>
-This process fully decouples the act of signaling a condition from the act of choosing whether to handle that situation and also from the act of choosing how to handle that situation.
-</p>
-
-<p>
-One can (and should) document the condition type in the design specifications, and also describe functions that are allowed to signal it.
-</p>
+<p>Sure.  The type-error example shown here is easily fixable by languages which utilize static typing and therefore make invalid code uncompilable, but it has the advantage of being easily understood by almost all programmers.</p><p>A more contrived example would be a situation in which some piece of data (e.g. a worker's monthly timesheet report) is passed between modules of a programming system, but the receiving module, upon performing validation, discovers e.g. that the employee was working during a holiday.</p><p>Handling that situation is hard, since there are multiple ways of handling it, each of them valid in its own specific context.  If the employee is in another country where that day is not a holiday, we should proceed without any other actions.  If the employee has an agreement with their manager that they are having crunch time, then the system should proceed after applying overtime payment.  If the employee is on a flexible time schedule, we should proceed and log this somewhere else; if the employee has no justification for that overtime, we should abort and signal an error; more examples follow.</p><p>In other words, when we signal the condition, we do not have full information about what should happen to it.  We have the question "What should we do with this timesheet?" and the answer to that question is "It depends."</p><p>It is possible to model this situation by a condition type named e.g. EMPLOYEE-WORKING-DURING-HOLIDAY, and instances of that condition type being signaled inside the programming module.  We create a dynamic environment where the proper handler routines for EMPLOYEE-WORKING-DURING-HOLIDAY are established, and we call the module's validator function inside that environment.</p><p>This process fully decouples the act of signaling a condition from the act of choosing whether to handle that situation and also from the act of choosing how to handle that situation.</p><p>One can (and should) document the condition type in the design specifications, and also describe functions that are allowed to signal it.</p>
 </blockquote>
 </div>
-<ul class="org-ul">
-<li><a id="orgf7d6b73"></a>pierrebai<br />
-<div class="outline-text-7" id="text-orgf7d6b73">
+<ul class="org-ul"><li><a id="orgcb38bed"></a>pierrebai<div class="outline-text-7" id="text-orgcb38bed">
 <blockquote>
-<p>
-I'm afraid to sound like a negative type, but to me this example is simply a callback?
-</p>
-
-<p>
-The described EMPLOYEE-WORKING-DURING-HOLIDAY is akin to a system has a slot to register a callback (or signal which can be connected to receiver, to use a Qt-like design) which can handle the situation or decide raise an exception.
-</p>
-
-<p>
-Again, I understand that it might be attractive to have a single unified system to handle the different possible situations instead of separate systems.  I find it hard to imagine a case where the decision to be an exception-like, callback-like or restart-like is chosen dynamically at run-time by any or all participants.  And like I said, I'd be afraid that if such a case come up, it would make understanding the design harder, not simpler.
-</p>
-
-<p>
-For example, as much as Qt signal/slot mechanism is powerful and flexible, I've found that when used fully, it makes understanding the code hard because it becomes impossible to know what will happen when a signal is raised because the handling is so well uncoupled.
-</p>
+<p>I'm afraid to sound like a negative type, but to me this example is simply a callback?</p><p>The described EMPLOYEE-WORKING-DURING-HOLIDAY is akin to a system has a slot to register a callback (or signal which can be connected to receiver, to use a Qt-like design) which can handle the situation or decide raise an exception.</p><p>Again, I understand that it might be attractive to have a single unified system to handle the different possible situations instead of separate systems.  I find it hard to imagine a case where the decision to be an exception-like, callback-like or restart-like is chosen dynamically at run-time by any or all participants.  And like I said, I'd be afraid that if such a case come up, it would make understanding the design harder, not simpler.</p><p>For example, as much as Qt signal/slot mechanism is powerful and flexible, I've found that when used fully, it makes understanding the code hard because it becomes impossible to know what will happen when a signal is raised because the handling is so well uncoupled.</p>
 </blockquote>
 </div>
-<ul class="org-ul">
-<li><a id="orgdf0f6a4"></a>phoe-krk<br />
-<div class="outline-text-8" id="text-orgdf0f6a4">
+<ul class="org-ul"><li><a id="org972daed"></a>phoe-krk<div class="outline-text-8" id="text-org972daed">
 <blockquote>
-<p>
-Yes, you are correct!  (And you don't sound negative just yet; skeptical, if anything.)  The mechanism of handlers is literally a mechanism of dynamically provided callbacks.  I draw the parallel between condition handlers and callbacks/hooks in the body of the book, too.
-</p>
-
-<p>
-The difference is the fact that Common Lisp has facilities that allow two things: choices of what and how to proceed and flexible non-local returns.  The callback is allowed to list all recovery choices that are present in a given dynamic environment; they are established dynamically, just like handlers, and therefore can be provided fully from outside.
-</p>
-
-<p>
-For instance, a handler/callback can invoke a choice named CONTINUE if it decides that absolutely nothing needs to be done and the validation is safe to proceed.  The validating code doesn't need to know why exactly that choice was taken.
-</p>
-
-<p>
-Or, if it notices that e.g. it needs to convert a timesheet from version 3.0 to version 4.0, it can call a conversion function on the timesheet object and invoke a choice named REVALIDATE, passing the converted timesheet as an argument.  Note that the validating code doesn't need to know about any details of the conversion routine!  It only needs to provide a means of restarting the validation by establishing a REVALIDATE choice.
-</p>
-
-<p>
-Or, if it decides that the situation is hopeless, it can signal an error of its own and defer the responsibility of handling that situation higher up - all the way to the system debugger, if necessary.  The validating code doesn't need to know about any details of why an error was signaled!  That's a ton of modularity that we've just given there.
-</p>
-
-<p>
-These choices are actualy named restarts in Common Lisp.  I purposefully name them choices, though, as I introduce them in the book.
-</p>
+<p>Yes, you are correct!  (And you don't sound negative just yet; skeptical, if anything.)  The mechanism of handlers is literally a mechanism of dynamically provided callbacks.  I draw the parallel between condition handlers and callbacks/hooks in the body of the book, too.</p><p>The difference is the fact that Common Lisp has facilities that allow two things: choices of what and how to proceed and flexible non-local returns.  The callback is allowed to list all recovery choices that are present in a given dynamic environment; they are established dynamically, just like handlers, and therefore can be provided fully from outside.</p><p>For instance, a handler/callback can invoke a choice named CONTINUE if it decides that absolutely nothing needs to be done and the validation is safe to proceed.  The validating code doesn't need to know why exactly that choice was taken.</p><p>Or, if it notices that e.g. it needs to convert a timesheet from version 3.0 to version 4.0, it can call a conversion function on the timesheet object and invoke a choice named REVALIDATE, passing the converted timesheet as an argument.  Note that the validating code doesn't need to know about any details of the conversion routine!  It only needs to provide a means of restarting the validation by establishing a REVALIDATE choice.</p><p>Or, if it decides that the situation is hopeless, it can signal an error of its own and defer the responsibility of handling that situation higher up - all the way to the system debugger, if necessary.  The validating code doesn't need to know about any details of why an error was signaled!  That's a ton of modularity that we've just given there.</p><p>These choices are actualy named restarts in Common Lisp.  I purposefully name them choices, though, as I introduce them in the book.</p>
 </blockquote>
-</div>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a id="org283b091"></a>TeMPOraL<br />
-<div class="outline-text-6" id="text-org283b091">
-<p>
-In response to a further question for clarification.
-</p>
-<blockquote>
-<p>
-Here's a blog post I wrote the other day that may help to clarify:
-</p>
-
-<p>
-<a href="http://jacek.zlydach.pl/blog/2019-07-24-algebraic-effects-yo">http://jacek.zlydach.pl/blog/2019-07-24-algebraic-effects-yo</a>&#x2026;
-</p>
-
-<p>
-The first part uses an example that you'd probably find not all that convincing (though it's a reworded example from Dan Abramov's post).  The second one is not about error handling at all - but instead, shows how you can use non-error conditions to bolt on a pseudo-UI on top of an operation that signals appropriately, using both restarts (to abort the operation) and signal handlers (as sort of observer pattern).
-</p>
-
-<p>
-I'd say the magic of CL's condition system is in restarts, and the ability to choose them programmatically.  It's a powerful tool in API design, that allows you to cheaply expose out-of-band interface for monitoring and error recovery (and I mean actual recovery).
-</p>
-
-<p>
-Suppose you're writing a module that extract data from a bunch of files (possibly accessed over network).  In the high-level view, you have two layers there: one that loops over files, and the other that goes over data in a given file and extracts values of interest.
-</p>
-
-<p>
-Writing this in Common Lisp, you could define a restart in the loop layer, allowing to retry a download, or substitute a different file URL.  Then, in the file processing layer, you could define a restart around reading an invalid value, allowing to skip it or substitute it.  These error conditions and restarts are now part of your module API.  The users of that module could then choose different strategies for error recovery.  In one case, if file access fails, you need to abort everything.  In another, you need to skip it.  In yet another, the caller knows of a backup data file, and can pass that information to the restart.  Similarly, invalid values could be replaced by an appropriate default value, again provided by the caller in the context.
-</p>
+</div></li></ul></li></ul></li>
+<li><a id="org283b091"></a>TeMPOraL<div class="outline-text-6" id="text-org283b091">
+<p>In response to a further question for clarification.</p><blockquote>
+<p>Here's a blog post I wrote the other day that may help to clarify:</p><p><a href="http://jacek.zlydach.pl/blog/2019-07-24-algebraic-effects-yo">http://jacek.zlydach.pl/blog/2019-07-24-algebraic-effects-yo</a>&#x2026;</p><p>The first part uses an example that you'd probably find not all that convincing (though it's a reworded example from Dan Abramov's post).  The second one is not about error handling at all - but instead, shows how you can use non-error conditions to bolt on a pseudo-UI on top of an operation that signals appropriately, using both restarts (to abort the operation) and signal handlers (as sort of observer pattern).</p><p>I'd say the magic of CL's condition system is in restarts, and the ability to choose them programmatically.  It's a powerful tool in API design, that allows you to cheaply expose out-of-band interface for monitoring and error recovery (and I mean actual recovery).</p><p>Suppose you're writing a module that extract data from a bunch of files (possibly accessed over network).  In the high-level view, you have two layers there: one that loops over files, and the other that goes over data in a given file and extracts values of interest.</p><p>Writing this in Common Lisp, you could define a restart in the loop layer, allowing to retry a download, or substitute a different file URL.  Then, in the file processing layer, you could define a restart around reading an invalid value, allowing to skip it or substitute it.  These error conditions and restarts are now part of your module API.  The users of that module could then choose different strategies for error recovery.  In one case, if file access fails, you need to abort everything.  In another, you need to skip it.  In yet another, the caller knows of a backup data file, and can pass that information to the restart.  Similarly, invalid values could be replaced by an appropriate default value, again provided by the caller in the context.</p>
 </blockquote>
-<p>
-Links:
-</p>
-<ul class="org-ul">
+<p>Links:</p><ul class="org-ul">
 <li><a href="jacek_zlydach_pl_algebraic_effects_you_can_touch_this_jacek_złydach.html#ID-f54613f2-d9fb-4a81-889e-82002685d8bd">(jacek.zlydach.pl) Algebraic Effects - You Can Touch This! — Jacek Złydach</a></li>
 </ul>
-</div>
-</li>
-</ul>
-</li>
-</ul>
+</div></li></ul></li></ul>
 </div>
 </div>
 </div>

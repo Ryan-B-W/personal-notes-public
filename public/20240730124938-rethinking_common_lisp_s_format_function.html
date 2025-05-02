@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:14 -->
+<!-- 2025-05-02 Fri 16:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Rethinking Common Lisp's =format= Function</title>
@@ -13,26 +13,16 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
 <header>
 <h1 class="title">Rethinking Common Lisp's <pre class="verbatim">format</pre> Function</h1>
-</header><p>
-An issue with <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a>'s <pre class="verbatim">format</pre> function is that it follows the C tradition that many languages have also followed of using a format string for the templates.  This causes several issues, namely, input sanitization being needed in all cases where an externally supplied string may end up being consumed by a <pre class="verbatim">format</pre> function call.  It'd be much safer to have something that instead consumes a template sequence (such as a list) that contains strings and symbols that are used for literal text and templating placeholders respectively.
-</p>
-
-<p>
-In a language with a more sophisticated type system and more strict type safety mechanisms this could be further refined with a template type to avoid issues where sequences get consumed by a templating function on accident.
-</p>
-
-<p>
-Are there any other <a href="20240714175050-lisp.html#ID-84ae6e85-a6a2-4133-bc53-274238081c2d">Lisp</a>s that implement something like this?  Feels more likely for a <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a> like <a href="20240730125923-racket.html#ID-2ce20b11-e9e9-48b0-ab32-de7f4158ea33">Racket</a> or <a href="20240719125446-guile.html#ID-064be3a0-bb32-4312-9868-73e9c77ba7cf">Guile</a> to do so?
-</p>
+</header><p>An issue with <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a>'s <pre class="verbatim">format</pre> function is that it follows the C tradition that many languages have also followed of using a format string for the templates.  This causes several issues, namely, input sanitization being needed in all cases where an externally supplied string may end up being consumed by a <pre class="verbatim">format</pre> function call.  It'd be much safer to have something that instead consumes a template sequence (such as a list) that contains strings and symbols that are used for literal text and templating placeholders respectively.</p><p>In a language with a more sophisticated type system and more strict type safety mechanisms this could be further refined with a template type to avoid issues where sequences get consumed by a templating function on accident.</p><p>Are there any other <a href="20240714175050-lisp.html#ID-84ae6e85-a6a2-4133-bc53-274238081c2d">Lisp</a>s that implement something like this?  Feels more likely for a <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a> like <a href="20240730125923-racket.html#ID-2ce20b11-e9e9-48b0-ab32-de7f4158ea33">Racket</a> or <a href="20240719125446-guile.html#ID-064be3a0-bb32-4312-9868-73e9c77ba7cf">Guile</a> to do so?</p>
 </main>
 <div id="postamble" class="status">
 <footer>

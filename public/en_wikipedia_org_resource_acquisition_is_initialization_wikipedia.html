@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:14 -->
+<!-- 2025-05-02 Fri 16:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(en.wikipedia.org) Resource acquisition is initialization - Wikipedia</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -26,17 +26,7 @@
 ROAM_REFS: https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization
 </pre>
 <blockquote>
-<p>
-<b>Resource acquisition is initialization</b> (<b>RAII</b>) is a <a href="https://en.wikipedia.org/wiki/Programming_idiom">programming idiom</a> used in several <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented</a>, <a href="https://en.wikipedia.org/wiki/Statically-typed_programming_language">statically typed</a> programming languages to describe a particular language behavior.  In RAII, holding a resource is a <a href="https://en.wikipedia.org/wiki/Class_invariant">class invariant</a>, and is tied to <a href="https://en.wikipedia.org/wiki/Object_lifetime">object lifetime</a>. <a href="https://en.wikipedia.org/wiki/Resource_allocation_(computer)">Resource allocation</a> (or acquisition) is done during object creation (specifically initialization), by the <a href="https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)">constructor</a>, while resource deallocation (release) is done during object destruction (specifically finalization), by the <a href="https://en.wikipedia.org/wiki/Destructor_(computer_programming)">destructor</a>.  In other words, resource acquisition must succeed for initialization to succeed.  Thus, the resource is guaranteed to be held between when initialization finishes and finalization starts (holding the resources is a class invariant), and to be held only when the object is alive.  Thus, if there are no object leaks, there are no <a href="https://en.wikipedia.org/wiki/Resource_leak">resource leaks</a>.
-</p>
-
-<p>
-RAII is associated most prominently with <a href="https://en.wikipedia.org/wiki/C++">C++</a>, where it originated, but also <a href="https://en.wikipedia.org/wiki/Ada_(programming_language)">Ada</a>, <a href="https://en.wikipedia.org/wiki/Vala_(programming_language)">Vala</a>, and <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)">Rust</a>.  The technique was developed for <a href="https://en.wikipedia.org/wiki/Exception_safety">exception-safe</a> <a href="https://en.wikipedia.org/wiki/Resource_management_(computing)">resource management</a> in C++ during 1984&#x2013;1989, primarily by <a href="https://en.wikipedia.org/wiki/Bjarne_Stroustrup">Bjarne Stroustrup</a> and <a href="https://en.wikipedia.org/wiki/Andrew_Koenig_(programmer)">Andrew Koenig</a>, and the term itself was coined by Stroustrup.
-</p>
-
-<p>
-Other names for this idiom include <i>Constructor Acquires, Destructor Releases</i> (CADRe) and one particular style of use is called <i>Scope-based Resource Management</i> (SBRM).  This latter term is for the special case of <a href="https://en.wikipedia.org/wiki/Automatic_variable">automatic variables</a>.  RAII ties resources to object <i>lifetime,</i> which may not coincide with entry and exit of a scope. (Notably variables allocated on the <a href="https://en.wikipedia.org/wiki/Heap_(programming)">free store</a> have lifetimes unrelated to any given scope.) However, using RAII for automatic variables (SBRM) is the most common use case.
-</p>
+<p><b>Resource acquisition is initialization</b> (<b>RAII</b>) is a <a href="https://en.wikipedia.org/wiki/Programming_idiom">programming idiom</a> used in several <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented</a>, <a href="https://en.wikipedia.org/wiki/Statically-typed_programming_language">statically typed</a> programming languages to describe a particular language behavior.  In RAII, holding a resource is a <a href="https://en.wikipedia.org/wiki/Class_invariant">class invariant</a>, and is tied to <a href="https://en.wikipedia.org/wiki/Object_lifetime">object lifetime</a>. <a href="https://en.wikipedia.org/wiki/Resource_allocation_(computer)">Resource allocation</a> (or acquisition) is done during object creation (specifically initialization), by the <a href="https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)">constructor</a>, while resource deallocation (release) is done during object destruction (specifically finalization), by the <a href="https://en.wikipedia.org/wiki/Destructor_(computer_programming)">destructor</a>.  In other words, resource acquisition must succeed for initialization to succeed.  Thus, the resource is guaranteed to be held between when initialization finishes and finalization starts (holding the resources is a class invariant), and to be held only when the object is alive.  Thus, if there are no object leaks, there are no <a href="https://en.wikipedia.org/wiki/Resource_leak">resource leaks</a>.</p><p>RAII is associated most prominently with <a href="https://en.wikipedia.org/wiki/C++">C++</a>, where it originated, but also <a href="https://en.wikipedia.org/wiki/Ada_(programming_language)">Ada</a>, <a href="https://en.wikipedia.org/wiki/Vala_(programming_language)">Vala</a>, and <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)">Rust</a>.  The technique was developed for <a href="https://en.wikipedia.org/wiki/Exception_safety">exception-safe</a> <a href="https://en.wikipedia.org/wiki/Resource_management_(computing)">resource management</a> in C++ during 1984&#x2013;1989, primarily by <a href="https://en.wikipedia.org/wiki/Bjarne_Stroustrup">Bjarne Stroustrup</a> and <a href="https://en.wikipedia.org/wiki/Andrew_Koenig_(programmer)">Andrew Koenig</a>, and the term itself was coined by Stroustrup.</p><p>Other names for this idiom include <i>Constructor Acquires, Destructor Releases</i> (CADRe) and one particular style of use is called <i>Scope-based Resource Management</i> (SBRM).  This latter term is for the special case of <a href="https://en.wikipedia.org/wiki/Automatic_variable">automatic variables</a>.  RAII ties resources to object <i>lifetime,</i> which may not coincide with entry and exit of a scope. (Notably variables allocated on the <a href="https://en.wikipedia.org/wiki/Heap_(programming)">free store</a> have lifetimes unrelated to any given scope.) However, using RAII for automatic variables (SBRM) is the most common use case.</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

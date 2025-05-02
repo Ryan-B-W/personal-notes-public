@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:12 -->
+<!-- 2025-05-02 Fri 16:50 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(jeffkreeftmeijer.com) org-html-export-to-html: Unable to resolve link</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,28 +30,11 @@ ROAM_REFS: https://jeffkreeftmeijer.com/org-unable-to-resolve-link/
 <li>org-html-export-to-html: Unable to resolve link</li>
 </ul>
 
-<p>
-By <a href="https://jeffkreeftmeijer.com/">Jeff Kreeftmeijer</a> on 2023-02-28 (originally published on 2023-02-26)
-</p>
-
-<p>
-When generating HTML from Org files that have ID-based links, sometimes <pre class="verbatim">org-html-export-to-html</pre> is unable to resolve links:
-</p>
-
-<pre class="example">
+<p>By <a href="https://jeffkreeftmeijer.com/">Jeff Kreeftmeijer</a> on 2023-02-28 (originally published on 2023-02-26)</p><p>When generating HTML from Org files that have ID-based links, sometimes <pre class="verbatim">org-html-export-to-html</pre> is unable to resolve links:</p><pre class="example">
 Unable to resolve link: "16A4875E-F1B7-4DEE-940C-0E1EDF09B27B"
 </pre>
 
-
-<p>
-This happens because the file isn't loaded, so Org doesn't yet know about its existence.
-</p>
-
-<p>
-To resolve this, use <pre class="verbatim">org-roam-update-org-id-locations</pre> over all files that are linked to from the file that's being exported.  For example, if all files are in the <pre class="verbatim">~/notes</pre> directory, run <pre class="verbatim">org-id-update-id-locations</pre> with a list of all org files in that directory <a href="https://jeffkreeftmeijer.com/emacs-find-files-recursively/">recursively</a>:
-</p>
-
-<div class="org-src-container">
+<p>This happens because the file isn't loaded, so Org doesn't yet know about its existence.</p><p>To resolve this, use <pre class="verbatim">org-roam-update-org-id-locations</pre> over all files that are linked to from the file that's being exported.  For example, if all files are in the <pre class="verbatim">~/notes</pre> directory, run <pre class="verbatim">org-id-update-id-locations</pre> with a list of all org files in that directory <a href="https://jeffkreeftmeijer.com/emacs-find-files-recursively/">recursively</a>:</p><div class="org-src-container">
 <pre class="src src-elisp"><code>(org-id-update-id-locations (directory-files-recursively <span class="org-string">"~/notes"</span> <span class="org-string">"</span><span class="org-string"><span class="org-warning">\</span></span><span class="org-string">.org$"</span>) )</code>
 </pre>
 </div>

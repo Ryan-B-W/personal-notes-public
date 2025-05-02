@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:14 -->
+<!-- 2025-05-02 Fri 16:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>iptables</title>
@@ -13,18 +13,16 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
 <header>
 <h1 class="title">iptables</h1>
-</header><p>
-Userspace frontend to <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> network filtering system <a href="20250308152657-netfilter.html#ID-4902673c-f336-4a97-8ea2-99d258c4e42a">Netfilter</a>.  Succeeded by <a href="20250308152259-nftables.html#ID-78c9c8fd-611c-496e-9103-ea8cc061d6fa">nftables</a>.
-</p>
+</header><p>Userspace frontend to <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> network filtering system <a href="20250308152657-netfilter.html#ID-4902673c-f336-4a97-8ea2-99d258c4e42a">Netfilter</a>.  Succeeded by <a href="20250308152259-nftables.html#ID-78c9c8fd-611c-496e-9103-ea8cc061d6fa">nftables</a>.</p>
 <div id="outline-container-ID-ee84af5b-76e1-4afd-9b0e-7c09fbcc63c2" class="outline-2">
 <h2 id="ID-ee84af5b-76e1-4afd-9b0e-7c09fbcc63c2">(en.wikipedia.org) iptables - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
 <div class="outline-text-2" id="text-orgd3924ae">
@@ -33,25 +31,7 @@ ROAM_REFS: https://en.wikipedia.org/wiki/Iptables
 </pre>
 
 <blockquote>
-<p>
-<b>iptables</b> is a <a href="https://en.wikipedia.org/wiki/User_space">user-space</a> utility program that allows a <a href="https://en.wikipedia.org/wiki/System_administrator">system administrator</a> to configure the <a href="https://en.wikipedia.org/wiki/Packet_filter">IP packet filter rules</a> of the <a href="https://en.wikipedia.org/wiki/Linux_kernel">Linux kernel</a> <a href="https://en.wikipedia.org/wiki/Firewall_(computing)">firewall</a>, implemented as different <a href="https://en.wikipedia.org/wiki/Netfilter">Netfilter</a> modules.  The filters are organized in a set of tables, which contain chains of rules for how to treat network traffic packets.  Different kernel modules and programs are currently used for different protocols; <i>iptables</i> applies to IPv4, <i>ip6tables</i> to IPv6, <i>arptables</i> to <a href="https://en.wikipedia.org/wiki/Address_Resolution_Protocol">ARP</a>, and <i>ebtables</i> to <a href="https://en.wikipedia.org/wiki/Ethernet_frame">Ethernet frames</a>.
-</p>
-
-<p>
-iptables requires elevated privileges to operate and must be executed by user <a href="https://en.wikipedia.org/wiki/Superuser">root</a>, otherwise it fails to function.  On most Linux systems, iptables is installed as
-</p>
-
-<p>
-/usr/sbin/iptables and documented in its <a href="https://en.wikipedia.org/wiki/Man_page">man pages</a>, which can be opened using <pre class="verbatim">man iptables</pre> when installed.  It may also be found in <pre class="verbatim">/sbin/iptables</pre>, but since iptables is more like a service rather than an "essential binary", the preferred location remains /usr/sbin.
-</p>
-
-<p>
-The term <i>iptables</i> is also commonly used to inclusively refer to the kernel-level components. <i>x<sub>tables</sub></i> is the name of the kernel module carrying the shared code portion used by all four modules that also provides the API used for extensions; subsequently, <i>Xtables</i> is more or less used to refer to the entire firewall (v4, v6, arp, and eb) architecture.
-</p>
-
-<p>
-iptables superseded <a href="https://en.wikipedia.org/wiki/Ipchains">ipchains</a>; and the successor of iptables is <a href="https://en.wikipedia.org/wiki/Nftables">nftables</a>, which was released on 19 January 2014 and was merged into the <a href="https://en.wikipedia.org/wiki/Linux_kernel_mainline">Linux kernel mainline</a> in kernel version 3.13.
-</p>
+<p><b>iptables</b> is a <a href="https://en.wikipedia.org/wiki/User_space">user-space</a> utility program that allows a <a href="https://en.wikipedia.org/wiki/System_administrator">system administrator</a> to configure the <a href="https://en.wikipedia.org/wiki/Packet_filter">IP packet filter rules</a> of the <a href="https://en.wikipedia.org/wiki/Linux_kernel">Linux kernel</a> <a href="https://en.wikipedia.org/wiki/Firewall_(computing)">firewall</a>, implemented as different <a href="https://en.wikipedia.org/wiki/Netfilter">Netfilter</a> modules.  The filters are organized in a set of tables, which contain chains of rules for how to treat network traffic packets.  Different kernel modules and programs are currently used for different protocols; <i>iptables</i> applies to IPv4, <i>ip6tables</i> to IPv6, <i>arptables</i> to <a href="https://en.wikipedia.org/wiki/Address_Resolution_Protocol">ARP</a>, and <i>ebtables</i> to <a href="https://en.wikipedia.org/wiki/Ethernet_frame">Ethernet frames</a>.</p><p>iptables requires elevated privileges to operate and must be executed by user <a href="https://en.wikipedia.org/wiki/Superuser">root</a>, otherwise it fails to function.  On most Linux systems, iptables is installed as</p><p>/usr/sbin/iptables and documented in its <a href="https://en.wikipedia.org/wiki/Man_page">man pages</a>, which can be opened using <pre class="verbatim">man iptables</pre> when installed.  It may also be found in <pre class="verbatim">/sbin/iptables</pre>, but since iptables is more like a service rather than an "essential binary", the preferred location remains /usr/sbin.</p><p>The term <i>iptables</i> is also commonly used to inclusively refer to the kernel-level components. <i>x<sub>tables</sub></i> is the name of the kernel module carrying the shared code portion used by all four modules that also provides the API used for extensions; subsequently, <i>Xtables</i> is more or less used to refer to the entire firewall (v4, v6, arp, and eb) architecture.</p><p>iptables superseded <a href="https://en.wikipedia.org/wiki/Ipchains">ipchains</a>; and the successor of iptables is <a href="https://en.wikipedia.org/wiki/Nftables">nftables</a>, which was released on 19 January 2014 and was merged into the <a href="https://en.wikipedia.org/wiki/Linux_kernel_mainline">Linux kernel mainline</a> in kernel version 3.13.</p>
 </blockquote>
 </div>
 </div>

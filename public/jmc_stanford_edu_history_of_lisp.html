@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:12 -->
+<!-- 2025-05-02 Fri 16:50 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(jmc.stanford.edu) History of Lisp</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -25,37 +25,12 @@
 </header><pre class="example">
 ROAM_REFS: http://jmc.stanford.edu/articles/lisp.html
 </pre>
-<p>
-History of Lisp, by <a href="20250323203017-john_mccarthy.html#ID-9c394806-9d31-4312-a2cf-ae0d0935f7b1">John McCarthy</a>.
-</p>
-<blockquote>
+<p>History of Lisp, by <a href="20250323203017-john_mccarthy.html#ID-9c394806-9d31-4312-a2cf-ae0d0935f7b1">John McCarthy</a>.</p><blockquote>
 <ul class="org-ul">
 <li>Articles</li>
 </ul>
 
-<p>
-** History of Lisp
-</p>
-
-<p>
-<i>The history of LISP according to McCarthy's memory in 1978, presented at the ACM SIGPLAN History of Programming Languages Conference.</i>
-</p>
-
-<p>
-LISP history according to McCarthy's memory in 1978.
-</p>
-
-<p>
-This paper concentrates on the development of the basic ideas of LISP and distinguishes two periods - Summer 1956 through Summer 1958 when most of the key ideas were developed (some of which were implemented in the FORTRAN based FLPL), and Fall 1958 through 1962 when the programming language was implemented and applied to problems of artificial intelligence.  After 1962, the development of LISP became multi-stranded, and different ideas were pursued in different places.
-</p>
-
-<p>
-This paper was presented at the ACM SIGPLAN History of Programming Languages Conference, June 1-3, 1978.  It was pubished in History of Programming Languages, edited by Richard Wexelblat, Academic Press 1981.  At the time, there was essentially no challenge to my memory .
-</p>
-
-<p>
-Download the article in <a href="http://jmc.stanford.edu/articles/lisp/lisp.pdf">PDF</a>.
-</p>
+<p>** History of Lisp</p><p><i>The history of LISP according to McCarthy's memory in 1978, presented at the ACM SIGPLAN History of Programming Languages Conference.</i></p><p>LISP history according to McCarthy's memory in 1978.</p><p>This paper concentrates on the development of the basic ideas of LISP and distinguishes two periods - Summer 1956 through Summer 1958 when most of the key ideas were developed (some of which were implemented in the FORTRAN based FLPL), and Fall 1958 through 1962 when the programming language was implemented and applied to problems of artificial intelligence.  After 1962, the development of LISP became multi-stranded, and different ideas were pursued in different places.</p><p>This paper was presented at the ACM SIGPLAN History of Programming Languages Conference, June 1-3, 1978.  It was pubished in History of Programming Languages, edited by Richard Wexelblat, Academic Press 1981.  At the time, there was essentially no challenge to my memory .</p><p>Download the article in <a href="http://jmc.stanford.edu/articles/lisp/lisp.pdf">PDF</a>.</p>
 </blockquote>
 <div id="outline-container-ID-2cd55918-ce21-4dbb-9eb3-df648603c7ad" class="outline-2">
 <h2 id="ID-2cd55918-ce21-4dbb-9eb3-df648603c7ad">(jmc.stanford.edu) lisp.pdf&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mime_type_application_pdf">mime_type_application_pdf</span></span></h2>
@@ -81,15 +56,7 @@ ROAM_REFS: http://www-formal.stanford.edu/jmc/history/lisp/lisp.html
 <b>John McCarthy</b>
 <b>Artificial Intelligence Laboratory</b>
 <b>Stanford University</b>
-</p>
-
-<p>
-<b>12 February 1979</b>
-</p>
-
-<p>
-<i>This draft gives insufficient mention to many people who helped implement LISP and who contributed ideas. Suggestions for improvements in that directions are particularly welcome. Facts about the history of FUNARG and uplevel addressing generally are especially needed</i>.
-</p>
+</p><p><b>12 February 1979</b></p><p><i>This draft gives insufficient mention to many people who helped implement LISP and who contributed ideas. Suggestions for improvements in that directions are particularly welcome. Facts about the history of FUNARG and uplevel addressing generally are especially needed</i>.</p>
 </blockquote>
 </div>
 <div id="outline-container-ID-bdae0de2-1927-4e5a-ae0e-9be1ab77cdf8" class="outline-3">
@@ -99,33 +66,8 @@ ROAM_REFS: http://www-formal.stanford.edu/jmc/history/lisp/lisp.html
 ROAM_REFS: http://www-formal.stanford.edu/jmc/history/lisp/node2.html
 </pre>
 
-<p>
-From the last part of the page/document:
-</p>
-<blockquote>
-<p>
-I spent the summer of 1958 at the IBM Information Research Department at the invitation of Nathaniel Rochester and chose differentiating algebraic expressions as a sample problem. It led to the following innovations beyond FLPL:
-</p>
-
-<p>
-a. Writing recursive function definitions using conditional expressions. The idea of differentiation is obviously recursive, and conditional expressions allowed combining the cases into a single formula.
-</p>
-
-<p>
-b. The <i>maplist</i> function that forms a list of applications of a functional argument to the elements of a list. This was obviously wanted for differentiating sums of arbitrarily many terms, and with a slight modification, it could be applied to differentiating products. (The original form was what is now called <i>mapcar</i>).
-</p>
-
-<p>
-c. To use functions as arguments, one needs a notation for functions, and it seemed natural to use the -notation of Church (1941). I didn't understand the rest of his book, so I wasn't tempted to try to implement his more general mechanism for defining functions. Church used higher order functionals instead of using conditional expressions. Conditional expressions are much more readily implemented on computers.
-</p>
-
-<p>
-d. The recursive definition of differentiation made no provision for erasure of abandoned list structure. No solution was apparent at the time, but the idea of complicating the elegant definition of differentiation with explicit erasure was unattractive. Needless to say, the point of the exercise was not the differentiation program itself, several of which had already been written, but rather clarification of the operations involved in symbolic computation.
-</p>
-
-<p>
-In fact, the differentiation program was not implemented that summer, because FLPL allows neither conditional expressions nor recursive use of subroutines. At this point a new language was necessary, since it was very difficult both technically and politically to tinker with Fortran, and neither conditional expressions nor recursion could be implemented with machine language Fortran functions - not even with ``functions'' that modify the code that calls them. Moreover, the IBM group seemed satisfied with FLPL as it was and did not want to make the vaguely stated but obviously drastic changes required to allow conditional expressions and recursive definition. As I recall, they argued that these were unnecessary.
-</p>
+<p>From the last part of the page/document:</p><blockquote>
+<p>I spent the summer of 1958 at the IBM Information Research Department at the invitation of Nathaniel Rochester and chose differentiating algebraic expressions as a sample problem. It led to the following innovations beyond FLPL:</p><p>a. Writing recursive function definitions using conditional expressions. The idea of differentiation is obviously recursive, and conditional expressions allowed combining the cases into a single formula.</p><p>b. The <i>maplist</i> function that forms a list of applications of a functional argument to the elements of a list. This was obviously wanted for differentiating sums of arbitrarily many terms, and with a slight modification, it could be applied to differentiating products. (The original form was what is now called <i>mapcar</i>).</p><p>c. To use functions as arguments, one needs a notation for functions, and it seemed natural to use the -notation of Church (1941). I didn't understand the rest of his book, so I wasn't tempted to try to implement his more general mechanism for defining functions. Church used higher order functionals instead of using conditional expressions. Conditional expressions are much more readily implemented on computers.</p><p>d. The recursive definition of differentiation made no provision for erasure of abandoned list structure. No solution was apparent at the time, but the idea of complicating the elegant definition of differentiation with explicit erasure was unattractive. Needless to say, the point of the exercise was not the differentiation program itself, several of which had already been written, but rather clarification of the operations involved in symbolic computation.</p><p>In fact, the differentiation program was not implemented that summer, because FLPL allows neither conditional expressions nor recursive use of subroutines. At this point a new language was necessary, since it was very difficult both technically and politically to tinker with Fortran, and neither conditional expressions nor recursion could be implemented with machine language Fortran functions - not even with ``functions'' that modify the code that calls them. Moreover, the IBM group seemed satisfied with FLPL as it was and did not want to make the vaguely stated but obviously drastic changes required to allow conditional expressions and recursive definition. As I recall, they argued that these were unnecessary.</p>
 </blockquote>
 </div>
 </div>
@@ -136,22 +78,14 @@ In fact, the differentiation program was not implemented that summer, because FL
 ROAM_REFS: http://www-formal.stanford.edu/jmc/history/lisp/node4.html
 </pre>
 
-<p>
-At the very end, there is this paragraph on the earliest programs written in Lisp:
-</p>
-<blockquote>
-<p>
-Besides work on the LISP system, many applications were programmed, and this experience affected the system itself.  The main applications that I can remember are a program by Rochester and Goldberg on symbolic computation of impedances and other functions associated with electrical networks, J.R. Slagle's thesis work on symbolic integration directed by Minsky, and Paul Abrahams' thesis on proof-checking.
-</p>
+<p>At the very end, there is this paragraph on the earliest programs written in Lisp:</p><blockquote>
+<p>Besides work on the LISP system, many applications were programmed, and this experience affected the system itself.  The main applications that I can remember are a program by Rochester and Goldberg on symbolic computation of impedances and other functions associated with electrical networks, J.R. Slagle's thesis work on symbolic integration directed by Minsky, and Paul Abrahams' thesis on proof-checking.</p>
 </blockquote>
 </div>
 <div id="outline-container-orgbb91487" class="outline-4">
 <h4 id="orgbb91487">See Also</h4>
 <div class="outline-text-4" id="text-orgbb91487">
-</div>
-<ul class="org-ul">
-<li><a id="orgfb40b2d"></a><a href="20250402033003-saint_symbolic_automatic_integrator_by_james_robert_slagle.html#ID-06b80a92-cc6d-4784-96db-503125f47f60">SAINT (Symbolic Automatic Integrator) by James Robert Slagle</a><br /></li>
-</ul>
+</div><ul class="org-ul"><li><a id="orgfb40b2d"></a><a href="20250402033003-saint_symbolic_automatic_integrator_by_james_robert_slagle.html#ID-06b80a92-cc6d-4784-96db-503125f47f60">SAINT (Symbolic Automatic Integrator) by James Robert Slagle</a></li></ul>
 </div>
 </div>
 </div>

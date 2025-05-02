@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:48 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(developer.mozilla.org) Block formatting context - CSS: Cascading Style Sheets | MDN</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,15 +30,7 @@ ROAM_REFS: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Block_fo
 <li>Block formatting context</li>
 </ul>
 
-<p>
-A <b>block formatting context</b> (BFC) is a part of a visual CSS rendering of a web page.  It's the region in which the layout of block boxes occurs and in which floats interact with other elements.
-</p>
-
-<p>
-A block formatting context is created by at least one of the following:
-</p>
-
-<ul class="org-ul">
+<p>A <b>block formatting context</b> (BFC) is a part of a visual CSS rendering of a web page.  It's the region in which the layout of block boxes occurs and in which floats interact with other elements.</p><p>A block formatting context is created by at least one of the following:</p><ul class="org-ul">
 <li>The root element of the document (<pre class="verbatim">&lt;html&gt;</pre>).</li>
 <li>Floats (elements where <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float"><pre class="verbatim">float</pre></a> isn't <pre class="verbatim">none</pre>).</li>
 <li>Absolutely positioned elements (elements where <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position"><pre class="verbatim">position</pre></a> is <pre class="verbatim">absolute</pre> or <pre class="verbatim">fixed</pre>).</li>
@@ -56,19 +48,13 @@ A block formatting context is created by at least one of the following:
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-span"><pre class="verbatim">column-span: all</pre></a>, even when the <pre class="verbatim">column-span: all</pre> element isn't contained by a multicol container.</li>
 </ul>
 
-<p>
-Formatting contexts affect layout because an element that establishes a new block formatting context will:
-</p>
-
-<ul class="org-ul">
+<p>Formatting contexts affect layout because an element that establishes a new block formatting context will:</p><ul class="org-ul">
 <li>contain internal floats.</li>
 <li>exclude external floats.</li>
 <li>suppress <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing">margin collapsing</a>.</li>
 </ul>
 
-<p>
-Flex and grid containers, defined by setting an element's (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><pre class="verbatim">display</pre></a> to <pre class="verbatim">flex</pre>, <pre class="verbatim">grid</pre>, <pre class="verbatim">inline-flex</pre>, or <pre class="verbatim">inline-grid</pre>, establishes a new flex or grid formatting context.  These are similar to block formatting context except there are no floating children available inside a flex or grid container, but these formatting contexts do exclude external floats and suppress margin collapsing.
-</p>
+<p>Flex and grid containers, defined by setting an element's (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><pre class="verbatim">display</pre></a> to <pre class="verbatim">flex</pre>, <pre class="verbatim">grid</pre>, <pre class="verbatim">inline-flex</pre>, or <pre class="verbatim">inline-grid</pre>, establishes a new flex or grid formatting context.  These are similar to block formatting context except there are no floating children available inside a flex or grid container, but these formatting contexts do exclude external floats and suppress margin collapsing.</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:13 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>C++ Concurrency in Action by Anthony Williams</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,70 +30,30 @@ ROAM_REFS: http://www.cplusplusconcurrencyinaction.com/
 </pre>
 
 <blockquote>
-<p>
-C++ Concurrency in Action (second edition, published 2019 by Manning Publications) is the definitive reference and guide to writing multithreaded code with Standard C++.  It is suitable for all levels of C++ programmers, including those who have never previously written any multithreaded code.  This book will show you how to write robust multithreaded applications in C++ while avoiding common pitfalls.
-</p>
-
-<p>
+<p>C++ Concurrency in Action (second edition, published 2019 by Manning Publications) is the definitive reference and guide to writing multithreaded code with Standard C++.  It is suitable for all levels of C++ programmers, including those who have never previously written any multithreaded code.  This book will show you how to write robust multithreaded applications in C++ while avoiding common pitfalls.</p><p>
 #+begin<sub>quote</sub>
 It's not just the best current treatment of C++11's threading facilities &#x2026; it's likely to remain the best for some time to come.<a href="http://scottmeyers.blogspot.co.uk/2012/04/information-on-c11-memory-model.html">Scott Meyers</a>
 </p>
 </blockquote>
 
 <blockquote>
-<p>
-This book should be on every C++ programmer's desk.  It's clear, concise, and valuable.Rob Green, Bowling Green State University
-</p>
+<p>This book should be on every C++ programmer's desk.  It's clear, concise, and valuable.Rob Green, Bowling Green State University</p>
 </blockquote>
 
-<p>
-** Overview
-</p>
-
-<p>
-Systems with multiple processors or processors with multiple cores are the norm these days; even many phones have multicore processors.  To take advantage of these processor cores you need to use concurrency, either in the form of multiple processes or multiple threads.
-</p>
-
-<p>
-The C++17 standard provides extensive support for writing multithreaded code to take advantage of these multicore and multiprocessor systems.  C++ Concurrency in Action explains how these facilities work, and how to use them to best effect.
-</p>
-
-<p>
-This book provides a tutorial covering the use of the library facilities introduced in the last three C++ standards.  It covers everything from the basics such as <pre class="verbatim">std::thread</pre>, <pre class="verbatim">std::future</pre> and <pre class="verbatim">std::condition_variable</pre>, to an in-depth description of the new memory model and <pre class="verbatim">std::atomic</pre> classes for low level synchronization and the new C++17 parallel algorithms.  In later chapters, the book then goes on to cover the design of multithreaded code, including lock-free data structures and thread pools.  Finally, there is a chapter on testing and debugging multithreaded applications.
-</p>
-
-<p>
-It doesn't stop there though: the appendices include a brief overview of the some of the C++ language features either used by the multithreading facilties, or commonly used in conjunction with them, such as variadic templates, lambda functions and rvalue references, as well as a 150 page reference covering every class and function in the C++ Standard Thread Library.  The book also covers the additional facilities from the Concurrency TS that aren't yet part of the main C++ standard.
-</p>
-
-<p>
-<b>*</b> Additional material in the second edition
-</p>
-
-<p>
-In addition to all the material from the first edition, the second edition (published in 2019) includes full coverage of the library changes from C++14 and C++17:
-</p>
-
-<ul class="org-ul">
+<p>** Overview</p><p>Systems with multiple processors or processors with multiple cores are the norm these days; even many phones have multicore processors.  To take advantage of these processor cores you need to use concurrency, either in the form of multiple processes or multiple threads.</p><p>The C++17 standard provides extensive support for writing multithreaded code to take advantage of these multicore and multiprocessor systems.  C++ Concurrency in Action explains how these facilities work, and how to use them to best effect.</p><p>This book provides a tutorial covering the use of the library facilities introduced in the last three C++ standards.  It covers everything from the basics such as <pre class="verbatim">std::thread</pre>, <pre class="verbatim">std::future</pre> and <pre class="verbatim">std::condition_variable</pre>, to an in-depth description of the new memory model and <pre class="verbatim">std::atomic</pre> classes for low level synchronization and the new C++17 parallel algorithms.  In later chapters, the book then goes on to cover the design of multithreaded code, including lock-free data structures and thread pools.  Finally, there is a chapter on testing and debugging multithreaded applications.</p><p>It doesn't stop there though: the appendices include a brief overview of the some of the C++ language features either used by the multithreading facilties, or commonly used in conjunction with them, such as variadic templates, lambda functions and rvalue references, as well as a 150 page reference covering every class and function in the C++ Standard Thread Library.  The book also covers the additional facilities from the Concurrency TS that aren't yet part of the main C++ standard.</p><p><b>*</b> Additional material in the second edition</p><p>In addition to all the material from the first edition, the second edition (published in 2019) includes full coverage of the library changes from C++14 and C++17:</p><ul class="org-ul">
 <li><pre class="verbatim">std::shared_mutex</pre> and <pre class="verbatim">std::shared_timed_mutex</pre>.  These provide for multiple-reader/single-writer mutex locks.</li>
 <li><pre class="verbatim">std::scoped_lock</pre> from C++17 for locking multiple mutexes together.</li>
 <li>Parallel overloads of many standard library algorithms include <pre class="verbatim">std::sort</pre>, <pre class="verbatim">std::for_each</pre> and <pre class="verbatim">std::transform_reduce</pre>.</li>
 </ul>
 
-<p>
-Plus, full coverage of the library extensions from the concurrency TS:
-</p>
-
-<ul class="org-ul">
+<p>Plus, full coverage of the library extensions from the concurrency TS:</p><ul class="org-ul">
 <li><pre class="verbatim">std::experimental::latch</pre> to allow waiting for a set number of events to occur</li>
 <li><pre class="verbatim">std::experimental::barrier</pre> and <pre class="verbatim">std::experimental::flex_barrier</pre> to synchronize groups of threads</li>
 <li><pre class="verbatim">std::experimental::atomic_shared_ptr</pre> to allow atomic accesses to a single <pre class="verbatim">shared_ptr</pre> instance from multiple threads, as a better alternative that the <pre class="verbatim">std::atomic_load</pre> and <pre class="verbatim">std::atomic_store</pre> free functions.</li>
 <li>Extended futures that allow continuations, so additional functions can be scheduled for when a future is ready.</li>
 <li><pre class="verbatim">std::experimental::when_all</pre> and <pre class="verbatim">std::experimental::when_any</pre> to allow waiting for either all of a set of futures to be ready, or the first of a set of futures to be ready.</li>
 </ul>
-<p>
-#+end<sub>quote</sub>
-</p>
+<p>#+end<sub>quote</sub></p>
 </div>
 </div>
 <div id="outline-container-ID-87dc353e-753f-4f80-b8d5-6a3e5dcb9624" class="outline-2">
@@ -104,45 +64,13 @@ ROAM_REFS: https://www.manning.com/books/c-plus-plus-concurrency-in-action-secon
 </pre>
 
 <blockquote>
-<p>
-C++ Concurrency in Action, Second Edition
-</p>
-
-<p>
-Anthony Williams
-</p>
-
-<ul class="org-ul">
+<p>C++ Concurrency in Action, Second Edition</p><p>Anthony Williams</p><ul class="org-ul">
 <li>February 2019</li>
 <li>ISBN 9781617294693</li>
 <li>592 pages</li>
 </ul>
 
-<p>
-This bestseller has been updated and revised to cover all the latest changes to C++ 14 and 17! <i>C++ Concurrency in Action, Second Edition</i> teaches you everything you need to write robust and elegant multithreaded applications in C++17.
-</p>
-
-<p>
-** about the technology
-</p>
-
-<p>
-You choose C++ when your applications need to run fast. Well-designed concurrency makes them go even faster. C++ 17 delivers strong support for the multithreaded, multiprocessor programming required for fast graphic processing, machine learning, and other performance-sensitive tasks. This exceptional book unpacks the features, patterns, and best practices of production-grade C++ concurrency.
-</p>
-
-<p>
-** about the book
-</p>
-
-<p>
-<i>C++ Concurrency in Action, Second Edition</i> is the definitive guide to writing elegant multithreaded applications in C++. Updated for C++ 17, it carefully addresses every aspect of concurrent development, from starting new threads to designing fully functional multithreaded algorithms and data structures. Concurrency master Anthony Williams presents examples and practical tasks in every chapter, including insights that will delight even the most experienced developer.
-</p>
-
-<p>
-** what's inside
-</p>
-
-<ul class="org-ul">
+<p>This bestseller has been updated and revised to cover all the latest changes to C++ 14 and 17! <i>C++ Concurrency in Action, Second Edition</i> teaches you everything you need to write robust and elegant multithreaded applications in C++17.</p><p>** about the technology</p><p>You choose C++ when your applications need to run fast. Well-designed concurrency makes them go even faster. C++ 17 delivers strong support for the multithreaded, multiprocessor programming required for fast graphic processing, machine learning, and other performance-sensitive tasks. This exceptional book unpacks the features, patterns, and best practices of production-grade C++ concurrency.</p><p>** about the book</p><p><i>C++ Concurrency in Action, Second Edition</i> is the definitive guide to writing elegant multithreaded applications in C++. Updated for C++ 17, it carefully addresses every aspect of concurrent development, from starting new threads to designing fully functional multithreaded algorithms and data structures. Concurrency master Anthony Williams presents examples and practical tasks in every chapter, including insights that will delight even the most experienced developer.</p><p>** what's inside</p><ul class="org-ul">
 <li>Full coverage of new C++ 17 features</li>
 <li>Starting and managing threads</li>
 <li>Synchronizing concurrent operations</li>
@@ -150,31 +78,7 @@ You choose C++ when your applications need to run fast. Well-designed concurrenc
 <li>Debugging multithreaded applications</li>
 </ul>
 
-<p>
-** about the reader
-</p>
-
-<p>
-Written for intermediate C and C++ developers. No prior experience with concurrency required.
-</p>
-
-<p>
-** about the author
-</p>
-
-<p>
-<b>Anthony Williams</b> has been an active member of the BSI C++ Panel since 2001 and is the developer of the just::thread Pro extensions to the C++ 11 thread library.
-</p>
-
-<p>
-** table of contents
-</p>
-
-<p>
-You can see this entire book for free. Click anywhere in the table of contents to start reading
-</p>
-
-<p>
+<p>** about the reader</p><p>Written for intermediate C and C++ developers. No prior experience with concurrency required.</p><p>** about the author</p><p><b>Anthony Williams</b> has been an active member of the BSI C++ Panel since 2001 and is the developer of the just::thread Pro extensions to the C++ 11 thread library.</p><p>** table of contents</p><p>You can see this entire book for free. Click anywhere in the table of contents to start reading</p><p>
 <b>*</b> <a href="https://livebook.manning.com/book/c-plus-plus-concurrency-in-action-second-edition/chapter-1?origin=product-toc">1 Hello, world of concurrency in C+!</a>
 <b>**</b> 1.1 What is concurrency?
 <b><b>*</b></b> 1.1.1 Concurrency in computer systems
@@ -387,39 +291,19 @@ You can see this entire book for free. Click anywhere in the table of contents t
 <b>*</b> <a href="https://livebook.manning.com/book/c-plus-plus-concurrency-in-action-second-edition/appendix-b?origin=product-toc">Appendix B: Brief comparison of concurrency libraries</a>
 <b>*</b> <a href="https://livebook.manning.com/book/c-plus-plus-concurrency-in-action-second-edition/appendix-c?origin=product-toc">Appendix C: A message-passing framework and complete ATM example</a>
 <b>*</b> <a href="https://livebook.manning.com/book/c-plus-plus-concurrency-in-action-second-edition/appendix-d?origin=product-toc">Appendix D: C+ Thread Library reference</a>
-</p>
-
-<pre class="example">
+</p><pre class="example">
 This book should be on every C++ programmer's desk. It's clear, concise, and valuable.
 </pre>
-
-<p>
-Rob Green, Bowling Green State University
-</p>
-
-<pre class="example">
+<p>Rob Green, Bowling Green State University</p><pre class="example">
 A thorough presentation of C++ concurrency capabilities.
 </pre>
-
-<p>
-Maurizio Tomasi, University of Milan
-</p>
-
-<pre class="example">
+<p>Maurizio Tomasi, University of Milan</p><pre class="example">
 Highly recommended for programmers who want to further their knowledge of the latest C++ standard.
 </pre>
-
-<p>
-Frédéric Flayol, 4Pro Web C++
-</p>
-
-<pre class="example">
+<p>Frédéric Flayol, 4Pro Web C++</p><pre class="example">
 The guide contains snippets for everyday use in your own projects and to help take your concurrency C++ skills from the Padawan to the Jedi level.
 </pre>
-
-<p>
-Jura Shikin, IVI Technologies
-</p>
+<p>Jura Shikin, IVI Technologies</p>
 </blockquote>
 </div>
 </div>

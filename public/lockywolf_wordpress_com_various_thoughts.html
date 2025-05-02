@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(lockywolf.wordpress.com) Various Thoughts</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,13 +30,7 @@ ROAM_REFS: https://lockywolf.wordpress.com/
 <li><a href="https://lockywolf.wordpress.com/2017/10/15/first-blog-post/">About</a></li>
 </ul>
 
-<p>
-Since I abandoned LiveJournal, but still need to publish my stuff somewhere, why don't I use WordPress?
-</p>
-
-<p>
-I post micro posts in on Facebook (bilingual), occasionally on Instagram and Twitter.  The links under the site title work.
-</p>
+<p>Since I abandoned LiveJournal, but still need to publish my stuff somewhere, why don't I use WordPress?</p><p>I post micro posts in on Facebook (bilingual), occasionally on Instagram and Twitter.  The links under the site title work.</p>
 </blockquote>
 <div id="outline-container-ID-0cd682ff-d2c0-4ee9-af88-5729e0e89c1c" class="outline-2">
 <h2 id="ID-0cd682ff-d2c0-4ee9-af88-5729e0e89c1c">(lockywolf.wordpress.com) Solving SICP – Various Thoughts&#xa0;&#xa0;&#xa0;<span class="tag"><span class="scheme">scheme</span>&#xa0;<span class="lisp">lisp</span>&#xa0;<span class="reviews">reviews</span>&#xa0;<span class="computer_science">computer_science</span>&#xa0;<span class="blogs">blogs</span>&#xa0;<span class="blog_post">blog_post</span>&#xa0;<span class="website">website</span></span></h2>
@@ -50,48 +44,24 @@ ROAM_REFS: https://lockywolf.wordpress.com/2021/02/08/solving-sicp/
 <li>Solving SICP</li>
 </ul>
 
-<p>
-<a href="https://lockywolf.wordpress.com/author/lockywolf/">lockywolf</a> <a href="https://lockywolf.wordpress.com/category/development/">development</a> February 8, 2021February 9, 2021 71 Minutes
-</p>
-
-<p>
-This report is written as a post-mortem of a project that has, perhaps, been the author's most extensive personal project: creating a complete and comprehensive solution to one of the most famous programming problem sets in the modern computer science curriculum “Structure and Interpretation of Computer Programs”, by Abelson, Sussman, and Sussman (cite{Abelson1996}).
-</p>
-
-<p>
-It measures exactly:
-</p>
-
-<ul class="org-ul">
+<p><a href="https://lockywolf.wordpress.com/author/lockywolf/">lockywolf</a> <a href="https://lockywolf.wordpress.com/category/development/">development</a> February 8, 2021February 9, 2021 71 Minutes</p><p>This report is written as a post-mortem of a project that has, perhaps, been the author's most extensive personal project: creating a complete and comprehensive solution to one of the most famous programming problem sets in the modern computer science curriculum “Structure and Interpretation of Computer Programs”, by Abelson, Sussman, and Sussman (cite{Abelson1996}).</p><p>It measures exactly:</p><ul class="org-ul">
 <li>How much effort SICP requires (729 hours 19 minutes (over eight months), 292 sessions).</li>
 <li>How many computer languages it involves (6).</li>
 <li>How many pieces of software are required (9).</li>
 <li>How much communication with peers is needed.</li>
 </ul>
 
-<p>
-It suggests:
-</p>
-
-<ul class="org-ul">
+<p>It suggests:</p><ul class="org-ul">
 <li>A practical software-supported task management procedure for solving coursework.</li>
 <li>Several improvements, on the technical side, to any hard skills teaching process.</li>
 <li>Several improvements, on the social side, to any kind of teaching process.</li>
 </ul>
 
-<p>
-The solution is published online (the source code and pdf file):
-</p>
-
-<ul class="org-ul">
+<p>The solution is published online (the source code and pdf file):</p><ul class="org-ul">
 <li><a href="http://gitlab.com/Lockywolf/chibi-sicp">http://gitlab.com/Lockywolf/chibi-sicp</a></li>
 </ul>
 
-<p>
-This report (and the data in the appendix) can be applied immediately as:
-</p>
-
-<ul class="org-ul">
+<p>This report (and the data in the appendix) can be applied immediately as:</p><ul class="org-ul">
 <li>A single-point estimate of the SICP problem set difficulty.</li>
 <li>A class handout aimed at increasing students' motivation to study.</li>
 <li>A data source for a study of learning patterns among adult professionals aiming for continuing education.</li>
@@ -99,41 +69,7 @@ This report (and the data in the appendix) can be applied immediately as:
 <li>An “almost ready”, and “almost convenient” protocol for measuring time consumption of almost any problem set expressible in a digital form.</li>
 </ul>
 
-<p>
-Additionally, a time-tracking data analysis can be reproduced interactively in the org-mode version of this report. (See: <a href="https://lockywolf.wordpress.com/2021/02/08/solving-sicp/#org492ae47">Appendix: Emacs Lisp code for data analysis</a>)
-</p>
-
-<p>
-** Introduction
-</p>
-
-<p>
-Programming language textbooks are not a frequent object of study, as they are expected to convey existing knowledge.  However, teaching practitioners, when they face the task of designing a computer science curriculum for their teaching institution, have to base their decisions on something.  An “ad-hoc” teaching method, primarily based on studying some particular programming language fashionable at the time of selection, is still a popular choice.
-</p>
-
-<p>
-There have been attempts to approach course design with more rigour.  The “Structure and Interpretation of Computer Programs” was created as a result of such an attempt.  SICP was revolutionary for its time, and perhaps can be still considered revolutionary nowadays.  Twenty years later, this endeavour was analysed by Felleisen in a paper “Structure and Interpretation of Computer Science Curriculum” (cite{sicsc}).  He then reflected upon the benefits and drawbacks of the <pre class="verbatim">deliberately designed</pre> syllabus from a pedagogical standpoint.  He proposed what he believes to be a pedagogically superior successor to the first generation of <pre class="verbatim">deliberate</pre> curriculum. (See: “How to Design Programs” (HTDP) cite{felleisen2018how})
-</p>
-
-<p>
-Leaving aside the pedagogical quality of the textbook (as the author is not a practising teacher), this report touches a different (and seldom considered!) aspect of a computer science (and in general, any other subject's) curriculum.  That is,precisely, how much work is required to pass a particular course.
-</p>
-
-<p>
-This endeavour was spurred by the author's previous experience of learning about partial differential equations through a traditional paper-and-pen based approach, only mildly augmented with a time-tracking software.  But even such a tiny augmentation already exposed an astonishing disparity between a declared laboriousness of a task and the empirically measured time required to complete it.
-</p>
-
-<p>
-The author, therefore, decided to build upon the previous experience and to try and design as smooth, manageable, and measurable approach to performing university coursework, as possible.  A computer science subject provided an obvious choice.
-</p>
-
-<p>
-The solution was planned, broken down into parts, harnessed with a software support system, and executed in a timely and measured manner by the author, thus proving that the chosen goal is doable.  The complete measured data are provided.  Teaching professionals may benefit from it when planning coursework specialised to their requirements.
-</p>
-
-<p>
-More generally, the author wants to propose a comprehensive reassessment of university teaching in general, based on empirical approaches (understanding precisely how, when, and what each party involved in the teaching process does), in order to select the most efficient (potentially even using an optimisation algorithm) strategy when selecting a learning approach for every particular student.
-</p>
+<p>Additionally, a time-tracking data analysis can be reproduced interactively in the org-mode version of this report. (See: <a href="https://lockywolf.wordpress.com/2021/02/08/solving-sicp/#org492ae47">Appendix: Emacs Lisp code for data analysis</a>)</p><p>** Introduction</p><p>Programming language textbooks are not a frequent object of study, as they are expected to convey existing knowledge.  However, teaching practitioners, when they face the task of designing a computer science curriculum for their teaching institution, have to base their decisions on something.  An “ad-hoc” teaching method, primarily based on studying some particular programming language fashionable at the time of selection, is still a popular choice.</p><p>There have been attempts to approach course design with more rigour.  The “Structure and Interpretation of Computer Programs” was created as a result of such an attempt.  SICP was revolutionary for its time, and perhaps can be still considered revolutionary nowadays.  Twenty years later, this endeavour was analysed by Felleisen in a paper “Structure and Interpretation of Computer Science Curriculum” (cite{sicsc}).  He then reflected upon the benefits and drawbacks of the <pre class="verbatim">deliberately designed</pre> syllabus from a pedagogical standpoint.  He proposed what he believes to be a pedagogically superior successor to the first generation of <pre class="verbatim">deliberate</pre> curriculum. (See: “How to Design Programs” (HTDP) cite{felleisen2018how})</p><p>Leaving aside the pedagogical quality of the textbook (as the author is not a practising teacher), this report touches a different (and seldom considered!) aspect of a computer science (and in general, any other subject's) curriculum.  That is,precisely, how much work is required to pass a particular course.</p><p>This endeavour was spurred by the author's previous experience of learning about partial differential equations through a traditional paper-and-pen based approach, only mildly augmented with a time-tracking software.  But even such a tiny augmentation already exposed an astonishing disparity between a declared laboriousness of a task and the empirically measured time required to complete it.</p><p>The author, therefore, decided to build upon the previous experience and to try and design as smooth, manageable, and measurable approach to performing university coursework, as possible.  A computer science subject provided an obvious choice.</p><p>The solution was planned, broken down into parts, harnessed with a software support system, and executed in a timely and measured manner by the author, thus proving that the chosen goal is doable.  The complete measured data are provided.  Teaching professionals may benefit from it when planning coursework specialised to their requirements.</p><p>More generally, the author wants to propose a comprehensive reassessment of university teaching in general, based on empirical approaches (understanding precisely how, when, and what each party involved in the teaching process does), in order to select the most efficient (potentially even using an optimisation algorithm) strategy when selecting a learning approach for every particular student.</p>
 </blockquote>
 </div>
 </div>

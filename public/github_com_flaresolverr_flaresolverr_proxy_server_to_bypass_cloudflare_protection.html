@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:48 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(github.com) FlareSolverr/FlareSolverr: Proxy server to bypass Cloudflare protection</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,25 +30,7 @@ ROAM_REFS: https://github.com/FlareSolverr/FlareSolverr
 <li>FlareSolverr</li>
 </ul>
 
-<p>
-FlareSolverr is a proxy server to bypass Cloudflare and DDoS-GUARD protection.
-</p>
-
-<p>
-** How it works
-</p>
-
-<p>
-FlareSolverr starts a proxy server, and it waits for user requests in an idle state using few resources.  When some request arrives, it uses <a href="https://www.selenium.dev/">Selenium</a> with the <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a> to create a web browser (Chrome).  It opens the URL with user parameters and waits until the Cloudflare challenge is solved (or timeout).  The HTML code and the cookies are sent back to the user, and those cookies can be used to bypass Cloudflare using other HTTP clients.
-</p>
-
-<p>
-<b>NOTE</b>: Web browsers consume a lot of memory.  If you are running FlareSolverr on a machine with few RAM, do not make many requests at once.  With each request a new browser is launched.
-</p>
-
-<p>
-It is also possible to use a permanent session.  However, if you use sessions, you should make sure to close them as soon as you are done using them.
-</p>
+<p>FlareSolverr is a proxy server to bypass Cloudflare and DDoS-GUARD protection.</p><p>** How it works</p><p>FlareSolverr starts a proxy server, and it waits for user requests in an idle state using few resources.  When some request arrives, it uses <a href="https://www.selenium.dev/">Selenium</a> with the <a href="https://github.com/ultrafunkamsterdam/undetected-chromedriver">undetected-chromedriver</a> to create a web browser (Chrome).  It opens the URL with user parameters and waits until the Cloudflare challenge is solved (or timeout).  The HTML code and the cookies are sent back to the user, and those cookies can be used to bypass Cloudflare using other HTTP clients.</p><p><b>NOTE</b>: Web browsers consume a lot of memory.  If you are running FlareSolverr on a machine with few RAM, do not make many requests at once.  With each request a new browser is launched.</p><p>It is also possible to use a permanent session.  However, if you use sessions, you should make sure to close them as soon as you are done using them.</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

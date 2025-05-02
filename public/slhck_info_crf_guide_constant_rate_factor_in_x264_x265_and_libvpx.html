@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:11 -->
+<!-- 2025-05-02 Fri 16:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(slhck.info) CRF Guide (Constant Rate Factor in x264, x265 and libvpx)</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,56 +30,22 @@ ROAM_REFS: https://slhck.info/video/2017/02/24/crf-guide.html
 <li>CRF Guide (Constant Rate Factor in x264, x265 and libvpx)</li>
 </ul>
 
-<p>
-Feb 24, 2017
-</p>
-
-<p>
-** What is the Constant Rate Factor?
-</p>
-
-<p>
-The Constant Rate Factor (CRF) is the default quality (and rate control) setting for the <a href="http://www.videolan.org/developers/x264.html">x264</a> and <a href="http://x265.org/">x265</a> encoders, and it's also available for <a href="https://www.webmproject.org/code/">libvpx</a>.  With x264 and x265, you can set the values between 0 and 51, where lower values would result in better quality, at the expense of higher file sizes.  Higher values mean more compression, but at some point you will notice the quality degradation.
-</p>
-
-<p>
-For x264, sane values are between 18 and 28.  The default is 23, so you can use this as a starting point.
-</p>
-
-<p>
-With <pre class="verbatim">ffmpeg</pre>, it'd look like this:
-</p>
-
-<div class="org-src-container">
+<p>Feb 24, 2017</p><p>** What is the Constant Rate Factor?</p><p>The Constant Rate Factor (CRF) is the default quality (and rate control) setting for the <a href="http://www.videolan.org/developers/x264.html">x264</a> and <a href="http://x265.org/">x265</a> encoders, and it's also available for <a href="https://www.webmproject.org/code/">libvpx</a>.  With x264 and x265, you can set the values between 0 and 51, where lower values would result in better quality, at the expense of higher file sizes.  Higher values mean more compression, but at some point you will notice the quality degradation.</p><p>For x264, sane values are between 18 and 28.  The default is 23, so you can use this as a starting point.</p><p>With <pre class="verbatim">ffmpeg</pre>, it'd look like this:</p><div class="org-src-container">
 <pre class="src src-highlight"><code>ffmpeg -i input.mp4 -c:v libx264 -crf 23 output.mp4</code>
 </pre>
 </div>
 
-<p>
-For x265, the default CRF is 28:
-</p>
-
-<div class="org-src-container">
+<p>For x265, the default CRF is 28:</p><div class="org-src-container">
 <pre class="src src-highlight"><code>ffmpeg -i input.mp4 -c:v libx265 -crf 28 output.mp4</code>
 </pre>
 </div>
 
-<p>
-For libvpx, there is no default, and CRF can range between 0 and 63.  31 is recommended for 1080p HD video:
-</p>
-
-<div class="org-src-container">
+<p>For libvpx, there is no default, and CRF can range between 0 and 63.  31 is recommended for 1080p HD video:</p><div class="org-src-container">
 <pre class="src src-highlight"><code>ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf 31 -b:v 0 output.mkv</code>
 </pre>
 </div>
 
-<p>
-If you're unsure about what CRF to use, begin with the default and change it according to your subjective impression of the output.  Is the quality good enough?  No?  Then set a lower CRF.  Is the file size too high?  Choose a higher CRF.  A change of ±6 should result in about half/double the file size, although your results might vary.
-</p>
-
-<p>
-You should use CRF encoding primarly for offline file storage, in order to achieve the most optimal encodes.  For other applications, <a href="https://slhck.info/articles/rate-control">other rate control modes</a> are recommended.  In video streaming, for example, CRF can be used in a constrained/capped mode to prevent bitrate spikes.
-</p>
+<p>If you're unsure about what CRF to use, begin with the default and change it according to your subjective impression of the output.  Is the quality good enough?  No?  Then set a lower CRF.  Is the file size too high?  Choose a higher CRF.  A change of ±6 should result in about half/double the file size, although your results might vary.</p><p>You should use CRF encoding primarly for offline file storage, in order to achieve the most optimal encodes.  For other applications, <a href="https://slhck.info/articles/rate-control">other rate control modes</a> are recommended.  In video streaming, for example, CRF can be used in a constrained/capped mode to prevent bitrate spikes.</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

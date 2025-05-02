@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:48 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Common Lisp</title>
@@ -13,30 +13,32 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
 <header>
 <h1 class="title">Common Lisp</h1>
-</header><p>
-A <a href="20240714175050-lisp.html#ID-84ae6e85-a6a2-4133-bc53-274238081c2d">Lisp</a> <a href="20240714174950-programming_language.html#ID-b24601aa-09df-41e1-aa7e-25ead342db34">programming language</a> dialect standardized by <a href="https://www.ansi.org/">ANSI</a> in 1994 after initially being developed in 1984.
-</p>
-<div id="outline-container-org708dc72" class="outline-2">
-<h2 id="org708dc72">See Also</h2>
-<div class="outline-text-2" id="text-org708dc72">
-<ul class="org-ul">
-<li><a href="https://en.wikipedia.org/wiki/Common_Lisp">Common Lisp - Wikipedia</a></li>
-</ul>
+</header><p>A <a href="20240714175050-lisp.html#ID-84ae6e85-a6a2-4133-bc53-274238081c2d">Lisp</a> <a href="20240714174950-programming_language.html#ID-b24601aa-09df-41e1-aa7e-25ead342db34">programming language</a> dialect standardized by <a href="https://www.ansi.org/">ANSI</a> in 1994 after initially being developed in 1984.</p>
+<div id="outline-container-ID-387ca036-fcfd-4ef3-99dd-9d3515641b6d" class="outline-2">
+<h2 id="ID-387ca036-fcfd-4ef3-99dd-9d3515641b6d">(en.wikipedia.org) Common Lisp - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org06ed6b7">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Common_Lisp#Libraries
+</pre>
+
+<blockquote>
+<p><b>Common Lisp</b> (<b>CL</b>) is a dialect of the <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp programming language</a>, published in <a href="https://en.wikipedia.org/wiki/American_National_Standards_Institute">American National Standards Institute</a> (ANSI) standard document <i>ANSI INCITS 226-1994 (S2018)</i> (formerly <i>X3.226-1994 (R1999)</i>).  The <a href="https://en.wikipedia.org/wiki/Common_Lisp_HyperSpec">Common Lisp HyperSpec</a>, a <a href="https://en.wikipedia.org/wiki/Hyperlink">hyperlinked</a> <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> version, has been derived from the ANSI Common Lisp standard.</p><p>The Common Lisp language was developed as a standardized and improved successor of <a href="https://en.wikipedia.org/wiki/Maclisp">Maclisp</a>.  By the early 1980s several groups were already at work on diverse successors to MacLisp: <a href="https://en.wikipedia.org/wiki/Lisp_Machine_Lisp">Lisp Machine Lisp</a> (aka ZetaLisp), <a href="https://en.wikipedia.org/wiki/Spice_Lisp">Spice Lisp</a>, <a href="https://en.wikipedia.org/wiki/NIL_(programming_language)">NIL</a> and <a href="https://en.wikipedia.org/wiki/S-1_Lisp">S-1 Lisp</a>.  Common Lisp sought to unify, standardise, and extend the features of these MacLisp dialects.  Common Lisp is not an implementation, but rather a language <a href="https://en.wikipedia.org/wiki/Specification">specification</a>.  Several <a href="https://en.wikipedia.org/wiki/Common_Lisp#Implementations">implementations</a> of the Common Lisp standard are available, including <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">free and open-source software</a> and proprietary products.  Common Lisp is a general-purpose, <a href="https://en.wikipedia.org/wiki/Multi-paradigm_programming_language">multi-paradigm programming language</a>.  It supports a combination of <a href="https://en.wikipedia.org/wiki/Procedural_programming">procedural</a>, <a href="https://en.wikipedia.org/wiki/Functional_programming">functional</a>, and <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented programming</a> paradigms.  As a <a href="https://en.wikipedia.org/wiki/Dynamic_programming_language">dynamic programming language</a>, it facilitates evolutionary and <a href="https://en.wikipedia.org/wiki/Iterative_and_incremental_development">incremental software development</a>, with iterative <a href="https://en.wikipedia.org/wiki/Compiler">compilation</a> into efficient run-time programs.  This incremental development is often done interactively without interrupting the running application.</p><p>It also supports optional type annotation and casting, which can be added as necessary at the later <a href="https://en.wikipedia.org/wiki/Profiling_(computer_programming)">profiling</a> and optimization stages, to permit the compiler to generate more efficient code.  For instance, <pre class="verbatim">fixnum</pre> can hold an <a href="https://en.wikipedia.org/wiki/Boxing_(computer_science)">unboxed</a> integer in a range supported by the hardware and implementation, permitting more efficient arithmetic than on big integers or arbitrary precision types.  Similarly, the compiler can be told on a per-module or per-function basis which type of safety level is wanted, using <i>optimize</i> declarations.</p><p>Common Lisp includes <a href="https://en.wikipedia.org/wiki/Common_Lisp_Object_System">CLOS</a>, an <a href="https://en.wikipedia.org/wiki/Object_system">object system</a> that supports <a href="https://en.wikipedia.org/wiki/Multimethods">multimethods</a> and method combinations.  It is often implemented with a <a href="https://en.wikipedia.org/wiki/Metaobject">Metaobject</a> Protocol.</p><p>Common Lisp is extensible through standard features such as <i>Lisp <a href="https://en.wikipedia.org/wiki/Macro_(computer_science)">macros</a></i> (code transformations) and <i>reader macros</i> (input parsers for characters).</p><p>Common Lisp provides partial backwards compatibility with <a href="https://en.wikipedia.org/wiki/Maclisp">Maclisp</a> and John McCarthy's original <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>.  This allows older Lisp software to be ported to Common Lisp.</p>
+</blockquote>
 </div>
 </div>
 </main>
 <div id="postamble" class="status">
 <footer>
-<p class="date">Last Modified: 2025-03-20 Thu 18:51</p>
+<p class="date">Last Modified: 2025-04-30 Wed 04:30</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
 </footer>
 </div>

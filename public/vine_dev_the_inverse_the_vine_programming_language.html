@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:48 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(vine.dev) The Inverse - The Vine Programming Language</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,19 +30,7 @@ ROAM_REFS: https://vine.dev/docs/features/inverse
 <li><a href="https://vine.dev/docs/features/inverse#the-inverse">The Inverse</a></li>
 </ul>
 
-<p>
-Vine's concept of the <i>inverse</i> is not something seen in other programming languages, as it is a concept that is only possible due to the unique properties of interaction nets.
-</p>
-
-<p>
-The <i>inverse type</i> <pre class="verbatim">~N32</pre> represents an <i>expectation</i> of an <pre class="verbatim">N32</pre>.  Such an expectation must be <i>fulfilled</i> with an <pre class="verbatim">N32</pre>.  The type <pre class="verbatim">~~N32</pre> is equivalent to the type <pre class="verbatim">N32</pre>.
-</p>
-
-<p>
-The <i>inverse operator</i> can be applied to a value, a space, or a place.
-</p>
-
-<ul class="org-ul">
+<p>Vine's concept of the <i>inverse</i> is not something seen in other programming languages, as it is a concept that is only possible due to the unique properties of interaction nets.</p><p>The <i>inverse type</i> <pre class="verbatim">~N32</pre> represents an <i>expectation</i> of an <pre class="verbatim">N32</pre>.  Such an expectation must be <i>fulfilled</i> with an <pre class="verbatim">N32</pre>.  The type <pre class="verbatim">~~N32</pre> is equivalent to the type <pre class="verbatim">N32</pre>.</p><p>The <i>inverse operator</i> can be applied to a value, a space, or a place.</p><ul class="org-ul">
 <li>The inverse operator, when applied to a space <pre class="verbatim">s</pre> of type <pre class="verbatim">T</pre>, evaluates to a value of type <pre class="verbatim">~T</pre>.  This value is the expectation of a <pre class="verbatim">T</pre> that will be put into the space <pre class="verbatim">s</pre>.</li>
 
 <li>The inverse operator, when applied to a value <pre class="verbatim">v</pre> of type <pre class="verbatim">T</pre>, evaluates to a space of type <pre class="verbatim">~T</pre>.  Whatever expectation is put into the space will be fulfilled with the value <pre class="verbatim">v</pre>.</li>
@@ -50,9 +38,7 @@ The <i>inverse operator</i> can be applied to a value, a space, or a place.
 <li>The inverse operator, when applied to a place <pre class="verbatim">p</pre> of type <pre class="verbatim">T</pre>, evaluates to a place <pre class="verbatim">q</pre> of type <pre class="verbatim">~T</pre>.  The value of <pre class="verbatim">q</pre> is the inverse of the space of <pre class="verbatim">p</pre>; the space of <pre class="verbatim">q</pre> is the inverse of the value of <pre class="verbatim">p</pre>.</li>
 </ul>
 
-<p>
-The <i>inverse pattern</i> is essentially the reverse of the inverse operator, and can be used to unwrap inverse types.
-</p>
+<p>The <i>inverse pattern</i> is essentially the reverse of the inverse operator, and can be used to unwrap inverse types.</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

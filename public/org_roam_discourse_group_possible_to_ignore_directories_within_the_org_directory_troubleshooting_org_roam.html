@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:11 -->
+<!-- 2025-05-02 Fri 16:50 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(org-roam.discourse.group) Possible to ignore directories within the org-directory? - Troubleshooting - Org-roam</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -25,14 +25,8 @@
 </header><pre class="example">
 ROAM_REFS: https://org-roam.discourse.group/t/possible-to-ignore-directories-within-the-org-directory/2454
 </pre>
-<p>
-Answer, by liam:
-</p>
-<blockquote>
-<p>
-For this case, <code>org-roam-file-exclude-regexp</code>, which is referenced by <code>org-roam-file-p</code>, is probably a better option than <code>org-roam-db-node-include-function</code>, which is referenced by <code>org-roam-db-node-p</code>.  It’s missing from the manual at the moment.  Including the full path to the subdirectory in the regular expression should work:
-</p>
-<pre class="example">
+<p>Answer, by liam:</p><blockquote>
+<p>For this case, <code>org-roam-file-exclude-regexp</code>, which is referenced by <code>org-roam-file-p</code>, is probably a better option than <code>org-roam-db-node-include-function</code>, which is referenced by <code>org-roam-db-node-p</code>.  It’s missing from the manual at the moment.  Including the full path to the subdirectory in the regular expression should work:</p><pre class="example">
 (setq org-roam-file-exclude-regexp
       (concat "^" (expand-file-name org-roam-directory) "/exclude-this-subdir/")
 </pre>

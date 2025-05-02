@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:11 -->
+<!-- 2025-05-02 Fri 16:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Uzbl</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,17 +30,8 @@ ROAM_REFS: https://www.uzbl.org/
 </pre>
 
 <blockquote>
-<p>
-** The uzbl web interface tools
-</p>
-
-<p>
-Uzbl follows the UNIX philosophy - "Write programs that do one thing and do it well.  Write programs to work together.  Write programs to handle text streams, because that is a universal interface."  Uzbl comes in different flavors:
-</p>
-
-<ul class="org-ul">
-<li>uzbl-core: main component meant for integration with other tools and scripts
-<ul class="org-ul">
+<p>** The uzbl web interface tools</p><p>Uzbl follows the UNIX philosophy - "Write programs that do one thing and do it well.  Write programs to work together.  Write programs to handle text streams, because that is a universal interface."  Uzbl comes in different flavors:</p><ul class="org-ul">
+<li>uzbl-core: main component meant for integration with other tools and scripts<ul class="org-ul">
 <li>Uses WebkitGtk+ for rendering, network interaction (libsoup). Css, javascript, plugin support etc come for free</li>
 <li>Provides interfaces to get data in (commands/configuration) and out (events): stdin/stdout/fifo/unix sockets</li>
 <li>You see a webkit view and (optionally) a statusbar which gets populated externally</li>
@@ -49,8 +40,7 @@ Uzbl follows the UNIX philosophy - "Write programs that do one thing and do it w
 <li>Entire configuration/state can be changed at runtime</li>
 <li>Uzbl keeps it simple, and puts <b>you</b> in charge.</li>
 </ul></li>
-<li>uzbl-browser: a complete browser experience based on uzbl-core
-<ul class="org-ul">
+<li>uzbl-browser: a complete browser experience based on uzbl-core<ul class="org-ul">
 <li>Uses a set of scripts (mostly python) that will fit most people, so things work out of the box.  Yet plenty of room for customisation</li>
 <li>Brings everything you expect: url changing, history, downloads, form filling, link navigation, cookies, event management etc.  However: one page per instance</li>
 <li>Advanced, customizable keyboard interface with support for modes, modkeys, multichars, variables (keywords) etc. (eg you can tweak the interface to be vim-like, emacs-like or any-other-program-like)</li>
@@ -58,16 +48,13 @@ Uzbl follows the UNIX philosophy - "Write programs that do one thing and do it w
 <li>Focus on plaintext storage for your data and configs in simple, parseable formats and adherence to the xdg basedir spec</li>
 <li>Visually, similar to uzbl-core except that the statusbar contains useful things.  One window per webpage</li>
 </ul></li>
-<li>uzbl-tabbed: wraps around uzbl-browser and multiplexes it
-<ul class="org-ul">
+<li>uzbl-tabbed: wraps around uzbl-browser and multiplexes it<ul class="org-ul">
 <li>Spawns one window containing multiple tabs, each tab containing a full embedded uzbl-browser</li>
 <li>Ideal as a quick and simple solution to manage multiple uzbl-browser instances without getting lost</li>
 </ul></li>
 </ul>
 
-<p>
-Uzbl is under heavy development and should be considered alpha.  See the <a href="https://www.uzbl.org/get.php">Get uzbl</a> page
-</p>
+<p>Uzbl is under heavy development and should be considered alpha.  See the <a href="https://www.uzbl.org/get.php">Get uzbl</a> page</p>
 </blockquote>
 </div>
 </div>
@@ -79,22 +66,12 @@ ROAM_REFS: https://github.com/uzbl/uzbl
 </pre>
 
 <blockquote>
-<p>
-<b>*</b> INTRODUCTION
-</p>
-
-<p>
-Any program can only be really useful if it complies with the Unix philosophy.  Web browsers (and other tools that work with HTML, such as feed readers) are frequent violators of this principle:
-</p>
-
-<ul class="org-ul">
+<p><b>*</b> INTRODUCTION</p><p>Any program can only be really useful if it complies with the Unix philosophy.  Web browsers (and other tools that work with HTML, such as feed readers) are frequent violators of this principle:</p><ul class="org-ul">
 <li>They build in way too much things into one (complex) program, dramatically decreasing the options to do things the way you want.</li>
 <li>They store things in way too fancy formats (XML, RDF, SQLite, etc.) which are hard to store under version control, reuse in other scripts, and so on.</li>
 </ul>
 
-<p>
-The Uzbl project was started as an attempt to resolve this.
-</p>
+<p>The Uzbl project was started as an attempt to resolve this.</p>
 </blockquote>
 </div>
 </div>
@@ -106,13 +83,7 @@ ROAM_REFS: https://github.com/haxney/ezbl
 </pre>
 
 <blockquote>
-<p>
-Ezbl - Emacs interface for Uzbl (uzbl.org)
-</p>
-
-<p>
-This package creates an Emacs interface for Uzbl, allowing you to control Uzbl from within Emacs.
-</p>
+<p>Ezbl - Emacs interface for Uzbl (uzbl.org)</p><p>This package creates an Emacs interface for Uzbl, allowing you to control Uzbl from within Emacs.</p>
 </blockquote>
 </div>
 </div>

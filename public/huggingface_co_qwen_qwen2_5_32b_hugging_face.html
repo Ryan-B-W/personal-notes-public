@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:48 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(huggingface.co) Qwen/Qwen2.5-32B · Hugging Face</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,26 +30,14 @@ ROAM_REFS: https://huggingface.co/Qwen/Qwen2.5-32B
 <li>Qwen2.5-32B</li>
 </ul>
 
-<p>
-**  Introduction
-</p>
-
-<p>
-Qwen2.5 is the latest series of Qwen large language models.  For Qwen2.5, we release a number of base language models and instruction-tuned language models ranging from 0.5 to 72 billion parameters.  Qwen2.5 brings the following improvements upon Qwen2:
-</p>
-
-<ul class="org-ul">
+<p>**  Introduction</p><p>Qwen2.5 is the latest series of Qwen large language models.  For Qwen2.5, we release a number of base language models and instruction-tuned language models ranging from 0.5 to 72 billion parameters.  Qwen2.5 brings the following improvements upon Qwen2:</p><ul class="org-ul">
 <li>Significantly <b>more knowledge</b> and has greatly improved capabilities in <b>coding</b> and <b>mathematics</b>, thanks to our specialized expert models in these domains.</li>
 <li>Significant improvements in <b>instruction following</b>, <b>generating long texts</b> (over 8K tokens), <b>understanding structured data</b> (e.g, tables), and <b>generating structured outputs</b> especially JSON. <b>More resilient to the diversity of system prompts</b>, enhancing role-play implementation and condition-setting for chatbots.</li>
 <li><b>Long-context Support</b> up to 128K tokens and can generate up to 8K tokens.</li>
 <li><b>Multilingual support</b> for over 29 languages, including Chinese, English, French, Spanish, Portuguese, German, Italian, Russian, Japanese, Korean, Vietnamese, Thai, Arabic, and more.</li>
 </ul>
 
-<p>
-<b>This repo contains the base 32B Qwen2.5 model</b>, which has the following features:
-</p>
-
-<ul class="org-ul">
+<p><b>This repo contains the base 32B Qwen2.5 model</b>, which has the following features:</p><ul class="org-ul">
 <li>Type: Causal Language Models</li>
 <li>Training Stage: Pretraining</li>
 <li>Architecture: transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias</li>
@@ -60,51 +48,11 @@ Qwen2.5 is the latest series of Qwen large language models.  For Qwen2.5, we rel
 <li>Context Length: 131,072 tokens</li>
 </ul>
 
-<p>
-<b>We do not recommend using base language models for conversations.</b> Instead, you can apply post-training, e.g., SFT, RLHF, continued pretraining, etc., on this model.
-</p>
-
-<p>
-For more details, please refer to our <a href="https://qwenlm.github.io/blog/qwen2.5/">blog</a>, <a href="https://github.com/QwenLM/Qwen2.5">GitHub</a>, and <a href="https://qwen.readthedocs.io/en/latest/">Documentation</a>.
-</p>
-
-<p>
-**  Requirements
-</p>
-
-<p>
-The code of Qwen2.5 has been in the latest Hugging face <pre class="verbatim">transformers</pre> and we advise you to use the latest version of <pre class="verbatim">transformers</pre>.
-</p>
-
-<p>
-With <pre class="verbatim">transformers&lt;4.37.0</pre>, you will encounter the following error:
-</p>
-
-<pre class="example" id="org4c9e365">
+<p><b>We do not recommend using base language models for conversations.</b> Instead, you can apply post-training, e.g., SFT, RLHF, continued pretraining, etc., on this model.</p><p>For more details, please refer to our <a href="https://qwenlm.github.io/blog/qwen2.5/">blog</a>, <a href="https://github.com/QwenLM/Qwen2.5">GitHub</a>, and <a href="https://qwen.readthedocs.io/en/latest/">Documentation</a>.</p><p>**  Requirements</p><p>The code of Qwen2.5 has been in the latest Hugging face <pre class="verbatim">transformers</pre> and we advise you to use the latest version of <pre class="verbatim">transformers</pre>.</p><p>With <pre class="verbatim">transformers&lt;4.37.0</pre>, you will encounter the following error:</p><pre class="example" id="org23776ce">
 <code>KeyError: 'qwen2'</code>
 </pre>
 
-<p>
-**  Evaluation &amp; Performance
-</p>
-
-<p>
-Detailed evaluation results are reported in this <a href="https://qwenlm.github.io/blog/qwen2.5/">📑 blog</a>.
-</p>
-
-<p>
-For requirements on GPU memory and the respective throughput, see results <a href="https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html">here</a>.
-</p>
-
-<p>
-**  Citation
-</p>
-
-<p>
-If you find our work helpful, feel free to give us a cite.
-</p>
-
-<pre class="example" id="org350049e">
+<p>**  Evaluation &amp; Performance</p><p>Detailed evaluation results are reported in this <a href="https://qwenlm.github.io/blog/qwen2.5/">📑 blog</a>.</p><p>For requirements on GPU memory and the respective throughput, see results <a href="https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html">here</a>.</p><p>**  Citation</p><p>If you find our work helpful, feel free to give us a cite.</p><pre class="example" id="orgc0bf2a6">
 <code>@misc{qwen2.5,</code>
 <code>    title = {Qwen2.5: A Party of Foundation Models},</code>
 <code>    url = {https://qwenlm.github.io/blog/qwen2.5/},</code>

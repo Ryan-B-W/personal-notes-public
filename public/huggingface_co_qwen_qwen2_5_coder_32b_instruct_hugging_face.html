@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:14 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(huggingface.co) Qwen/Qwen2.5-Coder-32B-Instruct · Hugging Face</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,25 +30,13 @@ ROAM_REFS: https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct
 <li>Qwen2.5-Coder-32B-Instruct</li>
 </ul>
 
-<p>
-**  Introduction
-</p>
-
-<p>
-Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen).  As of now, Qwen2.5-Coder has covered six mainstream model sizes, 0.5, 1.5, 3, 7, 14, 32 billion parameters, to meet the needs of different developers.  Qwen2.5-Coder brings the following improvements upon CodeQwen1.5:
-</p>
-
-<ul class="org-ul">
+<p>**  Introduction</p><p>Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen).  As of now, Qwen2.5-Coder has covered six mainstream model sizes, 0.5, 1.5, 3, 7, 14, 32 billion parameters, to meet the needs of different developers.  Qwen2.5-Coder brings the following improvements upon CodeQwen1.5:</p><ul class="org-ul">
 <li>Significantly improvements in <b>code generation</b>, <b>code reasoning</b> and <b>code fixing</b>.  Base on the strong Qwen2.5, we scale up the training tokens into 5.5 trillion including source code, text-code grounding, Synthetic data, etc. Qwen2.5-Coder-32B has become the current state-of-the-art open-source codeLLM, with its coding abilities matching those of GPT-4o.</li>
 <li>A more comprehensive foundation for real-world applications such as <b>Code Agents</b>.  Not only enhancing coding capabilities but also maintaining its strengths in mathematics and general competencies.</li>
 <li><b>Long-context Support</b> up to 128K tokens.</li>
 </ul>
 
-<p>
-<b>This repo contains the instruction-tuned 32B Qwen2.5-Coder model</b>, which has the following features:
-</p>
-
-<ul class="org-ul">
+<p><b>This repo contains the instruction-tuned 32B Qwen2.5-Coder model</b>, which has the following features:</p><ul class="org-ul">
 <li>Type: Causal Language Models</li>
 <li>Training Stage: Pretraining &amp; Post-training</li>
 <li>Architecture: transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias</li>
@@ -56,41 +44,16 @@ Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (
 <li>Number of Paramaters (Non-Embedding): 31.0B</li>
 <li>Number of Layers: 64</li>
 <li>Number of Attention Heads (GQA): 40 for Q and 8 for KV</li>
-<li>Context Length: Full 131,072 tokens
-<ul class="org-ul">
+<li>Context Length: Full 131,072 tokens<ul class="org-ul">
 <li>Please refer to <a href="https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct#processing-long-texts">this section</a> for detailed instructions on how to deploy Qwen2.5 for handling long texts.</li>
 </ul></li>
 </ul>
 
-<p>
-For more details, please refer to our <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">blog</a>, <a href="https://github.com/QwenLM/Qwen2.5-Coder">GitHub</a>, <a href="https://qwen.readthedocs.io/en/latest/">Documentation</a>, <a href="https://arxiv.org/abs/2409.12186">Arxiv</a>.
-</p>
-
-<p>
-**  Requirements
-</p>
-
-<p>
-The code of Qwen2.5-Coder has been in the latest Hugging face <pre class="verbatim">transformers</pre> and we advise you to use the latest version of <pre class="verbatim">transformers</pre>.
-</p>
-
-<p>
-With <pre class="verbatim">transformers&lt;4.37.0</pre>, you will encounter the following error:
-</p>
-
-<pre class="example" id="orge48a5d1">
+<p>For more details, please refer to our <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">blog</a>, <a href="https://github.com/QwenLM/Qwen2.5-Coder">GitHub</a>, <a href="https://qwen.readthedocs.io/en/latest/">Documentation</a>, <a href="https://arxiv.org/abs/2409.12186">Arxiv</a>.</p><p>**  Requirements</p><p>The code of Qwen2.5-Coder has been in the latest Hugging face <pre class="verbatim">transformers</pre> and we advise you to use the latest version of <pre class="verbatim">transformers</pre>.</p><p>With <pre class="verbatim">transformers&lt;4.37.0</pre>, you will encounter the following error:</p><pre class="example" id="orgf80df3b">
 <code>KeyError: 'qwen2'</code>
 </pre>
 
-<p>
-**  Quickstart
-</p>
-
-<p>
-Here provides a code snippet with <pre class="verbatim">apply_chat_template</pre> to show you how to load the tokenizer and model and how to generate contents.
-</p>
-
-<div class="org-src-container">
+<p>**  Quickstart</p><p>Here provides a code snippet with <pre class="verbatim">apply_chat_template</pre> to show you how to load the tokenizer and model and how to generate contents.</p><div class="org-src-container">
 <pre class="src src-python"><code><span class="org-keyword">from</span> transformers <span class="org-keyword">import</span> AutoModelForCausalLM, AutoTokenizer</code>
 <code></code>
 <code><span class="org-variable-name">model_name</span> <span class="org-operator">=</span> <span class="org-string">"Qwen/Qwen2.5-Coder-32B-Instruct"</span></code>
@@ -126,19 +89,7 @@ Here provides a code snippet with <pre class="verbatim">apply_chat_template</pre
 </pre>
 </div>
 
-<p>
-<b>*</b>  Processing Long Texts
-</p>
-
-<p>
-The current <pre class="verbatim">config.json</pre> is set for context length up to 32,768 tokens.  To handle extensive inputs exceeding 32,768 tokens, we utilize <a href="https://arxiv.org/abs/2309.00071">YaRN</a>, a technique for enhancing model length extrapolation, ensuring optimal performance on lengthy texts.
-</p>
-
-<p>
-For supported frameworks, you could add the following to <pre class="verbatim">config.json</pre> to enable YaRN:
-</p>
-
-<div class="org-src-container">
+<p><b>*</b>  Processing Long Texts</p><p>The current <pre class="verbatim">config.json</pre> is set for context length up to 32,768 tokens.  To handle extensive inputs exceeding 32,768 tokens, we utilize <a href="https://arxiv.org/abs/2309.00071">YaRN</a>, a technique for enhancing model length extrapolation, ensuring optimal performance on lengthy texts.</p><p>For supported frameworks, you could add the following to <pre class="verbatim">config.json</pre> to enable YaRN:</p><div class="org-src-container">
 <pre class="src src-json"><code>{</code>
 <code>  ...,</code>
 <code>  "rope_scaling": {</code>
@@ -150,31 +101,7 @@ For supported frameworks, you could add the following to <pre class="verbatim">c
 </pre>
 </div>
 
-<p>
-For deployment, we recommend using vLLM.  Please refer to our <a href="https://qwen.readthedocs.io/en/latest/deployment/vllm.html">Documentation</a> for usage if you are not familar with vLLM.  Presently, vLLM only supports static YARN, which means the scaling factor remains constant regardless of input length, <b>potentially impacting performance on shorter texts</b>.  We advise adding the <pre class="verbatim">rope_scaling</pre> configuration only when processing long contexts is required.
-</p>
-
-<p>
-**  Evaluation &amp; Performance
-</p>
-
-<p>
-Detailed evaluation results are reported in this <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">📑 blog</a>.
-</p>
-
-<p>
-For requirements on GPU memory and the respective throughput, see results <a href="https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html">here</a>.
-</p>
-
-<p>
-**  Citation
-</p>
-
-<p>
-If you find our work helpful, feel free to give us a cite.
-</p>
-
-<pre class="example" id="orgdff9065">
+<p>For deployment, we recommend using vLLM.  Please refer to our <a href="https://qwen.readthedocs.io/en/latest/deployment/vllm.html">Documentation</a> for usage if you are not familar with vLLM.  Presently, vLLM only supports static YARN, which means the scaling factor remains constant regardless of input length, <b>potentially impacting performance on shorter texts</b>.  We advise adding the <pre class="verbatim">rope_scaling</pre> configuration only when processing long contexts is required.</p><p>**  Evaluation &amp; Performance</p><p>Detailed evaluation results are reported in this <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">📑 blog</a>.</p><p>For requirements on GPU memory and the respective throughput, see results <a href="https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html">here</a>.</p><p>**  Citation</p><p>If you find our work helpful, feel free to give us a cite.</p><pre class="example" id="orgc918820">
 <code>@article{hui2024qwen2,</code>
 <code>      title={Qwen2. 5-Coder Technical Report},</code>
 <code>      author={Hui, Binyuan and Yang, Jian and Cui, Zeyu and Yang, Jiaxi and Liu, Dayiheng and Zhang, Lei and Liu, Tianyu and Zhang, Jiajun and Yu, Bowen and Dang, Kai and others},</code>

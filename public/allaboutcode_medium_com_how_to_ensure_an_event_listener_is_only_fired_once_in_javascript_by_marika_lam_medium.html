@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:11 -->
+<!-- 2025-05-02 Fri 16:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(allaboutcode.medium.com) How to ensure an event listener is only fired once in JavaScript | by Marika Lam | Medium</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,23 +30,11 @@ ROAM_REFS: https://allaboutcode.medium.com/how-to-ensure-an-event-listener-is-on
 <li>How to ensure an event listener is only fired once in JavaScript</li>
 </ul>
 
-<p>
-<a href="https://allaboutcode.medium.com/?source=post_page---byline--d20dfd0e318d---------------------------------------">Marika Lam</a>
-</p>
-
-<p>
-Nov 9, 2022
-</p>
-
-<ul class="org-ul">
+<p><a href="https://allaboutcode.medium.com/?source=post_page---byline--d20dfd0e318d---------------------------------------">Marika Lam</a></p><p>Nov 9, 2022</p><ul class="org-ul">
 <li>1. Using the <pre class="verbatim">once</pre> option</li>
 </ul>
 
-<p>
-We can pass an object as an argument to the <pre class="verbatim">addEventListener</pre> method and specify that the event is only handled once.  This is achieved by passing the property <pre class="verbatim">once</pre> to the object.  If we set <pre class="verbatim">once</pre> to true, the event will only be fired once.
-</p>
-
-<div class="org-src-container">
+<p>We can pass an object as an argument to the <pre class="verbatim">addEventListener</pre> method and specify that the event is only handled once.  This is achieved by passing the property <pre class="verbatim">once</pre> to the object.  If we set <pre class="verbatim">once</pre> to true, the event will only be fired once.</p><div class="org-src-container">
 <pre class="src src-javascript"><code><span class="org-keyword">let</span> <span class="org-variable-name">btn</span> = document.getElementById(<span class="org-string">'btn'</span>);</code>
 <code>btn.addEventListener(<span class="org-string">"click"</span>, <span class="org-keyword">function</span>() {</code>
 <code></code>
@@ -60,11 +48,7 @@ We can pass an object as an argument to the <pre class="verbatim">addEventListen
 <li>2. Removing the event listener once the event is fired</li>
 </ul>
 
-<p>
-We will bind an event listener for the element with the handler function and, inside the handler function, we will remove the event added for that element.
-</p>
-
-<div class="org-src-container">
+<p>We will bind an event listener for the element with the handler function and, inside the handler function, we will remove the event added for that element.</p><div class="org-src-container">
 <pre class="src src-javascript"><code><span class="org-keyword">let</span> <span class="org-variable-name">btn</span> = document.getElementById(<span class="org-string">'btn'</span>);</code>
 <code><span class="org-keyword">function</span> <span class="org-function-name">onClick</span>(<span class="org-variable-name">event</span>){</code>
 <code>   btn.removeEventListener(<span class="org-string">'click'</span>, onClick);</code>
@@ -73,11 +57,7 @@ We will bind an event listener for the element with the handler function and, in
 </pre>
 </div>
 
-<p>
-The code below shows how to create a common function to handle all events and elements:
-</p>
-
-<div class="org-src-container">
+<p>The code below shows how to create a common function to handle all events and elements:</p><div class="org-src-container">
 <pre class="src src-javascript"><code><span class="org-keyword">function</span> <span class="org-function-name">oneTimeListener</span>(<span class="org-variable-name">node</span>, <span class="org-variable-name">type</span>, <span class="org-variable-name">callback</span>) {</code>
 <code>    <span class="org-comment-delimiter">// </span><span class="org-comment">create event</span></code>
 <code>    node.addEventListener(type, <span class="org-keyword">function</span> listener(<span class="org-variable-name">e</span>) {</code>

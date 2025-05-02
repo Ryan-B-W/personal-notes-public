@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:13 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(www.overleaf.com) How TeX macros actually work: Part 1 - Overleaf, Online LaTeX Editor</title>
@@ -45,10 +45,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -57,14 +57,8 @@
 </header><pre class="example">
 ROAM_REFS: https://www.overleaf.com/learn/latex/How_TeX_macros_actually_work:_Part_1
 </pre>
-<p>
-Documentation series from <a href="20250306092039-overleaf.html#ID-77d17fca-fcac-429e-a0ee-d7d5ffd6cb9c">Overleaf</a> on how TeX macros work.
-</p>
-
-<blockquote>
-<p>
-This article series has an ambitious goal: to explain how TeX macros (such as <a href="20240818215045-latex.html#ID-669335f2-8499-4ee6-b6b8-317c0c4f96ed">LaTeX</a> commands) actually work—at the most fundamental level, inside the actual TeX engine software.  Instead of relying solely on a suite of example macros designed to demonstrate various features, edge cases and behaviours of TeX, we’ll look inside TeX itself to see how and why its macro programming methods work the way they do.
-</p>
+<p>Documentation series from <a href="20250306092039-overleaf.html#ID-77d17fca-fcac-429e-a0ee-d7d5ffd6cb9c">Overleaf</a> on how TeX macros work.</p><blockquote>
+<p>This article series has an ambitious goal: to explain how TeX macros (such as <a href="20240818215045-latex.html#ID-669335f2-8499-4ee6-b6b8-317c0c4f96ed">LaTeX</a> commands) actually work—at the most fundamental level, inside the actual TeX engine software.  Instead of relying solely on a suite of example macros designed to demonstrate various features, edge cases and behaviours of TeX, we’ll look inside TeX itself to see how and why its macro programming methods work the way they do.</p>
 </blockquote>
 <div id="outline-container-ID-125df194-ee3e-4124-8a44-3bc5571caa86" class="outline-2">
 <h2 id="ID-125df194-ee3e-4124-8a44-3bc5571caa86">(www.overleaf.com) How TeX macros actually work: Part 2 - Overleaf, Online LaTeX Editor</h2>
@@ -74,9 +68,7 @@ ROAM_REFS: https://www.overleaf.com/learn/latex/How_TeX_macros_actually_work:_Pa
 </pre>
 
 <blockquote>
-<p>
-As noted in Part 1, TeX has to “read” every character within your .tex file and that process of reading is more correctly referred to as scanning.  Traditionally, TeX’s input-processing (scanning) is likened to TeX having “eyes” with which to observe the input, so we’ll adopt that time-tested analogy within the graphics below.
-</p>
+<p>As noted in Part 1, TeX has to “read” every character within your .tex file and that process of reading is more correctly referred to as scanning.  Traditionally, TeX’s input-processing (scanning) is likened to TeX having “eyes” with which to observe the input, so we’ll adopt that time-tested analogy within the graphics below.</p>
 </blockquote>
 </div>
 </div>
@@ -88,9 +80,7 @@ ROAM_REFS: https://www.overleaf.com/learn/latex/How_TeX_macros_actually_work:_Pa
 </pre>
 
 <blockquote>
-<p>
-Before moving on to the next part of this story we need to have a recap: remind ourselves of where we are going and gather our thoughts to make sure all the key ideas are in place.  Just a reminder, our worked example is based on the assumption that TeX has read a line of text containing Hello World \jobname and that TeX is typesetting this to build a paragraph.
-</p>
+<p>Before moving on to the next part of this story we need to have a recap: remind ourselves of where we are going and gather our thoughts to make sure all the key ideas are in place.  Just a reminder, our worked example is based on the assumption that TeX has read a line of text containing Hello World \jobname and that TeX is typesetting this to build a paragraph.</p>
 </blockquote>
 </div>
 </div>
@@ -102,9 +92,7 @@ ROAM_REFS: https://www.overleaf.com/learn/latex/How_TeX_macros_actually_work:_Pa
 </pre>
 
 <blockquote>
-<p>
-In Parts 1–3 we took a deep-dive into some low-level backgound details in preparation for understanding how TeX macros work.  In this article we are going to “come up for some air” to review some basic practical principles of TeX macros in readiness for another deep-dive in Parts 5 and 6.  Throughout this article we are going to show example macros defined using the TeX primitive command \def: we won’t use the, perhaps more familiar, LaTeX command \newcommand.  There’s a very good reason for this: our objective is to understand the fundamental principles underlying TeX’s macro behaviour but to do that we need to use core commands built into TeX software.  LaTeX commands, such as \newcommand, are themselves macros: commands with specific programmed behaviour which are, ultimately, constructed from layers of lower-level TeX primitive commands.  To better understand the fundamental behaviour of TeX we have to use TeX primitives, not LaTeX macros.
-</p>
+<p>In Parts 1–3 we took a deep-dive into some low-level backgound details in preparation for understanding how TeX macros work.  In this article we are going to “come up for some air” to review some basic practical principles of TeX macros in readiness for another deep-dive in Parts 5 and 6.  Throughout this article we are going to show example macros defined using the TeX primitive command \def: we won’t use the, perhaps more familiar, LaTeX command \newcommand.  There’s a very good reason for this: our objective is to understand the fundamental principles underlying TeX’s macro behaviour but to do that we need to use core commands built into TeX software.  LaTeX commands, such as \newcommand, are themselves macros: commands with specific programmed behaviour which are, ultimately, constructed from layers of lower-level TeX primitive commands.  To better understand the fundamental behaviour of TeX we have to use TeX primitives, not LaTeX macros.</p>
 </blockquote>
 </div>
 </div>
@@ -116,9 +104,7 @@ ROAM_REFS: https://www.overleaf.com/learn/latex/How_TeX_macros_actually_work:_Pa
 </pre>
 
 <blockquote>
-<p>
-In Part 4 we reviewed some basic properties of TeX macros in preparation for the next two articles where we take a close look at the underlying mechanics of TeX macros: specialized token lists.  In these final two articles we use diagrams, called node lists, that were prepared from data generated using a specially modified version of Knuth’s original TeX software—those modifications were designed to access internal TeX data structures which are normally inaccessible to the user.  By “hooking into” TeX’s internal macro-processing and execution routines it was possible to write out graphical data which enables a more detailed and accurate discussion of TeX’s macro-processing behaviour.  Overleaf hopes that these diagrams assist readers to achieve a better understanding of how TeX macros really work.
-</p>
+<p>In Part 4 we reviewed some basic properties of TeX macros in preparation for the next two articles where we take a close look at the underlying mechanics of TeX macros: specialized token lists.  In these final two articles we use diagrams, called node lists, that were prepared from data generated using a specially modified version of Knuth’s original TeX software—those modifications were designed to access internal TeX data structures which are normally inaccessible to the user.  By “hooking into” TeX’s internal macro-processing and execution routines it was possible to write out graphical data which enables a more detailed and accurate discussion of TeX’s macro-processing behaviour.  Overleaf hopes that these diagrams assist readers to achieve a better understanding of how TeX macros really work.</p>
 </blockquote>
 </div>
 </div>
@@ -132,20 +118,12 @@ ROAM_REFS: https://www.overleaf.com/learn/latex/How_TeX_macros_actually_work:_Pa
 <p>
 #+begn<sub>quote</sub>
   Over the previous 5 parts of this series we have seen:
-</p>
-<ul class="org-ul">
+</p><ul class="org-ul">
 <li>how TeX reads the characters within an input file and uses category codes to recognize different “classes” of character and subsequently convert them to character tokens and command tokens;</li>
-<li><p>
-that a macro is, in effect, comprised of four sections:
-</p>
-<pre class="example">
+<li><p>that a macro is, in effect, comprised of four sections:</p><pre class="example">
 &lt;TeX macro primitive&gt;&lt;macro name&gt;&lt;parameter text&gt;{&lt;replacement text&gt;}
 </pre>
-
-<p>
-where:
-</p>
-<ul class="org-ul">
+<p>where:</p><ul class="org-ul">
 <li>&lt;TeX macro primitive&gt; = one of \def, \edef, \gdef or \xdef;</li>
 <li>&lt;macro name&gt;=the name of your macro, such as \foo;</li>
 <li>&lt;parameter text&gt; can be “null” (not present) or it can be an string of delimiter tokens and macro parameter tokens;</li>

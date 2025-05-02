@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:12 -->
+<!-- 2025-05-02 Fri 16:50 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>bpfilter</title>
@@ -13,18 +13,16 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
 <header>
 <h1 class="title">bpfilter</h1>
-</header><p>
-A <a href="20250308151837-bpf.html#ID-b7fe46b5-84f5-494e-9442-b356d8a44c15">BPF</a>-based packet filtering framework.  Has frontends for compatibility with <a href="20250308152149-iptables.html#ID-abd50a09-4c8a-4648-b73d-67b2a1724d27">iptables</a> and <a href="20250308152259-nftables.html#ID-78c9c8fd-611c-496e-9103-ea8cc061d6fa">nftables</a>.
-</p>
+</header><p>A <a href="20250308151837-bpf.html#ID-b7fe46b5-84f5-494e-9442-b356d8a44c15">BPF</a>-based packet filtering framework.  Has frontends for compatibility with <a href="20250308152149-iptables.html#ID-abd50a09-4c8a-4648-b73d-67b2a1724d27">iptables</a> and <a href="20250308152259-nftables.html#ID-78c9c8fd-611c-496e-9103-ea8cc061d6fa">nftables</a>.</p>
 <div id="outline-container-ID-c0230b58-a50d-4607-9b27-289bbdf06e27" class="outline-2">
 <h2 id="ID-c0230b58-a50d-4607-9b27-289bbdf06e27">(bpfilter.io) bpfilter documentation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
 <div class="outline-text-2" id="text-orgcf202b0">
@@ -37,23 +35,7 @@ ROAM_REFS: https://bpfilter.io/
 <li><pre class="verbatim">bpfilter</pre></li>
 </ul>
 
-<p>
-<pre class="verbatim">bpfilter</pre> is a BPF-based packet filtering framework.  It is composed of a shared library (<pre class="verbatim">libbpfilter</pre>) and a daemon (<pre class="verbatim">bpfilter</pre>).
-</p>
-
-<p>
-The <pre class="verbatim">bpfilter</pre> daemon running on the system receives a request from a client (<pre class="verbatim">iptables</pre>, <pre class="verbatim">nftables</pre>, or any other client that could be created) and converts the client-provided ruleset into one or more BPF program(s).
-</p>
-
-<p>
-If you want to try <pre class="verbatim">bpfilter</pre> with <pre class="verbatim">nftables</pre> or <pre class="verbatim">iptables</pre>, have a look at <a href="https://bpfilter.io/usage/index.html">Usage</a> and <a href="https://bpfilter.io/developers/build.html">Build from sources</a>.
-</p>
-
-<p>
-If you want to know more about <pre class="verbatim">bpfilter</pre>'s internals, take a look at the following talks about the project:
-</p>
-
-<ul class="org-ul">
+<p><pre class="verbatim">bpfilter</pre> is a BPF-based packet filtering framework.  It is composed of a shared library (<pre class="verbatim">libbpfilter</pre>) and a daemon (<pre class="verbatim">bpfilter</pre>).</p><p>The <pre class="verbatim">bpfilter</pre> daemon running on the system receives a request from a client (<pre class="verbatim">iptables</pre>, <pre class="verbatim">nftables</pre>, or any other client that could be created) and converts the client-provided ruleset into one or more BPF program(s).</p><p>If you want to try <pre class="verbatim">bpfilter</pre> with <pre class="verbatim">nftables</pre> or <pre class="verbatim">iptables</pre>, have a look at <a href="https://bpfilter.io/usage/index.html">Usage</a> and <a href="https://bpfilter.io/developers/build.html">Build from sources</a>.</p><p>If you want to know more about <pre class="verbatim">bpfilter</pre>'s internals, take a look at the following talks about the project:</p><ul class="org-ul">
 <li><a href="https://www.youtube.com/watch?v=UDZhCubE-Kk&amp;list=PLbzoR-pLrL6rlmdpJ3-oMgU_zxc1wAhjS&amp;index=47">BPF and firewall: kernel support to ease more complex packets filtering (LSFMMBPF 2023)</a></li>
 <li><a href="https://media.ccc.de/v/all-systems-go-2023-196-bpfilter-a-bpf-based-packet-filtering-framework">bpfilter: a BPF-based packet filtering framework (All Systems Go 2023)</a></li>
 <li><a href="https://www.youtube.com/watch?v=J5Hm6PrJWI4&amp;t=27649s">bpfilter: a BPF-based packet filtering framework (Linux Plumbers Conference 2023)</a></li>
@@ -71,27 +53,13 @@ ROAM_REFS: https://github.com/facebook/bpfilter
 </pre>
 
 <blockquote>
-<p>
-<b>*</b> An <a href="https://ebpf.io/">eBPF</a>-based packet filtering framework.
-</p>
-
-<p>
-<b>bpfilter</b> is an eBPF-based packet filtering framework designed to translate filtering rules into BPF programs.  It comprises three main components:
-</p>
-
-<ol class="org-ol">
+<p><b>*</b> An <a href="https://ebpf.io/">eBPF</a>-based packet filtering framework.</p><p><b>bpfilter</b> is an eBPF-based packet filtering framework designed to translate filtering rules into BPF programs.  It comprises three main components:</p><ol class="org-ol">
 <li>A daemon that runs on the host, translating filtering rules into BPF programs.</li>
 <li>A lightweight library to facilitate communication with the daemon.</li>
 <li>A dedicated command line interface to define the filtering rules.</li>
 </ol>
 
-<p>
-A typical usage workflow would be to start the <pre class="verbatim">bpfilter</pre> daemon, then define the filtering rules using <pre class="verbatim">bfcli</pre> (part of the <pre class="verbatim">bpfilter</pre> project), <pre class="verbatim">nftables</pre> or <pre class="verbatim">iptables</pre>.  The <pre class="verbatim">bpfilter</pre> daemon will be responsible for translating the filtering rules into custom BPF programs, and loading them on the system.
-</p>
-
-<p>
-Detailed information can be found in the <a href="https://bpfilter.io/">documentation</a>.
-</p>
+<p>A typical usage workflow would be to start the <pre class="verbatim">bpfilter</pre> daemon, then define the filtering rules using <pre class="verbatim">bfcli</pre> (part of the <pre class="verbatim">bpfilter</pre> project), <pre class="verbatim">nftables</pre> or <pre class="verbatim">iptables</pre>.  The <pre class="verbatim">bpfilter</pre> daemon will be responsible for translating the filtering rules into custom BPF programs, and loading them on the system.</p><p>Detailed information can be found in the <a href="https://bpfilter.io/">documentation</a>.</p>
 </blockquote>
 </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:12 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(en.cppreference.com) qsort, qsort_s - cppreference.com</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -30,11 +30,7 @@ ROAM_REFS: https://en.cppreference.com/w/c/algorithm/qsort
 <li>qsort, qsort<sub>s</sub></li>
 </ul>
 
-<p>
-Defined in header <a href="https://en.cppreference.com/w/c/header/stdlib"><pre class="verbatim">&lt;stdlib.h&gt;</pre></a>
-</p>
-
-<div class="org-src-container">
+<p>Defined in header <a href="https://en.cppreference.com/w/c/header/stdlib"><pre class="verbatim">&lt;stdlib.h&gt;</pre></a></p><div class="org-src-container">
 <pre class="src src-c"><code><span class="org-type">void</span> <span class="org-function-name">qsort</span>( <span class="org-type">void</span>* <span class="org-variable-name">ptr</span>, [[http:<span class="org-comment-delimiter">//</span><span class="org-comment">en.cppreference.com/w/c/types/size_t][size_t]] count, [[http://en.cppreference.com/w/c/types/size_t][size_t]] size,</span></code>
 <code>            <span class="org-type">int</span> (*comp)(<span class="org-keyword">const</span> <span class="org-type">void</span>*, <span class="org-keyword">const</span> <span class="org-type">void</span>*) );</code>
 <code><span class="org-type">errno_t</span> <span class="org-function-name">qsort_s</span>( <span class="org-type">void</span>* <span class="org-variable-name">ptr</span>, <span class="org-type">rsize_t</span> <span class="org-variable-name">count</span>, <span class="org-type">rsize_t</span> <span class="org-variable-name">size</span>,</code>
@@ -46,46 +42,24 @@ Defined in header <a href="https://en.cppreference.com/w/c/header/stdlib"><pre c
 <ol class="org-ol">
 <li>Sorts the given array pointed to by <pre class="verbatim">ptr</pre> in ascending order. The array contains <pre class="verbatim">count</pre> elements of <pre class="verbatim">size</pre> bytes. Function pointed to by <pre class="verbatim">comp</pre> is used for object comparison.</li>
 
-<li><p>
-Same as (1), except that the additional context parameter context is passed to comp and that the following errors are detected at runtime and call the currently installed <a href="https://en.cppreference.com/w/c/error/set_constraint_handler_s">constraint handler</a> function:
-</p>
-
-<ul class="org-ul">
+<li><p>Same as (1), except that the additional context parameter context is passed to comp and that the following errors are detected at runtime and call the currently installed <a href="https://en.cppreference.com/w/c/error/set_constraint_handler_s">constraint handler</a> function:</p><ul class="org-ul">
 <li><pre class="verbatim">count</pre> or <pre class="verbatim">size</pre> is greater than RSIZE<sub>MAX</sub></li>
 <li><pre class="verbatim">ptr</pre> or <pre class="verbatim">comp</pre> is a null pointer (unless <pre class="verbatim">count</pre> is zero)</li>
 </ul>
 
-<p>
-As with all bounds-checked functions, <pre class="verbatim">qsort_s</pre> is only guaranteed to be available if <pre class="verbatim">__STDC_LIB_EXT1__</pre> is defined by the implementation and if the user defines <pre class="verbatim">__STDC_WANT_LIB_EXT1__</pre> to the integer constant 1 before including <a href="https://en.cppreference.com/w/c/header/stdlib"><pre class="verbatim">&lt;stdlib.h&gt;</pre></a>.
-</p></li>
+<p>As with all bounds-checked functions, <pre class="verbatim">qsort_s</pre> is only guaranteed to be available if <pre class="verbatim">__STDC_LIB_EXT1__</pre> is defined by the implementation and if the user defines <pre class="verbatim">__STDC_WANT_LIB_EXT1__</pre> to the integer constant 1 before including <a href="https://en.cppreference.com/w/c/header/stdlib"><pre class="verbatim">&lt;stdlib.h&gt;</pre></a>.</p></li>
 </ol>
 
-<p>
-If comp indicates two elements as equivalent, their order in the resulting sorted array is unspecified.
-</p>
-
-<p>
-<b>*</b> Parameters
-</p>
-
-<p>
+<p>If comp indicates two elements as equivalent, their order in the resulting sorted array is unspecified.</p><p><b>*</b> Parameters</p><p>
 ptr     - pointer to the array to sort
 count   - number of elements in the array
 size    - size of each element in the array in bytes
 comp    - comparison function which returns ​a negative integer value if the first argument is <i>less</i> than the second, a positive integer value if the first argument is <i>greater</i> than the second and zero if the arguments are equivalent.
 	  The signature of the comparison function should be equivalent to the following:
-</p>
-
-<p>
+</p><p>
 	  The function must not modify the objects passed to it and must return consistent results when called for the same objects, regardless of their positions in the array.
 context - additional information (e.g., collating sequence), passed to <pre class="verbatim">comp</pre> as the third argument
-</p>
-
-<p>
-<b>*</b> Return value
-</p>
-
-<ol class="org-ol">
+</p><p><b>*</b> Return value</p><ol class="org-ol">
 <li>(none)</li>
 
 <li>zero on success, non-zero if a runtime constraints violation was detected</li>

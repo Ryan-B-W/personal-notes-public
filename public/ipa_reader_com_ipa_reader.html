@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:11 -->
+<!-- 2025-05-02 Fri 16:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(ipa-reader.com) IPA Reader</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -26,45 +26,7 @@
 ROAM_REFS: https://ipa-reader.com/
 </pre>
 <blockquote>
-<p>
-This is a tool for reading <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet">International Phonetic Alphabet (IPA)</a> notation aloud.
-</p>
-
-<p>
-It makes it easy to actually hear how words are pronounced based on their phonetic spelling, without having to look up each character in <a href="https://upload.wikimedia.org/wikipedia/commons/8/8e/IPA_chart_2018.pdf">the IPA chart</a> and string the sounds together yourself.
-</p>
-
-<p>
-For example, "budgerigar" (AKA the <a href="https://en.wikipedia.org/wiki/Budgerigar">common parakeet</a>) can be pronounced according to its IPA notation <pre class="verbatim">/ˈbʌdʒərɪɡɑːr/</pre>.
-</p>
-
-<p>
-** How Do You Use It?
-</p>
-
-<p>
-Find a word you would like to hear pronounced, grab the IPA notation (if you don't already have it, <a href="https://en.wiktionary.org/">Wiktionary</a> is a great place to look), toss it in the form, and hit the "Read" button.
-</p>
-
-<p>
-For example, <pre class="verbatim">/ˈpɪdʒən/</pre> will be read as "pigeon."
-</p>
-
-<p>
-** How Does It Work?
-</p>
-
-<p>
-I had fun making this, so I wrote about how it was built <a href="https://cuttlesoft.com/blog/2018/09/13/pronouncing-things-with-amazons-polly/">here</a>!
-</p>
-
-<p>
-Basically, the current version structures a request to Amazon Polly, a text-to-speech service, then retrieves and plays the resulting generated audio.
-</p>
-
-<p>
-(This also means that pronunciation is constrained by which phonemes Polly does or does not support; details about specific phonemes can be found in their <a href="https://docs.aws.amazon.com/polly/latest/dg/ref-phoneme-tables-shell.html">documentation of supported phonemes</a>.)
-</p>
+<p>This is a tool for reading <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet">International Phonetic Alphabet (IPA)</a> notation aloud.</p><p>It makes it easy to actually hear how words are pronounced based on their phonetic spelling, without having to look up each character in <a href="https://upload.wikimedia.org/wikipedia/commons/8/8e/IPA_chart_2018.pdf">the IPA chart</a> and string the sounds together yourself.</p><p>For example, "budgerigar" (AKA the <a href="https://en.wikipedia.org/wiki/Budgerigar">common parakeet</a>) can be pronounced according to its IPA notation <pre class="verbatim">/ˈbʌdʒərɪɡɑːr/</pre>.</p><p>** How Do You Use It?</p><p>Find a word you would like to hear pronounced, grab the IPA notation (if you don't already have it, <a href="https://en.wiktionary.org/">Wiktionary</a> is a great place to look), toss it in the form, and hit the "Read" button.</p><p>For example, <pre class="verbatim">/ˈpɪdʒən/</pre> will be read as "pigeon."</p><p>** How Does It Work?</p><p>I had fun making this, so I wrote about how it was built <a href="https://cuttlesoft.com/blog/2018/09/13/pronouncing-things-with-amazons-polly/">here</a>!</p><p>Basically, the current version structures a request to Amazon Polly, a text-to-speech service, then retrieves and plays the resulting generated audio.</p><p>(This also means that pronunciation is constrained by which phonemes Polly does or does not support; details about specific phonemes can be found in their <a href="https://docs.aws.amazon.com/polly/latest/dg/ref-phoneme-tables-shell.html">documentation of supported phonemes</a>.)</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

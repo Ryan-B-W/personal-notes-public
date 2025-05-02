@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>eBPF (extended Berkeley Packet Filter)</title>
@@ -13,18 +13,16 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
 <header>
 <h1 class="title">eBPF (extended Berkeley Packet Filter)</h1>
-</header><p>
-Extended, general-purpose, version of the <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> kernel's <a href="20250308151837-bpf.html#ID-b7fe46b5-84f5-494e-9442-b356d8a44c15">BPF</a>.
-</p>
+</header><p>Extended, general-purpose, version of the <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> kernel's <a href="20250308151837-bpf.html#ID-b7fe46b5-84f5-494e-9442-b356d8a44c15">BPF</a>.</p>
 <div id="outline-container-ID-bba77f2b-dcfe-427b-8bbe-75517fe5f8e1" class="outline-2">
 <h2 id="ID-bba77f2b-dcfe-427b-8bbe-75517fe5f8e1">(ebpf.io) eBPF - Introduction, Tutorials &amp; Community Resources&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
 <div class="outline-text-2" id="text-org5948ffc">
@@ -41,17 +39,7 @@ ROAM_REFS: https://en.wikipedia.org/wiki/EBPF
 </pre>
 
 <blockquote>
-<p>
-<b>eBPF</b> is a technology that can run programs in a <a href="https://en.wikipedia.org/wiki/Privilege_(computing)">privileged context</a> such as the <a href="https://en.wikipedia.org/wiki/Operating_system">operating system</a> <a href="https://en.wikipedia.org/wiki/Kernel_(operating_system)">kernel</a>.  It is the successor to the <a href="https://en.wikipedia.org/wiki/Berkeley_Packet_Filter">Berkeley Packet Filter</a> (BPF, with the "e" originally meaning "extended") filtering mechanism in Linux and is also used in non-networking parts of the Linux kernel as well.
-</p>
-
-<p>
-It is used to safely and efficiently extend the capabilities of the kernel at <a href="https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)">runtime</a> without requiring changes to kernel <a href="https://en.wikipedia.org/wiki/Source_code">source code</a> or loading <a href="https://en.wikipedia.org/wiki/Loadable_kernel_module">kernel modules</a>.  Safety is provided through an in-kernel verifier which performs <a href="https://en.wikipedia.org/wiki/Static_code_analysis">static code analysis</a> and rejects programs which crash, hang or otherwise interfere with the kernel negatively.
-</p>
-
-<p>
-This validation model differs from <a href="https://en.wikipedia.org/wiki/Sandboxed">sandboxed</a> environments, where the execution environment is restricted and the runtime has no insight about the program.  Examples of programs that are automatically rejected are programs without strong exit guarantees (i.e. for/while loops without exit conditions) and programs dereferencing pointers without safety checks.
-</p>
+<p><b>eBPF</b> is a technology that can run programs in a <a href="https://en.wikipedia.org/wiki/Privilege_(computing)">privileged context</a> such as the <a href="https://en.wikipedia.org/wiki/Operating_system">operating system</a> <a href="https://en.wikipedia.org/wiki/Kernel_(operating_system)">kernel</a>.  It is the successor to the <a href="https://en.wikipedia.org/wiki/Berkeley_Packet_Filter">Berkeley Packet Filter</a> (BPF, with the "e" originally meaning "extended") filtering mechanism in Linux and is also used in non-networking parts of the Linux kernel as well.</p><p>It is used to safely and efficiently extend the capabilities of the kernel at <a href="https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)">runtime</a> without requiring changes to kernel <a href="https://en.wikipedia.org/wiki/Source_code">source code</a> or loading <a href="https://en.wikipedia.org/wiki/Loadable_kernel_module">kernel modules</a>.  Safety is provided through an in-kernel verifier which performs <a href="https://en.wikipedia.org/wiki/Static_code_analysis">static code analysis</a> and rejects programs which crash, hang or otherwise interfere with the kernel negatively.</p><p>This validation model differs from <a href="https://en.wikipedia.org/wiki/Sandboxed">sandboxed</a> environments, where the execution environment is restricted and the runtime has no insight about the program.  Examples of programs that are automatically rejected are programs without strong exit guarantees (i.e. for/while loops without exit conditions) and programs dereferencing pointers without safety checks.</p>
 </blockquote>
 </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(research.swtch.com) research!rsc: Running the “Reflections on Trusting Trust” Compiler</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -25,11 +25,7 @@
 </header><pre class="example">
 ROAM_REFS: https://research.swtch.com/nih
 </pre>
-<p>
-Blog post where someone runs Ken Thompson's <a href="www_cs_cmu_edu_reflections_on_trusting_trust_pdf.html#ID-60005e00-0c1f-4b71-be75-36b216d6b0a1">Reflections on Trusting Trust</a> compiler trojan code.
-</p>
-
-<blockquote>
+<p>Blog post where someone runs Ken Thompson's <a href="www_cs_cmu_edu_reflections_on_trusting_trust_pdf.html#ID-60005e00-0c1f-4b71-be75-36b216d6b0a1">Reflections on Trusting Trust</a> compiler trojan code.</p><blockquote>
 <p>
 Supply chain security is a hot topic today, but it is a very old problem.  In October 1983, 40 years ago this week, Ken Thompson chose supply chain security as the topic for his Turing award lecture, although the specific term wasn’t used back then.  (The field of computer science was still young and small enough that the ACM conference where Ken spoke was the “Annual Conference on Computers.”) Ken’s lecture was later published in Communications of the ACM under the title “Reflections on Trusting Trust.”  It is a classic paper, and a short one (3 pages); if you haven’t read it yet, you should.  This post will still be here when you get back.
 In the lecture, Ken explains in three steps how to modify a C compiler binary to insert a backdoor when compiling the “login” program, leaving no trace in the source code.  In this post, we will run the backdoored compiler using Ken’s actual code.  But first, a brief summary of the important parts of the lecture.

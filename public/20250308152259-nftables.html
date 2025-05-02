@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:12 -->
+<!-- 2025-05-02 Fri 16:50 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>nftables</title>
@@ -13,18 +13,16 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
 <header>
 <h1 class="title">nftables</h1>
-</header><p>
-Successor to <a href="20250308152149-iptables.html#ID-abd50a09-4c8a-4648-b73d-67b2a1724d27">iptables</a> for network filtering.
-</p>
+</header><p>Successor to <a href="20250308152149-iptables.html#ID-abd50a09-4c8a-4648-b73d-67b2a1724d27">iptables</a> for network filtering.</p>
 <div id="outline-container-ID-4b3001be-41c0-4099-9cc8-29b491d54c3e" class="outline-2">
 <h2 id="ID-4b3001be-41c0-4099-9cc8-29b491d54c3e">(netfilter.org) netfilter/iptables project homepage - The netfilter.org "nftables" project&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
 <div class="outline-text-2" id="text-orgada02ed">
@@ -37,61 +35,21 @@ ROAM_REFS: https://netfilter.org/projects/nftables/
 <li>The netfilter.org "nftables" project</li>
 </ul>
 
-<p>
-** What is nftables?
-</p>
-
-<p>
-<b>nftables</b> replaces the popular <b>{ip,ip6,arp,eb}tables</b>.  This software provides a new in-kernel packet classification framework that is based on a network-specific Virtual Machine (VM) and a new <b>nft</b> userspace command line tool. <b>nftables</b> reuses the existing Netfilter subsystems such as the existing hook infrastructure, the connection tracking system, NAT, userspace queueing and logging subsystem.
-</p>
-
-<p>
-This software also provides <b>libnftables</b>, the high-level userspace library that includes support for JSON, see man (3)libnftables for more information.
-</p>
-
-<p>
-** What is the status of nftables?
-</p>
-
-<p>
-This software is available upstream since Linux kernel 3.13.
-</p>
-
-<p>
-** Running nftables
-</p>
-
-<p>
-You require the following software in order to run the <b>nft</b> command line tool:
-</p>
-
-<ul class="org-ul">
+<p>** What is nftables?</p><p><b>nftables</b> replaces the popular <b>{ip,ip6,arp,eb}tables</b>.  This software provides a new in-kernel packet classification framework that is based on a network-specific Virtual Machine (VM) and a new <b>nft</b> userspace command line tool. <b>nftables</b> reuses the existing Netfilter subsystems such as the existing hook infrastructure, the connection tracking system, NAT, userspace queueing and logging subsystem.</p><p>This software also provides <b>libnftables</b>, the high-level userspace library that includes support for JSON, see man (3)libnftables for more information.</p><p>** What is the status of nftables?</p><p>This software is available upstream since Linux kernel 3.13.</p><p>** Running nftables</p><p>You require the following software in order to run the <b>nft</b> command line tool:</p><ul class="org-ul">
 <li>Linux kernel since 3.13, although newer kernel versions are recommended.</li>
 <li>libmnl: the minimalistic Netlink library</li>
 <li>libnftnl: low level netlink userspace library</li>
 <li>nft: command line tool</li>
 </ul>
 
-<p>
-<b>nft</b> syntax differs from {ip,ip6,eb,arp}tables.  Moreover, there is a backward compatibility layer that allows you run iptables/ip6tables, using the same syntax, over the nftables infrastructure.
-</p>
-
-<p>
-** Main Features
-</p>
-
-<ul class="org-ul">
+<p><b>nft</b> syntax differs from {ip,ip6,eb,arp}tables.  Moreover, there is a backward compatibility layer that allows you run iptables/ip6tables, using the same syntax, over the nftables infrastructure.</p><p>** Main Features</p><ul class="org-ul">
 <li>Network-specific VM: the <b>nft</b> command line tool compiles the ruleset into the VM bytecode in netlink format, then it pushes this into the kernel via the nftables Netlink API.  When retrieving the ruleset, the VM bytecode in netlink format is decompiled back to its original ruleset representation.  So <b>nft</b> behaves both as compiler and decompiler.</li>
 <li>High performance through maps and concatenations: Linear ruleset inspection doesn't scale up.  Using maps and concatenations, you can structure your ruleset to reduce the number of rule inspections to find the final action on the packet to the bare minimum.</li>
 <li>Smaller kernel codebase.  The intelligence resides in the userspace <b>nft</b> command line tool, which is considerably more complex than iptables in terms of codebase, however, in the midrun, this will potentially allow us to deliver new features by upgrading the userspace command line tool, with no need of kernel upgrades.</li>
 <li>Unified and consistent syntax for every support protocol family, contrary to xtables utilities, that are well-known to be full of inconsistencies.</li>
 </ul>
 
-<p>
-** Git trees
-</p>
-
-<ul class="org-ul">
+<p>** Git trees</p><ul class="org-ul">
 <li>nftables is available as of Linux kernel 3.13, although recent versions are recommended.  The development git tree is available at: <a href="https://git.kernel.org/cgit/linux/kernel/git/netfilter/nf-next.git">https://git.kernel.org/cgit/linux/kernel/git/netfilter/nf-next.git</a></li>
 <li>libmnl userspace library at: <a href="https://git.netfilter.org/libmnl/">https://git.netfilter.org/libmnl/</a></li>
 <li>libnftnl userspace library at: <a href="https://git.netfilter.org/libnftnl/">https://git.netfilter.org/libnftnl/</a></li>
@@ -99,13 +57,7 @@ You require the following software in order to run the <b>nft</b> command line t
 <li>backward compatibility iptables/ip6tables user-space utility at: <a href="https://git.netfilter.org/iptables/">https://git.netfilter.org/iptables/</a></li>
 </ul>
 
-<p>
-** Documentation
-</p>
-
-<p>
-You can check out the <a href="https://wiki.nftables.org/">nftables HOWTO</a> documentation, there is also a <a href="https://www.netfilter.org/projects/nftables/manpage.html">manpage</a>.
-</p>
+<p>** Documentation</p><p>You can check out the <a href="https://wiki.nftables.org/">nftables HOWTO</a> documentation, there is also a <a href="https://www.netfilter.org/projects/nftables/manpage.html">manpage</a>.</p>
 </blockquote>
 </div>
 </div>
@@ -121,21 +73,7 @@ ROAM_REFS: https://wiki.nftables.org/wiki-nftables/index.php/Main_Page
 <li>Main Page</li>
 </ul>
 
-<p>
-From nftables wiki
-</p>
-
-<p>
-<a href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page#mw-head">Jump to navigation</a> <a href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page#searchInput">Jump to search</a>
-</p>
-
-<p>
-Welcome to the <i>nftables</i> HOWTO documentation page.  Here you will find documentation on how to build, install, configure and use nftables.
-</p>
-
-<p>
-If you have any suggestion to improve it, please send your comments to Netfilter users mailing list &lt;netfilter@vger.kernel.org&gt;.
-</p>
+<p>From nftables wiki</p><p><a href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page#mw-head">Jump to navigation</a> <a href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page#searchInput">Jump to search</a></p><p>Welcome to the <i>nftables</i> HOWTO documentation page.  Here you will find documentation on how to build, install, configure and use nftables.</p><p>If you have any suggestion to improve it, please send your comments to Netfilter users mailing list &lt;netfilter@vger.kernel.org&gt;.</p>
 </blockquote>
 </div>
 </div>
@@ -147,21 +85,7 @@ ROAM_REFS: https://en.wikipedia.org/wiki/Nftables
 </pre>
 
 <blockquote>
-<p>
-<b>nftables</b> is a subsystem of the <a href="https://en.wikipedia.org/wiki/Linux_kernel">Linux kernel</a> providing filtering and classification of <a href="https://en.wikipedia.org/wiki/Network_packet">network packets</a>/datagrams/frames.  It has been available since Linux kernel 3.13 released on 19 January 2014.
-</p>
-
-<p>
-nftables replaces the legacy <a href="https://en.wikipedia.org/wiki/Iptables">iptables</a> component of <a href="https://en.wikipedia.org/wiki/Netfilter">Netfilter</a>.  Among the advantages of nftables over iptables is less code duplication and easier extension to new protocols.  Among the disadvantages of nftables is that <a href="https://en.wikipedia.org/wiki/Deep_packet_inspection">DPI</a> that was provided by "iptables string match" like <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">SNI</a> filtering is not supported.
-</p>
-
-<p>
-nftables is configured via the <a href="https://en.wikipedia.org/wiki/User-space">user-space</a> utility <i>nft</i>, while legacy tools are configured via the utilities <i><a href="https://en.wikipedia.org/wiki/Iptables">iptables</a></i>, <i>ip6tables</i>, <i><a href="https://en.wikipedia.org/wiki/Arptables">arptables</a></i> and <i>ebtables</i> frameworks.
-</p>
-
-<p>
-nftables utilizes the building blocks of the <a href="https://en.wikipedia.org/wiki/Netfilter">Netfilter</a> infrastructure, such as the existing hooks into the networking stack, connection tracking system, userspace queueing component, and logging subsystem.
-</p>
+<p><b>nftables</b> is a subsystem of the <a href="https://en.wikipedia.org/wiki/Linux_kernel">Linux kernel</a> providing filtering and classification of <a href="https://en.wikipedia.org/wiki/Network_packet">network packets</a>/datagrams/frames.  It has been available since Linux kernel 3.13 released on 19 January 2014.</p><p>nftables replaces the legacy <a href="https://en.wikipedia.org/wiki/Iptables">iptables</a> component of <a href="https://en.wikipedia.org/wiki/Netfilter">Netfilter</a>.  Among the advantages of nftables over iptables is less code duplication and easier extension to new protocols.  Among the disadvantages of nftables is that <a href="https://en.wikipedia.org/wiki/Deep_packet_inspection">DPI</a> that was provided by "iptables string match" like <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">SNI</a> filtering is not supported.</p><p>nftables is configured via the <a href="https://en.wikipedia.org/wiki/User-space">user-space</a> utility <i>nft</i>, while legacy tools are configured via the utilities <i><a href="https://en.wikipedia.org/wiki/Iptables">iptables</a></i>, <i>ip6tables</i>, <i><a href="https://en.wikipedia.org/wiki/Arptables">arptables</a></i> and <i>ebtables</i> frameworks.</p><p>nftables utilizes the building blocks of the <a href="https://en.wikipedia.org/wiki/Netfilter">Netfilter</a> infrastructure, such as the existing hooks into the networking stack, connection tracking system, userspace queueing component, and logging subsystem.</p>
 </blockquote>
 </div>
 </div>

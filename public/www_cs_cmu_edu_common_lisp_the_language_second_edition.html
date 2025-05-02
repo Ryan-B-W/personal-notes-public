@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-02 Fri 16:52 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(www.cs.cmu.edu) Common Lisp the Language, Second Edition</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(www.cs.cmu.edu) Common Lisp the Language, Second Edition</h1>
+</header><pre class="example">
+ROAM_REFS: https://www.cs.cmu.edu/Groups/AI/util/html/cltl/clm/clm.html
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>Common Lisp the Language, 2nd Edition</li>
+</ul>
+
+<p>by Guy L. Steele Jr.</p><p>
+<i>with contributions by</i>
+Scott E. Fahlman, Richard P. Gabriel, David A. Moon, and Daniel L. Weinreb
+</p><p>
+<i>and with contributions to the second edition by</i>
+Daniel G. Bobrow, Linda G. DeMichiel, Richard P. Gabriel, Sonya E. Keene, Gregor Kiczales, David A. Moon, Crispin Perdue, Kent M. Pitman, Richard C. Waters, and Jon L White.
+</p>
+</blockquote>
+<div id="outline-container-ID-b9d5b964-d6c1-42e8-bed4-aa25935407c1" class="outline-2">
+<h2 id="ID-b9d5b964-d6c1-42e8-bed4-aa25935407c1">(www.cs.cmu.edu) 10.1. The Property List</h2>
+<div class="outline-text-2" id="text-org57cc8a3">
+<pre class="example">
+ROAM_REFS: https://www.cs.cmu.edu/Groups/AI/util/html/cltl/clm/node108.html
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li><a href="https://www.cs.cmu.edu/Groups/AI/util/html/cltl/clm/null">10.1. The Property List</a></li>
+</ul>
+
+<p>Since its inception, Lisp has associated with each symbol a kind of tabular data structure called a <i>property list</i> (<i>plist</i> for short). A property list contains zero or more entries; each entry associates with a key (called the <i>indicator</i>), which is typically a symbol, an arbitrary Lisp object (called the <i>value</i> or, sometimes, the <i>property</i>). There are no duplications among the indicators; a property list may only have one property at a time with a given name. In this way, given a symbol and an indicator (another symbol), an associated value can be retrieved.</p><p>A property list is very similar in purpose to an association list. The difference is that a property list is an object with a unique identity; the operations for adding and removing property-list entries are destructive operations that alter the property list rather than making a new one. Association lists, on the other hand, are normally augmented non-destructively (without side effects) by adding new entries to the front (see <pre class="verbatim">acons</pre> and <pre class="verbatim">pairlis</pre>).</p><p>A property list is implemented as a memory cell containing a list with an even number (possibly zero) of elements. (Usually this memory cell is the property-list cell of a symbol, but any memory cell acceptable to <pre class="verbatim">setf</pre> can be used if <pre class="verbatim">getf</pre> and <pre class="verbatim">remf</pre> are used.) Each pair of elements in the list constitutes an entry; the first item is the indicator, and the second is the value. Because property-list functions are given the symbol and not the list itself, modifications to the property list can be recorded by storing back into the property-list cell of the symbol.</p><p>When a symbol is created, its property list is initially empty. Properties are created by using <pre class="verbatim">get</pre> within a <pre class="verbatim">setf</pre> form.</p><p>Common Lisp does not use a symbol's property list as extensively as earlier Lisp implementations did. Less-used data, such as compiler, debugging, and documentation information, is kept on property lists in Common Lisp.</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-b4c9a914-2a36-47b3-b4c1-cf44c6f806cb" class="outline-2">
+<h2 id="ID-b4c9a914-2a36-47b3-b4c1-cf44c6f806cb">(www.cs.cmu.edu) 15.6. Association Lists</h2>
+<div class="outline-text-2" id="text-org579fde6">
+<pre class="example">
+ROAM_REFS: https://www.cs.cmu.edu/Groups/AI/util/html/cltl/clm/node153.html
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li><a href="https://www.cs.cmu.edu/Groups/AI/util/html/cltl/clm/null">15.6. Association Lists</a></li>
+</ul>
+
+<p>An <i>association list</i>, or <i>a-list</i>, is a data structure used very frequently in Lisp. An a-list is a list of pairs (conses); each pair is an association. The <i>car</i> of a pair is called the <i>key</i>, and the <i>cdr</i> is called the <i>datum</i>.</p><p>An advantage of the a-list representation is that an a-list can be incrementally augmented simply by adding new entries to the front. Moreover, because the searching function <pre class="verbatim">assoc</pre> searches the a-list in order, new entries can ``shadow'' old entries. If an a-list is viewed as a mapping from keys to data, then the mapping can be not only augmented but also altered in a non-destructive manner by adding new entries to the front of the a-list.</p><p>Sometimes an a-list represents a bijective mapping, and it is desirable to retrieve a key given a datum. For this purpose, the ``reverse'' searching function <pre class="verbatim">rassoc</pre> is provided. Other variants of a-list searches can be constructed using the function <pre class="verbatim">find</pre> or <pre class="verbatim">member</pre>.</p><p>It is permissible to let <pre class="verbatim">nil</pre> be an element of an a-list in place of a pair. Such an element is not considered to be a pair but is simply passed over when the a-list is searched by <pre class="verbatim">assoc</pre>.</p>
+</blockquote>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-04-30 Wed 04:29</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-02 Fri 16:48 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(www.youtube.com) The Fast Fourier Transform (FFT): Most Ingenious Algorithm Ever? - YouTube</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(www.youtube.com) The Fast Fourier Transform (FFT): Most Ingenious Algorithm Ever? - YouTube</h1>
+</header><pre class="example">
+ROAM_REFS: https://www.youtube.com/watch?v=h7apO7q16V0
+</pre>
+<blockquote>
+<p>In this video, we take a look at one of the most beautiful algorithms ever created: the Fast Fourier Transform (FFT). This is a tricky algorithm to understand so we take a look at it in a context that we are all familiar with: polynomial multiplication. You will see how the core ideas of the FFT can be "discovered" through asking the right questions. The key insights that are presented in this video is that polynomial multiplication can be improved significantly by multiplying polynomials in a special value representation. The challenge that presents itself is the problem of converting a polynomial from a standard coefficient representation to value representation.</p><p>We see that the FFT is an incredibly efficient recursive algorithm that performs this task, and we also discover that a slightly tweaked FFT (Inverse FFT) can also solve the reverse problem of interpolation. If this video doesn't blow your mind, I don't know what will.</p><p>
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0">0:00</a> Introduction<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=139s">2:19</a> Polynomial Multiplication<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=216s">3:36</a> Polynomial Representation<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=366s">6:06</a> Value Representation Advantages<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=427s">7:07</a> Polynomial Multiplication Flowchart<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=484s">8:04</a> Polynomial Evaluation<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=829s">13:49</a> Which Evaluation Points?<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=990s">16:30</a> Why Nth Roots of Unity?<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=1108s">18:28</a> FFT Implementation<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=1367s">22:47</a> Interpolation and Inverse FFT<br />
+<a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=1609s">26:49</a> Recap
+</p><p>Also a subtle mistake that a commenter made me aware of &#x2013; at <a href="https://www.youtube.com/watch?v=h7apO7q16V0&amp;t=1600s">26:40</a> instead of replacing w with (1/n * e<sup>-2 * pi i/ n</sup>), the actual right way to do this is by taking the final output of the IFFT at the end of the recursion and dividing by n.</p><p>So the full change is w = e<sup>-2 pi i / n</sup> And then somewhere outside the scope of the IFFT function ifft<sub>result</sub> = 1/n * IFFT(values)</p><p>The treatment of the FFT in this video is inspired by several well known references, mainly Introduction to Algorithms (Cormen et al.) and Algorithms (Papadimitriou et al.).</p><p>Support: <a href="https://www.patreon.com/reducible">/ reducible</a></p><p>This video wouldn't be possible without the open source manim library created by 3blue1brown: <a href="https://github.com/3b1b/manim">https://github.com/3b1b/manim</a></p><p>Here is link to the repository that contains the code used to generate the animations in this video: <a href="https://github.com/nipunramk/Reducible">https://github.com/nipunramk/Reducible</a></p><p>Elegant proof that the matrix used in the proof that (d + 1) points uniquely define a degree d polynomial is invertible: <a href="https://math.stackexchange.com/questions/426932/why-are-vandermonde-matrices-invertible">https://math.stackexchange.com/questi&#x2026;</a></p><p>
+Music:<br />
+Lift Motif by Kevin MacLeod is licensed under a Creative Commons Attribution license (<a href="https://creativecommons.org/licenses/...">https://creativecommons.org/licenses/&#x2026;</a>)<br />
+Source: <a href="http://incompetech.com/music/royalty-..">http://incompetech.com/music/royalty-..</a>.<br />
+Artist: <a href="http://incompetech.com/">http://incompetech.com/</a>
+</p><p>All other music by Aakash Gandhi</p><p>
+SVG Attributions:<br />
+Earth: Designed by Flat Icons from www.flaticon.com, CC BY 4.0 <a href="https://creativecommons.org/licenses/by/4.0">https://creativecommons.org/licenses/&#x2026;</a>, via Wikimedia Commons GPS: Icons made by <a href="https://www.flaticon.com/authors/pause08">https://www.flaticon.com/authors/pause08</a> from <a href="https://www.flaticon.com/">https://www.flaticon.com/</a><br />
+Wireless Comms: Design inspired by <a href="https://svgsilh.com/image/297434.html">https://svgsilh.com/image/297434.html</a>
+</p>
+</blockquote>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-04-30 Wed 04:29</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

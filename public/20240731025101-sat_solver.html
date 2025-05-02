@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:14 -->
+<!-- 2025-05-02 Fri 16:52 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>SAT Solver</title>
@@ -13,23 +13,20 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
 <header>
 <h1 class="title">SAT Solver</h1>
-</header><p>
-A piece of software that solves (some or most) <a href="20240731024533-boolean_satisfiability_problem_sat_or_b_sat.html#ID-1563348b-b611-45a4-9f7e-9ea9b70e4aad">SAT</a> problems.
-</p>
+</header><p>A piece of software that solves (some or most) <a href="20240731024533-boolean_satisfiability_problem_sat_or_b_sat.html#ID-1563348b-b611-45a4-9f7e-9ea9b70e4aad">SAT</a> problems.</p>
 <div id="outline-container-org7ed594c" class="outline-2">
 <h2 id="org7ed594c">See Also</h2>
 <div class="outline-text-2" id="text-org7ed594c">
-</div>
-<div id="outline-container-ID-9c559c0d-e728-46cf-bdaf-f3ef0dc39980" class="outline-3">
+</div><div id="outline-container-ID-9c559c0d-e728-46cf-bdaf-f3ef0dc39980" class="outline-3">
 <h3 id="ID-9c559c0d-e728-46cf-bdaf-f3ef0dc39980">SAT solver - Wikipedia</h3>
 <div class="outline-text-3" id="text-orge49123c">
 <pre class="example">
@@ -37,21 +34,7 @@ ROAM_REFS: https://en.wikipedia.org/wiki/SAT_solver
 </pre>
 
 <blockquote>
-<p>
-In <a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a> and <a href="https://en.wikipedia.org/wiki/Formal_methods">formal methods</a>, a <b>SAT solver</b> is a <a href="https://en.wikipedia.org/wiki/Computer_program">computer program</a> which aims to solve the <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">Boolean satisfiability problem</a> (SAT).  On input a formula over <a href="https://en.wikipedia.org/wiki/Boolean_data_type">Boolean</a> variables, such as "(<i>x</i> or <i>y</i>) and (<i>x</i> or not <i>y</i>)", a SAT solver outputs whether the formula is <a href="https://en.wikipedia.org/wiki/Satisfiability">satisfiable</a>, meaning that there are possible values of <i>x</i> and <i>y</i> which make the formula true, or unsatisfiable, meaning that there are no such values of <i>x</i> and <i>y</i>.  In this case, the formula is satisfiable when <i>x</i> is true, so the solver should return "satisfiable".  Since the introduction of <a href="https://en.wikipedia.org/wiki/Algorithm">algorithms</a> for SAT in the 1960s, modern SAT solvers have grown into complex <a href="https://en.wikipedia.org/wiki/Software">software artifacts</a> involving a large number of <a href="https://en.wikipedia.org/wiki/Heuristic">heuristics</a> and <a href="https://en.wikipedia.org/wiki/Program_optimization">program optimizations</a> to work efficiently.
-</p>
-
-<p>
-By a result known as the <a href="https://en.wikipedia.org/wiki/Cook%E2%80%93Levin_theorem">Cook&#x2013;Levin theorem</a>, Boolean satisfiability is an <a href="https://en.wikipedia.org/wiki/NP-completeness">NP-complete</a> problem in general.  As a result, only algorithms with exponential worst-case complexity are known.  In spite of this, efficient and scalable algorithms for SAT were developed during the 2000s, which have contributed to dramatic advances in the ability to automatically solve problem instances involving tens of thousands of variables and millions of constraints.
-</p>
-
-<p>
-SAT solvers often begin by converting a formula to <a href="https://en.wikipedia.org/wiki/Conjunctive_normal_form">conjunctive normal form</a>.  They are often based on core algorithms such as the <a href="https://en.wikipedia.org/wiki/DPLL_algorithm">DPLL algorithm</a>, but incorporate a number of extensions and features.  Most SAT solvers include time-outs, so they will terminate in reasonable time even if they cannot find a solution, with an output such as "unknown" in the latter case.  Often, SAT solvers do not just provide an answer, but can provide further information including an example assignment (values for <i>x</i>, <i>y</i>, etc.) in case the formula is satisfiable or minimal set of unsatisfiable clauses if the formula is unsatisfiable.
-</p>
-
-<p>
-Modern SAT solvers have had a significant impact on fields including <a href="https://en.wikipedia.org/wiki/Software_verification">software verification</a>, <a href="https://en.wikipedia.org/wiki/Program_analysis">program analysis</a>, <a href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem">constraint solving</a>, <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</a>, <a href="https://en.wikipedia.org/wiki/Electronic_design_automation">electronic design automation</a>, and <a href="https://en.wikipedia.org/wiki/Operations_research">operations research</a>.  Powerful solvers are readily available as <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">free and open-source software</a> and are built into some programming languages such as exposing SAT solvers as constraints in <a href="https://en.wikipedia.org/wiki/Constraint_logic_programming">constraint logic programming</a>.
-</p>
+<p>In <a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a> and <a href="https://en.wikipedia.org/wiki/Formal_methods">formal methods</a>, a <b>SAT solver</b> is a <a href="https://en.wikipedia.org/wiki/Computer_program">computer program</a> which aims to solve the <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">Boolean satisfiability problem</a> (SAT).  On input a formula over <a href="https://en.wikipedia.org/wiki/Boolean_data_type">Boolean</a> variables, such as "(<i>x</i> or <i>y</i>) and (<i>x</i> or not <i>y</i>)", a SAT solver outputs whether the formula is <a href="https://en.wikipedia.org/wiki/Satisfiability">satisfiable</a>, meaning that there are possible values of <i>x</i> and <i>y</i> which make the formula true, or unsatisfiable, meaning that there are no such values of <i>x</i> and <i>y</i>.  In this case, the formula is satisfiable when <i>x</i> is true, so the solver should return "satisfiable".  Since the introduction of <a href="https://en.wikipedia.org/wiki/Algorithm">algorithms</a> for SAT in the 1960s, modern SAT solvers have grown into complex <a href="https://en.wikipedia.org/wiki/Software">software artifacts</a> involving a large number of <a href="https://en.wikipedia.org/wiki/Heuristic">heuristics</a> and <a href="https://en.wikipedia.org/wiki/Program_optimization">program optimizations</a> to work efficiently.</p><p>By a result known as the <a href="https://en.wikipedia.org/wiki/Cook%E2%80%93Levin_theorem">Cook&#x2013;Levin theorem</a>, Boolean satisfiability is an <a href="https://en.wikipedia.org/wiki/NP-completeness">NP-complete</a> problem in general.  As a result, only algorithms with exponential worst-case complexity are known.  In spite of this, efficient and scalable algorithms for SAT were developed during the 2000s, which have contributed to dramatic advances in the ability to automatically solve problem instances involving tens of thousands of variables and millions of constraints.</p><p>SAT solvers often begin by converting a formula to <a href="https://en.wikipedia.org/wiki/Conjunctive_normal_form">conjunctive normal form</a>.  They are often based on core algorithms such as the <a href="https://en.wikipedia.org/wiki/DPLL_algorithm">DPLL algorithm</a>, but incorporate a number of extensions and features.  Most SAT solvers include time-outs, so they will terminate in reasonable time even if they cannot find a solution, with an output such as "unknown" in the latter case.  Often, SAT solvers do not just provide an answer, but can provide further information including an example assignment (values for <i>x</i>, <i>y</i>, etc.) in case the formula is satisfiable or minimal set of unsatisfiable clauses if the formula is unsatisfiable.</p><p>Modern SAT solvers have had a significant impact on fields including <a href="https://en.wikipedia.org/wiki/Software_verification">software verification</a>, <a href="https://en.wikipedia.org/wiki/Program_analysis">program analysis</a>, <a href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem">constraint solving</a>, <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">artificial intelligence</a>, <a href="https://en.wikipedia.org/wiki/Electronic_design_automation">electronic design automation</a>, and <a href="https://en.wikipedia.org/wiki/Operations_research">operations research</a>.  Powerful solvers are readily available as <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">free and open-source software</a> and are built into some programming languages such as exposing SAT solvers as constraints in <a href="https://en.wikipedia.org/wiki/Constraint_logic_programming">constraint logic programming</a>.</p>
 </blockquote>
 </div>
 </div>

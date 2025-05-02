@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-02 Fri 16:51 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(www.brinckerhoff.org) CSC 430, Spring 2025</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(www.brinckerhoff.org) CSC 430, Spring 2025</h1>
+</header><pre class="example">
+ROAM_REFS: https://www.brinckerhoff.org/clements/2254-csc430/index.html
+</pre>
+<blockquote>
+<p>** CSC 430, Spring 2025</p><p><a href="https://www.brinckerhoff.org/clements/2254-csc430/schedule.html">Schedule/Homeworks</a></p><p><a href="https://handin-1.brinckerhoff.org/servlets/standalone.rkt">lab number submission servlet</a></p><p><a href="https://www.brinckerhoff.org/clements/2254-csc430/Assignments/tr-notes.html">Hints on Using Typed Racket in CSC 430</a></p><p><a href="https://www.brinckerhoff.org/clements/2254-csc430/CodeFromClass/helpful-tidbits.html">Helpful Tidbits</a></p><p><a href="https://www.brinckerhoff.org/clements/2254-csc430/Files/map-examples.html">Using Map</a></p><p><a href="http://cs.brown.edu/courses/cs173/2012/book/">Textbook</a></p><p><a href="https://www.brinckerhoff.org/clements/2254-csc430/CodeFromClass/PLAI-TR-translation.rkt">PLAI TR Translation</a></p><p><a href="https://www.brinckerhoff.org/clements/2254-csc430/common-assignment-errors.html">Common Assignment Errors</a></p><p><a href="https://www.brinckerhoff.org/clements/2254-csc430/Files/debugging-in-racket.html">Debugging in Racket</a></p><p><b>*</b> Welcome!</p><p>Here we are at the almost-nearly-end of another year, gee whiz.  Spring!  Only one more quarter!  You've got this!</p><p>As always, our highest-level goal is to make the world a better place, and to make you happier, healthier, and better able to make the world a better place yourselves.</p><p>So, what exactly does that have to do with programming languages?  Well, the tools and ideas of programming languages <b>can</b> be deep ones that affect the way you work and think for the rest of your life.  Or, at a much lower level, maybe we can help you write programs a bit more carefully and correctly.  It's up to you!</p><p><b>*</b> About the Course</p><p>Programming languages determine what programs we can write.  Languages with nice abstractions allow us to write elegant, concise, and readable programs.</p><p>In this class, we'll start from scratch, and build a programming language by adding only what's necessary.  What we'll discover is that this simplistic approach leads to some really powerful abstractions.  You can do more with less!</p><p>At the end of the course, you should be a better programmer.  You should also have a clearer picture of a given language as a choice in a larger design space, and be better able to understand new programming languages and the similarities between them.  Finally, you may develop some taste for what you like in a programming language.</p><p>This course will involve lots of programming in Racket.  I choose Racket for several reasons.  First, “functional” programming languages make this kind of course feasible.  Writing a series of interpreters in another language would probably involve a whole lot more code.  Second, Racket is a wonderful, beautiful language that is probably pretty dramatically different from other languages that you've used.  (You can tell I'm totally not biased at all.)  Finally, as one of the developers of Racket, running this course in Racket creates a positive feedback loop; your experiences can help to improve the language, especially since Racket is a language that can easily be extended and updated.  If these reasons don't make sense to you, then&#x2026; perhaps you need to take the course!</p><p><b>*</b> Learning Outcomes</p><p>Here are the course outcomes that I'm striving for:</p><ul class="org-ul">
+<li>You can write programs in a largely functional language (i.e. ML, Racket).</li>
+
+<li>You can identify expressions and other syntactic elements of a language that you know or are learning.</li>
+
+<li>You can perform simple parsing by hand, transforming textual strings into abstract syntax trees.</li>
+
+<li>You can apply standard reduction rules for the following language forms to compute the results of programs, including these forms:<ul class="org-ul">
+<li>arithmetic &amp; other primitive function applications</li>
+
+<li>function calls / variable references</li>
+
+<li>mutation forms</li>
+</ul></li>
+
+<li>You can write programs to produce these same results (a.k.a. interpreters), up to families of similar reduction rules.</li>
+
+<li>You understand the relationship between substitution and environments, and can model a computation's progress using either model.</li>
+
+<li>You understand the notion of scope induced by these rules, and can identify and reason about the bindings and bound variables in arbitrary programs.</li>
+
+<li>You have a limited ability to read and understand programs written in store-passing style.</li>
+
+<li>You have a limited ability to transform code using mutation into purely functional code, using store-passing style</li>
+
+<li>You can apply the rules of a type-checker (given as Gentzen-style natural deduction rules) to determine whether a program satisfies a type system.</li>
+
+<li>You can explain why these systems work the way they do, and have a limited ability to consider variations of these systems and how such variant systems would behave.</li>
+</ul>
+
+<p><b>**</b> Bonus Topics</p><p>We usually get to one of these:</p><ul class="org-ul">
+<li>parsing,</li>
+
+<li>macros, or</li>
+
+<li>somewhat more advanced type systems, or</li>
+
+<li>continuation-passing-style, specifically:<ul class="org-ul">
+<li>You have a limited ability to read and understand programs written in continuation-passing style.</li>
+
+<li>You have a limited ability to transform code written in a direct style into continuation-passing style.</li>
+</ul></li>
+</ul>
+
+<p><b>*</b> Prerequisites</p><p>In order to take this course you must be able to design and implement small programs (~ 1 KLOC) efficiently.  You must have a basic understanding of mathematics and data structures.  You should be able to reduce arithmetic expressions by hand, in a small-step style (that is, one step at a time).  You should be able to identify statements and expressions in a programming language such as Python.  Actually, scratch the "such as"; in order to present examples in class, we are planning to use Python as the language that we assume that you already know.  If you can't read Python code, please let us know and we will try to accommodate your skillset by providing resources to get you up to speed in Python.</p>
+</blockquote>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-04-30 Wed 04:29</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

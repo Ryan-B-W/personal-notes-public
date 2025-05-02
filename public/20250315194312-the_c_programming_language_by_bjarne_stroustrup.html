@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:10 -->
+<!-- 2025-05-02 Fri 16:49 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>The C++ Programming Language by Bjarne Stroustrup</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -34,98 +34,32 @@ ROAM_REFS: https://www.stroustrup.com/4th.html
 <li>The C++ Programming Language (4th Edition)</li>
 </ul>
 
-<p>
-Addison-Wesley ISBN 978-0321563842. May 2013.
-</p>
-
-<p>
-<a href="http://click.linksynergy.com/fs-bin/click?id=/TDPPeRUMm4&amp;offerid=163217.10000230&amp;type=1&amp;subid=0">Order directly from the publisher!</a> (There is also an electronic version, and a hardcover version)
-</p>
-
-<p>
-Modified October 27, 2018
-</p>
-
-<p>
-<a href="http://www.bildelarstore.se/science/c-programming-language-4-edition/">Romainian translation of this page</a>.
-</p>
-
-<p>
-See also <a href="https://www.stroustrup.com/C++11FAQ.html">C++11 FAQ</a> and <a href="https://www.stroustrup.com/3rd.html">The C++ Programming Language (Special Edition)</a>.
-</p>
-
-<p>
-Available here:
-</p>
-
-<ul class="org-ul">
+<p>Addison-Wesley ISBN 978-0321563842. May 2013.</p><p><a href="http://click.linksynergy.com/fs-bin/click?id=/TDPPeRUMm4&amp;offerid=163217.10000230&amp;type=1&amp;subid=0">Order directly from the publisher!</a> (There is also an electronic version, and a hardcover version)</p><p>Modified October 27, 2018</p><p><a href="http://www.bildelarstore.se/science/c-programming-language-4-edition/">Romainian translation of this page</a>.</p><p>See also <a href="https://www.stroustrup.com/C++11FAQ.html">C++11 FAQ</a> and <a href="https://www.stroustrup.com/3rd.html">The C++ Programming Language (Special Edition)</a>.</p><p>Available here:</p><ul class="org-ul">
 <li><a href="https://www.stroustrup.com/4thPreface.pdf">The Preface</a></li>
 <li><a href="https://www.stroustrup.com/4thContents.html">Extended Table of Contents</a>.  Not in printed version.  I didn't think it was worth an extra 1000 lines.  Each chapter starts with its own table of contents.</li>
 <li><a href="https://www.stroustrup.com/4thExercises.pdf">Exercises</a>.  Not in printed version.  I did not want to add another 80 pages to the book and I want to be able to add and change exercises over the years.  The collection of exercises should be complete (if minimal) ASAP.</li>
 <li>Concept code.  I have so far failed to get my ``taylor made'' and stable version ready for posting, but see Andrew Sutton's <a href="http://code.google.com/p/origin/">Origin library</a> on which the book's concepts are based.</li>
 </ul>
 
-<p>
-If you are looking for a shorter and less complete introduction to C++, consider: Bjarne Stroustrup: <a href="https://www.stroustrup.com/tour3.html">A Tour of C++ (3rd Edition)</a>.  The ``tour'' is a quick (about 240 pages) tutorial overview of all of standard C++ at a moderately high level for people who already know C++ or at least are experienced programmers.
-</p>
+<p>If you are looking for a shorter and less complete introduction to C++, consider: Bjarne Stroustrup: <a href="https://www.stroustrup.com/tour3.html">A Tour of C++ (3rd Edition)</a>.  The ``tour'' is a quick (about 240 pages) tutorial overview of all of standard C++ at a moderately high level for people who already know C++ or at least are experienced programmers.</p><p>If you are looking for an an introduction to programming for people who has never programmed before, consider <a href="https://www.stroustrup.com/programming.html">Programming &#x2013; Principles and Practice Using C++</a>.  That book is also be useful for people who have programmed a bit and want to improve their style and technique - or to simply learn modern C++.  It is designed for classroom use, but written with an eye on self study.</p><hr />
 
-<p>
-If you are looking for an an introduction to programming for people who has never programmed before, consider <a href="https://www.stroustrup.com/programming.html">Programming &#x2013; Principles and Practice Using C++</a>.  That book is also be useful for people who have programmed a bit and want to improve their style and technique - or to simply learn modern C++.  It is designed for classroom use, but written with an eye on self study.
-</p>
-
-<hr />
-
-<p>
-** Errata
-</p>
-
-<p>
-Feel free to send me suggested errata.  I will fix every mistake that can be fixed within the constrains of the book.  I will post every errata that I think might impede understanding(eventually; I'm unfortunately way behind the printed books).
-</p>
-
-<ul class="org-ul">
+<p>** Errata</p><p>Feel free to send me suggested errata.  I will fix every mistake that can be fixed within the constrains of the book.  I will post every errata that I think might impede understanding(eventually; I'm unfortunately way behind the printed books).</p><ul class="org-ul">
 <li><a href="https://www.stroustrup.com/4th_printing3.html">For the 3rd printing</a></li>
 </ul>
 
-<p>
-People have pointed out that the {} doesn't work for copy construction:
-</p>
-
-<pre class="example">
+<p>People have pointed out that the {} doesn't work for copy construction:</p><pre class="example">
 X x1 {2};      // construct from integer (assume suitable constructor)
 X x2 {x1};      // copy construction: fails on GCC 4.8 and Clang 3.2
 </pre>
 
-
-<p>
-I know that.  It's a bug in the standard.  Fixed for C++14.  For now use one of the traditional notations:
-</p>
-
-<pre class="example">
+<p>I know that.  It's a bug in the standard.  Fixed for C++14.  For now use one of the traditional notations:</p><pre class="example">
 X x3(x1);      // copy construction
 X x4 = x1;      // copy construction
 </pre>
 
+<p>Thanks to all who send me problems, correction, and clarifications: Ron Avitzur, Matt Austern, Charles A. Barr, Paul Bennett, Thaddeus Black, Andreas Boerner, Keith Boruff, A. Bresee, Juerg Bruggermann Ian Bruntlett, Henry Buckley, Vladimir Burenkov, Peter Cordell, Walter C. Daugherity, Francios Degros, Gabriel Dos Reis, Robert Drehmel, Yaakov Eisenberg, James Feister, Ted Felix, William Fisher, Paul Floyd, Elazar Gershuni, Douglas Gilbert, Matt Ginsberg, Raffaele Grosso, Ben Hanson, M. Harbeck, Jack Harvard, Craig Henderson, Matthew Hielsberg, Derek Hofmann, Ashley Holman, Niels Holst, Zhiheng Huang, Olaf Ippisch, Dainis Jonitis, Koehne Kai, Zlatko Karakaï¿½, Tiemo Keller, Brian Kernighan, Hadeed Khalid, Michael Kilpelainen, Klaus-Werner Konrad, Vlado Koval, David Krishfield, Daniel Kruegler, Amali Praveena Soban Kumar, Mantosh Kumar, John Lakos, Wanying Luo, Chintan Maggu, Jaydeep Marathe, Bruno Marques, Brono Martinez, Randy Merkel, Martin Moene, Thiemo Nagel, Tyson Nottingham, Toshiaki Ohkuma, Peter Olsen, Aidas Ozelis, Laszlo Papp, Nathan Panike, Dale Lukas Peterson, Marcelo Pinto, Timur Pocheptsov, Michael Price, Tim Prebble, Andrea Proli, Luca Risolia, Dan Rose, Ambitabha Roy, Jens Rï¿½mer Rohit Santhanam, Anubhav Saxena, Ian Scott, Richard Shepherd, Eric Sirko, Abe Skolnik, Edward M. Smith-Rowland, Marcin, Sobieszczanski, Soren Soe, Dean Stanton, Igor Stauder, Daniel Suen, Andrew Sutton, Edward M. Taffel, David A. Thomas, Felix Voigtlander, Alexey Voytenko, Johan Williamsson, Aaron Wong, Scott Wright, Guilliam Xavier, Geffrey Yerem, Muhammad Zahalqa, Alexei Zakharov.</p><p>Apologies if I missed a name.</p><p>Some might find it reassuring that many (most?) problems were spotted by several people.</p><hr />
 
-<p>
-Thanks to all who send me problems, correction, and clarifications: Ron Avitzur, Matt Austern, Charles A. Barr, Paul Bennett, Thaddeus Black, Andreas Boerner, Keith Boruff, A. Bresee, Juerg Bruggermann Ian Bruntlett, Henry Buckley, Vladimir Burenkov, Peter Cordell, Walter C. Daugherity, Francios Degros, Gabriel Dos Reis, Robert Drehmel, Yaakov Eisenberg, James Feister, Ted Felix, William Fisher, Paul Floyd, Elazar Gershuni, Douglas Gilbert, Matt Ginsberg, Raffaele Grosso, Ben Hanson, M. Harbeck, Jack Harvard, Craig Henderson, Matthew Hielsberg, Derek Hofmann, Ashley Holman, Niels Holst, Zhiheng Huang, Olaf Ippisch, Dainis Jonitis, Koehne Kai, Zlatko Karakaï¿½, Tiemo Keller, Brian Kernighan, Hadeed Khalid, Michael Kilpelainen, Klaus-Werner Konrad, Vlado Koval, David Krishfield, Daniel Kruegler, Amali Praveena Soban Kumar, Mantosh Kumar, John Lakos, Wanying Luo, Chintan Maggu, Jaydeep Marathe, Bruno Marques, Brono Martinez, Randy Merkel, Martin Moene, Thiemo Nagel, Tyson Nottingham, Toshiaki Ohkuma, Peter Olsen, Aidas Ozelis, Laszlo Papp, Nathan Panike, Dale Lukas Peterson, Marcelo Pinto, Timur Pocheptsov, Michael Price, Tim Prebble, Andrea Proli, Luca Risolia, Dan Rose, Ambitabha Roy, Jens Rï¿½mer Rohit Santhanam, Anubhav Saxena, Ian Scott, Richard Shepherd, Eric Sirko, Abe Skolnik, Edward M. Smith-Rowland, Marcin, Sobieszczanski, Soren Soe, Dean Stanton, Igor Stauder, Daniel Suen, Andrew Sutton, Edward M. Taffel, David A. Thomas, Felix Voigtlander, Alexey Voytenko, Johan Williamsson, Aaron Wong, Scott Wright, Guilliam Xavier, Geffrey Yerem, Muhammad Zahalqa, Alexei Zakharov.
-</p>
-
-<p>
-Apologies if I missed a name.
-</p>
-
-<p>
-Some might find it reassuring that many (most?) problems were spotted by several people.
-</p>
-
-<hr />
-
-<p>
-** Previous Editions
-</p>
-
-<ul class="org-ul">
+<p>** Previous Editions</p><ul class="org-ul">
 <li><a href="https://www.stroustrup.com/3rd.html">The C++ Programming Language (Special Edition)</a></li>
 <li><a href="https://www.stroustrup.com/books.html">Book list</a></li>
 <li><a href="https://www.stroustrup.com/covers.html">My book covers</a></li>
@@ -133,15 +67,7 @@ Some might find it reassuring that many (most?) problems were spotted by several
 
 <hr />
 
-<p>
-** Reviews
-</p>
-
-<p>
-I don't have to agree with a review or blog post to list it, but it helps if I think at least some parts make sense.
-</p>
-
-<ul class="org-ul">
+<p>** Reviews</p><p>I don't have to agree with a review or blog post to list it, but it helps if I think at least some parts make sense.</p><ul class="org-ul">
 <li>June 17, 2012: Verity Stob: <a href="http://www.theregister.co.uk/2013/06/17/verity_stob_is_bjarne_again/">Software &gt;Bjarne Again: Hallelujah for C++</a> in The Register.</li>
 <li>June 17, 2013: The Meglomaniac Bore <a href="http://megalomaniacbore.blogspot.com/2013/06/the-c-programming-language-fourth.html">Blog entry</a>. ``you can learn something new nearly every other page - even as a seasoned C++ developer I was still updating my knowledge.''</li>
 <li>June 8, 2013: Peter Lee: <a href="http://compublab.com/2013/06/08/the-c-programming-language-4th-edition-bjarne-stroustrup-thou-art-the-man/">The C++ Programming Language (4th edition): Bjarne Stroustrup, Thou Art The Man!</a>.</li>
@@ -150,11 +76,7 @@ I don't have to agree with a review or blog post to list it, but it helps if I t
 
 <hr />
 
-<p>
-** Interviews
-</p>
-
-<ul class="org-ul">
+<p>** Interviews</p><ul class="org-ul">
 <li><a href="http://www.informit.com/articles/article.aspx?p=2080042&amp;WT.rss_f=Article&amp;WT.rss_a=An%20Interview%20with%20Bjarne%20Stroustrup&amp;WT.rss_ev=a">An interview by Danny Kalev for InformIT</a>.</li>
 </ul>
 </blockquote>

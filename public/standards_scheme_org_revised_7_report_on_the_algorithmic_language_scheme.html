@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-02 Fri 16:51 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(standards.scheme.org) Revised^7 Report on the Algorithmic Language Scheme</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(standards.scheme.org) Revised<sup>7</sup> Report on the Algorithmic Language Scheme</h1>
+</header><pre class="example">
+ROAM_REFS: https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html https://standards.scheme.org/corrected-r7rs/r7rs.html
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li><b>Revised<sup>7</sup> Report on the Algorithmic Language Scheme</b></li>
+</ul>
+
+<p>ALEX SHINN, JOHN COWAN, AND ARTHUR A. GLECKLER (<i>Editors</i>)</p><p>
+STEVEN GANZ, ALEXEY RADUL, OLIN SHIVERS,
+AARON W. HSU, JEFFREY T. READ, ALARIC SNELL-PYM,
+BRADLEY LUCIER, DAVID RUSH, GERALD J. SUSSMAN
+EMMANUEL MEDERNACH, BENJAMIN L. RUSSEL
+</p><p>
+RICHARD KELSEY, WILLIAM CLINGER, AND JONATHAN REES<br />
+<i>(Editors, Revised<sup>5</sup> Report on the Algorithmic Language Scheme)</i>
+</p><p>
+MICHAEL SPERBER, R. KENT DYBVIG, MATTHEW FLATT, AND ANTON VAN STRAATEN<br />
+<i>(Editors, Revised<sup>6</sup> Report on the Algorithmic Language Scheme)</i>
+</p><table>
+
+
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+<p><i>Dedicated to the memory of John McCarthy and Daniel Weinreb</i></p><p><b>December 19, 2022</b></p><p>** Summary</p><p>The report gives a defining description of the programming language Scheme.  Scheme is a statically scoped and properly tail recursive dialect of the Lisp programming language [<a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-15.html#TAG:__tex2page_bib_23">23</a>] invented by Guy Lewis Steele Jr.​ ​and Gerald Jay Sussman.  It was designed to have exceptionally clear and simple semantics and few different ways to form expressions.  A wide variety of programming paradigms, including imperative, functional, and object-oriented styles, find convenient expression in Scheme.</p><p>The introduction offers a brief history of the language and of the report.</p><p>The first three chapters present the fundamental ideas of the language and describe the notational conventions used for describing the language and for writing programs in the language.</p><p>Chapters <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_chap_4">4</a> and <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-7.html#TAG:__tex2page_chap_5">5</a> describe the syntax and semantics of expressions, definitions, programs, and libraries.</p><p>Chapter <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_chap_6">6</a> describes Scheme's built-in procedures, which include all of the language's data manipulation and input/output primitives.</p><p>Chapter <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-9.html#TAG:__tex2page_chap_7">7</a> provides a formal syntax for Scheme written in extended BNF, along with a formal denotational semantics.  An example of the use of the language follows the formal syntax and semantics.</p><p>Appendix <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-10.html#TAG:__tex2page_chap_A">A</a> provides a list of the standard libraries and the identifiers that they export.</p><p>Appendix <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-11.html#TAG:__tex2page_chap_B">B</a> provides a list of optional but standardized implementation feature names.</p><p>The report concludes with a list of references and an alphabetic index.</p><pre class="example">
+/Note: /The editors of the R^{5}RS​ ​and R^{6}RS​ ​reports are listed as authors of this report in recognition of the substantial portions of this report that are copied directly from R^{5}RS​ ​and R^{6}RS.  There is no intended implication that those editors, individually or collectively, support or do not support this report.
+</pre>
+</blockquote>
+<div id="outline-container-ID-6422cc26-5b5b-46c1-b7ed-5b313bf1ef23" class="outline-2">
+<h2 id="ID-6422cc26-5b5b-46c1-b7ed-5b313bf1ef23">R<sup>7RS</sup> Chapter 6</h2>
+<div class="outline-text-2" id="text-org1b58950">
+<pre class="example">
+ROAM_REFS: https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li>Chapter 6</li>
+</ul>
+<p>Standard procedures</p><p>This chapter describes Scheme's built-in procedures.  The procedures force, promise?, and make-promise are intimately associated with the expression types delay and delay-force, and are described with them in section <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.5">4.2.5</a>.  In the same way, the procedure make-parameter is intimately associated with the expression type parameterize, and is described with it in section <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.2.6">4.2.6</a>.</p><p>A program can use a global variable definition to bind any variable.  It may subsequently alter any such binding by an assignment (see section <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-6.html#TAG:__tex2page_sec_4.1.6">4.1.6</a>).  These operations do not modify the behavior of any procedure defined in this report or imported from a library (see section <a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-7.html#TAG:__tex2page_sec_5.6">5.6</a>).  Altering any global binding that has not been introduced by a definition has an unspecified effect on the behavior of the procedures defined in this chapter.</p><p>When a procedure is said to return a <i>newly allocated</i> object, it means that the locations in the object are fresh.</p>
+</blockquote>
+</div>
+<div id="outline-container-ID-ac3dda9e-bf08-4cab-9390-bd0cad22a907" class="outline-3">
+<h3 id="ID-ac3dda9e-bf08-4cab-9390-bd0cad22a907">R<sup>7RS</sup> Chapter 6 Section 4: Pairs and Lists</h3>
+<div class="outline-text-3" id="text-org9d83c9c">
+<pre class="example">
+ROAM_REFS: https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.4
+</pre>
+
+<blockquote>
+<p>A <i>pair</i> (sometimes called a dotted pair) is a record structure with two fields called the car and cdr fields (for historical reasons).  Pairs are created by the procedure <pre class="verbatim">cons</pre>.  The car and cdr fields are accessed by the procedures <pre class="verbatim">car</pre> and <pre class="verbatim">cdr</pre>.  The car and cdr fields are assigned by the procedures <pre class="verbatim">set-car!</pre>​ ​and <pre class="verbatim">set-cdr!</pre>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-04-30 Wed 04:29</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

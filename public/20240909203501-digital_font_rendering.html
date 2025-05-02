@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:13 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Digital Font Rendering</title>
@@ -13,28 +13,20 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
 <header>
 <h1 class="title">Digital Font Rendering</h1>
-</header><p>
-Rendering of fonts digitally.  Namely, computers.
-</p>
+</header><p>Rendering of fonts digitally.  Namely, computers.</p>
 <div id="outline-container-ID-1f807398-9548-46d5-8098-2651736c0cc0" class="outline-2">
 <h2 id="ID-1f807398-9548-46d5-8098-2651736c0cc0">Subpixel Rendering</h2>
 <div class="outline-text-2" id="text-orgcf40f2a">
-<p>
-Rendering of fonts using a display's subpixels to further increase resolution in one axis.  Most commonly used with LCD displays.  Microsoft's brand of subpixel rendering is branded ClearType.
-</p>
-
-<p>
-This also tends to be quite controversial, see <a href="www_reddit_com_turning_on_subpixel_rendering_makes_a_day_and_night_difference_r_linux.html#ID-72a47beb-2749-4056-92f6-ab391fccc651">(www.reddit.com) Turning on Subpixel rendering makes a Day and Night difference! : r/linux</a>.
-</p>
+<p>Rendering of fonts using a display's subpixels to further increase resolution in one axis.  Most commonly used with LCD displays.  Microsoft's brand of subpixel rendering is branded ClearType.</p><p>This also tends to be quite controversial, see <a href="www_reddit_com_turning_on_subpixel_rendering_makes_a_day_and_night_difference_r_linux.html#ID-72a47beb-2749-4056-92f6-ab391fccc651">(www.reddit.com) Turning on Subpixel rendering makes a Day and Night difference! : r/linux</a>.</p>
 </div>
 <div id="outline-container-ID-a52d4909-41db-4c3f-ab6e-a457bfce4c4b" class="outline-3">
 <h3 id="ID-a52d4909-41db-4c3f-ab6e-a457bfce4c4b">(en.wikipedia.org) Subpixel rendering - Wikipedia&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
@@ -68,9 +60,7 @@ ROAM_REFS: http://www.lagom.nl/lcd-test/subpixel.php
 </pre>
 
 <blockquote>
-<p>
-Each pixel on an LCD screen consists of three subpixels: red, green, and blue (RGB), that are sitting next to each other.  Most operating systems since about 2003 can improve the quality of on-screen text by using these subpixels.  However, this only works if the operating system knows how the subpixels are arranged.  For the majority of the monitors, the arrangement is RGB (red on the left, green in the middle, and blue on the right).  However, on an occasional monitor, it is the other way around (BGR).  And if you orient your monitor in portrait mode, the subpixel layout can be V-RGB (vertical RGB) or V-BGR.
-</p>
+<p>Each pixel on an LCD screen consists of three subpixels: red, green, and blue (RGB), that are sitting next to each other.  Most operating systems since about 2003 can improve the quality of on-screen text by using these subpixels.  However, this only works if the operating system knows how the subpixels are arranged.  For the majority of the monitors, the arrangement is RGB (red on the left, green in the middle, and blue on the right).  However, on an occasional monitor, it is the other way around (BGR).  And if you orient your monitor in portrait mode, the subpixel layout can be V-RGB (vertical RGB) or V-BGR.</p>
 </blockquote>
 </div>
 </div>
@@ -78,9 +68,7 @@ Each pixel on an LCD screen consists of three subpixels: red, green, and blue (R
 <div id="outline-container-ID-bdd9ee2d-b0ad-4935-bd45-76bab9d4e382" class="outline-2">
 <h2 id="ID-bdd9ee2d-b0ad-4935-bd45-76bab9d4e382">Fontconfig</h2>
 <div class="outline-text-2" id="text-org45e1938">
-<p>
-System used on <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> for configuring font rendering.  Namely, <a href="20240909211032-freetype.html#ID-71db43c6-1a39-4e98-8cb9-1305958a5978">FreeType</a>.
-</p>
+<p>System used on <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> for configuring font rendering.  Namely, <a href="20240909211032-freetype.html#ID-71db43c6-1a39-4e98-8cb9-1305958a5978">FreeType</a>.</p>
 </div>
 <div id="outline-container-ID-1899f0db-5e4e-44fe-8d13-c8a2760f94a1" class="outline-3">
 <h3 id="ID-1899f0db-5e4e-44fe-8d13-c8a2760f94a1">(wiki.gentoo.org) Fontconfig - Gentoo wiki&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
@@ -96,9 +84,7 @@ Refer to the Fonts page for more general information about using fonts on Gentoo
 </p>
 </blockquote>
 
-<p>
-See Also:
-</p>
+<p>See Also:</p>
 </div>
 <div id="outline-container-org7cfa21a" class="outline-4">
 <h4 id="org7cfa21a"><a href="#ID-c3579d32-363c-4800-a255-37e070d41b24">(wiki.gentoo.org) Fonts - Gentoo wiki</a></h4>
@@ -121,9 +107,7 @@ Although Fontconfig is used often in modern Unix and Unix-like operating systems
 </p>
 </blockquote>
 
-<p>
-See also:
-</p>
+<p>See also:</p>
 </div>
 <div id="outline-container-org48d2fde" class="outline-4">
 <h4 id="org48d2fde"><a href="20240909211032-freetype.html#ID-71db43c6-1a39-4e98-8cb9-1305958a5978">FreeType</a></h4>
@@ -141,9 +125,7 @@ ROAM_REFS: https://www.linuxfromscratch.org/blfs/view/svn/x/tuning-fontconfig.ht
 <div id="outline-container-ID-8555b189-29a5-45de-a3b8-f607759bb901" class="outline-2">
 <h2 id="ID-8555b189-29a5-45de-a3b8-f607759bb901">Linux Font Handling</h2>
 <div class="outline-text-2" id="text-org1dadef7">
-<p>
-How <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> handles font rendering.
-</p>
+<p>How <a href="20240714180324-linux.html#ID-bf0bc2d7-17df-413c-823b-93904faffc58">Linux</a> handles font rendering.</p>
 </div>
 <div id="outline-container-ID-c3579d32-363c-4800-a255-37e070d41b24" class="outline-3">
 <h3 id="ID-c3579d32-363c-4800-a255-37e070d41b24">(wiki.gentoo.org) Fonts - Gentoo wiki&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h3>
@@ -159,9 +141,7 @@ The best starting point for general information about configuration, use and man
 </p>
 </blockquote>
 
-<p>
-See also:
-</p>
+<p>See also:</p>
 </div>
 <div id="outline-container-orgfad3d27" class="outline-4">
 <h4 id="orgfad3d27"><a href="#ID-1899f0db-5e4e-44fe-8d13-c8a2760f94a1">(wiki.gentoo.org) Fontconfig - Gentoo wiki</a></h4>
@@ -182,8 +162,7 @@ See also:
 <div id="outline-container-org4ee3dc5" class="outline-3">
 <h3 id="org4ee3dc5">Tools for working with fonts on Linux</h3>
 <div class="outline-text-3" id="text-org4ee3dc5">
-</div>
-<div id="outline-container-orge91afff" class="outline-4">
+</div><div id="outline-container-orge91afff" class="outline-4">
 <h4 id="orge91afff"><a href="20240909210639-ftview.html#ID-3681e8da-7fe6-4ce0-98c8-7384de6ce324">ftview</a></h4>
 </div>
 <div id="outline-container-orgd77ba4d" class="outline-4">

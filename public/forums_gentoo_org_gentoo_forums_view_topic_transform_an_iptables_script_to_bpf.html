@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:12 -->
+<!-- 2025-05-02 Fri 16:50 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(forums.gentoo.org) Gentoo Forums :: View topic - transform an iptables script to BPF</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -26,24 +26,9 @@
 ROAM_REFS: https://forums.gentoo.org/viewtopic-t-1101644-start-0.html
 </pre>
 <blockquote>
-<p>
-<b>toralf</b> Developer
-</p>
+<p><b>toralf</b> Developer</p><p>Posted: Sun Sep 08, 2019 8:20 pm Post subject: transform an iptables script to BPF</p><hr />
 
-<p>
-Posted: Sun Sep 08, 2019 8:20 pm Post subject: transform an iptables script to BPF
-</p>
-
-<hr />
-
-<p>
-I do wonder, if this script
-</p>
-
-<p>
-<b>Code:</b>
-</p>
-<div class="org-src-container">
+<p>I do wonder, if this script</p><p><b>Code:</b></p><div class="org-src-container">
 <pre class="src src-sh"><code><span class="org-comment-delimiter">#</span><span class="org-comment">!/bin/</span><span class="org-keyword">sh</span></code>
 <code><span class="org-comment-delimiter">#</span></code>
 <code><span class="org-comment-delimiter">#</span><span class="org-comment">set -x</span></code>
@@ -105,33 +90,9 @@ I do wonder, if this script
 </pre>
 </div>
 
-<p>
-is worth to be transformed into a BPF capable script and which kernel modules I do have to activate for it?
-</p>
+<p>is worth to be transformed into a BPF capable script and which kernel modules I do have to activate for it?</p><p><b>Ant P.</b> Watchman</p><p>Posted: Mon Sep 09, 2019 4:33 am Post subject:</p><hr />
 
-
-<p>
-<b>Ant P.</b> Watchman
-</p>
-
-<p>
-Posted: Mon Sep 09, 2019 4:33 am Post subject:
-</p>
-
-<hr />
-
-<p>
-bpfilter support is nonexistent in Gentoo, and doesn't seem to be getting easier in general.
-</p>
-
-<p>
-Here's a translation (untested) using nftables, which is supported:
-</p>
-
-<p>
-<b>Code:</b>
-</p>
-<div class="org-src-container">
+<p>bpfilter support is nonexistent in Gentoo, and doesn't seem to be getting easier in general.</p><p>Here's a translation (untested) using nftables, which is supported:</p><p><b>Code:</b></p><div class="org-src-container">
 <pre class="src src-sh"><code><span class="org-comment-delimiter">#</span><span class="org-comment">!/bin/</span><span class="org-keyword">sh</span><span class="org-comment"> -eu</span></code>
 <code>nft -f rules.nft</code>
 <code></code>
@@ -141,10 +102,7 @@ Here's a translation (untested) using nftables, which is supported:
 </pre>
 </div>
 
-<p>
-<b>rules.nft:</b>
-</p>
-<div class="org-src-container">
+<p><b>rules.nft:</b></p><div class="org-src-container">
 <pre class="src src-sh"><code><span class="org-comment-delimiter">#</span><span class="org-comment">!/sbin/</span><span class="org-keyword">nft</span><span class="org-comment"> -f</span></code>
 <code></code>
 <code>ssh_dest = 123.456.XXX.XXX;</code>
@@ -184,19 +142,9 @@ Here's a translation (untested) using nftables, which is supported:
 </div>
 
 
-<p>
-<b>toralf</b> Developer
-</p>
+<p><b>toralf</b> Developer</p><p>Posted: Mon Sep 09, 2019 2:26 pm Post subject:</p><hr />
 
-<p>
-Posted: Mon Sep 09, 2019 2:26 pm Post subject:
-</p>
-
-<hr />
-
-<p>
-Thx, Ant P.!
-</p>
+<p>Thx, Ant P.!</p>
 </blockquote>
 </main>
 <div id="postamble" class="status">

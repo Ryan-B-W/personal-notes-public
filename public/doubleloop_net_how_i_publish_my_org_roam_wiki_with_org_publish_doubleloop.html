@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-20 Sun 00:13 -->
+<!-- 2025-05-02 Fri 16:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(doubleloop.net) How I publish my org-roam wiki with org-publish - doubleloop</title>
@@ -13,10 +13,10 @@
 <div id="preamble" class="status">
 <nav aria-labelledby="nav-head-main">
 <h1 id="nav-head-main">Navigation</h1>
-<ul>
+<menu>
 <li><a href="/personal-notes-public/" title="Home">Home</a></li>
 <li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
-</ul>
+</menu>
 </nav>
 </div>
 <main id="content" class="content">
@@ -26,19 +26,9 @@
 ROAM_REFS: https://doubleloop.net/2020/08/21/how-publish-org-roam-wiki-org-publish/
 </pre>
 <blockquote>
-<p>
-<b>NOTE: see <a href="https://commonplace.doubleloop.net/how-i-publish-my-wiki-with-org-publish">https://commonplace.doubleloop.net/how-i-publish-my-wiki-with-org-publish</a> for a more up-to-date version of this post.</b>
-</p>
+<p><b>NOTE: see <a href="https://commonplace.doubleloop.net/how-i-publish-my-wiki-with-org-publish">https://commonplace.doubleloop.net/how-i-publish-my-wiki-with-org-publish</a> for a more up-to-date version of this post.</b></p><hr />
 
-<hr />
-
-<p>
-I keep my <a href="https://commonplace.doubleloop.net/20200523164533-hyper_commonplace_garden_wiki.html">hyper commonplace garden wiki</a> at <a href="https://commonplace.doubleloop.net/">https://commonplace.doubleloop.net</a>. I use <a href="https://commonplace.doubleloop.net/20200308222205-org_roam.html">org-roam</a> to maintain my wiki locally, and I use <a href="https://commonplace.doubleloop.net/20200323224605-org_publish.html">org-publish</a> to render my wiki as a site of static html files. This article is specifically to describe how I use org-publish on my org-roam files to get them up on my public site.
-</p>
-
-<p>
-(Note: this is a snapshot in time, and I update the publish process fairly regularly &#x2013; you can always check on the wiki for the <a href="https://commonplace.doubleloop.net/20200821142536-how_i_publish_my_wiki_with_org_publish.html">latest version</a> of this)
-</p>
+<p>I keep my <a href="https://commonplace.doubleloop.net/20200523164533-hyper_commonplace_garden_wiki.html">hyper commonplace garden wiki</a> at <a href="https://commonplace.doubleloop.net/">https://commonplace.doubleloop.net</a>. I use <a href="https://commonplace.doubleloop.net/20200308222205-org_roam.html">org-roam</a> to maintain my wiki locally, and I use <a href="https://commonplace.doubleloop.net/20200323224605-org_publish.html">org-publish</a> to render my wiki as a site of static html files. This article is specifically to describe how I use org-publish on my org-roam files to get them up on my public site.</p><p>(Note: this is a snapshot in time, and I update the publish process fairly regularly &#x2013; you can always check on the wiki for the <a href="https://commonplace.doubleloop.net/20200821142536-how_i_publish_my_wiki_with_org_publish.html">latest version</a> of this)</p>
 </blockquote>
 <div id="outline-container-orgc94db51" class="outline-2">
 <h2 id="orgc94db51"><a href="commonplace_doubleloop_net.html#ID-e892977d-1e31-4550-9ab2-19f17dc4148e">(commonplace.doubleloop.net) publish.el</a></h2>
