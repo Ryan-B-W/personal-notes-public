@@ -252,6 +252,7 @@
         ("styles"
          :base-directory ,org-directory
          :base-extension "scss\\|sass\\|css"
+         :exclude "^_.+$"
          :recursive nil
          :publishing-function custom-publish-sass-scss-to-css
          :publishing-directory ,(expand-file-name "personal-notes-public" default-publish-directory))
