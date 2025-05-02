@@ -116,6 +116,27 @@ body {
     max-width: 54.25em;
     display: flow-root;
 }
+p {
+    font-size: 1rem;
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.4rem;
+}
+h3 {
+    font-size: 1.3rem;
+}
+h4 {
+    font-size: 1.2rem;
+}
+h5 {
+    font-size: 1.1rem;
+}
+h6 {
+    font-size: 1rem;
+}
 header {
     border: 1px solid var(--border);
     border-radius: 0.5em;
