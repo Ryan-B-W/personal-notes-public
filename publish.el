@@ -191,6 +191,146 @@
 
 
 
+(require 'ox-html)
+
+;; Override org-html-section to not add extra line breaks.
+(defun org-html-section (section contents info)
+  "Transcode a SECTION element from Org to HTML.
+CONTENTS holds the contents of the section.  INFO is a plist
+holding contextual information."
+  (let ((parent (org-element-lineage section 'headline)))
+    ;; Before first headline: no container, just return CONTENTS.
+    (if (not parent) contents
+      ;; Get div's class and id references.
+      (let* ((class-num (+ (org-export-get-relative-level parent info)
+                           (1- (plist-get info :html-toplevel-hlevel))))
+             (section-number
+              (and (org-export-numbered-headline-p parent info)
+                   (mapconcat
+                    #'number-to-string
+                    (org-export-get-headline-number parent info) "-"))))
+        ;; Build return value.
+        (format "<div class=\"outline-text-%d\" id=\"text-%s\">\n%s</div><!-- end of org-html-section -->"
+                class-num
+                (or (org-element-property :CUSTOM_ID parent)
+                    section-number
+                    (org-export-get-reference parent info))
+                (or contents ""))))))
+
+;; Override org-html-format-list-item to not add extra line breaks.
+(defun org-html-format-list-item (contents type checkbox info
+                                           &optional term-counter-id
+                                           headline)
+  "Format a list item into HTML.
+CONTENTS is the item contents.  TYPE is one of symbols `ordered',
+`unordered', or `descriptive'.  CHECKBOX checkbox type is nil or one of
+symbols `on', `off', or `trans'.   INFO is the info plist."
+  (let ((class (if checkbox
+                   (format " class=\"%s\""
+                           (symbol-name checkbox)) ""))
+        (checkbox (concat (org-html-checkbox checkbox info)
+                          (and checkbox " "))))
+    (concat
+     (pcase type
+       (`ordered
+        (let* ((counter term-counter-id)
+               (extra (if counter (format " value=\"%s\"" counter) "")))
+          (concat
+           (format "<li%s%s>" class extra)
+           (when headline headline))))
+       (`unordered
+        (let* ((id term-counter-id)
+               (extra (if id (format " id=\"%s\"" id) "")))
+          (concat
+           (format "<li%s%s>" class extra)
+           (when headline headline))))
+       (`descriptive
+        (let* ((term term-counter-id))
+          (setq term (or term "(no term)"))
+          ;; Check-boxes in descriptive lists are associated to tag.
+          (concat (format "<dt%s>%s</dt>"
+                          class (concat checkbox term))
+                  "<dd>"))))
+     (unless (eq type 'descriptive) checkbox)
+     (and (org-string-nw-p contents) (org-trim contents))
+     (pcase type
+       (`ordered "</li>")
+       (`unordered "</li>")
+       (`descriptive "</dd>")))))
+
+;; Override org-html-headline to not add extra line breaks.
+(defun org-html-headline (headline contents info)
+  "Transcode a HEADLINE element from Org to HTML.
+CONTENTS holds the contents of the headline.  INFO is a plist
+holding contextual information."
+  (unless (org-element-property :footnote-section-p headline)
+    (let* ((numberedp (org-export-numbered-headline-p headline info))
+           (numbers (org-export-get-headline-number headline info))
+           (level (+ (org-export-get-relative-level headline info)
+                     (1- (plist-get info :html-toplevel-hlevel))))
+           (todo (and (plist-get info :with-todo-keywords)
+                      (let ((todo (org-element-property :todo-keyword headline)))
+                        (and todo (org-export-data todo info)))))
+           (todo-type (and todo (org-element-property :todo-type headline)))
+           (priority (and (plist-get info :with-priority)
+                          (org-element-property :priority headline)))
+           (text (org-export-data (org-element-property :title headline) info))
+           (tags (and (plist-get info :with-tags)
+                      (org-export-get-tags headline info)))
+           (full-text (funcall (plist-get info :html-format-headline-function)
+                               todo todo-type priority text tags info))
+           (contents (or contents ""))
+           (id (org-html--reference headline info))
+           (formatted-text
+            (if (plist-get info :html-self-link-headlines)
+                (format "<a href=\"#%s\">%s</a>" id full-text)
+              full-text)))
+      (if (org-export-low-level-p headline info)
+          ;; This is a deep sub-tree: export it as a list item.
+          (let* ((html-type (if numberedp "ol" "ul")))
+            (concat
+             (and (org-export-first-sibling-p headline info)
+                  (apply #'format "<%s class=\"org-%s\">"
+                         (make-list 2 html-type)))
+             (org-html-format-list-item
+              contents (if numberedp 'ordered 'unordered)
+              nil info nil
+              (concat (org-html--anchor id nil nil info) formatted-text))
+             (and (org-export-last-sibling-p headline info)
+                  (format "</%s>" html-type))))
+        ;; Standard headline.  Export it as a section.
+        (let ((extra-class
+               (org-element-property :HTML_CONTAINER_CLASS headline))
+              (headline-class
+               (org-element-property :HTML_HEADLINE_CLASS headline))
+              (first-content (car (org-element-contents headline))))
+          (format "<%s id=\"%s\" class=\"%s\">%s%s</%s>"
+                  (org-html--container headline info)
+                  (format "outline-container-%s" id)
+                  (concat (format "outline-%d" level)
+                          (and extra-class " ")
+                          extra-class)
+                  (format "\n<h%d id=\"%s\"%s>%s</h%d>\n"
+                          level
+                          id
+                          (if (not headline-class) ""
+                            (format " class=\"%s\"" headline-class))
+                          (concat
+                           (and numberedp
+                                (format
+                                 "<span class=\"section-number-%d\">%s</span> "
+                                 level
+                                 (concat (mapconcat #'number-to-string numbers ".") ".")))
+                           formatted-text)
+                          level)
+                  ;; When there is no section, pretend there is an
+                  ;; empty one to get the correct <div
+                  ;; class="outline-...> which is needed by
+                  ;; `org-info.js'.
+                  (if (org-element-type-p first-content 'section) contents
+                    (concat (org-html-section first-content "" info) contents))
+                  (org-html--container headline info)))))))
+
 (defun custom-publish-sass-scss-to-css (_plist filename pub-dir)
   "Publish scss/sass as css."
   (unless (file-directory-p pub-dir)
