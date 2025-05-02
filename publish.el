@@ -231,13 +231,13 @@
                                    (code . "<code>%s</code>")
                                    (italic . "<i>%s</i>")
                                    (strike-through . "<del>%s</del>")
-                                   (underline . "<span class=\"underline\">%s</span>")
+                                   (underline . "<u class=\"underline\">%s</u>")
                                    (verbatim . "<pre class=\"verbatim\">%s</pre>"))
       org-html-wrap-src-lines t
       ;org-org-htmlized-css-url "org-htmlize.css"
       org-html-htmlize-output-type 'css
-      ;org-html-preamble "<header>\n<hgroup role=\"group\" aria-roledescription=\"Heading group\">\n<h1 class=\"title\">%t</h1>\n<p class=\"subtitle\" aria-roledescription=\"subtitle\">%s</p>\n</hgroup>\n</header>"
-      org-html-preamble "<nav aria-labelledby=\"nav-head-main\">\n<h1 id=\"nav-head-main\">Navigation</h1>\n<ul>\n<li><a href=\"/personal-notes-public/\" title=\"Home\">Home</a></li>\n<li><a href=\"/personal-notes-public/directory.html\" title=\"Directory\">Directory</a></li>\n</ul>\n</nav>"
+      ;org-html-preamble "<header>\n<hgroup role=\"group\" aria-roledescription=\"Heading group\">\n<h1 class=\"title\">%t</h1>\n<p class=\"subtitle\" aria-roledescription=\"subtitle\">%s</p>\n</hgroup>\n</header>\n"
+      org-html-preamble "<nav aria-labelledby=\"nav-head-main\">\n<h1 id=\"nav-head-main\">Navigation</h1>\n<menu>\n<li><a href=\"/personal-notes-public/\" title=\"Home\">Home</a></li>\n<li><a href=\"/personal-notes-public/directory.html\" title=\"Directory\">Directory</a></li>\n</menu>\n</nav>"
       org-html-footnotes-section "<section id=\"footnotes\">\n<h2 class=\"footnotes\">%s: </h2>\n<div id=\"text-footnotes\">\n%s\n</div>\n</section>"
       org-html-postamble "<footer>\n<p class=\"date\">Last Modified: %C</p>\n<p class=\"author\">Author: %a</p>\n</footer>"
       org-export-with-broken-links :mark
