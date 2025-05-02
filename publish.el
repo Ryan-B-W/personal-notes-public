@@ -210,7 +210,7 @@ holding contextual information."
                     #'number-to-string
                     (org-export-get-headline-number parent info) "-"))))
         ;; Build return value.
-        (format "<div class=\"outline-text-%d\" id=\"text-%s\">\n%s</div><!-- end of org-html-section -->"
+        (format "<div class=\"outline-text-%d\" id=\"text-%s\">\n%s</div>"
                 class-num
                 (or (org-element-property :CUSTOM_ID parent)
                     section-number
