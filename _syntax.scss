@@ -1,0 +1,82 @@
+.org-bracket {
+    color: var(--bracket);
+}
+.org-builtin {
+    color: var(--builtin);
+    font-weight: bold;
+}
+.org-comment {
+    color: var(--comment);
+    font-style: italic;
+}
+.org-comment-delimiter {
+    color: var(--comment);
+}
+.org-constant {
+    color: var(--constant);
+}
+.org-delimiter {
+    color: var(--delimiter);
+}
+.org-doc {
+    color: var(--doc-string);
+    font-style: italic;
+}
+.org-doc-markup {
+    color: var(--doc-markup);
+    font-style: italic;
+}
+.org-function-name {
+    color: var(--function-name);
+}
+.org-keyword {
+    color: var(--keyword);
+    font-weight: bold;
+}
+.org-negation-char {
+    color: var(--error);
+    font-weight: bold;
+}
+.org-number {
+    color: var(--number);
+}
+.org-operator {
+    color: var(--operator);
+}
+.org-preprocessor {
+    color: var(--preprocessor);
+}
+.org-punctuation {
+    color: var(--punctuation);
+}
+.org-regex-grouping-backslash {
+    color: var(--regex-grouping-backslash);
+    font-weight: bold;
+}
+.org-regex-grouping-construct {
+    color: var(--regex-grouping-construct);
+    font-weight: bold;
+}
+.org-string {
+    color: var(--string);
+}
+.org-type {
+    color: var(--type);
+    font-weight: bold;
+}
+.org-variable-name {
+    color: var(--variable-name);
+}
+.org-warning {
+    color: var(--warning);
+    font-weight: bold;
+}
+.org-error {
+    color: var(--error);
+    font-weight: bold;
+}
+.org-identifier {
+    color: var(--identifier);
+}
+pre.src {
+}
