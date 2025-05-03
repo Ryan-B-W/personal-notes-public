@@ -136,6 +136,12 @@ main, #content {
         text-wrap-mode: wrap;
         word-break: normal;
     }
+    pre {
+        a, b, blockquote, caption, dd, details, dfn, dt, em, figcaption, i, label, legend, li, mark, option, p, q, ruby, s, samp, small, span, strong, summary, td, textarea, th, time, u, br, div, ol, ul, section, dl {
+            white-space-collapse: preserve;
+            text-wrap-mode: nowrap;
+        }
+    }
 }
 footer {
     border: 1px solid var(--border);
