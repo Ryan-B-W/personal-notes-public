@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-02 Fri 16:51 -->
+<!-- 2025-05-02 Fri 23:45 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(huggingface.co) Qwen/Qwen2.5-Coder-32B-Instruct · Hugging Face</title>
@@ -49,7 +49,7 @@ ROAM_REFS: https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct
 </ul></li>
 </ul>
 
-<p>For more details, please refer to our <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">blog</a>, <a href="https://github.com/QwenLM/Qwen2.5-Coder">GitHub</a>, <a href="https://qwen.readthedocs.io/en/latest/">Documentation</a>, <a href="https://arxiv.org/abs/2409.12186">Arxiv</a>.</p><p>**  Requirements</p><p>The code of Qwen2.5-Coder has been in the latest Hugging face <pre class="verbatim">transformers</pre> and we advise you to use the latest version of <pre class="verbatim">transformers</pre>.</p><p>With <pre class="verbatim">transformers&lt;4.37.0</pre>, you will encounter the following error:</p><pre class="example" id="orgf80df3b">
+<p>For more details, please refer to our <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">blog</a>, <a href="https://github.com/QwenLM/Qwen2.5-Coder">GitHub</a>, <a href="https://qwen.readthedocs.io/en/latest/">Documentation</a>, <a href="https://arxiv.org/abs/2409.12186">Arxiv</a>.</p><p>**  Requirements</p><p>The code of Qwen2.5-Coder has been in the latest Hugging face <pre class="verbatim">transformers</pre> and we advise you to use the latest version of <pre class="verbatim">transformers</pre>.</p><p>With <pre class="verbatim">transformers&lt;4.37.0</pre>, you will encounter the following error:</p><pre class="example" id="org8431c1a">
 <code>KeyError: 'qwen2'</code>
 </pre>
 
@@ -101,7 +101,7 @@ ROAM_REFS: https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct
 </pre>
 </div>
 
-<p>For deployment, we recommend using vLLM.  Please refer to our <a href="https://qwen.readthedocs.io/en/latest/deployment/vllm.html">Documentation</a> for usage if you are not familar with vLLM.  Presently, vLLM only supports static YARN, which means the scaling factor remains constant regardless of input length, <b>potentially impacting performance on shorter texts</b>.  We advise adding the <pre class="verbatim">rope_scaling</pre> configuration only when processing long contexts is required.</p><p>**  Evaluation &amp; Performance</p><p>Detailed evaluation results are reported in this <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">📑 blog</a>.</p><p>For requirements on GPU memory and the respective throughput, see results <a href="https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html">here</a>.</p><p>**  Citation</p><p>If you find our work helpful, feel free to give us a cite.</p><pre class="example" id="orgc918820">
+<p>For deployment, we recommend using vLLM.  Please refer to our <a href="https://qwen.readthedocs.io/en/latest/deployment/vllm.html">Documentation</a> for usage if you are not familar with vLLM.  Presently, vLLM only supports static YARN, which means the scaling factor remains constant regardless of input length, <b>potentially impacting performance on shorter texts</b>.  We advise adding the <pre class="verbatim">rope_scaling</pre> configuration only when processing long contexts is required.</p><p>**  Evaluation &amp; Performance</p><p>Detailed evaluation results are reported in this <a href="https://qwenlm.github.io/blog/qwen2.5-coder-family/">📑 blog</a>.</p><p>For requirements on GPU memory and the respective throughput, see results <a href="https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html">here</a>.</p><p>**  Citation</p><p>If you find our work helpful, feel free to give us a cite.</p><pre class="example" id="orgbbc59c1">
 <code>@article{hui2024qwen2,</code>
 <code>      title={Qwen2. 5-Coder Technical Report},</code>
 <code>      author={Hui, Binyuan and Yang, Jian and Cui, Zeyu and Yang, Jiaxi and Liu, Dayiheng and Zhang, Lei and Liu, Tianyu and Zhang, Jiajun and Yu, Bowen and Dang, Kai and others},</code>

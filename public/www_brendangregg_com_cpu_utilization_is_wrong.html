@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-02 Fri 16:48 -->
+<!-- 2025-05-02 Fri 23:41 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(www.brendangregg.com) CPU Utilization is Wrong</title>
@@ -26,10 +26,10 @@
 ROAM_REFS: https://www.brendangregg.com/blog/2017-05-09/cpu-utilization-is-wrong.html
 </pre>
 <blockquote>
-<p>** CPU Utilization is Wrong</p><p>09 May 2017</p><p>The metric we all use for CPU utilization is deeply misleading, and getting worse every year.  What is CPU utilization?  How busy your processors are?  No, that's not what it measures.  Yes, I'm talking about the "%CPU" metric used <i>everywhere</i>, by <i>everyone</i>.  In every performance monitoring product.  In top(1).</p><p>What you may think 90% CPU utilization means:</p><figure id="org3f27a1b">
+<p>** CPU Utilization is Wrong</p><p>09 May 2017</p><p>The metric we all use for CPU utilization is deeply misleading, and getting worse every year.  What is CPU utilization?  How busy your processors are?  No, that's not what it measures.  Yes, I'm talking about the "%CPU" metric used <i>everywhere</i>, by <i>everyone</i>.  In every performance monitoring product.  In top(1).</p><p>What you may think 90% CPU utilization means:</p><figure id="org0f34bdf">
 <img src="https://www.brendangregg.com/blog/images/2017/cpubusyidle.png" alt="cpubusyidle.png" />
 
-</figure><p>What it might really mean:</p><figure id="org37586be">
+</figure><p>What it might really mean:</p><figure id="org33ed603">
 <img src="https://www.brendangregg.com/blog/images/2017/cpubusystalledidle.png" alt="cpubusystalledidle.png" />
 
 </figure><p>Stalled means the processor was not making forward progress with instructions, and usually happens because it is waiting on memory I/O. The ratio I drew above (between busy and stalled) is what I typically see in production.  Chances are, you're mostly stalled, but don't know it.</p><p>What does this mean for you?  Understanding how much your CPUs are stalled can direct performance tuning efforts between reducing code or reducing memory I/O. Anyone looking at CPU performance, especially on clouds that auto scale based on CPU, would benefit from knowing the stalled component of their %CPU.</p>
