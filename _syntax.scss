@@ -79,4 +79,241 @@
     color: var(--identifier);
 }
 pre.src {
+    &::before {
+        max-width: fit-content;
+        display: block;
+        text-align: right;
+        border: 1px solid var(--border);
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        margin-left: auto;
+        margin-bottom: 0.5rem;
+    }
+}
+
+// Specific language code block styles.
+.src-elisp, .src-emacs-lisp {
+    &::before {
+        content: "Emacs Lisp";
+    }
+}
+.src-asymptote {
+    &::before {
+        content: "Asymptote";
+    }
+}
+.src-awk {
+    &::before {
+        content: "AWK";
+    }
+}
+[class~=src-c i] {
+    &::before {
+        content: "C";
+    }
+}
+[class~=src-cpp i], [class~=src-c\+\+ i] {
+    &::before {
+        content: "C++";
+    }
+}
+.src-calc {
+    &::before {
+        content: "Emacs Calc";
+    }
+}
+.src-clojure {
+    &::before {
+        content: "Clojure";
+    }
+}
+.src-comint {
+    &::before {
+        content: "Emacs comint (COMmand INTeraction)";
+    }
+}
+.src-css {
+    &::before {
+        content: "CSS";
+    }
+}
+.src-ditaa {
+    &::before {
+        content: "Ditaa (DIagrams Through Ascii Art)";
+    }
+}
+.src-dot {
+    &::before {
+        content: "Graphviz DOT";
+    }
+}
+.src-eshell {
+    &::before {
+        content: "Eshell";
+    }
+}
+.src-gnuplot {
+    &::before {
+        content: "Gnuplot";
+    }
+}
+.src-groovy {
+    &::before {
+        content: "Groovy";
+    }
+}
+.src-haskell {
+    &::before {
+        content: "Haskell";
+    }
+}
+.src-latex {
+    &::before {
+        content: "LaTeX";
+    }
+}
+.src-java {
+    &::before {
+        content: "Java";
+    }
+}
+.src-js, .src-javascript {
+    &::before {
+        content: "JavaScript";
+    }
+}
+.src-lisp {
+    &::before {
+        content: "Lisp";
+    }
+}
+.src-common-lisp {
+    &::before {
+        content: "Common Lisp";
+    }
+}
+.src-makefile {
+    &::before {
+        content: "Makefile";
+    }
+}
+.src-mermaid {
+    &::before {
+        content: "Mermaid";
+    }
+}
+.src-org {
+    &::before {
+        content: "Org Mode";
+    }
+}
+.src-perl {
+    &::before {
+        content: "Perl";
+    }
+}
+.src-php {
+    &::before {
+        content: "PHP";
+    }
+}
+.src-plantuml {
+    &::before {
+        content: "PlantUML";
+    }
+}
+.src-python {
+    &::before {
+        content: "Python";
+    }
+}
+[class~=src-r i] {
+    &::before {
+        content: "R";
+    }
+}
+.src-ruby {
+    &::before {
+        content: "Ruby";
+    }
+}
+.src-sass {
+    &::before {
+        content: "SASS";
+    }
+}
+.src-scss {
+    &::before {
+        content: "SCSS";
+    }
+}
+.src-scheme {
+    &::before {
+        content: "Scheme";
+    }
+}
+.src-screen {
+    &::before {
+        content: "GNU Screen";
+    }
+}
+.src-tmux {
+    &::before {
+        content: "tmux";
+    }
+}
+.src-bash {
+    &::before {
+        content: "Bash";
+    }
+}
+.src-shell {
+    &::before {
+        content: "Shell";
+    }
+}
+.src-sh {
+    &::before {
+        content: "SH";
+    }
+}
+.src-ash {
+    &::before {
+        content: "ASH";
+    }
+}
+.src-dash {
+    &::before {
+        content: "DASH";
+    }
+}
+.src-ksh {
+    &::before {
+        content: "KSH";
+    }
+}
+.src-csh {
+    &::before {
+        content: "CSH";
+    }
+}
+.src-zsh {
+    &::before {
+        content: "ZSH";
+    }
+}
+.src-sql {
+    &::before {
+        content: "SQL";
+    }
+}
+.src-sqlite {
+    &::before {
+        content: "SQLite";
+    }
+}
+.src-typescript {
+    &::before {
+        content: "TypeScript";
+    }
 }
