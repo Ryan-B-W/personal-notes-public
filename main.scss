@@ -124,13 +124,13 @@ main, #content {
     max-width: 42em;
     float: left;
     clear: right;
-    a, b, blockquote, caption, dd, details, dfn, dt, em, figcaption, i, label, legend, li, mark, option, p, q, ruby, s, samp, small, span, strong, summary, td, textarea, th, time, u {
+    a, b, caption, dd, details, dfn, dt, em, figcaption, i, label, legend, li, mark, option, p, q, ruby, s, samp, small, span, strong, summary, td, textarea, th, time, u {
         white-space-collapse: preserve;
         overflow-wrap: normal;
         text-wrap-mode: wrap;
         word-break: normal;
     }
-    br, div, ol, ul, section, dl {
+    blockquote, br, div, ol, ul, section, dl {
         white-space-collapse: collapse;
         overflow-wrap: normal;
         text-wrap-mode: wrap;
