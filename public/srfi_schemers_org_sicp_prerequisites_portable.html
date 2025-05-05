@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-05 Mon 04:33 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(srfi.schemers.org) SICP Prerequisites (Portable)</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(srfi.schemers.org) SICP Prerequisites (Portable)</h1>
+</header><pre class="example">
+ROAM_REFS: https://srfi.schemers.org/srfi-216/
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>SRFI 216: SICP Prerequisites (Portable)</li>
+</ul>
+
+<p>by Vladimir Nikishkin</p><p>status: <i>final</i> (2021-01-21)</p><p>keywords: <a href="https://srfi.schemers.org/?keywords=sicp">SICP</a></p><p>See also <a href="https://srfi.schemers.org/srfi-203/">SRFI 203: A Simple Picture Language in the Style of SICP</a>.</p><ul class="org-ul">
+<li><a href="https://srfi.schemers.org/srfi-216/srfi-216.html">The SRFI Document</a></li>
+
+<li><a href="https://srfi-email.schemers.org/srfi-216/">Discussion Archive</a></li>
+
+<li><a href="https://github.com/scheme-requests-for-implementation/srfi-216">Git repo (on GitHub)</a></li>
+
+<li><a href="mailto://srfi-216@srfi.schemers.org">srfi-216@nospamsrfi.schemers.org (subscribers only)</a></li>
+</ul>
+
+<p>** Abstract</p><p>This SRFI follows <a href="https://srfi.schemers.org/srfi-203/">SRFI 203</a> in providing "out-of-the-box" support for hosting the exercises suggested by <a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Structure and Interpretation of Computer Programs</a> in portable Scheme.</p><p>Whereas SRFI 203 focused on the necessarily non-portable aspects of the problem set (the graphics), this SRFI aims to provide support for the rest of the features, which are far more widespread, often already provided, and in reality mostly need just a common vocabulary.</p><p>This SRFI provides procedures for working with time data, multi-threading, and streams, as well as SICP names for <pre class="verbatim">true</pre> and <pre class="verbatim">false</pre>.</p><p>None of these procedures is fit for production use.  They are only designed for pedagogical purposes.</p><p>Students, however, are expected to be able to just write</p><div class="org-src-container">
+<pre class="src src-scheme"><code>(<span class="org-keyword">include</span> (srfi sicp))</code>
+</pre>
+</div>
+
+<p>and have the code from the book run without problems (apart from those intended by the book authors).</p>
+</blockquote>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-05-05 Mon 03:15</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

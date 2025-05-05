@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-05 Mon 04:35 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(romanbird.github.io) Structure and Interpretation of Computer Programs</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(romanbird.github.io) Structure and Interpretation of Computer Programs</h1>
+</header><pre class="example">
+ROAM_REFS: https://romanbird.github.io/sicp/
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>Structure and Interpretation of Computer Programs</li>
+</ul>
+
+<hr />
+
+<p>
+📖
+This is intended to be a definitive resource on self-teaching the classic Computer Science book, <b>Structure and Interpretation of Computer Programs</b>, commonly SICP. This page compiles lectures and readings from Berkeley's series from 2011 (originally scattered throughout old course pages and dead links) to produce a clean path through the textbook that focuses on the content.
+</p><hr />
+
+<p><b>*</b> Prerequisites</p><p><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>THIS IS A HARD BOOK.</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b> Although the course allows for no former programming experience, approaching the course this way will make it needlessly difficult. Berkeley, in their version of the course recommends:</p><ul class="org-ul">
+<li><b>Maths up to Single Variable Calculus</b>: limits, functions, integration, differentiation.<ul class="org-ul">
+<li>Optionally, <b>Discrete Maths and proofs</b> will be extremely helpful for the course's harder exercises.</li>
+</ul></li>
+
+<li><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>Some programming experience:</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b> some confidence in using recursion is cited as a benchmark. If you're in between comfort levels, we strongly recommend <b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>**</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b> the twin courses How to Code: Simple Data and Complex Data as a precursor.</li>
+</ul>
+
+<p><a href="https://www.edx.org/course/how-to-code-simple-data">How to Code: Simple Data</a></p><pre class="example">
+There is one session available: This programming course takes a unique approach, as it focuses on learning a systematic programming method rather than a programming language. This practical approach will help you channel your creativity so that you can program well in any language.
+</pre>
+<p><a href="https://www.edx.org/course/how-to-code-simple-data">https://www.edx.org/course/how-to-code-simple-data</a></p><ul class="org-ul">
+<li>Course Introduction</li>
+</ul>
+
+<p>
+⚠️
+This page relates to the <b><b><b><b><b><b><b>Scheme</b></b></b></b></b></b></b> version of SICP, as opposed to newer versions that teach with JavaScript or Python.
+</p><p>** What to expect (read before starting)</p><p>The course is split into 16 weeks. Materials given are in order (ie reading should precede homework should precede &#x2026; etc.) Each week will have readings, homework, a lab section, and 2-3 lectures. Some intervals will have projects and midterm exams associated with them.</p><p><b>*</b> Readings</p><p>These are usually taken from the SICP textbook. This resource will link to the corrected 2nd edition, available free online. The textbook contains exercises, see Homework below for details. Occasionally a non-SICP handout is given - these will be linked.</p><p><b>*</b> Homework</p><p>From the lecturers:</p><pre class="example">
+Homework assignments consist mostly of exercises from the textbook; you'll do these whenever you can schedule time, either in the lab or at home. You may be accustomed to textbooks with huge numbers of boring, repetitive exercises. You won't find that in our text! Each assigned exercise teaches an important point.
+</pre>
+
+<p>Because of the textbook's popularity, answers for every SICP exercise can be easily found online through Google.</p><p><b>*</b> Lab sections</p><p>These are quick projects, usually intended to be completed in groups. A good opportunity for collaboration if you are going through these texts alongside somebody else!</p><p><b>*</b> Lectures</p><p>Each week has 2 or 3 lectures associated with it. Given are lecture notes, the appropriate ones will be linked on the week's page. Keep in mind this quote from the course creators:</p><pre class="example">
+The course reader includes my lecture notes. What this means is that you should be able to devote your effort during lecture to thinking, rather than to frantic scribbling.
+</pre>
+
+<p>Programs from the lectures can be accessed in the cs61a/lib folder of the course materials (see below)</p><p>
+💡
+Don't worry about the missing numbers in the lectures (there's no lecture 15, or 27-29) - the lectures are not lost, but rather they correspond to half-terms and spring breaks.
+</p><p><b>*</b> Projects</p><p>These are larger projects for you to apply more of your skills, given every few weeks or so. Often these projects are intended for pairs.</p><p><b>*</b> Exams</p><p>There are three midterm exams and a final. For each, three sample papers (with answers) are given for each.</p><p>** For completionists&#x2026;</p><p>Not every chapter in SICP is covered in these lecture series (the last of the 5 segments is entirely dropped, for one). A full list of chapters skipped is given here:</p><p><a href="https://romanbird.github.io/sicp/missingchapters.html">List of chapters not covered</a></p><p>Every exercise is also, not necessarily assigned. But solutions for every one can be easily found online if you want to go ahead with them.</p><ul class="org-ul">
+<li>Get started</li>
+</ul>
+
+<p>** Download the materials</p><ul class="org-ul">
+<li>To get started, clone the course materials from the github repository <a href="https://github.com/romanbird/sicp">linked here</a>.</li>
+
+<li>We use the online SICP given here, as created by sarabander</li>
+</ul>
+
+<p><a href="https://sarabander.github.io/sicp/html/index.xhtml">Structure and Interpretation of Computer Programs</a></p><pre class="example">
+Second Edition Unofficial Texinfo Format 2.andresraba6.6 Harold Abelson and Gerald Jay Sussman with Julie Sussman, foreword by Alan J. Perlis ©1996 by The Massachusetts Institute of Technology This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (). Based on a work at mitpress.mit.edu.
+</pre>
+<p><a href="https://sarabander.github.io/sicp/html/index.xhtml">https://sarabander.github.io/sicp/html/index.xhtml</a></p>
+</blockquote>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-05-05 Mon 03:15</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

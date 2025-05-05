@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-05 Mon 04:32 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(en.wikipedia.org) Multiple dispatch - Wikipedia</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(en.wikipedia.org) Multiple dispatch - Wikipedia</h1>
+</header><pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Multiple_dispatch
+</pre>
+<blockquote>
+<p><b>Multiple dispatch</b> or <b>multimethods</b> is a feature of some <a href="https://en.wikipedia.org/wiki/Programming_language">programming languages</a> in which a <a href="https://en.wikipedia.org/wiki/Subroutine">function</a> or <a href="https://en.wikipedia.org/wiki/Method_(computer_programming)">method</a> can be <a href="https://en.wikipedia.org/wiki/Dynamic_dispatch">dynamically dispatched</a> based on the <a href="https://en.wikipedia.org/wiki/Run_time_(program_lifecycle_phase)">run-time</a> (dynamic) type or, in the more general case, some other attribute of more than one of its <a href="https://en.wikipedia.org/wiki/Parameter_(computer_programming)">arguments</a>.  This is a generalization of <a href="https://en.wikipedia.org/wiki/Single-dispatch">single-dispatch</a> <a href="https://en.wikipedia.org/wiki/Polymorphism_in_object-oriented_programming">polymorphism</a> where a function or method call is dynamically dispatched based on the derived type of the object on which the method has been called.  Multiple dispatch routes the dynamic dispatch to the implementing function or method using the combined characteristics of one or more arguments.</p>
+</blockquote>
+<div id="outline-container-ID-a2904658-1ceb-494b-b3b9-fc0889140872" class="outline-2">
+<h2 id="ID-a2904658-1ceb-494b-b3b9-fc0889140872">(en.wikipedia.org) Python - Extending Languages with Multiple-dispatch Libraries - Examples - Multiple dispatch - Wikipedia</h2>
+<div class="outline-text-2" id="text-orgb162405">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Multiple_dispatch#Python
+</pre>
+<blockquote>
+<p><b>**</b> Python</p><p>Multiple dispatch can be added to <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> using a <a href="https://en.wikipedia.org/wiki/Library_(computing)">library</a> extension.  For example, using the module <i>multimethod.py</i> and also with the module <i>multimethods.py</i> which provides CLOS-style multimethods for <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> without changing the underlying syntax or keywords of the language.</p><div class="org-src-container">
+<pre class="src src-python"><code><span class="org-keyword">from</span> multimethods <span class="org-keyword">import</span> Dispatch</code>
+<code><span class="org-keyword">from</span> game_objects <span class="org-keyword">import</span> Asteroid, Spaceship</code>
+<code><span class="org-keyword">from</span> game_behaviors <span class="org-keyword">import</span> as_func, ss_func, sa_func</code>
+<code></code>
+<code><span class="org-variable-name">collide</span> <span class="org-operator">=</span> Dispatch()</code>
+<code>collide.add_rule((Asteroid, Spaceship), as_func)</code>
+<code>collide.add_rule((Spaceship, Spaceship), ss_func)</code>
+<code>collide.add_rule((Spaceship, Asteroid), sa_func)</code>
+<code></code>
+<code><span class="org-keyword">def</span> <span class="org-function-name">aa_func</span>(a, b):</code>
+<code>    <span class="org-doc">"""Behavior when asteroid hits asteroid."""</span></code>
+<code>    <span class="org-comment-delimiter"># </span><span class="org-comment">...define new behavior...</span></code>
+<code></code>
+<code>collide.add_rule((Asteroid, Asteroid), aa_func)</code>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><code><span class="org-comment-delimiter"># </span><span class="org-comment">...later...</span></code>
+<code>collide(thing1, thing2)</code>
+</pre>
+</div>
+
+<p>Functionally, this is very similar to the CLOS example, but the syntax is conventional Python.</p><p>Using Python 2.4 <a href="https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators">decorators</a>, <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido van Rossum</a> produced a sample implementation of multimethods with a simplified syntax:</p><div class="org-src-container">
+<pre class="src src-python"><code><span class="org-type">@multimethod</span>(Asteroid, Asteroid)</code>
+<code><span class="org-keyword">def</span> <span class="org-function-name">collide</span>(a, b):</code>
+<code>    <span class="org-doc">"""Behavior when asteroid hits a asteroid."""</span></code>
+<code>    <span class="org-comment-delimiter"># </span><span class="org-comment">...define new behavior...</span></code>
+<code><span class="org-type">@multimethod</span>(Asteroid, Spaceship)</code>
+<code><span class="org-keyword">def</span> <span class="org-function-name">collide</span>(a, b):</code>
+<code>    <span class="org-doc">"""Behavior when asteroid hits a spaceship."""</span></code>
+<code>    <span class="org-comment-delimiter"># </span><span class="org-comment">...define new behavior...</span></code>
+<code><span class="org-comment-delimiter"># </span><span class="org-comment">... define other multimethod rules ...</span></code>
+</pre>
+</div>
+
+<p>and then it goes on to define the multimethod decorator.</p><p>The PEAK-Rules package provides multiple dispatch with a syntax similar to the above example.  It was later replaced by PyProtocols.</p><p>The Reg library also supports multiple and predicate dispatch.</p><p>With the introduction of <a href="https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Function_annotations">type hints</a>, multiple dispatch is possible with even simpler syntax.  For example, using <a href="https://github.com/beartype/plum">plum-dispatch</a>,</p><div class="org-src-container">
+<pre class="src src-python"><code><span class="org-keyword">from</span> plum <span class="org-keyword">import</span> dispatch</code>
+<code></code>
+<code><span class="org-type">@dispatch</span></code>
+<code><span class="org-keyword">def</span> <span class="org-function-name">collide</span>(a: Asteroid, b: Asteroid):</code>
+<code>    <span class="org-doc">"""Behavior when asteroid hits a asteroid."""</span></code>
+<code>    <span class="org-comment-delimiter"># </span><span class="org-comment">...define new behavior...</span></code>
+<code></code>
+<code><span class="org-type">@dispatch</span></code>
+<code><span class="org-keyword">def</span> <span class="org-function-name">collide</span>(a: Asteroid, b: Spaceship):</code>
+<code>    <span class="org-doc">"""Behavior when asteroid hits a spaceship."""</span></code>
+<code>    <span class="org-comment-delimiter"># </span><span class="org-comment">...define new behavior...</span></code>
+<code></code>
+<code><span class="org-comment-delimiter"># </span><span class="org-comment">...define further rules...</span></code>
+</pre>
+</div>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-5d0865bd-877f-4ca9-aaf4-691aaec4a3c1" class="outline-2">
+<h2 id="ID-5d0865bd-877f-4ca9-aaf4-691aaec4a3c1">(en.wikipedia.org) C++ - Emulating Multiple Dispatch - Examples - Multiple dispatch - Wikipedia</h2>
+<div class="outline-text-2" id="text-orgfa8e5c5">
+<pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Multiple_dispatch#C++
+</pre>
+<blockquote>
+<p><b>**</b> C++</p><p>As of 2021, <a href="https://en.wikipedia.org/wiki/C++">C++</a> natively supports only single dispatch, though adding multi-methods (multiple dispatch) was proposed by <a href="https://en.wikipedia.org/wiki/Bjarne_Stroustrup">Bjarne Stroustrup</a> (and collaborators) in 2007.  The methods of working around this limit are analogous: use either the <a href="https://en.wikipedia.org/wiki/Visitor_pattern">visitor pattern</a>, dynamic cast or a library:</p><div class="org-src-container">
+<pre class="src src-cpp"><code><span class="org-comment-delimiter">// </span><span class="org-comment">Example using run time type comparison via dynamic_cast</span></code>
+<code></code>
+<code><span class="org-keyword">struct</span> <span class="org-type">Thing</span> {</code>
+<code>    <span class="org-keyword">virtual</span> <span class="org-type">void</span> <span class="org-function-name">collideWith</span>(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>) = 0;</code>
+<code>};</code>
+<code></code>
+<code><span class="org-keyword">struct</span> <span class="org-type">Asteroid</span> : <span class="org-type">Thing</span> {</code>
+<code>    <span class="org-type">void</span> <span class="org-function-name">collideWith</span>(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>) {</code>
+<code>        <span class="org-comment-delimiter">// </span><span class="org-comment">dynamic_cast to a pointer type returns NULL if the cast fails</span></code>
+<code>        <span class="org-comment-delimiter">// </span><span class="org-comment">(dynamic_cast to a reference type would throw an exception on failure)</span></code>
+<code>        <span class="org-keyword">if</span> (<span class="org-keyword">auto</span> <span class="org-variable-name">asteroid</span> = <span class="org-keyword">dynamic_cast</span>&lt;<span class="org-type">Asteroid</span>*&gt;(&amp;other)) {</code>
+<code>            <span class="org-comment-delimiter">// </span><span class="org-comment">handle Asteroid-Asteroid collision</span></code>
+<code>        } <span class="org-keyword">else</span> <span class="org-keyword">if</span> (<span class="org-keyword">auto</span> <span class="org-variable-name">spaceship</span> = <span class="org-keyword">dynamic_cast</span>&lt;<span class="org-type">Spaceship</span>*&gt;(&amp;other)) {</code>
+<code>            <span class="org-comment-delimiter">// </span><span class="org-comment">handle Asteroid-Spaceship collision</span></code>
+<code>        } <span class="org-keyword">else</span> {</code>
+<code>            <span class="org-comment-delimiter">// </span><span class="org-comment">default collision handling here</span></code>
+<code>        }</code>
+<code>    }</code>
+<code>};</code>
+<code></code>
+<code><span class="org-keyword">struct</span> <span class="org-type">Spaceship</span> : <span class="org-type">Thing</span> {</code>
+<code>    <span class="org-type">void</span> <span class="org-function-name">collideWith</span>(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>) {</code>
+<code>        <span class="org-keyword">if</span> (<span class="org-keyword">auto</span> <span class="org-variable-name">asteroid</span> = <span class="org-keyword">dynamic_cast</span>&lt;<span class="org-type">Asteroid</span>*&gt;(&amp;other)) {</code>
+<code>            <span class="org-comment-delimiter">// </span><span class="org-comment">handle Spaceship-Asteroid collision</span></code>
+<code>        } <span class="org-keyword">else</span> <span class="org-keyword">if</span> (<span class="org-keyword">auto</span> <span class="org-variable-name">spaceship</span> = <span class="org-keyword">dynamic_cast</span>&lt;<span class="org-type">Spaceship</span>*&gt;(&amp;other)) {</code>
+<code>            <span class="org-comment-delimiter">// </span><span class="org-comment">handle Spaceship-Spaceship collision</span></code>
+<code>        } <span class="org-keyword">else</span> {</code>
+<code>            <span class="org-comment-delimiter">// </span><span class="org-comment">default collision handling here</span></code>
+<code>        }</code>
+<code>    }</code>
+<code>};</code>
+</pre>
+</div>
+
+<p>or pointer-to-method lookup table:</p><div class="org-src-container">
+<pre class="src src-cpp"><code><span class="org-preprocessor">#include</span> <span class="org-string">&lt;cstdint&gt;</span></code>
+<code><span class="org-preprocessor">#include</span> <span class="org-string">&lt;typeinfo&gt;</span></code>
+<code><span class="org-preprocessor">#include</span> <span class="org-string">&lt;unordered_map&gt;</span></code>
+<code></code>
+<code><span class="org-keyword">class</span> <span class="org-type">Thing</span> {</code>
+<code>  <span class="org-keyword">protected</span>:</code>
+<code>    <span class="org-function-name">Thing</span>(<span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-variable-name">cid</span>) : tid(cid) {}</code>
+<code>    <span class="org-keyword">const</span> <span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-variable-name">tid</span>; <span class="org-comment-delimiter">// </span><span class="org-comment">type id</span></code>
+<code></code>
+<code>    <span class="org-keyword">typedef</span> <span class="org-type">void</span> (<span class="org-constant">Thing</span>::*<span class="org-type">CollisionHandler</span>)(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>);</code>
+<code>    <span class="org-keyword">typedef</span> <span class="org-constant">std</span>::<span class="org-type">unordered_map</span>&lt;<span class="org-constant">std</span>::uint64_t, CollisionHandler&gt; <span class="org-type">CollisionHandlerMap</span>;</code>
+<code></code>
+<code>    <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">addHandler</span>(<span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-variable-name">id1</span>, <span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-variable-name">id2</span>, <span class="org-type">CollisionHandler</span> <span class="org-variable-name">handler</span>) {</code>
+<code>        collisionCases.insert(<span class="org-constant">CollisionHandlerMap</span>::value_type(key(id1, id2), handler));</code>
+<code>    }</code>
+<code>    <span class="org-keyword">static</span> <span class="org-constant">std</span>::<span class="org-type">uint64_t</span> <span class="org-function-name">key</span>(<span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-variable-name">id1</span>, <span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-variable-name">id2</span>) {</code>
+<code>        <span class="org-keyword">return</span> <span class="org-constant">std</span>::uint64_t(id1) &lt;&lt; 32 | id2;</code>
+<code>    }</code>
+<code></code>
+<code>    <span class="org-keyword">static</span> <span class="org-type">CollisionHandlerMap</span> <span class="org-variable-name">collisionCases</span>;</code>
+<code></code>
+<code>  <span class="org-keyword">public</span>:</code>
+<code>    <span class="org-type">void</span> <span class="org-function-name">collideWith</span>(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>) {</code>
+<code>        <span class="org-keyword">auto</span> <span class="org-variable-name">handler</span> = collisionCases.find(key(tid, other.tid));</code>
+<code>        <span class="org-keyword">if</span> (handler != collisionCases.end()) {</code>
+<code>            (<span class="org-keyword">this</span>-&gt;*handler-&gt;second)(other); <span class="org-comment-delimiter">// </span><span class="org-comment">pointer-to-method call</span></code>
+<code>        } <span class="org-keyword">else</span> {</code>
+<code>            <span class="org-comment-delimiter">// </span><span class="org-comment">default collision handling</span></code>
+<code>        }</code>
+<code>    }</code>
+<code>};</code>
+<code></code>
+<code><span class="org-keyword">class</span> <span class="org-type">Asteroid</span>: <span class="org-keyword">public</span> <span class="org-type">Thing</span> {</code>
+<code>    <span class="org-type">void</span> <span class="org-function-name">asteroid_collision</span>(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>)   { <span class="org-comment-delimiter">/*</span><span class="org-comment">handle Asteroid-Asteroid collision</span><span class="org-comment-delimiter">*/</span> }</code>
+<code>    <span class="org-type">void</span> <span class="org-function-name">spaceship_collision</span>(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>)  { <span class="org-comment-delimiter">/*</span><span class="org-comment">handle Asteroid-Spaceship collision</span><span class="org-comment-delimiter">*/</span>}</code>
+<code></code>
+<code>  <span class="org-keyword">public</span>:</code>
+<code>    <span class="org-function-name">Asteroid</span>(): <span class="org-function-name">Thing</span>(cid) {}</code>
+<code>    <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">initCases</span>();</code>
+<code>    <span class="org-keyword">static</span> <span class="org-keyword">const</span> <span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-variable-name">cid</span>;</code>
+<code>};</code>
+<code></code>
+<code><span class="org-keyword">class</span> <span class="org-type">Spaceship</span>: <span class="org-keyword">public</span> <span class="org-type">Thing</span> {</code>
+<code>    <span class="org-type">void</span> <span class="org-function-name">asteroid_collision</span>(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>)   { <span class="org-comment-delimiter">/*</span><span class="org-comment">handle Spaceship-Asteroid collision</span><span class="org-comment-delimiter">*/</span>}</code>
+<code>    <span class="org-type">void</span> <span class="org-function-name">spaceship_collision</span>(<span class="org-type">Thing</span>&amp; <span class="org-variable-name">other</span>)  { <span class="org-comment-delimiter">/*</span><span class="org-comment">handle Spaceship-Spaceship collision</span><span class="org-comment-delimiter">*/</span>}</code>
+<code></code>
+<code>  <span class="org-keyword">public</span>:</code>
+<code>    <span class="org-function-name">Spaceship</span>(): <span class="org-function-name">Thing</span>(cid) {}</code>
+<code>    <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">initCases</span>();</code>
+<code>    <span class="org-keyword">static</span> <span class="org-keyword">const</span> <span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-variable-name">cid</span>; <span class="org-comment-delimiter">// </span><span class="org-comment">class id</span></code>
+<code>};</code>
+<code></code>
+<code><span class="org-constant">Thing</span>::<span class="org-type">CollisionHandlerMap</span> <span class="org-constant">Thing</span>::<span class="org-variable-name">collisionCases</span>;</code>
+<code><span class="org-keyword">const</span> <span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-constant">Asteroid</span>::<span class="org-variable-name">cid</span> = <span class="org-keyword">typeid</span>(Asteroid).hash_code();</code>
+<code><span class="org-keyword">const</span> <span class="org-constant">std</span>::<span class="org-type">uint32_t</span> <span class="org-constant">Spaceship</span>::<span class="org-variable-name">cid</span> = <span class="org-keyword">typeid</span>(Spaceship).hash_code();</code>
+<code></code>
+<code><span class="org-type">void</span> <span class="org-constant">Asteroid</span>::<span class="org-function-name">initCases</span>() {</code>
+<code>    addHandler(cid, cid, CollisionHandler(&amp;<span class="org-constant">Asteroid</span>::asteroid_collision));</code>
+<code>    addHandler(cid, <span class="org-constant">Spaceship</span>::cid, CollisionHandler(&amp;<span class="org-constant">Asteroid</span>::spaceship_collision));</code>
+<code>}</code>
+<code></code>
+<code><span class="org-type">void</span> <span class="org-constant">Spaceship</span>::<span class="org-function-name">initCases</span>() {</code>
+<code>    addHandler(cid, <span class="org-constant">Asteroid</span>::cid, CollisionHandler(&amp;<span class="org-constant">Spaceship</span>::asteroid_collision));</code>
+<code>    addHandler(cid, cid, CollisionHandler(&amp;<span class="org-constant">Spaceship</span>::spaceship_collision));</code>
+<code>}</code>
+<code></code>
+<code><span class="org-type">int</span> <span class="org-function-name">main</span>() {</code>
+<code>    <span class="org-constant">Asteroid</span>::initCases();</code>
+<code>    <span class="org-constant">Spaceship</span>::initCases();</code>
+<code></code>
+<code>    <span class="org-type">Asteroid</span>  <span class="org-variable-name">a1</span>, <span class="org-variable-name">a2</span>;</code>
+<code>    <span class="org-type">Spaceship</span> <span class="org-variable-name">s1</span>, <span class="org-variable-name">s2</span>;</code>
+<code></code>
+<code>    a1.collideWith(a2);</code>
+<code>    a1.collideWith(s1);</code>
+<code></code>
+<code>    s1.collideWith(s2);</code>
+<code>    s1.collideWith(a1);</code>
+<code>}</code>
+</pre>
+</div>
+
+<p>The <i>YOMM2</i> library provides a fast, orthogonal implementation of open multimethods.</p><p>The syntax for declaring open methods is inspired by a proposal for a native C++ implementation.  The library requires that the user registers all the classes used as virtual arguments (and their sub-classes), but does not require any modifications to existing code.  Methods are implemented as ordinary inline C++ functions; they can be overloaded and they can be passed by pointer.  There is no limit on the number of virtual arguments, and they can be arbitrarily mixed with non-virtual arguments.</p><p>The library uses a combination of techniques (compressed dispatch tables, collision free integer hash table) to implement method calls in constant time, while mitigating memory usage.  Dispatching a call to an open method with a single virtual argument takes only 15&#x2013;30% more time than calling an ordinary virtual member function, when a modern optimizing compiler is used.</p><p>The Asteroids example can be implemented as follows:</p><div class="org-src-container">
+<pre class="src src-cpp"><code><span class="org-preprocessor">#include</span> <span class="org-string">&lt;yorel/yomm2/keywords.hpp&gt;</span></code>
+<code><span class="org-preprocessor">#include</span> <span class="org-string">&lt;memory&gt;</span></code>
+<code></code>
+<code><span class="org-keyword">class</span> <span class="org-type">Thing</span> {</code>
+<code>  <span class="org-keyword">public</span>:</code>
+<code>    <span class="org-keyword">virtual</span> ~<span class="org-function-name">Thing</span>() {}</code>
+<code>};</code>
+<code></code>
+<code><span class="org-keyword">class</span> <span class="org-type">Asteroid</span> : <span class="org-keyword">public</span> <span class="org-type">Thing</span> {</code>
+<code>};</code>
+<code></code>
+<code><span class="org-keyword">class</span> <span class="org-type">Spaceship</span> : <span class="org-keyword">public</span> <span class="org-type">Thing</span> {</code>
+<code>};</code>
+<code></code>
+<code>register_classes(Thing, Spaceship, Asteroid);</code>
+<code></code>
+<code>declare_method(<span class="org-type">void</span>, collideWith, (<span class="org-type">virtual_</span>&lt;<span class="org-type">Thing</span>&amp;&gt;, <span class="org-type">virtual_</span>&lt;<span class="org-type">Thing</span>&amp;&gt;));</code>
+<code></code>
+<code><span class="org-function-name">define_method</span>(<span class="org-type">void</span>, collideWith, (<span class="org-type">Thing</span>&amp; <span class="org-variable-name">left</span>, <span class="org-type">Thing</span>&amp; <span class="org-variable-name">right</span>)) {</code>
+<code>    <span class="org-comment-delimiter">// </span><span class="org-comment">default collision handling</span></code>
+<code>}</code>
+<code></code>
+<code><span class="org-function-name">define_method</span>(<span class="org-type">void</span>, collideWith, (<span class="org-type">Asteroid</span>&amp; <span class="org-variable-name">left</span>, <span class="org-type">Asteroid</span>&amp; <span class="org-variable-name">right</span>)) {</code>
+<code>    <span class="org-comment-delimiter">// </span><span class="org-comment">handle Asteroid-Asteroid collision</span></code>
+<code>}</code>
+<code></code>
+<code><span class="org-function-name">define_method</span>(<span class="org-type">void</span>, collideWith, (<span class="org-type">Asteroid</span>&amp; <span class="org-variable-name">left</span>, <span class="org-type">Spaceship</span>&amp; <span class="org-variable-name">right</span>)) {</code>
+<code>    <span class="org-comment-delimiter">// </span><span class="org-comment">handle Asteroid-Spaceship collision</span></code>
+<code>}</code>
+<code></code>
+<code><span class="org-function-name">define_method</span>(<span class="org-type">void</span>, collideWith, (<span class="org-type">Spaceship</span>&amp; <span class="org-variable-name">left</span>, <span class="org-type">Asteroid</span>&amp; <span class="org-variable-name">right</span>)) {</code>
+<code>    <span class="org-comment-delimiter">// </span><span class="org-comment">handle Spaceship-Asteroid collision</span></code>
+<code>}</code>
+<code></code>
+<code><span class="org-function-name">define_method</span>(<span class="org-type">void</span>, collideWith, (<span class="org-type">Spaceship</span>&amp; <span class="org-variable-name">left</span>, <span class="org-type">Spaceship</span>&amp; <span class="org-variable-name">right</span>)) {</code>
+<code>    <span class="org-comment-delimiter">// </span><span class="org-comment">handle Spaceship-Spaceship collision</span></code>
+<code>}</code>
+<code></code>
+<code><span class="org-type">int</span> <span class="org-function-name">main</span>() {</code>
+<code>    <span class="org-constant">yorel</span>::<span class="org-constant">yomm2</span>::update_methods();</code>
+<code></code>
+<code>    <span class="org-constant">std</span>::<span class="org-type">unique_ptr</span>&lt;<span class="org-type">Thing</span>&gt; <span class="org-variable-name">a1</span>(<span class="org-constant">std</span>::make_unique&lt;<span class="org-type">Asteroid</span>&gt;()),</code>
+<code>        <span class="org-variable-name">a2</span>(<span class="org-constant">std</span>::make_unique&lt;<span class="org-type">Asteroid</span>&gt;());</code>
+<code>    <span class="org-constant">std</span>::<span class="org-type">unique_ptr</span>&lt;<span class="org-type">Thing</span>&gt; <span class="org-variable-name">s1</span>(<span class="org-constant">std</span>::make_unique&lt;<span class="org-type">Spaceship</span>&gt;()),</code>
+<code>        <span class="org-variable-name">s2</span>(<span class="org-constant">std</span>::make_unique&lt;<span class="org-type">Spaceship</span>&gt;());</code>
+<code>    <span class="org-comment-delimiter">// </span><span class="org-comment">note: types partially erased</span></code>
+<code></code>
+<code>    collideWith(*a1, *a2); <span class="org-comment-delimiter">// </span><span class="org-comment">Asteroid-Asteroid collision</span></code>
+<code>    collideWith(*a1, *s1); <span class="org-comment-delimiter">// </span><span class="org-comment">Asteroid-Spaceship collision</span></code>
+<code>    collideWith(*s1, *a1); <span class="org-comment-delimiter">// </span><span class="org-comment">Spaceship-Asteroid collision</span></code>
+<code>    collideWith(*s1, *s2); <span class="org-comment-delimiter">// </span><span class="org-comment">Spaceship-Spaceship collision</span></code>
+<code></code>
+<code>    <span class="org-keyword">return</span> 0;</code>
+<code>}</code>
+</pre>
+</div>
+
+<p>Stroustrup mentions in <i>The Design and Evolution of C++</i> that he liked the concept of multimethods and considered implementing it in C++ but claims to have been unable to find an efficient sample implementation (comparable to virtual functions) and resolve some possible type ambiguity problems.  He then states that although the feature would still be nice to have, that it can be approximately implemented using <a href="https://en.wikipedia.org/wiki/Double_dispatch">double dispatch</a> or a type based lookup table as outlined in the C/C++ example above so is a low priority feature for future language revisions.</p>
+</blockquote>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-05-05 Mon 03:08</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>
