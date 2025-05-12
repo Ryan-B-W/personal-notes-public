@@ -163,6 +163,7 @@
       org-roam-graph-extra-config '(("overlap" . "prism")
                                     ("sep" . "1"))
       org-roam-graph-node-extra-config '(("id"
+                                          ("class" . "node-id")
                                           ("style" . "bold,rounded,filled")
                                           ("shape" . "circle")
                                           ("fixedsize" . "shape")
@@ -170,6 +171,7 @@
                                           ("color" . "#C9C9C9")
                                           ("fontcolor" . "#111111"))
                                          ("http"
+                                          ("class" . "node-http")
                                           ("style" . "rounded,filled")
                                           ("shape" . "circle")
                                           ("fixedsize" . "shape")
@@ -177,6 +179,7 @@
                                           ("color" . "#C9C9C9")
                                           ("fontcolor" . "#0A97A6"))
                                          ("https"
+                                          ("class" . "node-https")
                                           ("style" . "rounded,filled")
                                           ("shape" . "circle")
                                           ("fixedsize" . "shape")
@@ -190,6 +193,11 @@
 (setf calendar-date-style "iso")
 
 
+
+;; A fix for when an image file gets "opened" during export and
+;; image-mode would throw an error because Emacs is in batch mode and
+;; can't display images.
+(add-to-list 'major-mode-remap-alist '(image-mode . fundamental-mode))
 
 (require 'ox-html)
 
@@ -331,6 +339,68 @@ holding contextual information."
                     (concat (org-html-section first-content "" info) contents))
                   (org-html--container headline info)))))))
 
+(require 'org-roam-graph)
+
+(defun custom-org-roam-link-builder (node)
+  (let ((file (org-roam-node-file node)))
+    (with-current-buffer (find-file-noselect file)
+      (file-relative-name (expand-file-name (org-export-output-file-name ".html") (file-name-directory file)) org-directory))))
+
+(setf org-roam-graph-link-builder #'custom-org-roam-link-builder)
+
+(defun custom-publish-insert-local-graph (_backend)
+  (let* ((node-id (org-id-get (point-min)))
+         (node (org-roam-node-from-id node-id))
+         (temp-assets-directory (expand-file-name "temp-assets" org-directory))
+         (graph-gv-file-name (expand-file-name (concat (file-name-base (buffer-file-name)) "-local-graph.gv") temp-assets-directory))
+         (graph-svg-file-name (expand-file-name (concat (file-name-base (buffer-file-name)) "-local-graph.svg") temp-assets-directory))
+         (sitemap-graph-page (expand-file-name "sitemap-graph.org" org-directory))
+         (sitemap-graph-gv (expand-file-name "sitemap-graph.gv" temp-assets-directory))
+         (sitemap-graph-svg (expand-file-name "sitemap-graph.svg" temp-assets-directory)))
+    (make-directory temp-assets-directory t)
+    (cond
+     ((equal (file-name-nondirectory (buffer-file-name)) "sitemap.org")
+      (goto-char (point-max))
+      (insert (concat "\n* [[id:d797d051-855a-4a45-9675-79f16dc2cbc9][Full Graph]]\n\n")))
+     ((equal (file-name-nondirectory (buffer-file-name)) "sitemap-graph.org")
+      (with-temp-file sitemap-graph-gv
+        (insert (org-roam-graph--dot nil 'all-nodes)))
+      (call-process "sfdp" nil nil nil sitemap-graph-gv "-T" "svg_inline" "-o" sitemap-graph-svg)
+      (goto-char (point-max))
+      (insert (concat "\n\n#+name: sitemap-graph-svg\n"
+                      "#+begin_figure\n"
+                      "#+include: \"" sitemap-graph-svg "\" export html\n"
+                      "#+end_figure\n\n"
+                      "#+begin_export html\n"
+                      "<script>\n"
+                      "deferredScriptSvgPanZoom.addEventListener('load', function () {\n"
+                      "    var panZoomLocalGraph = svgPanZoom('#sitemap-graph-svg > svg', {\n"
+                      "        controlIconsEnabled: true,\n"
+                      "        maxZoom: 35\n"
+                      "    })\n"
+                      "})\n"
+                      "</script>\n"
+                      "#+end_export\n")))
+     (t
+      (with-temp-file graph-gv-file-name
+        (insert (org-roam-graph--dot (org-roam-graph--connected-component node-id 1))))
+      (call-process "sfdp" nil nil nil graph-gv-file-name "-T" "svg_inline" "-o" graph-svg-file-name)
+      (goto-char (point-max))
+      (insert (concat "\n* Local Graph\n\n"
+                      "#+name: local-graph-svg\n"
+                      "#+begin_figure\n"
+                      "#+include: \"" graph-svg-file-name "\" export html\n"
+                      "#+end_figure\n"
+                      "\n#+begin_export html\n"
+                      "<script>\n"
+                      "deferredScriptSvgPanZoom.addEventListener('load', function () {\n"
+                      "    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})\n"
+                      "})\n"
+                      "</script>\n"
+                      "#+end_export\n"))))))
+
+(add-to-list 'org-export-before-processing-functions #'custom-publish-insert-local-graph)
+
 (defun custom-publish-sass-scss-to-css (_plist filename pub-dir)
   "Publish scss/sass as css."
   (unless (file-directory-p pub-dir)
@@ -354,7 +424,7 @@ holding contextual information."
       ;org-html-link-home ""
       ;org-html-link-use-abs-url t
       org-html-validation-link nil
-      org-html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"/personal-notes-public/main.css\" />"
+      org-html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"/personal-notes-public/main.css\" />\n<script id=\"deferredScriptSvgPanZoom\" src=\"/personal-notes-public/svg-pan-zoom.min.js\" defer></script>"
       org-html-head-include-default-style nil
       org-html-viewport '((width "device-width")
                           (initial-scale "")
@@ -388,7 +458,7 @@ holding contextual information."
       org-export-filter-headline-functions (list (lambda (content _backend _info) (replace-regexp-in-string "<br /></li>$" "</li>" content t nil)))
       org-publish-project-alist
       `(("meta"
-         :components ("styles" "notes" "public"))
+         :components ("styles" "assets" "notes" "public"))
         ("styles"
          :base-directory ,org-directory
          :base-extension "scss\\|sass\\|css"
@@ -396,17 +466,20 @@ holding contextual information."
          :recursive nil
          :publishing-function custom-publish-sass-scss-to-css
          :publishing-directory ,(expand-file-name "personal-notes-public" default-publish-directory))
-        ;("assets"
-        ; :base-directory ,org-directory
-        ; :base-extension "svg"
-        ; :recursive t
-        ; :publishing-directory ,(expand-file-name "personal-notes-public" default-publish-directory)
-        ; :publishing-function: org-publish-attachment)
+        ("assets"
+         :base-directory ,org-directory
+         :base-extension ,(regexp-opt '("svg" "png" "jpeg" "jpg" "webm" "js"))
+         :exclude "\\.git/" :exclude "ltximg/" :exclude "temp-assets/"
+         :exclude "^_.+$"
+         :recursive t
+         :publishing-function org-publish-attachment
+         :publishing-directory ,(expand-file-name "personal-notes-public" default-publish-directory))
         ("notes"
          :base-directory ,org-directory
-         :exclude "public/" :exclude "data/" :exclude "ltximg"
+         :base-extension "org"
+         :exclude "public/" :exclude "data/" :exclude "ltximg/"
          :exclude "resume/" :exclude "notes.org-images/"
-         :exclude "other/" :exclude "tmp/" :exclude ".git/"
+         :exclude "other/" :exclude "tmp/" :exclude "\\.git/"
          :recursive nil
          :publishing-directory ,(expand-file-name "personal-notes-public" default-publish-directory)
          :publishing-function org-html-publish-to-html
@@ -415,7 +488,9 @@ holding contextual information."
          :auto-sitemap t
          :sitemap-title "Sitemap for Personal Notes (Meta-Repo)")
         ("public"
-         :base-directory ,(concat org-directory "public")
+         :base-directory ,(expand-file-name "public" org-directory)
+         :base-extension "org"
+         :exclude "data/" :exclude "\\.git/"
          :recursive t
          :publishing-directory ,(expand-file-name "personal-notes-public/public" default-publish-directory)
          :publishing-function org-html-publish-to-html

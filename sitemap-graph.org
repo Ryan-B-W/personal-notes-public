@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       d797d051-855a-4a45-9675-79f16dc2cbc9
+:END:
+#+title: Full Graph

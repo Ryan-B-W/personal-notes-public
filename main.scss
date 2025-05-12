@@ -179,6 +179,72 @@ a[href^=http]::before {
 div.figure, .org-svg {
     max-width: 100%;
 }
+figure {
+    margin: 0;
+    > svg, > img {
+        max-width: 100%;
+        max-height: 100%;
+        width: unset;
+        height: unset;
+    }
+    // For the node local graph SVG.
+    & > svg {
+        border: 1px solid var(--border);
+        & > g, & > g > g {
+            & > title + polygon {
+                fill: var(--bg-main);
+                & ~ *.node {
+                    & ellipse {
+                        fill: var(--bg-button-inactive);
+                        stroke: var(--border);
+                    }
+                    & text {
+                        fill: var(--fg-main);
+                    }
+                    &:hover {
+                        text {
+                            text-decoration: underline;
+                        }
+                        ellipse {
+                            fill: var(--bg-button-active);
+                        }
+                    }
+                }
+                & ~ *.node-https, & ~ *.node-http {
+                    & text {
+                        fill: var(--fg-link);
+                    }
+                    a:visited text {
+                        fill: var(--fg-link-visited);
+                    }
+                }
+                & ~ *.edge {
+                    & path, polygon {
+                        fill: none;
+                        stroke: var(--border);
+                    }
+                    & polygon {
+                        fill: var(--border);
+                    }
+                }
+            }
+        }
+    }
+}
+svg {
+    & .svg-pan-zoom-control > .svg-pan-zoom-control {
+        fill: var(--bg-button-inactive);
+        fill-opacity: 1;
+        & .svg-pan-zoom-control-background {
+            fill: var(--bg-button-inactive);
+            fill-opacity: 1;
+        }
+        & .svg-pan-zoom-control-element {
+            fill: var(--fg-main);
+            fill-opacity: 1;
+        }
+    }
+}
 .todo {
     color: red;
 }
