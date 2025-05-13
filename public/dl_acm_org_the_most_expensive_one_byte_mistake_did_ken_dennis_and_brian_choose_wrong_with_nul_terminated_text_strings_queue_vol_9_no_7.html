@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:35 -->
+<!-- 2025-05-12 Mon 12:29 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(dl.acm.org) The Most Expensive One-byte Mistake: Did Ken, Dennis, and Brian choose wrong with NUL-terminated text strings?: Queue: Vol 9, No 7</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -46,6 +47,68 @@ ROAM_REFS: https://dl.acm.org/doi/pdf/10.1145/2001562.2010365
 
 <p>Did Ken, Dennis, and Brian choose wrong with NUL-terminated text strings?</p><p>Poul-Henning Kamp</p><p>IT both drives and implements the modern Western-style economy.  Thus, we regularly see headlines about staggeringly large amounts of money connected with IT mistakes.  Which IT or CS decision has resulted in the most expensive mistake?</p><p>Not long ago, a fair number of pundits were doing a lot of hand waving about the financial implications of Sony's troubles with its PlayStation Network, but an event like that does not count here.  In my school days, I talked with an inspector from The Guinness Book of World Records who explained that for something to be “a true record,” it could not be a mere accident; there had to be direct causation starting with human intent (i.e., we stuffed 26 high school students into our music teacher's Volkswagen Beetle and closed the doors).</p><p>Sony (probably) did not intend to see how big a mess it could make with the least attention to security, so this and other such examples of false economy will not qualify.  Another candidate could be IBM's choice of Bill Gates over Gary Kildall to supply the operating system for its personal computer.  The damage from this decision is still accumulating at breakneck speed, with StuxNet and the OOXML perversion of the ISO standardization process being exemplary bookends for how far and wide the damage spreads.  But that was not really an IT or CS decision.  It was a business decision that, as far as history has been able to uncover, centered on Kildall's decision not to accept IBM's nondisclosure demands.</p><p>A better example would be the decision for MS-DOS to invent its own directory/filename separator, using the backslash () rather than the forward slash (/) that Unix used or the period that DEC used in its operating systems.  Apart from the actual damage being relatively modest, however, this does not qualify as a good example either, because it was not a real decision selecting a true preference.  IBM had decided to use the slash for command flags, eliminating Unix as a precedent, and the period was used between filename and filename extension, making it impossible to follow DEC's example.</p><p>Space exploration history offers a pool of well-publicized and expensive mistakes, but interestingly, I didn't find any valid candidates there.  Fortran syntax errors and space shuttle computer synchronization mistakes do not qualify for lack of intent.  Running one part of a project in imperial units and the other in metric is a “random act of management” that has nothing to do with CS or IT.</p><p>The best candidate I have been able to come up with is the C/Unix/Posix use of NUL-terminated text strings.  The choice was really simple: Should the C language represent strings as an address + length tuple or just as the address with a magic character (NUL) marking the end?  This is a decision that the dynamic trio of Ken Thompson, Dennis Ritchie, and Brian Kernighan must have made one day in the early 1970s, and they had full freedom to choose either way.  I have not found any record of the decision, which I admit is a weak point in its candidacy: I do not have proof that it was a conscious decision.</p><p>As far as I can determine from my research, however, the address + length format was preferred by the majority of programming languages at the time, whereas the address + magic<sub>marker</sub> format was used mostly in assembly programs.  As the C language was a development from assembly to a portable high-level language, I have a hard time believing that Ken, Dennis, and Brian gave it no thought at all.</p><p>Using an address + length format would cost one more byte of overhead than an address + magic<sub>marker</sub> format, and their PDP computer had limited core memory.  In other words, this could have been a perfectly typical and rational IT or CS decision, like the many similar decisions we all make every day; but this one had quite atypical economic consequences.</p>
 </blockquote>
+</div>
+</div>
+<div id="outline-container-orgcd74385" class="outline-2">
+<h2 id="orgcd74385">Local Graph</h2>
+<div class="outline-text-2" id="text-orgcd74385">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="1487pt" height="44pt"
+ viewBox="0.00 0.00 1486.73 44.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-40 1482.73,-40 1482.73,4 -4,4"/>
+<!-- b1870822&#45;d84e&#45;408a&#45;9271&#45;c2e5ccaf1055 -->
+<g id="node1" class="node node&#45;id">
+<title>b1870822&#45;d84e&#45;408a&#45;9271&#45;c2e5ccaf1055</title>
+<g id="a_node1"><a xlink:href="public/dl_acm_org_the_most_expensive_one_byte_mistake_did_ken_dennis_and_brian_choose_wrong_with_nul_terminated_text_strings_queue_vol_9_no_7.html" xlink:title="(dl.acm.org) The Most Expensive One&#45;byte Mistake: Did Ken, Dennis, and Brian choose wrong with NUL&#45;terminated text strings?: Queue: Vol 9, No 7">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="748.61" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="748.61" y="-13.33" font-family="Times,serif" font-size="14.00" fill="#111111">(dl.acm.org) The Most Expensive One&#45;b...</text>
+</a>
+</g>
+</g>
+<!-- //dl.acm.org/toc/queue/2011/9/7 -->
+<g id="node2" class="node node&#45;https">
+<title>//dl.acm.org/toc/queue/2011/9/7</title>
+<g id="a_node2"><a xlink:href="https://dl.acm.org/toc/queue/2011/9/7" xlink:title="https://dl.acm.org/toc/queue/2011/9/7">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1336.48" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1336.48" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://dl.acm.org/toc/queue/2011/9/7</text>
+</a>
+</g>
+</g>
+<!-- b1870822&#45;d84e&#45;408a&#45;9271&#45;c2e5ccaf1055&#45;&gt;//dl.acm.org/toc/queue/2011/9/7 -->
+<g id="edge1" class="edge">
+<title>b1870822&#45;d84e&#45;408a&#45;9271&#45;c2e5ccaf1055&#45;&gt;//dl.acm.org/toc/queue/2011/9/7</title>
+<path fill="none" stroke="black" d="M766.52,-18C850.19,-18 1202.83,-18 1307.23,-18"/>
+<polygon fill="black" stroke="black" points="1307.19,-21.5 1317.19,-18 1307.19,-14.5 1307.19,-21.5"/>
+</g>
+<!-- //doi.org/10.1145/2001562.2010365 -->
+<g id="node3" class="node node&#45;https">
+<title>//doi.org/10.1145/2001562.2010365</title>
+<g id="a_node3"><a xlink:href="https://doi.org/10.1145/2001562.2010365" xlink:title="https://doi.org/10.1145/2001562.2010365">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="157.62" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="157.62" y="-13.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://doi.org/10.1145/2001562.2010365</text>
+</a>
+</g>
+</g>
+<!-- b1870822&#45;d84e&#45;408a&#45;9271&#45;c2e5ccaf1055&#45;&gt;//doi.org/10.1145/2001562.2010365 -->
+<g id="edge2" class="edge">
+<title>b1870822&#45;d84e&#45;408a&#45;9271&#45;c2e5ccaf1055&#45;&gt;//doi.org/10.1145/2001562.2010365</title>
+<path fill="none" stroke="black" d="M730.92,-18C647.33,-18 291.53,-18 186.76,-18"/>
+<polygon fill="black" stroke="black" points="187.05,-14.5 177.05,-18 187.05,-21.5 187.05,-14.5"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
 </div>
 </div>
 </main>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:34 -->
+<!-- 2025-05-12 Mon 09:58 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(github.com) lassik/emacs-format-all-the-code: Auto-format source code in many languages with one command</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -36,6 +37,1373 @@ ROAM_REFS: https://github.com/lassik/emacs-format-all-the-code
 
 <p>** What does it do</p><p>Lets you auto-format source code in many languages using the same command for all languages, instead of learning a different Emacs package and formatting command for each language.</p><p>Just do <b>M-x</b> <pre class="verbatim">format-all-region-or-buffer</pre> and it will try its best to do the right thing.  To auto-format code on save, use the minor mode <pre class="verbatim">format-all-mode</pre>.  Please see the documentation for that function for instructions.</p><p>** Supported languages</p><p><b>Angular</b> (<a href="https://prettier.io/"><i>prettier</i></a>)</p><p><b>Assembly</b> (<a href="https://github.com/klauspost/asmfmt"><i>asmfmt</i></a>)</p><p><b>ATS</b> (<a href="https://hackage.haskell.org/package/ats-format"><i>atsfmt</i></a>)</p><p><b>Awk</b> (<a href="https://www.gnu.org/software/gawk/"><i>gawk</i></a>)</p><p><b>AZSL</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)</p><p><b>Bazel Starlark</b> (<a href="https://github.com/bazelbuild/buildtools/tree/master/buildifier"><i>buildifier</i></a>)</p><p><b>Beancount</b> (<a href="https://beancount.github.io/"><i>bean-format</i></a>)</p><p><b>BibTeX</b> (Emacs)</p><p><b>C/C++/Objective-C</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>, <a href="http://astyle.sourceforge.net/"><i>astyle</i></a>)</p><p><b>C#</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>, <a href="http://astyle.sourceforge.net/"><i>astyle</i></a>, <a href="https://github.com/belav/csharpier"><i>csharpier</i></a>)</p><p><b>Cabal</b> (<a href="https://github.com/phadej/cabal-fmt"><i>cabal-fmt</i></a>)</p><p><b>Caddyfile</b> (<a href="https://caddyserver.com/docs/command-line#caddy-fmt"><i>caddy-fmt</i></a>)</p><p><b>Clojure/ClojureScript</b> (<a href="https://github.com/weavejester/cljfmt"><i>cljfmt</i></a>, <a href="https://github.com/kkinnear/zprint"><i>zprint</i></a>)</p><p><b>CMake</b> (<a href="https://github.com/cheshirekow/cmake_format"><i>cmake-format</i></a>)</p><p><b>Crystal</b> (<a href="http://www.motion-express.com/blog/crystal-code-formatter"><i>crystal tool format</i></a>)</p><p><b>CSS/Less/SCSS</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>)</p><p><b>Cuda</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)</p><p><b>D</b> (<a href="https://github.com/dlang-community/dfmt"><i>dfmt</i></a>)</p><p><b>Dart</b> (<a href="https://github.com/dart-lang/dart_style"><i>dartfmt</i></a>, <a href="https://dart.dev/tools/dart-format"><i>dart-format</i></a>)</p><p><b>Dhall</b> (<a href="https://github.com/dhall-lang/dhall-lang"><i>dhall format</i></a>)</p><p><b>Dockerfile</b> (<a href="https://github.com/jessfraz/dockfmt"><i>dockfmt</i></a>)</p><p><b>Elixir</b> (<a href="https://hexdocs.pm/mix/master/Mix.Tasks.Format.html"><i>mix format</i></a>)</p><p><b>Elm</b> (<a href="https://github.com/avh4/elm-format"><i>elm-format</i></a>)</p><p><b>Emacs Lisp</b> (Emacs)</p><p><b>Erb</b> (<a href="https://github.com/nebulab/erb-formatter"><i>erb-format</i></a>)</p><p><b>Erlang</b> (<a href="https://github.com/sile/efmt"><i>efmt</i></a>)</p><p><b>F#</b> (<a href="https://github.com/fsprojects/fantomas"><i>fantomas</i></a>)</p><p><b>Fish Shell</b> (<a href="https://fishshell.com/docs/current/commands.html#fish_indent"><i>fish<sub>indent</sub></i></a>)</p><p><b>Fortran Free Form</b> (<a href="https://github.com/pseewald/fprettify"><i>fprettify</i></a>)</p><p><b>Gleam</b> (<a href="https://gleam.run/"><i>gleam format</i></a>)</p><p><b>GLSL</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)</p><p><b>Go</b> (<a href="https://golang.org/cmd/gofmt/"><i>gofmt</i></a>, <a href="https://godoc.org/golang.org/x/tools/cmd/goimports"><i>goimports</i></a>)</p><p><b>GraphQL</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>)</p><p><b>Haskell</b> (<a href="https://github.com/lspitzner/brittany"><i>brittany</i></a>, <a href="https://github.com/fourmolu/fourmolu"><i>fourmolu</i></a>, <a href="https://github.com/commercialhaskell/hindent"><i>hindent</i></a>, <a href="https://github.com/tweag/ormolu"><i>ormolu</i></a>, <a href="https://github.com/jaspervdj/stylish-haskell"><i>stylish-haskell</i></a>)</p><p><b>HCL</b> (<a href="https://github.com/hashicorp/hcl/tree/main/cmd/hclfmt"><i>hclfmt</i></a>)</p><p><b>HLSL</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)</p><p><b>HTML/XHTML/XML</b> (<a href="http://www.html-tidy.org/"><i>tidy</i></a>)</p><p><b>Hy</b> (Emacs)</p><p><b>Java</b> (<a href="http://astyle.sourceforge.net/"><i>astyle</i></a>, <a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>, <a href="https://github.com/google/google-java-format"><i>google-java-format</i></a>)</p><p><b>JavaScript/JSON/JSX</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://standardjs.com/"><i>standard</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>, <a href="https://deno.land/manual/tools/formatter"><i>deno</i></a>)</p><p><b>Jsonnet</b> (<a href="https://jsonnet.org/"><i>jsonnetfmt</i></a>)</p><p><b>Kotlin</b> (<a href="https://github.com/shyiko/ktlint"><i>ktlint</i></a>)</p><p><b>LaTeX</b> (<a href="https://github.com/cmhughes/latexindent.pl"><i>latexindent</i></a>, <a href="https://www.gnu.org/software/auctex/"><i>auctex</i></a>)</p><p><b>Ledger</b> (<a href="https://github.com/ledger/ledger-mode"><i>ledger-mode</i></a>)</p><p><b>Lua</b> (<a href="https://github.com/trixnz/lua-fmt"><i>lua-fmt</i></a>, <a href="https://github.com/JohnnyMorganz/StyLua">stylua</a>, <a href="https://github.com/prettier/plugin-lua"><i>prettier plugin</i></a>)</p><p><b>Markdown</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>, <a href="https://deno.land/manual/tools/formatter"><i>deno</i></a>)</p><p><b>Meson</b> (<a href="https://sr.ht/~lattis/muon/"><i>muon fmt</i></a>)</p><p><b>Nginx</b> (<a href="https://github.com/slomkowski/nginx-config-formatter"><i>nginxfmt</i></a>)</p><p><b>Nix</b> (<a href="https://github.com/nix-community/nixpkgs-fmt"><i>nixpkgs-fmt</i></a>, <a href="https://github.com/serokell/nixfmt"><i>nixfmt</i></a>, <a href="https://github.com/kamadorueda/alejandra"><i>alejandra</i></a>)</p><p><b>OCaml</b> (<a href="https://opam.ocaml.org/packages/ocp-indent/"><i>ocp-indent</i></a>, <a href="https://github.com/ocaml-ppx/ocamlformat"><i>ocamlformat</i></a>)</p><p><b>Perl</b> (<a href="http://perltidy.sourceforge.net/"><i>perltidy</i></a>)</p><p><b>PHP</b> (<a href="https://github.com/prettier/plugin-php"><i>prettier plugin</i></a>)</p><p><b>Protocol Buffers</b> (<a href="https://clang.llvm.org/docs/ClangFormat.html"><i>clang-format</i></a>)</p><p><b>PureScript</b> (<a href="https://gitlab.com/joneshf/purty"><i>purty</i></a>, <a href="https://github.com/natefaubion/purescript-tidy"><i>purescript-tidy</i></a>)</p><p><b>Python</b> (<a href="https://github.com/ambv/black"><i>black</i></a>, <a href="https://github.com/PyCQA/isort"><i>isort</i></a>, <a href="https://docs.astral.sh/ruff/formatter/"><i>ruff format</i></a>, <a href="https://github.com/google/yapf"><i>yapf</i></a>)</p><p><b>R</b> (<a href="https://github.com/r-lib/styler"><i>styler</i></a>)</p><p><b>Racket</b> (<a href="https://docs.racket-lang.org/fmt/"><i>raco fmt</i></a>)</p><p><b>Reason</b> (<a href="https://github.com/glennsl/bs-refmt"><i>bsrefmt</i></a>)</p><p><b>ReScript</b> (<a href="https://www.npmjs.com/package/rescript"><i>rescript format</i></a>)</p><p><b>Ruby</b> (<a href="https://github.com/rubocop/rubocop"><i>rubocop</i></a>, <a href="https://github.com/ruby-formatter/rufo"><i>rufo</i></a>, <a href="https://github.com/testdouble/standard"><i>standardrb</i></a>, <a href="https://github.com/ruby-syntax-tree/syntax_tree"><i>stree (syntax<sub>tree</sub>)</i></a>)</p><p><b>Rust</b> (<a href="https://github.com/rust-lang-nursery/rustfmt"><i>rustfmt</i></a>)</p><p><b>Scala</b> (<a href="https://github.com/scalameta/scalafmt"><i>scalafmt</i></a>)</p><p><b>Shell script</b> (<a href="https://github.com/lovesegfault/beautysh"><i>beautysh</i></a>, <a href="https://github.com/mvdan/sh"><i>shfmt</i></a>)</p><p><b>Snakemake</b> (<a href="https://github.com/snakemake/snakefmt"><i>snakefmt</i></a>)</p><p><b>Solidity</b> (<a href="https://github.com/prettier-solidity/prettier-plugin-solidity"><i>prettier plugin</i></a>)</p><p><b>SQL</b> (<a href="https://github.com/darold/pgFormatter"><i>pgformatter</i></a>, <a href="https://pypi.org/project/sqlparse/"><i>sqlformat</i></a>)</p><p><b>Svelte</b> (<a href="https://github.com/sveltejs/prettier-plugin-svelte"><i>prettier plugin</i></a>)</p><p><b>Swift</b> (<a href="https://github.com/nicklockwood/SwiftFormat"><i>swiftformat</i></a>)</p><p><b>Terraform</b> (<a href="https://www.terraform.io/docs/commands/fmt.html"><i>terraform fmt</i></a>)</p><p><b>TOML</b> (<a href="https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml"><i>prettier plugin</i></a>, <a href="https://taplo.tamasfe.dev/cli/usage/formatting.html"><i>taplo fmt</i></a>)</p><p><b>TypeScript/TSX</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://standardjs.com/"><i>ts-standard</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>, <a href="https://deno.land/manual/tools/formatter"><i>deno</i></a>)</p><p><b>V</b> (<a href="https://github.com/vlang/v"><i>v fmt</i></a>)</p><p><b>Vue</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>)</p><p><b>Verilog</b> (<a href="https://github.com/thomasrussellmurphy/istyle-verilog-formatter"><i>iStyle</i></a>, <a href="https://github.com/chipsalliance/verible/tree/master/verilog/tools/formatter"><i>Verible</i></a>)</p><p><b>YAML</b> (<a href="https://prettier.io/"><i>prettier</i></a>, <a href="https://github.com/fsouza/prettierd"><i>prettierd</i></a>)</p><p><b>Zig</b> (<a href="https://ziglang.org/"><i>zig</i></a>)</p>
 </blockquote>
+<div id="outline-container-org9ad856a" class="outline-2">
+<h2 id="org9ad856a">Local Graph</h2>
+<div class="outline-text-2" id="text-org9ad856a">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="2403pt" height="2010pt"
+ viewBox="0.00 0.00 2402.74 2010.06">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2006.06)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2006.06 2398.74,-2006.06 2398.74,4 -4,4"/>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2 -->
+<g id="node1" class="node node&#45;id">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2</title>
+<g id="a_node1"><a xlink:href="public/github_com_lassik_emacs_format_all_the_code_auto_format_source_code_in_many_languages_with_one_command.html" xlink:title="(github.com) lassik/emacs&#45;format&#45;all&#45;the&#45;code: Auto&#45;format source code in many languages with one command">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1161.91" cy="-1006.11" rx="18" ry="18"/>
+<text text-anchor="middle" x="1161.91" y="-1001.43" font-family="Times,serif" font-size="14.00" fill="#111111">(github.com) lassik/emacs&#45;format&#45;all&#45;...</text>
+</a>
+</g>
+</g>
+<!-- //prettier.io/ -->
+<g id="node2" class="node node&#45;https">
+<title>//prettier.io/</title>
+<g id="a_node2"><a xlink:href="https://prettier.io/" xlink:title="https://prettier.io/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1593.32" cy="-1264.9" rx="18" ry="18"/>
+<text text-anchor="middle" x="1593.32" y="-1260.22" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://prettier.io/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//prettier.io/ -->
+<g id="edge1" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//prettier.io/</title>
+<path fill="none" stroke="black" d="M1177.26,-1015.32C1241.48,-1053.84 1488.84,-1202.22 1568.47,-1249.99"/>
+<polygon fill="black" stroke="black" points="1566.47,-1252.88 1576.85,-1255.02 1570.08,-1246.87 1566.47,-1252.88"/>
+</g>
+<!-- //github.com/klauspost/asmfmt -->
+<g id="node3" class="node node&#45;https">
+<title>//github.com/klauspost/asmfmt</title>
+<g id="a_node3"><a xlink:href="https://github.com/klauspost/asmfmt" xlink:title="https://github.com/klauspost/asmfmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1125.34" cy="-1374.58" rx="18" ry="18"/>
+<text text-anchor="middle" x="1125.34" y="-1369.91" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/klauspost/asmfmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/klauspost/asmfmt -->
+<g id="edge2" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/klauspost/asmfmt</title>
+<path fill="none" stroke="black" d="M1160.15,-1023.88C1154.29,-1082.86 1135.47,-1272.5 1128.22,-1345.53"/>
+<polygon fill="black" stroke="black" points="1124.74,-1345.19 1127.23,-1355.48 1131.7,-1345.88 1124.74,-1345.19"/>
+</g>
+<!-- //hackage.haskell.org/package/ats&#45;format -->
+<g id="node4" class="node node&#45;https">
+<title>//hackage.haskell.org/package/ats&#45;format</title>
+<g id="a_node4"><a xlink:href="https://hackage.haskell.org/package/ats-format" xlink:title="https://hackage.haskell.org/package/ats&#45;format">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1448.09" cy="-1410.59" rx="18" ry="18"/>
+<text text-anchor="middle" x="1448.09" y="-1405.92" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://hackage.haskell.org/package/ats&#45;format</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//hackage.haskell.org/package/ats&#45;format -->
+<g id="edge3" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//hackage.haskell.org/package/ats&#45;format</title>
+<path fill="none" stroke="black" d="M1172.1,-1020.5C1214.6,-1080.57 1378.05,-1311.59 1431.25,-1386.79"/>
+<polygon fill="black" stroke="black" points="1428.22,-1388.57 1436.86,-1394.71 1433.94,-1384.52 1428.22,-1388.57"/>
+</g>
+<!-- //www.gnu.org/software/gawk/ -->
+<g id="node5" class="node node&#45;https">
+<title>//www.gnu.org/software/gawk/</title>
+<g id="a_node5"><a xlink:href="https://www.gnu.org/software/gawk/" xlink:title="https://www.gnu.org/software/gawk/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1077.29" cy="-1578.9" rx="18" ry="18"/>
+<text text-anchor="middle" x="1077.29" y="-1574.22" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://www.gnu.org/software/gawk/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.gnu.org/software/gawk/ -->
+<g id="edge4" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.gnu.org/software/gawk/</title>
+<path fill="none" stroke="black" d="M1159.29,-1023.88C1147.17,-1105.89 1096.6,-1448.18 1081.54,-1550.13"/>
+<polygon fill="black" stroke="black" points="1078.1,-1549.43 1080.1,-1559.84 1085.03,-1550.46 1078.1,-1549.43"/>
+</g>
+<!-- //clang.llvm.org/docs/ClangFormat.html -->
+<g id="node6" class="node node&#45;https">
+<title>//clang.llvm.org/docs/ClangFormat.html</title>
+<g id="a_node6"><a xlink:href="https://clang.llvm.org/docs/ClangFormat.html" xlink:title="https://clang.llvm.org/docs/ClangFormat.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1008.99" cy="-1900.97" rx="18" ry="18"/>
+<text text-anchor="middle" x="1008.99" y="-1896.3" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://clang.llvm.org/docs/ClangFormat.html</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//clang.llvm.org/docs/ClangFormat.html -->
+<g id="edge5" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//clang.llvm.org/docs/ClangFormat.html</title>
+<path fill="none" stroke="black" d="M1158.92,-1023.58C1140.08,-1133.83 1037.72,-1732.87 1013.93,-1872.07"/>
+<polygon fill="black" stroke="black" points="1010.48,-1871.45 1012.25,-1881.9 1017.38,-1872.63 1010.48,-1871.45"/>
+</g>
+<!-- //github.com/bazelbuild/buildtools/tree/master/buildifier -->
+<g id="node7" class="node node&#45;https">
+<title>//github.com/bazelbuild/buildtools/tree/master/buildifier</title>
+<g id="a_node7"><a xlink:href="https://github.com/bazelbuild/buildtools/tree/master/buildifier" xlink:title="https://github.com/bazelbuild/buildtools/tree/master/buildifier">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="776.41" cy="-1945.01" rx="18" ry="18"/>
+<text text-anchor="middle" x="776.41" y="-1940.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/bazelbuild/buildtools/tree/master/buildifier</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/bazelbuild/buildtools/tree/master/buildifier -->
+<g id="edge6" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/bazelbuild/buildtools/tree/master/buildifier</title>
+<path fill="none" stroke="black" d="M1155.22,-1022.4C1109.66,-1133.37 845.13,-1777.64 787.5,-1918.01"/>
+<polygon fill="black" stroke="black" points="784.27,-1916.65 783.71,-1927.23 790.75,-1919.31 784.27,-1916.65"/>
+</g>
+<!-- //beancount.github.io/ -->
+<g id="node8" class="node node&#45;https">
+<title>//beancount.github.io/</title>
+<g id="a_node8"><a xlink:href="https://beancount.github.io/" xlink:title="https://beancount.github.io/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1075.29" cy="-1751.14" rx="18" ry="18"/>
+<text text-anchor="middle" x="1075.29" y="-1746.46" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://beancount.github.io/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//beancount.github.io/ -->
+<g id="edge7" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//beancount.github.io/</title>
+<path fill="none" stroke="black" d="M1159.86,-1023.79C1148.45,-1121.89 1092.95,-1599.27 1078.65,-1722.22"/>
+<polygon fill="black" stroke="black" points="1075.22,-1721.45 1077.54,-1731.79 1082.17,-1722.26 1075.22,-1721.45"/>
+</g>
+<!-- //astyle.sourceforge.net/ -->
+<g id="node9" class="node node&#45;http">
+<title>//astyle.sourceforge.net/</title>
+<g id="a_node9"><a xlink:href="http://astyle.sourceforge.net/" xlink:title="http://astyle.sourceforge.net/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="848.27" cy="-1740.57" rx="18" ry="18"/>
+<text text-anchor="middle" x="848.27" y="-1735.89" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://astyle.sourceforge.net/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//astyle.sourceforge.net/ -->
+<g id="edge8" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//astyle.sourceforge.net/</title>
+<path fill="none" stroke="black" d="M1154.92,-1022.48C1114.47,-1117.21 910.42,-1595.03 859.7,-1713.81"/>
+<polygon fill="black" stroke="black" points="856.58,-1712.19 855.88,-1722.76 863.02,-1714.94 856.58,-1712.19"/>
+</g>
+<!-- //github.com/belav/csharpier -->
+<g id="node10" class="node node&#45;https">
+<title>//github.com/belav/csharpier</title>
+<g id="a_node10"><a xlink:href="https://github.com/belav/csharpier" xlink:title="https://github.com/belav/csharpier">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1336.39" cy="-1879.9" rx="18" ry="18"/>
+<text text-anchor="middle" x="1336.39" y="-1875.22" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/belav/csharpier</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/belav/csharpier -->
+<g id="edge9" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/belav/csharpier</title>
+<path fill="none" stroke="black" d="M1165.4,-1023.56C1187.08,-1132.13 1303.43,-1714.83 1330.68,-1851.29"/>
+<polygon fill="black" stroke="black" points="1327.21,-1851.8 1332.6,-1860.92 1334.07,-1850.43 1327.21,-1851.8"/>
+</g>
+<!-- //github.com/phadej/cabal&#45;fmt -->
+<g id="node11" class="node node&#45;https">
+<title>//github.com/phadej/cabal&#45;fmt</title>
+<g id="a_node11"><a xlink:href="https://github.com/phadej/cabal-fmt" xlink:title="https://github.com/phadej/cabal&#45;fmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1566.21" cy="-1967.28" rx="18" ry="18"/>
+<text text-anchor="middle" x="1566.21" y="-1962.6" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/phadej/cabal&#45;fmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/phadej/cabal&#45;fmt -->
+<g id="edge10" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/phadej/cabal&#45;fmt</title>
+<path fill="none" stroke="black" d="M1168.76,-1022.39C1216.14,-1135.03 1495.15,-1798.33 1554.94,-1940.47"/>
+<polygon fill="black" stroke="black" points="1551.61,-1941.59 1558.72,-1949.45 1558.06,-1938.88 1551.61,-1941.59"/>
+</g>
+<!-- //caddyserver.com/docs/command&#45;line#caddy&#45;fmt -->
+<g id="node12" class="node node&#45;https">
+<title>//caddyserver.com/docs/command&#45;line#caddy&#45;fmt</title>
+<g id="a_node12"><a xlink:href="https://caddyserver.com/docs/command-line#caddy-fmt" xlink:title="https://caddyserver.com/docs/command&#45;line#caddy&#45;fmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1175.55" cy="-1675.12" rx="18" ry="18"/>
+<text text-anchor="middle" x="1175.55" y="-1670.44" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://caddyserver.com/docs/command&#45;line#caddy&#45;fmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//caddyserver.com/docs/command&#45;line#caddy&#45;fmt -->
+<g id="edge11" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//caddyserver.com/docs/command&#45;line#caddy&#45;fmt</title>
+<path fill="none" stroke="black" d="M1162.28,-1024C1164.14,-1115.52 1172.62,-1531.43 1174.96,-1645.89"/>
+<polygon fill="black" stroke="black" points="1171.45,-1645.73 1175.16,-1655.66 1178.45,-1645.59 1171.45,-1645.73"/>
+</g>
+<!-- //github.com/weavejester/cljfmt -->
+<g id="node13" class="node node&#45;https">
+<title>//github.com/weavejester/cljfmt</title>
+<g id="a_node13"><a xlink:href="https://github.com/weavejester/cljfmt" xlink:title="https://github.com/weavejester/cljfmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1172.25" cy="-1984.06" rx="18" ry="18"/>
+<text text-anchor="middle" x="1172.25" y="-1979.38" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/weavejester/cljfmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/weavejester/cljfmt -->
+<g id="edge12" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/weavejester/cljfmt</title>
+<path fill="none" stroke="black" d="M1162.1,-1023.91C1163.34,-1141.63 1170.39,-1807.57 1171.95,-1955.11"/>
+<polygon fill="black" stroke="black" points="1168.44,-1954.83 1172.05,-1964.79 1175.44,-1954.75 1168.44,-1954.83"/>
+</g>
+<!-- //github.com/kkinnear/zprint -->
+<g id="node14" class="node node&#45;https">
+<title>//github.com/kkinnear/zprint</title>
+<g id="a_node14"><a xlink:href="https://github.com/kkinnear/zprint" xlink:title="https://github.com/kkinnear/zprint">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="801.28" cy="-1598.5" rx="18" ry="18"/>
+<text text-anchor="middle" x="801.28" y="-1593.82" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/kkinnear/zprint</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/kkinnear/zprint -->
+<g id="edge13" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/kkinnear/zprint</title>
+<path fill="none" stroke="black" d="M1152.63,-1021.34C1103.87,-1101.45 877.11,-1473.94 816.31,-1573.8"/>
+<polygon fill="black" stroke="black" points="813.49,-1571.7 811.28,-1582.06 819.47,-1575.34 813.49,-1571.7"/>
+</g>
+<!-- //github.com/cheshirekow/cmake_format -->
+<g id="node15" class="node node&#45;https">
+<title>//github.com/cheshirekow/cmake_format</title>
+<g id="a_node15"><a xlink:href="https://github.com/cheshirekow/cmake_format" xlink:title="https://github.com/cheshirekow/cmake_format">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="586.64" cy="-1827.58" rx="18" ry="18"/>
+<text text-anchor="middle" x="586.64" y="-1822.9" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/cheshirekow/cmake_format</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/cheshirekow/cmake_format -->
+<g id="edge14" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/cheshirekow/cmake_format</title>
+<path fill="none" stroke="black" d="M1151.68,-1020.71C1083.06,-1118.7 689.83,-1680.23 603.43,-1803.61"/>
+<polygon fill="black" stroke="black" points="600.62,-1801.52 597.75,-1811.72 606.35,-1805.53 600.62,-1801.52"/>
+</g>
+<!-- //www.motion&#45;express.com/blog/crystal&#45;code&#45;formatter -->
+<g id="node16" class="node node&#45;http">
+<title>//www.motion&#45;express.com/blog/crystal&#45;code&#45;formatter</title>
+<g id="a_node16"><a xlink:href="http://www.motion-express.com/blog/crystal-code-formatter" xlink:title="http://www.motion&#45;express.com/blog/crystal&#45;code&#45;formatter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="945.17" cy="-1475.91" rx="18" ry="18"/>
+<text text-anchor="middle" x="945.17" y="-1471.24" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://www.motion&#45;express.com/blog/crystal&#45;code&#45;formatter</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.motion&#45;express.com/blog/crystal&#45;code&#45;formatter -->
+<g id="edge15" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.motion&#45;express.com/blog/crystal&#45;code&#45;formatter</title>
+<path fill="none" stroke="black" d="M1154.45,-1022.28C1122.5,-1091.53 997.06,-1363.44 957.32,-1449.59"/>
+<polygon fill="black" stroke="black" points="954.24,-1447.89 953.23,-1458.44 960.6,-1450.82 954.24,-1447.89"/>
+</g>
+<!-- //github.com/fsouza/prettierd -->
+<g id="node17" class="node node&#45;https">
+<title>//github.com/fsouza/prettierd</title>
+<g id="a_node17"><a xlink:href="https://github.com/fsouza/prettierd" xlink:title="https://github.com/fsouza/prettierd">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="766.54" cy="-1394.33" rx="18" ry="18"/>
+<text text-anchor="middle" x="766.54" y="-1389.65" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/fsouza/prettierd</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/fsouza/prettierd -->
+<g id="edge16" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/fsouza/prettierd</title>
+<path fill="none" stroke="black" d="M1149.2,-1018.58C1092.04,-1074.72 858.39,-1304.13 787.21,-1374.02"/>
+<polygon fill="black" stroke="black" points="784.76,-1371.53 780.08,-1381.03 789.67,-1376.52 784.76,-1371.53"/>
+</g>
+<!-- //github.com/dlang&#45;community/dfmt -->
+<g id="node18" class="node node&#45;https">
+<title>//github.com/dlang&#45;community/dfmt</title>
+<g id="a_node18"><a xlink:href="https://github.com/dlang-community/dfmt" xlink:title="https://github.com/dlang&#45;community/dfmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="244.35" cy="-1605.84" rx="18" ry="18"/>
+<text text-anchor="middle" x="244.35" y="-1601.17" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/dlang&#45;community/dfmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/dlang&#45;community/dfmt -->
+<g id="edge17" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/dlang&#45;community/dfmt</title>
+<path fill="none" stroke="black" d="M1147.13,-1015.77C1041.54,-1084.78 402.29,-1502.62 268.78,-1589.88"/>
+<polygon fill="black" stroke="black" points="267.12,-1586.78 260.66,-1595.19 270.95,-1592.64 267.12,-1586.78"/>
+</g>
+<!-- //github.com/dart&#45;lang/dart_style -->
+<g id="node19" class="node node&#45;https">
+<title>//github.com/dart&#45;lang/dart_style</title>
+<g id="a_node19"><a xlink:href="https://github.com/dart-lang/dart_style" xlink:title="https://github.com/dart&#45;lang/dart_style">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="524.72" cy="-1438.41" rx="18" ry="18"/>
+<text text-anchor="middle" x="524.72" y="-1433.73" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/dart&#45;lang/dart_style</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/dart&#45;lang/dart_style -->
+<g id="edge18" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/dart&#45;lang/dart_style</title>
+<path fill="none" stroke="black" d="M1147.1,-1016.16C1063.73,-1072.71 653.09,-1351.32 548.83,-1422.05"/>
+<polygon fill="black" stroke="black" points="547.02,-1419.05 540.7,-1427.56 550.95,-1424.84 547.02,-1419.05"/>
+</g>
+<!-- //dart.dev/tools/dart&#45;format -->
+<g id="node20" class="node node&#45;https">
+<title>//dart.dev/tools/dart&#45;format</title>
+<g id="a_node20"><a xlink:href="https://dart.dev/tools/dart-format" xlink:title="https://dart.dev/tools/dart&#45;format">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="536" cy="-1642.37" rx="18" ry="18"/>
+<text text-anchor="middle" x="536" y="-1637.7" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://dart.dev/tools/dart&#45;format</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//dart.dev/tools/dart&#45;format -->
+<g id="edge19" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//dart.dev/tools/dart&#45;format</title>
+<path fill="none" stroke="black" d="M1149.41,-1018.82C1071.64,-1097.87 654.24,-1522.17 556.49,-1621.54"/>
+<polygon fill="black" stroke="black" points="554.11,-1618.97 549.59,-1628.56 559.1,-1623.88 554.11,-1618.97"/>
+</g>
+<!-- //github.com/dhall&#45;lang/dhall&#45;lang -->
+<g id="node21" class="node node&#45;https">
+<title>//github.com/dhall&#45;lang/dhall&#45;lang</title>
+<g id="a_node21"><a xlink:href="https://github.com/dhall-lang/dhall-lang" xlink:title="https://github.com/dhall&#45;lang/dhall&#45;lang">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="214.45" cy="-1462.24" rx="18" ry="18"/>
+<text text-anchor="middle" x="214.45" y="-1457.56" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/dhall&#45;lang/dhall&#45;lang</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/dhall&#45;lang/dhall&#45;lang -->
+<g id="edge20" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/dhall&#45;lang/dhall&#45;lang</title>
+<path fill="none" stroke="black" d="M1145.86,-1013.83C1034.82,-1067.29 380.98,-1382.06 240.87,-1449.51"/>
+<polygon fill="black" stroke="black" points="239.49,-1446.29 232,-1453.78 242.53,-1452.6 239.49,-1446.29"/>
+</g>
+<!-- //github.com/jessfraz/dockfmt -->
+<g id="node22" class="node node&#45;https">
+<title>//github.com/jessfraz/dockfmt</title>
+<g id="a_node22"><a xlink:href="https://github.com/jessfraz/dockfmt" xlink:title="https://github.com/jessfraz/dockfmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="862.15" cy="-1078.68" rx="18" ry="18"/>
+<text text-anchor="middle" x="862.15" y="-1074" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/jessfraz/dockfmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/jessfraz/dockfmt -->
+<g id="edge21" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/jessfraz/dockfmt</title>
+<path fill="none" stroke="black" d="M1144.5,-1010.32C1094.83,-1022.35 952.1,-1056.9 890.75,-1071.75"/>
+<polygon fill="black" stroke="black" points="889.98,-1068.34 881.08,-1074.09 891.63,-1075.14 889.98,-1068.34"/>
+</g>
+<!-- //hexdocs.pm/mix/master/Mix.Tasks.Format.html -->
+<g id="node23" class="node node&#45;https">
+<title>//hexdocs.pm/mix/master/Mix.Tasks.Format.html</title>
+<g id="a_node23"><a xlink:href="https://hexdocs.pm/mix/master/Mix.Tasks.Format.html" xlink:title="https://hexdocs.pm/mix/master/Mix.Tasks.Format.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="896.53" cy="-1299.48" rx="18" ry="18"/>
+<text text-anchor="middle" x="896.53" y="-1294.8" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://hexdocs.pm/mix/master/Mix.Tasks.Format.html</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//hexdocs.pm/mix/master/Mix.Tasks.Format.html -->
+<g id="edge22" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//hexdocs.pm/mix/master/Mix.Tasks.Format.html</title>
+<path fill="none" stroke="black" d="M1150.17,-1019.09C1108.56,-1065.09 967.89,-1220.59 915.98,-1277.98"/>
+<polygon fill="black" stroke="black" points="913.57,-1275.42 909.46,-1285.19 918.76,-1280.12 913.57,-1275.42"/>
+</g>
+<!-- //github.com/avh4/elm&#45;format -->
+<g id="node24" class="node node&#45;https">
+<title>//github.com/avh4/elm&#45;format</title>
+<g id="a_node24"><a xlink:href="https://github.com/avh4/elm-format" xlink:title="https://github.com/avh4/elm&#45;format">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="584.42" cy="-1049.7" rx="18" ry="18"/>
+<text text-anchor="middle" x="584.42" y="-1045.02" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/avh4/elm&#45;format</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/avh4/elm&#45;format -->
+<g id="edge23" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/avh4/elm&#45;format</title>
+<path fill="none" stroke="black" d="M1143.99,-1007.46C1061.3,-1013.7 716.2,-1039.75 613.42,-1047.51"/>
+<polygon fill="black" stroke="black" points="613.34,-1044.01 603.63,-1048.25 613.87,-1050.99 613.34,-1044.01"/>
+</g>
+<!-- //github.com/nebulab/erb&#45;formatter -->
+<g id="node25" class="node node&#45;https">
+<title>//github.com/nebulab/erb&#45;formatter</title>
+<g id="a_node25"><a xlink:href="https://github.com/nebulab/erb-formatter" xlink:title="https://github.com/nebulab/erb&#45;formatter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1067.37" cy="-1200.61" rx="18" ry="18"/>
+<text text-anchor="middle" x="1067.37" y="-1195.94" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/nebulab/erb&#45;formatter</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/nebulab/erb&#45;formatter -->
+<g id="edge24" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/nebulab/erb&#45;formatter</title>
+<path fill="none" stroke="black" d="M1154.17,-1022.02C1137.93,-1055.43 1100.15,-1133.16 1080.22,-1174.18"/>
+<polygon fill="black" stroke="black" points="1077.1,-1172.59 1075.87,-1183.11 1083.39,-1175.65 1077.1,-1172.59"/>
+</g>
+<!-- //github.com/sile/efmt -->
+<g id="node26" class="node node&#45;https">
+<title>//github.com/sile/efmt</title>
+<g id="a_node26"><a xlink:href="https://github.com/sile/efmt" xlink:title="https://github.com/sile/efmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="419.98" cy="-1118.01" rx="18" ry="18"/>
+<text text-anchor="middle" x="419.98" y="-1113.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/sile/efmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/sile/efmt -->
+<g id="edge25" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/sile/efmt</title>
+<path fill="none" stroke="black" d="M1144.3,-1008.76C1046.61,-1023.5 571.22,-1095.2 448.79,-1113.66"/>
+<polygon fill="black" stroke="black" points="448.62,-1110.15 439.25,-1115.1 449.66,-1117.07 448.62,-1110.15"/>
+</g>
+<!-- //github.com/fsprojects/fantomas -->
+<g id="node27" class="node node&#45;https">
+<title>//github.com/fsprojects/fantomas</title>
+<g id="a_node27"><a xlink:href="https://github.com/fsprojects/fantomas" xlink:title="https://github.com/fsprojects/fantomas">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="447.43" cy="-746.43" rx="18" ry="18"/>
+<text text-anchor="middle" x="447.43" y="-741.75" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/fsprojects/fantomas</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/fsprojects/fantomas -->
+<g id="edge26" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/fsprojects/fantomas</title>
+<path fill="none" stroke="black" d="M1145.3,-1000.07C1051.92,-966.13 592.36,-799.1 474.84,-756.39"/>
+<polygon fill="black" stroke="black" points="476.28,-753.19 465.68,-753.06 473.89,-759.77 476.28,-753.19"/>
+</g>
+<!-- //fishshell.com/docs/current/commands.html#fish_indent -->
+<g id="node28" class="node node&#45;https">
+<title>//fishshell.com/docs/current/commands.html#fish_indent</title>
+<g id="a_node28"><a xlink:href="https://fishshell.com/docs/current/commands.html#fish_indent" xlink:title="https://fishshell.com/docs/current/commands.html#fish_indent">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="284.79" cy="-961.56" rx="18" ry="18"/>
+<text text-anchor="middle" x="284.79" y="-956.88" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://fishshell.com/docs/current/commands.html#fish_indent</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//fishshell.com/docs/current/commands.html#fish_indent -->
+<g id="edge27" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//fishshell.com/docs/current/commands.html#fish_indent</title>
+<path fill="none" stroke="black" d="M1143.99,-1005.2C1034.09,-999.61 451.41,-970.02 313.89,-963.04"/>
+<polygon fill="black" stroke="black" points="314.36,-959.55 304.19,-962.54 314,-966.55 314.36,-959.55"/>
+</g>
+<!-- //github.com/pseewald/fprettify -->
+<g id="node29" class="node node&#45;https">
+<title>//github.com/pseewald/fprettify</title>
+<g id="a_node29"><a xlink:href="https://github.com/pseewald/fprettify" xlink:title="https://github.com/pseewald/fprettify">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="618.72" cy="-825.03" rx="18" ry="18"/>
+<text text-anchor="middle" x="618.72" y="-820.36" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/pseewald/fprettify</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/pseewald/fprettify -->
+<g id="edge28" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/pseewald/fprettify</title>
+<path fill="none" stroke="black" d="M1145.06,-1000.49C1067.37,-974.59 743.4,-866.59 646.32,-834.23"/>
+<polygon fill="black" stroke="black" points="647.67,-830.99 637.08,-831.15 645.46,-837.64 647.67,-830.99"/>
+</g>
+<!-- //gleam.run/ -->
+<g id="node30" class="node node&#45;https">
+<title>//gleam.run/</title>
+<g id="a_node30"><a xlink:href="https://gleam.run/" xlink:title="https://gleam.run/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="572.07" cy="-1251.45" rx="18" ry="18"/>
+<text text-anchor="middle" x="572.07" y="-1246.77" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://gleam.run/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//gleam.run/ -->
+<g id="edge29" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//gleam.run/</title>
+<path fill="none" stroke="black" d="M1145.52,-1012.92C1063.92,-1046.86 701.37,-1197.66 599.04,-1240.23"/>
+<polygon fill="black" stroke="black" points="597.95,-1236.89 590.06,-1243.96 600.64,-1243.35 597.95,-1236.89"/>
+</g>
+<!-- //golang.org/cmd/gofmt/ -->
+<g id="node31" class="node node&#45;https">
+<title>//golang.org/cmd/gofmt/</title>
+<g id="a_node31"><a xlink:href="https://golang.org/cmd/gofmt/" xlink:title="https://golang.org/cmd/gofmt/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="153.91" cy="-1243.02" rx="18" ry="18"/>
+<text text-anchor="middle" x="153.91" y="-1238.34" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://golang.org/cmd/gofmt/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//golang.org/cmd/gofmt/ -->
+<g id="edge30" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//golang.org/cmd/gofmt/</title>
+<path fill="none" stroke="black" d="M1144.42,-1010.22C1025.04,-1038.28 330.73,-1201.46 181.97,-1236.43"/>
+<polygon fill="black" stroke="black" points="181.51,-1232.94 172.58,-1238.63 183.11,-1239.75 181.51,-1232.94"/>
+</g>
+<!-- //godoc.org/golang.org/x/tools/cmd/goimports -->
+<g id="node32" class="node node&#45;https">
+<title>//godoc.org/golang.org/x/tools/cmd/goimports</title>
+<g id="a_node32"><a xlink:href="https://godoc.org/golang.org/x/tools/cmd/goimports" xlink:title="https://godoc.org/golang.org/x/tools/cmd/goimports">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="333.03" cy="-1318.82" rx="18" ry="18"/>
+<text text-anchor="middle" x="333.03" y="-1314.14" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://godoc.org/golang.org/x/tools/cmd/goimports</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//godoc.org/golang.org/x/tools/cmd/goimports -->
+<g id="edge31" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//godoc.org/golang.org/x/tools/cmd/goimports</title>
+<path fill="none" stroke="black" d="M1145.35,-1012.35C1042.36,-1051.21 489.62,-1259.74 360.17,-1308.58"/>
+<polygon fill="black" stroke="black" points="359.17,-1305.22 351.05,-1312.02 361.64,-1311.77 359.17,-1305.22"/>
+</g>
+<!-- //github.com/lspitzner/brittany -->
+<g id="node33" class="node node&#45;https">
+<title>//github.com/lspitzner/brittany</title>
+<g id="a_node33"><a xlink:href="https://github.com/lspitzner/brittany" xlink:title="https://github.com/lspitzner/brittany">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="437.59" cy="-880.11" rx="18" ry="18"/>
+<text text-anchor="middle" x="437.59" y="-875.44" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/lspitzner/brittany</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/lspitzner/brittany -->
+<g id="edge32" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/lspitzner/brittany</title>
+<path fill="none" stroke="black" d="M1144.37,-1003.05C1048.39,-986.36 586.88,-906.08 466.41,-885.13"/>
+<polygon fill="black" stroke="black" points="467.17,-881.71 456.72,-883.44 465.97,-888.6 467.17,-881.71"/>
+</g>
+<!-- //github.com/fourmolu/fourmolu -->
+<g id="node34" class="node node&#45;https">
+<title>//github.com/fourmolu/fourmolu</title>
+<g id="a_node34"><a xlink:href="https://github.com/fourmolu/fourmolu" xlink:title="https://github.com/fourmolu/fourmolu">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="760" cy="-63.62" rx="18" ry="18"/>
+<text text-anchor="middle" x="760" y="-58.95" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/fourmolu/fourmolu</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/fourmolu/fourmolu -->
+<g id="edge33" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/fourmolu/fourmolu</title>
+<path fill="none" stroke="black" d="M1154.93,-989.75C1107.39,-878.25 831.09,-230.33 771.37,-90.3"/>
+<polygon fill="black" stroke="black" points="774.74,-89.28 767.6,-81.45 768.3,-92.03 774.74,-89.28"/>
+</g>
+<!-- //github.com/commercialhaskell/hindent -->
+<g id="node35" class="node node&#45;https">
+<title>//github.com/commercialhaskell/hindent</title>
+<g id="a_node35"><a xlink:href="https://github.com/commercialhaskell/hindent" xlink:title="https://github.com/commercialhaskell/hindent">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="683.69" cy="-244.05" rx="18" ry="18"/>
+<text text-anchor="middle" x="683.69" y="-239.37" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/commercialhaskell/hindent</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/commercialhaskell/hindent -->
+<g id="edge34" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/commercialhaskell/hindent</title>
+<path fill="none" stroke="black" d="M1152.36,-990.88C1092.87,-896.09 773.34,-386.92 699.1,-268.62"/>
+<polygon fill="black" stroke="black" points="702.15,-266.89 693.87,-260.28 696.22,-270.61 702.15,-266.89"/>
+</g>
+<!-- //github.com/tweag/ormolu -->
+<g id="node36" class="node node&#45;https">
+<title>//github.com/tweag/ormolu</title>
+<g id="a_node36"><a xlink:href="https://github.com/tweag/ormolu" xlink:title="https://github.com/tweag/ormolu">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1036.69" cy="-62.01" rx="18" ry="18"/>
+<text text-anchor="middle" x="1036.69" y="-57.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/tweag/ormolu</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/tweag/ormolu -->
+<g id="edge35" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/tweag/ormolu</title>
+<path fill="none" stroke="black" d="M1159.58,-988.5C1144.38,-873.96 1059.59,-234.7 1040.5,-90.79"/>
+<polygon fill="black" stroke="black" points="1043.99,-90.44 1039.2,-80.99 1037.05,-91.36 1043.99,-90.44"/>
+</g>
+<!-- //github.com/jaspervdj/stylish&#45;haskell -->
+<g id="node37" class="node node&#45;https">
+<title>//github.com/jaspervdj/stylish&#45;haskell</title>
+<g id="a_node37"><a xlink:href="https://github.com/jaspervdj/stylish-haskell" xlink:title="https://github.com/jaspervdj/stylish&#45;haskell">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="880.27" cy="-199.84" rx="18" ry="18"/>
+<text text-anchor="middle" x="880.27" y="-195.17" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/jaspervdj/stylish&#45;haskell</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/jaspervdj/stylish&#45;haskell -->
+<g id="edge36" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/jaspervdj/stylish&#45;haskell</title>
+<path fill="none" stroke="black" d="M1156.03,-989.27C1120.48,-887.51 934.44,-354.92 889.87,-227.33"/>
+<polygon fill="black" stroke="black" points="893.22,-226.3 886.61,-218.02 886.61,-228.61 893.22,-226.3"/>
+</g>
+<!-- //github.com/hashicorp/hcl/tree/main/cmd/hclfmt -->
+<g id="node38" class="node node&#45;https">
+<title>//github.com/hashicorp/hcl/tree/main/cmd/hclfmt</title>
+<g id="a_node38"><a xlink:href="https://github.com/hashicorp/hcl/tree/main/cmd/hclfmt" xlink:title="https://github.com/hashicorp/hcl/tree/main/cmd/hclfmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1102.14" cy="-767.57" rx="18" ry="18"/>
+<text text-anchor="middle" x="1102.14" y="-762.9" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/hashicorp/hcl/tree/main/cmd/hclfmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/hashicorp/hcl/tree/main/cmd/hclfmt -->
+<g id="edge37" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/hashicorp/hcl/tree/main/cmd/hclfmt</title>
+<path fill="none" stroke="black" d="M1157.61,-988.95C1147.43,-948.3 1121.74,-845.81 1109.22,-795.84"/>
+<polygon fill="black" stroke="black" points="1112.67,-795.21 1106.85,-786.36 1105.88,-796.91 1112.67,-795.21"/>
+</g>
+<!-- //www.html&#45;tidy.org/ -->
+<g id="node39" class="node node&#45;http">
+<title>//www.html&#45;tidy.org/</title>
+<g id="a_node39"><a xlink:href="http://www.html-tidy.org/" xlink:title="http://www.html&#45;tidy.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="874.94" cy="-699.69" rx="18" ry="18"/>
+<text text-anchor="middle" x="874.94" y="-695.02" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://www.html&#45;tidy.org/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.html&#45;tidy.org/ -->
+<g id="edge38" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.html&#45;tidy.org/</title>
+<path fill="none" stroke="black" d="M1149.95,-993.33C1105.55,-945.93 949.98,-779.82 894.65,-720.74"/>
+<polygon fill="black" stroke="black" points="897.38,-718.53 887.99,-713.63 892.27,-723.32 897.38,-718.53"/>
+</g>
+<!-- //github.com/google/google&#45;java&#45;format -->
+<g id="node40" class="node node&#45;https">
+<title>//github.com/google/google&#45;java&#45;format</title>
+<g id="a_node40"><a xlink:href="https://github.com/google/google-java-format" xlink:title="https://github.com/google/google&#45;java&#45;format">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="933.49" cy="-917.4" rx="18" ry="18"/>
+<text text-anchor="middle" x="933.49" y="-912.73" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/google/google&#45;java&#45;format</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/google/google&#45;java&#45;format -->
+<g id="edge39" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/google/google&#45;java&#45;format</title>
+<path fill="none" stroke="black" d="M1145.48,-999.73C1106.56,-984.61 1008.41,-946.5 960.56,-927.91"/>
+<polygon fill="black" stroke="black" points="962.07,-924.75 951.48,-924.39 959.54,-931.27 962.07,-924.75"/>
+</g>
+<!-- //standardjs.com/ -->
+<g id="node41" class="node node&#45;https">
+<title>//standardjs.com/</title>
+<g id="a_node41"><a xlink:href="https://standardjs.com/" xlink:title="https://standardjs.com/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="923.57" cy="-473.7" rx="18" ry="18"/>
+<text text-anchor="middle" x="923.57" y="-469.02" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standardjs.com/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//standardjs.com/ -->
+<g id="edge40" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//standardjs.com/</title>
+<path fill="none" stroke="black" d="M1154.65,-989.88C1120.76,-914.19 978.07,-595.44 935.57,-500.49"/>
+<polygon fill="black" stroke="black" points="938.8,-499.13 931.52,-491.44 932.41,-501.99 938.8,-499.13"/>
+</g>
+<!-- //deno.land/manual/tools/formatter -->
+<g id="node42" class="node node&#45;https">
+<title>//deno.land/manual/tools/formatter</title>
+<g id="a_node42"><a xlink:href="https://deno.land/manual/tools/formatter" xlink:title="https://deno.land/manual/tools/formatter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="442.68" cy="-288.13" rx="18" ry="18"/>
+<text text-anchor="middle" x="442.68" y="-283.45" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://deno.land/manual/tools/formatter</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//deno.land/manual/tools/formatter -->
+<g id="edge41" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//deno.land/manual/tools/formatter</title>
+<path fill="none" stroke="black" d="M1149.43,-993.64C1064.43,-908.79 570.89,-416.12 463.36,-308.77"/>
+<polygon fill="black" stroke="black" points="465.85,-306.31 456.3,-301.72 460.9,-311.26 465.85,-306.31"/>
+</g>
+<!-- //jsonnet.org/ -->
+<g id="node43" class="node node&#45;https">
+<title>//jsonnet.org/</title>
+<g id="a_node43"><a xlink:href="https://jsonnet.org/" xlink:title="https://jsonnet.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="689.67" cy="-630.9" rx="18" ry="18"/>
+<text text-anchor="middle" x="689.67" y="-626.23" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://jsonnet.org/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//jsonnet.org/ -->
+<g id="edge42" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//jsonnet.org/</title>
+<path fill="none" stroke="black" d="M1148.03,-995.08C1081.43,-942.16 794.42,-714.12 711.92,-648.58"/>
+<polygon fill="black" stroke="black" points="714.51,-646.17 704.51,-642.69 710.16,-651.65 714.51,-646.17"/>
+</g>
+<!-- //github.com/shyiko/ktlint -->
+<g id="node44" class="node node&#45;https">
+<title>//github.com/shyiko/ktlint</title>
+<g id="a_node44"><a xlink:href="https://github.com/shyiko/ktlint" xlink:title="https://github.com/shyiko/ktlint">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="367.42" cy="-406.8" rx="18" ry="18"/>
+<text text-anchor="middle" x="367.42" y="-402.13" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/shyiko/ktlint</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/shyiko/ktlint -->
+<g id="edge43" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/shyiko/ktlint</title>
+<path fill="none" stroke="black" d="M1147.78,-995.45C1053.02,-923.96 509.92,-514.3 390.6,-424.29"/>
+<polygon fill="black" stroke="black" points="392.86,-421.61 382.77,-418.38 388.64,-427.2 392.86,-421.61"/>
+</g>
+<!-- //github.com/cmhughes/latexindent.pl -->
+<g id="node45" class="node node&#45;https">
+<title>//github.com/cmhughes/latexindent.pl</title>
+<g id="a_node45"><a xlink:href="https://github.com/cmhughes/latexindent.pl" xlink:title="https://github.com/cmhughes/latexindent.pl">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="660.88" cy="-449.27" rx="18" ry="18"/>
+<text text-anchor="middle" x="660.88" y="-444.59" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/cmhughes/latexindent.pl</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/cmhughes/latexindent.pl -->
+<g id="edge44" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/cmhughes/latexindent.pl</title>
+<path fill="none" stroke="black" d="M1150.02,-992.89C1084.12,-919.65 763.66,-563.49 680.59,-471.16"/>
+<polygon fill="black" stroke="black" points="683.19,-468.83 673.9,-463.73 677.99,-473.51 683.19,-468.83"/>
+</g>
+<!-- //www.gnu.org/software/auctex/ -->
+<g id="node46" class="node node&#45;https">
+<title>//www.gnu.org/software/auctex/</title>
+<g id="a_node46"><a xlink:href="https://www.gnu.org/software/auctex/" xlink:title="https://www.gnu.org/software/auctex/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="175.07" cy="-594.06" rx="18" ry="18"/>
+<text text-anchor="middle" x="175.07" y="-589.38" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://www.gnu.org/software/auctex/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.gnu.org/software/auctex/ -->
+<g id="edge45" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.gnu.org/software/auctex/</title>
+<path fill="none" stroke="black" d="M1145.61,-999.3C1031.05,-951.47 347.42,-666.02 202.18,-605.38"/>
+<polygon fill="black" stroke="black" points="203.56,-602.16 192.99,-601.54 200.87,-608.62 203.56,-602.16"/>
+</g>
+<!-- //github.com/ledger/ledger&#45;mode -->
+<g id="node47" class="node node&#45;https">
+<title>//github.com/ledger/ledger&#45;mode</title>
+<g id="a_node47"><a xlink:href="https://github.com/ledger/ledger-mode" xlink:title="https://github.com/ledger/ledger&#45;mode">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="471.04" cy="-566.42" rx="18" ry="18"/>
+<text text-anchor="middle" x="471.04" y="-561.74" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/ledger/ledger&#45;mode</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ledger/ledger&#45;mode -->
+<g id="edge46" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ledger/ledger&#45;mode</title>
+<path fill="none" stroke="black" d="M1146.84,-996.51C1058.43,-940.25 607.24,-653.1 495.9,-582.24"/>
+<polygon fill="black" stroke="black" points="497.8,-579.3 487.49,-576.89 494.05,-585.21 497.8,-579.3"/>
+</g>
+<!-- //github.com/trixnz/lua&#45;fmt -->
+<g id="node48" class="node node&#45;https">
+<title>//github.com/trixnz/lua&#45;fmt</title>
+<g id="a_node48"><a xlink:href="https://github.com/trixnz/lua-fmt" xlink:title="https://github.com/trixnz/lua&#45;fmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="159.9" cy="-1062.34" rx="18" ry="18"/>
+<text text-anchor="middle" x="159.9" y="-1057.67" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/trixnz/lua&#45;fmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/trixnz/lua&#45;fmt -->
+<g id="edge47" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/trixnz/lua&#45;fmt</title>
+<path fill="none" stroke="black" d="M1144.09,-1007.11C1024.57,-1013.81 339.63,-1052.26 189.13,-1060.7"/>
+<polygon fill="black" stroke="black" points="189.03,-1057.2 179.24,-1061.26 189.43,-1064.19 189.03,-1057.2"/>
+</g>
+<!-- //github.com/JohnnyMorganz/StyLua -->
+<g id="node49" class="node node&#45;https">
+<title>//github.com/JohnnyMorganz/StyLua</title>
+<g id="a_node49"><a xlink:href="https://github.com/JohnnyMorganz/StyLua" xlink:title="https://github.com/JohnnyMorganz/StyLua">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="159.12" cy="-808.34" rx="18" ry="18"/>
+<text text-anchor="middle" x="159.12" y="-803.67" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/JohnnyMorganz/StyLua</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/JohnnyMorganz/StyLua -->
+<g id="edge48" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/JohnnyMorganz/StyLua</title>
+<path fill="none" stroke="black" d="M1144.51,-1002.67C1025.87,-979.28 336.5,-843.32 187.51,-813.94"/>
+<polygon fill="black" stroke="black" points="188.59,-810.59 178.1,-812.08 187.24,-817.45 188.59,-810.59"/>
+</g>
+<!-- //github.com/prettier/plugin&#45;lua -->
+<g id="node50" class="node node&#45;https">
+<title>//github.com/prettier/plugin&#45;lua</title>
+<g id="a_node50"><a xlink:href="https://github.com/prettier/plugin-lua" xlink:title="https://github.com/prettier/plugin&#45;lua">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1245.27" cy="-372.04" rx="18" ry="18"/>
+<text text-anchor="middle" x="1245.27" y="-367.37" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/prettier/plugin&#45;lua</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/prettier/plugin&#45;lua -->
+<g id="edge49" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/prettier/plugin&#45;lua</title>
+<path fill="none" stroke="black" d="M1164.23,-988.49C1175.76,-900.77 1227,-511.04 1241.46,-401.04"/>
+<polygon fill="black" stroke="black" points="1244.89,-401.75 1242.73,-391.38 1237.95,-400.84 1244.89,-401.75"/>
+</g>
+<!-- //sr.ht/~lattis/muon/ -->
+<g id="node51" class="node node&#45;https">
+<title>//sr.ht/~lattis/muon/</title>
+<g id="a_node51"><a xlink:href="https://sr.ht/~lattis/muon/" xlink:title="https://sr.ht/~lattis/muon/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1364.32" cy="-196.53" rx="18" ry="18"/>
+<text text-anchor="middle" x="1364.32" y="-191.86" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://sr.ht/~lattis/muon/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//sr.ht/~lattis/muon/ -->
+<g id="edge50" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//sr.ht/~lattis/muon/</title>
+<path fill="none" stroke="black" d="M1166.23,-988.82C1191.98,-885.82 1325.18,-353.09 1357.33,-224.49"/>
+<polygon fill="black" stroke="black" points="1360.65,-225.68 1359.68,-215.12 1353.85,-223.98 1360.65,-225.68"/>
+</g>
+<!-- //github.com/slomkowski/nginx&#45;config&#45;formatter -->
+<g id="node52" class="node node&#45;https">
+<title>//github.com/slomkowski/nginx&#45;config&#45;formatter</title>
+<g id="a_node52"><a xlink:href="https://github.com/slomkowski/nginx-config-formatter" xlink:title="https://github.com/slomkowski/nginx&#45;config&#45;formatter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1529.06" cy="-70.06" rx="18" ry="18"/>
+<text text-anchor="middle" x="1529.06" y="-65.38" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/slomkowski/nginx&#45;config&#45;formatter</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/slomkowski/nginx&#45;config&#45;formatter -->
+<g id="edge51" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/slomkowski/nginx&#45;config&#45;formatter</title>
+<path fill="none" stroke="black" d="M1168.44,-989.46C1212.23,-877.81 1463.21,-237.95 1518.35,-97.37"/>
+<polygon fill="black" stroke="black" points="1521.58,-98.72 1521.97,-88.13 1515.06,-96.16 1521.58,-98.72"/>
+</g>
+<!-- //github.com/nix&#45;community/nixpkgs&#45;fmt -->
+<g id="node53" class="node node&#45;https">
+<title>//github.com/nix&#45;community/nixpkgs&#45;fmt</title>
+<g id="a_node53"><a xlink:href="https://github.com/nix-community/nixpkgs-fmt" xlink:title="https://github.com/nix&#45;community/nixpkgs&#45;fmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1273.54" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1273.54" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/nix&#45;community/nixpkgs&#45;fmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/nix&#45;community/nixpkgs&#45;fmt -->
+<g id="edge52" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/nix&#45;community/nixpkgs&#45;fmt</title>
+<path fill="none" stroke="black" d="M1163.9,-988.54C1177.21,-870.67 1253.52,-195.23 1270.29,-46.83"/>
+<polygon fill="black" stroke="black" points="1273.74,-47.42 1271.39,-37.09 1266.79,-46.63 1273.74,-47.42"/>
+</g>
+<!-- //github.com/serokell/nixfmt -->
+<g id="node54" class="node node&#45;https">
+<title>//github.com/serokell/nixfmt</title>
+<g id="a_node54"><a xlink:href="https://github.com/serokell/nixfmt" xlink:title="https://github.com/serokell/nixfmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1778.27" cy="-500.72" rx="18" ry="18"/>
+<text text-anchor="middle" x="1778.27" y="-496.04" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/serokell/nixfmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/serokell/nixfmt -->
+<g id="edge53" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/serokell/nixfmt</title>
+<path fill="none" stroke="black" d="M1175.65,-994.84C1255.15,-929.66 1656.14,-600.86 1755.81,-519.13"/>
+<polygon fill="black" stroke="black" points="1757.81,-522.02 1763.33,-512.97 1753.37,-516.6 1757.81,-522.02"/>
+</g>
+<!-- //github.com/kamadorueda/alejandra -->
+<g id="node55" class="node node&#45;https">
+<title>//github.com/kamadorueda/alejandra</title>
+<g id="a_node55"><a xlink:href="https://github.com/kamadorueda/alejandra" xlink:title="https://github.com/kamadorueda/alejandra">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1707.89" cy="-143.71" rx="18" ry="18"/>
+<text text-anchor="middle" x="1707.89" y="-139.03" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/kamadorueda/alejandra</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/kamadorueda/alejandra -->
+<g id="edge54" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/kamadorueda/alejandra</title>
+<path fill="none" stroke="black" d="M1171.39,-991.14C1235.98,-889.11 1611.31,-296.25 1692.43,-168.12"/>
+<polygon fill="black" stroke="black" points="1695.16,-170.35 1697.56,-160.03 1689.25,-166.6 1695.16,-170.35"/>
+</g>
+<!-- //opam.ocaml.org/packages/ocp&#45;indent/ -->
+<g id="node56" class="node node&#45;https">
+<title>//opam.ocaml.org/packages/ocp&#45;indent/</title>
+<g id="a_node56"><a xlink:href="https://opam.ocaml.org/packages/ocp-indent/" xlink:title="https://opam.ocaml.org/packages/ocp&#45;indent/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1817.55" cy="-301.95" rx="18" ry="18"/>
+<text text-anchor="middle" x="1817.55" y="-297.28" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://opam.ocaml.org/packages/ocp&#45;indent/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//opam.ocaml.org/packages/ocp&#45;indent/ -->
+<g id="edge55" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//opam.ocaml.org/packages/ocp&#45;indent/</title>
+<path fill="none" stroke="black" d="M1174.13,-992.98C1253.68,-907.54 1697.62,-430.76 1797.56,-323.42"/>
+<polygon fill="black" stroke="black" points="1800.12,-325.8 1804.37,-316.1 1795,-321.03 1800.12,-325.8"/>
+</g>
+<!-- //github.com/ocaml&#45;ppx/ocamlformat -->
+<g id="node57" class="node node&#45;https">
+<title>//github.com/ocaml&#45;ppx/ocamlformat</title>
+<g id="a_node57"><a xlink:href="https://github.com/ocaml-ppx/ocamlformat" xlink:title="https://github.com/ocaml&#45;ppx/ocamlformat">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1629.37" cy="-429.88" rx="18" ry="18"/>
+<text text-anchor="middle" x="1629.37" y="-425.2" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/ocaml&#45;ppx/ocamlformat</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ocaml&#45;ppx/ocamlformat -->
+<g id="edge56" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ocaml&#45;ppx/ocamlformat</title>
+<path fill="none" stroke="black" d="M1173.23,-992.15C1235.24,-915.71 1533.67,-547.84 1611.02,-452.49"/>
+<polygon fill="black" stroke="black" points="1613.66,-454.8 1617.24,-444.83 1608.22,-450.39 1613.66,-454.8"/>
+</g>
+<!-- //perltidy.sourceforge.net/ -->
+<g id="node58" class="node node&#45;http">
+<title>//perltidy.sourceforge.net/</title>
+<g id="a_node58"><a xlink:href="http://perltidy.sourceforge.net/" xlink:title="http://perltidy.sourceforge.net/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1273.11" cy="-543.33" rx="18" ry="18"/>
+<text text-anchor="middle" x="1273.11" y="-538.66" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://perltidy.sourceforge.net/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//perltidy.sourceforge.net/ -->
+<g id="edge57" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//perltidy.sourceforge.net/</title>
+<path fill="none" stroke="black" d="M1166.07,-988.81C1182.82,-919.07 1245.52,-658.15 1266.34,-571.5"/>
+<polygon fill="black" stroke="black" points="1269.71,-572.49 1268.64,-561.94 1262.9,-570.85 1269.71,-572.49"/>
+</g>
+<!-- //github.com/prettier/plugin&#45;php -->
+<g id="node59" class="node node&#45;https">
+<title>//github.com/prettier/plugin&#45;php</title>
+<g id="a_node59"><a xlink:href="https://github.com/prettier/plugin-php" xlink:title="https://github.com/prettier/plugin&#45;php">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="990.15" cy="-306.06" rx="18" ry="18"/>
+<text text-anchor="middle" x="990.15" y="-301.39" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/prettier/plugin&#45;php</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/prettier/plugin&#45;php -->
+<g id="edge58" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/prettier/plugin&#45;php</title>
+<path fill="none" stroke="black" d="M1157.67,-988.8C1134.74,-895.37 1025.72,-451.02 997.06,-334.24"/>
+<polygon fill="black" stroke="black" points="1000.54,-333.74 994.76,-324.86 993.75,-335.41 1000.54,-333.74"/>
+</g>
+<!-- //gitlab.com/joneshf/purty -->
+<g id="node60" class="node node&#45;https">
+<title>//gitlab.com/joneshf/purty</title>
+<g id="a_node60"><a xlink:href="https://gitlab.com/joneshf/purty" xlink:title="https://gitlab.com/joneshf/purty">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1146.62" cy="-243.87" rx="18" ry="18"/>
+<text text-anchor="middle" x="1146.62" y="-239.19" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://gitlab.com/joneshf/purty</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//gitlab.com/joneshf/purty -->
+<g id="edge59" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//gitlab.com/joneshf/purty</title>
+<path fill="none" stroke="black" d="M1161.56,-988.39C1159.56,-888.77 1149.72,-398.49 1147.21,-273.11"/>
+<polygon fill="black" stroke="black" points="1150.71,-273.27 1147.01,-263.34 1143.71,-273.41 1150.71,-273.27"/>
+</g>
+<!-- //github.com/natefaubion/purescript&#45;tidy -->
+<g id="node61" class="node node&#45;https">
+<title>//github.com/natefaubion/purescript&#45;tidy</title>
+<g id="a_node61"><a xlink:href="https://github.com/natefaubion/purescript-tidy" xlink:title="https://github.com/natefaubion/purescript&#45;tidy">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1051.68" cy="-587.37" rx="18" ry="18"/>
+<text text-anchor="middle" x="1051.68" y="-582.69" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/natefaubion/purescript&#45;tidy</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/natefaubion/purescript&#45;tidy -->
+<g id="edge60" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/natefaubion/purescript&#45;tidy</title>
+<path fill="none" stroke="black" d="M1157.38,-988.91C1140.36,-924.22 1080.05,-695.12 1058.99,-615.16"/>
+<polygon fill="black" stroke="black" points="1062.5,-614.72 1056.57,-605.94 1055.73,-616.5 1062.5,-614.72"/>
+</g>
+<!-- //github.com/ambv/black -->
+<g id="node62" class="node node&#45;https">
+<title>//github.com/ambv/black</title>
+<g id="a_node62"><a xlink:href="https://github.com/ambv/black" xlink:title="https://github.com/ambv/black">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1233.83" cy="-902.17" rx="18" ry="18"/>
+<text text-anchor="middle" x="1233.83" y="-897.49" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/ambv/black</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ambv/black -->
+<g id="edge61" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ambv/black</title>
+<path fill="none" stroke="black" d="M1171.91,-991.65C1183.65,-974.68 1203.3,-946.29 1217.32,-926.03"/>
+<polygon fill="black" stroke="black" points="1220.01,-928.29 1222.83,-918.07 1214.26,-924.31 1220.01,-928.29"/>
+</g>
+<!-- //github.com/PyCQA/isort -->
+<g id="node63" class="node node&#45;https">
+<title>//github.com/PyCQA/isort</title>
+<g id="a_node63"><a xlink:href="https://github.com/PyCQA/isort" xlink:title="https://github.com/PyCQA/isort">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1674.64" cy="-651.54" rx="18" ry="18"/>
+<text text-anchor="middle" x="1674.64" y="-646.86" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/PyCQA/isort</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/PyCQA/isort -->
+<g id="edge62" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/PyCQA/isort</title>
+<path fill="none" stroke="black" d="M1176.7,-995.88C1248.64,-946.13 1562.06,-729.39 1651.02,-667.87"/>
+<polygon fill="black" stroke="black" points="1652.8,-670.9 1659.03,-662.33 1648.82,-665.14 1652.8,-670.9"/>
+</g>
+<!-- //docs.astral.sh/ruff/formatter/ -->
+<g id="node64" class="node node&#45;https">
+<title>//docs.astral.sh/ruff/formatter/</title>
+<g id="a_node64"><a xlink:href="https://docs.astral.sh/ruff/formatter/" xlink:title="https://docs.astral.sh/ruff/formatter/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1410.07" cy="-667.93" rx="18" ry="18"/>
+<text text-anchor="middle" x="1410.07" y="-663.26" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://docs.astral.sh/ruff/formatter/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//docs.astral.sh/ruff/formatter/ -->
+<g id="edge63" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//docs.astral.sh/ruff/formatter/</title>
+<path fill="none" stroke="black" d="M1172.26,-992.01C1210.65,-939.69 1345.17,-756.37 1393.02,-691.17"/>
+<polygon fill="black" stroke="black" points="1395.69,-693.45 1398.78,-683.31 1390.04,-689.3 1395.69,-693.45"/>
+</g>
+<!-- //github.com/google/yapf -->
+<g id="node65" class="node node&#45;https">
+<title>//github.com/google/yapf</title>
+<g id="a_node65"><a xlink:href="https://github.com/google/yapf" xlink:title="https://github.com/google/yapf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1512.08" cy="-339.72" rx="18" ry="18"/>
+<text text-anchor="middle" x="1512.08" y="-335.05" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/google/yapf</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/google/yapf -->
+<g id="edge64" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/google/yapf</title>
+<path fill="none" stroke="black" d="M1170.22,-990.29C1216.33,-902.54 1440.74,-475.49 1498.5,-365.57"/>
+<polygon fill="black" stroke="black" points="1501.59,-367.21 1503.15,-356.73 1495.4,-363.96 1501.59,-367.21"/>
+</g>
+<!-- //github.com/r&#45;lib/styler -->
+<g id="node66" class="node node&#45;https">
+<title>//github.com/r&#45;lib/styler</title>
+<g id="a_node66"><a xlink:href="https://github.com/r-lib/styler" xlink:title="https://github.com/r&#45;lib/styler">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2082.78" cy="-1165.42" rx="18" ry="18"/>
+<text text-anchor="middle" x="2082.78" y="-1160.74" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/r&#45;lib/styler</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/r&#45;lib/styler -->
+<g id="edge65" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/r&#45;lib/styler</title>
+<path fill="none" stroke="black" d="M1179.48,-1009.15C1292.2,-1028.65 1913.34,-1136.11 2054.32,-1160.49"/>
+<polygon fill="black" stroke="black" points="2053.45,-1163.9 2063.9,-1162.15 2054.65,-1157 2053.45,-1163.9"/>
+</g>
+<!-- //docs.racket&#45;lang.org/fmt/ -->
+<g id="node67" class="node node&#45;https">
+<title>//docs.racket&#45;lang.org/fmt/</title>
+<g id="a_node67"><a xlink:href="https://docs.racket-lang.org/fmt/" xlink:title="https://docs.racket&#45;lang.org/fmt/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2255.45" cy="-1055.52" rx="18" ry="18"/>
+<text text-anchor="middle" x="2255.45" y="-1050.85" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://docs.racket&#45;lang.org/fmt/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//docs.racket&#45;lang.org/fmt/ -->
+<g id="edge66" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//docs.racket&#45;lang.org/fmt/</title>
+<path fill="none" stroke="black" d="M1179.53,-1006.9C1305.37,-1012.59 2067.23,-1047.02 2226.34,-1054.21"/>
+<polygon fill="black" stroke="black" points="2225.87,-1057.69 2236.02,-1054.64 2226.18,-1050.69 2225.87,-1057.69"/>
+</g>
+<!-- //github.com/glennsl/bs&#45;refmt -->
+<g id="node68" class="node node&#45;https">
+<title>//github.com/glennsl/bs&#45;refmt</title>
+<g id="a_node68"><a xlink:href="https://github.com/glennsl/bs-refmt" xlink:title="https://github.com/glennsl/bs&#45;refmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2195.53" cy="-1319.86" rx="18" ry="18"/>
+<text text-anchor="middle" x="2195.53" y="-1315.19" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/glennsl/bs&#45;refmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/glennsl/bs&#45;refmt -->
+<g id="edge67" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/glennsl/bs&#45;refmt</title>
+<path fill="none" stroke="black" d="M1178.99,-1011.29C1299.1,-1047.75 2016.54,-1265.53 2167.62,-1311.39"/>
+<polygon fill="black" stroke="black" points="2166.59,-1314.74 2177.17,-1314.29 2168.62,-1308.04 2166.59,-1314.74"/>
+</g>
+<!-- //www.npmjs.com/package/rescript -->
+<g id="node69" class="node node&#45;https">
+<title>//www.npmjs.com/package/rescript</title>
+<g id="a_node69"><a xlink:href="https://www.npmjs.com/package/rescript" xlink:title="https://www.npmjs.com/package/rescript">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2141.31" cy="-1473.7" rx="18" ry="18"/>
+<text text-anchor="middle" x="2141.31" y="-1469.03" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://www.npmjs.com/package/rescript</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.npmjs.com/package/rescript -->
+<g id="edge68" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.npmjs.com/package/rescript</title>
+<path fill="none" stroke="black" d="M1178.09,-1013.83C1292.02,-1068.22 1973.07,-1393.38 2115.29,-1461.28"/>
+<polygon fill="black" stroke="black" points="2113.39,-1464.25 2123.92,-1465.4 2116.41,-1457.94 2113.39,-1464.25"/>
+</g>
+<!-- //github.com/rubocop/rubocop -->
+<g id="node70" class="node node&#45;https">
+<title>//github.com/rubocop/rubocop</title>
+<g id="a_node70"><a xlink:href="https://github.com/rubocop/rubocop" xlink:title="https://github.com/rubocop/rubocop">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1525.27" cy="-1640.14" rx="18" ry="18"/>
+<text text-anchor="middle" x="1525.27" y="-1635.47" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/rubocop/rubocop</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/rubocop/rubocop -->
+<g id="edge69" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/rubocop/rubocop</title>
+<path fill="none" stroke="black" d="M1170.71,-1021.46C1218.86,-1105.48 1450.38,-1509.46 1510.82,-1614.92"/>
+<polygon fill="black" stroke="black" points="1507.66,-1616.45 1515.67,-1623.39 1513.74,-1612.97 1507.66,-1616.45"/>
+</g>
+<!-- //github.com/ruby&#45;formatter/rufo -->
+<g id="node71" class="node node&#45;https">
+<title>//github.com/ruby&#45;formatter/rufo</title>
+<g id="a_node71"><a xlink:href="https://github.com/ruby-formatter/rufo" xlink:title="https://github.com/ruby&#45;formatter/rufo">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1798.88" cy="-1684.56" rx="18" ry="18"/>
+<text text-anchor="middle" x="1798.88" y="-1679.88" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/ruby&#45;formatter/rufo</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ruby&#45;formatter/rufo -->
+<g id="edge70" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ruby&#45;formatter/rufo</title>
+<path fill="none" stroke="black" d="M1174.07,-1019.05C1251.95,-1102 1680.76,-1558.74 1778.88,-1663.25"/>
+<polygon fill="black" stroke="black" points="1776.16,-1665.47 1785.56,-1670.37 1781.27,-1660.68 1776.16,-1665.47"/>
+</g>
+<!-- //github.com/testdouble/standard -->
+<g id="node72" class="node node&#45;https">
+<title>//github.com/testdouble/standard</title>
+<g id="a_node72"><a xlink:href="https://github.com/testdouble/standard" xlink:title="https://github.com/testdouble/standard">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1579.29" cy="-1458.52" rx="18" ry="18"/>
+<text text-anchor="middle" x="1579.29" y="-1453.85" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/testdouble/standard</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/testdouble/standard -->
+<g id="edge71" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/testdouble/standard</title>
+<path fill="none" stroke="black" d="M1173.95,-1019.16C1232.38,-1082.49 1486.52,-1357.97 1559.58,-1437.16"/>
+<polygon fill="black" stroke="black" points="1556.82,-1439.33 1566.17,-1444.31 1561.96,-1434.58 1556.82,-1439.33"/>
+</g>
+<!-- //github.com/ruby&#45;syntax&#45;tree/syntax_tree -->
+<g id="node73" class="node node&#45;https">
+<title>//github.com/ruby&#45;syntax&#45;tree/syntax_tree</title>
+<g id="a_node73"><a xlink:href="https://github.com/ruby-syntax-tree/syntax_tree" xlink:title="https://github.com/ruby&#45;syntax&#45;tree/syntax_tree">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1614.54" cy="-1795.91" rx="18" ry="18"/>
+<text text-anchor="middle" x="1614.54" y="-1791.24" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/ruby&#45;syntax&#45;tree/syntax_tree</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ruby&#45;syntax&#45;tree/syntax_tree -->
+<g id="edge72" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/ruby&#45;syntax&#45;tree/syntax_tree</title>
+<path fill="none" stroke="black" d="M1170.75,-1021.53C1226.57,-1118.93 1530.12,-1648.6 1600.13,-1770.77"/>
+<polygon fill="black" stroke="black" points="1596.88,-1772.14 1604.89,-1779.08 1602.95,-1768.66 1596.88,-1772.14"/>
+</g>
+<!-- //github.com/rust&#45;lang&#45;nursery/rustfmt -->
+<g id="node74" class="node node&#45;https">
+<title>//github.com/rust&#45;lang&#45;nursery/rustfmt</title>
+<g id="a_node74"><a xlink:href="https://github.com/rust-lang-nursery/rustfmt" xlink:title="https://github.com/rust&#45;lang&#45;nursery/rustfmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1889.11" cy="-1234.72" rx="18" ry="18"/>
+<text text-anchor="middle" x="1889.11" y="-1230.05" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/rust&#45;lang&#45;nursery/rustfmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/rust&#45;lang&#45;nursery/rustfmt -->
+<g id="edge73" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/rust&#45;lang&#45;nursery/rustfmt</title>
+<path fill="none" stroke="black" d="M1178.82,-1011.42C1273.85,-1041.3 1741.59,-1188.35 1861.21,-1225.95"/>
+<polygon fill="black" stroke="black" points="1859.94,-1229.22 1870.53,-1228.88 1862.04,-1222.55 1859.94,-1229.22"/>
+</g>
+<!-- //github.com/scalameta/scalafmt -->
+<g id="node75" class="node node&#45;https">
+<title>//github.com/scalameta/scalafmt</title>
+<g id="a_node75"><a xlink:href="https://github.com/scalameta/scalafmt" xlink:title="https://github.com/scalameta/scalafmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1433" cy="-1098.31" rx="18" ry="18"/>
+<text text-anchor="middle" x="1433" y="-1093.63" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/scalameta/scalafmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/scalameta/scalafmt -->
+<g id="edge74" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/scalameta/scalafmt</title>
+<path fill="none" stroke="black" d="M1178.87,-1011.87C1224.32,-1027.33 1349.2,-1069.81 1405.2,-1088.85"/>
+<polygon fill="black" stroke="black" points="1404.02,-1092.15 1414.62,-1092.05 1406.28,-1085.52 1404.02,-1092.15"/>
+</g>
+<!-- //github.com/lovesegfault/beautysh -->
+<g id="node76" class="node node&#45;https">
+<title>//github.com/lovesegfault/beautysh</title>
+<g id="a_node76"><a xlink:href="https://github.com/lovesegfault/beautysh" xlink:title="https://github.com/lovesegfault/beautysh">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1748.89" cy="-1112.72" rx="18" ry="18"/>
+<text text-anchor="middle" x="1748.89" y="-1108.05" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/lovesegfault/beautysh</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/lovesegfault/beautysh -->
+<g id="edge75" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/lovesegfault/beautysh</title>
+<path fill="none" stroke="black" d="M1179.48,-1009.3C1262.6,-1024.39 1616.67,-1088.71 1720.3,-1107.53"/>
+<polygon fill="black" stroke="black" points="1719.44,-1110.93 1729.91,-1109.28 1720.69,-1104.04 1719.44,-1110.93"/>
+</g>
+<!-- //github.com/mvdan/sh -->
+<g id="node77" class="node node&#45;https">
+<title>//github.com/mvdan/sh</title>
+<g id="a_node77"><a xlink:href="https://github.com/mvdan/sh" xlink:title="https://github.com/mvdan/sh">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1468.8" cy="-903.64" rx="18" ry="18"/>
+<text text-anchor="middle" x="1468.8" y="-898.97" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/mvdan/sh</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/mvdan/sh -->
+<g id="edge76" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/mvdan/sh</title>
+<path fill="none" stroke="black" d="M1178.85,-1000.45C1229.25,-983.62 1378.66,-933.74 1441,-912.92"/>
+<polygon fill="black" stroke="black" points="1442.1,-916.24 1450.48,-909.76 1439.89,-909.61 1442.1,-916.24"/>
+</g>
+<!-- //github.com/snakemake/snakefmt -->
+<g id="node78" class="node node&#45;https">
+<title>//github.com/snakemake/snakefmt</title>
+<g id="a_node78"><a xlink:href="https://github.com/snakemake/snakefmt" xlink:title="https://github.com/snakemake/snakefmt">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1991.81" cy="-1596.56" rx="18" ry="18"/>
+<text text-anchor="middle" x="1991.81" y="-1591.88" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/snakemake/snakefmt</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/snakemake/snakefmt -->
+<g id="edge77" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/snakemake/snakefmt</title>
+<path fill="none" stroke="black" d="M1176.32,-1016.35C1274.5,-1086.21 1845.02,-1492.12 1968.32,-1579.85"/>
+<polygon fill="black" stroke="black" points="1965.93,-1582.44 1976.1,-1585.38 1969.98,-1576.73 1965.93,-1582.44"/>
+</g>
+<!-- //github.com/prettier&#45;solidity/prettier&#45;plugin&#45;solidity -->
+<g id="node79" class="node node&#45;https">
+<title>//github.com/prettier&#45;solidity/prettier&#45;plugin&#45;solidity</title>
+<g id="a_node79"><a xlink:href="https://github.com/prettier-solidity/prettier-plugin-solidity" xlink:title="https://github.com/prettier&#45;solidity/prettier&#45;plugin&#45;solidity">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1764.14" cy="-1514.84" rx="18" ry="18"/>
+<text text-anchor="middle" x="1764.14" y="-1510.16" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/prettier&#45;solidity/prettier&#45;plugin&#45;solidity</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/prettier&#45;solidity/prettier&#45;plugin&#45;solidity -->
+<g id="edge78" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/prettier&#45;solidity/prettier&#45;plugin&#45;solidity</title>
+<path fill="none" stroke="black" d="M1175.62,-1017.69C1253.9,-1083.81 1644.21,-1413.52 1741.93,-1496.07"/>
+<polygon fill="black" stroke="black" points="1739.4,-1498.52 1749.3,-1502.3 1743.92,-1493.17 1739.4,-1498.52"/>
+</g>
+<!-- //github.com/darold/pgFormatter -->
+<g id="node80" class="node node&#45;https">
+<title>//github.com/darold/pgFormatter</title>
+<g id="a_node80"><a xlink:href="https://github.com/darold/pgFormatter" xlink:title="https://github.com/darold/pgFormatter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1951.36" cy="-1779.84" rx="18" ry="18"/>
+<text text-anchor="middle" x="1951.36" y="-1775.17" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/darold/pgFormatter</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/darold/pgFormatter -->
+<g id="edge79" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/darold/pgFormatter</title>
+<path fill="none" stroke="black" d="M1174.63,-1018.57C1265.57,-1107.7 1816.65,-1647.81 1930.7,-1759.6"/>
+<polygon fill="black" stroke="black" points="1928.04,-1761.89 1937.63,-1766.39 1932.94,-1756.89 1928.04,-1761.89"/>
+</g>
+<!-- //pypi.org/project/sqlparse/ -->
+<g id="node81" class="node node&#45;https">
+<title>//pypi.org/project/sqlparse/</title>
+<g id="a_node81"><a xlink:href="https://pypi.org/project/sqlparse/" xlink:title="https://pypi.org/project/sqlparse/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1886.53" cy="-1407.04" rx="18" ry="18"/>
+<text text-anchor="middle" x="1886.53" y="-1402.37" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://pypi.org/project/sqlparse/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//pypi.org/project/sqlparse/ -->
+<g id="edge80" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//pypi.org/project/sqlparse/</title>
+<path fill="none" stroke="black" d="M1177.38,-1014.67C1269.47,-1065.62 1745.38,-1328.94 1861.14,-1392.99"/>
+<polygon fill="black" stroke="black" points="1859.13,-1395.88 1869.58,-1397.66 1862.52,-1389.76 1859.13,-1395.88"/>
+</g>
+<!-- //github.com/sveltejs/prettier&#45;plugin&#45;svelte -->
+<g id="node82" class="node node&#45;https">
+<title>//github.com/sveltejs/prettier&#45;plugin&#45;svelte</title>
+<g id="a_node82"><a xlink:href="https://github.com/sveltejs/prettier-plugin-svelte" xlink:title="https://github.com/sveltejs/prettier&#45;plugin&#45;svelte">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1927.9" cy="-1064.53" rx="18" ry="18"/>
+<text text-anchor="middle" x="1927.9" y="-1059.86" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/sveltejs/prettier&#45;plugin&#45;svelte</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/sveltejs/prettier&#45;plugin&#45;svelte -->
+<g id="edge81" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/sveltejs/prettier&#45;plugin&#45;svelte</title>
+<path fill="none" stroke="black" d="M1179.72,-1007.46C1279.93,-1015.11 1773.59,-1052.76 1898.92,-1062.32"/>
+<polygon fill="black" stroke="black" points="1898.44,-1065.79 1908.68,-1063.07 1898.98,-1058.81 1898.44,-1065.79"/>
+</g>
+<!-- //github.com/nicklockwood/SwiftFormat -->
+<g id="node83" class="node node&#45;https">
+<title>//github.com/nicklockwood/SwiftFormat</title>
+<g id="a_node83"><a xlink:href="https://github.com/nicklockwood/SwiftFormat" xlink:title="https://github.com/nicklockwood/SwiftFormat">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1845.04" cy="-796.32" rx="18" ry="18"/>
+<text text-anchor="middle" x="1845.04" y="-791.64" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/nicklockwood/SwiftFormat</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/nicklockwood/SwiftFormat -->
+<g id="edge82" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/nicklockwood/SwiftFormat</title>
+<path fill="none" stroke="black" d="M1178.8,-1000.92C1269.88,-972.95 1702.71,-840.03 1817.2,-804.87"/>
+<polygon fill="black" stroke="black" points="1818.16,-808.23 1826.69,-801.95 1816.1,-801.54 1818.16,-808.23"/>
+</g>
+<!-- //www.terraform.io/docs/commands/fmt.html -->
+<g id="node84" class="node node&#45;https">
+<title>//www.terraform.io/docs/commands/fmt.html</title>
+<g id="a_node84"><a xlink:href="https://www.terraform.io/docs/commands/fmt.html" xlink:title="https://www.terraform.io/docs/commands/fmt.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2030.92" cy="-906.56" rx="18" ry="18"/>
+<text text-anchor="middle" x="2030.92" y="-901.89" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://www.terraform.io/docs/commands/fmt.html</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.terraform.io/docs/commands/fmt.html -->
+<g id="edge83" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//www.terraform.io/docs/commands/fmt.html</title>
+<path fill="none" stroke="black" d="M1179.66,-1004.07C1288.54,-991.6 1865.84,-925.47 2002.09,-909.87"/>
+<polygon fill="black" stroke="black" points="2002.15,-913.38 2011.69,-908.77 2001.36,-906.43 2002.15,-913.38"/>
+</g>
+<!-- //github.com/bd82/toml&#45;tools/tree/master/packages/prettier&#45;plugin&#45;toml -->
+<g id="node85" class="node node&#45;https">
+<title>//github.com/bd82/toml&#45;tools/tree/master/packages/prettier&#45;plugin&#45;toml</title>
+<g id="a_node85"><a xlink:href="https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml" xlink:title="https://github.com/bd82/toml&#45;tools/tree/master/packages/prettier&#45;plugin&#45;toml">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1660.22" cy="-845.96" rx="18" ry="18"/>
+<text text-anchor="middle" x="1660.22" y="-841.28" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/bd82/toml&#45;tools/tree/master/packages/prettier&#45;plugin&#45;toml</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/bd82/toml&#45;tools/tree/master/packages/prettier&#45;plugin&#45;toml -->
+<g id="edge84" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/bd82/toml&#45;tools/tree/master/packages/prettier&#45;plugin&#45;toml</title>
+<path fill="none" stroke="black" d="M1178.78,-1000.69C1251.74,-977.24 1540.68,-884.37 1632.24,-854.95"/>
+<polygon fill="black" stroke="black" points="1633.22,-858.31 1641.67,-851.92 1631.08,-851.65 1633.22,-858.31"/>
+</g>
+<!-- //taplo.tamasfe.dev/cli/usage/formatting.html -->
+<g id="node86" class="node node&#45;https">
+<title>//taplo.tamasfe.dev/cli/usage/formatting.html</title>
+<g id="a_node86"><a xlink:href="https://taplo.tamasfe.dev/cli/usage/formatting.html" xlink:title="https://taplo.tamasfe.dev/cli/usage/formatting.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1948.83" cy="-602.73" rx="18" ry="18"/>
+<text text-anchor="middle" x="1948.83" y="-598.06" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://taplo.tamasfe.dev/cli/usage/formatting.html</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//taplo.tamasfe.dev/cli/usage/formatting.html -->
+<g id="edge85" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//taplo.tamasfe.dev/cli/usage/formatting.html</title>
+<path fill="none" stroke="black" d="M1177.63,-998.05C1275.41,-947.93 1800.17,-678.94 1923.06,-615.94"/>
+<polygon fill="black" stroke="black" points="1924.42,-619.18 1931.72,-611.5 1921.23,-612.95 1924.42,-619.18"/>
+</g>
+<!-- //github.com/vlang/v -->
+<g id="node87" class="node node&#45;https">
+<title>//github.com/vlang/v</title>
+<g id="a_node87"><a xlink:href="https://github.com/vlang/v" xlink:title="https://github.com/vlang/v">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2129.68" cy="-716.72" rx="18" ry="18"/>
+<text text-anchor="middle" x="2129.68" y="-712.04" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/vlang/v</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/vlang/v -->
+<g id="edge86" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/vlang/v</title>
+<path fill="none" stroke="black" d="M1179.12,-1000.96C1294.56,-966.44 1956.09,-768.63 2101.44,-725.16"/>
+<polygon fill="black" stroke="black" points="2102.42,-728.52 2111,-722.3 2100.42,-721.82 2102.42,-728.52"/>
+</g>
+<!-- //github.com/thomasrussellmurphy/istyle&#45;verilog&#45;formatter -->
+<g id="node88" class="node node&#45;https">
+<title>//github.com/thomasrussellmurphy/istyle&#45;verilog&#45;formatter</title>
+<g id="a_node88"><a xlink:href="https://github.com/thomasrussellmurphy/istyle-verilog-formatter" xlink:title="https://github.com/thomasrussellmurphy/istyle&#45;verilog&#45;formatter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2155.37" cy="-518.8" rx="18" ry="18"/>
+<text text-anchor="middle" x="2155.37" y="-514.13" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/thomasrussellmurphy/istyle&#45;verilog&#45;formatter</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/thomasrussellmurphy/istyle&#45;verilog&#45;formatter -->
+<g id="edge87" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/thomasrussellmurphy/istyle&#45;verilog&#45;formatter</title>
+<path fill="none" stroke="black" d="M1177.92,-998.25C1292.36,-942.12 1985.85,-601.96 2129.38,-531.55"/>
+<polygon fill="black" stroke="black" points="2130.66,-534.82 2138.1,-527.27 2127.58,-528.53 2130.66,-534.82"/>
+</g>
+<!-- //github.com/chipsalliance/verible/tree/master/verilog/tools/formatter -->
+<g id="node89" class="node node&#45;https">
+<title>//github.com/chipsalliance/verible/tree/master/verilog/tools/formatter</title>
+<g id="a_node89"><a xlink:href="https://github.com/chipsalliance/verible/tree/master/verilog/tools/formatter" xlink:title="https://github.com/chipsalliance/verible/tree/master/verilog/tools/formatter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1973.66" cy="-376.72" rx="18" ry="18"/>
+<text text-anchor="middle" x="1973.66" y="-372.05" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/chipsalliance/verible/tree/master/verilog/tools/formatter</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/chipsalliance/verible/tree/master/verilog/tools/formatter -->
+<g id="edge88" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//github.com/chipsalliance/verible/tree/master/verilog/tools/formatter</title>
+<path fill="none" stroke="black" d="M1176,-995.18C1272.03,-920.72 1830.08,-488.05 1950.68,-394.54"/>
+<polygon fill="black" stroke="black" points="1952.55,-397.52 1958.31,-388.63 1948.26,-391.99 1952.55,-397.52"/>
+</g>
+<!-- //ziglang.org/ -->
+<g id="node90" class="node node&#45;https">
+<title>//ziglang.org/</title>
+<g id="a_node90"><a xlink:href="https://ziglang.org/" xlink:title="https://ziglang.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2221.91" cy="-848.76" rx="18" ry="18"/>
+<text text-anchor="middle" x="2221.91" y="-844.09" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://ziglang.org/</text>
+</a>
+</g>
+</g>
+<!-- ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//ziglang.org/ -->
+<g id="edge89" class="edge">
+<title>ca0fa9f9&#45;896f&#45;45aa&#45;a60b&#45;dcb0ed5eb8e2&#45;&gt;//ziglang.org/</title>
+<path fill="none" stroke="black" d="M1179.42,-1003.51C1302.47,-985.24 2036.79,-876.24 2192.79,-853.08"/>
+<polygon fill="black" stroke="black" points="2193.29,-856.55 2202.67,-851.62 2192.26,-849.62 2193.29,-856.55"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
 </main>
 <div id="postamble" class="status">
 <footer>

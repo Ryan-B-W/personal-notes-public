@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:36 -->
+<!-- 2025-05-12 Mon 15:53 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(en.wikipedia.org) Quaternion - Wikipedia</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 <script>
   window.MathJax = {
     tex: {
@@ -60,6 +61,719 @@ ROAM_REFS: https://en.wikipedia.org/wiki/Quaternion
 <blockquote>
 <p>In <a href="https://en.wikipedia.org/wiki/Mathematics">mathematics</a>, the <b>quaternion</b> <a href="https://en.wikipedia.org/wiki/Number_system">number system</a> extends the <a href="https://en.wikipedia.org/wiki/Complex_number">complex numbers</a>.  Quaternions were first described by the Irish mathematician <a href="https://en.wikipedia.org/wiki/William_Rowan_Hamilton">William Rowan Hamilton</a> in 1843 and applied to <a href="https://en.wikipedia.org/wiki/Mechanics">mechanics</a> in <a href="https://en.wikipedia.org/wiki/Three-dimensional_space">three-dimensional space</a>.  The algebra of quaternions is often denoted by <b>H</b> (for <i>Hamilton</i>), or in <a href="https://en.wikipedia.org/wiki/Blackboard_bold">blackboard bold</a> by \(\mathbb{H}.\) Quaternions are not a <a href="https://en.wikipedia.org/wiki/Field_(mathematics)">field</a>, because multiplication of quaternions is not, in general, <a href="https://en.wikipedia.org/wiki/Commutative">commutative</a>.  Quaternions provide a definition of the quotient of two <a href="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)">vectors</a> in a three-dimensional space.  Quaternions are generally represented in the form</p><p>\[a + b\,\mathbf{i} + c\,\mathbf{j} + d\,\mathbf{k},\]</p><p>where the coefficients a, b, c, d are <a href="https://en.wikipedia.org/wiki/Real_number">real numbers</a>, and 1, <b>i</b>, <b>j</b>, <b>k</b> are the <i>basis vectors</i> or <i>basis elements</i>.</p><p>Quaternions are used in <a href="https://en.wikipedia.org/wiki/Pure_mathematics">pure mathematics</a>, but also have practical uses in <a href="https://en.wikipedia.org/wiki/Applied_mathematics">applied mathematics</a>, particularly for <a href="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation">calculations involving three-dimensional rotations</a>, such as in <a href="https://en.wikipedia.org/wiki/3D_computer_graphics">three-dimensional computer graphics</a>, <a href="https://en.wikipedia.org/wiki/Computer_vision">computer vision</a>, robotics, <a href="https://en.wikipedia.org/wiki/Magnetic_resonance_imaging">magnetic resonance imaging</a> and <a href="https://en.wikipedia.org/wiki/Texture_(crystalline)">crystallographic texture</a> analysis.  They can be used alongside other methods of rotation, such as <a href="https://en.wikipedia.org/wiki/Euler_angles">Euler angles</a> and <a href="https://en.wikipedia.org/wiki/Rotation_matrix">rotation matrices</a>, or as an alternative to them, depending on the application.</p><p>In modern terms, quaternions form a four-dimensional <a href="https://en.wikipedia.org/wiki/Associative_algebra">associative</a> <a href="https://en.wikipedia.org/wiki/Composition_algebra">normed</a> <a href="https://en.wikipedia.org/wiki/Division_algebra">division algebra</a> over the real numbers, and therefore a ring, also a <a href="https://en.wikipedia.org/wiki/Division_ring">division ring</a> and a <a href="https://en.wikipedia.org/wiki/Domain_(ring_theory)">domain</a>.  It is a special case of a <a href="https://en.wikipedia.org/wiki/Clifford_algebra">Clifford algebra</a>, <a href="https://en.wikipedia.org/wiki/Classification_of_Clifford_algebras">classified</a> as \({Cl}_{0,2}(\mathbb{R}) \cong {Cl}_{3,0}^{+}(\mathbb{R}).\) It was the first noncommutative division algebra to be discovered.</p><p>According to the <a href="https://en.wikipedia.org/wiki/Frobenius_theorem_(real_division_algebras)">Frobenius theorem</a>, the algebra \(\mathbb{H}\) is one of only two finite-dimensional <a href="https://en.wikipedia.org/wiki/Division_ring">division rings</a> containing a proper <a href="https://en.wikipedia.org/wiki/Subring">subring</a> <a href="https://en.wikipedia.org/wiki/Isomorphism">isomorphic</a> to the real numbers; the other being the complex numbers.  These rings are also <a href="https://en.wikipedia.org/wiki/Hurwitz's_theorem_(composition_algebras)">Euclidean Hurwitz algebras</a>, of which the quaternions are the largest <a href="https://en.wikipedia.org/wiki/Associative_algebra">associative algebra</a> (and hence the largest ring).  Further extending the quaternions yields the <a href="https://en.wikipedia.org/wiki/Non-associative_algebra">non-associative</a> <a href="https://en.wikipedia.org/wiki/Octonion">octonions</a>, which is the last <a href="https://en.wikipedia.org/wiki/Normed_division_algebra">normed division algebra</a> over the real numbers.  The next extension gives the <a href="https://en.wikipedia.org/wiki/Sedenions">sedenions</a>, which have <a href="https://en.wikipedia.org/wiki/Zero_divisor">zero divisors</a> and so cannot be a normed division algebra.</p><p>The <a href="https://en.wikipedia.org/wiki/Unit_quaternion">unit quaternions</a> give a <a href="https://en.wikipedia.org/wiki/Group_(mathematics)">group</a> structure on the <a href="https://en.wikipedia.org/wiki/3-sphere">3-sphere</a> S<sup>3</sup> isomorphic to the groups <a href="https://en.wikipedia.org/wiki/Spin(3)">Spin(3)</a> and <a href="https://en.wikipedia.org/wiki/SU(2)">SU(2)</a>, i.e. the <a href="https://en.wikipedia.org/wiki/Universal_cover">universal cover</a> group of <a href="https://en.wikipedia.org/wiki/SO(3)">SO(3)</a>.  The positive and negative basis vectors form the eight-element <a href="https://en.wikipedia.org/wiki/Quaternion_group">quaternion group</a>.</p>
 </blockquote>
+<div id="outline-container-org3bba03b" class="outline-2">
+<h2 id="org3bba03b">Local Graph</h2>
+<div class="outline-text-2" id="text-org3bba03b">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="2826pt" height="2208pt"
+ viewBox="0.00 0.00 2826.38 2208.38">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2204.38)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2204.38 2822.38,-2204.38 2822.38,4 -4,4"/>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f -->
+<g id="node1" class="node node&#45;id">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f</title>
+<g id="a_node1"><a xlink:href="public/en_wikipedia_org_quaternion_wikipedia.html" xlink:title="(en.wikipedia.org) Quaternion &#45; Wikipedia">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1483.46" cy="-1097.95" rx="18" ry="18"/>
+<text text-anchor="middle" x="1483.46" y="-1093.27" font-family="Times,serif" font-size="14.00" fill="#111111">(en.wikipedia.org) Quaternion &#45; Wikip...</text>
+</a>
+</g>
+</g>
+<!-- //en.wikipedia.org/wiki/Mathematics -->
+<g id="node2" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Mathematics</title>
+<g id="a_node2"><a xlink:href="https://en.wikipedia.org/wiki/Mathematics" xlink:title="https://en.wikipedia.org/wiki/Mathematics">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2133.38" cy="-1521.27" rx="18" ry="18"/>
+<text text-anchor="middle" x="2133.38" y="-1516.6" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Mathematics</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Mathematics -->
+<g id="edge1" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Mathematics</title>
+<path fill="none" stroke="black" d="M1498.26,-1107.58C1582.56,-1162.49 2002.19,-1435.82 2108.74,-1505.23"/>
+<polygon fill="black" stroke="black" points="2106.77,-1508.11 2117.06,-1510.64 2110.59,-1502.25 2106.77,-1508.11"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Number_system -->
+<g id="node3" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Number_system</title>
+<g id="a_node3"><a xlink:href="https://en.wikipedia.org/wiki/Number_system" xlink:title="https://en.wikipedia.org/wiki/Number_system">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2344.27" cy="-1800.06" rx="18" ry="18"/>
+<text text-anchor="middle" x="2344.27" y="-1795.39" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Number_system</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Number_system -->
+<g id="edge2" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Number_system</title>
+<path fill="none" stroke="black" d="M1497.33,-1109.26C1596.5,-1190.14 2197.38,-1680.25 2321.75,-1781.7"/>
+<polygon fill="black" stroke="black" points="2319.35,-1784.25 2329.31,-1787.86 2323.78,-1778.83 2319.35,-1784.25"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Complex_number -->
+<g id="node4" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Complex_number</title>
+<g id="a_node4"><a xlink:href="https://en.wikipedia.org/wiki/Complex_number" xlink:title="https://en.wikipedia.org/wiki/Complex_number">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1641.35" cy="-1468.02" rx="18" ry="18"/>
+<text text-anchor="middle" x="1641.35" y="-1463.35" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Complex_number</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Complex_number -->
+<g id="edge3" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Complex_number</title>
+<path fill="none" stroke="black" d="M1490.45,-1114.33C1515.26,-1172.48 1599.28,-1369.41 1629.99,-1441.39"/>
+<polygon fill="black" stroke="black" points="1626.7,-1442.61 1633.85,-1450.44 1633.14,-1439.87 1626.7,-1442.61"/>
+</g>
+<!-- //en.wikipedia.org/wiki/William_Rowan_Hamilton -->
+<g id="node5" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/William_Rowan_Hamilton</title>
+<g id="a_node5"><a xlink:href="https://en.wikipedia.org/wiki/William_Rowan_Hamilton" xlink:title="https://en.wikipedia.org/wiki/William_Rowan_Hamilton">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1900.32" cy="-1725.66" rx="18" ry="18"/>
+<text text-anchor="middle" x="1900.32" y="-1720.99" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/William_Rowan_Hamilton</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/William_Rowan_Hamilton -->
+<g id="edge4" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/William_Rowan_Hamilton</title>
+<path fill="none" stroke="black" d="M1493.36,-1112.85C1548.25,-1195.5 1815.39,-1597.77 1884.15,-1701.32"/>
+<polygon fill="black" stroke="black" points="1881.23,-1703.25 1889.68,-1709.64 1887.06,-1699.38 1881.23,-1703.25"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Mechanics -->
+<g id="node6" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Mechanics</title>
+<g id="a_node6"><a xlink:href="https://en.wikipedia.org/wiki/Mechanics" xlink:title="https://en.wikipedia.org/wiki/Mechanics">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1853.66" cy="-2132.57" rx="18" ry="18"/>
+<text text-anchor="middle" x="1853.66" y="-2127.89" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Mechanics</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Mechanics -->
+<g id="edge5" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Mechanics</title>
+<path fill="none" stroke="black" d="M1489.43,-1114.62C1532.07,-1233.8 1790.49,-1956.02 1843.97,-2105.5"/>
+<polygon fill="black" stroke="black" points="1840.55,-2106.34 1847.22,-2114.58 1847.14,-2103.98 1840.55,-2106.34"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Three&#45;dimensional_space -->
+<g id="node7" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Three&#45;dimensional_space</title>
+<g id="a_node7"><a xlink:href="https://en.wikipedia.org/wiki/Three-dimensional_space" xlink:title="https://en.wikipedia.org/wiki/Three&#45;dimensional_space">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1663.23" cy="-1889.71" rx="18" ry="18"/>
+<text text-anchor="middle" x="1663.23" y="-1885.03" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Three&#45;dimensional_space</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Three&#45;dimensional_space -->
+<g id="edge6" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Three&#45;dimensional_space</title>
+<path fill="none" stroke="black" d="M1487.38,-1115.22C1510.39,-1216.55 1627.79,-1733.63 1656.76,-1861.22"/>
+<polygon fill="black" stroke="black" points="1653.32,-1861.87 1658.95,-1870.85 1660.15,-1860.32 1653.32,-1861.87"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Blackboard_bold -->
+<g id="node8" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Blackboard_bold</title>
+<g id="a_node8"><a xlink:href="https://en.wikipedia.org/wiki/Blackboard_bold" xlink:title="https://en.wikipedia.org/wiki/Blackboard_bold">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1468.96" cy="-2182.38" rx="18" ry="18"/>
+<text text-anchor="middle" x="1468.96" y="-2177.71" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Blackboard_bold</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Blackboard_bold -->
+<g id="edge7" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Blackboard_bold</title>
+<path fill="none" stroke="black" d="M1483.22,-1115.87C1481.54,-1242.01 1471.45,-1996.1 1469.35,-2153.57"/>
+<polygon fill="black" stroke="black" points="1465.85,-2153.08 1469.22,-2163.13 1472.85,-2153.18 1465.85,-2153.08"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Field_(mathematics) -->
+<g id="node9" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Field_(mathematics)</title>
+<g id="a_node9"><a xlink:href="https://en.wikipedia.org/wiki/Field_(mathematics)" xlink:title="https://en.wikipedia.org/wiki/Field_(mathematics)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2142.54" cy="-1979.98" rx="18" ry="18"/>
+<text text-anchor="middle" x="2142.54" y="-1975.31" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Field_(mathematics)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Field_(mathematics) -->
+<g id="edge8" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Field_(mathematics)</title>
+<path fill="none" stroke="black" d="M1494.08,-1112.16C1570.01,-1213.77 2030.08,-1829.47 2125.3,-1956.91"/>
+<polygon fill="black" stroke="black" points="2122.29,-1958.73 2131.08,-1964.64 2127.9,-1954.54 2122.29,-1958.73"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Commutative -->
+<g id="node10" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Commutative</title>
+<g id="a_node10"><a xlink:href="https://en.wikipedia.org/wiki/Commutative" xlink:title="https://en.wikipedia.org/wiki/Commutative">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1965.39" cy="-467.41" rx="18" ry="18"/>
+<text text-anchor="middle" x="1965.39" y="-462.74" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Commutative</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Commutative -->
+<g id="edge9" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Commutative</title>
+<path fill="none" stroke="black" d="M1494.2,-1083.89C1556.36,-1002.57 1869.9,-592.35 1947.83,-490.38"/>
+<polygon fill="black" stroke="black" points="1950.41,-492.77 1953.71,-482.7 1944.85,-488.52 1950.41,-492.77"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Vector_(mathematics_and_physics) -->
+<g id="node11" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Vector_(mathematics_and_physics)</title>
+<g id="a_node11"><a xlink:href="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)" xlink:title="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1918.72" cy="-1311.98" rx="18" ry="18"/>
+<text text-anchor="middle" x="1918.72" y="-1307.3" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Vector_(mathematics_and_physics) -->
+<g id="edge10" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Vector_(mathematics_and_physics)</title>
+<path fill="none" stroke="black" d="M1499.47,-1105.82C1564.79,-1137.94 1811.51,-1259.26 1892.67,-1299.17"/>
+<polygon fill="black" stroke="black" points="1890.69,-1302.1 1901.21,-1303.37 1893.78,-1295.81 1890.69,-1302.1"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Real_number -->
+<g id="node12" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Real_number</title>
+<g id="a_node12"><a xlink:href="https://en.wikipedia.org/wiki/Real_number" xlink:title="https://en.wikipedia.org/wiki/Real_number">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1191.28" cy="-898" rx="18" ry="18"/>
+<text text-anchor="middle" x="1191.28" y="-893.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Real_number</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Real_number -->
+<g id="edge11" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Real_number</title>
+<path fill="none" stroke="black" d="M1468.97,-1088.03C1421.95,-1055.85 1273.27,-954.12 1215.02,-914.25"/>
+<polygon fill="black" stroke="black" points="1217.33,-911.59 1207.1,-908.83 1213.38,-917.37 1217.33,-911.59"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Pure_mathematics -->
+<g id="node13" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Pure_mathematics</title>
+<g id="a_node13"><a xlink:href="https://en.wikipedia.org/wiki/Pure_mathematics" xlink:title="https://en.wikipedia.org/wiki/Pure_mathematics">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2278.79" cy="-1224.67" rx="18" ry="18"/>
+<text text-anchor="middle" x="2278.79" y="-1219.99" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Pure_mathematics</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Pure_mathematics -->
+<g id="edge12" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Pure_mathematics</title>
+<path fill="none" stroke="black" d="M1501.19,-1100.77C1603.77,-1117.12 2121.19,-1199.56 2249.81,-1220.05"/>
+<polygon fill="black" stroke="black" points="2249.1,-1223.48 2259.52,-1221.6 2250.2,-1216.57 2249.1,-1223.48"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Applied_mathematics -->
+<g id="node14" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Applied_mathematics</title>
+<g id="a_node14"><a xlink:href="https://en.wikipedia.org/wiki/Applied_mathematics" xlink:title="https://en.wikipedia.org/wiki/Applied_mathematics">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2509.41" cy="-763.33" rx="18" ry="18"/>
+<text text-anchor="middle" x="2509.41" y="-758.65" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Applied_mathematics</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Applied_mathematics -->
+<g id="edge13" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Applied_mathematics</title>
+<path fill="none" stroke="black" d="M1500.41,-1092.42C1619.64,-1053.53 2331.75,-821.27 2481.7,-772.36"/>
+<polygon fill="black" stroke="black" points="2482.77,-775.7 2491.19,-769.27 2480.6,-769.04 2482.77,-775.7"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Quaternions_and_spatial_rotation -->
+<g id="node15" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Quaternions_and_spatial_rotation</title>
+<g id="a_node15"><a xlink:href="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation" xlink:title="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2586.88" cy="-1105.17" rx="18" ry="18"/>
+<text text-anchor="middle" x="2586.88" y="-1100.5" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Quaternions_and_spatial_rotation -->
+<g id="edge14" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Quaternions_and_spatial_rotation</title>
+<path fill="none" stroke="black" d="M1501.24,-1098.06C1628.35,-1098.9 2398.6,-1103.94 2558.02,-1104.98"/>
+<polygon fill="black" stroke="black" points="2557.68,-1108.48 2567.7,-1105.05 2557.72,-1101.48 2557.68,-1108.48"/>
+</g>
+<!-- //en.wikipedia.org/wiki/3D_computer_graphics -->
+<g id="node16" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/3D_computer_graphics</title>
+<g id="a_node16"><a xlink:href="https://en.wikipedia.org/wiki/3D_computer_graphics" xlink:title="https://en.wikipedia.org/wiki/3D_computer_graphics">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1870.1" cy="-1001.1" rx="18" ry="18"/>
+<text text-anchor="middle" x="1870.1" y="-996.43" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/3D_computer_graphics</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/3D_computer_graphics -->
+<g id="edge15" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/3D_computer_graphics</title>
+<path fill="none" stroke="black" d="M1500.83,-1093.6C1561.78,-1078.33 1766.35,-1027.09 1841.82,-1008.18"/>
+<polygon fill="black" stroke="black" points="1842.47,-1011.63 1851.32,-1005.81 1840.77,-1004.84 1842.47,-1011.63"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Computer_vision -->
+<g id="node17" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Computer_vision</title>
+<g id="a_node17"><a xlink:href="https://en.wikipedia.org/wiki/Computer_vision" xlink:title="https://en.wikipedia.org/wiki/Computer_vision">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2498.02" cy="-1497.32" rx="18" ry="18"/>
+<text text-anchor="middle" x="2498.02" y="-1492.64" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Computer_vision</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Computer_vision -->
+<g id="edge16" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Computer_vision</title>
+<path fill="none" stroke="black" d="M1499.81,-1104.38C1616.56,-1150.34 2323.39,-1428.58 2471.01,-1486.69"/>
+<polygon fill="black" stroke="black" points="2469.39,-1489.81 2479.98,-1490.22 2471.95,-1483.3 2469.39,-1489.81"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Magnetic_resonance_imaging -->
+<g id="node18" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Magnetic_resonance_imaging</title>
+<g id="a_node18"><a xlink:href="https://en.wikipedia.org/wiki/Magnetic_resonance_imaging" xlink:title="https://en.wikipedia.org/wiki/Magnetic_resonance_imaging">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1579.93" cy="-431.46" rx="18" ry="18"/>
+<text text-anchor="middle" x="1579.93" y="-426.79" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Magnetic_resonance_imaging</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Magnetic_resonance_imaging -->
+<g id="edge17" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Magnetic_resonance_imaging</title>
+<path fill="none" stroke="black" d="M1485.99,-1080.46C1499.1,-989.9 1559.3,-573.98 1575.76,-460.27"/>
+<polygon fill="black" stroke="black" points="1579.2,-460.97 1577.16,-450.57 1572.27,-459.97 1579.2,-460.97"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Texture_(crystalline) -->
+<g id="node19" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Texture_(crystalline)</title>
+<g id="a_node19"><a xlink:href="https://en.wikipedia.org/wiki/Texture_(crystalline)" xlink:title="https://en.wikipedia.org/wiki/Texture_(crystalline)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="660.7" cy="-859.65" rx="18" ry="18"/>
+<text text-anchor="middle" x="660.7" y="-854.98" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Texture_(crystalline)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Texture_(crystalline) -->
+<g id="edge18" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Texture_(crystalline)</title>
+<path fill="none" stroke="black" d="M1466.28,-1092.97C1362.44,-1062.9 818.95,-905.49 688.75,-867.78"/>
+<polygon fill="black" stroke="black" points="689.82,-864.44 679.24,-865.02 687.87,-871.17 689.82,-864.44"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Euler_angles -->
+<g id="node20" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Euler_angles</title>
+<g id="a_node20"><a xlink:href="https://en.wikipedia.org/wiki/Euler_angles" xlink:title="https://en.wikipedia.org/wiki/Euler_angles">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="930.05" cy="-646.31" rx="18" ry="18"/>
+<text text-anchor="middle" x="930.05" y="-641.63" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Euler_angles</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Euler_angles -->
+<g id="edge19" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Euler_angles</title>
+<path fill="none" stroke="black" d="M1469.78,-1086.78C1395.99,-1026.57 1045.35,-740.41 952.6,-664.71"/>
+<polygon fill="black" stroke="black" points="954.88,-662.05 944.92,-658.44 950.45,-667.48 954.88,-662.05"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Rotation_matrix -->
+<g id="node21" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Rotation_matrix</title>
+<g id="a_node21"><a xlink:href="https://en.wikipedia.org/wiki/Rotation_matrix" xlink:title="https://en.wikipedia.org/wiki/Rotation_matrix">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1128.24" cy="-1337.02" rx="18" ry="18"/>
+<text text-anchor="middle" x="1128.24" y="-1332.34" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Rotation_matrix</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Rotation_matrix -->
+<g id="edge20" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Rotation_matrix</title>
+<path fill="none" stroke="black" d="M1468.65,-1107.92C1413.7,-1144.9 1221.13,-1274.5 1152.64,-1320.59"/>
+<polygon fill="black" stroke="black" points="1150.71,-1317.67 1144.37,-1326.16 1154.62,-1323.48 1150.71,-1317.67"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Associative_algebra -->
+<g id="node22" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Associative_algebra</title>
+<g id="a_node22"><a xlink:href="https://en.wikipedia.org/wiki/Associative_algebra" xlink:title="https://en.wikipedia.org/wiki/Associative_algebra">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="824.52" cy="-1488.61" rx="18" ry="18"/>
+<text text-anchor="middle" x="824.52" y="-1483.93" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Associative_algebra</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Associative_algebra -->
+<g id="edge21" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Associative_algebra</title>
+<path fill="none" stroke="black" d="M1468.14,-1107.03C1381.93,-1158.14 957.26,-1409.91 849.44,-1473.83"/>
+<polygon fill="black" stroke="black" points="847.87,-1470.69 841.05,-1478.8 851.44,-1476.71 847.87,-1470.69"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Composition_algebra -->
+<g id="node23" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Composition_algebra</title>
+<g id="a_node23"><a xlink:href="https://en.wikipedia.org/wiki/Composition_algebra" xlink:title="https://en.wikipedia.org/wiki/Composition_algebra">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="600.28" cy="-1754.03" rx="18" ry="18"/>
+<text text-anchor="middle" x="600.28" y="-1749.36" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Composition_algebra</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Composition_algebra -->
+<g id="edge22" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Composition_algebra</title>
+<path fill="none" stroke="black" d="M1469.23,-1108.52C1367.49,-1184.1 750.99,-1642.08 623.39,-1736.87"/>
+<polygon fill="black" stroke="black" points="621.58,-1733.85 615.64,-1742.63 625.76,-1739.47 621.58,-1733.85"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Division_algebra -->
+<g id="node24" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Division_algebra</title>
+<g id="a_node24"><a xlink:href="https://en.wikipedia.org/wiki/Division_algebra" xlink:title="https://en.wikipedia.org/wiki/Division_algebra">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="628.78" cy="-1215.7" rx="18" ry="18"/>
+<text text-anchor="middle" x="628.78" y="-1211.02" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Division_algebra</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Division_algebra -->
+<g id="edge23" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Division_algebra</title>
+<path fill="none" stroke="black" d="M1466,-1100.35C1359.03,-1115.09 792.36,-1193.16 657.57,-1211.73"/>
+<polygon fill="black" stroke="black" points="657.5,-1208.21 648.07,-1213.04 658.45,-1215.14 657.5,-1208.21"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Division_ring -->
+<g id="node25" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Division_ring</title>
+<g id="a_node25"><a xlink:href="https://en.wikipedia.org/wiki/Division_ring" xlink:title="https://en.wikipedia.org/wiki/Division_ring">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1294.67" cy="-1927.98" rx="18" ry="18"/>
+<text text-anchor="middle" x="1294.67" y="-1923.31" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Division_ring</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Division_ring -->
+<g id="edge24" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Division_ring</title>
+<path fill="none" stroke="black" d="M1479.52,-1115.28C1455.69,-1220.03 1330.98,-1768.33 1301.11,-1899.68"/>
+<polygon fill="black" stroke="black" points="1297.73,-1898.74 1298.93,-1909.26 1304.56,-1900.29 1297.73,-1898.74"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Domain_(ring_theory) -->
+<g id="node26" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Domain_(ring_theory)</title>
+<g id="a_node26"><a xlink:href="https://en.wikipedia.org/wiki/Domain_(ring_theory)" xlink:title="https://en.wikipedia.org/wiki/Domain_(ring_theory)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1053.46" cy="-1714.39" rx="18" ry="18"/>
+<text text-anchor="middle" x="1053.46" y="-1709.72" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Domain_(ring_theory)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Domain_(ring_theory) -->
+<g id="edge25" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Domain_(ring_theory)</title>
+<path fill="none" stroke="black" d="M1473.26,-1112.58C1416.63,-1193.75 1141.06,-1588.8 1070.13,-1690.48"/>
+<polygon fill="black" stroke="black" points="1067.28,-1688.45 1064.43,-1698.66 1073.02,-1692.46 1067.28,-1688.45"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Clifford_algebra -->
+<g id="node27" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Clifford_algebra</title>
+<g id="a_node27"><a xlink:href="https://en.wikipedia.org/wiki/Clifford_algebra" xlink:title="https://en.wikipedia.org/wiki/Clifford_algebra">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1353.55" cy="-1598.14" rx="18" ry="18"/>
+<text text-anchor="middle" x="1353.55" y="-1593.46" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Clifford_algebra</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Clifford_algebra -->
+<g id="edge26" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Clifford_algebra</title>
+<path fill="none" stroke="black" d="M1478.99,-1115.17C1459.86,-1188.81 1384.82,-1477.74 1360.91,-1569.8"/>
+<polygon fill="black" stroke="black" points="1357.58,-1568.71 1358.45,-1579.27 1364.35,-1570.47 1357.58,-1568.71"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Classification_of_Clifford_algebras -->
+<g id="node28" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Classification_of_Clifford_algebras</title>
+<g id="a_node28"><a xlink:href="https://en.wikipedia.org/wiki/Classification_of_Clifford_algebras" xlink:title="https://en.wikipedia.org/wiki/Classification_of_Clifford_algebras">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="781.08" cy="-1943.24" rx="18" ry="18"/>
+<text text-anchor="middle" x="781.08" y="-1938.57" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Classification_of_Clifford_algebras</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Classification_of_Clifford_algebras -->
+<g id="edge27" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Classification_of_Clifford_algebras</title>
+<path fill="none" stroke="black" d="M1472.15,-1111.57C1391.23,-1208.94 900.94,-1799 799.46,-1921.13"/>
+<polygon fill="black" stroke="black" points="797,-1918.61 793.3,-1928.54 802.38,-1923.09 797,-1918.61"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Frobenius_theorem_(real_division_algebras) -->
+<g id="node29" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Frobenius_theorem_(real_division_algebras)</title>
+<g id="a_node29"><a xlink:href="https://en.wikipedia.org/wiki/Frobenius_theorem_(real_division_algebras)" xlink:title="https://en.wikipedia.org/wiki/Frobenius_theorem_(real_division_algebras)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1065.4" cy="-2116.48" rx="18" ry="18"/>
+<text text-anchor="middle" x="1065.4" y="-2111.8" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Frobenius_theorem_(real_division_algebras)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Frobenius_theorem_(real_division_algebras) -->
+<g id="edge28" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Frobenius_theorem_(real_division_algebras)</title>
+<path fill="none" stroke="black" d="M1476.73,-1114.36C1428.57,-1231.69 1136.74,-1942.68 1076.33,-2089.83"/>
+<polygon fill="black" stroke="black" points="1073.23,-2088.19 1072.67,-2098.77 1079.7,-2090.84 1073.23,-2088.19"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Subring -->
+<g id="node30" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Subring</title>
+<g id="a_node30"><a xlink:href="https://en.wikipedia.org/wiki/Subring" xlink:title="https://en.wikipedia.org/wiki/Subring">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="428.39" cy="-1466.69" rx="18" ry="18"/>
+<text text-anchor="middle" x="428.39" y="-1462.02" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Subring</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Subring -->
+<g id="edge29" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Subring</title>
+<path fill="none" stroke="black" d="M1466.89,-1103.74C1346.67,-1145.75 608.79,-1403.64 456.04,-1457.03"/>
+<polygon fill="black" stroke="black" points="455.03,-1453.67 446.75,-1460.27 457.34,-1460.28 455.03,-1453.67"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Isomorphism -->
+<g id="node31" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Isomorphism</title>
+<g id="a_node31"><a xlink:href="https://en.wikipedia.org/wiki/Isomorphism" xlink:title="https://en.wikipedia.org/wiki/Isomorphism">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="918.38" cy="-1052.51" rx="18" ry="18"/>
+<text text-anchor="middle" x="918.38" y="-1047.84" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Isomorphism</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Isomorphism -->
+<g id="edge30" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Isomorphism</title>
+<path fill="none" stroke="black" d="M1465.62,-1096.51C1384.4,-1089.98 1049.25,-1063.03 947.68,-1054.87"/>
+<polygon fill="black" stroke="black" points="947.98,-1051.38 937.74,-1054.07 947.42,-1058.36 947.98,-1051.38"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Hurwitz&apos;s_theorem_(composition_algebras) -->
+<g id="node33" class="node">
+<title>//en.wikipedia.org/wiki/Hurwitz&apos;s_theorem_(composition_algebras)</title>
+<ellipse fill="none" stroke="black" cx="375.82" cy="-1037.82" rx="375.82" ry="18"/>
+<text text-anchor="middle" x="375.82" y="-1033.15" font-family="Times,serif" font-size="14.00">//en.wikipedia.org/wiki/Hurwitz&amp;apos;s_theorem_(composition_algebras)</text>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Hurwitz&apos;s_theorem_(composition_algebras) -->
+<g id="edge31" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Hurwitz&apos;s_theorem_(composition_algebras)</title>
+<path fill="none" stroke="black" d="M1465.62,-1096.98C1372,-1091.9 930.89,-1067.95 639.36,-1052.13"/>
+<polygon fill="black" stroke="black" points="639.88,-1048.65 629.7,-1051.61 639.5,-1055.64 639.88,-1048.65"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Non&#45;associative_algebra -->
+<g id="node34" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Non&#45;associative_algebra</title>
+<g id="a_node34"><a xlink:href="https://en.wikipedia.org/wiki/Non-associative_algebra" xlink:title="https://en.wikipedia.org/wiki/Non&#45;associative_algebra">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="446.82" cy="-635.74" rx="18" ry="18"/>
+<text text-anchor="middle" x="446.82" y="-631.07" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Non&#45;associative_algebra</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Non&#45;associative_algebra -->
+<g id="edge32" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Non&#45;associative_algebra</title>
+<path fill="none" stroke="black" d="M1467.18,-1090.69C1348.94,-1037.97 622.52,-714.08 473.51,-647.65"/>
+<polygon fill="black" stroke="black" points="475.01,-644.48 464.45,-643.6 472.15,-650.87 475.01,-644.48"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Octonion -->
+<g id="node35" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Octonion</title>
+<g id="a_node35"><a xlink:href="https://en.wikipedia.org/wiki/Octonion" xlink:title="https://en.wikipedia.org/wiki/Octonion">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2152.49" cy="-692.51" rx="18" ry="18"/>
+<text text-anchor="middle" x="2152.49" y="-687.83" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Octonion</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Octonion -->
+<g id="edge33" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Octonion</title>
+<path fill="none" stroke="black" d="M1498.69,-1088.72C1585.56,-1036.07 2018.38,-773.78 2127.48,-707.66"/>
+<polygon fill="black" stroke="black" points="2129.25,-710.68 2135.99,-702.51 2125.62,-704.7 2129.25,-710.68"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Normed_division_algebra -->
+<g id="node36" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Normed_division_algebra</title>
+<g id="a_node36"><a xlink:href="https://en.wikipedia.org/wiki/Normed_division_algebra" xlink:title="https://en.wikipedia.org/wiki/Normed_division_algebra">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2407.49" cy="-458.31" rx="18" ry="18"/>
+<text text-anchor="middle" x="2407.49" y="-453.64" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Normed_division_algebra</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Normed_division_algebra -->
+<g id="edge34" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Normed_division_algebra</title>
+<path fill="none" stroke="black" d="M1497.98,-1087.9C1603.37,-1014.94 2250.88,-566.73 2383.7,-474.78"/>
+<polygon fill="black" stroke="black" points="2385.54,-477.77 2391.77,-469.2 2381.55,-472.01 2385.54,-477.77"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Sedenions -->
+<g id="node37" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Sedenions</title>
+<g id="a_node37"><a xlink:href="https://en.wikipedia.org/wiki/Sedenions" xlink:title="https://en.wikipedia.org/wiki/Sedenions">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1891.21" cy="-142.16" rx="18" ry="18"/>
+<text text-anchor="middle" x="1891.21" y="-137.49" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Sedenions</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Sedenions -->
+<g id="edge35" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Sedenions</title>
+<path fill="none" stroke="black" d="M1490.37,-1081.76C1538.16,-969.74 1819.54,-310.16 1879.84,-168.82"/>
+<polygon fill="black" stroke="black" points="1882.95,-170.46 1883.65,-159.89 1876.51,-167.72 1882.95,-170.46"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Zero_divisor -->
+<g id="node38" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Zero_divisor</title>
+<g id="a_node38"><a xlink:href="https://en.wikipedia.org/wiki/Zero_divisor" xlink:title="https://en.wikipedia.org/wiki/Zero_divisor">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2246.07" cy="-999.37" rx="18" ry="18"/>
+<text text-anchor="middle" x="2246.07" y="-994.7" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Zero_divisor</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Zero_divisor -->
+<g id="edge36" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Zero_divisor</title>
+<path fill="none" stroke="black" d="M1501.19,-1095.66C1600.96,-1082.76 2092.44,-1019.23 2217.22,-1003.1"/>
+<polygon fill="black" stroke="black" points="2217.47,-1006.6 2226.94,-1001.84 2216.57,-999.65 2217.47,-1006.6"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Unit_quaternion -->
+<g id="node39" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Unit_quaternion</title>
+<g id="a_node39"><a xlink:href="https://en.wikipedia.org/wiki/Unit_quaternion" xlink:title="https://en.wikipedia.org/wiki/Unit_quaternion">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1784.97" cy="-748.04" rx="18" ry="18"/>
+<text text-anchor="middle" x="1784.97" y="-743.36" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Unit_quaternion</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Unit_quaternion -->
+<g id="edge37" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Unit_quaternion</title>
+<path fill="none" stroke="black" d="M1494.91,-1084.66C1540.53,-1031.72 1709.56,-835.56 1766.28,-769.73"/>
+<polygon fill="black" stroke="black" points="1768.65,-772.34 1772.52,-762.48 1763.34,-767.78 1768.65,-772.34"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Group_(mathematics) -->
+<g id="node40" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Group_(mathematics)</title>
+<g id="a_node40"><a xlink:href="https://en.wikipedia.org/wiki/Group_(mathematics)" xlink:title="https://en.wikipedia.org/wiki/Group_(mathematics)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1389.81" cy="-210.73" rx="18" ry="18"/>
+<text text-anchor="middle" x="1389.81" y="-206.06" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Group_(mathematics)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Group_(mathematics) -->
+<g id="edge38" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Group_(mathematics)</title>
+<path fill="none" stroke="black" d="M1481.59,-1080.23C1469.96,-969.99 1407.5,-378.34 1392.87,-239.78"/>
+<polygon fill="black" stroke="black" points="1396.37,-239.58 1391.84,-230 1389.41,-240.32 1396.37,-239.58"/>
+</g>
+<!-- //en.wikipedia.org/wiki/3&#45;sphere -->
+<g id="node41" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/3&#45;sphere</title>
+<g id="a_node41"><a xlink:href="https://en.wikipedia.org/wiki/3-sphere" xlink:title="https://en.wikipedia.org/wiki/3&#45;sphere">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2211.9" cy="-242.45" rx="18" ry="18"/>
+<text text-anchor="middle" x="2211.9" y="-237.78" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/3&#45;sphere</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/3&#45;sphere -->
+<g id="edge39" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/3&#45;sphere</title>
+<path fill="none" stroke="black" d="M1494.9,-1084.51C1577.99,-986.93 2088.43,-387.45 2193.14,-264.48"/>
+<polygon fill="black" stroke="black" points="2195.68,-266.89 2199.5,-257.01 2190.35,-262.36 2195.68,-266.89"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Spin(3) -->
+<g id="node42" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Spin(3)</title>
+<g id="a_node42"><a xlink:href="https://en.wikipedia.org/wiki/Spin(3)" xlink:title="https://en.wikipedia.org/wiki/Spin(3)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1595.7" cy="-27.45" rx="18" ry="18"/>
+<text text-anchor="middle" x="1595.7" y="-22.78" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Spin(3)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Spin(3) -->
+<g id="edge40" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Spin(3)</title>
+<path fill="none" stroke="black" d="M1485.32,-1080.26C1498.36,-955.86 1576.26,-212.83 1592.66,-56.36"/>
+<polygon fill="black" stroke="black" points="1596.14,-56.78 1593.7,-46.47 1589.18,-56.05 1596.14,-56.78"/>
+</g>
+<!-- //en.wikipedia.org/wiki/SU(2) -->
+<g id="node43" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/SU(2)</title>
+<g id="a_node43"><a xlink:href="https://en.wikipedia.org/wiki/SU(2)" xlink:title="https://en.wikipedia.org/wiki/SU(2)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="847.15" cy="-192.22" rx="18" ry="18"/>
+<text text-anchor="middle" x="847.15" y="-187.55" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/SU(2)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/SU(2) -->
+<g id="edge41" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/SU(2)</title>
+<path fill="none" stroke="black" d="M1473.21,-1083.35C1399.91,-979.02 955.73,-346.77 863.8,-215.91"/>
+<polygon fill="black" stroke="black" points="866.83,-214.14 858.21,-207.97 861.1,-218.16 866.83,-214.14"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Universal_cover -->
+<g id="node44" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Universal_cover</title>
+<g id="a_node44"><a xlink:href="https://en.wikipedia.org/wiki/Universal_cover" xlink:title="https://en.wikipedia.org/wiki/Universal_cover">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1352.86" cy="-632.12" rx="18" ry="18"/>
+<text text-anchor="middle" x="1352.86" y="-627.44" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Universal_cover</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Universal_cover -->
+<g id="edge42" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Universal_cover</title>
+<path fill="none" stroke="black" d="M1478.66,-1080.82C1459.08,-1010.98 1385.18,-747.39 1360.75,-660.27"/>
+<polygon fill="black" stroke="black" points="1364.18,-659.55 1358.11,-650.86 1357.44,-661.44 1364.18,-659.55"/>
+</g>
+<!-- //en.wikipedia.org/wiki/SO(3) -->
+<g id="node45" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/SO(3)</title>
+<g id="a_node45"><a xlink:href="https://en.wikipedia.org/wiki/SO(3)" xlink:title="https://en.wikipedia.org/wiki/SO(3)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1120.12" cy="-403.96" rx="18" ry="18"/>
+<text text-anchor="middle" x="1120.12" y="-399.29" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/SO(3)</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/SO(3) -->
+<g id="edge43" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/SO(3)</title>
+<path fill="none" stroke="black" d="M1475.19,-1082.15C1428.01,-992.04 1192.96,-543.08 1133.7,-429.9"/>
+<polygon fill="black" stroke="black" points="1136.82,-428.31 1129.08,-421.08 1130.62,-431.56 1136.82,-428.31"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Quaternion_group -->
+<g id="node46" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Quaternion_group</title>
+<g id="a_node46"><a xlink:href="https://en.wikipedia.org/wiki/Quaternion_group" xlink:title="https://en.wikipedia.org/wiki/Quaternion_group">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1156.7" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1156.7" y="-13.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Quaternion_group</text>
+</a>
+</g>
+</g>
+<!-- 9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Quaternion_group -->
+<g id="edge44" class="edge">
+<title>9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f&#45;&gt;//en.wikipedia.org/wiki/Quaternion_group</title>
+<path fill="none" stroke="black" d="M1478.33,-1080.98C1441.06,-957.8 1212.09,-201.05 1165.12,-45.81"/>
+<polygon fill="black" stroke="black" points="1168.51,-44.93 1162.26,-36.37 1161.81,-46.96 1168.51,-44.93"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Hurwitz&#39;s_theorem_(composition_algebras) -->
+<g id="node32" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Hurwitz&#39;s_theorem_(composition_algebras)</title>
+<g id="a_node32"><a xlink:href="https://en.wikipedia.org/wiki/Hurwitz&apos;s_theorem_(composition_algebras)" xlink:title="https://en.wikipedia.org/wiki/Hurwitz&#39;s_theorem_(composition_algebras)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2377.62" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="2377.62" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Hurwitz&#39;s_theorem_(composition_algebras)</text>
+</a>
+</g>
+</g>
+<!-- 2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5 -->
+<g id="node47" class="node node&#45;id">
+<title>2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5</title>
+<g id="a_node47"><a xlink:href="public/20250223161754-code_and_coffee_book_club.html" xlink:title="Code and Coffee Book Club">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="671.44" cy="-428.31" rx="18" ry="18"/>
+<text text-anchor="middle" x="671.44" y="-423.63" font-family="Times,serif" font-size="14.00" fill="#111111">Code and Coffee Book Club</text>
+</a>
+</g>
+</g>
+<!-- 2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5&#45;&gt;9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f -->
+<g id="edge45" class="edge">
+<title>2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5&#45;&gt;9f49f590&#45;90a1&#45;4cca&#45;9da0&#45;d5bf922c2d3f</title>
+<path fill="none" stroke="black" d="M685.2,-439.65C780.36,-518.13 1340.74,-980.25 1460.82,-1079.27"/>
+<polygon fill="black" stroke="black" points="1458.48,-1081.88 1468.42,-1085.54 1462.93,-1076.48 1458.48,-1081.88"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
 </main>
 <div id="postamble" class="status">
 <footer>

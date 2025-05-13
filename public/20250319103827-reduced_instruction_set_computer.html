@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:35 -->
+<!-- 2025-05-12 Mon 12:42 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Reduced Instruction Set Computer (RISC)</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -36,6 +37,194 @@ ROAM_REFS: https://en.wikipedia.org/wiki/Reduced_instruction_set_computer
 <blockquote>
 <p>In <a href="https://en.wikipedia.org/wiki/Electronics">electronics</a> and <a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a>, a <b>reduced instruction set computer</b> (<b>RISC</b>) is a <a href="https://en.wikipedia.org/wiki/Computer_architecture">computer architecture</a> designed to simplify the individual instructions given to the computer to accomplish tasks.  Compared to the instructions given to a <a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer">complex instruction set computer</a> (CISC), a RISC computer might require more instructions (more code) in order to accomplish a task because the individual instructions are written in simpler code.  The goal is to offset the need to process more instructions by increasing the speed of each instruction, in particular by implementing an <a href="https://en.wikipedia.org/wiki/Instruction_pipeline">instruction pipeline</a>, which may be simpler to achieve given simpler instructions.</p><p>The key operational concept of the RISC computer is that each instruction performs only one function (e.g. copy a value from memory to a register).  The RISC computer usually has many (16 or 32) high-speed, general-purpose registers with a <a href="https://en.wikipedia.org/wiki/Load%E2%80%93store_architecture">load&#x2013;store architecture</a> in which the code for the register-register instructions (for performing arithmetic and tests) are separate from the instructions that access the main memory of the computer.  The design of the CPU allows RISC computers few simple <a href="https://en.wikipedia.org/wiki/Addressing_mode">addressing modes</a> and predictable instruction times that simplify design of the system as a whole.</p><p>The conceptual developments of the RISC computer architecture began with the <a href="https://en.wikipedia.org/wiki/IBM_801">IBM 801</a> project in the late 1970s, but these were not immediately put into use.  Designers in California picked up the 801 concepts in two seminal projects, <a href="https://en.wikipedia.org/wiki/Stanford_MIPS">Stanford MIPS</a> and <a href="https://en.wikipedia.org/wiki/Berkeley_RISC">Berkeley RISC</a>.  These were commercialized in the 1980s as the <a href="https://en.wikipedia.org/wiki/MIPS_architecture">MIPS</a> and <a href="https://en.wikipedia.org/wiki/SPARC">SPARC</a> systems. <a href="https://en.wikipedia.org/wiki/IBM">IBM</a> eventually produced RISC designs based on further work on the 801 concept, the <a href="https://en.wikipedia.org/wiki/IBM_POWER_architecture">IBM POWER architecture</a>, <a href="https://en.wikipedia.org/wiki/PowerPC">PowerPC</a>, and <a href="https://en.wikipedia.org/wiki/Power_ISA">Power ISA</a>.  As the projects matured, many similar designs, produced in the mid-to-late 1980s and early 1990s, such as <a href="https://en.wikipedia.org/wiki/ARM_architecture_family">ARM</a>, <a href="https://en.wikipedia.org/wiki/PA-RISC">PA-RISC</a>, and <a href="https://en.wikipedia.org/wiki/DEC_Alpha">Alpha</a>, created central processing units that increased the commercial utility of the <a href="https://en.wikipedia.org/wiki/Unix">Unix</a> <a href="https://en.wikipedia.org/wiki/Workstation">workstation</a> and of <a href="https://en.wikipedia.org/wiki/Embedded_processor">embedded processors</a> in the <a href="https://en.wikipedia.org/wiki/Laser_printer">laser printer</a>, the <a href="https://en.wikipedia.org/wiki/Router_(computing)">router</a>, and similar products.</p><p>In the <a href="https://en.wikipedia.org/wiki/Minicomputer">minicomputer</a> market, companies that included <a href="https://en.wikipedia.org/wiki/Celerity_Computing">Celerity Computing</a>, <a href="https://en.wikipedia.org/wiki/Pyramid_Technology">Pyramid Technology</a>, and <a href="https://en.wikipedia.org/wiki/Ridge_Computers">Ridge Computers</a> began offering systems designed according to RISC or RISC-like principles in the early 1980s.  Few of these designs began by using RISC <a href="https://en.wikipedia.org/wiki/Microprocessor">microprocessors</a>.</p><p>The varieties of RISC processor design include the <a href="https://en.wikipedia.org/wiki/ARC_(processor)">ARC</a> processor, the DEC Alpha, the <a href="https://en.wikipedia.org/wiki/AMD_Am29000">AMD Am29000</a>, the ARM architecture, the <a href="https://en.wikipedia.org/wiki/Atmel_AVR">Atmel AVR</a>, <a href="https://en.wikipedia.org/wiki/Blackfin">Blackfin</a>, <a href="https://en.wikipedia.org/wiki/Intel_i860">Intel i860</a>, <a href="https://en.wikipedia.org/wiki/Intel_i960">Intel i960</a>, <a href="https://en.wikipedia.org/wiki/LoongArch">LoongArch</a>, <a href="https://en.wikipedia.org/wiki/Motorola_88000">Motorola 88000</a>, the MIPS architecture, PA-RISC, Power ISA, <a href="https://en.wikipedia.org/wiki/RISC-V">RISC-V</a>, <a href="https://en.wikipedia.org/wiki/SuperH">SuperH</a>, and SPARC.  RISC processors are used in <a href="https://en.wikipedia.org/wiki/Supercomputer">supercomputers</a>, such as the <a href="https://en.wikipedia.org/wiki/Fugaku_(supercomputer)">Fugaku</a>.</p>
 </blockquote>
+</div>
+</div>
+<div id="outline-container-org5aa9cd8" class="outline-2">
+<h2 id="org5aa9cd8">Local Graph</h2>
+<div class="outline-text-2" id="text-org5aa9cd8">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="1029pt" height="891pt"
+ viewBox="0.00 0.00 1028.55 891.21">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 887.21)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-887.21 1024.55,-887.21 1024.55,4 -4,4"/>
+<!-- 8d70d8dc&#45;cecc&#45;4503&#45;89cc&#45;e1c4e450f98d -->
+<g id="node1" class="node node&#45;id">
+<title>8d70d8dc&#45;cecc&#45;4503&#45;89cc&#45;e1c4e450f98d</title>
+<g id="a_node1"><a xlink:href="public/20250319134438-sparc.html" xlink:title="SPARC">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="783.86" cy="-699.51" rx="18" ry="18"/>
+<text text-anchor="middle" x="783.86" y="-694.84" font-family="Times,serif" font-size="14.00" fill="#111111">SPARC</text>
+</a>
+</g>
+</g>
+<!-- 321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="node2" class="node node&#45;id">
+<title>321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<g id="a_node2"><a xlink:href="public/20250319103827-reduced_instruction_set_computer.html" xlink:title="Reduced Instruction Set Computer (RISC)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="447.84" cy="-437.63" rx="18" ry="18"/>
+<text text-anchor="middle" x="447.84" y="-432.95" font-family="Times,serif" font-size="14.00" fill="#111111">Reduced Instruction Set Computer (RISC)</text>
+</a>
+</g>
+</g>
+<!-- 8d70d8dc&#45;cecc&#45;4503&#45;89cc&#45;e1c4e450f98d&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge1" class="edge">
+<title>8d70d8dc&#45;cecc&#45;4503&#45;89cc&#45;e1c4e450f98d&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M769.85,-688.59C717.87,-648.08 535.71,-506.11 470.93,-455.62"/>
+<polygon fill="black" stroke="black" points="473.15,-452.91 463.11,-449.52 468.84,-458.43 473.15,-452.91"/>
+</g>
+<!-- 96b6fc36&#45;5b86&#45;4108&#45;b2b4&#45;39b85a38f385 -->
+<g id="node3" class="node node&#45;id">
+<title>96b6fc36&#45;5b86&#45;4108&#45;b2b4&#45;39b85a38f385</title>
+<g id="a_node3"><a xlink:href="public/20250319104218-complex_instruction_set_computer.html" xlink:title="Complex Instruction Set Computer (CISC)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="302.65" cy="-835.13" rx="18" ry="18"/>
+<text text-anchor="middle" x="302.65" y="-830.46" font-family="Times,serif" font-size="14.00" fill="#111111">Complex Instruction Set Computer (CISC)</text>
+</a>
+</g>
+</g>
+<!-- 321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac&#45;&gt;96b6fc36&#45;5b86&#45;4108&#45;b2b4&#45;39b85a38f385 -->
+<g id="edge4" class="edge">
+<title>321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac&#45;&gt;96b6fc36&#45;5b86&#45;4108&#45;b2b4&#45;39b85a38f385</title>
+<path fill="none" stroke="black" d="M439.05,-453.2C412.02,-513.03 333.09,-728.43 309.21,-806.57"/>
+<polygon fill="black" stroke="black" points="305.89,-805.45 306.41,-816.03 312.61,-807.44 305.89,-805.45"/>
+</g>
+<!-- c980a340&#45;2564&#45;437e&#45;a79f&#45;388122a206ad -->
+<g id="node4" class="node node&#45;id">
+<title>c980a340&#45;2564&#45;437e&#45;a79f&#45;388122a206ad</title>
+<g id="a_node4"><a xlink:href="public/20250319100756-instruction_set_architecture.html" xlink:title="Instruction Set Architecture (ISA)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="892.17" cy="-452.67" rx="18" ry="18"/>
+<text text-anchor="middle" x="892.17" y="-448" font-family="Times,serif" font-size="14.00" fill="#111111">Instruction Set Architecture (ISA)</text>
+</a>
+</g>
+</g>
+<!-- 321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac&#45;&gt;c980a340&#45;2564&#45;437e&#45;a79f&#45;388122a206ad -->
+<g id="edge3" class="edge">
+<title>321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac&#45;&gt;c980a340&#45;2564&#45;437e&#45;a79f&#45;388122a206ad</title>
+<path fill="none" stroke="black" d="M465.81,-438.23C534.21,-440.55 778.71,-448.83 863.2,-451.69"/>
+<polygon fill="black" stroke="black" points="862.84,-455.18 872.95,-452.02 863.08,-448.18 862.84,-455.18"/>
+</g>
+<!-- 96b6fc36&#45;5b86&#45;4108&#45;b2b4&#45;39b85a38f385&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge2" class="edge">
+<title>96b6fc36&#45;5b86&#45;4108&#45;b2b4&#45;39b85a38f385&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M311.44,-819.56C338.47,-759.73 417.4,-544.33 441.28,-466.18"/>
+<polygon fill="black" stroke="black" points="444.59,-467.31 444.07,-456.72 437.88,-465.32 444.59,-467.31"/>
+</g>
+<!-- d548e7db&#45;0a88&#45;4a2f&#45;a2a7&#45;ac90f4676046 -->
+<g id="node5" class="node node&#45;id">
+<title>d548e7db&#45;0a88&#45;4a2f&#45;a2a7&#45;ac90f4676046</title>
+<g id="a_node5"><a xlink:href="public/20250319135205-openrisc.html" xlink:title="OpenRISC">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="570.57" cy="-865.21" rx="18" ry="18"/>
+<text text-anchor="middle" x="570.57" y="-860.53" font-family="Times,serif" font-size="14.00" fill="#111111">OpenRISC</text>
+</a>
+</g>
+</g>
+<!-- d548e7db&#45;0a88&#45;4a2f&#45;a2a7&#45;ac90f4676046&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge5" class="edge">
+<title>d548e7db&#45;0a88&#45;4a2f&#45;a2a7&#45;ac90f4676046&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M565.61,-847.91C546.72,-782.1 479.18,-546.81 455.84,-465.5"/>
+<polygon fill="black" stroke="black" points="459.27,-464.76 453.15,-456.12 452.54,-466.7 459.27,-464.76"/>
+</g>
+<!-- 4467ec8c&#45;6e6e&#45;45fe&#45;8e90&#45;b2d7c520e9fe -->
+<g id="node6" class="node node&#45;id">
+<title>4467ec8c&#45;6e6e&#45;45fe&#45;8e90&#45;b2d7c520e9fe</title>
+<g id="a_node6"><a xlink:href="public/20250319134803-dec_alpha.html" xlink:title="DEC Alpha">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="331.19" cy="-32.34" rx="18" ry="18"/>
+<text text-anchor="middle" x="331.19" y="-27.66" font-family="Times,serif" font-size="14.00" fill="#111111">DEC Alpha</text>
+</a>
+</g>
+</g>
+<!-- 4467ec8c&#45;6e6e&#45;45fe&#45;8e90&#45;b2d7c520e9fe&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge6" class="edge">
+<title>4467ec8c&#45;6e6e&#45;45fe&#45;8e90&#45;b2d7c520e9fe&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M336.13,-49.49C354.28,-112.55 417.4,-331.86 439.84,-409.84"/>
+<polygon fill="black" stroke="black" points="436.42,-410.59 442.55,-419.24 443.15,-408.66 436.42,-410.59"/>
+</g>
+<!-- 9eb1ccab&#45;a5d8&#45;458c&#45;b532&#45;528551c420ca -->
+<g id="node7" class="node node&#45;id">
+<title>9eb1ccab&#45;a5d8&#45;458c&#45;b532&#45;528551c420ca</title>
+<g id="a_node7"><a xlink:href="public/20250319132625-mips.html" xlink:title="MIPS">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="27.5" cy="-423.13" rx="18" ry="18"/>
+<text text-anchor="middle" x="27.5" y="-418.46" font-family="Times,serif" font-size="14.00" fill="#111111">MIPS</text>
+</a>
+</g>
+</g>
+<!-- 9eb1ccab&#45;a5d8&#45;458c&#45;b532&#45;528551c420ca&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge7" class="edge">
+<title>9eb1ccab&#45;a5d8&#45;458c&#45;b532&#45;528551c420ca&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M45.29,-423.75C110.62,-426 337.68,-433.83 418.77,-436.62"/>
+<polygon fill="black" stroke="black" points="418.65,-440.12 428.77,-436.97 418.89,-433.13 418.65,-440.12"/>
+</g>
+<!-- d76dd6d0&#45;cc93&#45;40cd&#45;b8de&#45;9da49431281c -->
+<g id="node8" class="node node&#45;id">
+<title>d76dd6d0&#45;cc93&#45;40cd&#45;b8de&#45;9da49431281c</title>
+<g id="a_node8"><a xlink:href="public/20250302140718-risc_v.html" xlink:title="RISC&#45;V">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="76.56" cy="-687.35" rx="18" ry="18"/>
+<text text-anchor="middle" x="76.56" y="-682.67" font-family="Times,serif" font-size="14.00" fill="#111111">RISC&#45;V</text>
+</a>
+</g>
+</g>
+<!-- d76dd6d0&#45;cc93&#45;40cd&#45;b8de&#45;9da49431281c&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge8" class="edge">
+<title>d76dd6d0&#45;cc93&#45;40cd&#45;b8de&#45;9da49431281c&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M91.12,-677.56C147.6,-639.57 352.64,-501.66 423.53,-453.98"/>
+<polygon fill="black" stroke="black" points="425.38,-456.95 431.73,-448.46 421.48,-451.14 425.38,-456.95"/>
+</g>
+<!-- 1662ad74&#45;9db0&#45;4436&#45;b928&#45;ea9c36383d71 -->
+<g id="node9" class="node node&#45;id">
+<title>1662ad74&#45;9db0&#45;4436&#45;b928&#45;ea9c36383d71</title>
+<g id="a_node9"><a xlink:href="public/20250319133223-power_isa.html" xlink:title="Power ISA">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="93.96" cy="-162.22" rx="18" ry="18"/>
+<text text-anchor="middle" x="93.96" y="-157.55" font-family="Times,serif" font-size="14.00" fill="#111111">Power ISA</text>
+</a>
+</g>
+</g>
+<!-- 1662ad74&#45;9db0&#45;4436&#45;b928&#45;ea9c36383d71&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge9" class="edge">
+<title>1662ad74&#45;9db0&#45;4436&#45;b928&#45;ea9c36383d71&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M107.83,-173.02C161.67,-214.92 357.1,-367.01 424.67,-419.59"/>
+<polygon fill="black" stroke="black" points="422.44,-422.3 432.49,-425.68 426.74,-416.77 422.44,-422.3"/>
+</g>
+<!-- 34a6d6d5&#45;128a&#45;483e&#45;8d57&#45;8b8f01f2c1ad -->
+<g id="node10" class="node node&#45;id">
+<title>34a6d6d5&#45;128a&#45;483e&#45;8d57&#45;8b8f01f2c1ad</title>
+<g id="a_node10"><a xlink:href="public/20250319132005-arm.html" xlink:title="ARM">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="600.41" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="600.41" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#111111">ARM</text>
+</a>
+</g>
+</g>
+<!-- 34a6d6d5&#45;128a&#45;483e&#45;8d57&#45;8b8f01f2c1ad&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge10" class="edge">
+<title>34a6d6d5&#45;128a&#45;483e&#45;8d57&#45;8b8f01f2c1ad&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M594.34,-34.71C570.99,-98.93 486.88,-330.25 457.81,-410.21"/>
+<polygon fill="black" stroke="black" points="454.58,-408.85 454.45,-419.45 461.16,-411.24 454.58,-408.85"/>
+</g>
+<!-- 5c3575fd&#45;40a0&#45;49bb&#45;8be0&#45;4f9e6d9a6024 -->
+<g id="node11" class="node node&#45;id">
+<title>5c3575fd&#45;40a0&#45;49bb&#45;8be0&#45;4f9e6d9a6024</title>
+<g id="a_node11"><a xlink:href="public/20250428035916-high_level_language_architecture_hllca.html" xlink:title="High&#45;Level Language Computer Architecture (HLLCA)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="798.97" cy="-199.73" rx="18" ry="18"/>
+<text text-anchor="middle" x="798.97" y="-195.05" font-family="Times,serif" font-size="14.00" fill="#111111">High&#45;Level Language Computer Architec...</text>
+</a>
+</g>
+</g>
+<!-- 5c3575fd&#45;40a0&#45;49bb&#45;8be0&#45;4f9e6d9a6024&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac -->
+<g id="edge11" class="edge">
+<title>5c3575fd&#45;40a0&#45;49bb&#45;8be0&#45;4f9e6d9a6024&#45;&gt;321ba3cc&#45;d73a&#45;4620&#45;88f7&#45;2527cbae1aac</title>
+<path fill="none" stroke="black" d="M784.33,-209.65C730.01,-246.45 539.67,-375.41 471.97,-421.28"/>
+<polygon fill="black" stroke="black" points="470.11,-418.31 463.8,-426.82 474.04,-424.1 470.11,-418.31"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
 </div>
 </div>
 </main>

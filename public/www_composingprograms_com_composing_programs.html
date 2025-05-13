@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:36 -->
+<!-- 2025-05-12 Mon 15:51 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(www.composingprograms.com) Composing Programs</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -28,10 +29,204 @@ ROAM_REFS: https://www.composingprograms.com/
 <blockquote>
 <p>Welcome to <a href="http://www.composingprograms.com/">Composing Programs</a>, a free online introduction to programming and computer science.</p><p>In the tradition of <a href="http://mitpress.mit.edu/sicp/">SICP</a>, this text focuses on methods for abstraction, programming paradigms, and techniques for managing the complexity of large programs.  These concepts are illustrated primarily using the <a href="http://www.python.org/">Python 3</a> programming language.</p><p>In addition to reading the chapters below, you can apply your knowledge to the <a href="https://www.composingprograms.com/projects.html">programming projects</a> that accompany the text and visualize program execution using the <a href="https://www.composingprograms.com/tutor.html">Online Python Tutor</a>.</p><p><b>Instructors</b>: If you are interested in adapting any of these materials for your courses, please <a href="https://docs.google.com/forms/d/1lcDf-_y9t1oSDH_-HFz3UhUFouAX1518XeCMnlRISss/viewform">fill out this short survey</a> so that we can support your efforts.</p>
 </blockquote>
+<div id="outline-container-ID-52315cda-ffff-4c82-b6b6-738945255cc2" class="outline-2">
+<h2 id="ID-52315cda-ffff-4c82-b6b6-738945255cc2">(www.composingprograms.com) 2.4 Mutable Data</h2>
+<div class="outline-text-2" id="text-org614ef4f">
+<pre class="example">
+ROAM_REFS: https://www.composingprograms.com/pages/24-mutable-data.html
+</pre>
+
+<blockquote>
+<p>** 2.4 Mutable Data</p><p>We have seen how abstraction is vital in helping us to cope with the complexity of large systems.  Effective programming also requires organizational principles that can guide us in formulating the overall design of a program.  In particular, we need strategies to help us structure large systems to be modular, meaning that they divide naturally into coherent parts that can be separately developed and maintained.</p><p>One powerful technique for creating modular programs is to incorporate data that may change state over time.  In this way, a single data object can represent something that evolves independently of the rest of the program.  The behavior of a changing object may be influenced by its history, just like an entity in the world.  Adding state to data is a central ingredient of a paradigm called object-oriented programming.</p>
+</blockquote>
+</div>
+<div id="outline-container-ID-b1f95bb7-9bec-4190-bdd8-aabbbc672e08" class="outline-3">
+<h3 id="ID-b1f95bb7-9bec-4190-bdd8-aabbbc672e08">(www.composingprograms.com) 2.4.8 Dispatch Dictionaries</h3>
+<div class="outline-text-3" id="text-org5a0d954">
+<pre class="example">
+ROAM_REFS: https://www.composingprograms.com/pages/24-mutable-data.html#dispatch-dictionaries
+</pre>
+
+<blockquote>
+<p><b>*</b> 2.4.8 Dispatch Dictionaries</p><p>The dispatch function is a general method for implementing a message passing interface for abstract data.  To implement message dispatch, we have thus far used conditional statements to compare the message string to a fixed set of known messages.</p><p>The built-in dictionary data type provides a general method for looking up a value for a key.  Instead of using conditionals to implement dispatching, we can use dictionaries with string keys.</p><p>The mutable <pre class="verbatim">account</pre> data type below is implemented as a dictionary.  It has a constructor <pre class="verbatim">account</pre> and selector <pre class="verbatim">check_balance</pre>, as well as functions to <pre class="verbatim">deposit</pre> or <pre class="verbatim">withdraw</pre> funds.  Moreover, the local state of the account is stored in the dictionary alongside the functions that implement its behavior.</p><div class="org-src-container">
+<pre class="src src-python"><code><span class="org-keyword">def</span> <span class="org-function-name">account</span>(initial_balance):</code>
+<code>    <span class="org-keyword">def</span> <span class="org-function-name">deposit</span>(amount):</code>
+<code>        <span class="org-variable-name">dispatch</span>[<span class="org-string">'balance'</span>] <span class="org-operator">+=</span> amount</code>
+<code>        <span class="org-keyword">return</span> dispatch[<span class="org-string">'balance'</span>]</code>
+<code>    <span class="org-keyword">def</span> <span class="org-function-name">withdraw</span>(amount):</code>
+<code>        <span class="org-keyword">if</span> amount <span class="org-operator">&gt;</span> dispatch[<span class="org-string">'balance'</span>]:</code>
+<code>            <span class="org-keyword">return</span> <span class="org-string">'Insufficient funds'</span></code>
+<code>        <span class="org-variable-name">dispatch</span>[<span class="org-string">'balance'</span>] <span class="org-operator">-=</span> amount</code>
+<code>        <span class="org-keyword">return</span> dispatch[<span class="org-string">'balance'</span>]</code>
+<code>    <span class="org-variable-name">dispatch</span> <span class="org-operator">=</span> {<span class="org-string">'deposit'</span>:   deposit,</code>
+<code>                <span class="org-string">'withdraw'</span>:  withdraw,</code>
+<code>                <span class="org-string">'balance'</span>:   initial_balance}</code>
+<code>    <span class="org-keyword">return</span> dispatch</code>
+<code></code>
+<code><span class="org-keyword">def</span> <span class="org-function-name">withdraw</span>(account, amount):</code>
+<code>    <span class="org-keyword">return</span> account[<span class="org-string">'withdraw'</span>](amount)</code>
+<code><span class="org-keyword">def</span> <span class="org-function-name">deposit</span>(account, amount):</code>
+<code>    <span class="org-keyword">return</span> account[<span class="org-string">'deposit'</span>](amount)</code>
+<code><span class="org-keyword">def</span> <span class="org-function-name">check_balance</span>(account):</code>
+<code>    <span class="org-keyword">return</span> account[<span class="org-string">'balance'</span>]</code>
+<code></code>
+<code><span class="org-variable-name">a</span> <span class="org-operator">=</span> account(20)</code>
+<code>deposit(a, 5)</code>
+<code>withdraw(a, 17)</code>
+<code>check_balance(a)</code>
+</pre>
+</div>
+
+<p>The name <pre class="verbatim">dispatch</pre> within the body of the <pre class="verbatim">account</pre> constructor is bound to a dictionary that contains the messages accepted by an account as keys.  The <i>balance</i> is a number, while the messages <i>deposit</i> and <i>withdraw</i> are bound to functions.  These functions have access to the <pre class="verbatim">dispatch</pre> dictionary, and so they can read and change the balance.  By storing the balance in the dispatch dictionary rather than in the <pre class="verbatim">account</pre> frame directly, we avoid the need for <pre class="verbatim">nonlocal</pre> statements in <pre class="verbatim">deposit</pre> and <pre class="verbatim">withdraw</pre>.</p><p>The operators <pre class="verbatim">+=</pre> and <pre class="verbatim">-=</pre> are shorthand in Python (and many other languages) for combined lookup and re-assignment.  The last two lines below are equivalent.</p><pre class="example" id="org08170d8">
+<code>&gt;&gt;&gt; a = 2</code>
+<code>&gt;&gt;&gt; a = a + 1</code>
+<code>&gt;&gt;&gt; a += 1</code>
+</pre>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="outline-container-org4a64509" class="outline-2">
+<h2 id="org4a64509">Local Graph</h2>
+<div class="outline-text-2" id="text-org4a64509">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="1909pt" height="1604pt"
+ viewBox="0.00 0.00 1908.87 1603.96">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1599.96)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1599.96 1904.87,-1599.96 1904.87,4 -4,4"/>
+<!-- 0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7 -->
+<g id="node1" class="node node&#45;id">
+<title>0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7</title>
+<g id="a_node1"><a xlink:href="public/www_composingprograms_com_composing_programs.html" xlink:title="(www.composingprograms.com) Composing Programs">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="907.74" cy="-758.75" rx="18" ry="18"/>
+<text text-anchor="middle" x="907.74" y="-754.07" font-family="Times,serif" font-size="14.00" fill="#111111">(www.composingprograms.com) Composing...</text>
+</a>
+</g>
+</g>
+<!-- //www.composingprograms.com/ -->
+<g id="node2" class="node node&#45;http">
+<title>//www.composingprograms.com/</title>
+<g id="a_node2"><a xlink:href="http://www.composingprograms.com/" xlink:title="http://www.composingprograms.com/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="263.76" cy="-1265.85" rx="18" ry="18"/>
+<text text-anchor="middle" x="263.76" y="-1261.18" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://www.composingprograms.com/</text>
+</a>
+</g>
+</g>
+<!-- 0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//www.composingprograms.com/ -->
+<g id="edge1" class="edge">
+<title>0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//www.composingprograms.com/</title>
+<path fill="none" stroke="black" d="M893.69,-769.81C811.28,-834.71 390.71,-1165.88 286.93,-1247.6"/>
+<polygon fill="black" stroke="black" points="284.78,-1244.84 279.09,-1253.78 289.11,-1250.34 284.78,-1244.84"/>
+</g>
+<!-- //mitpress.mit.edu/sicp/ -->
+<g id="node3" class="node node&#45;http">
+<title>//mitpress.mit.edu/sicp/</title>
+<g id="a_node3"><a xlink:href="http://mitpress.mit.edu/sicp/" xlink:title="http://mitpress.mit.edu/sicp/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="109.63" cy="-577.07" rx="18" ry="18"/>
+<text text-anchor="middle" x="109.63" y="-572.39" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://mitpress.mit.edu/sicp/</text>
+</a>
+</g>
+</g>
+<!-- 0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//mitpress.mit.edu/sicp/ -->
+<g id="edge2" class="edge">
+<title>0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//mitpress.mit.edu/sicp/</title>
+<path fill="none" stroke="black" d="M890.33,-754.78C788.19,-731.53 266.96,-612.88 138.34,-583.61"/>
+<polygon fill="black" stroke="black" points="139.15,-580.2 128.63,-581.39 137.6,-587.03 139.15,-580.2"/>
+</g>
+<!-- //www.python.org/ -->
+<g id="node4" class="node node&#45;http">
+<title>//www.python.org/</title>
+<g id="a_node4"><a xlink:href="http://www.python.org/" xlink:title="http://www.python.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="550.13" cy="-18.16" rx="18" ry="18"/>
+<text text-anchor="middle" x="550.13" y="-13.49" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://www.python.org/</text>
+</a>
+</g>
+</g>
+<!-- 0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//www.python.org/ -->
+<g id="edge3" class="edge">
+<title>0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//www.python.org/</title>
+<path fill="none" stroke="black" d="M899.94,-742.59C854.12,-647.71 620.12,-163.11 562.81,-44.42"/>
+<polygon fill="black" stroke="black" points="565.99,-42.95 558.49,-35.47 559.68,-46 565.99,-42.95"/>
+</g>
+<!-- //www.composingprograms.com/projects.html -->
+<g id="node5" class="node node&#45;https">
+<title>//www.composingprograms.com/projects.html</title>
+<g id="a_node5"><a xlink:href="https://www.composingprograms.com/projects.html" xlink:title="https://www.composingprograms.com/projects.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="902.77" cy="-1577.96" rx="18" ry="18"/>
+<text text-anchor="middle" x="902.77" y="-1573.28" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://www.composingprograms.com/projects.html</text>
+</a>
+</g>
+</g>
+<!-- 0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//www.composingprograms.com/projects.html -->
+<g id="edge4" class="edge">
+<title>0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//www.composingprograms.com/projects.html</title>
+<path fill="none" stroke="black" d="M907.63,-776.62C907,-881.46 903.75,-1416.46 902.95,-1548.48"/>
+<polygon fill="black" stroke="black" points="899.45,-1548.43 902.89,-1558.46 906.45,-1548.48 899.45,-1548.43"/>
+</g>
+<!-- //www.composingprograms.com/tutor.html -->
+<g id="node6" class="node node&#45;https">
+<title>//www.composingprograms.com/tutor.html</title>
+<g id="a_node6"><a xlink:href="https://www.composingprograms.com/tutor.html" xlink:title="https://www.composingprograms.com/tutor.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1266.21" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1266.21" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://www.composingprograms.com/tutor.html</text>
+</a>
+</g>
+</g>
+<!-- 0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//www.composingprograms.com/tutor.html -->
+<g id="edge5" class="edge">
+<title>0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//www.composingprograms.com/tutor.html</title>
+<path fill="none" stroke="black" d="M915.56,-742.59C961.48,-647.69 1196.05,-162.98 1253.5,-44.27"/>
+<polygon fill="black" stroke="black" points="1256.63,-45.84 1257.83,-35.31 1250.32,-42.79 1256.63,-45.84"/>
+</g>
+<!-- //docs.google.com/forms/d/1lcDf&#45;_y9t1oSDH_&#45;HFz3UhUFouAX1518XeCMnlRISss/viewform -->
+<g id="node7" class="node node&#45;https">
+<title>//docs.google.com/forms/d/1lcDf&#45;_y9t1oSDH_&#45;HFz3UhUFouAX1518XeCMnlRISss/viewform</title>
+<g id="a_node7"><a xlink:href="https://docs.google.com/forms/d/1lcDf-_y9t1oSDH_-HFz3UhUFouAX1518XeCMnlRISss/viewform" xlink:title="https://docs.google.com/forms/d/1lcDf&#45;_y9t1oSDH_&#45;HFz3UhUFouAX1518XeCMnlRISss/viewform">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1549.74" cy="-1274.43" rx="18" ry="18"/>
+<text text-anchor="middle" x="1549.74" y="-1269.75" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://docs.google.com/forms/d/1lcDf&#45;_y9t1oSDH_&#45;HFz3UhUFouAX1518XeCMnlRISss/viewform</text>
+</a>
+</g>
+</g>
+<!-- 0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//docs.google.com/forms/d/1lcDf&#45;_y9t1oSDH_&#45;HFz3UhUFouAX1518XeCMnlRISss/viewform -->
+<g id="edge6" class="edge">
+<title>0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7&#45;&gt;//docs.google.com/forms/d/1lcDf&#45;_y9t1oSDH_&#45;HFz3UhUFouAX1518XeCMnlRISss/viewform</title>
+<path fill="none" stroke="black" d="M921.75,-770C1003.99,-836.06 1424.09,-1173.5 1526.98,-1256.14"/>
+<polygon fill="black" stroke="black" points="1524.75,-1258.84 1534.74,-1262.38 1529.14,-1253.39 1524.75,-1258.84"/>
+</g>
+<!-- 2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5 -->
+<g id="node8" class="node node&#45;id">
+<title>2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5</title>
+<g id="a_node8"><a xlink:href="public/20250223161754-code_and_coffee_book_club.html" xlink:title="Code and Coffee Book Club">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1708.86" cy="-578.07" rx="18" ry="18"/>
+<text text-anchor="middle" x="1708.86" y="-573.4" font-family="Times,serif" font-size="14.00" fill="#111111">Code and Coffee Book Club</text>
+</a>
+</g>
+</g>
+<!-- 2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5&#45;&gt;0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7 -->
+<g id="edge7" class="edge">
+<title>2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5&#45;&gt;0a5f3d1d&#45;8e20&#45;4616&#45;8cdd&#45;90f817b959a7</title>
+<path fill="none" stroke="black" d="M1691.38,-582.01C1588.75,-605.16 1064.54,-723.38 936.15,-752.34"/>
+<polygon fill="black" stroke="black" points="935.45,-748.91 926.46,-754.52 936.99,-755.74 935.45,-748.91"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
 </main>
 <div id="postamble" class="status">
 <footer>
-<p class="date">Last Modified: 2025-04-30 Wed 04:29</p>
+<p class="date">Last Modified: 2025-05-11 Sun 21:31</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
 </footer>
 </div>

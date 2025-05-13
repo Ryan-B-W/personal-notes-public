@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:34 -->
+<!-- 2025-05-12 Mon 11:13 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(news.ycombinator.com) The Common Lisp Condition System – Upcoming Book | Hacker News</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -28,9 +29,9 @@ ROAM_REFS: https://news.ycombinator.com/item?id=23843525
 <div id="outline-container-orgb31abab" class="outline-2">
 <h2 id="orgb31abab">Comments of Note</h2>
 <div class="outline-text-2" id="text-orgb31abab">
-</div><div id="outline-container-orga3a9ee4" class="outline-3">
-<h3 id="orga3a9ee4">phoe-krk</h3>
-<div class="outline-text-3" id="text-orga3a9ee4">
+</div><div id="outline-container-org6298ea9" class="outline-3">
+<h3 id="org6298ea9">phoe-krk</h3>
+<div class="outline-text-3" id="text-org6298ea9">
 <blockquote>
 <p>Author here.  The book has just gone to production and will be available at the end of the year in dead-tree and electronic formats.</p><p>The book happened because I got annoyed at the fact that there is no good reference that shows how the condition system works, what are the foundations required for it to work, what are the basic building blocks that it is composed of, and what are its uses, both in the domain of handling exceptional situations and, more importantly and less obviously, outside that domain.</p><p>The book also contains a description of a full implementation of a condition system that can (and hopefully will!) be used outside Common Lisp.  There's hope that some languages will pick up these parts of Common Lisp that fully decouple the acts and means of signaling conditions from the acts and means of handling them, therefore allowing for means of dynamically controlled control flow that are currently very hard to achieve in other languages.</p><p>The accompanying code is available at <a href="https://github.com/phoe/tclcs-code">https://github.com/phoe/tclcs-code</a> and <a href="https://github.com/phoe/portable-condition-system">https://github.com/phoe/portable-condition-system</a> - it will be copied over to the Apress repository soon.</p><p>Linked Reddit thread: <a href="https://www.reddit.com/r/lisp/comments/hrjzs8/">https://www.reddit.com/r/lisp/comments/hrjzs8/</a></p><p>AMA, I guess.</p>
 </blockquote>
@@ -48,31 +49,31 @@ ROAM_REFS: https://news.ycombinator.com/item?id=23843525
 </blockquote>
 </div>
 </div>
-<div id="outline-container-orgc9cb3a2" class="outline-4">
-<h4 id="orgc9cb3a2">phoe-krk</h4>
-<div class="outline-text-4" id="text-orgc9cb3a2">
+<div id="outline-container-org7969109" class="outline-4">
+<h4 id="org7969109">phoe-krk</h4>
+<div class="outline-text-4" id="text-org7969109">
 <p>In response to a question about what the <a href="20240714204453-common_lisp.html#ID-b5fb5c4b-d10f-4bca-91e1-a5e946ef0c83">Common Lisp</a> condition system is.</p><blockquote>
 <p>Let me answer by posting an introduction to the condition system by Kent M. Pitman. It is the first subchapter of the book.</p><hr />
 
 <p>There have been many attempts to declare the Lisp family of languages dead, and yet it continues on in many forms.  There are many explanations for this, but an obvious one is that it still contains ideas and features that aren't fully appreciated outside the Lisp community, and so it continues as both a refuge and an idea factory.</p><p>Gradually, other languages see the light and these important features migrate to other languages.  For example, the Lisp community used to be unusual for standing steadfastly by automatic memory management and garbage collection when many said it couldn't be trusted to be efficient or responsive.  In the modern world, however, many languages now presume that automatic memory management is normal and natural, as if this had never been a controversy.  So times change.</p><p>But proper condition handling is something which other languages still have not figured out that they need.  Java's try/catch and Python's try/except have indeed shown that these language appreciate the importance of representing exceptional situations as objects.  However, in adopting these concepts, they have left out restarts &#x2014; a key piece of the puzzle.</p><p>When you raise an exception in Python, or throw one in Java, you are still just performing an immediate and blind transfer of control to the innermost available handler.  This leaves out the rich experience that Common Lisp offers to perform actual reasoning about where to return to.</p><p>The Common Lisp condition system disconnects the ability to return to a particular place in the program from the necessity to do so, and adds the ability to "look before you leap." In other languages, if you create a possible place to return to, that is what will get used.  There is no ability to say "If a certain kind of error happens, this might be a good place to return to, but I don't have a strong opinion ahead of time on whether or not it is definitely the right place."</p><p>The Common Lisp condition system separates out three different activities: describing a problem, describing a possible solution, and selecting the right solution for the right problem.  In other languages, describing a possible solution is the same as selecting that solution, so the set of things you can describe is necessarily less expansive.</p><p>This matters, because in other languages such as Python or Java, by the time your program first notices a problem, it already will have "recovered" from it.  The "except" or "catch" part of your "try" statement will have received control.  There will have been no intervening time.  To invoke the error handling process IS to transfer control.  By the time any further application code is running, a stack unwind already will have happened.  The dynamic context of the problem will be gone, and with it, any potential intervening options to resume operation at other points on the stack between the raising of the condition and the handling of an error.  Any such opportunities to resume operation will have lost their chance to exist.</p><p>"Well, too bad", these languages would say.  "If they wanted a chance, they could have handled the error."  But the thing is, a lot of the business of signaling and handling conditions is about the fact that you only have partial knowledge.  The more uncertain information you are forced to supply, the more your system will make bad decisions.  For best results, you want to be able to defer decisions until all information is available.  Simple-minded exception systems are great if you know exactly how you want to handle things ahead of time.  But if you don't know, then what are you to do?  Common Lisp provides much better mechanisms for navigating this uncertain space than other languages do.</p><p>So in Common Lisp you can say "I got an argument of the wrong type.  Moreover, I know what I would do with an argument of the right type, I just don't happen to have one or know how to make one." Or you can say "Not only do I know what to do if I'm given an argument of the right type (even at runtime), but I even know how to store such a value so they won't hit this error over and over again." In other languages, if the program doesn't know this correctly-typed value, even if you (the user) do know it at runtime, you're simply stuck.</p><p>In Common Lisp, you can specify the restart mechanism separately from the mechanism of choosing among possible restarts.  Having this ability means that an outer part of the program can make the choice, or the choice can fall through to a human user to make.  Of course, the human user might get tired of answering, but in such a case, they can wrap the program with advice that will save them from the need to answer.  This is a much more flexible division of responsibility than other languages offer.</p>
 </blockquote>
 </div>
-<ul class="org-ul"><li><a id="orgf1509f1"></a>pierrebai<div class="outline-text-5" id="text-orgf1509f1">
+<ul class="org-ul"><li><a id="org24c1b46"></a>pierrebai<div class="outline-text-5" id="text-org24c1b46">
 <blockquote>
 <p>Am I allowed to think the described use case less than compelling?</p><p>It's especially not compelling that the caller passed the wrong type, the called function would like a different type and somehow a different piece of code would know both end of the situation and fix it instead of the caller or callee.</p><p>It all seems like an artificial and convoluted use case.</p><p>Software design tend to know if they'd like to abort (throw) or report (callback) statically.  Conditions may be general, but they seem to me to mostly allow unnecessary open-ended complex design.</p><p>If the supposed gain is that a single system can do it all, I again don't feel it is a convincing argument.  In fact, I tend to prefer a one-goal system, where different use case are easily differentiable because they are different.  IOW, that throwing an exception, calling a callback, sending a signal or converting a value should look different is a plus.</p><p>This is something I've noticed: one starts with a rigid design, then adds abstractions.  But one reach a point over over-abstracting where the design becomes uncomprehensible because it is so generic that it becomes meaningless.</p>
 </blockquote>
 </div>
-<ul class="org-ul"><li><a id="orgbc495e3"></a>phoe-krk<div class="outline-text-6" id="text-orgbc495e3">
+<ul class="org-ul"><li><a id="org975ed74"></a>phoe-krk<div class="outline-text-6" id="text-org975ed74">
 <blockquote>
 <p>Sure.  The type-error example shown here is easily fixable by languages which utilize static typing and therefore make invalid code uncompilable, but it has the advantage of being easily understood by almost all programmers.</p><p>A more contrived example would be a situation in which some piece of data (e.g. a worker's monthly timesheet report) is passed between modules of a programming system, but the receiving module, upon performing validation, discovers e.g. that the employee was working during a holiday.</p><p>Handling that situation is hard, since there are multiple ways of handling it, each of them valid in its own specific context.  If the employee is in another country where that day is not a holiday, we should proceed without any other actions.  If the employee has an agreement with their manager that they are having crunch time, then the system should proceed after applying overtime payment.  If the employee is on a flexible time schedule, we should proceed and log this somewhere else; if the employee has no justification for that overtime, we should abort and signal an error; more examples follow.</p><p>In other words, when we signal the condition, we do not have full information about what should happen to it.  We have the question "What should we do with this timesheet?" and the answer to that question is "It depends."</p><p>It is possible to model this situation by a condition type named e.g. EMPLOYEE-WORKING-DURING-HOLIDAY, and instances of that condition type being signaled inside the programming module.  We create a dynamic environment where the proper handler routines for EMPLOYEE-WORKING-DURING-HOLIDAY are established, and we call the module's validator function inside that environment.</p><p>This process fully decouples the act of signaling a condition from the act of choosing whether to handle that situation and also from the act of choosing how to handle that situation.</p><p>One can (and should) document the condition type in the design specifications, and also describe functions that are allowed to signal it.</p>
 </blockquote>
 </div>
-<ul class="org-ul"><li><a id="org68cbb39"></a>pierrebai<div class="outline-text-7" id="text-org68cbb39">
+<ul class="org-ul"><li><a id="org6324ba6"></a>pierrebai<div class="outline-text-7" id="text-org6324ba6">
 <blockquote>
 <p>I'm afraid to sound like a negative type, but to me this example is simply a callback?</p><p>The described EMPLOYEE-WORKING-DURING-HOLIDAY is akin to a system has a slot to register a callback (or signal which can be connected to receiver, to use a Qt-like design) which can handle the situation or decide raise an exception.</p><p>Again, I understand that it might be attractive to have a single unified system to handle the different possible situations instead of separate systems.  I find it hard to imagine a case where the decision to be an exception-like, callback-like or restart-like is chosen dynamically at run-time by any or all participants.  And like I said, I'd be afraid that if such a case come up, it would make understanding the design harder, not simpler.</p><p>For example, as much as Qt signal/slot mechanism is powerful and flexible, I've found that when used fully, it makes understanding the code hard because it becomes impossible to know what will happen when a signal is raised because the handling is so well uncoupled.</p>
 </blockquote>
 </div>
-<ul class="org-ul"><li><a id="orgb00470e"></a>phoe-krk<div class="outline-text-8" id="text-orgb00470e">
+<ul class="org-ul"><li><a id="orgdde2262"></a>phoe-krk<div class="outline-text-8" id="text-orgdde2262">
 <blockquote>
 <p>Yes, you are correct!  (And you don't sound negative just yet; skeptical, if anything.)  The mechanism of handlers is literally a mechanism of dynamically provided callbacks.  I draw the parallel between condition handlers and callbacks/hooks in the body of the book, too.</p><p>The difference is the fact that Common Lisp has facilities that allow two things: choices of what and how to proceed and flexible non-local returns.  The callback is allowed to list all recovery choices that are present in a given dynamic environment; they are established dynamically, just like handlers, and therefore can be provided fully from outside.</p><p>For instance, a handler/callback can invoke a choice named CONTINUE if it decides that absolutely nothing needs to be done and the validation is safe to proceed.  The validating code doesn't need to know why exactly that choice was taken.</p><p>Or, if it notices that e.g. it needs to convert a timesheet from version 3.0 to version 4.0, it can call a conversion function on the timesheet object and invoke a choice named REVALIDATE, passing the converted timesheet as an argument.  Note that the validating code doesn't need to know about any details of the conversion routine!  It only needs to provide a means of restarting the validation by establishing a REVALIDATE choice.</p><p>Or, if it decides that the situation is hopeless, it can signal an error of its own and defer the responsibility of handling that situation higher up - all the way to the system debugger, if necessary.  The validating code doesn't need to know about any details of why an error was signaled!  That's a ton of modularity that we've just given there.</p><p>These choices are actualy named restarts in Common Lisp.  I purposefully name them choices, though, as I introduce them in the book.</p>
 </blockquote>
@@ -86,6 +87,173 @@ ROAM_REFS: https://news.ycombinator.com/item?id=23843525
 </ul>
 </div></li></ul></li></ul>
 </div>
+</div>
+</div>
+<div id="outline-container-org6eacada" class="outline-2">
+<h2 id="org6eacada">Local Graph</h2>
+<div class="outline-text-2" id="text-org6eacada">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="1622pt" height="1330pt"
+ viewBox="0.00 0.00 1622.34 1329.70">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1325.7)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1325.7 1618.34,-1325.7 1618.34,4 -4,4"/>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4 -->
+<g id="node1" class="node node&#45;id">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4</title>
+<g id="a_node1"><a xlink:href="public/news_ycombinator_com_the_common_lisp_condition_system_upcoming_book_hacker_news.html" xlink:title="(news.ycombinator.com) The Common Lisp Condition System – Upcoming Book | Hacker News">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="771.93" cy="-669.59" rx="18" ry="18"/>
+<text text-anchor="middle" x="771.93" y="-664.91" font-family="Times,serif" font-size="14.00" fill="#111111">(news.ycombinator.com) The Common Lis...</text>
+</a>
+</g>
+</g>
+<!-- //github.com/phoe/tclcs&#45;code -->
+<g id="node2" class="node node&#45;https">
+<title>//github.com/phoe/tclcs&#45;code</title>
+<g id="a_node2"><a xlink:href="https://github.com/phoe/tclcs-code" xlink:title="https://github.com/phoe/tclcs&#45;code">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1241.89" cy="-213.96" rx="18" ry="18"/>
+<text text-anchor="middle" x="1241.89" y="-209.28" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/phoe/tclcs&#45;code</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;//github.com/phoe/tclcs&#45;code -->
+<g id="edge1" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;//github.com/phoe/tclcs&#45;code</title>
+<path fill="none" stroke="black" d="M784.5,-657.4C848.73,-595.14 1140.32,-312.43 1221.09,-234.12"/>
+<polygon fill="black" stroke="black" points="1223.23,-236.92 1227.98,-227.45 1218.36,-231.9 1223.23,-236.92"/>
+</g>
+<!-- //github.com/phoe/portable&#45;condition&#45;system -->
+<g id="node3" class="node node&#45;https">
+<title>//github.com/phoe/portable&#45;condition&#45;system</title>
+<g id="a_node3"><a xlink:href="https://github.com/phoe/portable-condition-system" xlink:title="https://github.com/phoe/portable&#45;condition&#45;system">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1425.97" cy="-622.23" rx="18" ry="18"/>
+<text text-anchor="middle" x="1425.97" y="-617.55" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/phoe/portable&#45;condition&#45;system</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;//github.com/phoe/portable&#45;condition&#45;system -->
+<g id="edge2" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;//github.com/phoe/portable&#45;condition&#45;system</title>
+<path fill="none" stroke="black" d="M789.77,-668.3C879.75,-661.78 1284.07,-632.5 1396.74,-624.35"/>
+<polygon fill="black" stroke="black" points="1396.92,-627.84 1406.64,-623.63 1396.41,-620.86 1396.92,-627.84"/>
+</g>
+<!-- //www.reddit.com/r/lisp/comments/hrjzs8/ -->
+<g id="node4" class="node node&#45;https">
+<title>//www.reddit.com/r/lisp/comments/hrjzs8/</title>
+<g id="a_node4"><a xlink:href="https://www.reddit.com/r/lisp/comments/hrjzs8/" xlink:title="https://www.reddit.com/r/lisp/comments/hrjzs8/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="404.05" cy="-127.11" rx="18" ry="18"/>
+<text text-anchor="middle" x="404.05" y="-122.43" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://www.reddit.com/r/lisp/comments/hrjzs8/</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;//www.reddit.com/r/lisp/comments/hrjzs8/ -->
+<g id="edge3" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;//www.reddit.com/r/lisp/comments/hrjzs8/</title>
+<path fill="none" stroke="black" d="M761.9,-654.8C711.29,-580.16 483.86,-244.8 420.48,-151.35"/>
+<polygon fill="black" stroke="black" points="423.43,-149.45 414.92,-143.14 417.63,-153.38 423.43,-149.45"/>
+</g>
+<!-- 3c7df3f7&#45;a551&#45;4f8c&#45;97b6&#45;8ef3296cd36a -->
+<g id="node5" class="node node&#45;id">
+<title>3c7df3f7&#45;a551&#45;4f8c&#45;97b6&#45;8ef3296cd36a</title>
+<g id="a_node5"><a xlink:href="public/link_springer_com_the_common_lisp_condition_system_beyond_exception_handling_with_control_flow_mechanisms_springerlink.html" xlink:title="(link.springer.com) The Common Lisp Condition System: Beyond Exception Handling with Control Flow Mechanisms | SpringerLink">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="838.36" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="838.36" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#111111">(link.springer.com) The Common Lisp C...</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;3c7df3f7&#45;a551&#45;4f8c&#45;97b6&#45;8ef3296cd36a -->
+<g id="edge4" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;3c7df3f7&#45;a551&#45;4f8c&#45;97b6&#45;8ef3296cd36a</title>
+<path fill="none" stroke="black" d="M773.74,-651.82C782.88,-562.17 823.95,-159.36 835.39,-47.12"/>
+<polygon fill="black" stroke="black" points="838.87,-47.56 836.4,-37.26 831.9,-46.85 838.87,-47.56"/>
+</g>
+<!-- ceb47e89&#45;bff1&#45;40fa&#45;a774&#45;10f77c58216a -->
+<g id="node6" class="node node&#45;id">
+<title>ceb47e89&#45;bff1&#45;40fa&#45;a774&#45;10f77c58216a</title>
+<g id="a_node6"><a xlink:href="public/github_com_github_phoe_tclcs_code_companion_code_for_the_book_the_common_lisp_condition_system.html" xlink:title="(github.com) GitHub &#45; phoe/tclcs&#45;code: Companion code for the book &quot;The Common Lisp Condition System&quot;">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="174.35" cy="-938.22" rx="18" ry="18"/>
+<text text-anchor="middle" x="174.35" y="-933.54" font-family="Times,serif" font-size="14.00" fill="#111111">(github.com) GitHub &#45; phoe/tclcs&#45;code...</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;ceb47e89&#45;bff1&#45;40fa&#45;a774&#45;10f77c58216a -->
+<g id="edge5" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;ceb47e89&#45;bff1&#45;40fa&#45;a774&#45;10f77c58216a</title>
+<path fill="none" stroke="black" d="M755.64,-676.91C673.42,-713.87 304,-879.94 201.05,-926.21"/>
+<polygon fill="black" stroke="black" points="199.7,-922.99 192.01,-930.28 202.57,-929.37 199.7,-922.99"/>
+</g>
+<!-- f569efb7&#45;7112&#45;4080&#45;957d&#45;e9e0eb480e74 -->
+<g id="node7" class="node node&#45;id">
+<title>f569efb7&#45;7112&#45;4080&#45;957d&#45;e9e0eb480e74</title>
+<g id="a_node7"><a xlink:href="public/github_com_github_phoe_portable_condition_system_a_portable_common_lisp_condition_system.html" xlink:title="(github.com) GitHub &#45; phoe/portable&#45;condition&#45;system: A portable Common Lisp condition system">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="932.28" cy="-1303.7" rx="18" ry="18"/>
+<text text-anchor="middle" x="932.28" y="-1299.03" font-family="Times,serif" font-size="14.00" fill="#111111">(github.com) GitHub &#45; phoe/portable&#45;c...</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;f569efb7&#45;7112&#45;4080&#45;957d&#45;e9e0eb480e74 -->
+<g id="edge6" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;f569efb7&#45;7112&#45;4080&#45;957d&#45;e9e0eb480e74</title>
+<path fill="none" stroke="black" d="M776.31,-686.88C798.37,-774.12 897.49,-1166.13 925.11,-1275.37"/>
+<polygon fill="black" stroke="black" points="921.69,-1276.12 927.54,-1284.96 928.48,-1274.41 921.69,-1276.12"/>
+</g>
+<!-- b5fb5c4b&#45;d10f&#45;4bca&#45;91e1&#45;a5e946ef0c83 -->
+<g id="node8" class="node node&#45;id">
+<title>b5fb5c4b&#45;d10f&#45;4bca&#45;91e1&#45;a5e946ef0c83</title>
+<g id="a_node8"><a xlink:href="public/20240714204453-common_lisp.html" xlink:title="Common Lisp">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1302.77" cy="-1052.89" rx="18" ry="18"/>
+<text text-anchor="middle" x="1302.77" y="-1048.22" font-family="Times,serif" font-size="14.00" fill="#111111">Common Lisp</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;b5fb5c4b&#45;d10f&#45;4bca&#45;91e1&#45;a5e946ef0c83 -->
+<g id="edge7" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;b5fb5c4b&#45;d10f&#45;4bca&#45;91e1&#45;a5e946ef0c83</title>
+<path fill="none" stroke="black" d="M786.41,-680.04C859.44,-732.78 1187.6,-969.73 1279.05,-1035.76"/>
+<polygon fill="black" stroke="black" points="1276.92,-1038.55 1287.08,-1041.56 1281.02,-1032.87 1276.92,-1038.55"/>
+</g>
+<!-- //jacek.zlydach.pl/blog/2019&#45;07&#45;24&#45;algebraic&#45;effects&#45;yo -->
+<g id="node9" class="node node&#45;http">
+<title>//jacek.zlydach.pl/blog/2019&#45;07&#45;24&#45;algebraic&#45;effects&#45;yo</title>
+<g id="a_node9"><a xlink:href="http://jacek.zlydach.pl/blog/2019-07-24-algebraic-effects-yo" xlink:title="http://jacek.zlydach.pl/blog/2019&#45;07&#45;24&#45;algebraic&#45;effects&#45;yo">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="486.5" cy="-1259.7" rx="18" ry="18"/>
+<text text-anchor="middle" x="486.5" y="-1255.03" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://jacek.zlydach.pl/blog/2019&#45;07&#45;24&#45;algebraic&#45;effects&#45;yo</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;//jacek.zlydach.pl/blog/2019&#45;07&#45;24&#45;algebraic&#45;effects&#45;yo -->
+<g id="edge8" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;//jacek.zlydach.pl/blog/2019&#45;07&#45;24&#45;algebraic&#45;effects&#45;yo</title>
+<path fill="none" stroke="black" d="M764.15,-685.68C724.88,-766.87 548.42,-1131.68 499.25,-1233.33"/>
+<polygon fill="black" stroke="black" points="496.14,-1231.74 494.93,-1242.26 502.44,-1234.78 496.14,-1231.74"/>
+</g>
+<!-- f54613f2&#45;d9fb&#45;4a81&#45;889e&#45;82002685d8bd -->
+<g id="node10" class="node node&#45;id">
+<title>f54613f2&#45;d9fb&#45;4a81&#45;889e&#45;82002685d8bd</title>
+<g id="a_node10"><a xlink:href="public/jacek_zlydach_pl_algebraic_effects_you_can_touch_this_jacek_złydach.html" xlink:title="(jacek.zlydach.pl) Algebraic Effects &#45; You Can Touch This! — Jacek Złydach">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="141.88" cy="-490.82" rx="18" ry="18"/>
+<text text-anchor="middle" x="141.88" y="-486.14" font-family="Times,serif" font-size="14.00" fill="#111111">(jacek.zlydach.pl) Algebraic Effects ...</text>
+</a>
+</g>
+</g>
+<!-- 2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;f54613f2&#45;d9fb&#45;4a81&#45;889e&#45;82002685d8bd -->
+<g id="edge9" class="edge">
+<title>2f158356&#45;91ef&#45;42bc&#45;b84d&#45;95b67e7bebb4&#45;&gt;f54613f2&#45;d9fb&#45;4a81&#45;889e&#45;82002685d8bd</title>
+<path fill="none" stroke="black" d="M754.75,-664.71C668.07,-640.12 278.57,-529.6 170.03,-498.81"/>
+<polygon fill="black" stroke="black" points="171.07,-495.46 160.49,-496.1 169.16,-502.2 171.07,-495.46"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
 </div>
 </div>
 </main>

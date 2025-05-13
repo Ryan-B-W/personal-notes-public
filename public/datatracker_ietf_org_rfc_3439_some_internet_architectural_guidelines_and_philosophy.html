@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-05-12 Mon 15:44 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(datatracker.ietf.org) RFC 3439 - Some Internet Architectural Guidelines and Philosophy</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(datatracker.ietf.org) RFC 3439 - Some Internet Architectural Guidelines and Philosophy</h1>
+</header><pre class="example">
+ROAM_REFS: https://datatracker.ietf.org/doc/html/rfc3439#section-3 https://datatracker.ietf.org/doc/html/rfc3439
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>Some Internet Architectural Guidelines and Philosophy</li>
+</ul>
+
+<p>** Status of this Memo</p><p>This memo provides information for the Internet community.  It does not specify an Internet standard of any kind.  Distribution of this memo is unlimited.</p><p>** Abstract</p><p>This document extends <a href="https://datatracker.ietf.org/doc/html/rfc1958">RFC 1958</a> by outlining some of the philosophical guidelines to which architects and designers of Internet backbone networks should adhere.  We describe the Simplicity Principle, which states that complexity is the primary mechanism that impedes efficient scaling, and discuss its implications on the architecture, design and engineering issues found in large scale Internet backbones.</p>
+</blockquote>
+<div id="outline-container-ID-3dff72e3-a56a-4b7c-9ec5-dd055106e411" class="outline-2">
+<h2 id="ID-3dff72e3-a56a-4b7c-9ec5-dd055106e411">(datatracker.ietf.org) RFC 3439 - Some Internet Architectural Guidelines and Philosophy - Layering Considered Harmful</h2>
+<div class="outline-text-2" id="text-orgc0cc383">
+<blockquote>
+<ol class="org-ol">
+<li>Layering Considered Harmful</li>
+</ol>
+
+<p>There are several generic properties of layering, or vertical integration as applied to networking.  In general, a layer as defined in our context implements one or more of</p><p>Error Control:     The layer makes the "channel" more reliable (e.g., reliable transport layer)</p><p>Flow Control:      The layer avoids flooding slower peer (e.g., ATM flow control)</p><p>Fragmentation:     Dividing large data chunks into smaller pieces, and subsequent reassembly (e.g., TCP MSS fragmentation/reassembly)</p><p>Multiplexing:      Allow several higher level sessions share single lower level "connection" (e.g., ATM PVC)</p><p>Connection Setup:  Handshaking with peer (e.g., TCP three-way handshake, ATM ILMI)</p><p>Addressing/Naming: Locating, managing identifiers associated with entities (e.g., GOSSIP 2 NSAP Structure [RFC1629])</p><p>Layering of this type does have various conceptual and structuring advantages.  However, in the data networking context structured layering implies that the functions of each layer are carried out completely before the protocol data unit is passed to the next layer.  This means that the optimization of each layer has to be done separately.  Such ordering constraints are in conflict with efficient implementation of data manipulation functions.  One could accuse the layered model (e.g., TCP/IP and ISO OSI) of causing this conflict.  In fact, the operations of multiplexing and segmentation both hide vital information that lower layers may need to optimize their performance.  For example, layer N may duplicate lower level functionality, e.g., error recovery hop-hop versus end-to-end error recovery.  In addition, different layers may need the same information (e.g., time stamp): layer N may need layer N-2 information (e.g., lower layer packet sizes), and the like [WAKEMAN].  A related and even more ironic statement comes from Tennenhouse's classic paper, "Layered Multiplexing Considered Harmful" [TENNENHOUSE]: "The ATM approach to broadband networking is presently being pursued within the CCITT (and elsewhere) as the unifying mechanism for the support of service integration, rate adaptation, and jitter control within the lower layers of the network architecture.  This position paper is specifically concerned with the jitter arising from the design of the "middle" and "upper" layers that operate within the end systems and relays of multi-service networks (MSNs)."</p><p>As a result of inter-layer dependencies, increased layering can quickly lead to violation of the Simplicity Principle.  Industry experience has taught us that increased layering frequently increases complexity and hence leads to increases in OPEX, as is predicted by the Simplicity Principle.  A corollary is stated in RFC 1925 [RFC1925], section 2(5):</p><pre class="example">
+"It is always possible to agglutinate multiple separate problems into a single complex interdependent solution.  In most cases this is a bad idea."
+</pre>
+
+<p>The first order conclusion then, is that horizontal (as opposed to vertical) separation may be more cost-effective and reliable in the long term.</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-orgc16f60b" class="outline-2">
+<h2 id="orgc16f60b">Local Graph</h2>
+<div class="outline-text-2" id="text-orgc16f60b">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="980pt" height="44pt"
+ viewBox="0.00 0.00 980.21 44.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-40 976.21,-40 976.21,4 -4,4"/>
+<!-- 4dd99472&#45;9204&#45;4037&#45;b637&#45;5267da6cf691 -->
+<g id="node1" class="node node&#45;id">
+<title>4dd99472&#45;9204&#45;4037&#45;b637&#45;5267da6cf691</title>
+<g id="a_node1"><a xlink:href="public/datatracker_ietf_org_rfc_3439_some_internet_architectural_guidelines_and_philosophy.html" xlink:title="(datatracker.ietf.org) RFC 3439 &#45; Some Internet Architectural Guidelines and Philosophy">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="822.83" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="822.83" y="-13.33" font-family="Times,serif" font-size="14.00" fill="#111111">(datatracker.ietf.org) RFC 3439 &#45; Som...</text>
+</a>
+</g>
+</g>
+<!-- //datatracker.ietf.org/doc/html/rfc1958 -->
+<g id="node2" class="node node&#45;https">
+<title>//datatracker.ietf.org/doc/html/rfc1958</title>
+<g id="a_node2"><a xlink:href="https://datatracker.ietf.org/doc/html/rfc1958" xlink:title="https://datatracker.ietf.org/doc/html/rfc1958">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="165.88" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="165.88" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://datatracker.ietf.org/doc/html/rfc1958</text>
+</a>
+</g>
+</g>
+<!-- 4dd99472&#45;9204&#45;4037&#45;b637&#45;5267da6cf691&#45;&gt;//datatracker.ietf.org/doc/html/rfc1958 -->
+<g id="edge1" class="edge">
+<title>4dd99472&#45;9204&#45;4037&#45;b637&#45;5267da6cf691&#45;&gt;//datatracker.ietf.org/doc/html/rfc1958</title>
+<path fill="none" stroke="black" d="M804.92,-18C714.53,-18 308.4,-18 195.23,-18"/>
+<polygon fill="black" stroke="black" points="195.29,-14.5 185.29,-18 195.29,-21.5 195.29,-14.5"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-05-11 Sun 21:29</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:32 -->
+<!-- 2025-05-12 Mon 06:03 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>The Art of Computer Programming (TAOCP)</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -209,7 +210,7 @@ Some "pre-fascicles" are also available for alpha-testing: <a href="https://www-
 <li>10. Parsing techniques</li>
 </ul>
 
-<p>Estimated to be ready in 2030.</p><p><b>*</b> Future plans</p><p>As I continue to write Volumes 4 and 5, I'll need to refer to topics that belong logically in Volumes 1&#x2013;3 but weren't invented yet when I wrote those books.  Instead of putting such material artificially into Volumes 4 or 5, I'll put it into fascicle form.  The first such fascicle is in fact ready now (see above): It describes <a href="https://www-cs-faculty.stanford.edu/~knuth/mmix.html"><pre class="verbatim">MMIX</pre></a>, a RISC machine that is used in Volume 4A; <pre class="verbatim">MMIX</pre> will also take the place of <pre class="verbatim">MIX</pre> in all subsequent editions of Volumes 1, 2, and 3.</p><p><a href="https://www-cs-faculty.stanford.edu/~knuth/fasc1.ps.gz">Download the 16 Feb 2004 version of Volume 1 Fascicle 1 (583KB of compressed PostScript)</a> (this old version is however no longer being maintained; see the errata below)</p><p>After Volume 5 has been completed, I will revise Volumes 1&#x2013;3 again to bring them up to date.  In particular, the new material for those volumes that has been issued in beta-test fascicles will be incorporated at that time.</p><p>Then I will publish a “reader's digest” edition of Volumes 1&#x2013;5, condensing the most important material into a single book.</p><p>And after Volumes 1&#x2013;5 are done, God willing, I plan to publish Volume 6 (the theory of context-free languages) and Volume 7 (Compiler techniques), but only if the things I want to say about those topics are still relevant and still haven't been said.  Volumes 1&#x2013;5 represent the central core of computer programming for sequential machines; the subjects of Volumes 6 and 7 are important but more specialized.</p><figure id="org0ee199f">
+<p>Estimated to be ready in 2030.</p><p><b>*</b> Future plans</p><p>As I continue to write Volumes 4 and 5, I'll need to refer to topics that belong logically in Volumes 1&#x2013;3 but weren't invented yet when I wrote those books.  Instead of putting such material artificially into Volumes 4 or 5, I'll put it into fascicle form.  The first such fascicle is in fact ready now (see above): It describes <a href="https://www-cs-faculty.stanford.edu/~knuth/mmix.html"><pre class="verbatim">MMIX</pre></a>, a RISC machine that is used in Volume 4A; <pre class="verbatim">MMIX</pre> will also take the place of <pre class="verbatim">MIX</pre> in all subsequent editions of Volumes 1, 2, and 3.</p><p><a href="https://www-cs-faculty.stanford.edu/~knuth/fasc1.ps.gz">Download the 16 Feb 2004 version of Volume 1 Fascicle 1 (583KB of compressed PostScript)</a> (this old version is however no longer being maintained; see the errata below)</p><p>After Volume 5 has been completed, I will revise Volumes 1&#x2013;3 again to bring them up to date.  In particular, the new material for those volumes that has been issued in beta-test fascicles will be incorporated at that time.</p><p>Then I will publish a “reader's digest” edition of Volumes 1&#x2013;5, condensing the most important material into a single book.</p><p>And after Volumes 1&#x2013;5 are done, God willing, I plan to publish Volume 6 (the theory of context-free languages) and Volume 7 (Compiler techniques), but only if the things I want to say about those topics are still relevant and still haven't been said.  Volumes 1&#x2013;5 represent the central core of computer programming for sequential machines; the subjects of Volumes 6 and 7 are important but more specialized.</p><figure id="org91cf765">
 <img src="https://www-cs-faculty.stanford.edu/~knuth/border.gif" alt="border.gif" />
 
 </figure><p>Volumes 1&#x2013;4B are available from the publisher, <a href="http://www.informit.com/knuth">Addison-Wesley Publishing Company</a>.</p><p>** MIXware</p><p>The <pre class="verbatim">MIX</pre> computer will soon be replaced by a RISC machine called <a href="https://www-cs-faculty.stanford.edu/~knuth/mmix.html"><pre class="verbatim">MMIX</pre></a>.  Meanwhile if you want to try out the existing programs for the original 60s-era machine, you might be able to find suitable software at the following sites:</p><ul class="org-ul">
@@ -230,7 +231,7 @@ Some "pre-fascicles" are also available for alpha-testing: <a href="https://www-
 <li><a href="https://github.com/jflude/taocp">Justin Flude's implementation in GO, includes floating-point ops</a></li>
 </ul>
 
-<p>(Please let me know of any other sites that I should add to this list.)</p><p>** The MMIX Supplement</p><figure id="org216c1bb">
+<p>(Please let me know of any other sites that I should add to this list.)</p><p>** The MMIX Supplement</p><figure id="org5118ac9">
 <img src="https://www-cs-faculty.stanford.edu/~knuth/mmix-supp.jpeg" alt="mmix-supp.jpeg" />
 
 </figure><p>Martin Ruckert has written an excellent 200-page companion to Volumes 1, 2, and 3, intelligently translating all of the <pre class="verbatim">MIX</pre> programs into <pre class="verbatim">MMIX</pre> form.  This booklet is jam-packed with instructive details and opportunities for self-instruction.</p><p>** Errata et Addenda for Volume 1</p><p>The main changes between the second and third editions of Volume 1 are listed in the <a href="https://www-cs-faculty.stanford.edu/~knuth/err1-2e.ps.gz">Errata for Volume 1 (2nd ed.)</a> (335K bytes of compressed PostScript, 80pp)&#x2014;an archival file that is not being kept up to date.  But thousands of additional refinements appear in the 3rd edition; you really should ask someone to get it for you next Christmas.</p><p>The main changes to the third edition of Volume 1, made before the appearance of Volume 4A in 2011, are listed in the <a href="https://www-cs-faculty.stanford.edu/~knuth/all1-prepre.ps.gz">Earliest errata for Volume 1 (3rd ed.)</a> (262K bytes of compressed PostScript, 50pp).</p><p>There's also another major list of changes, covering the period 2011&#x2013;2021: <a href="https://www-cs-faculty.stanford.edu/~knuth/all1-pre.ps.gz">Earlier changes for Volume 1 (3rd ed.)</a> (143K bytes of compressed PostScript, 20pp).</p><ul class="org-ul">
@@ -334,6 +335,59 @@ ROAM_REFS: https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming
 <blockquote>
 <p><i><b>The Art of Computer Programming</b></i> (<i><b>TAOCP</b></i>) is a comprehensive <a href="https://en.wikipedia.org/wiki/Monograph">monograph</a> written by the computer scientist <a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a> presenting <a href="https://en.wikipedia.org/wiki/Computer_programming">programming</a> <a href="https://en.wikipedia.org/wiki/Algorithm">algorithms</a> and <a href="https://en.wikipedia.org/wiki/Analysis_of_algorithms">their analysis</a>.  Volumes 1&#x2013;5 are intended to represent the central core of computer programming for sequential machines.</p><p>When Knuth began the project in 1962, he originally conceived of it as a single book with twelve chapters.  The first three volumes of what was then expected to be a seven-volume set were published in 1968, 1969, and 1973.  Work began in earnest on Volume 4 in 1973, but was suspended in 1977 for work on typesetting prompted by the second edition of Volume 2.  Writing of the final copy of Volume 4A began in longhand in 2001, and the first online pre-fascicle, 2A, appeared later in 2001.  The first published installment of Volume 4 appeared in paperback as <a href="https://en.wikipedia.org/wiki/Fascicle_(book)">Fascicle</a> 2 in 2005.  The hardback Volume 4A, combining Volume 4, Fascicles 0&#x2013;4, was published in 2011.  Volume 4, Fascicle 6 ("Satisfiability") was released in December 2015; Volume 4, Fascicle 5 ("Mathematical Preliminaries Redux; Backtracking; Dancing Links") was released in November 2019.</p><p>Volume 4B consists of material evolved from Fascicles 5 and 6.  The manuscript was sent to the publisher on August 1, 2022, and the volume was published in September 2022.  Fascicle 7 (Constraint Satisfaction), planned for Volume 4C, was the subject of Knuth's talk on August 3, 2022 and was published on February 5, 2025.</p>
 </blockquote>
+</div>
+</div>
+<div id="outline-container-orgdcdb4bc" class="outline-2">
+<h2 id="orgdcdb4bc">Local Graph</h2>
+<div class="outline-text-2" id="text-orgdcdb4bc">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="782pt" height="44pt"
+ viewBox="0.00 0.00 781.50 44.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-40 777.5,-40 777.5,4 -4,4"/>
+<!-- 98408d03&#45;2cf9&#45;4897&#45;905d&#45;02781a1b8a6b -->
+<g id="node1" class="node node&#45;id">
+<title>98408d03&#45;2cf9&#45;4897&#45;905d&#45;02781a1b8a6b</title>
+<g id="a_node1"><a xlink:href="public/20250313191241-donald_e_knuth.html" xlink:title="Donald Ervin Knuth">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="694.63" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="694.63" y="-13.33" font-family="Times,serif" font-size="14.00" fill="#111111">Donald Ervin Knuth</text>
+</a>
+</g>
+</g>
+<!-- b63e99ff&#45;3b78&#45;4b44&#45;8683&#45;91df13ef08fb -->
+<g id="node2" class="node node&#45;id">
+<title>b63e99ff&#45;3b78&#45;4b44&#45;8683&#45;91df13ef08fb</title>
+<g id="a_node2"><a xlink:href="public/20250313191503-the_art_of_computer_programming.html" xlink:title="The Art of Computer Programming (TAOCP)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="165.12" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="165.12" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#111111">The Art of Computer Programming (TAOCP)</text>
+</a>
+</g>
+</g>
+<!-- 98408d03&#45;2cf9&#45;4897&#45;905d&#45;02781a1b8a6b&#45;&gt;b63e99ff&#45;3b78&#45;4b44&#45;8683&#45;91df13ef08fb -->
+<g id="edge1" class="edge">
+<title>98408d03&#45;2cf9&#45;4897&#45;905d&#45;02781a1b8a6b&#45;&gt;b63e99ff&#45;3b78&#45;4b44&#45;8683&#45;91df13ef08fb</title>
+<path fill="none" stroke="black" d="M677.01,-15.37C599.82,-10.11 291.03,-9.89 194.27,-14.7"/>
+<polygon fill="black" stroke="black" points="194.1,-11.21 184.32,-15.28 194.5,-18.2 194.1,-11.21"/>
+</g>
+<!-- b63e99ff&#45;3b78&#45;4b44&#45;8683&#45;91df13ef08fb&#45;&gt;98408d03&#45;2cf9&#45;4897&#45;905d&#45;02781a1b8a6b -->
+<g id="edge2" class="edge">
+<title>b63e99ff&#45;3b78&#45;4b44&#45;8683&#45;91df13ef08fb&#45;&gt;98408d03&#45;2cf9&#45;4897&#45;905d&#45;02781a1b8a6b</title>
+<path fill="none" stroke="black" d="M182.74,-20.63C259.93,-25.89 568.72,-26.11 665.48,-21.3"/>
+<polygon fill="black" stroke="black" points="665.65,-24.79 675.43,-20.72 665.25,-17.8 665.65,-24.79"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
 </div>
 </div>
 </main>

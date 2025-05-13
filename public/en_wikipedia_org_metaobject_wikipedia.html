@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:33 -->
+<!-- 2025-05-12 Mon 08:54 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>(en.wikipedia.org) Metaobject - Wikipedia</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -44,6 +45,173 @@ ROAM_REFS: https://en.wikipedia.org/wiki/Metaobject#Metaobject_protocol
 
 <p>Metaobject protocol is contrary to <a href="https://en.wikipedia.org/wiki/Bertrand_Meyer">Bertrand Meyer</a>'s <a href="https://en.wikipedia.org/wiki/Open/closed_principle">open/closed principle</a>, which holds that software object systems should be <i>open for extension</i> but <i>closed for modification</i>.  This principle effectively draws a distinction between <i>extending</i> an object by adding to it, and <i>modifying</i> an object by redefining it, proposing that the former is a desirable quality ("<i>objects should be extensible to meet the requirements of future use cases</i>"), while the latter is undesirable ("<i>objects should provide a stable interface not subject to summary revision</i>").  Metaobject protocol, by contrast, transparently exposes the internal composition of objects and the entire object system in terms of the system itself.  In practice, this means that programmers may use objects to redefine themselves, possibly in quite complex ways.</p><p>Furthermore, metaobject protocol is not merely an <a href="https://en.wikipedia.org/wiki/Application_Programming_Interface">interface</a> to an "underlying" implementation; rather, through metaobject protocol the object system is <a href="https://en.wikipedia.org/wiki/Recursive_definition">recursively implemented</a> in terms of a <i>meta</i>-object system, which itself is theoretically implemented in terms of a <i>meta</i>-metaobject system, and so on until an arbitrary <a href="https://en.wikipedia.org/wiki/Base_case_(recursion)">base case</a> (a consistent <a href="https://en.wikipedia.org/wiki/State_(computing)">state</a> of the object system) is determined, with the protocol as such being the recursive functional relationship between these implementation levels.</p><p>Implementing object systems in such a way opens the possibility for radical discretionary redesign, providing deep flexibility but introducing possibly complex or difficult-to-understand metastability issues (for instance, the object system must not <a href="https://en.wikipedia.org/wiki/Persistent_data_structure">destructively update</a> its own metaobject protocol - its internal self-representation - but the potential destructiveness of some updates is non-trivial to predict and may be hard to reason about), depending on the recursive depth to which the desired modifications are propagated.  For this reason, metaobject protocol, when present in a language, is usually used sparingly and for specialised purposes such as software that transforms other software or itself in sophisticated ways, for example in reverse engineering.</p><p><b>*</b> Runtime and compile time</p><p>When compilation is not available at run-time there are additional complications for the implementation of metaobject protocol.  For example, it is possible to change the type hierarchy with such a protocol but doing so may cause problems for code compiled with an alternative class model definition.  Some environments have found innovative solutions for this, e.g., by handling metaobject issues at compile time.  A good example of this is <a href="https://en.wikipedia.org/w/index.php?title=OpenC++_(software_tool)&amp;action=edit&amp;redlink=1">OpenC++</a>.  The <a href="https://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a> object-oriented model is more dynamic than most standard object systems, and is consistent with runtime metaobject protocols.  For example, in the Semantic Web model classes are expected to change their relations to each other and there is a special <a href="https://en.wikipedia.org/wiki/Inference_engine">inference engine</a> known as a classifier that can validate and analyze evolving class models.</p><p><b>*</b> Usage</p><p>The first metaobject protocol was in the <a href="https://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a> object-oriented programming language developed at <a href="https://en.wikipedia.org/wiki/Xerox_PARC">Xerox PARC</a>.  The <a href="https://en.wikipedia.org/wiki/Common_Lisp_Object_System">Common Lisp Object System</a> (CLOS) came later and was influenced by the Smalltalk protocol as well as by <a href="https://en.wikipedia.org/wiki/Brian_Cantwell_Smith">Brian C. Smith</a>'s original studies on 3-Lisp as an infinite tower of evaluators.  The CLOS model, unlike the Smalltalk model, allows a class to have <a href="https://en.wikipedia.org/wiki/Multiple_inheritance">more than one superclass</a>; this raises additional complexity in issues such as resolving the lineage of the class hierarchy on some object instance.  CLOS also allows for <a href="https://en.wikipedia.org/wiki/Multiple_dispatch">dynamic multimethod dispatch</a>, which is handled via <a href="https://en.wikipedia.org/wiki/Generic_functions">generic functions</a> rather than <a href="https://en.wikipedia.org/wiki/Message_passing">message passing</a> like in Smalltalk's <a href="https://en.wikipedia.org/wiki/Single_dispatch">single dispatch</a>.  The most influential book describing the semantics and implementation of the metaobject protocol in Common Lisp is <i><a href="https://en.wikipedia.org/wiki/The_Art_of_the_Metaobject_Protocol">The Art of the Metaobject Protocol</a></i> by <a href="https://en.wikipedia.org/wiki/Gregor_Kiczales">Gregor Kiczales</a> et al.</p><p>Metaobject protocols are also extensively used in software engineering applications.  In virtually all commercial CASE, re-engineering, and Integrated Development Environments there is some form of metaobject protocol to represent and manipulate the design artifacts.</p><p>A metaobject protocol is one way to implement <a href="https://en.wikipedia.org/wiki/Aspect-oriented_programming">aspect-oriented programming</a>.  Many of the early founders of MOPs, including <a href="https://en.wikipedia.org/wiki/Gregor_Kiczales">Gregor Kiczales</a>, have since moved on to be the primary advocates for aspect-oriented programming.  Kiczales et al. of <a href="https://en.wikipedia.org/wiki/Palo_Alto_Research_Center">PARC</a> were hired to design <a href="https://en.wikipedia.org/wiki/AspectJ">AspectJ</a> for <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a>, a language which does not possess a native metaobject protocol.</p>
 </blockquote>
+</div>
+</div>
+<div id="outline-container-org3d8795c" class="outline-2">
+<h2 id="org3d8795c">Local Graph</h2>
+<div class="outline-text-2" id="text-org3d8795c">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="1742pt" height="1330pt"
+ viewBox="0.00 0.00 1741.94 1329.68">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1325.68)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1325.68 1737.94,-1325.68 1737.94,4 -4,4"/>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a -->
+<g id="node1" class="node node&#45;id">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a</title>
+<g id="a_node1"><a xlink:href="public/en_wikipedia_org_metaobject_wikipedia.html" xlink:title="(en.wikipedia.org) Metaobject &#45; Wikipedia">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="872.42" cy="-669.57" rx="18" ry="18"/>
+<text text-anchor="middle" x="872.42" y="-664.9" font-family="Times,serif" font-size="14.00" fill="#111111">(en.wikipedia.org) Metaobject &#45; Wikip...</text>
+</a>
+</g>
+</g>
+<!-- //en.wikipedia.org/wiki/Computer_science -->
+<g id="node2" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Computer_science</title>
+<g id="a_node2"><a xlink:href="https://en.wikipedia.org/wiki/Computer_science" xlink:title="https://en.wikipedia.org/wiki/Computer_science">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1342.37" cy="-213.95" rx="18" ry="18"/>
+<text text-anchor="middle" x="1342.37" y="-209.28" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Computer_science</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Computer_science -->
+<g id="edge1" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Computer_science</title>
+<path fill="none" stroke="black" d="M884.99,-657.39C949.21,-595.13 1240.8,-312.43 1321.57,-234.12"/>
+<polygon fill="black" stroke="black" points="1323.71,-236.92 1328.45,-227.45 1318.84,-231.89 1323.71,-236.92"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Object_(computer_science) -->
+<g id="node3" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Object_(computer_science)</title>
+<g id="a_node3"><a xlink:href="https://en.wikipedia.org/wiki/Object_(computer_science)" xlink:title="https://en.wikipedia.org/wiki/Object_(computer_science)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1526.44" cy="-622.22" rx="18" ry="18"/>
+<text text-anchor="middle" x="1526.44" y="-617.54" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Object_(computer_science)</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Object_(computer_science) -->
+<g id="edge2" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Object_(computer_science)</title>
+<path fill="none" stroke="black" d="M890.25,-668.28C980.24,-661.77 1384.55,-632.49 1497.21,-624.33"/>
+<polygon fill="black" stroke="black" points="1497.39,-627.83 1507.11,-623.62 1496.89,-620.85 1497.39,-627.83"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Type_system -->
+<g id="node4" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Type_system</title>
+<g id="a_node4"><a xlink:href="https://en.wikipedia.org/wiki/Type_system" xlink:title="https://en.wikipedia.org/wiki/Type_system">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="504.54" cy="-127.11" rx="18" ry="18"/>
+<text text-anchor="middle" x="504.54" y="-122.43" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Type_system</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Type_system -->
+<g id="edge3" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Type_system</title>
+<path fill="none" stroke="black" d="M862.39,-654.78C811.78,-580.15 584.35,-244.79 520.98,-151.35"/>
+<polygon fill="black" stroke="black" points="523.92,-149.45 515.41,-143.14 518.13,-153.38 523.92,-149.45"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Interface_(object&#45;oriented_programming) -->
+<g id="node5" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Interface_(object&#45;oriented_programming)</title>
+<g id="a_node5"><a xlink:href="https://en.wikipedia.org/wiki/Interface_(object-oriented_programming)" xlink:title="https://en.wikipedia.org/wiki/Interface_(object&#45;oriented_programming)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="938.85" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="938.85" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Interface_(object&#45;oriented_programming)</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Interface_(object&#45;oriented_programming) -->
+<g id="edge4" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Interface_(object&#45;oriented_programming)</title>
+<path fill="none" stroke="black" d="M874.23,-651.81C883.37,-562.16 924.44,-159.36 935.88,-47.12"/>
+<polygon fill="black" stroke="black" points="939.35,-47.56 936.89,-37.26 932.39,-46.85 939.35,-47.56"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Class_(computer_science) -->
+<g id="node6" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Class_(computer_science)</title>
+<g id="a_node6"><a xlink:href="https://en.wikipedia.org/wiki/Class_(computer_science)" xlink:title="https://en.wikipedia.org/wiki/Class_(computer_science)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="274.85" cy="-938.2" rx="18" ry="18"/>
+<text text-anchor="middle" x="274.85" y="-933.52" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Class_(computer_science)</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Class_(computer_science) -->
+<g id="edge5" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Class_(computer_science)</title>
+<path fill="none" stroke="black" d="M856.13,-676.9C773.91,-713.86 404.49,-879.92 301.55,-926.2"/>
+<polygon fill="black" stroke="black" points="300.19,-922.97 292.51,-930.26 303.06,-929.35 300.19,-922.97"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Method_(computer_science) -->
+<g id="node7" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Method_(computer_science)</title>
+<g id="a_node7"><a xlink:href="https://en.wikipedia.org/wiki/Method_(computer_science)" xlink:title="https://en.wikipedia.org/wiki/Method_(computer_science)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1032.76" cy="-1303.68" rx="18" ry="18"/>
+<text text-anchor="middle" x="1032.76" y="-1299" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Method_(computer_science)</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Method_(computer_science) -->
+<g id="edge6" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Method_(computer_science)</title>
+<path fill="none" stroke="black" d="M876.79,-686.86C898.85,-774.11 997.98,-1166.11 1025.6,-1275.34"/>
+<polygon fill="black" stroke="black" points="1022.18,-1276.1 1028.02,-1284.93 1028.96,-1274.38 1022.18,-1276.1"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Attribute_(computing) -->
+<g id="node8" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Attribute_(computing)</title>
+<g id="a_node8"><a xlink:href="https://en.wikipedia.org/wiki/Attribute_(computing)" xlink:title="https://en.wikipedia.org/wiki/Attribute_(computing)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1403.24" cy="-1052.87" rx="18" ry="18"/>
+<text text-anchor="middle" x="1403.24" y="-1048.19" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Attribute_(computing)</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Attribute_(computing) -->
+<g id="edge7" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Attribute_(computing)</title>
+<path fill="none" stroke="black" d="M886.89,-680.03C959.93,-732.76 1288.08,-969.71 1379.52,-1035.74"/>
+<polygon fill="black" stroke="black" points="1377.4,-1038.53 1387.56,-1041.54 1381.5,-1032.85 1377.4,-1038.53"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Parse_tree -->
+<g id="node9" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Parse_tree</title>
+<g id="a_node9"><a xlink:href="https://en.wikipedia.org/wiki/Parse_tree" xlink:title="https://en.wikipedia.org/wiki/Parse_tree">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="586.99" cy="-1259.68" rx="18" ry="18"/>
+<text text-anchor="middle" x="586.99" y="-1255" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Parse_tree</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Parse_tree -->
+<g id="edge8" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Parse_tree</title>
+<path fill="none" stroke="black" d="M864.64,-685.66C825.37,-766.85 648.92,-1131.65 599.75,-1233.31"/>
+<polygon fill="black" stroke="black" points="596.63,-1231.71 595.43,-1242.24 602.93,-1234.76 596.63,-1231.71"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Reflection_(computer_programming) -->
+<g id="node10" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Reflection_(computer_programming)</title>
+<g id="a_node10"><a xlink:href="https://en.wikipedia.org/wiki/Reflection_(computer_programming)" xlink:title="https://en.wikipedia.org/wiki/Reflection_(computer_programming)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="242.38" cy="-490.81" rx="18" ry="18"/>
+<text text-anchor="middle" x="242.38" y="-486.13" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Reflection_(computer_programming)</text>
+</a>
+</g>
+</g>
+<!-- 832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Reflection_(computer_programming) -->
+<g id="edge9" class="edge">
+<title>832077b8&#45;d0c8&#45;4375&#45;96af&#45;d96e9838a71a&#45;&gt;//en.wikipedia.org/wiki/Reflection_(computer_programming)</title>
+<path fill="none" stroke="black" d="M855.24,-664.7C768.56,-640.11 379.06,-529.59 270.53,-498.8"/>
+<polygon fill="black" stroke="black" points="271.57,-495.46 260.99,-496.09 269.66,-502.19 271.57,-495.46"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
 </div>
 </div>
 </main>

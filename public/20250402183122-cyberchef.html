@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:33 -->
+<!-- 2025-05-12 Mon 09:18 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>CyberChef</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -56,7 +57,7 @@ Compile time: 21/02/2025 22:14:02 UTC
 <li><a href="https://gchq.github.io/CyberChef/#recipe=Register('key=(%5B%5Cda-f%5D*)',true,false)Find_/_Replace(%7B'option':'Regex','string':'.*data=(.*)'%7D,'$1',true,false,true)RC4(%7B'option':'Hex','string':'$R0'%7D,'Hex','Latin1')&amp;input=aHR0cDovL21hbHdhcmV6LmJpei9iZWFjb24ucGhwP2tleT0wZTkzMmE1YyZkYXRhPThkYjdkNWViZTM4NjYzYTU0ZWNiYjMzNGUzZGIxMQ">Use parts of the input as arguments to operations</a></li>
 </ul>
 
-<p><a href="https://gchq.github.io/CyberChef/null">Can I load input directly from files?</a></p><p>Yes! Just drag your file over the input box and drop it.</p><p>CyberChef can handle files up to around 2GB (depending on your browser), however some of the operations may take a very long time to run over this much data.</p><p>If the output is larger than a certain threshold (default <a href="https://gchq.github.io/CyberChef/#recipe=Multiply('Line%20feed')Convert_data_units('Bytes%20(B)','Mebibytes%20(MiB)')&amp;input=MTAyNAoxMDI0">1MiB</a>), it will be presented to you as a file available for download. Slices of the file can be viewed in the output if you need to inspect them.</p><p><a href="https://gchq.github.io/CyberChef/null">How do I run operation X over multiple inputs at once?</a></p><p>Maybe you have 10 timestamps that you want to parse or 16 encoded strings that all have the same key.</p><p>The 'Fork' operation (found in the 'Flow control' category) splits up the input line by line and runs all subsequent operations on each line separately. Each output is then displayed on a separate line. These delimiters can be changed, so if your inputs are separated by commas, you can change the split delimiter to a comma instead.</p><p><a href="https://gchq.github.io/CyberChef/#recipe=Fork('%5Cn','%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&amp;input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">Click here</a> for an example.</p><p><a href="https://gchq.github.io/CyberChef/null">How does the 'Magic' operation work?</a></p><p>The 'Magic' operation uses a number of methods to detect encoded data and the operations which can be used to make sense of it. A technical description of these methods can be found <a href="https://github.com/gchq/CyberChef/wiki/Automatic-detection-of-encoded-data-using-CyberChef-Magic">here</a>.</p><p>** Report a Bug</p><p>If you find a bug in CyberChef, please raise an issue in our GitHub repository explaining it in as much detail as possible. Copy and include the following information if relevant.</p><pre class="example" id="orga1a090d">
+<p><a href="https://gchq.github.io/CyberChef/null">Can I load input directly from files?</a></p><p>Yes! Just drag your file over the input box and drop it.</p><p>CyberChef can handle files up to around 2GB (depending on your browser), however some of the operations may take a very long time to run over this much data.</p><p>If the output is larger than a certain threshold (default <a href="https://gchq.github.io/CyberChef/#recipe=Multiply('Line%20feed')Convert_data_units('Bytes%20(B)','Mebibytes%20(MiB)')&amp;input=MTAyNAoxMDI0">1MiB</a>), it will be presented to you as a file available for download. Slices of the file can be viewed in the output if you need to inspect them.</p><p><a href="https://gchq.github.io/CyberChef/null">How do I run operation X over multiple inputs at once?</a></p><p>Maybe you have 10 timestamps that you want to parse or 16 encoded strings that all have the same key.</p><p>The 'Fork' operation (found in the 'Flow control' category) splits up the input line by line and runs all subsequent operations on each line separately. Each output is then displayed on a separate line. These delimiters can be changed, so if your inputs are separated by commas, you can change the split delimiter to a comma instead.</p><p><a href="https://gchq.github.io/CyberChef/#recipe=Fork('%5Cn','%5Cn',false)From_UNIX_Timestamp('Seconds%20(s)')&amp;input=OTc4MzQ2ODAwCjEwMTI2NTEyMDAKMTA0NjY5NjQwMAoxMDgxMDg3MjAwCjExMTUzMDUyMDAKMTE0OTYwOTYwMA">Click here</a> for an example.</p><p><a href="https://gchq.github.io/CyberChef/null">How does the 'Magic' operation work?</a></p><p>The 'Magic' operation uses a number of methods to detect encoded data and the operations which can be used to make sense of it. A technical description of these methods can be found <a href="https://github.com/gchq/CyberChef/wiki/Automatic-detection-of-encoded-data-using-CyberChef-Magic">here</a>.</p><p>** Report a Bug</p><p>If you find a bug in CyberChef, please raise an issue in our GitHub repository explaining it in as much detail as possible. Copy and include the following information if relevant.</p><pre class="example" id="org6c23ebd">
 <code>* Version: 10.19.4</code>
 <code>* Compile time: 21/02/2025 22:14:02 UTC</code>
 <code>* User-Agent:</code>
@@ -66,6 +67,53 @@ Compile time: 21/02/2025 22:14:02 UTC
 
 <p><a href="https://github.com/gchq/CyberChef/issues/new/choose">Raise issue on GitHub</a></p><p>** About</p><p><b>*</b> <b>What</b></p><p>A simple, intuitive web app for analysing and decoding data without having to deal with complex tools or programming languages. CyberChef encourages both technical and non-technical people to explore data formats, encryption and compression.</p><p><b>*</b> <b>Why</b></p><p>Digital data comes in all shapes, sizes and formats in the modern world &#x2013; CyberChef helps to make sense of this data all on one easy-to-use platform.</p><p><b>*</b> <b>How</b></p><p>The interface is designed with simplicity at its heart. Complex techniques are now as trivial as drag-and-drop. Simple functions can be combined to build up a "recipe", potentially resulting in complex analysis, which can be shared with other users and used with their input.</p><p>For those comfortable writing code, CyberChef is a quick and efficient way to prototype solutions to a problem which can then be scripted once proven to work.</p><p><b>*</b> <b>Who</b></p><p>It is expected that CyberChef will be useful for cybersecurity and antivirus companies. It should also appeal to the academic world and any individuals or companies involved in the analysis of digital data, be that software developers, analysts, mathematicians or casual puzzle solvers.</p><p><b>*</b> <b>Aim</b></p><p>It is hoped that by releasing CyberChef through <a href="https://github.com/gchq/CyberChef">GitHub</a>, contributions can be added which can be rolled out into future versions of the tool.</p><p>There are 452 useful operations in CyberChef for anyone working on anything vaguely Internet-related, whether you just want to convert a timestamp to a different format, decompress gzipped data, create a SHA3 hash, or parse an X.509 certificate to find out who issued it.</p><p>It's the Cyber Swiss Army Knife.</p>
 </blockquote>
+</div>
+</div>
+<div id="outline-container-org3744ac7" class="outline-2">
+<h2 id="org3744ac7">Local Graph</h2>
+<div class="outline-text-2" id="text-org3744ac7">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="412pt" height="44pt"
+ viewBox="0.00 0.00 412.33 44.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-40 408.33,-40 408.33,4 -4,4"/>
+<!-- 7ad4a126&#45;0b9f&#45;4dc0&#45;9968&#45;cd9135bf8b1e -->
+<g id="node1" class="node node&#45;id">
+<title>7ad4a126&#45;0b9f&#45;4dc0&#45;9968&#45;cd9135bf8b1e</title>
+<g id="a_node1"><a xlink:href="public/20240804153216-useful_software.html" xlink:title="Useful Software">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="338.58" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="338.58" y="-13.33" font-family="Times,serif" font-size="14.00" fill="#111111">Useful Software</text>
+</a>
+</g>
+</g>
+<!-- a03acba4&#45;5fa3&#45;4665&#45;acf3&#45;82d33955b535 -->
+<g id="node2" class="node node&#45;id">
+<title>a03acba4&#45;5fa3&#45;4665&#45;acf3&#45;82d33955b535</title>
+<g id="a_node2"><a xlink:href="public/20250402183122-cyberchef.html" xlink:title="CyberChef">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="45.87" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="45.87" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#111111">CyberChef</text>
+</a>
+</g>
+</g>
+<!-- 7ad4a126&#45;0b9f&#45;4dc0&#45;9968&#45;cd9135bf8b1e&#45;&gt;a03acba4&#45;5fa3&#45;4665&#45;acf3&#45;82d33955b535 -->
+<g id="edge1" class="edge">
+<title>7ad4a126&#45;0b9f&#45;4dc0&#45;9968&#45;cd9135bf8b1e&#45;&gt;a03acba4&#45;5fa3&#45;4665&#45;acf3&#45;82d33955b535</title>
+<path fill="none" stroke="black" d="M320.71,-18C271.7,-18 134.86,-18 74.78,-18"/>
+<polygon fill="black" stroke="black" points="75.02,-14.5 65.02,-18 75.02,-21.5 75.02,-14.5"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
 </div>
 </div>
 </main>

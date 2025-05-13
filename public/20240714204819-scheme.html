@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-05 Mon 04:32 -->
+<!-- 2025-05-12 Mon 06:43 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Scheme</title>
 <meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -364,7 +365,7 @@ I intend this but for a Scheme of a larger Design.<br />
 &#x2013;Woodward, Nat. Hist. Earth, 1723
 </p><hr />
 
-<p><b>News Items and Announcements</b></p><p>Please check out the Scheme workshops from <a href="http://www.schemeworkshop.org/2014/">2014</a>, <a href="http://andykeep.com/SchemeWorkshop2015/">2015</a>, <a href="http://www.schemeworkshop.org/2016/">2016</a> (with <a href="https://www.youtube.com/playlist?list=PLoH3jteqsb2jcsSe4Ve1TDeLL5fCCiwzC">videos</a>), <a href="http://scheme2017.namin.org/">2017</a> (with <a href="https://www.youtube.com/playlist?list=PLnqUlCo055hWAwdO0V0lCBGfgL-3fFgvV">videos</a>), <a href="http://www.schemeworkshop.org/2018/">2018</a> (with <a href="https://www.youtube.com/playlist?list=PLoH3jteqsb2j9qKCH8CuNLfzJdpKxy43J">videos</a>), and <a href="https://thomas.gilray.org/scheme-2019/">2019</a> (with <a href="https://www.youtube.com/playlist?list=PLyrlk8Xaylp4pcRhsuZ0gEOmggCOd8GBz">videos</a>).</p><p>Manuel Serrano was invited to give a seminar on Hop to <a href="https://www.youtube.com/watch?v=i7bc6yiJQ0I">the Collège de France</a>.</p><p>Now that both <a href="http://www.r6rs.org/">R6RS</a> and <a href="https://small.r7rs.org/">R7RS Small</a> have been ratified, work has begun on <a href="http://r7rs.org/">R7RS Large</a>.</p><p>Blogspace is alive with good Scheme articles. See <a href="https://planet.scheme.org/">Planet Scheme</a>! You can also find some articles <a href="https://conservatory.scheme.org/schemers/Documents/#essays">linked</a> from here.</p><p>Check out the Scheme <a href="https://scheme.meetup.com/">Meetup site</a>.</p><p><b>The Regular Fare</b></p><pre class="example" id="orgeb954a4">
+<p><b>News Items and Announcements</b></p><p>Please check out the Scheme workshops from <a href="http://www.schemeworkshop.org/2014/">2014</a>, <a href="http://andykeep.com/SchemeWorkshop2015/">2015</a>, <a href="http://www.schemeworkshop.org/2016/">2016</a> (with <a href="https://www.youtube.com/playlist?list=PLoH3jteqsb2jcsSe4Ve1TDeLL5fCCiwzC">videos</a>), <a href="http://scheme2017.namin.org/">2017</a> (with <a href="https://www.youtube.com/playlist?list=PLnqUlCo055hWAwdO0V0lCBGfgL-3fFgvV">videos</a>), <a href="http://www.schemeworkshop.org/2018/">2018</a> (with <a href="https://www.youtube.com/playlist?list=PLoH3jteqsb2j9qKCH8CuNLfzJdpKxy43J">videos</a>), and <a href="https://thomas.gilray.org/scheme-2019/">2019</a> (with <a href="https://www.youtube.com/playlist?list=PLyrlk8Xaylp4pcRhsuZ0gEOmggCOd8GBz">videos</a>).</p><p>Manuel Serrano was invited to give a seminar on Hop to <a href="https://www.youtube.com/watch?v=i7bc6yiJQ0I">the Collège de France</a>.</p><p>Now that both <a href="http://www.r6rs.org/">R6RS</a> and <a href="https://small.r7rs.org/">R7RS Small</a> have been ratified, work has begun on <a href="http://r7rs.org/">R7RS Large</a>.</p><p>Blogspace is alive with good Scheme articles. See <a href="https://planet.scheme.org/">Planet Scheme</a>! You can also find some articles <a href="https://conservatory.scheme.org/schemers/Documents/#essays">linked</a> from here.</p><p>Check out the Scheme <a href="https://scheme.meetup.com/">Meetup site</a>.</p><p><b>The Regular Fare</b></p><pre class="example" id="orgcfc4d41">
 <code>(case (what-would-you-like-to-do?)</code>
 <code>  ((learn)</code>
 <code>   (choose-from FAQ</code>
@@ -414,6 +415,194 @@ ROAM_REFS: https://en.wikipedia.org/wiki/Scheme_(programming_language)
 <blockquote>
 <p><b>Scheme</b> is a <a href="https://en.wikipedia.org/wiki/Programming_language_dialect">dialect</a> of the <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a> family of <a href="https://en.wikipedia.org/wiki/Programming_language">programming languages</a>.  Scheme was created during the 1970s at the <a href="https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory">MIT Computer Science and Artificial Intelligence Laboratory</a> (MIT CSAIL) and released by its developers, <a href="https://en.wikipedia.org/wiki/Guy_L._Steele">Guy L. Steele</a> and <a href="https://en.wikipedia.org/wiki/Gerald_Jay_Sussman">Gerald Jay Sussman</a>, via a series of memos now known as the <a href="https://en.wikipedia.org/wiki/Lambda_Papers">Lambda Papers</a>.  It was the first dialect of Lisp to choose <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scoping_and_dynamic_scoping">lexical scope</a> and the first to require implementations to perform <a href="https://en.wikipedia.org/wiki/Tail-call_optimization">tail-call optimization</a>, giving stronger support for functional programming and associated techniques such as recursive algorithms.  It was also one of the first programming languages to support <a href="https://en.wikipedia.org/wiki/First-class_object">first-class</a> <a href="https://en.wikipedia.org/wiki/Continuation">continuations</a>.  It had a significant influence on the effort that led to the development of <a href="https://en.wikipedia.org/wiki/Common_Lisp">Common Lisp</a>.</p><p>The Scheme language is standardized in the official <a href="https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers">Institute of Electrical and Electronics Engineers</a> (IEEE) standard and a <i>de facto</i> standard called the <i>Revised<sup>n</sup> Report on the Algorithmic Language Scheme</i> (R/n/RS).  A widely implemented standard is R5RS (1998).  The most recently ratified standard of Scheme is "R7RS-small" (2013).  The more expansive and modular R6RS was ratified in 2007.  Both trace their descent from R5RS; the timeline below reflects the chronological order of ratification.</p>
 </blockquote>
+</div>
+</div>
+<div id="outline-container-org7d3bb50" class="outline-2">
+<h2 id="org7d3bb50">Local Graph</h2>
+<div class="outline-text-2" id="text-org7d3bb50">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="995pt" height="843pt"
+ viewBox="0.00 0.00 994.62 842.65">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 838.65)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-838.65 990.62,-838.65 990.62,4 -4,4"/>
+<!-- 745de98a&#45;8445&#45;4622&#45;9020&#45;877901f1a7cf -->
+<g id="node1" class="node node&#45;id">
+<title>745de98a&#45;8445&#45;4622&#45;9020&#45;877901f1a7cf</title>
+<g id="a_node1"><a xlink:href="public/20250325161303-guy_l_steele_jr.html" xlink:title="Guy L. Steele Jr.">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="835.64" cy="-660.45" rx="18" ry="18"/>
+<text text-anchor="middle" x="835.64" y="-655.77" font-family="Times,serif" font-size="14.00" fill="#111111">Guy L. Steele Jr.</text>
+</a>
+</g>
+</g>
+<!-- 6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="node2" class="node node&#45;id">
+<title>6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<g id="a_node2"><a xlink:href="public/20240714204819-scheme.html" xlink:title="Scheme">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="518.88" cy="-413.58" rx="18" ry="18"/>
+<text text-anchor="middle" x="518.88" y="-408.9" font-family="Times,serif" font-size="14.00" fill="#111111">Scheme</text>
+</a>
+</g>
+</g>
+<!-- 745de98a&#45;8445&#45;4622&#45;9020&#45;877901f1a7cf&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge1" class="edge">
+<title>745de98a&#45;8445&#45;4622&#45;9020&#45;877901f1a7cf&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M821.62,-649.52C771.84,-610.73 603.28,-479.36 541.67,-431.34"/>
+<polygon fill="black" stroke="black" points="543.97,-428.69 533.93,-425.31 539.66,-434.21 543.97,-428.69"/>
+</g>
+<!-- 84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d -->
+<g id="node5" class="node node&#45;id">
+<title>84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d</title>
+<g id="a_node5"><a xlink:href="public/20240714175050-lisp.html" xlink:title="Lisp">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="634.57" cy="-816.65" rx="18" ry="18"/>
+<text text-anchor="middle" x="634.57" y="-811.97" font-family="Times,serif" font-size="14.00" fill="#111111">Lisp</text>
+</a>
+</g>
+</g>
+<!-- 6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60&#45;&gt;84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d -->
+<g id="edge6" class="edge">
+<title>6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60&#45;&gt;84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d</title>
+<path fill="none" stroke="black" d="M520.95,-431.45C534.3,-495.49 596.68,-713.67 623.15,-790.01"/>
+<polygon fill="black" stroke="black" points="619.77,-790.94 626.43,-799.19 626.36,-788.59 619.77,-790.94"/>
+</g>
+<!-- b24601aa&#45;09df&#45;41e1&#45;aa7e&#45;25ead342db34 -->
+<g id="node7" class="node node&#45;id">
+<title>b24601aa&#45;09df&#45;41e1&#45;aa7e&#45;25ead342db34</title>
+<g id="a_node7"><a xlink:href="public/20240714174950-programming_language.html" xlink:title="Programming Language">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="122.63" cy="-399.91" rx="18" ry="18"/>
+<text text-anchor="middle" x="122.63" y="-395.24" font-family="Times,serif" font-size="14.00" fill="#111111">Programming Language</text>
+</a>
+</g>
+</g>
+<!-- 6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60&#45;&gt;b24601aa&#45;09df&#45;41e1&#45;aa7e&#45;25ead342db34 -->
+<g id="edge7" class="edge">
+<title>6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60&#45;&gt;b24601aa&#45;09df&#45;41e1&#45;aa7e&#45;25ead342db34</title>
+<path fill="none" stroke="black" d="M501.08,-412.96C438.61,-410.81 228.95,-403.58 151.61,-400.91"/>
+<polygon fill="black" stroke="black" points="152,-397.42 141.88,-400.58 151.76,-404.42 152,-397.42"/>
+</g>
+<!-- 097f1b09&#45;ad77&#45;4307&#45;b9df&#45;71c6124ed7d6 -->
+<g id="node3" class="node node&#45;id">
+<title>097f1b09&#45;ad77&#45;4307&#45;b9df&#45;71c6124ed7d6</title>
+<g id="a_node3"><a xlink:href="public/20240730124938-rethinking_common_lisp_s_format_function.html" xlink:title="Rethinking Common Lisp&amp;apos;s =format= Function">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="382" cy="-788.3" rx="18" ry="18"/>
+<text text-anchor="middle" x="382" y="-783.62" font-family="Times,serif" font-size="14.00" fill="#111111">Rethinking Common Lisp&#39;s =format= Fun...</text>
+</a>
+</g>
+</g>
+<!-- 097f1b09&#45;ad77&#45;4307&#45;b9df&#45;71c6124ed7d6&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge2" class="edge">
+<title>097f1b09&#45;ad77&#45;4307&#45;b9df&#45;71c6124ed7d6&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M388.06,-771.71C409.52,-712.96 482.07,-514.33 508.84,-441.04"/>
+<polygon fill="black" stroke="black" points="512.07,-442.41 512.21,-431.82 505.49,-440.01 512.07,-442.41"/>
+</g>
+<!-- eac73a7d&#45;f14b&#45;4ec4&#45;bc18&#45;08d864e6c4c0 -->
+<g id="node4" class="node node&#45;id">
+<title>eac73a7d&#45;f14b&#45;4ec4&#45;bc18&#45;08d864e6c4c0</title>
+<g id="a_node4"><a xlink:href="public/20240714204139-emacs_lisp.html" xlink:title="Emacs Lisp">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="937.74" cy="-427.76" rx="18" ry="18"/>
+<text text-anchor="middle" x="937.74" y="-423.08" font-family="Times,serif" font-size="14.00" fill="#111111">Emacs Lisp</text>
+</a>
+</g>
+</g>
+<!-- eac73a7d&#45;f14b&#45;4ec4&#45;bc18&#45;08d864e6c4c0&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge3" class="edge">
+<title>eac73a7d&#45;f14b&#45;4ec4&#45;bc18&#45;08d864e6c4c0&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M920.01,-427.16C854.99,-424.96 629.22,-417.31 548.15,-414.57"/>
+<polygon fill="black" stroke="black" points="548.47,-411.08 538.36,-414.23 548.23,-418.07 548.47,-411.08"/>
+</g>
+<!-- 84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge4" class="edge">
+<title>84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M632.49,-798.78C619.15,-734.73 556.77,-516.56 530.3,-440.21"/>
+<polygon fill="black" stroke="black" points="533.68,-439.28 527.02,-431.04 527.09,-441.63 533.68,-439.28"/>
+</g>
+<!-- 9af45692&#45;b2f1&#45;4d4e&#45;a9b3&#45;03d355ffacd0 -->
+<g id="node6" class="node node&#45;id">
+<title>9af45692&#45;b2f1&#45;4d4e&#45;a9b3&#45;03d355ffacd0</title>
+<g id="a_node6"><a xlink:href="public/20240719130126-guix.html" xlink:title="Guix">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="408.91" cy="-31.52" rx="18" ry="18"/>
+<text text-anchor="middle" x="408.91" y="-26.84" font-family="Times,serif" font-size="14.00" fill="#111111">Guix</text>
+</a>
+</g>
+</g>
+<!-- 9af45692&#45;b2f1&#45;4d4e&#45;a9b3&#45;03d355ffacd0&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge5" class="edge">
+<title>9af45692&#45;b2f1&#45;4d4e&#45;a9b3&#45;03d355ffacd0&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M413.77,-48.43C431.02,-108.33 489.31,-310.85 510.82,-385.57"/>
+<polygon fill="black" stroke="black" points="507.39,-386.33 513.52,-394.97 514.12,-384.4 507.39,-386.33"/>
+</g>
+<!-- 18a1ad86&#45;a00c&#45;437a&#45;b253&#45;ba0d24299574 -->
+<g id="node8" class="node node&#45;id">
+<title>18a1ad86&#45;a00c&#45;437a&#45;b253&#45;ba0d24299574</title>
+<g id="a_node8"><a xlink:href="public/20240714204819-scheme.html" xlink:title="(www.scheme.org) The Scheme Programming Language">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="168.88" cy="-648.99" rx="18" ry="18"/>
+<text text-anchor="middle" x="168.88" y="-644.31" font-family="Times,serif" font-size="14.00" fill="#111111">(www.scheme.org) The Scheme Programmi...</text>
+</a>
+</g>
+</g>
+<!-- 18a1ad86&#45;a00c&#45;437a&#45;b253&#45;ba0d24299574&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge8" class="edge">
+<title>18a1ad86&#45;a00c&#45;437a&#45;b253&#45;ba0d24299574&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M183.47,-639.17C237.61,-602.75 427.35,-475.14 494.83,-429.75"/>
+<polygon fill="black" stroke="black" points="496.62,-432.76 502.96,-424.28 492.71,-426.95 496.62,-432.76"/>
+</g>
+<!-- db0939e6&#45;0c2e&#45;4bb0&#45;a626&#45;2114209235af -->
+<g id="node9" class="node node&#45;id">
+<title>db0939e6&#45;0c2e&#45;4bb0&#45;a626&#45;2114209235af</title>
+<g id="a_node9"><a xlink:href="public/20240719125725-javascript.html" xlink:title="JavaScript, aka ECMAScript">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="185.28" cy="-153.96" rx="18" ry="18"/>
+<text text-anchor="middle" x="185.28" y="-149.28" font-family="Times,serif" font-size="14.00" fill="#111111">JavaScript, aka ECMAScript</text>
+</a>
+</g>
+</g>
+<!-- db0939e6&#45;0c2e&#45;4bb0&#45;a626&#45;2114209235af&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge9" class="edge">
+<title>db0939e6&#45;0c2e&#45;4bb0&#45;a626&#45;2114209235af&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M199.19,-164.78C250.79,-204.95 431.64,-345.68 495.96,-395.74"/>
+<polygon fill="black" stroke="black" points="493.67,-398.4 503.71,-401.77 497.97,-392.87 493.67,-398.4"/>
+</g>
+<!-- 064be3a0&#45;bb32&#45;4312&#45;9868&#45;73e9c77ba7cf -->
+<g id="node10" class="node node&#45;id">
+<title>064be3a0&#45;bb32&#45;4312&#45;9868&#45;73e9c77ba7cf</title>
+<g id="a_node10"><a xlink:href="public/20240719125446-guile.html" xlink:title="Guile">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="662.7" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="662.7" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#111111">Guile</text>
+</a>
+</g>
+</g>
+<!-- 064be3a0&#45;bb32&#45;4312&#45;9868&#45;73e9c77ba7cf&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge10" class="edge">
+<title>064be3a0&#45;bb32&#45;4312&#45;9868&#45;73e9c77ba7cf&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M656.71,-34.49C634.46,-95.69 556.49,-310.13 528.76,-386.4"/>
+<polygon fill="black" stroke="black" points="525.54,-384.99 525.42,-395.59 532.12,-387.39 525.54,-384.99"/>
+</g>
+<!-- 2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33 -->
+<g id="node11" class="node node&#45;id">
+<title>2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33</title>
+<g id="a_node11"><a xlink:href="public/20240730125923-racket.html" xlink:title="Racket">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="849.88" cy="-189.31" rx="18" ry="18"/>
+<text text-anchor="middle" x="849.88" y="-184.64" font-family="Times,serif" font-size="14.00" fill="#111111">Racket</text>
+</a>
+</g>
+</g>
+<!-- 2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
+<g id="edge11" class="edge">
+<title>2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
+<path fill="none" stroke="black" d="M835.23,-199.24C783.33,-234.4 607.88,-353.27 543.14,-397.14"/>
+<polygon fill="black" stroke="black" points="541.3,-394.15 534.99,-402.66 545.23,-399.95 541.3,-394.15"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
 </div>
 </div>
 </main>
