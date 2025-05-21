@@ -24,5 +24,6 @@ Directory of nodes for navigating notes.
 ** [[id:bd12a34f-f545-4508-ad59-01fb77a2420f][Snippets]]
 * Social
 ** [[id:beb21559-633e-4b33-a6e0-e1926dce439d][Quotes]]
+** Civilization
 * Health
 ** [[id:2f1ea8a7-6ccb-4e9b-94c5-cb605729a317][Electrolyte Supplement Research]]
