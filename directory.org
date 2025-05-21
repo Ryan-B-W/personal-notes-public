@@ -22,6 +22,10 @@ Directory of nodes for navigating notes.
 ** [[id:212f25e1-f183-4cb0-97db-342ac6667078][C and C++ Documentation and Resources]]
 ** [[id:73afc0b8-eda4-4aea-869d-523d0a2410ad][C and C++ Tooling]]
 ** [[id:bd12a34f-f545-4508-ad59-01fb77a2420f][Snippets]]
+* Supplies & Requisitions
+** Herbal
+*** [[id:28d00703-6485-4b6d-aa0f-8da6ceed568a][The Tao Of Tea]]
+*** [[id:8278a1cc-191c-40e9-93c3-5e5a4cbc3bc7][Monterey Bay Herb Company (Herb Co.)]]
 * Social
 ** [[id:beb21559-633e-4b33-a6e0-e1926dce439d][Quotes]]
 ** Civilization
