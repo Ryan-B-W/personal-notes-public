@@ -80,7 +80,7 @@
 (setf org-todo-keywords '((sequence "TODO(t)" "CURRENT(s!)" "|" "CANCELED(c!)"
                                     "DONELATE(l!)" "PARTIALCOMPLETE(p!)" "FAILED(f!)"
                                     "DONE(d!)")))
-(setf org-tags-exclude-from-inheritance '("ARCHIVE" "ATTACH" "directory" "lists" "blog" "blog_post" "essay" "searches" "class_homework" "class_assignment"))
+(setf org-tags-exclude-from-inheritance '("ARCHIVE" "ATTACH" "directory" "lists" "playlist" "blog" "blog_post" "essay" "searches" "class_homework" "class_assignment"))
 (setf org-directory default-directory)
 (setf org-export-backends '(ascii beamer html icalendar latex man md odt org texinfo))
 (setf org-format-latex-header
