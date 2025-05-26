@@ -22,6 +22,11 @@ Directory of nodes for navigating notes.
 ** [[id:212f25e1-f183-4cb0-97db-342ac6667078][C and C++ Documentation and Resources]]
 ** [[id:73afc0b8-eda4-4aea-869d-523d0a2410ad][C and C++ Tooling]]
 ** [[id:bd12a34f-f545-4508-ad59-01fb77a2420f][Snippets]]
+* Tools
+** Electronics
+*** Soldering
+**** [[id:f0a2a19d-792f-4679-bcbb-806265bd6f98][Pine64 Pinecil]]
+**** [[id:992d34bf-696b-458f-b60e-da7b172c3ccc][iFixit FixHub]]
 * Supplies & Requisitions
 ** Herbal
 *** [[id:28d00703-6485-4b6d-aa0f-8da6ceed568a][The Tao Of Tea]]
