@@ -28,6 +28,13 @@ Directory of nodes for navigating notes.
 **** [[id:f0a2a19d-792f-4679-bcbb-806265bd6f98][Pine64 Pinecil]]
 **** [[id:992d34bf-696b-458f-b60e-da7b172c3ccc][iFixit FixHub]]
 * Supplies & Requisitions
+** Stationery, Pens, and Pencils
+*** [[id:9dff5716-abe9-400c-a21e-adea7135eab1][The Goulet Pen Company]]
+*** [[id:e45ec17a-6788-48f0-8fc6-f8ebfcfbb1c5][JetPens]]
+*** [[id:8635129e-1f3b-4196-9ebe-195dd438a8f5][PenChalet.com]]
+*** [[id:6497fdad-0b4f-4f6d-9406-c94dddb04b48][FPnibs]]
+*** [[id:5ab2c0c6-5e75-4ce9-b9ec-9a013166c188][Cult Pens]]
+*** [[id:e41bbf9c-9dea-4856-9386-a6235c2be630][EndlessPens]]
 ** Herbal
 *** [[id:28d00703-6485-4b6d-aa0f-8da6ceed568a][The Tao Of Tea]]
 *** [[id:8278a1cc-191c-40e9-93c3-5e5a4cbc3bc7][Monterey Bay Herb Company (Herb Co.)]]
