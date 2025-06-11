@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-06-10 Tue 02:20 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(en.wikipedia.org) Stream processing - Wikipedia</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(en.wikipedia.org) Stream processing - Wikipedia</h1>
+</header><pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Stream_processing
+</pre>
+<blockquote>
+<p>In <a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a>, <b>stream processing</b> (also known as <b>event stream processing</b>, <b>data stream processing</b>, or <b>distributed stream processing</b>) is a <a href="https://en.wikipedia.org/wiki/Programming_paradigm">programming paradigm</a> which views <a href="https://en.wikipedia.org/wiki/Stream_(computing)">streams</a>, or sequences of events in time, as the central input and output objects of <a href="https://en.wikipedia.org/wiki/Computation">computation</a>.  Stream processing encompasses <a href="https://en.wikipedia.org/wiki/Dataflow_programming">dataflow programming</a>, <a href="https://en.wikipedia.org/wiki/Reactive_programming">reactive programming</a>, and <a href="https://en.wikipedia.org/wiki/Distributed_computing">distributed</a> <a href="https://en.wikipedia.org/wiki/Data_processing">data processing</a>.  Stream processing systems aim to expose <a href="https://en.wikipedia.org/wiki/Parallel_computing">parallel processing</a> for data streams and rely on <a href="https://en.wikipedia.org/wiki/Streaming_algorithm">streaming algorithms</a> for efficient implementation.  The <a href="https://en.wikipedia.org/wiki/Solution_stack">software stack</a> for these systems includes components such as <a href="https://en.wikipedia.org/wiki/Programming_model">programming models</a> and <a href="https://en.wikipedia.org/wiki/Query_language">query languages</a>, for expressing computation; <a href="https://en.wikipedia.org/wiki/Data_stream_management_system">stream management systems</a>, for distribution and <a href="https://en.wikipedia.org/wiki/Scheduling_(computing)">scheduling</a>; and hardware components for <a href="https://en.wikipedia.org/wiki/Hardware_acceleration">acceleration</a> including <a href="https://en.wikipedia.org/wiki/Floating-point_unit">floating-point units</a>, <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">graphics processing units</a>, and <a href="https://en.wikipedia.org/wiki/Field-programmable_gate_array">field-programmable gate arrays</a>.</p><p>The stream processing paradigm simplifies parallel software and hardware by restricting the parallel computation that can be performed.  Given a sequence of data (a <i>stream</i>), a series of operations (<i><a href="https://en.wikipedia.org/wiki/Compute_kernel">kernel functions</a></i>) is applied to each element in the stream.  Kernel functions are usually <a href="https://en.wikipedia.org/wiki/Pipeline_(computing)">pipelined</a>, and optimal local on-chip memory reuse is attempted, in order to minimize the loss in bandwidth, associated with external memory interaction.  <i>Uniform streaming</i>, where one kernel function is applied to all elements in the stream, is typical.  Since the kernel and stream abstractions expose data dependencies, compiler tools can fully automate and optimize on-chip management tasks.  Stream processing hardware can use <a href="https://en.wikipedia.org/wiki/Scoreboarding">scoreboarding</a>, for example, to initiate a <a href="https://en.wikipedia.org/wiki/Direct_memory_access">direct memory access</a> (DMA) when dependencies become known.  The elimination of manual DMA management reduces software complexity, and an associated elimination for hardware cached I/O, reduces the data area expanse that has to be involved with service by specialized computational units such as <a href="https://en.wikipedia.org/wiki/Arithmetic_logic_unit">arithmetic logic units</a>.</p><p>During the 1980s stream processing was explored within <a href="https://en.wikipedia.org/wiki/Dataflow_programming">dataflow programming</a>.  An example is the language <a href="https://en.wikipedia.org/wiki/SISAL">SISAL</a> (Streams and Iteration in a Single Assignment Language).</p>
+</blockquote>
+<div id="outline-container-org0ca4744" class="outline-2">
+<h2 id="org0ca4744">Local Graph</h2>
+<div class="outline-text-2" id="text-org0ca4744">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="2582pt" height="2162pt"
+ viewBox="0.00 0.00 2582.36 2161.60">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2157.6)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2157.6 2578.36,-2157.6 2578.36,4 -4,4"/>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43 -->
+<g id="node1" class="node node&#45;id">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43</title>
+<g id="a_node1"><a xlink:href="public/en_wikipedia_org_stream_processing_wikipedia.html" xlink:title="(en.wikipedia.org) Stream processing &#45; Wikipedia">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1273.1" cy="-1075.49" rx="18" ry="18"/>
+<text text-anchor="middle" x="1273.1" y="-1070.82" font-family="Times,serif" font-size="14.00" fill="#111111">(en.wikipedia.org) Stream processing ...</text>
+</a>
+</g>
+</g>
+<!-- //en.wikipedia.org/wiki/Computer_science -->
+<g id="node2" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Computer_science</title>
+<g id="a_node2"><a xlink:href="https://en.wikipedia.org/wiki/Computer_science" xlink:title="https://en.wikipedia.org/wiki/Computer_science">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1527.88" cy="-2113.36" rx="18" ry="18"/>
+<text text-anchor="middle" x="1527.88" y="-2108.68" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Computer_science</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Computer_science -->
+<g id="edge1" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Computer_science</title>
+<path fill="none" stroke="black" d="M1277.31,-1092.64C1306.89,-1213.12 1483.39,-1932.1 1520.88,-2084.84"/>
+<polygon fill="black" stroke="black" points="1517.48,-2085.64 1523.26,-2094.51 1524.27,-2083.97 1517.48,-2085.64"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Programming_paradigm -->
+<g id="node3" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Programming_paradigm</title>
+<g id="a_node3"><a xlink:href="https://en.wikipedia.org/wiki/Programming_paradigm" xlink:title="https://en.wikipedia.org/wiki/Programming_paradigm">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1962.34" cy="-1915.87" rx="18" ry="18"/>
+<text text-anchor="middle" x="1962.34" y="-1911.2" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Programming_paradigm</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Programming_paradigm -->
+<g id="edge2" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Programming_paradigm</title>
+<path fill="none" stroke="black" d="M1284.49,-1089.38C1364.67,-1187.13 1843.95,-1771.52 1944.03,-1893.55"/>
+<polygon fill="black" stroke="black" points="1941.06,-1895.44 1950.11,-1900.96 1946.47,-1891 1941.06,-1895.44"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Stream_(computing) -->
+<g id="node4" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Stream_(computing)</title>
+<g id="a_node4"><a xlink:href="https://en.wikipedia.org/wiki/Stream_(computing)" xlink:title="https://en.wikipedia.org/wiki/Stream_(computing)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1056.23" cy="-2135.6" rx="18" ry="18"/>
+<text text-anchor="middle" x="1056.23" y="-2130.92" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Stream_(computing)</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Stream_(computing) -->
+<g id="edge3" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Stream_(computing)</title>
+<path fill="none" stroke="black" d="M1269.52,-1093.01C1244.29,-1216.32 1093.48,-1953.5 1061.99,-2107.43"/>
+<polygon fill="black" stroke="black" points="1058.65,-2106.28 1060.08,-2116.77 1065.51,-2107.68 1058.65,-2106.28"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Computation -->
+<g id="node5" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Computation</title>
+<g id="a_node5"><a xlink:href="https://en.wikipedia.org/wiki/Computation" xlink:title="https://en.wikipedia.org/wiki/Computation">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1229.01" cy="-1750.19" rx="18" ry="18"/>
+<text text-anchor="middle" x="1229.01" y="-1745.52" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Computation</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Computation -->
+<g id="edge4" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Computation</title>
+<path fill="none" stroke="black" d="M1271.95,-1093.19C1265.96,-1184.87 1238.44,-1605.91 1230.92,-1721.03"/>
+<polygon fill="black" stroke="black" points="1227.43,-1720.65 1230.27,-1730.86 1234.42,-1721.1 1227.43,-1720.65"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Dataflow_programming -->
+<g id="node6" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Dataflow_programming</title>
+<g id="a_node6"><a xlink:href="https://en.wikipedia.org/wiki/Dataflow_programming" xlink:title="https://en.wikipedia.org/wiki/Dataflow_programming">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1638.12" cy="-1657.06" rx="18" ry="18"/>
+<text text-anchor="middle" x="1638.12" y="-1652.39" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Dataflow_programming</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Dataflow_programming -->
+<g id="edge5" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Dataflow_programming</title>
+<path fill="none" stroke="black" d="M1282.49,-1090.45C1331.75,-1168.93 1560.41,-1533.25 1622.52,-1632.2"/>
+<polygon fill="black" stroke="black" points="1619.54,-1634.04 1627.82,-1640.65 1625.47,-1630.32 1619.54,-1634.04"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Reactive_programming -->
+<g id="node7" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Reactive_programming</title>
+<g id="a_node7"><a xlink:href="https://en.wikipedia.org/wiki/Reactive_programming" xlink:title="https://en.wikipedia.org/wiki/Reactive_programming">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="939.53" cy="-1470.34" rx="18" ry="18"/>
+<text text-anchor="middle" x="939.53" y="-1465.67" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Reactive_programming</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Reactive_programming -->
+<g id="edge6" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Reactive_programming</title>
+<path fill="none" stroke="black" d="M1261.62,-1089.08C1212.4,-1147.34 1018.99,-1376.28 958.03,-1448.44"/>
+<polygon fill="black" stroke="black" points="955.72,-1445.76 951.94,-1455.65 961.06,-1450.27 955.72,-1445.76"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Distributed_computing -->
+<g id="node8" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Distributed_computing</title>
+<g id="a_node8"><a xlink:href="https://en.wikipedia.org/wiki/Distributed_computing" xlink:title="https://en.wikipedia.org/wiki/Distributed_computing">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="363.93" cy="-1655.49" rx="18" ry="18"/>
+<text text-anchor="middle" x="363.93" y="-1650.82" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Distributed_computing</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Distributed_computing -->
+<g id="edge7" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Distributed_computing</title>
+<path fill="none" stroke="black" d="M1258.08,-1085.08C1152.43,-1152.48 521.37,-1555.05 388.48,-1639.83"/>
+<polygon fill="black" stroke="black" points="386.62,-1636.86 380.07,-1645.19 390.39,-1642.76 386.62,-1636.86"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Data_processing -->
+<g id="node9" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Data_processing</title>
+<g id="a_node9"><a xlink:href="https://en.wikipedia.org/wiki/Data_processing" xlink:title="https://en.wikipedia.org/wiki/Data_processing">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="696.03" cy="-1909.52" rx="18" ry="18"/>
+<text text-anchor="middle" x="696.03" y="-1904.84" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Data_processing</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Data_processing -->
+<g id="edge8" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Data_processing</title>
+<path fill="none" stroke="black" d="M1263.09,-1089.97C1194.89,-1188.54 798.9,-1760.84 712.63,-1885.53"/>
+<polygon fill="black" stroke="black" points="709.77,-1883.51 706.96,-1893.72 715.53,-1887.49 709.77,-1883.51"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Parallel_computing -->
+<g id="node10" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Parallel_computing</title>
+<g id="a_node10"><a xlink:href="https://en.wikipedia.org/wiki/Parallel_computing" xlink:title="https://en.wikipedia.org/wiki/Parallel_computing">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="573.16" cy="-1290.82" rx="18" ry="18"/>
+<text text-anchor="middle" x="573.16" y="-1286.15" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Parallel_computing</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Parallel_computing -->
+<g id="edge9" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Parallel_computing</title>
+<path fill="none" stroke="black" d="M1256.15,-1080.71C1163.4,-1109.24 717.42,-1246.44 601,-1282.25"/>
+<polygon fill="black" stroke="black" points="600.18,-1278.85 591.65,-1285.13 602.24,-1285.54 600.18,-1278.85"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Streaming_algorithm -->
+<g id="node11" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Streaming_algorithm</title>
+<g id="a_node11"><a xlink:href="https://en.wikipedia.org/wiki/Streaming_algorithm" xlink:title="https://en.wikipedia.org/wiki/Streaming_algorithm">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="187.62" cy="-1175.82" rx="18" ry="18"/>
+<text text-anchor="middle" x="187.62" y="-1171.15" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Streaming_algorithm</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Streaming_algorithm -->
+<g id="edge10" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Streaming_algorithm</title>
+<path fill="none" stroke="black" d="M1255.61,-1077.11C1130.7,-1088.66 374.46,-1158.55 216.52,-1173.15"/>
+<polygon fill="black" stroke="black" points="216.56,-1169.63 206.93,-1174.04 217.21,-1176.6 216.56,-1169.63"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Solution_stack -->
+<g id="node12" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Solution_stack</title>
+<g id="a_node12"><a xlink:href="https://en.wikipedia.org/wiki/Solution_stack" xlink:title="https://en.wikipedia.org/wiki/Solution_stack">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="741.52" cy="-903" rx="18" ry="18"/>
+<text text-anchor="middle" x="741.52" y="-898.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Solution_stack</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Solution_stack -->
+<g id="edge11" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Solution_stack</title>
+<path fill="none" stroke="black" d="M1256.02,-1069.95C1179.16,-1045.01 865.07,-943.1 769.34,-912.03"/>
+<polygon fill="black" stroke="black" points="770.57,-908.75 759.98,-908.99 768.41,-915.41 770.57,-908.75"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Programming_model -->
+<g id="node13" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Programming_model</title>
+<g id="a_node13"><a xlink:href="https://en.wikipedia.org/wiki/Programming_model" xlink:title="https://en.wikipedia.org/wiki/Programming_model">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="292.53" cy="-757.89" rx="18" ry="18"/>
+<text text-anchor="middle" x="292.53" y="-753.22" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Programming_model</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Programming_model -->
+<g id="edge12" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Programming_model</title>
+<path fill="none" stroke="black" d="M1256.08,-1069.98C1140.08,-1032.41 465.98,-814.07 320.29,-766.88"/>
+<polygon fill="black" stroke="black" points="321.67,-763.65 311.07,-763.9 319.51,-770.31 321.67,-763.65"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Query_language -->
+<g id="node14" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Query_language</title>
+<g id="a_node14"><a xlink:href="https://en.wikipedia.org/wiki/Query_language" xlink:title="https://en.wikipedia.org/wiki/Query_language">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="819.36" cy="-110.91" rx="18" ry="18"/>
+<text text-anchor="middle" x="819.36" y="-106.24" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Query_language</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Query_language -->
+<g id="edge13" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Query_language</title>
+<path fill="none" stroke="black" d="M1265.61,-1059.56C1212.94,-947.58 898.61,-279.37 831.83,-137.41"/>
+<polygon fill="black" stroke="black" points="835.03,-135.99 827.6,-128.43 828.69,-138.97 835.03,-135.99"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Data_stream_management_system -->
+<g id="node15" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Data_stream_management_system</title>
+<g id="a_node15"><a xlink:href="https://en.wikipedia.org/wiki/Data_stream_management_system" xlink:title="https://en.wikipedia.org/wiki/Data_stream_management_system">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="475.39" cy="-388.39" rx="18" ry="18"/>
+<text text-anchor="middle" x="475.39" y="-383.72" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Data_stream_management_system</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Data_stream_management_system -->
+<g id="edge14" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Data_stream_management_system</title>
+<path fill="none" stroke="black" d="M1259.59,-1063.86C1166.1,-983.33 615.6,-509.16 497.63,-407.56"/>
+<polygon fill="black" stroke="black" points="500.03,-405 490.17,-401.12 495.46,-410.3 500.03,-405"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Scheduling_(computing) -->
+<g id="node16" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Scheduling_(computing)</title>
+<g id="a_node16"><a xlink:href="https://en.wikipedia.org/wiki/Scheduling_(computing)" xlink:title="https://en.wikipedia.org/wiki/Scheduling_(computing)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1240.08" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1240.08" y="-13.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Scheduling_(computing)</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Scheduling_(computing) -->
+<g id="edge15" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Scheduling_(computing)</title>
+<path fill="none" stroke="black" d="M1272.54,-1057.58C1268.67,-933.51 1245.83,-202.32 1240.98,-46.99"/>
+<polygon fill="black" stroke="black" points="1244.49,-47.06 1240.68,-37.18 1237.49,-47.28 1244.49,-47.06"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Hardware_acceleration -->
+<g id="node17" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Hardware_acceleration</title>
+<g id="a_node17"><a xlink:href="https://en.wikipedia.org/wiki/Hardware_acceleration" xlink:title="https://en.wikipedia.org/wiki/Hardware_acceleration">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="917.34" cy="-534.71" rx="18" ry="18"/>
+<text text-anchor="middle" x="917.34" y="-530.03" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Hardware_acceleration</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Hardware_acceleration -->
+<g id="edge16" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Hardware_acceleration</title>
+<path fill="none" stroke="black" d="M1263.22,-1060.47C1213.95,-985.57 994.85,-652.52 933.41,-559.13"/>
+<polygon fill="black" stroke="black" points="936.43,-557.36 928.01,-550.93 930.58,-561.2 936.43,-557.36"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Floating&#45;point_unit -->
+<g id="node18" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Floating&#45;point_unit</title>
+<g id="a_node18"><a xlink:href="https://en.wikipedia.org/wiki/Floating-point_unit" xlink:title="https://en.wikipedia.org/wiki/Floating&#45;point_unit">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2168.46" cy="-1542.22" rx="18" ry="18"/>
+<text text-anchor="middle" x="2168.46" y="-1537.55" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Floating&#45;point_unit</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Floating&#45;point_unit -->
+<g id="edge17" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Floating&#45;point_unit</title>
+<path fill="none" stroke="black" d="M1289.02,-1083.79C1395.82,-1139.46 2007.86,-1458.51 2142.34,-1528.6"/>
+<polygon fill="black" stroke="black" points="2140.7,-1531.7 2151.18,-1533.21 2143.93,-1525.49 2140.7,-1531.7"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Graphics_processing_unit -->
+<g id="node19" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Graphics_processing_unit</title>
+<g id="a_node19"><a xlink:href="https://en.wikipedia.org/wiki/Graphics_processing_unit" xlink:title="https://en.wikipedia.org/wiki/Graphics_processing_unit">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1735.29" cy="-1265.53" rx="18" ry="18"/>
+<text text-anchor="middle" x="1735.29" y="-1260.86" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Graphics_processing_unit</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Graphics_processing_unit -->
+<g id="edge18" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Graphics_processing_unit</title>
+<path fill="none" stroke="black" d="M1289.55,-1082.26C1358.27,-1110.51 1622.81,-1219.29 1708.4,-1254.48"/>
+<polygon fill="black" stroke="black" points="1707.06,-1257.71 1717.64,-1258.27 1709.72,-1251.23 1707.06,-1257.71"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Field&#45;programmable_gate_array -->
+<g id="node20" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Field&#45;programmable_gate_array</title>
+<g id="a_node20"><a xlink:href="https://en.wikipedia.org/wiki/Field-programmable_gate_array" xlink:title="https://en.wikipedia.org/wiki/Field&#45;programmable_gate_array">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2348.11" cy="-1167.6" rx="18" ry="18"/>
+<text text-anchor="middle" x="2348.11" y="-1162.92" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Field&#45;programmable_gate_array</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Field&#45;programmable_gate_array -->
+<g id="edge19" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Field&#45;programmable_gate_array</title>
+<path fill="none" stroke="black" d="M1290.87,-1077.02C1415.79,-1087.72 2161.95,-1151.65 2319.08,-1165.11"/>
+<polygon fill="black" stroke="black" points="2318.75,-1168.59 2329.02,-1165.96 2319.35,-1161.62 2318.75,-1168.59"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Compute_kernel -->
+<g id="node21" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Compute_kernel</title>
+<g id="a_node21"><a xlink:href="https://en.wikipedia.org/wiki/Compute_kernel" xlink:title="https://en.wikipedia.org/wiki/Compute_kernel">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1989.28" cy="-948.76" rx="18" ry="18"/>
+<text text-anchor="middle" x="1989.28" y="-944.08" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Compute_kernel</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Compute_kernel -->
+<g id="edge20" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Compute_kernel</title>
+<path fill="none" stroke="black" d="M1290.81,-1072.36C1386.5,-1055.43 1841.97,-974.83 1960.85,-953.79"/>
+<polygon fill="black" stroke="black" points="1961.15,-957.29 1970.39,-952.1 1959.93,-950.4 1961.15,-957.29"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Pipeline_(computing) -->
+<g id="node22" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Pipeline_(computing)</title>
+<g id="a_node22"><a xlink:href="https://en.wikipedia.org/wiki/Pipeline_(computing)" xlink:title="https://en.wikipedia.org/wiki/Pipeline_(computing)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1658.19" cy="-106" rx="18" ry="18"/>
+<text text-anchor="middle" x="1658.19" y="-101.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Pipeline_(computing)</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Pipeline_(computing) -->
+<g id="edge21" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Pipeline_(computing)</title>
+<path fill="none" stroke="black" d="M1279.63,-1059.07C1324.76,-945.45 1590.5,-276.41 1647.45,-133.04"/>
+<polygon fill="black" stroke="black" points="1650.61,-134.56 1651.05,-123.98 1644.11,-131.98 1650.61,-134.56"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Scoreboarding -->
+<g id="node23" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Scoreboarding</title>
+<g id="a_node23"><a xlink:href="https://en.wikipedia.org/wiki/Scoreboarding" xlink:title="https://en.wikipedia.org/wiki/Scoreboarding">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1322.48" cy="-457.01" rx="18" ry="18"/>
+<text text-anchor="middle" x="1322.48" y="-452.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Scoreboarding</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Scoreboarding -->
+<g id="edge22" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Scoreboarding</title>
+<path fill="none" stroke="black" d="M1274.53,-1057.65C1281.44,-971.07 1311.5,-594.47 1320.15,-486.21"/>
+<polygon fill="black" stroke="black" points="1323.62,-486.68 1320.93,-476.43 1316.64,-486.12 1323.62,-486.68"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Direct_memory_access -->
+<g id="node24" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Direct_memory_access</title>
+<g id="a_node24"><a xlink:href="https://en.wikipedia.org/wiki/Direct_memory_access" xlink:title="https://en.wikipedia.org/wiki/Direct_memory_access">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2003.08" cy="-332.79" rx="18" ry="18"/>
+<text text-anchor="middle" x="2003.08" y="-328.11" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Direct_memory_access</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Direct_memory_access -->
+<g id="edge23" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Direct_memory_access</title>
+<path fill="none" stroke="black" d="M1285.47,-1062.91C1371.02,-975.87 1874.77,-463.33 1982.72,-353.5"/>
+<polygon fill="black" stroke="black" points="1985.03,-356.15 1989.54,-346.56 1980.03,-351.24 1985.03,-356.15"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Arithmetic_logic_unit -->
+<g id="node25" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Arithmetic_logic_unit</title>
+<g id="a_node25"><a xlink:href="https://en.wikipedia.org/wiki/Arithmetic_logic_unit" xlink:title="https://en.wikipedia.org/wiki/Arithmetic_logic_unit">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1678.12" cy="-658.73" rx="18" ry="18"/>
+<text text-anchor="middle" x="1678.12" y="-654.05" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Arithmetic_logic_unit</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Arithmetic_logic_unit -->
+<g id="edge24" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/Arithmetic_logic_unit</title>
+<path fill="none" stroke="black" d="M1285.22,-1063.02C1342.39,-1004.19 1585.32,-754.22 1657.69,-679.75"/>
+<polygon fill="black" stroke="black" points="1660.13,-682.26 1664.59,-672.65 1655.11,-677.38 1660.13,-682.26"/>
+</g>
+<!-- //en.wikipedia.org/wiki/SISAL -->
+<g id="node26" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/SISAL</title>
+<g id="a_node26"><a xlink:href="https://en.wikipedia.org/wiki/SISAL" xlink:title="https://en.wikipedia.org/wiki/SISAL">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2279.74" cy="-666.54" rx="18" ry="18"/>
+<text text-anchor="middle" x="2279.74" y="-661.86" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/SISAL</text>
+</a>
+</g>
+</g>
+<!-- 6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/SISAL -->
+<g id="edge25" class="edge">
+<title>6ef1ac14&#45;28b3&#45;4eb3&#45;b97d&#45;eeb96177be43&#45;&gt;//en.wikipedia.org/wiki/SISAL</title>
+<path fill="none" stroke="black" d="M1289.74,-1068.74C1406.83,-1021.17 2106.82,-736.79 2252.99,-677.4"/>
+<polygon fill="black" stroke="black" points="2253.92,-680.8 2261.87,-673.8 2251.28,-674.32 2253.92,-680.8"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-06-10 Tue 01:47</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

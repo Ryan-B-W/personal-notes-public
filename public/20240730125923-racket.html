@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-12 Mon 11:34 -->
+<!-- 2025-06-10 Tue 02:17 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, minimum-scale=1" />
 <title>Racket</title>
@@ -26,21 +26,21 @@
 </header><p>A relatively popular <a href="20240714204819-scheme.html#ID-6246f8d4-6cd4-489d-b19f-9c1142b51b60">Scheme</a> implementation, among other things.  Built, in part, as a <a href="20240703010539-programming_language_design.html#ID-f236ab65-0f2f-4c13-bfac-b7a693e44af9">programming language design</a> playground/sandbox.  Intended in no small part to be useful in <a href="20240727040647-education_and_learning.html#ID-b49cb73a-945b-452c-9d1e-450252185605">education</a>.  Racket also includes a number of other <a href="20240714175050-lisp.html#ID-84ae6e85-a6a2-4133-bc53-274238081c2d">Lisp</a> implementations and a few other <a href="20240714174950-programming_language.html#ID-b24601aa-09df-41e1-aa7e-25ead342db34">programming languages</a> besides.</p>
 <div id="outline-container-ID-82dac0a3-1609-43d4-ae80-1433e32ddfbb" class="outline-2">
 <h2 id="ID-82dac0a3-1609-43d4-ae80-1433e32ddfbb">(www.racket-lang.org) Racket&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
-<div class="outline-text-2" id="text-orgece4ba7">
+<div class="outline-text-2" id="text-org39b0487">
 <pre class="example">
 ROAM_REFS: https://www.racket-lang.org/
 </pre>
 </div>
 <div id="outline-container-ID-e87879af-54bd-48fa-a547-82bf55397b23" class="outline-3">
 <h3 id="ID-e87879af-54bd-48fa-a547-82bf55397b23">(docs.racket-lang.org) Racket Documentation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="documentation">documentation</span></span></h3>
-<div class="outline-text-3" id="text-org87992ff">
+<div class="outline-text-3" id="text-org4d468cc">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/
 </pre>
 </div>
 <div id="outline-container-ID-cb16b2b8-6584-4598-a60c-69b061b05fd5" class="outline-4">
 <h4 id="ID-cb16b2b8-6584-4598-a60c-69b061b05fd5">(docs.racket-lang.org) The Racket Reference</h4>
-<div class="outline-text-4" id="text-orgfa88a7d">
+<div class="outline-text-4" id="text-org9205c9a">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/reference/
 </pre>
@@ -59,12 +59,12 @@ The source of this manual is available on [[https://github.com/racket/racket/tre
 </p><p>Unless otherwise noted, the bindings defined in this manual are exported by the <a href="https://docs.racket-lang.org/reference/">racket/base</a> and <a href="https://docs.racket-lang.org/reference/">racket</a> languages.</p>
 </blockquote>
 </div>
-<ul class="org-ul"><li><a id="ID-42f087c7-9684-4555-ab4b-a83b78add348"></a>(docs.racket-lang.org) 3.2 Importing and Exporting: require and provide<div class="outline-text-5" id="text-orgf72b68f">
+<ul class="org-ul"><li><a id="ID-42f087c7-9684-4555-ab4b-a83b78add348"></a>(docs.racket-lang.org) 3.2 Importing and Exporting: require and provide<div class="outline-text-5" id="text-orga798c9a">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/reference/require.html
 </pre>
 </div></li>
-<li><a id="ID-f142ecf1-0f7e-4740-80b3-b81c7a8e2519"></a>(docs.racket-lang.org) 6.2 Module Syntax<div class="outline-text-5" id="text-org0a28b73">
+<li><a id="ID-f142ecf1-0f7e-4740-80b3-b81c7a8e2519"></a>(docs.racket-lang.org) 6.2 Module Syntax<div class="outline-text-5" id="text-org431a15b">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/guide/Module_Syntax.html
 </pre>
@@ -73,13 +73,13 @@ ROAM_REFS: https://docs.racket-lang.org/guide/Module_Syntax.html
 <p><b>**</b> Module Syntax</p><p>The <pre class="verbatim">#lang</pre> at the start of a module file begins a shorthand for a <a href="https://docs.racket-lang.org/reference/module.html#(form._((quote._~23~25kernel)._module))">module</a> form, much like <pre class="verbatim">'</pre> is a shorthand for a <a href="https://docs.racket-lang.org/reference/quote.html#(form._((quote._~23~25kernel)._quote))">quote</a> form.  Unlike <pre class="verbatim">'</pre>, the <pre class="verbatim">#lang</pre> shorthand does not work well in a <a href="https://docs.racket-lang.org/guide/intro.html#(tech._repl)">REPL</a>, in part because it must be terminated by an end-of-file, but also because the longhand expansion of <pre class="verbatim">#lang</pre> depends on the name of the enclosing file.</p>
 </blockquote>
 </div>
-<ul class="org-ul"><li><a id="ID-63ba64c5-856d-4c77-b81c-6e6ca020b94c"></a>(docs.racket-lang.org) 6.2.2 The #lang Shorthand<div class="outline-text-6" id="text-orgdf8e2a3">
+<ul class="org-ul"><li><a id="ID-63ba64c5-856d-4c77-b81c-6e6ca020b94c"></a>(docs.racket-lang.org) 6.2.2 The #lang Shorthand<div class="outline-text-6" id="text-org5e67111">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/guide/Module_Syntax.html#(part._hash-lang)
 </pre>
 
 <blockquote>
-<p><b><b>*</b></b> The #lang Shorthand</p><p>The body of a <pre class="verbatim">#lang</pre> shorthand has no specific syntax, because the syntax is determined by the language name that follows <pre class="verbatim">#lang</pre>.</p><p>In the case of <pre class="verbatim">#lang racket</pre>, the syntax is</p><pre class="example" id="orgbbfacbb">
+<p><b><b>*</b></b> The #lang Shorthand</p><p>The body of a <pre class="verbatim">#lang</pre> shorthand has no specific syntax, because the syntax is determined by the language name that follows <pre class="verbatim">#lang</pre>.</p><p>In the case of <pre class="verbatim">#lang racket</pre>, the syntax is</p><pre class="example" id="org7800fab">
 <code>[[https://docs.racket-lang.org/guide/Module_Syntax.html#(part._hash-lang)][#lang]] [[https://docs.racket-lang.org/reference/index.html][racket]]</code>
 <code>decl [[https://docs.racket-lang.org/reference/stx-patterns.html#(form._((lib._racket/private/stxcase-scheme..rkt)._......))][...]]</code>
 </pre>
@@ -96,7 +96,7 @@ ROAM_REFS: https://docs.racket-lang.org/guide/Module_Syntax.html#(part._hash-lan
 </div>
 <div id="outline-container-ID-28293466-114e-4c1a-95ae-47b6f6b121ca" class="outline-4">
 <h4 id="ID-28293466-114e-4c1a-95ae-47b6f6b121ca">(docs.racket-lang.org) raco: Racket Command-Line Tools</h4>
-<div class="outline-text-4" id="text-org7dbe3c3">
+<div class="outline-text-4" id="text-org3cd77da">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/raco/
 </pre>
@@ -108,7 +108,7 @@ ROAM_REFS: https://docs.racket-lang.org/raco/
 </div>
 <div id="outline-container-ID-d4aa1a41-b677-4b02-a6d2-72a3dd1b8ad1" class="outline-4">
 <h4 id="ID-d4aa1a41-b677-4b02-a6d2-72a3dd1b8ad1">(docs.racket-lang.org) The Racket Graphical Interface Toolkit</h4>
-<div class="outline-text-4" id="text-orgd476d4a">
+<div class="outline-text-4" id="text-org1839f88">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/gui/index.html
 </pre>
@@ -138,7 +138,7 @@ and John Clements
 </div>
 <div id="outline-container-ID-a54beb66-ce36-4034-ae2b-e8ca50f1fd3f" class="outline-4">
 <h4 id="ID-a54beb66-ce36-4034-ae2b-e8ca50f1fd3f">(docs.racket-lang.org) The Racket Drawing Toolkit</h4>
-<div class="outline-text-4" id="text-orgc4b4077">
+<div class="outline-text-4" id="text-org3990f37">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/draw/index.html
 </pre>
@@ -158,7 +158,7 @@ and John Clements
 </div>
 <div id="outline-container-ID-a72419f7-8591-46a0-8376-0ff91621c982" class="outline-4">
 <h4 id="ID-a72419f7-8591-46a0-8376-0ff91621c982">(docs.racket-lang.org) Datalog: Deductive Database Programming&#xa0;&#xa0;&#xa0;<span class="tag"><span class="logic">logic</span></span></h4>
-<div class="outline-text-4" id="text-org628f20a">
+<div class="outline-text-4" id="text-orgb21e5f9">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/datalog/
 </pre>
@@ -174,7 +174,7 @@ ROAM_REFS: https://docs.racket-lang.org/datalog/
 </div>
 <div id="outline-container-ID-6525fb29-4aa1-4c0a-8fd2-d5024a3ae869" class="outline-4">
 <h4 id="ID-6525fb29-4aa1-4c0a-8fd2-d5024a3ae869">(docs.racket-lang.org) SICP Collections</h4>
-<div class="outline-text-4" id="text-org0f491fc">
+<div class="outline-text-4" id="text-orge83cb8b">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/sicp-manual/index.html
 </pre>
@@ -183,7 +183,7 @@ ROAM_REFS: https://docs.racket-lang.org/sicp-manual/index.html
 <p>** SICP Collections</p><p>This package contains two collections.</p><p>The sicp collection contains a #lang sicp language ideal for studying the book "Structure and Interpretation of Computer Programs" by Gerald Jay Sussman and Hal Abelson.  The book is usually referred to simply as SICP.</p><p>The second sicp-pict collection contains the picture language used in SICP.</p>
 </blockquote>
 </div>
-<ul class="org-ul"><li><a id="ID-56ecdc25-f6ba-44b4-85a6-3aebc15a4e37"></a>(docs.racket-lang.org) SICP Picture Language<div class="outline-text-5" id="text-org030a440">
+<ul class="org-ul"><li><a id="ID-56ecdc25-f6ba-44b4-85a6-3aebc15a4e37"></a>(docs.racket-lang.org) SICP Picture Language<div class="outline-text-5" id="text-org298eb4d">
 <pre class="example">
 ROAM_REFS: https://docs.racket-lang.org/sicp-manual/SICP_Picture_Language.html
 </pre>
@@ -199,24 +199,60 @@ ROAM_REFS: https://docs.racket-lang.org/sicp-manual/SICP_Picture_Language.html
 </div>
 </div>
 </div>
-<div id="outline-container-org2822bec" class="outline-2">
-<h2 id="org2822bec">Local Graph</h2>
-<div class="outline-text-2" id="text-org2822bec">
+<div id="outline-container-ID-84ff8493-203f-4120-a6b6-4b92ce184786" class="outline-2">
+<h2 id="ID-84ff8493-203f-4120-a6b6-4b92ce184786">(github.com) Racket&#xa0;&#xa0;&#xa0;<span class="tag"><span class="website">website</span></span></h2>
+<div class="outline-text-2" id="text-org20983a2">
+<pre class="example">
+ROAM_REFS: https://github.com/racket
+</pre>
+</div>
+<div id="outline-container-ID-ec476b78-d994-4475-85d2-ace10ac93e1c" class="outline-3">
+<h3 id="ID-ec476b78-d994-4475-85d2-ace10ac93e1c">(github.com) racket/racket: The Racket repository</h3>
+<div class="outline-text-3" id="text-orgb25fd4e">
+<pre class="example">
+ROAM_REFS: https://github.com/racket/racket
+</pre>
+
+<blockquote>
+<p><a href="https://racket-lang.org/">Racket</a> is a general-purpose programming language and an ecosystem for language-oriented programming.</p><p>This repository holds the source code for the core of Racket plus some related packages.  The rest of the Racket distribution source code is in other repositories, mostly under <a href="https://github.com/racket">the Racket GitHub organization</a>.</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-ID-e59a8f9c-2082-4a00-b26f-16130f861970" class="outline-3">
+<h3 id="ID-e59a8f9c-2082-4a00-b26f-16130f861970">(github.com) racket/drracket: DrRacket, IDE for Racket</h3>
+<div class="outline-text-3" id="text-org1b004ac">
+<pre class="example">
+ROAM_REFS: https://github.com/racket/drracket
+</pre>
+
+<blockquote>
+<ul class="org-ul">
+<li>drracket</li>
+</ul>
+
+<p>This is the source for the Racket packages: "drracket", "drracket-plugin-lib", "drracket-test", "drracket-tool", "drracket-tool-doc", "drracket-tool-lib", "drracket-tool-test".</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="outline-container-org2405cad" class="outline-2">
+<h2 id="org2405cad">Local Graph</h2>
+<div class="outline-text-2" id="text-org2405cad">
 <figure id="local-graph-svg">
 <!-- Generated by graphviz version 12.2.1 (20241206.2353)
  -->
 <!-- Title: org&#45;roam Pages: 1 -->
-<svg width="505pt" height="318pt"
- viewBox="0.00 0.00 505.14 317.84">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 313.84)">
+<svg width="1149pt" height="942pt"
+ viewBox="0.00 0.00 1149.30 941.62">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 937.62)">
 <title>org&#45;roam</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-313.84 501.14,-313.84 501.14,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-937.62 1145.3,-937.62 1145.3,4 -4,4"/>
 <!-- 097f1b09&#45;ad77&#45;4307&#45;b9df&#45;71c6124ed7d6 -->
 <g id="node1" class="node node&#45;id">
 <title>097f1b09&#45;ad77&#45;4307&#45;b9df&#45;71c6124ed7d6</title>
 <g id="a_node1"><a xlink:href="public/20240730124938-rethinking_common_lisp_s_format_function.html" xlink:title="Rethinking Common Lisp&amp;apos;s =format= Function">
-<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="164.75" cy="-246.01" rx="18" ry="18"/>
-<text text-anchor="middle" x="164.75" y="-241.33" font-family="Times,serif" font-size="14.00" fill="#111111">Rethinking Common Lisp&#39;s =format= Fun...</text>
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="164.75" cy="-446.68" rx="18" ry="18"/>
+<text text-anchor="middle" x="164.75" y="-442" font-family="Times,serif" font-size="14.00" fill="#111111">Rethinking Common Lisp&#39;s =format= Fun...</text>
 </a>
 </g>
 </g>
@@ -224,91 +260,106 @@ ROAM_REFS: https://docs.racket-lang.org/sicp-manual/SICP_Picture_Language.html
 <g id="node2" class="node node&#45;id">
 <title>2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33</title>
 <g id="a_node2"><a xlink:href="public/20240730125923-racket.html" xlink:title="Racket">
-<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="270.47" cy="-154.66" rx="18" ry="18"/>
-<text text-anchor="middle" x="270.47" y="-149.98" font-family="Times,serif" font-size="14.00" fill="#111111">Racket</text>
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="629.89" cy="-462.76" rx="18" ry="18"/>
+<text text-anchor="middle" x="629.89" y="-458.08" font-family="Times,serif" font-size="14.00" fill="#111111">Racket</text>
 </a>
 </g>
 </g>
 <!-- 097f1b09&#45;ad77&#45;4307&#45;b9df&#45;71c6124ed7d6&#45;&gt;2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33 -->
 <g id="edge1" class="edge">
 <title>097f1b09&#45;ad77&#45;4307&#45;b9df&#45;71c6124ed7d6&#45;&gt;2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33</title>
-<path fill="none" stroke="black" d="M178.14,-234.44C195.76,-219.21 226.97,-192.25 248.17,-173.92"/>
-<polygon fill="black" stroke="black" points="250.43,-176.6 255.71,-167.41 245.86,-171.3 250.43,-176.6"/>
+<path fill="none" stroke="black" d="M182.7,-447.3C253.35,-449.74 512.67,-458.71 600.55,-461.74"/>
+<polygon fill="black" stroke="black" points="600.37,-465.24 610.49,-462.09 600.61,-458.24 600.37,-465.24"/>
 </g>
 <!-- 6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
 <g id="node3" class="node node&#45;id">
 <title>6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
 <g id="a_node3"><a xlink:href="public/20240714204819-scheme.html" xlink:title="Scheme">
-<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="138.44" cy="-109.88" rx="18" ry="18"/>
-<text text-anchor="middle" x="138.44" y="-105.21" font-family="Times,serif" font-size="14.00" fill="#111111">Scheme</text>
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="356.49" cy="-96.27" rx="18" ry="18"/>
+<text text-anchor="middle" x="356.49" y="-91.59" font-family="Times,serif" font-size="14.00" fill="#111111">Scheme</text>
 </a>
 </g>
 </g>
 <!-- 2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60 -->
 <g id="edge2" class="edge">
 <title>2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;6246f8d4&#45;6cd4&#45;489d&#45;b19f&#45;9c1142b51b60</title>
-<path fill="none" stroke="black" d="M253.48,-148.89C231.4,-141.4 192.54,-128.23 166.16,-119.28"/>
-<polygon fill="black" stroke="black" points="167.39,-116 156.79,-116.11 165.14,-122.63 167.39,-116"/>
+<path fill="none" stroke="black" d="M619.18,-448.39C577.4,-392.4 425.29,-188.49 373.72,-119.37"/>
+<polygon fill="black" stroke="black" points="376.82,-117.67 368.04,-111.75 371.21,-121.86 376.82,-117.67"/>
 </g>
 <!-- f236ab65&#45;0f2f&#45;4c13&#45;bfac&#45;b7a693e44af9 -->
 <g id="node4" class="node node&#45;id">
 <title>f236ab65&#45;0f2f&#45;4c13&#45;bfac&#45;b7a693e44af9</title>
 <g id="a_node4"><a xlink:href="public/20240703010539-programming_language_design.html" xlink:title="Programming Language Design">
-<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="242.72" cy="-18" rx="18" ry="18"/>
-<text text-anchor="middle" x="242.72" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#111111">Programming Language Design</text>
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="747.93" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="747.93" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#111111">Programming Language Design</text>
 </a>
 </g>
 </g>
 <!-- 2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;f236ab65&#45;0f2f&#45;4c13&#45;bfac&#45;b7a693e44af9 -->
 <g id="edge3" class="edge">
 <title>2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;f236ab65&#45;0f2f&#45;4c13&#45;bfac&#45;b7a693e44af9</title>
-<path fill="none" stroke="black" d="M266.9,-137.07C262.26,-114.21 254.09,-74 248.55,-46.69"/>
-<polygon fill="black" stroke="black" points="252,-46.1 246.58,-37 245.14,-47.5 252,-46.1"/>
+<path fill="none" stroke="black" d="M634.45,-445.6C652.36,-378.12 718.03,-130.65 740.41,-46.35"/>
+<polygon fill="black" stroke="black" points="743.75,-47.38 742.94,-36.81 736.99,-45.58 743.75,-47.38"/>
 </g>
 <!-- b49cb73a&#45;945b&#45;452c&#45;9d1e&#45;450252185605 -->
 <g id="node5" class="node node&#45;id">
 <title>b49cb73a&#45;945b&#45;452c&#45;9d1e&#45;450252185605</title>
 <g id="a_node5"><a xlink:href="public/20240727040647-education_and_learning.html" xlink:title="Education and Learning">
-<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="297.64" cy="-291.84" rx="18" ry="18"/>
-<text text-anchor="middle" x="297.64" y="-287.17" font-family="Times,serif" font-size="14.00" fill="#111111">Education and Learning</text>
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="330.54" cy="-805.82" rx="18" ry="18"/>
+<text text-anchor="middle" x="330.54" y="-801.15" font-family="Times,serif" font-size="14.00" fill="#111111">Education and Learning</text>
 </a>
 </g>
 </g>
 <!-- 2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;b49cb73a&#45;945b&#45;452c&#45;9d1e&#45;450252185605 -->
 <g id="edge4" class="edge">
 <title>2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;b49cb73a&#45;945b&#45;452c&#45;9d1e&#45;450252185605</title>
-<path fill="none" stroke="black" d="M273.97,-172.31C278.51,-195.25 286.5,-235.62 291.93,-263.04"/>
-<polygon fill="black" stroke="black" points="288.48,-263.64 293.86,-272.77 295.35,-262.28 288.48,-263.64"/>
+<path fill="none" stroke="black" d="M618.16,-476.21C572.52,-528.51 406.55,-718.72 349.75,-783.8"/>
+<polygon fill="black" stroke="black" points="347.12,-781.49 343.19,-791.33 352.4,-786.09 347.12,-781.49"/>
 </g>
 <!-- 84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d -->
 <g id="node6" class="node node&#45;id">
 <title>84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d</title>
 <g id="a_node6"><a xlink:href="public/20240714175050-lisp.html" xlink:title="Lisp">
-<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="375.08" cy="-62" rx="18" ry="18"/>
-<text text-anchor="middle" x="375.08" y="-57.33" font-family="Times,serif" font-size="14.00" fill="#111111">Lisp</text>
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1053.63" cy="-280.06" rx="18" ry="18"/>
+<text text-anchor="middle" x="1053.63" y="-275.38" font-family="Times,serif" font-size="14.00" fill="#111111">Lisp</text>
 </a>
 </g>
 </g>
 <!-- 2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d -->
 <g id="edge5" class="edge">
 <title>2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;84ae6e85&#45;a6a2&#45;4133&#45;bc53&#45;274238081c2d</title>
-<path fill="none" stroke="black" d="M283.72,-142.92C301.15,-127.48 332.03,-100.13 353.02,-81.54"/>
-<polygon fill="black" stroke="black" points="355.31,-84.19 360.48,-74.94 350.67,-78.95 355.31,-84.19"/>
+<path fill="none" stroke="black" d="M646.25,-455.71C710.74,-427.9 947.86,-325.66 1027.41,-291.36"/>
+<polygon fill="black" stroke="black" points="1028.37,-294.76 1036.17,-287.59 1025.6,-288.33 1028.37,-294.76"/>
 </g>
 <!-- b24601aa&#45;09df&#45;41e1&#45;aa7e&#45;25ead342db34 -->
 <g id="node7" class="node node&#45;id">
 <title>b24601aa&#45;09df&#45;41e1&#45;aa7e&#45;25ead342db34</title>
 <g id="a_node7"><a xlink:href="public/20240714174950-programming_language.html" xlink:title="Programming Language">
-<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="402.89" cy="-199.36" rx="18" ry="18"/>
-<text text-anchor="middle" x="402.89" y="-194.69" font-family="Times,serif" font-size="14.00" fill="#111111">Programming Language</text>
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="711.78" cy="-915.62" rx="18" ry="18"/>
+<text text-anchor="middle" x="711.78" y="-910.94" font-family="Times,serif" font-size="14.00" fill="#111111">Programming Language</text>
 </a>
 </g>
 </g>
 <!-- 2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;b24601aa&#45;09df&#45;41e1&#45;aa7e&#45;25ead342db34 -->
 <g id="edge6" class="edge">
 <title>2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33&#45;&gt;b24601aa&#45;09df&#45;41e1&#45;aa7e&#45;25ead342db34</title>
-<path fill="none" stroke="black" d="M287.51,-160.41C309.66,-167.89 348.63,-181.04 375.08,-189.97"/>
-<polygon fill="black" stroke="black" points="373.89,-193.26 384.48,-193.15 376.13,-186.63 373.89,-193.26"/>
+<path fill="none" stroke="black" d="M633.05,-480.23C645.48,-548.94 691.04,-800.92 706.56,-886.76"/>
+<polygon fill="black" stroke="black" points="703.1,-887.24 708.32,-896.46 709.98,-886 703.1,-887.24"/>
+</g>
+<!-- 2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5 -->
+<g id="node8" class="node node&#45;id">
+<title>2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5</title>
+<g id="a_node8"><a xlink:href="public/20250223161754-code_and_coffee_book_club.html" xlink:title="Code and Coffee Book Club">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1036.55" cy="-678.79" rx="18" ry="18"/>
+<text text-anchor="middle" x="1036.55" y="-674.11" font-family="Times,serif" font-size="14.00" fill="#111111">Code and Coffee Book Club</text>
+</a>
+</g>
+</g>
+<!-- 2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5&#45;&gt;2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33 -->
+<g id="edge7" class="edge">
+<title>2a07e4ea&#45;610b&#45;4c9a&#45;bb84&#45;d961fb2450e5&#45;&gt;2ce20b11&#45;e9e9&#45;48b0&#45;ab32&#45;de7f4158ea33</title>
+<path fill="none" stroke="black" d="M1020.85,-670.45C959.1,-637.64 732.43,-517.23 655.58,-476.4"/>
+<polygon fill="black" stroke="black" points="657.57,-473.5 647.1,-471.9 654.28,-479.68 657.57,-473.5"/>
 </g>
 </g>
 </svg>
@@ -324,7 +375,7 @@ deferredScriptSvgPanZoom.addEventListener('load', function () {
 </main>
 <div id="postamble" class="status">
 <footer>
-<p class="date">Last Modified: 2025-05-05 Mon 03:15</p>
+<p class="date">Last Modified: 2025-06-07 Sat 13:36</p>
 <p class="author">Author: Ryan "Brody" Wilcox</p>
 </footer>
 </div>

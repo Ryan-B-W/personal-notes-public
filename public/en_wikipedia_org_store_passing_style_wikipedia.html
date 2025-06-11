@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-06-10 Tue 02:17 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(en.wikipedia.org) Store-passing style - Wikipedia</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(en.wikipedia.org) Store-passing style - Wikipedia</h1>
+</header><pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Store-passing_style
+</pre>
+<blockquote>
+<p><b>Store-passing style</b> is a programming technique that is used to model <a href="https://en.wikipedia.org/wiki/State_(computer_science)">mutable state</a> without using mutable state.  It generally arises in the conversion of <a href="https://en.wikipedia.org/wiki/Imperative_programming">imperative programs</a> into <a href="https://en.wikipedia.org/wiki/Purely_functional_programming">purely functional</a> ones.</p><p>So, for instance, consider this <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> program, written in a non-store-passing-style:</p><div class="org-src-container">
+<pre class="src src-javascript"><code><span class="org-keyword">var</span> <span class="org-variable-name">lastWasA</span> = <span class="org-constant">false</span></code>
+<code></code>
+<code><span class="org-comment-delimiter">// </span><span class="org-comment">a treebin represents a binary tree of strings.</span></code>
+<code></code>
+<code><span class="org-comment-delimiter">// </span><span class="org-comment">a treebin is either</span></code>
+<code><span class="org-comment-delimiter">// </span><span class="org-comment">- a string, or</span></code>
+<code><span class="org-comment-delimiter">// </span><span class="org-comment">- {l : &lt;treebin&gt;, r: &lt;treebin&gt;}</span></code>
+<code></code>
+<code><span class="org-comment-delimiter">// </span><span class="org-comment">does an in-order traversal of this tree's</span></code>
+<code><span class="org-comment-delimiter">// </span><span class="org-comment">leaves contain an 'a' followed by a 'b'?</span></code>
+<code><span class="org-keyword">function</span> <span class="org-function-name">aThenB</span>(<span class="org-variable-name">treebin</span>) {</code>
+<code>    <span class="org-keyword">if</span> (<span class="org-keyword">typeof</span>(treebin) === <span class="org-string">"string"</span>) {</code>
+<code>        <span class="org-keyword">if</span> (treebin === <span class="org-string">"a"</span>) {</code>
+<code>            lastWasA = <span class="org-constant">true</span>;</code>
+<code>            <span class="org-keyword">return</span> <span class="org-constant">false</span>;</code>
+<code>        } <span class="org-keyword">else</span> <span class="org-keyword">if</span> (treebin === <span class="org-string">"b"</span>) {</code>
+<code>            <span class="org-keyword">if</span> (lastWasA) {</code>
+<code>                <span class="org-keyword">return</span> <span class="org-constant">true</span>;</code>
+<code>            } <span class="org-keyword">else</span> {</code>
+<code>                lastWasA = <span class="org-constant">false</span>;</code>
+<code>                <span class="org-keyword">return</span> <span class="org-constant">false</span>;</code>
+<code>            }</code>
+<code>        } <span class="org-keyword">else</span> {</code>
+<code>            lastWasA = <span class="org-constant">false</span>;</code>
+<code>            <span class="org-keyword">return</span> <span class="org-constant">false</span>;</code>
+<code>        }</code>
+<code>    } <span class="org-keyword">else</span> { <span class="org-comment-delimiter">// </span><span class="org-comment">not a string, must be an internal node:</span></code>
+<code>        <span class="org-keyword">return</span> ((aThenB(treebin.l))||(aThenB(treebin.r)));</code>
+<code>    }</code>
+<code>}</code>
+</pre>
+</div>
+
+<p>This contains a reference to a <a href="https://en.wikipedia.org/wiki/Global_variable">global variable</a>.  In store-passing style, the value of the global variable (or variables) is passed along to each call, and also returned from each call and threaded through the next call.  The code might look like this:</p><div class="org-src-container">
+<pre class="src src-javascript"><code><span class="org-keyword">function</span> <span class="org-function-name">aThenB</span>(<span class="org-variable-name">treebin</span>, <span class="org-variable-name">lastWasA</span>) {</code>
+<code>    <span class="org-keyword">if</span> (<span class="org-keyword">typeof</span>(treebin) === <span class="org-string">"string"</span>) {</code>
+<code>        <span class="org-keyword">if</span> (treebin === <span class="org-string">"a"</span>) {</code>
+<code>            <span class="org-keyword">return</span> {result: <span class="org-constant">false</span>, lastWasA: <span class="org-constant">true</span>};</code>
+<code>        } <span class="org-keyword">else</span> <span class="org-keyword">if</span> (treebin === <span class="org-string">"b"</span>) {</code>
+<code>            <span class="org-keyword">if</span> (lastWasA) {</code>
+<code>                <span class="org-keyword">return</span> {result: <span class="org-constant">true</span>, lastWasA: <span class="org-constant">false</span>};</code>
+<code>            }</code>
+<code>        } <span class="org-keyword">else</span> {</code>
+<code>            <span class="org-keyword">return</span> {result: <span class="org-constant">false</span>, lastWasA: <span class="org-constant">false</span>};</code>
+<code>        }</code>
+<code>    } <span class="org-keyword">else</span> { <span class="org-comment-delimiter">// </span><span class="org-comment">not a string, must be an internal node:</span></code>
+<code>        <span class="org-keyword">var</span> <span class="org-variable-name">leftCall</span> = aThenB(treebin.l, lastWasA);</code>
+<code>        <span class="org-keyword">if</span> (leftCall.result) {</code>
+<code>            <span class="org-keyword">return</span> {result: <span class="org-constant">true</span>, lastWasA: <span class="org-constant">false</span>}</code>
+<code>        } <span class="org-keyword">else</span> {</code>
+<code>            <span class="org-keyword">return</span> aThenB(treebin.r, leftCall.lastWasA);</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code>
+</pre>
+</div>
+
+<p>Note that each call takes an extra argument, and two values are now returned; the ordinary return value, and a new value representing the state of the formerly mutable variable.</p><p>Store-passing style can be quite painful to write, but can help to eliminate race conditions by isolating state within function calls, and can potentially make code more <a href="https://en.wikipedia.org/wiki/Parallelizable">parallelizable</a>.</p>
+</blockquote>
+<div id="outline-container-org9b6fe57" class="outline-2">
+<h2 id="org9b6fe57">See Also</h2>
+<div class="outline-text-2" id="text-org9b6fe57">
+</div><div id="outline-container-org9e508bc" class="outline-3">
+<h3 id="org9e508bc"><a href="20250427190353-essentials_of_programming_languages.html#ID-b436fdf8-1290-484f-becf-c369142a0b80">Essentials of Programming Languages</a></h3>
+</div>
+<div id="outline-container-org8310aaf" class="outline-3">
+<h3 id="org8310aaf"></h3>
+</div>
+</div>
+<div id="outline-container-org059c33c" class="outline-2">
+<h2 id="org059c33c">Local Graph</h2>
+<div class="outline-text-2" id="text-org059c33c">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="1920pt" height="1605pt"
+ viewBox="0.00 0.00 1920.39 1604.64">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1600.64)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1600.64 1916.39,-1600.64 1916.39,4 -4,4"/>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27 -->
+<g id="node1" class="node node&#45;id">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27</title>
+<g id="a_node1"><a xlink:href="public/en_wikipedia_org_store_passing_style_wikipedia.html" xlink:title="(en.wikipedia.org) Store&#45;passing style &#45; Wikipedia">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="984.32" cy="-798.33" rx="18" ry="18"/>
+<text text-anchor="middle" x="984.32" y="-793.66" font-family="Times,serif" font-size="14.00" fill="#111111">(en.wikipedia.org) Store&#45;passing styl...</text>
+</a>
+</g>
+</g>
+<!-- //en.wikipedia.org/wiki/State_(computer_science) -->
+<g id="node2" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/State_(computer_science)</title>
+<g id="a_node2"><a xlink:href="https://en.wikipedia.org/wiki/State_(computer_science)" xlink:title="https://en.wikipedia.org/wiki/State_(computer_science)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1332.44" cy="-1557.21" rx="18" ry="18"/>
+<text text-anchor="middle" x="1332.44" y="-1552.53" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/State_(computer_science)</text>
+</a>
+</g>
+</g>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/State_(computer_science) -->
+<g id="edge1" class="edge">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/State_(computer_science)</title>
+<path fill="none" stroke="black" d="M991.75,-814.53C1036.04,-911.08 1265.12,-1410.46 1320.41,-1531"/>
+<polygon fill="black" stroke="black" points="1317.09,-1532.15 1324.44,-1539.78 1323.45,-1529.23 1317.09,-1532.15"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Imperative_programming -->
+<g id="node3" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Imperative_programming</title>
+<g id="a_node3"><a xlink:href="https://en.wikipedia.org/wiki/Imperative_programming" xlink:title="https://en.wikipedia.org/wiki/Imperative_programming">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="688.59" cy="-1578.64" rx="18" ry="18"/>
+<text text-anchor="middle" x="688.59" y="-1573.97" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Imperative_programming</text>
+</a>
+</g>
+</g>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/Imperative_programming -->
+<g id="edge2" class="edge">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/Imperative_programming</title>
+<path fill="none" stroke="black" d="M978.01,-814.99C940.38,-914.27 745.77,-1427.75 698.8,-1551.69"/>
+<polygon fill="black" stroke="black" points="695.65,-1550.13 695.38,-1560.72 702.19,-1552.61 695.65,-1550.13"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Purely_functional_programming -->
+<g id="node4" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Purely_functional_programming</title>
+<g id="a_node4"><a xlink:href="https://en.wikipedia.org/wiki/Purely_functional_programming" xlink:title="https://en.wikipedia.org/wiki/Purely_functional_programming">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="226.25" cy="-1136.25" rx="18" ry="18"/>
+<text text-anchor="middle" x="226.25" y="-1131.58" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Purely_functional_programming</text>
+</a>
+</g>
+</g>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/Purely_functional_programming -->
+<g id="edge3" class="edge">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/Purely_functional_programming</title>
+<path fill="none" stroke="black" d="M968.14,-805.55C871.79,-848.49 373.92,-1070.43 252.82,-1124.41"/>
+<polygon fill="black" stroke="black" points="251.7,-1121.08 243.99,-1128.35 254.55,-1127.47 251.7,-1121.08"/>
+</g>
+<!-- //en.wikipedia.org/wiki/JavaScript -->
+<g id="node5" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/JavaScript</title>
+<g id="a_node5"><a xlink:href="https://en.wikipedia.org/wiki/JavaScript" xlink:title="https://en.wikipedia.org/wiki/JavaScript">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1763.77" cy="-1084.18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1763.77" y="-1079.51" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/JavaScript</text>
+</a>
+</g>
+</g>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/JavaScript -->
+<g id="edge4" class="edge">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/JavaScript</title>
+<path fill="none" stroke="black" d="M1000.96,-804.44C1100.02,-840.76 1611.94,-1028.5 1736.45,-1074.16"/>
+<polygon fill="black" stroke="black" points="1734.94,-1077.34 1745.53,-1077.49 1737.35,-1070.76 1734.94,-1077.34"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Global_variable -->
+<g id="node6" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Global_variable</title>
+<g id="a_node6"><a xlink:href="https://en.wikipedia.org/wiki/Global_variable" xlink:title="https://en.wikipedia.org/wiki/Global_variable">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="205.68" cy="-503.98" rx="18" ry="18"/>
+<text text-anchor="middle" x="205.68" y="-499.31" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Global_variable</text>
+</a>
+</g>
+</g>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/Global_variable -->
+<g id="edge5" class="edge">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/Global_variable</title>
+<path fill="none" stroke="black" d="M967.7,-792.05C868.74,-754.64 357.36,-561.32 232.97,-514.3"/>
+<polygon fill="black" stroke="black" points="234.49,-511.13 223.9,-510.87 232.01,-517.68 234.49,-511.13"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Parallelizable -->
+<g id="node7" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Parallelizable</title>
+<g id="a_node7"><a xlink:href="https://en.wikipedia.org/wiki/Parallelizable" xlink:title="https://en.wikipedia.org/wiki/Parallelizable">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1739.32" cy="-455.75" rx="18" ry="18"/>
+<text text-anchor="middle" x="1739.32" y="-451.08" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Parallelizable</text>
+</a>
+</g>
+</g>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/Parallelizable -->
+<g id="edge6" class="edge">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;//en.wikipedia.org/wiki/Parallelizable</title>
+<path fill="none" stroke="black" d="M1000.44,-791.02C1096.39,-747.48 1592.25,-522.49 1712.85,-467.76"/>
+<polygon fill="black" stroke="black" points="1713.99,-471.09 1721.65,-463.77 1711.1,-464.72 1713.99,-471.09"/>
+</g>
+<!-- b436fdf8&#45;1290&#45;484f&#45;becf&#45;c369142a0b80 -->
+<g id="node8" class="node node&#45;id">
+<title>b436fdf8&#45;1290&#45;484f&#45;becf&#45;c369142a0b80</title>
+<g id="a_node8"><a xlink:href="public/20250427190353-essentials_of_programming_languages.html" xlink:title="Essentials of Programming Languages">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="641.14" cy="-46" rx="18" ry="18"/>
+<text text-anchor="middle" x="641.14" y="-41.32" font-family="Times,serif" font-size="14.00" fill="#111111">Essentials of Programming Languages</text>
+</a>
+</g>
+</g>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;b436fdf8&#45;1290&#45;484f&#45;becf&#45;c369142a0b80 -->
+<g id="edge7" class="edge">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;b436fdf8&#45;1290&#45;484f&#45;becf&#45;c369142a0b80</title>
+<path fill="none" stroke="black" d="M976.99,-782.27C933.38,-686.66 707.99,-192.55 653.17,-72.37"/>
+<polygon fill="black" stroke="black" points="656.5,-71.25 649.17,-63.6 650.14,-74.16 656.5,-71.25"/>
+</g>
+<!-- 00867142&#45;be60&#45;4f08&#45;9b95&#45;0180ae6b15ab -->
+<g id="node9" class="node node&#45;id">
+<title>00867142&#45;be60&#45;4f08&#45;9b95&#45;0180ae6b15ab</title>
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1277.51" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1277.51" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#111111">id:00867142&#45;be60&#45;4f08&#45;9b95&#45;0180ae6b15ab</text>
+</g>
+<!-- 6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;00867142&#45;be60&#45;4f08&#45;9b95&#45;0180ae6b15ab -->
+<g id="edge8" class="edge">
+<title>6d3d1476&#45;6ead&#45;42ee&#45;aadd&#45;a9ffbc913e27&#45;&gt;00867142&#45;be60&#45;4f08&#45;9b95&#45;0180ae6b15ab</title>
+<path fill="none" stroke="black" d="M990.58,-781.67C1027.84,-682.5 1220.39,-170 1267.23,-45.35"/>
+<polygon fill="black" stroke="black" points="1270.41,-46.84 1270.65,-36.25 1263.85,-44.38 1270.41,-46.84"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-06-10 Tue 01:59</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>
