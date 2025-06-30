@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-06-30 Mon 03:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(ucsd-cse230.github.io) Principles of Programming Languages - Principles of Programming Languages - W25</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(ucsd-cse230.github.io) Principles of Programming Languages - Principles of Programming Languages - W25</h1>
+</header><pre class="example">
+ROAM_REFS: https://ucsd-cse230.github.io/wi25/
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>CSE 230: Principles of Programming Languages CSE 230</li>
+</ul>
+
+<p>** Summary</p><p>CSE 230 is an introduction to the Semantics of Programming Languages. Unlike most engineering artifacts, programming languages and hence, programs are <i>mathematical objects</i> whose properties can be formalized. The goal of CSE 230 is to to introduce you to the fundamental <i>mental</i> and <i>mechanical</i> tools required to rigorously analyze languages and programs and to expose you to recent developments in and applications of these techniques/</p><p>We shall study <i>operational</i> and <i>axiomatic</i> semantics, two different ways of precisely capturing the meaning of programs by characterizing their executions.</p><p>We will see how the <i>lambda calculus</i> can be used to distill essence of computation into a few powerful constructs.</p><p>We use that as a launching pad to study expressive <i>type systems</i> useful for for analyzing the behavior of programs at compile-time.</p><p>We will study all of the above in the context of <a href="https://lean-lang.org/">lean</a>, an interactive proof assistant that will help us precisely formalize and verify our intuitions about languages and their semantics.</p><p>Students will be evaluated on the basis of 4-6 programming (proving!) assignments, and a final exam.</p><p>** Prerequisites</p><p>Basic functional programming e.g. as taught in <a href="https://ucsd-cse130.github.io/wi24">UCSD CSE 130</a> using languages like Haskell, OCaml, Scala, Rust, and undergraduate level discrete mathematics, i.e. logic, sets, relations.</p>
+</blockquote>
+
+<blockquote>
+<p>** Resources</p><p>The course is loosely based on <a href="http://www.concrete-semantics.org/">Concrete Semantics</a> but there is no official textbook; we will link to any relevant resources that may be needed to supplement the lecture material.</p><ul class="org-ul">
+<li><a href="https://github.com/ucsd-cse230/wi25/tree/main/code">Code from lecture</a></li>
+</ul>
+
+<p>Some other useful links are:</p><ul class="org-ul">
+<li><a href="https://lean-lang.org/">Lean</a></li>
+<li><a href="https://lean-lang.org/theorem_proving_in_lean4/">Theorem Proving in Lean4</a></li>
+<li><a href="http://www.concrete-semantics.org/">Concrete Semantics</a></li>
+<li><a href="https://softwarefoundations.cis.upenn.edu/">Software Foundations</a></li>
+<li><a href="https://lean-forward.github.io/hitchhikers-guide/2023/">Hitchhikers Guide to Logical Verification</a></li>
+<li><a href="https://plfa.github.io/">PL Foundations in Agda</a></li>
+</ul>
+</blockquote>
+
+<blockquote>
+<p>** Schedule</p><p>The schedule below outlines topics, due dates, and links to assignments. The schedule of lecture topics might change slightly, but I post a general plan so you can know roughly where we are headed.</p><p><b>*</b> Week 1 - Basics and Induction</p><ul class="org-ul">
+<li><a href="https://ucsd-cse230.github.io/wi25/lectures/L00Hello.html">Hello!</a></li>
+<li><a href="https://ucsd-cse230.github.io/wi25/lectures/L01Expressions.html">Expressions and Types</a></li>
+<li><a href="https://ucsd-cse230.github.io/wi25/lectures/L02Datatypes.html">Datatypes and Polymorphism</a></li>
+</ul>
+
+<p><b>*</b> Week 2 - Expressions and Evidence</p><ul class="org-ul">
+<li><a href="https://ucsd-cse230.github.io/wi25/lectures/L03Induction.html">Recursion and Induction</a></li>
+<li><a href="https://ucsd-cse230.github.io/wi25/static/230-handout-1-14.pdf">Handout 1-14</a></li>
+<li>Compiling Expressions to Stack Machines (Ch03)</li>
+</ul>
+
+<p><b>*</b> Week 3 - Big Step Semantics</p><ul class="org-ul">
+<li>Induction on Evidence (Ch04)</li>
+<li>Imperative Programs: States, Commands, Transitions</li>
+<li>Program Equivalence (Ch07)</li>
+</ul>
+
+<p><b>*</b> Week 4 - Small Step Semantics</p><ul class="org-ul">
+<li>Preservation and Progress (Ch09)</li>
+</ul>
+
+<p><b>*</b> Week 5, 6 - Axiomatic Semantics</p><ul class="org-ul">
+<li>Assertions, Floyd-Hoare Logic, Soundness (Ch12)</li>
+<li>Verification Conditions and Automatic Verification</li>
+</ul>
+
+<p><b>*</b> Week 7, 8 - Simply Typed Lambda Calculus</p><ul class="org-ul">
+<li>Terms, Types, and Typing Rules</li>
+<li>Denotational Semantics and Type Soundness</li>
+</ul>
+
+<p><b>*</b> Week 9, 10 - Automated Verification</p><ul class="org-ul">
+<li>Satisfiability Modulo Theories</li>
+<li>Flux: Refinement Type based verification for Rust</li>
+</ul>
+</blockquote>
+<div id="outline-container-orgde01606" class="outline-2">
+<h2 id="orgde01606">Local Graph</h2>
+<div class="outline-text-2" id="text-orgde01606">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="2315pt" height="1876pt"
+ viewBox="0.00 0.00 2315.43 1875.71">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1871.71)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1871.71 2311.43,-1871.71 2311.43,4 -4,4"/>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe -->
+<g id="node1" class="node node&#45;id">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe</title>
+<g id="a_node1"><a xlink:href="public/ucsd_cse230_github_io_principles_of_programming_languages_principles_of_programming_languages_w25.html" xlink:title="(ucsd&#45;cse230.github.io) Principles of Programming Languages &#45; Principles of Programming Languages &#45; W25">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1198.71" cy="-978.73" rx="18" ry="18"/>
+<text text-anchor="middle" x="1198.71" y="-974.05" font-family="Times,serif" font-size="14.00" fill="#111111">(ucsd&#45;cse230.github.io) Principles of...</text>
+</a>
+</g>
+</g>
+<!-- //lean&#45;lang.org/ -->
+<g id="node2" class="node node&#45;https">
+<title>//lean&#45;lang.org/</title>
+<g id="a_node2"><a xlink:href="https://lean-lang.org/" xlink:title="https://lean&#45;lang.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1301.33" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1301.33" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://lean&#45;lang.org/</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//lean&#45;lang.org/ -->
+<g id="edge1" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//lean&#45;lang.org/</title>
+<path fill="none" stroke="black" d="M1200.57,-961.23C1212.91,-845.71 1282.66,-192.78 1298.25,-46.9"/>
+<polygon fill="black" stroke="black" points="1301.69,-47.65 1299.27,-37.33 1294.73,-46.9 1301.69,-47.65"/>
+</g>
+<!-- //ucsd&#45;cse130.github.io/wi24 -->
+<g id="node3" class="node node&#45;https">
+<title>//ucsd&#45;cse130.github.io/wi24</title>
+<g id="a_node3"><a xlink:href="https://ucsd-cse130.github.io/wi24" xlink:title="https://ucsd&#45;cse130.github.io/wi24">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="948.97" cy="-325.84" rx="18" ry="18"/>
+<text text-anchor="middle" x="948.97" y="-321.16" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://ucsd&#45;cse130.github.io/wi24</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse130.github.io/wi24 -->
+<g id="edge2" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse130.github.io/wi24</title>
+<path fill="none" stroke="black" d="M1192.28,-961.93C1158.51,-873.64 1001.48,-463.11 959.38,-353.05"/>
+<polygon fill="black" stroke="black" points="962.73,-352.02 955.89,-343.93 956.19,-354.52 962.73,-352.02"/>
+</g>
+<!-- //www.concrete&#45;semantics.org/ -->
+<g id="node4" class="node node&#45;http">
+<title>//www.concrete&#45;semantics.org/</title>
+<g id="a_node4"><a xlink:href="http://www.concrete-semantics.org/" xlink:title="http://www.concrete&#45;semantics.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1713.96" cy="-313.3" rx="18" ry="18"/>
+<text text-anchor="middle" x="1713.96" y="-308.63" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://www.concrete&#45;semantics.org/</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//www.concrete&#45;semantics.org/ -->
+<g id="edge3" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//www.concrete&#45;semantics.org/</title>
+<path fill="none" stroke="black" d="M1209.71,-964.52C1275.26,-879.86 1614.32,-441.98 1696.16,-336.28"/>
+<polygon fill="black" stroke="black" points="1698.78,-338.62 1702.13,-328.57 1693.24,-334.34 1698.78,-338.62"/>
+</g>
+<!-- //github.com/ucsd&#45;cse230/wi25/tree/main/code -->
+<g id="node5" class="node node&#45;https">
+<title>//github.com/ucsd&#45;cse230/wi25/tree/main/code</title>
+<g id="a_node5"><a xlink:href="https://github.com/ucsd-cse230/wi25/tree/main/code" xlink:title="https://github.com/ucsd&#45;cse230/wi25/tree/main/code">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2112.68" cy="-662.37" rx="18" ry="18"/>
+<text text-anchor="middle" x="2112.68" y="-657.69" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/ucsd&#45;cse230/wi25/tree/main/code</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//github.com/ucsd&#45;cse230/wi25/tree/main/code -->
+<g id="edge4" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//github.com/ucsd&#45;cse230/wi25/tree/main/code</title>
+<path fill="none" stroke="black" d="M1215.35,-972.97C1325.25,-934.93 1946.41,-719.92 2085.18,-671.89"/>
+<polygon fill="black" stroke="black" points="2085.98,-675.31 2094.29,-668.73 2083.69,-668.7 2085.98,-675.31"/>
+</g>
+<!-- //lean&#45;lang.org/theorem_proving_in_lean4/ -->
+<g id="node6" class="node node&#45;https">
+<title>//lean&#45;lang.org/theorem_proving_in_lean4/</title>
+<g id="a_node6"><a xlink:href="https://lean-lang.org/theorem_proving_in_lean4/" xlink:title="https://lean&#45;lang.org/theorem_proving_in_lean4/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2091.29" cy="-1318.55" rx="18" ry="18"/>
+<text text-anchor="middle" x="2091.29" y="-1313.87" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://lean&#45;lang.org/theorem_proving_in_lean4/</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//lean&#45;lang.org/theorem_proving_in_lean4/ -->
+<g id="edge5" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//lean&#45;lang.org/theorem_proving_in_lean4/</title>
+<path fill="none" stroke="black" d="M1215.35,-985.06C1323.64,-1026.29 1928.02,-1256.39 2064.08,-1308.19"/>
+<polygon fill="black" stroke="black" points="2062.76,-1311.43 2073.35,-1311.72 2065.25,-1304.89 2062.76,-1311.43"/>
+</g>
+<!-- //softwarefoundations.cis.upenn.edu/ -->
+<g id="node7" class="node node&#45;https">
+<title>//softwarefoundations.cis.upenn.edu/</title>
+<g id="a_node7"><a xlink:href="https://softwarefoundations.cis.upenn.edu/" xlink:title="https://softwarefoundations.cis.upenn.edu/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1711.01" cy="-988.87" rx="18" ry="18"/>
+<text text-anchor="middle" x="1711.01" y="-984.2" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://softwarefoundations.cis.upenn.edu/</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//softwarefoundations.cis.upenn.edu/ -->
+<g id="edge6" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//softwarefoundations.cis.upenn.edu/</title>
+<path fill="none" stroke="black" d="M1216.64,-979.08C1292.48,-980.58 1587.34,-986.42 1681.75,-988.29"/>
+<polygon fill="black" stroke="black" points="1681.64,-991.79 1691.71,-988.49 1681.78,-984.79 1681.64,-991.79"/>
+</g>
+<!-- //lean&#45;forward.github.io/hitchhikers&#45;guide/2023/ -->
+<g id="node8" class="node node&#45;https">
+<title>//lean&#45;forward.github.io/hitchhikers&#45;guide/2023/</title>
+<g id="a_node8"><a xlink:href="https://lean-forward.github.io/hitchhikers-guide/2023/" xlink:title="https://lean&#45;forward.github.io/hitchhikers&#45;guide/2023/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1742.26" cy="-1742.71" rx="18" ry="18"/>
+<text text-anchor="middle" x="1742.26" y="-1738.03" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://lean&#45;forward.github.io/hitchhikers&#45;guide/2023/</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//lean&#45;forward.github.io/hitchhikers&#45;guide/2023/ -->
+<g id="edge7" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//lean&#45;forward.github.io/hitchhikers&#45;guide/2023/</title>
+<path fill="none" stroke="black" d="M1209.08,-993.31C1275.61,-1086.82 1642.25,-1602.14 1725.46,-1719.09"/>
+<polygon fill="black" stroke="black" points="1722.47,-1720.93 1731.12,-1727.05 1728.17,-1716.88 1722.47,-1720.93"/>
+</g>
+<!-- //plfa.github.io/ -->
+<g id="node9" class="node node&#45;https">
+<title>//plfa.github.io/</title>
+<g id="a_node9"><a xlink:href="https://plfa.github.io/" xlink:title="https://plfa.github.io/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1276.49" cy="-1700.17" rx="18" ry="18"/>
+<text text-anchor="middle" x="1276.49" y="-1695.5" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://plfa.github.io/</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//plfa.github.io/ -->
+<g id="edge8" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//plfa.github.io/</title>
+<path fill="none" stroke="black" d="M1200.63,-996.56C1211.01,-1092.85 1260.38,-1550.78 1273.36,-1671.14"/>
+<polygon fill="black" stroke="black" points="1269.85,-1671.25 1274.4,-1680.81 1276.81,-1670.49 1269.85,-1671.25"/>
+</g>
+<!-- //ucsd&#45;cse230.github.io/wi25/lectures/L00Hello.html -->
+<g id="node10" class="node node&#45;https">
+<title>//ucsd&#45;cse230.github.io/wi25/lectures/L00Hello.html</title>
+<g id="a_node10"><a xlink:href="https://ucsd-cse230.github.io/wi25/lectures/L00Hello.html" xlink:title="https://ucsd&#45;cse230.github.io/wi25/lectures/L00Hello.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="215.38" cy="-936.31" rx="18" ry="18"/>
+<text text-anchor="middle" x="215.38" y="-931.63" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://ucsd&#45;cse230.github.io/wi25/lectures/L00Hello.html</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/lectures/L00Hello.html -->
+<g id="edge9" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/lectures/L00Hello.html</title>
+<path fill="none" stroke="black" d="M1180.8,-977.96C1062.44,-972.85 392.83,-943.96 244.48,-937.56"/>
+<polygon fill="black" stroke="black" points="244.88,-934.08 234.74,-937.14 244.58,-941.07 244.88,-934.08"/>
+</g>
+<!-- //ucsd&#45;cse230.github.io/wi25/lectures/L01Expressions.html -->
+<g id="node11" class="node node&#45;https">
+<title>//ucsd&#45;cse230.github.io/wi25/lectures/L01Expressions.html</title>
+<g id="a_node11"><a xlink:href="https://ucsd-cse230.github.io/wi25/lectures/L01Expressions.html" xlink:title="https://ucsd&#45;cse230.github.io/wi25/lectures/L01Expressions.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="456.96" cy="-1497.19" rx="18" ry="18"/>
+<text text-anchor="middle" x="456.96" y="-1492.52" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://ucsd&#45;cse230.github.io/wi25/lectures/L01Expressions.html</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/lectures/L01Expressions.html -->
+<g id="edge10" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/lectures/L01Expressions.html</title>
+<path fill="none" stroke="black" d="M1184.22,-988.85C1092.84,-1052.73 596.3,-1399.8 480.92,-1480.44"/>
+<polygon fill="black" stroke="black" points="478.97,-1477.54 472.78,-1486.14 482.98,-1483.28 478.97,-1477.54"/>
+</g>
+<!-- //ucsd&#45;cse230.github.io/wi25/lectures/L02Datatypes.html -->
+<g id="node12" class="node node&#45;https">
+<title>//ucsd&#45;cse230.github.io/wi25/lectures/L02Datatypes.html</title>
+<g id="a_node12"><a xlink:href="https://ucsd-cse230.github.io/wi25/lectures/L02Datatypes.html" xlink:title="https://ucsd&#45;cse230.github.io/wi25/lectures/L02Datatypes.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="837.45" cy="-1849.71" rx="18" ry="18"/>
+<text text-anchor="middle" x="837.45" y="-1845.04" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://ucsd&#45;cse230.github.io/wi25/lectures/L02Datatypes.html</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/lectures/L02Datatypes.html -->
+<g id="edge11" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/lectures/L02Datatypes.html</title>
+<path fill="none" stroke="black" d="M1191.81,-995.35C1147.59,-1101.95 903.92,-1689.45 848.62,-1822.79"/>
+<polygon fill="black" stroke="black" points="845.45,-1821.29 844.85,-1831.87 851.91,-1823.97 845.45,-1821.29"/>
+</g>
+<!-- //ucsd&#45;cse230.github.io/wi25/lectures/L03Induction.html -->
+<g id="node13" class="node node&#45;https">
+<title>//ucsd&#45;cse230.github.io/wi25/lectures/L03Induction.html</title>
+<g id="a_node13"><a xlink:href="https://ucsd-cse230.github.io/wi25/lectures/L03Induction.html" xlink:title="https://ucsd&#45;cse230.github.io/wi25/lectures/L03Induction.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="692.44" cy="-982.48" rx="18" ry="18"/>
+<text text-anchor="middle" x="692.44" y="-977.8" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://ucsd&#45;cse230.github.io/wi25/lectures/L03Induction.html</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/lectures/L03Induction.html -->
+<g id="edge12" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/lectures/L03Induction.html</title>
+<path fill="none" stroke="black" d="M1180.98,-978.86C1106.12,-979.41 815.3,-981.57 721.67,-982.26"/>
+<polygon fill="black" stroke="black" points="721.77,-978.76 711.8,-982.33 721.82,-985.76 721.77,-978.76"/>
+</g>
+<!-- //ucsd&#45;cse230.github.io/wi25/static/230&#45;handout&#45;1&#45;14.pdf -->
+<g id="node14" class="node node&#45;https">
+<title>//ucsd&#45;cse230.github.io/wi25/static/230&#45;handout&#45;1&#45;14.pdf</title>
+<g id="a_node14"><a xlink:href="https://ucsd-cse230.github.io/wi25/static/230-handout-1-14.pdf" xlink:title="https://ucsd&#45;cse230.github.io/wi25/static/230&#45;handout&#45;1&#45;14.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="463.58" cy="-370.57" rx="18" ry="18"/>
+<text text-anchor="middle" x="463.58" y="-365.89" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://ucsd&#45;cse230.github.io/wi25/static/230&#45;handout&#45;1&#45;14.pdf</text>
+</a>
+</g>
+</g>
+<!-- d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/static/230&#45;handout&#45;1&#45;14.pdf -->
+<g id="edge13" class="edge">
+<title>d82fc65b&#45;f168&#45;4eaf&#45;b1da&#45;8d08652a8efe&#45;&gt;//ucsd&#45;cse230.github.io/wi25/static/230&#45;handout&#45;1&#45;14.pdf</title>
+<path fill="none" stroke="black" d="M1185,-967.39C1095.81,-893.6 598.04,-481.81 485.98,-389.1"/>
+<polygon fill="black" stroke="black" points="488.29,-386.47 478.36,-382.79 483.83,-391.86 488.29,-386.47"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-06-30 Mon 03:27</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

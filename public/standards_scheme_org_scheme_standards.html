@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-06-30 Mon 03:49 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(standards.scheme.org) Scheme Standards</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(standards.scheme.org) Scheme Standards</h1>
+</header><pre class="example">
+ROAM_REFS: https://standards.scheme.org/
+</pre>
+<blockquote>
+<ul class="org-ul">
+<li>Scheme Standards</li>
+</ul>
+
+<p>The Scheme programming language was introduced in the 1975 paper, <a href="https://standards.scheme.org/early/#r0rs"><i>Scheme: An Interpreter for Extended Lambda Calculus</i></a>. Since then it has been improved and extended through many rounds of standardization. The authoritative standards are the <i>Scheme reports</i>. Their names follow the convention <b>Revised<sup>n</sup> Report on the Algorithmic Language Scheme</b>, abbreviated <b>R<sup>n</sup>RS</b>.</p><p>** Modern standards</p><p>Most active Scheme implementations now support one or both of these standards. Writing code that works on both R<sup>6</sup>RS and R<sup>7</sup>RS is possible with some care.</p><p><b>*</b> Revised<sup>7</sup> Report on the Algorithmic Language Scheme (2013)</p><p>Abbreviated <b>R<sup>7</sup>RS</b>, this standard brings back the simplicity of R<sup>5</sup>RS in the core language. Complexity has been moved into an optional <b>large edition</b> that is still a work in progress.</p><p><b>What's new:</b> <pre class="verbatim">define-library</pre> definitions</p><p>
+<b>Official documents (PDF):</b><br />
+<a href="https://standards.scheme.org/official/r7rs.pdf">R<sup>7</sup>RS Small Edition</a>
+</p><p>
+<b>Unofficial documents with errata corrected (PDF):</b><br />
+<a href="https://standards.scheme.org/unofficial/errata-corrected-r7rs.pdf">R<sup>7</sup>RS Small Edition</a>
+</p><p>
+<b>Unofficial documents with errata corrected (browse on the web):</b><br />
+<a href="https://standards.scheme.org/corrected-r7rs/r7rs.html">R<sup>7</sup>RS Small Edition</a>
+</p><p><b><a href="https://github.com/johnwcowan/r7rs-work/blob/master/R7RSSmallErrata.md">Editors' list of errata</a></b></p><p><b><a href="https://small.r7rs.org/">Editors' home page</a></b></p><p><b><a href="https://github.com/johnwcowan/r7rs-spec">Editors' version control repository</a></b></p><p><b>*</b> <b>Revised<sup>6</sup> Report on the Algorithmic Language Scheme (2007)</b></p><p>Abbreviated <b>R<sup>6</sup>RS</b>, this standard abandoned the simplicity of R<sup>5</sup>RS and shipped a more full-featured language. Error situations are much more closely specified; a formal hierarchy of condition (exception) types is given.</p><p>This is the first standard with a library system, enabling programmers to share libraries that work out-of-the-box on multiple Scheme implementations.</p><p><b>What's new:</b> <pre class="verbatim">library</pre> definitions, procedural macros via <pre class="verbatim">syntax-case</pre>, condition system, standard condition hierarchy, hash tables, custom ports, explicit Unicode support, transcoding and endianness, a much larger standard library.</p><p>
+<b>Official documents (PDF):</b><br />
+<a href="https://standards.scheme.org/official/r6rs.pdf">R<sup>6</sup>RS</a>, <a href="https://standards.scheme.org/official/r6rs-lib.pdf">Standard Libraries</a>, <a href="https://standards.scheme.org/official/r6rs-app.pdf">Non-Normative Appendices</a>, <a href="https://standards.scheme.org/official/r6rs-rationale.pdf">Rationale</a>
+</p><p>
+<b>Unofficial documents with errata corrected (PDF):</b><br />
+<a href="https://standards.scheme.org/unofficial/errata-corrected-r6rs.pdf">R<sup>6</sup>RS</a>, <a href="https://standards.scheme.org/unofficial/errata-corrected-r6rs-lib.pdf">Standard Libraries</a>, <a href="https://standards.scheme.org/unofficial/errata-corrected-r6rs-app.pdf">Non-Normative Appendices</a>, <a href="https://standards.scheme.org/unofficial/errata-corrected-r6rs-rationale.pdf">Rationale</a>
+</p><p>
+<b>Unofficial documents with errata corrected (browse on the web):</b><br />
+<a href="https://standards.scheme.org/corrected-r6rs/r6rs.html">R<sup>6</sup>RS</a>, <a href="https://standards.scheme.org/corrected-r6rs/r6rs-lib.html">Standard Libraries</a>, <a href="https://standards.scheme.org/corrected-r6rs/r6rs-app.html">Non-Normative Appendices</a>, <a href="https://standards.scheme.org/corrected-r6rs/r6rs-rationale.html">Rationale</a>
+</p><p><b><a href="http://www.r6rs.org/r6rs-errata.html">Editors' list of errata</a></b></p><p><b><a href="http://www.r6rs.org/">Editors' home page</a></b></p><p><b><a href="https://www.s48.org/cgi-bin/hgwebdir.cgi/r6rs/">Editors' version control repository</a></b> (<a href="https://github.com/schemedoc/r6rs">GitHub mirror</a>)</p><p>** Classic standards</p><p>These standards present the core Scheme syntax and semantics in essentially the same form as it now is.</p><p><b>*</b> Revised<sup>5</sup> Report on the Algorithmic Language Scheme (1998)</p><p>Abbreviated <b>R<sup>5</sup>RS</b>, this standard comes closest to a Platonic Form of Scheme before later standards tackle the complexities of <i>programming in the large</i> with features such as libraries and exceptions.</p><p>Weighing in at 50 pages, the R<sup>5</sup>RS document is an object of reverence among programming language enthusiasts. It is a touchstone of the Scheme community and is considered an exemplar of a concise and expressive language specification in other communities as well.</p><p><b>What's new:</b> <pre class="verbatim">syntax-rules</pre> macros</p><p><b>Official documents (PDF):</b> <a href="https://standards.scheme.org/official/r5rs.pdf">R<sup>5</sup>RS</a></p><p><b>Unofficial documents with errata corrected (browse on the web):</b> <a href="https://standards.scheme.org/corrected-r5rs/r5rs.html">R<sup>5</sup>RS</a></p><p><b><a href="https://mumble.net/~kelsey/r5rs-errata.html">Editors' list of errata</a></b></p><p><b>*</b> Revised<sup>4</sup> Report on the Algorithmic Language Scheme (1991)</p><p>Abbreviated <b>R<sup>4</sup>RS</b></p><p>Scheme starts really becoming Scheme with R4RS, e.g. hygienic macros were optional and in the appendix.</p><p><b>Official documents (PDF):</b> <a href="https://standards.scheme.org/official/r4rs.pdf">R<sup>4</sup>RS</a></p><p><b>*</b> Revised<sup>3</sup> Report on the Algorithmic Language Scheme (1986)</p><p>Abbreviated <b>R<sup>3</sup>RS</b>, this was the first Scheme report laid on the now-familiar TeX template.</p><p><b>Official documents (PDF):</b> <a href="https://standards.scheme.org/official/r3rs.pdf">R<sup>3</sup>RS</a></p><p>** More information</p><p><b>*</b> <a href="https://standards.scheme.org/early/">Early standards</a></p><p><b>*</b> <a href="https://standards.scheme.org/formal/">Formal standards (ISO and IEEE)</a></p><p><b>*</b> <a href="https://standards.scheme.org/process/">Standardization process</a></p><p><b>See also:</b> <a href="https://research.scheme.org/">Scheme research</a>, especially the <a href="https://research.scheme.org/lambda-papers/"><i>lambda papers</i></a> from MIT.</p><hr />
+
+<p><a href="https://standards.scheme.org/about/">About <pre class="verbatim">standards.scheme.org</pre></a></p>
+</blockquote>
+<div id="outline-container-org3361710" class="outline-2">
+<h2 id="org3361710">Local Graph</h2>
+<div class="outline-text-2" id="text-org3361710">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="2578pt" height="2186pt"
+ viewBox="0.00 0.00 2578.37 2186.15">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2182.15)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2182.15 2574.37,-2182.15 2574.37,4 -4,4"/>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d -->
+<g id="node1" class="node node&#45;id">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d</title>
+<g id="a_node1"><a xlink:href="public/standards_scheme_org_scheme_standards.html" xlink:title="(standards.scheme.org) Scheme Standards">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1300.08" cy="-1085.14" rx="18" ry="18"/>
+<text text-anchor="middle" x="1300.08" y="-1080.47" font-family="Times,serif" font-size="14.00" fill="#111111">(standards.scheme.org) Scheme Standards</text>
+</a>
+</g>
+</g>
+<!-- //standards.scheme.org/early/#r0rs -->
+<g id="node2" class="node node&#45;https">
+<title>//standards.scheme.org/early/#r0rs</title>
+<g id="a_node2"><a xlink:href="https://standards.scheme.org/early/#r0rs" xlink:title="https://standards.scheme.org/early/#r0rs">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2147.31" cy="-1757.72" rx="18" ry="18"/>
+<text text-anchor="middle" x="2147.31" y="-1753.04" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/early/#r0rs</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/early/#r0rs -->
+<g id="edge1" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/early/#r0rs</title>
+<path fill="none" stroke="black" d="M1314.08,-1096.25C1412.63,-1174.49 2001.78,-1642.18 2124.8,-1739.85"/>
+<polygon fill="black" stroke="black" points="2122.26,-1742.3 2132.27,-1745.77 2126.61,-1736.81 2122.26,-1742.3"/>
+</g>
+<!-- //standards.scheme.org/official/r7rs.pdf -->
+<g id="node3" class="node node&#45;https">
+<title>//standards.scheme.org/official/r7rs.pdf</title>
+<g id="a_node3"><a xlink:href="https://standards.scheme.org/official/r7rs.pdf" xlink:title="https://standards.scheme.org/official/r7rs.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2400.74" cy="-1033.63" rx="18" ry="18"/>
+<text text-anchor="middle" x="2400.74" y="-1028.96" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/official/r7rs.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r7rs.pdf -->
+<g id="edge2" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r7rs.pdf</title>
+<path fill="none" stroke="black" d="M1317.82,-1084.31C1444.61,-1078.38 2212.93,-1042.42 2371.95,-1034.98"/>
+<polygon fill="black" stroke="black" points="2371.78,-1038.49 2381.61,-1034.53 2371.45,-1031.5 2371.78,-1038.49"/>
+</g>
+<!-- //standards.scheme.org/unofficial/errata&#45;corrected&#45;r7rs.pdf -->
+<g id="node4" class="node node&#45;https">
+<title>//standards.scheme.org/unofficial/errata&#45;corrected&#45;r7rs.pdf</title>
+<g id="a_node4"><a xlink:href="https://standards.scheme.org/unofficial/errata-corrected-r7rs.pdf" xlink:title="https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r7rs.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1566.47" cy="-763.58" rx="18" ry="18"/>
+<text text-anchor="middle" x="1566.47" y="-758.91" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r7rs.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r7rs.pdf -->
+<g id="edge3" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r7rs.pdf</title>
+<path fill="none" stroke="black" d="M1311.53,-1071.32C1353.11,-1021.13 1496.44,-848.12 1547.9,-786.01"/>
+<polygon fill="black" stroke="black" points="1550.42,-788.45 1554.1,-778.51 1545.03,-783.98 1550.42,-788.45"/>
+</g>
+<!-- //standards.scheme.org/corrected&#45;r7rs/r7rs.html -->
+<g id="node5" class="node node&#45;https">
+<title>//standards.scheme.org/corrected&#45;r7rs/r7rs.html</title>
+<g id="a_node5"><a xlink:href="https://standards.scheme.org/corrected-r7rs/r7rs.html" xlink:title="https://standards.scheme.org/corrected&#45;r7rs/r7rs.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2355.64" cy="-1397.61" rx="18" ry="18"/>
+<text text-anchor="middle" x="2355.64" y="-1392.93" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/corrected&#45;r7rs/r7rs.html</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r7rs/r7rs.html -->
+<g id="edge4" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r7rs/r7rs.html</title>
+<path fill="none" stroke="black" d="M1317.09,-1090.18C1438.69,-1126.17 2175.52,-1344.29 2328.03,-1389.43"/>
+<polygon fill="black" stroke="black" points="2326.7,-1392.69 2337.29,-1392.17 2328.69,-1385.98 2326.7,-1392.69"/>
+</g>
+<!-- //github.com/johnwcowan/r7rs&#45;work/blob/master/R7RSSmallErrata.md -->
+<g id="node6" class="node node&#45;https">
+<title>//github.com/johnwcowan/r7rs&#45;work/blob/master/R7RSSmallErrata.md</title>
+<g id="a_node6"><a xlink:href="https://github.com/johnwcowan/r7rs-work/blob/master/R7RSSmallErrata.md" xlink:title="https://github.com/johnwcowan/r7rs&#45;work/blob/master/R7RSSmallErrata.md">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1980.8" cy="-989.59" rx="18" ry="18"/>
+<text text-anchor="middle" x="1980.8" y="-984.92" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/johnwcowan/r7rs&#45;work/blob/master/R7RSSmallErrata.md</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//github.com/johnwcowan/r7rs&#45;work/blob/master/R7RSSmallErrata.md -->
+<g id="edge5" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//github.com/johnwcowan/r7rs&#45;work/blob/master/R7RSSmallErrata.md</title>
+<path fill="none" stroke="black" d="M1317.6,-1082.68C1409.45,-1069.79 1835.87,-1009.94 1951.7,-993.68"/>
+<polygon fill="black" stroke="black" points="1952.18,-997.15 1961.59,-992.29 1951.2,-990.21 1952.18,-997.15"/>
+</g>
+<!-- //small.r7rs.org/ -->
+<g id="node7" class="node node&#45;https">
+<title>//small.r7rs.org/</title>
+<g id="a_node7"><a xlink:href="https://small.r7rs.org/" xlink:title="https://small.r7rs.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1681.04" cy="-1679.02" rx="18" ry="18"/>
+<text text-anchor="middle" x="1681.04" y="-1674.34" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://small.r7rs.org/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//small.r7rs.org/ -->
+<g id="edge6" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//small.r7rs.org/</title>
+<path fill="none" stroke="black" d="M1309.69,-1100.12C1360.85,-1179.87 1601.3,-1554.71 1665.34,-1654.54"/>
+<polygon fill="black" stroke="black" points="1662.29,-1656.28 1670.64,-1662.81 1668.19,-1652.5 1662.29,-1656.28"/>
+</g>
+<!-- //github.com/johnwcowan/r7rs&#45;spec -->
+<g id="node8" class="node node&#45;https">
+<title>//github.com/johnwcowan/r7rs&#45;spec</title>
+<g id="a_node8"><a xlink:href="https://github.com/johnwcowan/r7rs-spec" xlink:title="https://github.com/johnwcowan/r7rs&#45;spec">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1989.72" cy="-1422.92" rx="18" ry="18"/>
+<text text-anchor="middle" x="1989.72" y="-1418.24" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/johnwcowan/r7rs&#45;spec</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//github.com/johnwcowan/r7rs&#45;spec -->
+<g id="edge7" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//github.com/johnwcowan/r7rs&#45;spec</title>
+<path fill="none" stroke="black" d="M1316.12,-1092.99C1406.34,-1137.19 1850.79,-1354.87 1963.63,-1410.14"/>
+<polygon fill="black" stroke="black" points="1961.9,-1413.19 1972.42,-1414.44 1964.97,-1406.9 1961.9,-1413.19"/>
+</g>
+<!-- //standards.scheme.org/official/r6rs.pdf -->
+<g id="node9" class="node node&#45;https">
+<title>//standards.scheme.org/official/r6rs.pdf</title>
+<g id="a_node9"><a xlink:href="https://standards.scheme.org/official/r6rs.pdf" xlink:title="https://standards.scheme.org/official/r6rs.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1866.11" cy="-1996.75" rx="18" ry="18"/>
+<text text-anchor="middle" x="1866.11" y="-1992.07" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/official/r6rs.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r6rs.pdf -->
+<g id="edge8" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r6rs.pdf</title>
+<path fill="none" stroke="black" d="M1309.44,-1100.2C1375.21,-1206.13 1768.04,-1838.81 1850.8,-1972.1"/>
+<polygon fill="black" stroke="black" points="1847.58,-1973.55 1855.83,-1980.2 1853.53,-1969.86 1847.58,-1973.55"/>
+</g>
+<!-- //standards.scheme.org/official/r6rs&#45;lib.pdf -->
+<g id="node10" class="node node&#45;https">
+<title>//standards.scheme.org/official/r6rs&#45;lib.pdf</title>
+<g id="a_node10"><a xlink:href="https://standards.scheme.org/official/r6rs-lib.pdf" xlink:title="https://standards.scheme.org/official/r6rs&#45;lib.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1056.92" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1056.92" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/official/r6rs&#45;lib.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r6rs&#45;lib.pdf -->
+<g id="edge9" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r6rs&#45;lib.pdf</title>
+<path fill="none" stroke="black" d="M1296.17,-1067.95C1268.18,-945.15 1098.77,-201.68 1063.39,-46.41"/>
+<polygon fill="black" stroke="black" points="1066.87,-45.94 1061.24,-36.97 1060.05,-47.5 1066.87,-45.94"/>
+</g>
+<!-- //standards.scheme.org/official/r6rs&#45;app.pdf -->
+<g id="node11" class="node node&#45;https">
+<title>//standards.scheme.org/official/r6rs&#45;app.pdf</title>
+<g id="a_node11"><a xlink:href="https://standards.scheme.org/official/r6rs-app.pdf" xlink:title="https://standards.scheme.org/official/r6rs&#45;app.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1432.22" cy="-20.64" rx="18" ry="18"/>
+<text text-anchor="middle" x="1432.22" y="-15.96" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/official/r6rs&#45;app.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r6rs&#45;app.pdf -->
+<g id="edge10" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r6rs&#45;app.pdf</title>
+<path fill="none" stroke="black" d="M1302.27,-1067.55C1317.62,-943.86 1409.33,-205.07 1428.65,-49.41"/>
+<polygon fill="black" stroke="black" points="1432.06,-50.31 1429.82,-39.96 1425.12,-49.45 1432.06,-50.31"/>
+</g>
+<!-- //standards.scheme.org/official/r6rs&#45;rationale.pdf -->
+<g id="node12" class="node node&#45;https">
+<title>//standards.scheme.org/official/r6rs&#45;rationale.pdf</title>
+<g id="a_node12"><a xlink:href="https://standards.scheme.org/official/r6rs-rationale.pdf" xlink:title="https://standards.scheme.org/official/r6rs&#45;rationale.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1078.36" cy="-378.08" rx="18" ry="18"/>
+<text text-anchor="middle" x="1078.36" y="-373.4" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/official/r6rs&#45;rationale.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r6rs&#45;rationale.pdf -->
+<g id="edge11" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r6rs&#45;rationale.pdf</title>
+<path fill="none" stroke="black" d="M1294.71,-1068.01C1265.3,-974.22 1123.75,-522.83 1087.06,-405.82"/>
+<polygon fill="black" stroke="black" points="1090.45,-404.92 1084.12,-396.43 1083.77,-407.01 1090.45,-404.92"/>
+</g>
+<!-- //standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs.pdf -->
+<g id="node13" class="node node&#45;https">
+<title>//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs.pdf</title>
+<g id="a_node13"><a xlink:href="https://standards.scheme.org/unofficial/errata-corrected-r6rs.pdf" xlink:title="https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1803.5" cy="-134.43" rx="18" ry="18"/>
+<text text-anchor="middle" x="1803.5" y="-129.76" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs.pdf -->
+<g id="edge12" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs.pdf</title>
+<path fill="none" stroke="black" d="M1308.4,-1069.43C1366.9,-958.96 1716.33,-299.07 1789.91,-160.11"/>
+<polygon fill="black" stroke="black" points="1792.97,-161.8 1794.56,-151.32 1786.79,-158.52 1792.97,-161.8"/>
+</g>
+<!-- //standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;lib.pdf -->
+<g id="node14" class="node node&#45;https">
+<title>//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;lib.pdf</title>
+<g id="a_node14"><a xlink:href="https://standards.scheme.org/unofficial/errata-corrected-r6rs-lib.pdf" xlink:title="https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;lib.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2096.06" cy="-332.34" rx="18" ry="18"/>
+<text text-anchor="middle" x="2096.06" y="-327.66" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;lib.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;lib.pdf -->
+<g id="edge13" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;lib.pdf</title>
+<path fill="none" stroke="black" d="M1312.91,-1073.01C1404.51,-986.38 1959.05,-461.91 2074.87,-352.38"/>
+<polygon fill="black" stroke="black" points="2077.05,-355.13 2081.91,-345.72 2072.24,-350.05 2077.05,-355.13"/>
+</g>
+<!-- //standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;app.pdf -->
+<g id="node15" class="node node&#45;https">
+<title>//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;app.pdf</title>
+<g id="a_node15"><a xlink:href="https://standards.scheme.org/unofficial/errata-corrected-r6rs-app.pdf" xlink:title="https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;app.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1892.69" cy="-617.24" rx="18" ry="18"/>
+<text text-anchor="middle" x="1892.69" y="-612.57" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;app.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;app.pdf -->
+<g id="edge14" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;app.pdf</title>
+<path fill="none" stroke="black" d="M1314.15,-1074.04C1392.26,-1012.36 1772.72,-711.96 1870,-635.15"/>
+<polygon fill="black" stroke="black" points="1871.89,-638.12 1877.57,-629.18 1867.55,-632.63 1871.89,-638.12"/>
+</g>
+<!-- //standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;rationale.pdf -->
+<g id="node16" class="node node&#45;https">
+<title>//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;rationale.pdf</title>
+<g id="a_node16"><a xlink:href="https://standards.scheme.org/unofficial/errata-corrected-r6rs-rationale.pdf" xlink:title="https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;rationale.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1564.02" cy="-394.32" rx="18" ry="18"/>
+<text text-anchor="middle" x="1564.02" y="-389.64" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;rationale.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;rationale.pdf -->
+<g id="edge15" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/unofficial/errata&#45;corrected&#45;r6rs&#45;rationale.pdf</title>
+<path fill="none" stroke="black" d="M1306.48,-1068.41C1341.49,-976.77 1509.99,-535.74 1553.66,-421.43"/>
+<polygon fill="black" stroke="black" points="1556.87,-422.84 1557.17,-412.25 1550.33,-420.34 1556.87,-422.84"/>
+</g>
+<!-- //standards.scheme.org/corrected&#45;r6rs/r6rs.html -->
+<g id="node17" class="node node&#45;https">
+<title>//standards.scheme.org/corrected&#45;r6rs/r6rs.html</title>
+<g id="a_node17"><a xlink:href="https://standards.scheme.org/corrected-r6rs/r6rs.html" xlink:title="https://standards.scheme.org/corrected&#45;r6rs/r6rs.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2290.28" cy="-671.07" rx="18" ry="18"/>
+<text text-anchor="middle" x="2290.28" y="-666.39" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/corrected&#45;r6rs/r6rs.html</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r6rs/r6rs.html -->
+<g id="edge16" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r6rs/r6rs.html</title>
+<path fill="none" stroke="black" d="M1316.44,-1078.3C1431.51,-1030.19 2118.72,-742.81 2263.51,-682.26"/>
+<polygon fill="black" stroke="black" points="2264.43,-685.67 2272.31,-678.58 2261.73,-679.21 2264.43,-685.67"/>
+</g>
+<!-- //standards.scheme.org/corrected&#45;r6rs/r6rs&#45;lib.html -->
+<g id="node18" class="node node&#45;https">
+<title>//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;lib.html</title>
+<g id="a_node18"><a xlink:href="https://standards.scheme.org/corrected-r6rs/r6rs-lib.html" xlink:title="https://standards.scheme.org/corrected&#45;r6rs/r6rs&#45;lib.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="294.52" cy="-736.62" rx="18" ry="18"/>
+<text text-anchor="middle" x="294.52" y="-731.95" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/corrected&#45;r6rs/r6rs&#45;lib.html</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;lib.html -->
+<g id="edge17" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;lib.html</title>
+<path fill="none" stroke="black" d="M1283.47,-1079.38C1166.74,-1038.93 470.14,-797.49 322.15,-746.2"/>
+<polygon fill="black" stroke="black" points="323.38,-742.92 312.78,-742.95 321.09,-749.53 323.38,-742.92"/>
+</g>
+<!-- //standards.scheme.org/corrected&#45;r6rs/r6rs&#45;app.html -->
+<g id="node19" class="node node&#45;https">
+<title>//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;app.html</title>
+<g id="a_node19"><a xlink:href="https://standards.scheme.org/corrected-r6rs/r6rs-app.html" xlink:title="https://standards.scheme.org/corrected&#45;r6rs/r6rs&#45;app.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="441.69" cy="-395.27" rx="18" ry="18"/>
+<text text-anchor="middle" x="441.69" y="-390.59" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/corrected&#45;r6rs/r6rs&#45;app.html</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;app.html -->
+<g id="edge18" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;app.html</title>
+<path fill="none" stroke="black" d="M1286.25,-1074.03C1187.37,-994.55 588.17,-512.99 464.15,-413.32"/>
+<polygon fill="black" stroke="black" points="466.61,-410.8 456.62,-407.26 462.22,-416.26 466.61,-410.8"/>
+</g>
+<!-- //standards.scheme.org/corrected&#45;r6rs/r6rs&#45;rationale.html -->
+<g id="node20" class="node node&#45;https">
+<title>//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;rationale.html</title>
+<g id="a_node20"><a xlink:href="https://standards.scheme.org/corrected-r6rs/r6rs-rationale.html" xlink:title="https://standards.scheme.org/corrected&#45;r6rs/r6rs&#45;rationale.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="236.37" cy="-1096.15" rx="18" ry="18"/>
+<text text-anchor="middle" x="236.37" y="-1091.48" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/corrected&#45;r6rs/r6rs&#45;rationale.html</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;rationale.html -->
+<g id="edge19" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r6rs/r6rs&#45;rationale.html</title>
+<path fill="none" stroke="black" d="M1282.51,-1085.32C1159.03,-1086.6 422.15,-1094.23 265.6,-1095.85"/>
+<polygon fill="black" stroke="black" points="265.66,-1092.35 255.69,-1095.95 265.73,-1099.35 265.66,-1092.35"/>
+</g>
+<!-- //www.r6rs.org/r6rs&#45;errata.html -->
+<g id="node21" class="node node&#45;http">
+<title>//www.r6rs.org/r6rs&#45;errata.html</title>
+<g id="a_node21"><a xlink:href="http://www.r6rs.org/r6rs-errata.html" xlink:title="http://www.r6rs.org/r6rs&#45;errata.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="615.86" cy="-1424.04" rx="18" ry="18"/>
+<text text-anchor="middle" x="615.86" y="-1419.37" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://www.r6rs.org/r6rs&#45;errata.html</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//www.r6rs.org/r6rs&#45;errata.html -->
+<g id="edge20" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//www.r6rs.org/r6rs&#45;errata.html</title>
+<path fill="none" stroke="black" d="M1284.18,-1093.02C1194.76,-1137.31 754.66,-1355.3 642.11,-1411.04"/>
+<polygon fill="black" stroke="black" points="640.75,-1407.81 633.34,-1415.39 643.85,-1414.09 640.75,-1407.81"/>
+</g>
+<!-- //www.r6rs.org/ -->
+<g id="node22" class="node node&#45;http">
+<title>//www.r6rs.org/</title>
+<g id="a_node22"><a xlink:href="http://www.r6rs.org/" xlink:title="http://www.r6rs.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="912.51" cy="-1222.15" rx="18" ry="18"/>
+<text text-anchor="middle" x="912.51" y="-1217.47" font-family="Times,serif" font-size="14.00" fill="#0a97a6">http://www.r6rs.org/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//www.r6rs.org/ -->
+<g id="edge21" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//www.r6rs.org/</title>
+<path fill="none" stroke="black" d="M1283.18,-1091.12C1222.34,-1112.62 1014.19,-1186.2 939.48,-1212.61"/>
+<polygon fill="black" stroke="black" points="938.75,-1209.16 930.49,-1215.79 941.09,-1215.76 938.75,-1209.16"/>
+</g>
+<!-- //www.s48.org/cgi&#45;bin/hgwebdir.cgi/r6rs/ -->
+<g id="node23" class="node node&#45;https">
+<title>//www.s48.org/cgi&#45;bin/hgwebdir.cgi/r6rs/</title>
+<g id="a_node23"><a xlink:href="https://www.s48.org/cgi-bin/hgwebdir.cgi/r6rs/" xlink:title="https://www.s48.org/cgi&#45;bin/hgwebdir.cgi/r6rs/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="777.56" cy="-2020.38" rx="18" ry="18"/>
+<text text-anchor="middle" x="777.56" y="-2015.71" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://www.s48.org/cgi&#45;bin/hgwebdir.cgi/r6rs/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//www.s48.org/cgi&#45;bin/hgwebdir.cgi/r6rs/ -->
+<g id="edge22" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//www.s48.org/cgi&#45;bin/hgwebdir.cgi/r6rs/</title>
+<path fill="none" stroke="black" d="M1291.45,-1100.59C1230.8,-1209.16 868.82,-1857.05 791.92,-1994.69"/>
+<polygon fill="black" stroke="black" points="788.87,-1992.97 787.05,-2003.41 794.98,-1996.38 788.87,-1992.97"/>
+</g>
+<!-- //github.com/schemedoc/r6rs -->
+<g id="node24" class="node node&#45;https">
+<title>//github.com/schemedoc/r6rs</title>
+<g id="a_node24"><a xlink:href="https://github.com/schemedoc/r6rs" xlink:title="https://github.com/schemedoc/r6rs">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="925.16" cy="-1681.56" rx="18" ry="18"/>
+<text text-anchor="middle" x="925.16" y="-1676.88" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://github.com/schemedoc/r6rs</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//github.com/schemedoc/r6rs -->
+<g id="edge23" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//github.com/schemedoc/r6rs</title>
+<path fill="none" stroke="black" d="M1290.63,-1100.18C1240.28,-1180.27 1003.63,-1556.72 940.61,-1656.97"/>
+<polygon fill="black" stroke="black" points="937.75,-1654.95 935.39,-1665.27 943.68,-1658.67 937.75,-1654.95"/>
+</g>
+<!-- //standards.scheme.org/official/r5rs.pdf -->
+<g id="node25" class="node node&#45;https">
+<title>//standards.scheme.org/official/r5rs.pdf</title>
+<g id="a_node25"><a xlink:href="https://standards.scheme.org/official/r5rs.pdf" xlink:title="https://standards.scheme.org/official/r5rs.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1117.34" cy="-2160.15" rx="18" ry="18"/>
+<text text-anchor="middle" x="1117.34" y="-2155.47" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/official/r5rs.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r5rs.pdf -->
+<g id="edge24" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r5rs.pdf</title>
+<path fill="none" stroke="black" d="M1297.14,-1102.46C1276.11,-1226.17 1148.79,-1975.11 1122.2,-2131.53"/>
+<polygon fill="black" stroke="black" points="1118.81,-2130.59 1120.59,-2141.03 1125.72,-2131.76 1118.81,-2130.59"/>
+</g>
+<!-- //standards.scheme.org/corrected&#45;r5rs/r5rs.html -->
+<g id="node26" class="node node&#45;https">
+<title>//standards.scheme.org/corrected&#45;r5rs/r5rs.html</title>
+<g id="a_node26"><a xlink:href="https://standards.scheme.org/corrected-r5rs/r5rs.html" xlink:title="https://standards.scheme.org/corrected&#45;r5rs/r5rs.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1683.73" cy="-1229.7" rx="18" ry="18"/>
+<text text-anchor="middle" x="1683.73" y="-1225.03" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/corrected&#45;r5rs/r5rs.html</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r5rs/r5rs.html -->
+<g id="edge25" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/corrected&#45;r5rs/r5rs.html</title>
+<path fill="none" stroke="black" d="M1316.82,-1091.45C1376.9,-1114.09 1582.14,-1191.42 1656.53,-1219.45"/>
+<polygon fill="black" stroke="black" points="1654.91,-1222.58 1665.5,-1222.83 1657.37,-1216.03 1654.91,-1222.58"/>
+</g>
+<!-- //mumble.net/~kelsey/r5rs&#45;errata.html -->
+<g id="node27" class="node node&#45;https">
+<title>//mumble.net/~kelsey/r5rs&#45;errata.html</title>
+<g id="a_node27"><a xlink:href="https://mumble.net/~kelsey/r5rs-errata.html" xlink:title="https://mumble.net/~kelsey/r5rs&#45;errata.html">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1304.77" cy="-1861.34" rx="18" ry="18"/>
+<text text-anchor="middle" x="1304.77" y="-1856.66" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://mumble.net/~kelsey/r5rs&#45;errata.html</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//mumble.net/~kelsey/r5rs&#45;errata.html -->
+<g id="edge26" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//mumble.net/~kelsey/r5rs&#45;errata.html</title>
+<path fill="none" stroke="black" d="M1300.19,-1102.81C1300.8,-1203.49 1303.82,-1704.65 1304.59,-1831.91"/>
+<polygon fill="black" stroke="black" points="1301.09,-1831.86 1304.65,-1841.84 1308.09,-1831.82 1301.09,-1831.86"/>
+</g>
+<!-- //standards.scheme.org/official/r4rs.pdf -->
+<g id="node28" class="node node&#45;https">
+<title>//standards.scheme.org/official/r4rs.pdf</title>
+<g id="a_node28"><a xlink:href="https://standards.scheme.org/official/r4rs.pdf" xlink:title="https://standards.scheme.org/official/r4rs.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1301.06" cy="-1505.62" rx="18" ry="18"/>
+<text text-anchor="middle" x="1301.06" y="-1500.95" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/official/r4rs.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r4rs.pdf -->
+<g id="edge27" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r4rs.pdf</title>
+<path fill="none" stroke="black" d="M1300.13,-1102.94C1300.28,-1168.29 1300.8,-1395.42 1300.99,-1476.54"/>
+<polygon fill="black" stroke="black" points="1297.49,-1476.55 1301.01,-1486.54 1304.49,-1476.53 1297.49,-1476.55"/>
+</g>
+<!-- //standards.scheme.org/official/r3rs.pdf -->
+<g id="node29" class="node node&#45;https">
+<title>//standards.scheme.org/official/r3rs.pdf</title>
+<g id="a_node29"><a xlink:href="https://standards.scheme.org/official/r3rs.pdf" xlink:title="https://standards.scheme.org/official/r3rs.pdf">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1530.28" cy="-2145.64" rx="18" ry="18"/>
+<text text-anchor="middle" x="1530.28" y="-2140.97" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/official/r3rs.pdf</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r3rs.pdf -->
+<g id="edge28" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/official/r3rs.pdf</title>
+<path fill="none" stroke="black" d="M1303.89,-1102.66C1330.67,-1226.02 1490.74,-1963.47 1524.17,-2117.47"/>
+<polygon fill="black" stroke="black" points="1520.65,-2117.79 1526.2,-2126.82 1527.49,-2116.3 1520.65,-2117.79"/>
+</g>
+<!-- //standards.scheme.org/early/ -->
+<g id="node30" class="node node&#45;https">
+<title>//standards.scheme.org/early/</title>
+<g id="a_node30"><a xlink:href="https://standards.scheme.org/early/" xlink:title="https://standards.scheme.org/early/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="602.91" cy="-989.69" rx="18" ry="18"/>
+<text text-anchor="middle" x="602.91" y="-985.01" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/early/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/early/ -->
+<g id="edge29" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/early/</title>
+<path fill="none" stroke="black" d="M1282.5,-1082.73C1188.88,-1069.92 748.84,-1009.67 631.65,-993.62"/>
+<polygon fill="black" stroke="black" points="632.33,-990.18 621.95,-992.3 631.38,-997.12 632.33,-990.18"/>
+</g>
+<!-- //standards.scheme.org/formal/ -->
+<g id="node31" class="node node&#45;https">
+<title>//standards.scheme.org/formal/</title>
+<g id="a_node31"><a xlink:href="https://standards.scheme.org/formal/" xlink:title="https://standards.scheme.org/formal/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1056.61" cy="-743.07" rx="18" ry="18"/>
+<text text-anchor="middle" x="1056.61" y="-738.39" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/formal/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/formal/ -->
+<g id="edge30" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/formal/</title>
+<path fill="none" stroke="black" d="M1289.93,-1070.88C1252.27,-1017.96 1120.28,-832.52 1073.33,-766.57"/>
+<polygon fill="black" stroke="black" points="1076.33,-764.74 1067.68,-758.62 1070.63,-768.8 1076.33,-764.74"/>
+</g>
+<!-- //standards.scheme.org/process/ -->
+<g id="node32" class="node node&#45;https">
+<title>//standards.scheme.org/process/</title>
+<g id="a_node32"><a xlink:href="https://standards.scheme.org/process/" xlink:title="https://standards.scheme.org/process/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="267.97" cy="-1458.13" rx="18" ry="18"/>
+<text text-anchor="middle" x="267.97" y="-1453.45" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/process/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/process/ -->
+<g id="edge31" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/process/</title>
+<path fill="none" stroke="black" d="M1283.45,-1091.15C1164.68,-1134.07 445.62,-1393.93 295.45,-1448.2"/>
+<polygon fill="black" stroke="black" points="294.53,-1444.81 286.31,-1451.5 296.91,-1451.39 294.53,-1444.81"/>
+</g>
+<!-- //research.scheme.org/ -->
+<g id="node33" class="node node&#45;https">
+<title>//research.scheme.org/</title>
+<g id="a_node33"><a xlink:href="https://research.scheme.org/" xlink:title="https://research.scheme.org/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="491.16" cy="-1790.4" rx="18" ry="18"/>
+<text text-anchor="middle" x="491.16" y="-1785.72" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://research.scheme.org/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//research.scheme.org/ -->
+<g id="edge32" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//research.scheme.org/</title>
+<path fill="none" stroke="black" d="M1286.72,-1096.79C1192.72,-1178.74 631.31,-1668.21 513.02,-1771.33"/>
+<polygon fill="black" stroke="black" points="511.08,-1768.38 505.84,-1777.59 515.68,-1773.66 511.08,-1768.38"/>
+</g>
+<!-- //research.scheme.org/lambda&#45;papers/ -->
+<g id="node34" class="node node&#45;https">
+<title>//research.scheme.org/lambda&#45;papers/</title>
+<g id="a_node34"><a xlink:href="https://research.scheme.org/lambda-papers/" xlink:title="https://research.scheme.org/lambda&#45;papers/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="715.6" cy="-618.9" rx="18" ry="18"/>
+<text text-anchor="middle" x="715.6" y="-614.23" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://research.scheme.org/lambda&#45;papers/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//research.scheme.org/lambda&#45;papers/ -->
+<g id="edge33" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//research.scheme.org/lambda&#45;papers/</title>
+<path fill="none" stroke="black" d="M1286.21,-1074.08C1209.33,-1012.75 835.5,-714.54 738.59,-637.23"/>
+<polygon fill="black" stroke="black" points="740.79,-634.51 730.79,-631.01 736.42,-639.98 740.79,-634.51"/>
+</g>
+<!-- //standards.scheme.org/about/ -->
+<g id="node35" class="node node&#45;https">
+<title>//standards.scheme.org/about/</title>
+<g id="a_node35"><a xlink:href="https://standards.scheme.org/about/" xlink:title="https://standards.scheme.org/about/">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="738.39" cy="-202.31" rx="18" ry="18"/>
+<text text-anchor="middle" x="738.39" y="-197.63" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://standards.scheme.org/about/</text>
+</a>
+</g>
+</g>
+<!-- 21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/about/ -->
+<g id="edge34" class="edge">
+<title>21d092e3&#45;ec63&#45;4cea&#45;93de&#45;116f4c89328d&#45;&gt;//standards.scheme.org/about/</title>
+<path fill="none" stroke="black" d="M1290.57,-1070.19C1224.74,-966.72 837.11,-357.48 754.05,-226.93"/>
+<polygon fill="black" stroke="black" points="757.12,-225.23 748.8,-218.67 751.21,-228.99 757.12,-225.23"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-06-30 Mon 03:27</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

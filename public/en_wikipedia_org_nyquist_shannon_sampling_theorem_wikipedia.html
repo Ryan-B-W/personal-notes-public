@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-06-30 Mon 03:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(en.wikipedia.org) Nyquist–Shannon sampling theorem - Wikipedia</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(en.wikipedia.org) Nyquist–Shannon sampling theorem - Wikipedia</h1>
+</header><pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem
+</pre>
+<blockquote>
+<p>The <b>Nyquist&#x2013;Shannon sampling theorem</b> is an essential principle for <a href="https://en.wikipedia.org/wiki/Digital_signal_processing">digital signal processing</a> linking the <a href="https://en.wikipedia.org/wiki/Frequency_range">frequency range</a> of a signal and the <a href="https://en.wikipedia.org/wiki/Sample_rate">sample rate</a> required to avoid a type of <a href="https://en.wikipedia.org/wiki/Distortion">distortion</a> called <a href="https://en.wikipedia.org/wiki/Aliasing">aliasing</a>.  The theorem states that the sample rate must be at least twice the <a href="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)">bandwidth</a> of the signal to avoid aliasing.  In practice, it is used to select <a href="https://en.wikipedia.org/wiki/Band-limiting">band-limiting</a> filters to keep aliasing below an acceptable amount when an analog signal is sampled or when sample rates are changed within a digital signal processing function.</p><p><a href="https://en.wikipedia.org/wiki/File:Bandlimited.svg">[[https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Bandlimited.svg/250px-Bandlimited.svg.png</a>]]</p><p>The Nyquist&#x2013;Shannon sampling theorem is a theorem in the field of <a href="https://en.wikipedia.org/wiki/Signal_processing">signal processing</a> which serves as a fundamental bridge between <a href="https://en.wikipedia.org/wiki/Continuous-time_signal">continuous-time signals</a> and <a href="https://en.wikipedia.org/wiki/Discrete-time_signal">discrete-time signals</a>.  It establishes a sufficient condition for a <a href="https://en.wikipedia.org/wiki/Sample_rate">sample rate</a> that permits a discrete sequence of <i>samples</i> to capture all the information from a continuous-time signal of finite <a href="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)">bandwidth</a>.</p><p>Strictly speaking, the theorem only applies to a class of <a href="https://en.wikipedia.org/wiki/Mathematical_function">mathematical functions</a> having a <a href="https://en.wikipedia.org/wiki/Continuous_Fourier_transform">Fourier transform</a> that is zero outside of a finite region of frequencies.  Intuitively we expect that when one reduces a continuous function to a discrete sequence and <a href="https://en.wikipedia.org/wiki/Interpolates">interpolates</a> back to a continuous function, the fidelity of the result depends on the density (or <a href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)">sample rate</a>) of the original samples.  The sampling theorem introduces the concept of a sample rate that is sufficient for perfect fidelity for the class of functions that are <a href="https://en.wikipedia.org/wiki/Bandlimiting">band-limited</a> to a given bandwidth, such that no actual information is lost in the sampling process.  It expresses the sufficient sample rate in terms of the bandwidth for the class of functions.  The theorem also leads to a formula for perfectly reconstructing the original continuous-time function from the samples.</p><p>Perfect reconstruction may still be possible when the sample-rate criterion is not satisfied, provided other constraints on the signal are known (see <a href="https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem#Sampling_of_non-baseband_signals">§ Sampling of non-baseband signals</a> below and <a href="https://en.wikipedia.org/wiki/Compressed_sensing">compressed sensing</a>).  In some cases (when the sample-rate criterion is not satisfied), utilizing additional constraints allows for approximate reconstructions.  The fidelity of these reconstructions can be verified and quantified utilizing <a href="https://en.wikipedia.org/wiki/Bochner's_theorem">Bochner's theorem</a>.</p><p>The name <i>Nyquist&#x2013;Shannon sampling theorem</i> honours <a href="https://en.wikipedia.org/wiki/Harry_Nyquist">Harry Nyquist</a> and <a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a>, but the theorem was also previously discovered by <a href="https://en.wikipedia.org/wiki/E._T._Whittaker">E. T. Whittaker</a> (published in 1915), and Shannon cited Whittaker's paper in his work.  The theorem is thus also known by the names <i>Whittaker&#x2013;Shannon sampling theorem</i>, <i>Whittaker&#x2013;Shannon</i>, and <i>Whittaker&#x2013;Nyquist&#x2013;Shannon</i>, and may also be referred to as the <i>cardinal theorem of interpolation</i>.</p>
+</blockquote>
+<div id="outline-container-orga19dc95" class="outline-2">
+<h2 id="orga19dc95">Local Graph</h2>
+<div class="outline-text-2" id="text-orga19dc95">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="2575pt" height="2177pt"
+ viewBox="0.00 0.00 2575.10 2177.43">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2173.43)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2173.43 2571.1,-2173.43 2571.1,4 -4,4"/>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa -->
+<g id="node1" class="node node&#45;id">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa</title>
+<g id="a_node1"><a xlink:href="public/en_wikipedia_org_nyquist_shannon_sampling_theorem_wikipedia.html" xlink:title="(en.wikipedia.org) Nyquist–Shannon sampling theorem &#45; Wikipedia">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1290.93" cy="-1057.24" rx="18" ry="18"/>
+<text text-anchor="middle" x="1290.93" y="-1052.56" font-family="Times,serif" font-size="14.00" fill="#111111">(en.wikipedia.org) Nyquist–Shannon sa...</text>
+</a>
+</g>
+</g>
+<!-- //en.wikipedia.org/wiki/Digital_signal_processing -->
+<g id="node2" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Digital_signal_processing</title>
+<g id="a_node2"><a xlink:href="https://en.wikipedia.org/wiki/Digital_signal_processing" xlink:title="https://en.wikipedia.org/wiki/Digital_signal_processing">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1807.41" cy="-836.4" rx="18" ry="18"/>
+<text text-anchor="middle" x="1807.41" y="-831.72" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Digital_signal_processing</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Digital_signal_processing -->
+<g id="edge1" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Digital_signal_processing</title>
+<path fill="none" stroke="black" d="M1307.24,-1050.26C1381.48,-1018.52 1687.8,-887.54 1780.63,-847.85"/>
+<polygon fill="black" stroke="black" points="1781.89,-851.12 1789.71,-843.97 1779.14,-844.68 1781.89,-851.12"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Frequency_range -->
+<g id="node3" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Frequency_range</title>
+<g id="a_node3"><a xlink:href="https://en.wikipedia.org/wiki/Frequency_range" xlink:title="https://en.wikipedia.org/wiki/Frequency_range">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2393.35" cy="-1005.01" rx="18" ry="18"/>
+<text text-anchor="middle" x="2393.35" y="-1000.34" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Frequency_range</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Frequency_range -->
+<g id="edge2" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Frequency_range</title>
+<path fill="none" stroke="black" d="M1308.69,-1056.4C1435.69,-1050.38 2205.23,-1013.92 2364.51,-1006.38"/>
+<polygon fill="black" stroke="black" points="2364.36,-1009.89 2374.18,-1005.92 2364.03,-1002.9 2364.36,-1009.89"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Sample_rate -->
+<g id="node4" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Sample_rate</title>
+<g id="a_node4"><a xlink:href="https://en.wikipedia.org/wiki/Sample_rate" xlink:title="https://en.wikipedia.org/wiki/Sample_rate">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2251.85" cy="-569.13" rx="18" ry="18"/>
+<text text-anchor="middle" x="2251.85" y="-564.46" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Sample_rate</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Sample_rate -->
+<g id="edge3" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Sample_rate</title>
+<path fill="none" stroke="black" d="M1306.81,-1049.17C1418.47,-992.45 2085.45,-653.66 2225.9,-582.32"/>
+<polygon fill="black" stroke="black" points="2227.45,-585.45 2234.78,-577.8 2224.28,-579.21 2227.45,-585.45"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Distortion -->
+<g id="node5" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Distortion</title>
+<g id="a_node5"><a xlink:href="https://en.wikipedia.org/wiki/Distortion" xlink:title="https://en.wikipedia.org/wiki/Distortion">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2083.2" cy="-1271.22" rx="18" ry="18"/>
+<text text-anchor="middle" x="2083.2" y="-1266.54" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Distortion</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Distortion -->
+<g id="edge4" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Distortion</title>
+<path fill="none" stroke="black" d="M1308.22,-1061.91C1409.72,-1089.32 1928.14,-1229.34 2055.11,-1263.63"/>
+<polygon fill="black" stroke="black" points="2054.12,-1266.99 2064.68,-1266.22 2055.94,-1260.23 2054.12,-1266.99"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Aliasing -->
+<g id="node6" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Aliasing</title>
+<g id="a_node6"><a xlink:href="https://en.wikipedia.org/wiki/Aliasing" xlink:title="https://en.wikipedia.org/wiki/Aliasing">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2198.08" cy="-1675.42" rx="18" ry="18"/>
+<text text-anchor="middle" x="2198.08" y="-1670.75" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Aliasing</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Aliasing -->
+<g id="edge5" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Aliasing</title>
+<path fill="none" stroke="black" d="M1305.55,-1067.2C1409.94,-1138.34 2041.94,-1569.02 2173.93,-1658.97"/>
+<polygon fill="black" stroke="black" points="2171.72,-1661.7 2181.96,-1664.44 2175.66,-1655.91 2171.72,-1661.7"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Bandwidth_(signal_processing) -->
+<g id="node7" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Bandwidth_(signal_processing)</title>
+<g id="a_node7"><a xlink:href="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)" xlink:title="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1651.22" cy="-1466.1" rx="18" ry="18"/>
+<text text-anchor="middle" x="1651.22" y="-1461.42" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Bandwidth_(signal_processing) -->
+<g id="edge6" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Bandwidth_(signal_processing)</title>
+<path fill="none" stroke="black" d="M1302.51,-1070.38C1354.49,-1129.36 1566.57,-1370.04 1631.94,-1444.22"/>
+<polygon fill="black" stroke="black" points="1629.26,-1446.47 1638.5,-1451.66 1634.52,-1441.85 1629.26,-1446.47"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Band&#45;limiting -->
+<g id="node8" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Band&#45;limiting</title>
+<g id="a_node8"><a xlink:href="https://en.wikipedia.org/wiki/Band-limiting" xlink:title="https://en.wikipedia.org/wiki/Band&#45;limiting">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1437.29" cy="-1885.51" rx="18" ry="18"/>
+<text text-anchor="middle" x="1437.29" y="-1880.83" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Band&#45;limiting</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Band&#45;limiting -->
+<g id="edge7" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Band&#45;limiting</title>
+<path fill="none" stroke="black" d="M1294.06,-1074.92C1312.68,-1180.3 1408.99,-1725.34 1432.24,-1856.9"/>
+<polygon fill="black" stroke="black" points="1428.75,-1857.26 1433.93,-1866.5 1435.64,-1856.04 1428.75,-1857.26"/>
+</g>
+<!-- //en.wikipedia.org/wiki/File:Bandlimited.svg -->
+<g id="node9" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/File:Bandlimited.svg</title>
+<g id="a_node9"><a xlink:href="https://en.wikipedia.org/wiki/File:Bandlimited.svg" xlink:title="https://en.wikipedia.org/wiki/File:Bandlimited.svg">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1841.64" cy="-2003.74" rx="18" ry="18"/>
+<text text-anchor="middle" x="1841.64" y="-1999.07" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/File:Bandlimited.svg</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/File:Bandlimited.svg -->
+<g id="edge8" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/File:Bandlimited.svg</title>
+<path fill="none" stroke="black" d="M1299.8,-1072.49C1363.18,-1181.41 1746.85,-1840.83 1826.98,-1978.54"/>
+<polygon fill="black" stroke="black" points="1823.79,-1980.03 1831.85,-1986.92 1829.84,-1976.51 1823.79,-1980.03"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Signal_processing -->
+<g id="node10" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Signal_processing</title>
+<g id="a_node10"><a xlink:href="https://en.wikipedia.org/wiki/Signal_processing" xlink:title="https://en.wikipedia.org/wiki/Signal_processing">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="440.07" cy="-1621.95" rx="18" ry="18"/>
+<text text-anchor="middle" x="440.07" y="-1617.27" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Signal_processing</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Signal_processing -->
+<g id="edge9" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Signal_processing</title>
+<path fill="none" stroke="black" d="M1276.16,-1067.04C1175.5,-1133.85 590.57,-1522.06 464.15,-1605.96"/>
+<polygon fill="black" stroke="black" points="462.56,-1602.81 456.17,-1611.26 466.43,-1608.65 462.56,-1602.81"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Continuous&#45;time_signal -->
+<g id="node11" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Continuous&#45;time_signal</title>
+<g id="a_node11"><a xlink:href="https://en.wikipedia.org/wiki/Continuous-time_signal" xlink:title="https://en.wikipedia.org/wiki/Continuous&#45;time_signal">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1025.36" cy="-1565.15" rx="18" ry="18"/>
+<text text-anchor="middle" x="1025.36" y="-1560.47" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Continuous&#45;time_signal</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Continuous&#45;time_signal -->
+<g id="edge10" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Continuous&#45;time_signal</title>
+<path fill="none" stroke="black" d="M1282.69,-1073C1244.71,-1145.64 1086.31,-1448.57 1038.85,-1539.33"/>
+<polygon fill="black" stroke="black" points="1035.87,-1537.5 1034.33,-1547.98 1042.07,-1540.74 1035.87,-1537.5"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Discrete&#45;time_signal -->
+<g id="node12" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Discrete&#45;time_signal</title>
+<g id="a_node12"><a xlink:href="https://en.wikipedia.org/wiki/Discrete-time_signal" xlink:title="https://en.wikipedia.org/wiki/Discrete&#45;time_signal">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="716.71" cy="-1948.66" rx="18" ry="18"/>
+<text text-anchor="middle" x="716.71" y="-1943.98" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Discrete&#45;time_signal</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Discrete&#45;time_signal -->
+<g id="edge11" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Discrete&#45;time_signal</title>
+<path fill="none" stroke="black" d="M1281.21,-1072.34C1213.84,-1176.92 816.79,-1793.29 732.45,-1924.22"/>
+<polygon fill="black" stroke="black" points="729.59,-1922.19 727.12,-1932.49 735.48,-1925.98 729.59,-1922.19"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Mathematical_function -->
+<g id="node13" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Mathematical_function</title>
+<g id="a_node13"><a xlink:href="https://en.wikipedia.org/wiki/Mathematical_function" xlink:title="https://en.wikipedia.org/wiki/Mathematical_function">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1127.69" cy="-2151.43" rx="18" ry="18"/>
+<text text-anchor="middle" x="1127.69" y="-2146.75" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Mathematical_function</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Mathematical_function -->
+<g id="edge12" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Mathematical_function</title>
+<path fill="none" stroke="black" d="M1288.3,-1074.87C1269.5,-1200.92 1155.54,-1964.72 1131.96,-2122.81"/>
+<polygon fill="black" stroke="black" points="1128.54,-2122 1130.52,-2132.41 1135.46,-2123.04 1128.54,-2122"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Continuous_Fourier_transform -->
+<g id="node14" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Continuous_Fourier_transform</title>
+<g id="a_node14"><a xlink:href="https://en.wikipedia.org/wiki/Continuous_Fourier_transform" xlink:title="https://en.wikipedia.org/wiki/Continuous_Fourier_transform">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="221" cy="-1244.18" rx="18" ry="18"/>
+<text text-anchor="middle" x="221" y="-1239.51" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Continuous_Fourier_transform</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Continuous_Fourier_transform -->
+<g id="edge13" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Continuous_Fourier_transform</title>
+<path fill="none" stroke="black" d="M1273.25,-1060.33C1148.8,-1082.07 404.79,-1212.07 249.43,-1239.22"/>
+<polygon fill="black" stroke="black" points="249.24,-1235.7 239.99,-1240.87 250.45,-1242.59 249.24,-1235.7"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Interpolates -->
+<g id="node15" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Interpolates</title>
+<g id="a_node15"><a xlink:href="https://en.wikipedia.org/wiki/Interpolates" xlink:title="https://en.wikipedia.org/wiki/Interpolates">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="305.69" cy="-816.65" rx="18" ry="18"/>
+<text text-anchor="middle" x="305.69" y="-811.97" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Interpolates</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Interpolates -->
+<g id="edge14" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Interpolates</title>
+<path fill="none" stroke="black" d="M1273.83,-1053.06C1157.39,-1024.63 481.32,-859.54 334.02,-823.57"/>
+<polygon fill="black" stroke="black" points="334.89,-820.18 324.35,-821.2 333.23,-826.98 334.89,-820.18"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Sampling_(signal_processing) -->
+<g id="node16" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Sampling_(signal_processing)</title>
+<g id="a_node16"><a xlink:href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)" xlink:title="https://en.wikipedia.org/wiki/Sampling_(signal_processing)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="715.43" cy="-1148.73" rx="18" ry="18"/>
+<text text-anchor="middle" x="715.43" y="-1144.05" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Sampling_(signal_processing)</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Sampling_(signal_processing) -->
+<g id="edge15" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Sampling_(signal_processing)</title>
+<path fill="none" stroke="black" d="M1273.39,-1060.03C1191.57,-1073.03 847.03,-1127.81 744.4,-1144.12"/>
+<polygon fill="black" stroke="black" points="743.94,-1140.65 734.61,-1145.68 745.04,-1147.56 743.94,-1140.65"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Bandlimiting -->
+<g id="node17" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Bandlimiting</title>
+<g id="a_node17"><a xlink:href="https://en.wikipedia.org/wiki/Bandlimiting" xlink:title="https://en.wikipedia.org/wiki/Bandlimiting">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="878.34" cy="-645.75" rx="18" ry="18"/>
+<text text-anchor="middle" x="878.34" y="-641.08" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Bandlimiting</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Bandlimiting -->
+<g id="edge16" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Bandlimiting</title>
+<path fill="none" stroke="black" d="M1278.58,-1044.92C1220.35,-986.84 972.88,-740.04 899.15,-666.51"/>
+<polygon fill="black" stroke="black" points="901.67,-664.08 892.12,-659.49 896.73,-669.03 901.67,-664.08"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem#Sampling_of_non&#45;baseband_signals -->
+<g id="node18" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem#Sampling_of_non&#45;baseband_signals</title>
+<g id="a_node18"><a xlink:href="https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem#Sampling_of_non-baseband_signals" xlink:title="https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem#Sampling_of_non&#45;baseband_signals">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1132.67" cy="-22.46" rx="18" ry="18"/>
+<text text-anchor="middle" x="1132.67" y="-17.78" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem#Sampling_of_non&#45;baseband_signals</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem#Sampling_of_non&#45;baseband_signals -->
+<g id="edge17" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Nyquist–Shannon_sampling_theorem#Sampling_of_non&#45;baseband_signals</title>
+<path fill="none" stroke="black" d="M1288.25,-1039.71C1269.7,-918.44 1160.49,-204.34 1137.09,-51.32"/>
+<polygon fill="black" stroke="black" points="1140.58,-50.99 1135.61,-41.64 1133.66,-52.05 1140.58,-50.99"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Compressed_sensing -->
+<g id="node19" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Compressed_sensing</title>
+<g id="a_node19"><a xlink:href="https://en.wikipedia.org/wiki/Compressed_sensing" xlink:title="https://en.wikipedia.org/wiki/Compressed_sensing">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1912.44" cy="-322.61" rx="18" ry="18"/>
+<text text-anchor="middle" x="1912.44" y="-317.94" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Compressed_sensing</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Compressed_sensing -->
+<g id="edge18" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Compressed_sensing</title>
+<path fill="none" stroke="black" d="M1302.52,-1043.54C1377.93,-954.41 1798.76,-456.99 1893.5,-345.01"/>
+<polygon fill="black" stroke="black" points="1896.17,-347.27 1899.96,-337.37 1890.83,-342.75 1896.17,-347.27"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Bochner&apos;s_theorem -->
+<g id="node21" class="node">
+<title>//en.wikipedia.org/wiki/Bochner&apos;s_theorem</title>
+<ellipse fill="none" stroke="black" cx="1379.75" cy="-486.64" rx="256.39" ry="18"/>
+<text text-anchor="middle" x="1379.75" y="-481.96" font-family="Times,serif" font-size="14.00">//en.wikipedia.org/wiki/Bochner&amp;apos;s_theorem</text>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Bochner&apos;s_theorem -->
+<g id="edge19" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Bochner&apos;s_theorem</title>
+<path fill="none" stroke="black" d="M1293.69,-1039.54C1306.36,-958.1 1359.13,-619.11 1375.13,-516.32"/>
+<polygon fill="black" stroke="black" points="1378.59,-516.9 1376.67,-506.48 1371.67,-515.82 1378.59,-516.9"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Harry_Nyquist -->
+<g id="node22" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Harry_Nyquist</title>
+<g id="a_node22"><a xlink:href="https://en.wikipedia.org/wiki/Harry_Nyquist" xlink:title="https://en.wikipedia.org/wiki/Harry_Nyquist">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1680.69" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1680.69" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Harry_Nyquist</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Harry_Nyquist -->
+<g id="edge20" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Harry_Nyquist</title>
+<path fill="none" stroke="black" d="M1297.21,-1040.49C1342.11,-920.78 1614.19,-195.33 1670.5,-45.19"/>
+<polygon fill="black" stroke="black" points="1673.69,-46.65 1673.92,-36.06 1667.13,-44.19 1673.69,-46.65"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Claude_Shannon -->
+<g id="node23" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Claude_Shannon</title>
+<g id="a_node23"><a xlink:href="https://en.wikipedia.org/wiki/Claude_Shannon" xlink:title="https://en.wikipedia.org/wiki/Claude_Shannon">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="782.44" cy="-143.93" rx="18" ry="18"/>
+<text text-anchor="middle" x="782.44" y="-139.25" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Claude_Shannon</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Claude_Shannon -->
+<g id="edge21" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/Claude_Shannon</title>
+<path fill="none" stroke="black" d="M1282.32,-1041.77C1222.73,-934.73 871.82,-304.46 796.63,-169.4"/>
+<polygon fill="black" stroke="black" points="799.79,-167.89 791.87,-160.86 793.68,-171.3 799.79,-167.89"/>
+</g>
+<!-- //en.wikipedia.org/wiki/E._T._Whittaker -->
+<g id="node24" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/E._T._Whittaker</title>
+<g id="a_node24"><a xlink:href="https://en.wikipedia.org/wiki/E._T._Whittaker" xlink:title="https://en.wikipedia.org/wiki/E._T._Whittaker">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="430.79" cy="-410.39" rx="18" ry="18"/>
+<text text-anchor="middle" x="430.79" y="-405.72" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/E._T._Whittaker</text>
+</a>
+</g>
+</g>
+<!-- 95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/E._T._Whittaker -->
+<g id="edge22" class="edge">
+<title>95c14df4&#45;0412&#45;4460&#45;a3eb&#45;0273759781aa&#45;&gt;//en.wikipedia.org/wiki/E._T._Whittaker</title>
+<path fill="none" stroke="black" d="M1276.72,-1046.55C1176.77,-971.38 579.75,-522.41 454.02,-427.86"/>
+<polygon fill="black" stroke="black" points="456.17,-425.1 446.08,-421.89 451.96,-430.69 456.17,-425.1"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Bochner&#39;s_theorem -->
+<g id="node20" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Bochner&#39;s_theorem</title>
+<g id="a_node20"><a xlink:href="https://en.wikipedia.org/wiki/Bochner&apos;s_theorem" xlink:title="https://en.wikipedia.org/wiki/Bochner&#39;s_theorem">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2364.5" cy="-200" rx="18" ry="18"/>
+<text text-anchor="middle" x="2364.5" y="-195.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Bochner&#39;s_theorem</text>
+</a>
+</g>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-06-30 Mon 03:28</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>

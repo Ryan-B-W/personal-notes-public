@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-06-30 Mon 03:47 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1" />
+<title>(en.wikipedia.org) Delta-sigma modulation - Wikipedia</title>
+<meta name="author" content="Ryan &quot;Brody&quot; Wilcox" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/personal-notes-public/main.css" />
+<script id="deferredScriptSvgPanZoom" src="/personal-notes-public/svg-pan-zoom.min.js" defer></script>
+</head>
+<body>
+<div id="preamble" class="status">
+<nav aria-labelledby="nav-head-main">
+<h1 id="nav-head-main">Navigation</h1>
+<menu>
+<li><a href="/personal-notes-public/" title="Home">Home</a></li>
+<li><a href="/personal-notes-public/directory.html" title="Directory">Directory</a></li>
+</menu>
+</nav>
+</div>
+<main id="content" class="content">
+<header>
+<h1 class="title">(en.wikipedia.org) Delta-sigma modulation - Wikipedia</h1>
+</header><pre class="example">
+ROAM_REFS: https://en.wikipedia.org/wiki/Delta-sigma_modulation
+</pre>
+<blockquote>
+<p><b>Delta-sigma</b> (<b>ΔΣ</b>; or <b>sigma-delta</b>, <b>ΣΔ</b>) modulation is an <a href="https://en.wikipedia.org/wiki/Oversampling">oversampling</a> method for encoding <a href="https://en.wikipedia.org/wiki/Signals">signals</a> into low <a href="https://en.wikipedia.org/wiki/Audio_bit_depth">bit depth</a> <a href="https://en.wikipedia.org/wiki/Digital_signal_(signal_processing)">digital signals</a> at a very high <a href="https://en.wikipedia.org/wiki/Sampling_frequency">sample-frequency</a> as part of the process of delta-sigma <a href="https://en.wikipedia.org/wiki/Analog-to-digital_converter">analog-to-digital converters</a> (ADCs) and <a href="https://en.wikipedia.org/wiki/Digital-to-analog_converter">digital-to-analog converters</a> (DACs).  Delta-sigma modulation achieves high <a href="https://en.wikipedia.org/wiki/Audio_quality">quality</a> by utilizing a <a href="https://en.wikipedia.org/wiki/Negative_feedback">negative feedback</a> loop during quantization to the lower bit depth that continuously corrects <a href="https://en.wikipedia.org/wiki/Quantization_error">quantization errors</a> and moves quantization noise to higher frequencies well above the original signal's <a href="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)">bandwidth</a>.  Subsequent <a href="https://en.wikipedia.org/wiki/Low-pass_filtering">low-pass filtering</a> for <a href="https://en.wikipedia.org/wiki/Demodulation">demodulation</a> easily removes this high frequency noise and <a href="https://en.wikipedia.org/wiki/Time_average">time averages</a> to achieve high accuracy in amplitude, which can be ultimately encoded as <a href="https://en.wikipedia.org/wiki/Pulse-code_modulation">pulse-code modulation</a> (PCM).</p><p>Both ADCs and DACs can employ delta-sigma modulation.  A delta-sigma ADC (e.g. Figure 1 top) encodes an <a href="https://en.wikipedia.org/wiki/Analog_signal">analog signal</a> using high-frequency delta-sigma modulation and then applies a <a href="https://en.wikipedia.org/wiki/Digital_filter">digital filter</a> to demodulate it to a high-bit digital output at a lower sampling-frequency.  A delta-sigma DAC (e.g. Figure 1 bottom) encodes a high-resolution digital input signal into a lower-resolution but higher sample-frequency signal that may then be mapped to <a href="https://en.wikipedia.org/wiki/Voltage">voltages</a> and smoothed with an analog filter for demodulation.  In both cases, the temporary use of a low bit depth signal at a higher sampling frequency simplifies circuit design and takes advantage of the efficiency and high accuracy in time of <a href="https://en.wikipedia.org/wiki/Digital_electronics">digital electronics</a>.</p><p>Primarily because of its cost efficiency and reduced circuit complexity, this technique has found increasing use in modern electronic components such as DACs, ADCs, <a href="https://en.wikipedia.org/wiki/Frequency_synthesizer">frequency synthesizers</a>, <a href="https://en.wikipedia.org/wiki/Switched-mode_power_supplies">switched-mode power supplies</a> and <a href="https://en.wikipedia.org/wiki/Motor_controller">motor controllers</a>.  The coarsely-quantized output of a delta-sigma ADC is occasionally used directly in signal processing or as a representation for signal storage (e.g., <a href="https://en.wikipedia.org/wiki/Super_Audio_CD">Super Audio CD</a> stores the raw output of a 1-bit delta-sigma modulator).</p><p>While this article focuses on <a href="https://en.wikipedia.org/wiki/Synchronous_circuit">synchronous</a> modulation, which requires a precise clock for quantization, <a href="https://en.wikipedia.org/wiki/Asynchronous_circuit">asynchronous</a> delta-sigma modulation instead runs without a clock.</p>
+</blockquote>
+<div id="outline-container-orga0da184" class="outline-2">
+<h2 id="orga0da184">Local Graph</h2>
+<div class="outline-text-2" id="text-orga0da184">
+<figure id="local-graph-svg">
+<!-- Generated by graphviz version 12.2.1 (20241206.2353)
+ -->
+<!-- Title: org&#45;roam Pages: 1 -->
+<svg width="2477pt" height="2113pt"
+ viewBox="0.00 0.00 2477.00 2113.47">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2109.47)">
+<title>org&#45;roam</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-2109.47 2473,-2109.47 2473,4 -4,4"/>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143 -->
+<g id="node1" class="node node&#45;id">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143</title>
+<g id="a_node1"><a xlink:href="public/en_wikipedia_org_delta_sigma_modulation_wikipedia.html" xlink:title="(en.wikipedia.org) Delta&#45;sigma modulation &#45; Wikipedia">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" stroke-width="2" cx="1240.18" cy="-1051.46" rx="18" ry="18"/>
+<text text-anchor="middle" x="1240.18" y="-1046.78" font-family="Times,serif" font-size="14.00" fill="#111111">(en.wikipedia.org) Delta&#45;sigma modula...</text>
+</a>
+</g>
+</g>
+<!-- //en.wikipedia.org/wiki/Oversampling -->
+<g id="node2" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Oversampling</title>
+<g id="a_node2"><a xlink:href="https://en.wikipedia.org/wiki/Oversampling" xlink:title="https://en.wikipedia.org/wiki/Oversampling">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1489.17" cy="-2065.73" rx="18" ry="18"/>
+<text text-anchor="middle" x="1489.17" y="-2061.05" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Oversampling</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Oversampling -->
+<g id="edge1" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Oversampling</title>
+<path fill="none" stroke="black" d="M1244.4,-1068.64C1273.58,-1187.51 1445.41,-1887.45 1482.23,-2037.44"/>
+<polygon fill="black" stroke="black" points="1478.77,-2038.05 1484.55,-2046.92 1485.57,-2036.38 1478.77,-2038.05"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Signals -->
+<g id="node3" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Signals</title>
+<g id="a_node3"><a xlink:href="https://en.wikipedia.org/wiki/Signals" xlink:title="https://en.wikipedia.org/wiki/Signals">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1913.75" cy="-1872.74" rx="18" ry="18"/>
+<text text-anchor="middle" x="1913.75" y="-1868.06" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Signals</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Signals -->
+<g id="edge2" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Signals</title>
+<path fill="none" stroke="black" d="M1251.59,-1065.37C1330.61,-1161.72 1796.35,-1729.59 1895.29,-1850.22"/>
+<polygon fill="black" stroke="black" points="1892.49,-1852.33 1901.54,-1857.84 1897.91,-1847.89 1892.49,-1852.33"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Audio_bit_depth -->
+<g id="node4" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Audio_bit_depth</title>
+<g id="a_node4"><a xlink:href="https://en.wikipedia.org/wiki/Audio_bit_depth" xlink:title="https://en.wikipedia.org/wiki/Audio_bit_depth">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1028.23" cy="-2087.47" rx="18" ry="18"/>
+<text text-anchor="middle" x="1028.23" y="-2082.79" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Audio_bit_depth</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Audio_bit_depth -->
+<g id="edge3" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Audio_bit_depth</title>
+<path fill="none" stroke="black" d="M1236.59,-1069C1211.72,-1190.55 1065.17,-1906.89 1034.04,-2059.06"/>
+<polygon fill="black" stroke="black" points="1030.65,-2058.18 1032.08,-2068.68 1037.51,-2059.58 1030.65,-2058.18"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Digital_signal_(signal_processing) -->
+<g id="node5" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Digital_signal_(signal_processing)</title>
+<g id="a_node5"><a xlink:href="https://en.wikipedia.org/wiki/Digital_signal_(signal_processing)" xlink:title="https://en.wikipedia.org/wiki/Digital_signal_(signal_processing)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1197.09" cy="-1710.82" rx="18" ry="18"/>
+<text text-anchor="middle" x="1197.09" y="-1706.14" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Digital_signal_(signal_processing)</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Digital_signal_(signal_processing) -->
+<g id="edge4" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Digital_signal_(signal_processing)</title>
+<path fill="none" stroke="black" d="M1239.03,-1069.09C1233.14,-1159.21 1206.4,-1568.38 1199,-1681.67"/>
+<polygon fill="black" stroke="black" points="1195.51,-1681.41 1198.35,-1691.62 1202.49,-1681.87 1195.51,-1681.41"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Sampling_frequency -->
+<g id="node6" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Sampling_frequency</title>
+<g id="a_node6"><a xlink:href="https://en.wikipedia.org/wiki/Sampling_frequency" xlink:title="https://en.wikipedia.org/wiki/Sampling_frequency">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1596.9" cy="-1619.81" rx="18" ry="18"/>
+<text text-anchor="middle" x="1596.9" y="-1615.13" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Sampling_frequency</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Sampling_frequency -->
+<g id="edge5" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Sampling_frequency</title>
+<path fill="none" stroke="black" d="M1249.72,-1066.66C1298.58,-1144.5 1520.77,-1498.52 1581.52,-1595.29"/>
+<polygon fill="black" stroke="black" points="1578.41,-1596.93 1586.69,-1603.54 1584.34,-1593.21 1578.41,-1596.93"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Analog&#45;to&#45;digital_converter -->
+<g id="node7" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Analog&#45;to&#45;digital_converter</title>
+<g id="a_node7"><a xlink:href="https://en.wikipedia.org/wiki/Analog-to-digital_converter" xlink:title="https://en.wikipedia.org/wiki/Analog&#45;to&#45;digital_converter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="914.19" cy="-1437.33" rx="18" ry="18"/>
+<text text-anchor="middle" x="914.19" y="-1432.66" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Analog&#45;to&#45;digital_converter</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Analog&#45;to&#45;digital_converter -->
+<g id="edge6" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Analog&#45;to&#45;digital_converter</title>
+<path fill="none" stroke="black" d="M1228.58,-1065.19C1180.06,-1122.62 993.14,-1343.88 932.96,-1415.1"/>
+<polygon fill="black" stroke="black" points="930.41,-1412.71 926.63,-1422.61 935.75,-1417.23 930.41,-1412.71"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Digital&#45;to&#45;analog_converter -->
+<g id="node8" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Digital&#45;to&#45;analog_converter</title>
+<g id="a_node8"><a xlink:href="https://en.wikipedia.org/wiki/Digital-to-analog_converter" xlink:title="https://en.wikipedia.org/wiki/Digital&#45;to&#45;analog_converter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="351.67" cy="-1618.27" rx="18" ry="18"/>
+<text text-anchor="middle" x="351.67" y="-1613.6" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Digital&#45;to&#45;analog_converter</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Digital&#45;to&#45;analog_converter -->
+<g id="edge7" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Digital&#45;to&#45;analog_converter</title>
+<path fill="none" stroke="black" d="M1225.13,-1061.06C1120.89,-1127.56 506.53,-1519.48 376.03,-1602.73"/>
+<polygon fill="black" stroke="black" points="374.34,-1599.66 367.79,-1607.99 378.1,-1605.56 374.34,-1599.66"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Audio_quality -->
+<g id="node9" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Audio_quality</title>
+<g id="a_node9"><a xlink:href="https://en.wikipedia.org/wiki/Audio_quality" xlink:title="https://en.wikipedia.org/wiki/Audio_quality">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="676.23" cy="-1866.52" rx="18" ry="18"/>
+<text text-anchor="middle" x="676.23" y="-1861.85" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Audio_quality</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Audio_quality -->
+<g id="edge8" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Audio_quality</title>
+<path fill="none" stroke="black" d="M1230.15,-1065.95C1162.88,-1163.17 777.38,-1720.33 692.68,-1842.74"/>
+<polygon fill="black" stroke="black" points="689.94,-1840.56 687.13,-1850.77 695.69,-1844.54 689.94,-1840.56"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Negative_feedback -->
+<g id="node10" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Negative_feedback</title>
+<g id="a_node10"><a xlink:href="https://en.wikipedia.org/wiki/Negative_feedback" xlink:title="https://en.wikipedia.org/wiki/Negative_feedback">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="556.15" cy="-1261.89" rx="18" ry="18"/>
+<text text-anchor="middle" x="556.15" y="-1257.21" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Negative_feedback</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Negative_feedback -->
+<g id="edge9" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Negative_feedback</title>
+<path fill="none" stroke="black" d="M1223.27,-1056.66C1132.07,-1084.72 698.67,-1218.04 584.02,-1253.31"/>
+<polygon fill="black" stroke="black" points="583.05,-1249.95 574.52,-1256.24 585.11,-1256.64 583.05,-1249.95"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Quantization_error -->
+<g id="node11" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Quantization_error</title>
+<g id="a_node11"><a xlink:href="https://en.wikipedia.org/wiki/Quantization_error" xlink:title="https://en.wikipedia.org/wiki/Quantization_error">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="179.38" cy="-1149.5" rx="18" ry="18"/>
+<text text-anchor="middle" x="179.38" y="-1144.83" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Quantization_error</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Quantization_error -->
+<g id="edge10" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Quantization_error</title>
+<path fill="none" stroke="black" d="M1222.65,-1053.08C1099.51,-1064.46 364.64,-1132.38 208.52,-1146.81"/>
+<polygon fill="black" stroke="black" points="208.28,-1143.32 198.64,-1147.72 208.92,-1150.29 208.28,-1143.32"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Bandwidth_(signal_processing) -->
+<g id="node12" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Bandwidth_(signal_processing)</title>
+<g id="a_node12"><a xlink:href="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)" xlink:title="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="720.68" cy="-882.89" rx="18" ry="18"/>
+<text text-anchor="middle" x="720.68" y="-878.21" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Bandwidth_(signal_processing) -->
+<g id="edge11" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Bandwidth_(signal_processing)</title>
+<path fill="none" stroke="black" d="M1223.19,-1045.94C1147.73,-1021.46 842.48,-922.41 748.41,-891.89"/>
+<polygon fill="black" stroke="black" points="749.57,-888.58 738.98,-888.83 747.41,-895.24 749.57,-888.58"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Low&#45;pass_filtering -->
+<g id="node13" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Low&#45;pass_filtering</title>
+<g id="a_node13"><a xlink:href="https://en.wikipedia.org/wiki/Low-pass_filtering" xlink:title="https://en.wikipedia.org/wiki/Low&#45;pass_filtering">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="281.9" cy="-741.07" rx="18" ry="18"/>
+<text text-anchor="middle" x="281.9" y="-736.4" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Low&#45;pass_filtering</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Low&#45;pass_filtering -->
+<g id="edge12" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Low&#45;pass_filtering</title>
+<path fill="none" stroke="black" d="M1223.14,-1045.94C1108.84,-1008.91 453.78,-796.75 309.86,-750.13"/>
+<polygon fill="black" stroke="black" points="310.98,-746.82 300.39,-747.06 308.83,-753.48 310.98,-746.82"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Demodulation -->
+<g id="node14" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Demodulation</title>
+<g id="a_node14"><a xlink:href="https://en.wikipedia.org/wiki/Demodulation" xlink:title="https://en.wikipedia.org/wiki/Demodulation">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="796.76" cy="-108.8" rx="18" ry="18"/>
+<text text-anchor="middle" x="796.76" y="-104.13" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Demodulation</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Demodulation -->
+<g id="edge13" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Demodulation</title>
+<path fill="none" stroke="black" d="M1232.67,-1035.49C1180.7,-925.01 874.7,-274.49 809.12,-135.09"/>
+<polygon fill="black" stroke="black" points="812.4,-133.84 804.98,-126.28 806.07,-136.82 812.4,-133.84"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Time_average -->
+<g id="node15" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Time_average</title>
+<g id="a_node15"><a xlink:href="https://en.wikipedia.org/wiki/Time_average" xlink:title="https://en.wikipedia.org/wiki/Time_average">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="460.6" cy="-379.97" rx="18" ry="18"/>
+<text text-anchor="middle" x="460.6" y="-375.3" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Time_average</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Time_average -->
+<g id="edge14" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Time_average</title>
+<path fill="none" stroke="black" d="M1226.65,-1039.8C1134.42,-960.36 598.49,-498.75 482.66,-398.98"/>
+<polygon fill="black" stroke="black" points="485.2,-396.55 475.34,-392.67 480.63,-401.85 485.2,-396.55"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Pulse&#45;code_modulation -->
+<g id="node16" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Pulse&#45;code_modulation</title>
+<g id="a_node16"><a xlink:href="https://en.wikipedia.org/wiki/Pulse-code_modulation" xlink:title="https://en.wikipedia.org/wiki/Pulse&#45;code_modulation">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1207.91" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1207.91" y="-13.32" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Pulse&#45;code_modulation</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Pulse&#45;code_modulation -->
+<g id="edge15" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Pulse&#45;code_modulation</title>
+<path fill="none" stroke="black" d="M1239.62,-1033.52C1235.8,-911.13 1213.57,-199.29 1208.8,-46.76"/>
+<polygon fill="black" stroke="black" points="1212.31,-47.02 1208.5,-37.14 1205.32,-47.24 1212.31,-47.02"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Analog_signal -->
+<g id="node17" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Analog_signal</title>
+<g id="a_node17"><a xlink:href="https://en.wikipedia.org/wiki/Analog_signal" xlink:title="https://en.wikipedia.org/wiki/Analog_signal">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="892.5" cy="-522.96" rx="18" ry="18"/>
+<text text-anchor="middle" x="892.5" y="-518.29" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Analog_signal</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Analog_signal -->
+<g id="edge16" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Analog_signal</title>
+<path fill="none" stroke="black" d="M1230.34,-1036.49C1181.92,-962.9 969,-639.24 908.55,-547.36"/>
+<polygon fill="black" stroke="black" points="911.51,-545.49 903.09,-539.06 905.67,-549.34 911.51,-545.49"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Digital_filter -->
+<g id="node18" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Digital_filter</title>
+<g id="a_node18"><a xlink:href="https://en.wikipedia.org/wiki/Digital_filter" xlink:title="https://en.wikipedia.org/wiki/Digital_filter">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2115.19" cy="-1507.58" rx="18" ry="18"/>
+<text text-anchor="middle" x="2115.19" y="-1502.9" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Digital_filter</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Digital_filter -->
+<g id="edge17" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Digital_filter</title>
+<path fill="none" stroke="black" d="M1256.12,-1059.76C1361.44,-1114.67 1957.28,-1425.26 2089.29,-1494.08"/>
+<polygon fill="black" stroke="black" points="2087.47,-1497.08 2097.96,-1498.59 2090.71,-1490.87 2087.47,-1497.08"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Voltage -->
+<g id="node19" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Voltage</title>
+<g id="a_node19"><a xlink:href="https://en.wikipedia.org/wiki/Voltage" xlink:title="https://en.wikipedia.org/wiki/Voltage">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1691.86" cy="-1237.18" rx="18" ry="18"/>
+<text text-anchor="middle" x="1691.86" y="-1232.5" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Voltage</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Voltage -->
+<g id="edge18" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Voltage</title>
+<path fill="none" stroke="black" d="M1256.79,-1058.29C1324.66,-1086.19 1581.24,-1191.69 1665.13,-1226.19"/>
+<polygon fill="black" stroke="black" points="1663.59,-1229.34 1674.17,-1229.9 1666.26,-1222.86 1663.59,-1229.34"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Digital_electronics -->
+<g id="node20" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Digital_electronics</title>
+<g id="a_node20"><a xlink:href="https://en.wikipedia.org/wiki/Digital_electronics" xlink:title="https://en.wikipedia.org/wiki/Digital_electronics">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2290.75" cy="-1141.47" rx="18" ry="18"/>
+<text text-anchor="middle" x="2290.75" y="-1136.79" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Digital_electronics</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Digital_electronics -->
+<g id="edge19" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Digital_electronics</title>
+<path fill="none" stroke="black" d="M1257.97,-1052.98C1381.23,-1063.54 2107.64,-1125.78 2261.95,-1139"/>
+<polygon fill="black" stroke="black" points="2261.43,-1142.47 2271.69,-1139.83 2262.03,-1135.49 2261.43,-1142.47"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Frequency_synthesizer -->
+<g id="node21" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Frequency_synthesizer</title>
+<g id="a_node21"><a xlink:href="https://en.wikipedia.org/wiki/Frequency_synthesizer" xlink:title="https://en.wikipedia.org/wiki/Frequency_synthesizer">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1940.08" cy="-927.6" rx="18" ry="18"/>
+<text text-anchor="middle" x="1940.08" y="-922.93" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Frequency_synthesizer</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Frequency_synthesizer -->
+<g id="edge20" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Frequency_synthesizer</title>
+<path fill="none" stroke="black" d="M1257.83,-1048.33C1351.82,-1031.7 1793.58,-953.53 1911.23,-932.71"/>
+<polygon fill="black" stroke="black" points="1911.75,-936.17 1920.99,-930.98 1910.53,-929.28 1911.75,-936.17"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Switched&#45;mode_power_supplies -->
+<g id="node22" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Switched&#45;mode_power_supplies</title>
+<g id="a_node22"><a xlink:href="https://en.wikipedia.org/wiki/Switched-mode_power_supplies" xlink:title="https://en.wikipedia.org/wiki/Switched&#45;mode_power_supplies">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1616.51" cy="-104" rx="18" ry="18"/>
+<text text-anchor="middle" x="1616.51" y="-99.33" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Switched&#45;mode_power_supplies</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Switched&#45;mode_power_supplies -->
+<g id="edge21" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Switched&#45;mode_power_supplies</title>
+<path fill="none" stroke="black" d="M1246.71,-1035.01C1291.23,-922.92 1549.95,-271.59 1605.86,-130.82"/>
+<polygon fill="black" stroke="black" points="1608.95,-132.52 1609.39,-121.94 1602.45,-129.94 1608.95,-132.52"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Motor_controller -->
+<g id="node23" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Motor_controller</title>
+<g id="a_node23"><a xlink:href="https://en.wikipedia.org/wiki/Motor_controller" xlink:title="https://en.wikipedia.org/wiki/Motor_controller">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1288.43" cy="-447.03" rx="18" ry="18"/>
+<text text-anchor="middle" x="1288.43" y="-442.35" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Motor_controller</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Motor_controller -->
+<g id="edge22" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Motor_controller</title>
+<path fill="none" stroke="black" d="M1241.6,-1033.69C1248.39,-948.63 1277.61,-582.64 1286.1,-476.18"/>
+<polygon fill="black" stroke="black" points="1289.59,-476.55 1286.89,-466.3 1282.61,-475.99 1289.59,-476.55"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Super_Audio_CD -->
+<g id="node24" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Super_Audio_CD</title>
+<g id="a_node24"><a xlink:href="https://en.wikipedia.org/wiki/Super_Audio_CD" xlink:title="https://en.wikipedia.org/wiki/Super_Audio_CD">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1953.56" cy="-325.63" rx="18" ry="18"/>
+<text text-anchor="middle" x="1953.56" y="-320.96" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Super_Audio_CD</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Super_Audio_CD -->
+<g id="edge23" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Super_Audio_CD</title>
+<path fill="none" stroke="black" d="M1252.56,-1038.86C1336.87,-953.08 1826.39,-455.02 1933.05,-346.51"/>
+<polygon fill="black" stroke="black" points="1935.54,-348.96 1940.06,-339.37 1930.55,-344.05 1935.54,-348.96"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Synchronous_circuit -->
+<g id="node25" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Synchronous_circuit</title>
+<g id="a_node25"><a xlink:href="https://en.wikipedia.org/wiki/Synchronous_circuit" xlink:title="https://en.wikipedia.org/wiki/Synchronous_circuit">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="1635.99" cy="-644.17" rx="18" ry="18"/>
+<text text-anchor="middle" x="1635.99" y="-639.49" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Synchronous_circuit</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Synchronous_circuit -->
+<g id="edge24" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Synchronous_circuit</title>
+<path fill="none" stroke="black" d="M1252.46,-1038.82C1309.01,-980.63 1544.62,-738.19 1615.64,-665.11"/>
+<polygon fill="black" stroke="black" points="1617.95,-667.75 1622.4,-658.14 1612.93,-662.88 1617.95,-667.75"/>
+</g>
+<!-- //en.wikipedia.org/wiki/Asynchronous_circuit -->
+<g id="node26" class="node node&#45;https">
+<title>//en.wikipedia.org/wiki/Asynchronous_circuit</title>
+<g id="a_node26"><a xlink:href="https://en.wikipedia.org/wiki/Asynchronous_circuit" xlink:title="https://en.wikipedia.org/wiki/Asynchronous_circuit">
+<ellipse fill="#eeeeee" stroke="#c9c9c9" cx="2223.93" cy="-651.8" rx="18" ry="18"/>
+<text text-anchor="middle" x="2223.93" y="-647.12" font-family="Times,serif" font-size="14.00" fill="#0a97a6">https://en.wikipedia.org/wiki/Asynchronous_circuit</text>
+</a>
+</g>
+</g>
+<!-- d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Asynchronous_circuit -->
+<g id="edge25" class="edge">
+<title>d4ea841b&#45;6ba4&#45;4975&#45;bc84&#45;95b08ff73143&#45;&gt;//en.wikipedia.org/wiki/Asynchronous_circuit</title>
+<path fill="none" stroke="black" d="M1256.84,-1044.69C1372.26,-997.8 2052.47,-721.46 2196.96,-662.75"/>
+<polygon fill="black" stroke="black" points="2198.15,-666.05 2206.1,-659.04 2195.51,-659.56 2198.15,-666.05"/>
+</g>
+</g>
+</svg>
+</figure>
+
+<script>
+deferredScriptSvgPanZoom.addEventListener('load', function () {
+    var panZoomLocalGraph = svgPanZoom('#local-graph-svg > svg', {controlIconsEnabled: true})
+})
+</script>
+</div>
+</div>
+</main>
+<div id="postamble" class="status">
+<footer>
+<p class="date">Last Modified: 2025-06-30 Mon 03:28</p>
+<p class="author">Author: Ryan "Brody" Wilcox</p>
+</footer>
+</div>
+</body>
+</html>
