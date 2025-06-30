@@ -479,7 +479,8 @@ holding contextual information."
          :base-extension "org"
          :exclude "public/" :exclude "data/" :exclude "ltximg/"
          :exclude "resume/" :exclude "notes.org-images/"
-         :exclude "other/" :exclude "tmp/" :exclude "\\.git/"
+         :exclude "other/" :exclude "tmp/" :exclude "temp-assets/"
+         :exclude "\\.git/"
          :recursive nil
          :publishing-directory ,(expand-file-name "personal-notes-public" default-publish-directory)
          :publishing-function org-html-publish-to-html
